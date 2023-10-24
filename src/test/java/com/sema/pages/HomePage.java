@@ -31,6 +31,10 @@ public class HomePage extends BasePage {
     private WebElement contact;
     @FindBy(id = "Contact ManagementH")
     private WebElement contactManagement;
+    @FindBy(id = "Campaign")
+    private WebElement campaign;
+    @FindBy(id = "Campaign ManagementH")
+    private WebElement campaignManagement;
     @FindBy(xpath = "//a[@id='Event']")
     private WebElement event;
     @FindBy(xpath = "//a[@id='Event ManagementH']")
@@ -163,6 +167,19 @@ public class HomePage extends BasePage {
 
     public void clicksOnTheEventElement() {
         event.click();
+    }
+    public void mouseoverOnTheCampaignManagementElement() {
+        BrowserUtils.waitForVisibility(campaignManagement, 10);
+        BrowserUtils.hoverOver(campaignManagement);
+    }
+
+    public void mouseoverOnTheCampaignElement() {
+        BrowserUtils.waitForVisibility(campaign, 10);
+        BrowserUtils.hoverOver(campaign);
+    }
+
+    public void clicksOnTheCampaignElement() {
+        campaign.click();
     }
 
 }

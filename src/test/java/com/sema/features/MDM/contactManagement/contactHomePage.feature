@@ -11,7 +11,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     And   The User performs a mouseover on the Contact element
     And   The User clicks on the Contact element
     And   The User gets the current URL and stores it in "itemType=Contact"
-@semaosdıjf
+
   Scenario: Contact category functionality check
         And The user clicks on Contact  category
         And The user verifies that the codes shown in the Contact label filter are contact categories
@@ -121,7 +121,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     And the user clicks on Search button
     And The user clicks on Edit Button
     Then The user verify Edit Page
-@semali
+
     Scenario Outline: Verify "<starFeature>" visibility and badge count
       Then The user verifies that "<starFeature>" is visible
       Given The user clicks "<starFeature>"

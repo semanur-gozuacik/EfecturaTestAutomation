@@ -3,6 +3,7 @@ import com.sema.pages.HomePage;
 import com.sema.pages.LoginPage;
 import com.sema.pages.MDMPage.AssetManagement.Asset;
 import com.sema.pages.MDMPage.AssetManagement.AssetEditPage;
+import com.sema.pages.MDMPage.CampaignManagement.CampaignHomePage;
 import com.sema.pages.MDMPage.ContactManagement.ContactEditPage;
 import com.sema.pages.MDMPage.ContactManagement.ContactHomePage;
 import com.sema.pages.MDMPage.ContactManagement.ContactHomePageMyContactPage;
@@ -24,6 +25,8 @@ public class Pages {
     private AssetEditPage assetEditPage;
     private BlackListPage  blackListPage;
     private EventHomePage  eventHomePage;
+    private CampaignHomePage campaignHomePage;
+
 
     public Pages() {
             this.homePage =new HomePage();
@@ -37,6 +40,8 @@ public class Pages {
             this.assetEditPage= new AssetEditPage();
             this.blackListPage=new BlackListPage();
             this.eventHomePage=new EventHomePage();
+            this.campaignHomePage=new CampaignHomePage();
+
 
     }
     // Getter metotları
@@ -56,6 +61,8 @@ public class Pages {
     public AssetEditPage assetEditPage(){return assetEditPage;}
     public BlackListPage blackListPage(){return blackListPage;}
     public EventHomePage eventHomePage(){return eventHomePage;}
+    public CampaignHomePage campaignHomePage(){return campaignHomePage();}
+
 
 }
 

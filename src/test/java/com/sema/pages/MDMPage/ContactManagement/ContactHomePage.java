@@ -203,6 +203,7 @@ public class ContactHomePage extends BasePage {
 
     public void verifyCodeFilter(String code) {
         BrowserUtils.wait(2);
+        System.out.println("");
         assertTrue(verifyCodeFilter.getText().equalsIgnoreCase(code));
     }
 
