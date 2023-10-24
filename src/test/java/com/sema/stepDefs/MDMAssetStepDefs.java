@@ -1,0 +1,58 @@
+package com.sema.stepDefs;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+
+public class MDMAssetStepDefs extends BaseStep {
+    @Then("The User performs a    mouseover on the Asset Management element")
+    public void the_user_performs_a_mouseover_on_the_asset_management_element() {
+        pages.homePage().mouseoverOnTheAssetManagement();
+    }
+
+    @Then("The User performs a    mouseover on the Asset element")
+    public void the_user_performs_a_mouseover_on_the_asset_element() {
+        pages.homePage().mouseoverOnTheAssetManagementElement();
+    }
+    @Then("The User clicks on the Asset element")
+    public void the_user_clicks_on_the_asset_element() {
+        pages.homePage().clicksOnTheAssetElement();
+    }
+    @Then("The User gets the current URL and stores it in {string} Asset page")
+    public void the_user_gets_the_current_url_and_stores_it_in_asset_page(String partialUrl) {
+        pages.homePage().currentUrlAndStoresItInUrl(partialUrl);
+    }
+    @Then("The User waits until the Asset Categories element is visible with a timeout of {int} seconds")
+    public void the_user_waits_until_the_asset_categories_element_is_visible_with_a_timeout_of_seconds(Integer timeout) {
+        pages.asset().verifyAssetCategories(timeout);
+    }
+    @Then("The User clicks on the new node element")
+    public void the_user_clicks_on_the_new_node_element() {
+        pages.asset().clickNewNode();
+    }
+
+    @Given("The user waits until the element with id  Infoitem is visible.")
+    public void the_user_waits_until_the_element_with_id_ınfoitem_is_visible() {
+        pages.asset().verifyInfoItem();
+    }
+    @Then("The User presses the down arrow key and then presses Enter in the Cooler element")
+    public void the_user_presses_the_down_arrow_key_and_then_presses_enter_in_the_cooler_element() {
+     pages.asset().selectCoolerFamily();    }
+    @Then("The user clicks delete button- {string}")
+    public void the_user_clicks_delete_button(String string) {
+       pages.asset().clickDeleteButtonAsset();
+    }
+
+    @Then("The user clicks cancel button in popup")
+    public void the_user_clicks_cancel_button_in_popup() {
+        pages.asset().clickCancelButtonInPopup();
+    }
+
+    @Then("The user clicks delete button in popup")
+    public void the_user_clicks_delete_button_in_popup() {
+       pages.asset().clickDeleteButtonAssetPopup();
+    }
+    @Then("The User waits until the page contains {string} with a timeout of {int} seconds-Asset")
+    public void the_user_waits_until_the_page_contains_with_a_timeout_of_seconds_Asset(String text, Integer timeout) {
+        pages.asset().verifyDeleteItemText(text,timeout);
+    }
+}
