@@ -1,4 +1,4 @@
-@regression
+@regression @login
 Feature: MDM Session Verification
 
   Background:
