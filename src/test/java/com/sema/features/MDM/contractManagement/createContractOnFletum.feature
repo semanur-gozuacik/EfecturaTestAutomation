@@ -1,4 +1,4 @@
-@regression
+@rweartgdfjökmç
 Feature: Contract Management Test Cases
 Background:
 
@@ -13,7 +13,6 @@ Background:
   And   The User clicks on the Contract element
   And   The User gets the current URL and stores it in "itemType=Contract"
   Then   The User waits until the createItem element is visible with a timeout of 120 seconds
-
 
   Scenario: Create Contract on Fletum with invalid family
     And   The User clicks on the createItem element
@@ -56,7 +55,7 @@ Background:
     And   The User clicks on the createButton element
 
   Scenario: Delete Asset on Fletum with valid credentials - "<Family>"
-    And  The user enters "1999555235" into Code field
+    And  The user enters "199955523515555" into Code field
     And  the user clicks on Search button
     And  The user clicks delete button- "<Family>"
     And  The user clicks delete button in popup

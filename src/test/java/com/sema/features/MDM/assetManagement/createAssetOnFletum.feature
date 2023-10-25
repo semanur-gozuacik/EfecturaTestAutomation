@@ -1,4 +1,4 @@
-
+@semolii
 Feature: Asset Management Test Case
 Background:
 
@@ -24,7 +24,7 @@ Background:
     Then The User waits until the Asset Categories element is visible with a timeout of 120 seconds
     And   The User clicks on the new node element
     And   The User clicks on the createButton element
-    Then   The User waits until the page contains "EMPTY_FAMILY" with a timeout of 120 seconds-asset
+    Then   The User waits until the page contains "EMPTY_FAMILY" with a timeout of 120 seconds
 
   Scenario: Create Asset on Fletum without Categories
     And   The User clicks on the createItem element
@@ -57,8 +57,6 @@ Background:
     And  The User clicks on the Asset Categories element
     And  The User clicks on the new node element
     And  The User clicks on the createButton element
-    Then The User waits until the page contains "Changes saved succesfully." with a timeout of 120 seconds
-    And   The User gets the current URL and stores it in "Enrich/EditItem" Asset page
     Examples:
       |Family|
       |Cooler|

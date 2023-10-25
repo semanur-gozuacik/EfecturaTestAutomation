@@ -29,6 +29,8 @@ public class Contract extends BasePage {
     private WebElement contractFamily;
     @FindBy(xpath = "//span[normalize-space()='Please choose categories']")
     private WebElement emptyCategoriesText;
+    @FindBy(xpath = "//span[normalize-space()='EMPTY_FAMILY']")
+    private WebElement emptyFamilyText;
     @FindBy(xpath = "//span[normalize-space()='Changes saved succesfully.']")
     private WebElement savedCategoriesText;
     @FindBy(xpath = "//span[@class='iconbtn iconbtn-gray']//a[@id='cancelItem']")
@@ -68,11 +70,11 @@ public class Contract extends BasePage {
     }
     public void clickCreateButton(){
         createButton.click();
-
+        BrowserUtils.wait(5);
     }
     public void verifyCreateItemMessage(String message, int timeout){
         if (message.contains("Changes")){
-Assert.assertTrue(true);        }
+    Assert.assertTrue(true);        }
         else{
             emptyFamily(message,timeout);        }
     }
