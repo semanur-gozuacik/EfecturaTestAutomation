@@ -1,13 +1,7 @@
 package com.sema.pages.MDMPage.ContactManagement;
-
-import com.beust.ah.A;
 import com.sema.pages.BasePage;
-import com.sema.pages.MDMPage.AssetManagement.Asset;
-import com.sema.stepDefs.BaseStep;
 import com.sema.utilities.BrowserUtils;
-import org.bouncycastle.jcajce.provider.asymmetric.X509;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
