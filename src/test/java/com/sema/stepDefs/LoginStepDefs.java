@@ -9,12 +9,12 @@ public class LoginStepDefs extends BaseStep {
     }
 
     @Given("I am on the MDM login page")
-    public void ı_am_on_the_mdm_login_page() {
+    public void i_am_on_the_mdm_login_page() {
         pages.loginPage().theUserIsOnTheHomePage();
     }
 
     @When("I enter the username {string} and password {string}")
-    public void ı_enter_the_username_and_password(String username, String password) {
+    public void i_enter_the_username_and_password(String username, String password) {
         pages.loginPage().setUsernameField(username);
         pages.loginPage().setPasswordField(password);
     }
@@ -25,7 +25,7 @@ public class LoginStepDefs extends BaseStep {
     }
 
     @Then("I should see the message {string}")
-    public void ı_should_see_the_message(String expectedResult) {
+    public void i_should_see_the_message(String expectedResult) {
         pages.loginPage().loginVerify(expectedResult);
     }
 
