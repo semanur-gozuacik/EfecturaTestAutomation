@@ -1,4 +1,4 @@
-@regression
+@regression @somokıı
 Feature: BlackList Test Cases- Create Black List
   Background:
     When  The User opens the browser with the given url
