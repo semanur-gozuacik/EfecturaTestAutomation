@@ -1,4 +1,4 @@
-@rweartgdfjökmç
+@abcd
 Feature: Contract Management Test Cases
 Background:
 

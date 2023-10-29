@@ -79,9 +79,12 @@ public class BlackListPage extends BasePage {
      } else if (phoneNumber.equalsIgnoreCase("partialNumber")) {
          phoneNumberField.sendKeys(Constants.PARTIAL_PHONE_NUMBER);
      }
-     else {
+     else if(phoneNumber.equalsIgnoreCase("invalidNumber")){
          phoneNumberField.sendKeys(Constants.INVALID_PHONE_NUMBER);
      }
+     else{
+         phoneNumberField.sendKeys(phoneNumber);
+        }
      BrowserUtils.wait(5);
     }
     public void verifyPhoneNumber(String phoneNumber) {

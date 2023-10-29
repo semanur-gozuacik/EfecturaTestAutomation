@@ -23,7 +23,7 @@ public class Contract extends BasePage {
     private WebElement rootCategories;
     @FindBy(xpath = "//div[@class='modalFooter']//div[@class='pull-right del-btn']")
     private WebElement createButton;
-    @FindBy(xpath = "//div[@class='notifyjs-warning']")
+    @FindBy(xpath = "//div[@class='notifyjs-warning']//div//*[name()='svg']")
     private WebElement emptyFamily;
     @FindBy(xpath = "//span//ul//li[@class='select2-results__option']")
     private WebElement contractFamily;
@@ -72,16 +72,20 @@ public class Contract extends BasePage {
         createButton.click();
         BrowserUtils.wait(5);
     }
-    public void verifyCreateItemMessage(String message, int timeout){
-        if (message.contains("Changes")){
-    Assert.assertTrue(true);        }
-        else{
-            emptyFamily(message,timeout);        }
+    public void verifyCreateItemMessage(String message, int timeout) {
+      if ( message.equalsIgnoreCase("EMPTY_FAMILY")){
+          BrowserUtils.waitForVisibility(emptyFamily,timeout);
+          Assert.assertTrue(emptyFamily.isDisplayed());
+      }
+      else if(message.equalsIgnoreCase("Changes saved succesfully.")){
+          BrowserUtils.waitForVisibility(savedCategoriesText,timeout);
+          Assert.assertTrue(savedCategoriesText.isDisplayed());
+      }
     }
     private void emptyFamily(String text,int timeout ){
-        BrowserUtils.waitForVisibility(emptyFamily,timeout);
-        System.out.println(emptyFamily.getText());
-        Assert.assertTrue(emptyFamily.getText().contains(text));
+        BrowserUtils.waitForVisibility(emptyFamilyText,timeout);
+        System.out.println(emptyFamilyText.getText());
+        Assert.assertTrue(emptyFamilyText.getText().contains(text));
     }
     private void saveItem(String text,int timeout ){
         BrowserUtils.waitForVisibility(savedCategoriesText,timeout);
