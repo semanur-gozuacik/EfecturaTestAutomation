@@ -12,8 +12,6 @@ import org.openqa.selenium.support.FindBy;
 import java.util.concurrent.RecursiveTask;
 
 public class LoginPage extends BasePage {
-    HomePage homePage = new HomePage();
-    // Define web elements
     @FindBy(xpath = "//iframe[@id='nr-ext-rsicon']")
     private WebElement iframe;
     @FindBy(id = "Username")
@@ -76,7 +74,7 @@ public class LoginPage extends BasePage {
 
     public void loginVerify(String expectedResult) {
         if (expectedResult.equalsIgnoreCase("successful login")) {
-            homePage.loginVerification();
+            loginVerification();
         } else if (expectedResult.equalsIgnoreCase("session opening error empty")) {
             BrowserUtils.waitForVisibility(emptyLoginErrorText, 20);
             Assert.assertTrue(emptyLoginErrorText.isDisplayed());
@@ -84,6 +82,10 @@ public class LoginPage extends BasePage {
             BrowserUtils.waitForVisibility(loginErrorText, 20);
             Assert.assertTrue(loginErrorText.isDisplayed());
         }
+    }
+    private void loginVerification() {
+        String currentURL = driver.getCurrentUrl();
+        Assert.assertTrue(currentURL.contains("Home/Index"));
     }
 
     public void clickForgotYourPassword() {
