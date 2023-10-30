@@ -62,7 +62,7 @@ Background:
       |Cooler|
 
 Scenario Outline: Delete Asset on Fletum with valid credentials - "<Family>"-cancel button
-  And  The user enters "1999555235" into Code field
+  And  The user enters "199955523515555" into Code field
   And  the user clicks on Search button
   And  The user clicks delete button- "<Family>"
   And  The user clicks cancel button in popup
@@ -71,7 +71,7 @@ Scenario Outline: Delete Asset on Fletum with valid credentials - "<Family>"-can
     |Cooler|
 
   Scenario Outline: Delete Asset on Fletum with valid credentials - "<Family>"
-    And  The user enters "1999555235" into Code field
+    And  The user enters "199955523515555" into Code field
     And  the user clicks on Search button
     And  The user clicks delete button- "<Family>"
     And  The user clicks delete button in popup

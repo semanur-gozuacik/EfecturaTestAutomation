@@ -10,6 +10,7 @@ import com.sema.pages.MDMPage.ContactManagement.ContactHomePageMyContactPage;
 import com.sema.pages.MDMPage.ContractManagement.Contract;
 import com.sema.pages.MDMPage.EventManagement.EventHomePage;
 import com.sema.pages.MDMPage.GiftManagement.Gift;
+import com.sema.pages.MDMPage.KPIManagement.KPIHomePage;
 import com.sema.pages.SystemPage.BlackListPage;
 
 public class Pages {
@@ -26,6 +27,7 @@ public class Pages {
     private BlackListPage  blackListPage;
     private EventHomePage  eventHomePage;
     private CampaignHomePage campaignHomePage;
+    private KPIHomePage kpiHomePage;
 
 
     public Pages() {
@@ -41,6 +43,7 @@ public class Pages {
             this.blackListPage=new BlackListPage();
             this.eventHomePage=new EventHomePage();
             this.campaignHomePage=new CampaignHomePage();
+            this.kpiHomePage=new KPIHomePage();
 
 
     }
@@ -61,8 +64,8 @@ public class Pages {
     public AssetEditPage assetEditPage(){return assetEditPage;}
     public BlackListPage blackListPage(){return blackListPage;}
     public EventHomePage eventHomePage(){return eventHomePage;}
-    public CampaignHomePage campaignHomePage(){return campaignHomePage();}
-
+    public CampaignHomePage campaignHomePage(){return campaignHomePage;}
+     public KPIHomePage kpiHomePage(){return kpiHomePage;}
 
 }
 

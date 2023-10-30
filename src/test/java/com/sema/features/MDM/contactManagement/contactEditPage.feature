@@ -5,7 +5,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And   The User inputs a valid username "validUsername"
     And   The User inputs a valid password "validPassword"
     And   The User clicks the Submit button
-    Then   The User waits until the MDM element is visible with a timeout of 120 seconds
+    Then   The User waits until the MDM element is visible with a timeout of 15 seconds
     And   The User performs a mouseover on the MDM element
     And   The User performs a mouseover on the Contact Management element
     And   The User performs a mouseover on the Contact element

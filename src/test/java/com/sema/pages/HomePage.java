@@ -17,7 +17,7 @@ public class HomePage extends BasePage {
     private WebElement contract;
     @FindBy(id = "Asset ManagementH")
     private WebElement assetManagement;
-    @FindBy(id = "KPIH")
+    @FindBy(id = "KPI")
     private WebElement KPI;
     @FindBy(id = "KPI ManagementH")
     private WebElement KPIManagement;
@@ -131,6 +131,10 @@ public class HomePage extends BasePage {
     public void mouseoverOnTheKPIManagementElement() {
         BrowserUtils.waitForVisibility(KPIManagement, 10);
         BrowserUtils.hoverOver(KPIManagement);
+    }
+    public void mouseoverOnTheKPIElement() {
+        BrowserUtils.waitForVisibility(KPI, 10);
+        BrowserUtils.hoverOver(KPI);
     }
 
     public void mouseoverOnTheSystemElementSymbol() {

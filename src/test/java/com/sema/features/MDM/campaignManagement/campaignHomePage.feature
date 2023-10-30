@@ -11,7 +11,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And   The User performs a  mouseover on the Campaign element
     And   The User clicks on the Campaign element
     And   The User gets the current URL and stores it in "itemType=Campaign" Asset page
-  @semooo
+
   Scenario: Verify Code Filter -Valid Unique Code
     And The user enters "testsema123" into Code field
     And the user clicks on Search button

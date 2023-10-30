@@ -11,7 +11,7 @@ Feature: Event Management Test Cases- Event Home Page
     And   The User performs a mouseover on the Event element
     And   The User clicks on the Event element
     And   The User gets the current URL and stores it in "itemType=Event"
-  @semakızzz
+
   Scenario: Verify Code Filter -Valid Unique Code
     And The user enters "TransferTest" into Code field
     And the user clicks on Search button

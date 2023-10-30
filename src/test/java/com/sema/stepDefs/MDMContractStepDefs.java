@@ -142,7 +142,7 @@ public class MDMContractStepDefs extends BaseStep {
     }
     @Then("The User waits until the page contains {string} text with a timeout of {int} seconds")
     public void the_user_waits_until_the_page_contains_text_with_a_timeout_of_seconds(String text, Integer timeout) {
-        pages.contract().verifyEmptyCategoriesText(text,timeout);
+        pages.contract().verifyEmptyCategories(text,timeout);
     }
     @Then("The User clicks on the cancelButton element")
     public void the_user_clicks_on_the_cancel_button_element() {
