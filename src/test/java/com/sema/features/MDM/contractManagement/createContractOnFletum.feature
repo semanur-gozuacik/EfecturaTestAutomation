@@ -1,4 +1,4 @@
-@abcd
+@regression
 Feature: Contract Management Test Cases
 Background:
 

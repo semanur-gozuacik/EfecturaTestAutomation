@@ -1,4 +1,4 @@
-
+@regression
 Feature: Contact Management Test Cases- Contact Home Page
   Background:
     When   The User opens the browser with the given url
