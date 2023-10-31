@@ -24,7 +24,7 @@ import java.util.List;
                 "rerun:target/rerun.txt"
         },
         // Hangi senaryoların çalıştırılacağını belirten etiket
-        tags ="@dkf",
+        tags ="@regression",
         features ="src/test/java/com/sema/features",
         //features ="src/test/java/com/sema/features/Login/loginSenerios.feature",
         //feature ="src/test/java/com/sema/features/MDM",
