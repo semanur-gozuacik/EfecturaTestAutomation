@@ -30,6 +30,10 @@ public class KPIHomePage extends BasePage {
         BrowserUtils.waitForVisibility(familyKPI, 20);
         familyKPI.click();
     }
+    public void selectKPIFamily(){
+        BrowserUtils.wait(5);
+        if(familyKPI.isEnabled());
+    }
 }
 
 

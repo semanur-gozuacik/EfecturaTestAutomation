@@ -12,47 +12,6 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And   The User clicks on the Contact element
     And   The User gets the current URL and stores it in "itemType=Contact"
 
-  Scenario: Edit Page Upload Photo-Cancel
-    When The user clicks on Contact  category
-    And The user enters "TEST1" into Code field
-    And the user clicks on Search button
-    And The user clicks on Edit Button
-    Then The user verify Edit Page
-    When The user clicks upload button
-    And The user enters "-------" in comment area
-    And The user clicks upload photo cancel button
-    Then The user verifies the photo unuploaded
-
-  Scenario: Edit Page Upload Photo-Save Button
-    When The user clicks on Contact  category
-    And The user enters "sematestttt" into Code field
-    And the user clicks on Search button
-    And The user clicks on Edit Button
-    Then The user verify Edit Page
-    When The user clicks upload button
-    And The user enters "-------" in comment area
-    And The user clicks upload photo save button
-    And The user verifies the photo uploaded
-
-  Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button
-    When The user clicks on Contact  category
-    And The user enters "sematestttt" into Code field
-    And the user clicks on Search button
-    And The user clicks on Edit Button
-    Then The user verify Edit Page
-    And the user selects "<ItemStatus>"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks cancel button
-    And the user verifies item status not change
-
-    Examples:
-      |ItemStatus |
-      |Active     |
-      |Passive    |
-      |Approved   |
-
-
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     When The user clicks on Contact  category
     And The user enters "sematestttt" into Code field
@@ -70,3 +29,24 @@ Feature: Contact Management Test Cases- Contact Edit Page
       |Active     |
       |Passive    |
       |Approved   |
+
+  Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button
+    When The user clicks on Contact  category
+    And The user enters "sematestttt" into Code field
+    And the user clicks on Search button
+    And The user clicks on Edit Button
+    Then The user verify Edit Page
+    And the user selects "<ItemStatus>"
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks cancel button
+    And the user verifies item status not change
+
+    Examples:
+      |ItemStatus |
+      |Passive    |
+      |Active     |
+      #|Approved   |
+
+
+

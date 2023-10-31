@@ -152,8 +152,11 @@ public class BlackListPage extends BasePage {
         } else if (cardNumber.equalsIgnoreCase("partialNumber")) {
             cardNumbersField.sendKeys(Constants.PARTIAL_CARD_NUMBER);
         }
-        else {
+        else if (cardNumber.equalsIgnoreCase("invalidNumber")){
             cardNumbersField.sendKeys(Constants.INVALID_CARD_NUMBER);
+        }
+        else {
+            cardNumbersField.sendKeys(cardNumber);
         }
         BrowserUtils.wait(5);
     }

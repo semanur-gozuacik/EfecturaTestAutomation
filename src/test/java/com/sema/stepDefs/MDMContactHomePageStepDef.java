@@ -82,6 +82,12 @@ public class MDMContactHomePageStepDef extends BaseStep {
         pages.contactHomePage().setCodeFilter(code);
 
     }
+    @Then("The User inputs the {string} from cont into the inputCode field")
+    public void the_user_inputs_the_from_cont_into_the_input_code_field(String code) {
+        pages.contactHomePage().setUniqueCodeElement(code);
+    }
+
+
 
     @Then("the user clicks on Search button")
     public void the_user_clicks_on_search_button() {

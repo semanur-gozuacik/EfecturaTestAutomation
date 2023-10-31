@@ -22,7 +22,7 @@ private WebElement coolerFamily;
 private WebElement familyDropDown;
 @FindBy(xpath = "//span[normalize-space()='EMPTY_FAMILY']")
 private WebElement emptyFamilyAssetText;
-@FindBy(xpath = "//tbody/tr[1]/td[11]/a[2]")
+@FindBy(xpath = "//a[@class='t-delete danger-btn']")
 private WebElement deleteButtonAsset;
 @FindBy(xpath = "//button[@id='deleteItemPopup']")
 private WebElement deleteButtonAssetPopup;

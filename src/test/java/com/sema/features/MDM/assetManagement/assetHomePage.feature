@@ -20,7 +20,7 @@ Feature: Asset Management Test Cases- Asset Home Page
   Scenario:  Verify Code Filter -Valid Unique Code partial
     And The user enters "TEST" into Code field
     And the user clicks on Search button
-    And the user verify on code filter functionality with partial unique code "Test"
+    And the user verify on code filter functionality with partial unique code "TEST"
 
   Scenario: Verify Code Filter - Invalid Unique Code
     And The user enters "sema12345" into Code field

@@ -8,31 +8,6 @@ import io.cucumber.java.en.When;
 import java.util.Random;
 
 public class MDMContractStepDefs extends BaseStep {
-    @Given("The User generates a random {int}-character string and stores it in {string}")
-    public void the_user_generates_a_random_character_string_and_stores_it_in(Integer int1, String count) {
-        count = generateRandomString(int1);
-    }
-
-    private String generateRandomString(int length) {
-
-        // Rastgele karakterlerin bulunduğu bir karakter dizisi
-        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-        // Rastgele karakterleri oluşturmak için kullanılacak bir Random nesnesi oluşturun
-        Random random = new Random();
-
-        // Boş bir dize oluşturun ve rastgele karakterler ekleyin
-        StringBuilder sb = new StringBuilder(length);
-        for (int i = 0; i < length; i++) {
-            int randomIndex = random.nextInt(characters.length());
-            char randomChar = characters.charAt(randomIndex);
-            sb.append(randomChar);
-        }
-
-        // Oluşturulan rastgele dizeyi döndürün
-        return sb.toString();
-    }
-
     @When("The User opens the browser with the given url")
     public void the_user_opens_the_browser_with_the_given_url() {
     }

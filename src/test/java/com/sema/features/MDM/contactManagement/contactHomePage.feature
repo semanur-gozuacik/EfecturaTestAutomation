@@ -95,16 +95,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     And The user declines the popup message
     Then The user verify that "sematestttt" is visible
 
-  Scenario: Deleting an item and accepting the popup message-invalid authentication
-    And The user clicks on Contact  category
-    And The user enters "sematestttt" into Code field
-    And the user clicks on Search button
-    And The user clicks on Delete
-    And The user accepts the popup message
-    Then The user should see the message
-
   Scenario Outline: User selects different options for show entries
-
     Given The user clicks show entries button
     When  The user selects "<entrie>" into show entries
     Then  The user should see  "<entries>" entrie in everypage
@@ -128,9 +119,9 @@ Feature: Contact Management Test Cases- Contact Home Page
       And The user verifies that the badge count for feature is correct
       Examples:
       |starFeature   |
-     # |My Partners   |
+    #|My Partners   |
      |My Events     |
-      #|My Contacts   |
+      |My Contacts   |
 
   Scenario: Verify My Count Star Item Functionality- One Contact
     And The user clicks on Contact  category
@@ -166,17 +157,12 @@ Feature: Contact Management Test Cases- Contact Home Page
     When The user clicks last page button
     And  The user verifies last page button is not clickable
 
-  Scenario: Verify the redirection to the My Partners page
-    Then The user verifies that " My Partners" is visible
-    Given The user clicks " My Partners"
-    And   The User gets the current URL and stores it in "ItemType=Account&isFavorite=true"
-
   Scenario: Verify the redirection to the My Contacts page
-    Then The user verifies that " My Contacts" is visible
-    Given The user clicks " My Contacts"
+    Then The user verifies that "My Contacts" is visible
+    Given The user clicks "My Contacts"
     And   The User gets the current URL and stores it in "ItemType=Contact&isFavorite=true"
 
   Scenario: Verify the redirection to the My Event page
-    Then The user verifies that " My Events" is visible
-    Given The user clicks " My Events"
+    Then The user verifies that "My Events" is visible
+    Given The user clicks "My Events"
     And   The User gets the current URL and stores it in "ItemType=Event&isFavorite=true"

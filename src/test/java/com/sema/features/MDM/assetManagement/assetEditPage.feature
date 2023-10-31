@@ -1,5 +1,5 @@
 @regression
-Feature: Asset Management Test Cases- Asset Home Page
+Feature: Asset Management Test Cases- Asset Home Page Edit
   Background:
     When   The User opens the browser with the given url
     And    The User inputs a valid username "validUsername"
