@@ -136,7 +136,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     And the user clicks on Search button
     And the user clicks on Star items
     And the user verify My Count badge count is correct
-
+@semaaaaa
   Scenario: Verify export button
     When  The user clicks on Export button
     Then  The user verify that the export was "Success"
