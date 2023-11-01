@@ -17,7 +17,7 @@ Feature: Gift Creation and Management
     #And The user enters the same random string into the "2027" input field
     #And     And The user waits for the "2027" input field to be visible
     #And  The User presses the down arrow key and then presses Enter in the Choose Family element
-
+@regression
   Scenario: Create Gift on Fletum with invalid family
     And   The User presses the down arrow key and then presses Enter in the Choose Family element
     And   The User clicks on the Categories element
