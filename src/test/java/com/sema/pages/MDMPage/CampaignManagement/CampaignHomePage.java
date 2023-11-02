@@ -10,10 +10,16 @@ import static org.junit.Assert.assertTrue;
 public class CampaignHomePage extends BasePage {
     @FindBy(xpath = "//tr//td[7]")
     private WebElement verifyCampaignCodeFilter;
+    @FindBy(xpath = "//td[normalize-space()='TESTSETSET123123']")
+    private WebElement deletingObject;
     public CampaignHomePage() {
     }
     public void verifyCampaignCodeFilter(String code) {
         BrowserUtils.waitForVisibility(verifyCampaignCodeFilter,25);
         assertTrue(verifyCampaignCodeFilter.getText().equalsIgnoreCase(code));
+    }
+    public void verifyDeletingObject(String code) {
+        BrowserUtils.waitForVisibility(deletingObject, 25);
+        assertTrue(deletingObject.getText().equalsIgnoreCase(code));
     }
 }

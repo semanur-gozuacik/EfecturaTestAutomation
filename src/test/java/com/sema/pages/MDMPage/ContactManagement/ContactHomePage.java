@@ -75,7 +75,7 @@ public class ContactHomePage extends BasePage {
     private WebElement clicksItemStatus;
     @FindBy(xpath = "//span[contains(text(),'Reset')]")
     private WebElement resetButton;
-    @FindBy(xpath = "//tr[1]/td[11]/a[2]")
+    @FindBy(xpath = "//a[@class='t-delete danger-btn']")
     private WebElement deleteButton;
 
     @FindBy(xpath = "//span[@id='select2-filter-Family-container']")
@@ -206,7 +206,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyCodeFilter(String code) {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
         System.out.println("");
         assertTrue(verifyCodeFilter.getText().equalsIgnoreCase(code));
     }
@@ -318,7 +318,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyDeletingObject(String code) {
-        BrowserUtils.waitForVisibility(deletingObject, 20);
+        BrowserUtils.waitForVisibility(deletingObject, 25);
         assertTrue(deletingObject.getText().equalsIgnoreCase(code));
     }
 

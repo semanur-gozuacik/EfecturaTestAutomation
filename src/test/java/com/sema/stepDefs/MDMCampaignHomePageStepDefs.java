@@ -31,6 +31,9 @@ public class MDMCampaignHomePageStepDefs extends BaseStep{
     public void the_user_verify_on_label_filter_functionality_with_partial_unique_code_campaign(String string) {
 
     }
-
+    @Then("The user verify that {string} is visible-campaign")
+    public void the_user_verify_that_is_visible(String code) {
+        pages.campaignHomePage().verifyDeletingObject(code);
+    }
 
 }
