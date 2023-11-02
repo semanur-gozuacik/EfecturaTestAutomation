@@ -5,6 +5,10 @@ import com.sema.utilities.BrowserUtils;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
@@ -38,8 +42,22 @@ private WebElement mainAssetCategories;
 private WebElement newNodeElementAssetCategories;
 @FindBy(xpath = "//li[contains(text(),'Cooler') and @role='treeitem']")
 private WebElement selectCoolerFamily;
-
-
+    @FindBy(xpath = "//a[@id='createNewList']")
+    private WebElement createListButton;
+    @FindBy(xpath = "//div[@class='modal-dialog modal-confirm list-modal']//button[@type='button'][normalize-space()='Cancel']")
+    private WebElement createListCancelButton;
+    @FindBy(xpath = "//h4[normalize-space()='New List']")
+    private WebElement verifyNewListPopup;
+    @FindBy(xpath = "//input[@id='input-list']")
+    private WebElement listName;
+    @FindBy(xpath = "//div[@class='modal-dialog modal-confirm list-modal']//span[@class='select2 select2-container select2-container--bootstrap material-container']//ul[@class='select2-selection__rendered']")
+    private WebElement canView;
+    @FindBy(xpath = "//span[@class='select2 select2-container select2-container--bootstrap material-container select2-container--below']//ul[@class='select2-selection__rendered']")
+    private WebElement canEdit;
+    @FindBy(xpath = "//li[@class='list-item']")
+    private List<WebElement> listItemsName;
+    @FindBy(xpath = "//li[@id='select2-can-view-select-result-ejbv-user0007d59c-20cc-4ce2-a7f3-8031f22b03ce'and @role='treeitem']")
+    private WebElement selectedCanView;
 public Asset() {
 }
 public void verifyInfoItem(){
@@ -102,5 +120,36 @@ public void verifyInfoItem(){
             selectCoolerFamily.click();
         }
     }
+    public void clickNewList(){
+    BrowserUtils.waitForVisibility(createListButton,20);
+    createListButton.click();
+    }
+   public void verifyNewListPopup(){
+    BrowserUtils.waitForVisibility(verifyNewListPopup,20 );
+    Assert.assertTrue(verifyNewListPopup.isDisplayed());
+}
+public void setListName(String name){
+    listName.sendKeys(name);
+}
+public void setCanView(String view){
+    canView.click();
+    BrowserUtils.wait(2);
+canView.sendKeys(view);
 
 }
+public void setCanEdit(String edit){
+    canEdit.sendKeys(edit);
+}
+public void clickNewListCancelButton(){
+    createListCancelButton.click();
+
+}
+public void verifyListItemIsNotVisible(String itemName){
+    BrowserUtils.wait(3);
+    List<String> names=new ArrayList<String>();
+    for(int i=0;i<listItemsName.size();i++){
+        names.add(listItemsName.get(i).getText());
+    }Assert.assertTrue(!names.contains(itemName));
+}
+}
+

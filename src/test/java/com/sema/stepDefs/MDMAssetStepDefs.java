@@ -2,6 +2,7 @@ package com.sema.stepDefs;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class MDMAssetStepDefs extends BaseStep {
     @Then("The User performs a    mouseover on the Asset Management element")
@@ -55,4 +56,34 @@ public class MDMAssetStepDefs extends BaseStep {
     public void the_user_waits_until_the_page_contains_with_a_timeout_of_seconds_Asset(String text, Integer timeout) {
         pages.asset().verifyDeleteItemText(text,timeout);
     }
+
+    @Then("The user clicks plus icon")
+    public void the_user_clicks_plus_icon() {
+        pages.asset().clickNewList();
+    }
+    @Then("The user verifies New List pop up is open")
+    public void the_user_verifies_new_list_pop_up_is_open() {
+        pages.asset().verifyNewListPopup();
+    }
+    @When("The user enters {string} List Name")
+    public void the_user_enters_list_name(String name) {
+        pages.asset().setListName(name);
+    }
+    @When("The user enters {string} Can view")
+    public void the_user_enters_can_view(String view) {
+        pages.asset().setCanView(view);
+    }
+    @When("The user enters {string} Can edit")
+    public void the_user_enters_can_edit(String edit) {
+        pages.asset().setCanEdit(edit);
+    }
+    @When("The user clicks cancel button-New List")
+    public void the_user_clicks_cancel_button_new_list() {
+        pages.asset().clickNewListCancelButton();
+    }
+    @Then("The user verifies {string} is not visible")
+    public void the_user_verifies_is_not_visible(String itemName) {
+        pages.asset().verifyListItemIsNotVisible(itemName);
+    }
+
 }

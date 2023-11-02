@@ -26,14 +26,6 @@ import java.util.List;
         // Hangi senaryoların çalıştırılacağını belirten etiket
         tags ="@regression",
         features ="src/test/java/com/sema/features",
-        //features ="src/test/java/com/sema/features/Login/loginSenerios.feature",
-        //feature ="src/test/java/com/sema/features/MDM",
-        //features ="src/test/java/com/sema/features/MDM/contactManagement.feature",
-        //features ="src/test/java/com/sema/features/MDM/contactManagement/createContactOnFletum.feature",
-        //features ="src/test/java/com/sema/features/MDM/contactManagement/contactHomePage.feature",
-        //features ="src/test/java/com/sema/features/MDM/contractManagement/createContractOnFletum.feature",
-        //features ="src/test/java/com/sema/features/MDM/assetManagement/createAssetOnFletum.feature",
-
         glue  = "com/sema/stepDefs",
         dryRun = false
 )
