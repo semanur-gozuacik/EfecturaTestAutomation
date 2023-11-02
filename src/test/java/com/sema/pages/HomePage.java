@@ -35,9 +35,9 @@ public class HomePage extends BasePage {
     private WebElement campaign;
     @FindBy(id = "Campaign ManagementH")
     private WebElement campaignManagement;
-    @FindBy(xpath = "//a[@id='Event']")
+    @FindBy(xpath = "Event")
     private WebElement event;
-    @FindBy(xpath = "//a[@id='Event ManagementH']")
+    @FindBy(id = "Event ManagementH")
     private WebElement eventManagement;
     @FindBy(xpath = "//a[@id='setting-wheel']")
     private WebElement systemElementSymbol;
