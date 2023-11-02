@@ -25,7 +25,7 @@ Feature: Contact Management Test Cases
     And   The User clicks on the new node element Contact
     And   The User clicks on the createButton element
     Then  The User waits until the page contains "EMPTY_FAMILY" with a timeout of 15 seconds
-
+@SEMA
   Scenario: Create Contact on Fletum without Categories-EKOSYSTEM
     And   The User clicks on the createItem element
     Then The User waits until the uniqueCode element is visible with a timeout of 15 seconds
