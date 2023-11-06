@@ -85,5 +85,35 @@ public class MDMAssetStepDefs extends BaseStep {
     public void the_user_verifies_is_not_visible(String itemName) {
         pages.asset().verifyListItemIsNotVisible(itemName);
     }
+    @Then("The user verifies {string} is visible")
+    public void the_user_verifies_is_visible(String itemName) {
+        pages.asset().verifyListItemIsVisible(itemName);
+    }
+    @When("The user clicks create button-New List")
+    public void the_user_clicks_create_button_new_list() {
+      pages.asset().clickNewListCreateButton();    }
+    @Then("The user verifies error message {string} is displayed")
+    public void the_user_verifies_error_message_is_displayed(String message) {
+       pages.asset().verifyCreateListErrorMessageIsDisplayed(message);
+    }
+    @Then("The user verifies is invalid visible")
+    public void the_user_verifies_is_invalid_visible() {
+        pages.asset().verifyNoResultsFound();
+    }
+
+    @Then("The user selects deleted element")
+    public void the_user_selects_deleted_element() {
+      pages.asset().clickDeleteButton();
+    }
+    @Then("The user clicks delete button in delete popup")
+    public void the_user_clicks_delete_button_in_delete_popup() {
+      pages.asset().clickDeleteButtonPopUp();
+    }
+    @Then("The user clicks cancel button in delete popup")
+    public void the_user_clicks_cancel_button_in_delete_popup() {
+      pages.asset().clickCancelButtonPopUp();
+    }
 
 }
+
+

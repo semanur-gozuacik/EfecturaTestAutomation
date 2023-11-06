@@ -35,6 +35,8 @@ public class ContactEditPage extends BasePage {
     private WebElement changeSucessMessage;
     @FindBy (xpath = "//a[@id='savebutton']")
     private WebElement saveChangeButton;
+    @FindBy (xpath = "//a[normalize-space()='testListesi']")
+    private WebElement editListItem;
     public ContactEditPage() {
     }
 
@@ -98,5 +100,9 @@ public class ContactEditPage extends BasePage {
     public void clickSaveChangeButton(){
         BrowserUtils.waitForVisibility(saveChangeButton,20);
         saveChangeButton.click();
+    }
+    public void clickListItem() {
+        BrowserUtils.waitForVisibility(editListItem, 20);
+        editListItem.click();
     }
 }

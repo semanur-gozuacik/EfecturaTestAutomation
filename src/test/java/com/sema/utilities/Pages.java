@@ -45,7 +45,6 @@ public class Pages {
             this.campaignHomePage=new CampaignHomePage();
             this.kpiHomePage=new KPIHomePage();
 
-
     }
     // Getter metotları
     public HomePage homePage() {

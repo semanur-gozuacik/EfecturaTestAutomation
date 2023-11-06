@@ -56,3 +56,4 @@ Feature: Event Management Test Cases- Event Home Page
     And The user clicks on WSET Filtre
     And the user clicks on Search button
     And the user verify on family filter WSET functionality
+

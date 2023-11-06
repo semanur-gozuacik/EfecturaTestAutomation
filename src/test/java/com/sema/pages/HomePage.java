@@ -35,9 +35,9 @@ public class HomePage extends BasePage {
     private WebElement campaign;
     @FindBy(id = "Campaign ManagementH")
     private WebElement campaignManagement;
-    @FindBy(xpath = "Event")
+    @FindBy(xpath = "//a[@id='Event']")
     private WebElement event;
-    @FindBy(id = "Event ManagementH")
+    @FindBy(xpath = "//a[@id='Event ManagementH']")
     private WebElement eventManagement;
     @FindBy(xpath = "//a[@id='setting-wheel']")
     private WebElement systemElementSymbol;
@@ -170,6 +170,7 @@ public class HomePage extends BasePage {
     }
 
     public void clicksOnTheEventElement() {
+        BrowserUtils.waitForVisibility(event, 20);
         event.click();
     }
     public void mouseoverOnTheCampaignManagementElement() {

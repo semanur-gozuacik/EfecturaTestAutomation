@@ -166,3 +166,40 @@ Feature: Contact Management Test Cases- Contact Home Page
     Then The user verifies that "My Events" is visible
     Given The user clicks "My Events"
     And   The User gets the current URL and stores it in "ItemType=Event&isFavorite=true"
+
+  Scenario: Contact Create List- cancel button
+    And  The user clicks plus icon
+    Then The user verifies New List pop up is open
+    When The user enters "otomasyon" List Name
+    And  The user enters "_5458429214" Can view
+    And  The user enters "1757483988_5392786463" Can edit
+    And The user clicks cancel button-New List
+    Then The user verifies "otomasyon" is not visible
+
+  Scenario:Contact Create List- create button
+    And  The user clicks plus icon
+    Then The user verifies New List pop up is open
+    When The user enters "otomasyon" List Name
+    And  The user enters "_5458429214" Can view
+    And  The user enters "1757483988_5392786463" Can edit
+    And The user clicks create button-New List
+    Then The user verifies "otomasyon" is visible
+
+  Scenario:Contact Create List- create button-exist user
+    And  The user clicks plus icon
+    Then The user verifies New List pop up is open
+    When The user enters "otomasyon" List Name
+    And  The user enters "_5458429214" Can view
+    And  The user enters "1757483988_5392786463" Can edit
+    And  The user clicks create button-New List
+    Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
+
+  Scenario:Contact Create List- delete list-cancel button
+    And The user selects deleted element
+    And The user clicks cancel button in delete popup
+    Then The user verifies "otomasyon" is visible
+
+  Scenario:Contact Create List- delete list-cancel button
+    And The user selects deleted element
+    And The user clicks delete button in delete popup
+    Then The user verifies "otomasyon" is not visible

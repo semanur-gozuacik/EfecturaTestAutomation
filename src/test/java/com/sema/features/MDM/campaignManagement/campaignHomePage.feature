@@ -53,7 +53,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
       |Passive    |
       |On Hold    |
        #|Draftt    |
-@sema
+
   Scenario: Reset Button Control
     And The user enters "welcometestgeneric1" into Code field
     And The user enters "testbirthday1561" into Label field
@@ -66,3 +66,40 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And The user clicks on Delete
     And The user declines the popup message
     Then The user verify that "TESTSETSET123123" is visible-campaign
+
+  Scenario: Campaign Create List- cancel button
+    And  The user clicks plus icon
+    Then The user verifies New List pop up is open
+    When The user enters "otomasyon" List Name
+    And  The user enters "_5458429214" Can view
+    And  The user enters "1757483988_5392786463" Can edit
+    And The user clicks cancel button-New List
+    Then The user verifies "otomasyon" is not visible
+
+  Scenario:Campaign Create List- create button
+    And  The user clicks plus icon
+    Then The user verifies New List pop up is open
+    When The user enters "otomasyon" List Name
+    And  The user enters "_5458429214" Can view
+    And  The user enters "1757483988_5392786463" Can edit
+    And The user clicks create button-New List
+    Then The user verifies "otomasyon" is visible
+
+  Scenario:Campaign Create List- create button-exist user
+    And  The user clicks plus icon
+    Then The user verifies New List pop up is open
+    When The user enters "otomasyon" List Name
+    And  The user enters "_5458429214" Can view
+    And  The user enters "1757483988_5392786463" Can edit
+    And  The user clicks create button-New List
+    Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
+
+  Scenario:Campaign Create List- delete list-cancel button
+    And The user selects deleted element
+    And The user clicks cancel button in delete popup
+    Then The user verifies "otomasyon" is visible
+
+  Scenario:Campaign Create List- delete list-cancel button
+    And The user selects deleted element
+    And The user clicks delete button in delete popup
+    Then The user verifies "otomasyon" is not visible

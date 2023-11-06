@@ -66,5 +66,8 @@ public class MDMContactEditPage extends BaseStep{
         pages.contactEditPage().verifyCancelChange();
 
     }
-
+    @Then("The user clicks new list item-contact")
+    public void the_user_clicks_new_list_item() {
+        pages.contactEditPage().clickListItem();
+    }
 }
