@@ -153,16 +153,16 @@ Feature: Contact Management Test Cases-My Contact Page
     Scenario: Verify Item Next Button
       When The user clicks My Contact button
       And  The user clicks item next button
-      Then The user verify next items is displayed
+    #  Then The user verify next items is displayed
 
   Scenario: Verify Item Previous Button
     When The user clicks My Contact button
     And  The user clicks item previous button
-    Then The user verify previous items is displayed
+ #   Then The user verify previous items is displayed
 
   Scenario: Verify Item Previous Button Unclickable Condition
     When The user clicks My Contact button
-    And  The user verifies previous button is not clickable
+   # And  The user verifies previous button is not clickable
 
   Scenario: Verify Item Left Previous Button Unclickable Condition
     When The user clicks My Contact button

@@ -64,21 +64,21 @@ Feature: Contact Management Test Cases- Contact Edit Page
     Then The user verifies item is removed
 
   Scenario:Contact Group Permission Verify Item First Page Button Unclickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     And  The user verifies previous button is not clickable asset
 
   Scenario:Contact Group Permission Verify Item Previous Page Button Unclickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     And  The user verifies previous page button is not clickable asset
 
   Scenario:Contact Group Permission Verify Item next Button clickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
@@ -86,7 +86,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And  The user verifies next button is clickable asset
 
   Scenario:Contact Group Permission Verify Previous Page Button clickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
@@ -96,7 +96,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And  The user verifies previous button is clickable asset
 
   Scenario:Contact Group Permission Verify Last Page Button clickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
@@ -104,7 +104,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And  The user verifies last button is clickable asset
 
   Scenario:Contact Group Permission Verify Last Page Button Unclickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
@@ -112,7 +112,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And  The user verifies last button is unclickable asset
 
   Scenario:Contact Group Permission Verify Item next Button unclickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
@@ -120,73 +120,73 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And  The user verifies next button is unclickable asset
 
   Scenario:Contact Group Permission Verify Item First Page Button Clickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies first page button is clickable asset
-
+  @semo
   Scenario:Contact User Permission Verify Item First Page Button Unclickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
-    And  The user verifies previous button is not clickable asset
-
+    And  The user verifies previous button is not clickable user
+  @semo
   Scenario:Contact User Permission Verify Item Previous Page Button Unclickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
-    And  The user verifies previous page button is not clickable asset
-
+    And  The user verifies previous page button is not clickable user
+  @semo
   Scenario:Contact User Permission Verify Item next Button clickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks next page button asset
-    And  The user verifies next button is clickable asset
-
+    And  The user verifies next button is clickable user
+  @semo
   Scenario:Contact User Permission Verify Previous Page Button clickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks next page button asset
     When The user clicks next page button asset
     When The user clicks previous page button asset
-    And  The user verifies previous button is clickable asset
-
+    And  The user verifies previous button is clickable user
+  @semo
   Scenario:Contact User Permission Verify Last Page Button clickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button asset
-    And  The user verifies last button is clickable asset
-
+    And  The user verifies last button is clickable user
+  @semo
   Scenario:Contact User Permission Verify Last Page Button Unclickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button asset
-    And  The user verifies last button is unclickable asset
-
+    And  The user verifies last button is unclickable user
+  @semo
   Scenario:Contact User Permission Verify Item next Button unclickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button asset
-    And  The user verifies next button is unclickable asset
-
+    And  The user verifies next button is unclickable user
+  @semo
   Scenario:Contact User Permission Verify Item First Page Button Clickable Condition
-    And The user enters "TEST123456" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button asset
-    And  The user verifies first page button is clickable asset
+    And  The user verifies first page button is clickable user

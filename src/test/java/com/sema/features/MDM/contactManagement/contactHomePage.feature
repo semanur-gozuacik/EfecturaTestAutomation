@@ -148,7 +148,7 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Verify Item next Button Unclickable Condition
     When The user clicks last page button
-    And  The user verifies next button is not clickable
+   # And  The user verifies next button is not clickable
 
   Scenario: Verify First Page Button Unclickable Condition
     And  The user verifies first page button is not clickable

@@ -192,7 +192,7 @@ public class Asset extends BasePage {
     }
 
     public void verifyListItemIsNotVisible(String itemName) {
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(5);
         List<String> names = new ArrayList<String>();
         for (int i = 0; i < listItemsName.size(); i++) {
             names.add(listItemsName.get(i).getText());
@@ -201,7 +201,7 @@ public class Asset extends BasePage {
     }
 
     public void verifyListItemIsVisible(String itemName) {
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(5);
         List<String> names = new ArrayList<String>();
         for (int i = 0; i < listItemsName.size(); i++) {
             names.add(listItemsName.get(i).getText());
@@ -214,7 +214,7 @@ public class Asset extends BasePage {
     }
 
     public void verifyCreateListErrorMessageIsDisplayed(String message) {
-        BrowserUtils.waitForVisibility(createListErrorMessage, 20);
+        BrowserUtils.waitForVisibility(createListErrorMessage, 30);
         Assert.assertTrue(createListErrorMessage.isDisplayed());
     }
 

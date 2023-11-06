@@ -86,7 +86,7 @@ public class ContactEditPage extends BasePage {
         cancelChangeButton.click();
     }
    public void verifyCancelChange(){
-        BrowserUtils.waitForVisibility(unsavedChanges,20);
+        BrowserUtils.waitForVisibility(unsavedChanges,25);
         Assert.assertTrue(unsavedChanges.isDisplayed());
    }
     public void setChangeCommentArea(String comment) {

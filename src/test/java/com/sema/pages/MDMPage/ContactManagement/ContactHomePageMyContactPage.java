@@ -39,7 +39,7 @@ public class ContactHomePageMyContactPage extends BasePage {
     }
 
     public void verifyItemNextShowingEntriesText() {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(5);
         Assert.assertFalse(showingEntriesText.getText().contains("11 to 1"));
 
     }

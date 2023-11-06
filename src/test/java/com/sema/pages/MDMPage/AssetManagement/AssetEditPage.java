@@ -1,9 +1,7 @@
 package com.sema.pages.MDMPage.AssetManagement;
 
 import com.sema.pages.BasePage;
-import com.sema.stepDefs.BaseStep;
 import com.sema.utilities.BrowserUtils;
-import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,14 +29,24 @@ public class AssetEditPage extends BasePage {
     private WebElement groupPermissions;
     @FindBy(xpath = "//button[@id='firtPageTableGroup']")
     private WebElement leftPreviousPage;
+    @FindBy(xpath = "//button[@id='user-permissions-tableFirstPage']")
+    private WebElement leftPreviousPageUser;
     @FindBy(xpath = "//span[@id='group-permissions-table_previous']")
     private WebElement previousPage;
+    @FindBy(xpath = "//span[@id='user-permissions-table_previous']")
+    private WebElement previousPageUser;
     @FindBy(xpath = "//span[@id='group-permissions-table_next']")
     private WebElement nextPage;
+    @FindBy(xpath = "//span[@id='user-permissions-table_next']")
+    private WebElement nextPageUser;
     @FindBy(xpath = "//div[@class='custom-button-right groupPermissions custom-button-page']")
     private WebElement lastPage;
+    @FindBy(xpath = "//div[@class='custom-button-right userPermissions custom-button-page']")
+    private WebElement lastPageUser;
     @FindBy(xpath = "//input[@class='pagination-text']")
     private WebElement lastPageVerificationText;
+    @FindBy(xpath = "//input[@class='pagination-text']")
+    private WebElement lastPageVerificationTextUser;
     @FindBy(xpath = "//a[@id='_user-permissions']")
     private WebElement userPermissions;
 
@@ -58,8 +66,8 @@ public class AssetEditPage extends BasePage {
     }
 
     public void verifyEditListItem() {
-        BrowserUtils.waitForVisibility(verifyEditListItem, 20);
-        Assert.assertTrue(verifyEditListItem.isDisplayed());
+    BrowserUtils.wait(5);
+    Assert.assertTrue(verifyEditListItem.isDisplayed());
     }
 
     public void clicksDeleteEditList() {
@@ -78,7 +86,7 @@ public class AssetEditPage extends BasePage {
     }
 
     public void clickGroupPermission() {
-        BrowserUtils.waitForVisibility(groupPermissions, 20);
+    BrowserUtils.wait(5);
         groupPermissions.click();
     }
 
@@ -91,25 +99,53 @@ public class AssetEditPage extends BasePage {
         String classAttribute = previousPage.getAttribute("class");
         Assert.assertTrue(classAttribute.contains("disabled"));
     }
+    public void verifyPreviousePageUserIsNotClicible() {
+        String classAttribute = previousPageUser.getAttribute("class");
+        Assert.assertTrue(classAttribute.contains("disabled"));
+    }
+    public void verifyLeftPreviousPageUserIsClickable() {
+        BrowserUtils.wait(5);
+        String classAttribute = leftPreviousPageUser.getAttribute("class");
+        Assert.assertTrue(!classAttribute.contains("disabled"));
+    }
+
 
     public void clicksNextPageButton() {
         BrowserUtils.wait(5);
         nextPage.click();
     }
 
-    public void verifyNextPageIsNotClicible() {
+    public void verifyNextPageIsNotClickable() {
         String classAttribute = nextPage.getAttribute("class");
         Assert.assertTrue(classAttribute.contains("disabled"));
+    }
+    public void clicksNextPageUserButton() {
+        BrowserUtils.wait(10);
+        nextPageUser.click();
+    }
+
+
+    public void verifyNextPageUserIsClickable() {
+        String classAttribute = nextPageUser.getAttribute("class");
+        Assert.assertTrue(!classAttribute.contains("disabled"));
     }
 
     public void clickPreviousPageButton() {
         BrowserUtils.waitForVisibility(previousPage,20);
         previousPage.click();
     }
-
+    public void clickPreviousPageUserButton() {
+        BrowserUtils.waitForVisibility(previousPageUser,20);
+        previousPageUser.click();
+    }
     public void verifyPreviousPageIsClickable() {
         BrowserUtils.wait(5);
         String classAttribute = previousPage.getAttribute("class");
+        Assert.assertTrue(!classAttribute.contains("disabled"));
+    }
+    public void verifyPreviousPageUserIsClickable() {
+        BrowserUtils.wait(5);
+        String classAttribute = previousPageUser.getAttribute("class");
         Assert.assertTrue(!classAttribute.contains("disabled"));
     }
 
@@ -119,8 +155,18 @@ public class AssetEditPage extends BasePage {
     }
 
     public void verifyLastPageIsClickable() {
-        BrowserUtils.wait(2);
-        Assert.assertTrue(!lastPageVerificationText.getText().equalsIgnoreCase("1"));
+        BrowserUtils.wait(5);
+        Assert.assertTrue(!lastPage.getText().equalsIgnoreCase("1"));
+    }
+
+    public void clickLastPageUserButton() {
+        BrowserUtils.wait(5);
+        lastPageUser.click();
+    }
+
+    public void verifyLastPageUserIsClickable() {
+        BrowserUtils.wait(5);
+        Assert.assertTrue(!lastPageVerificationTextUser.getText().equalsIgnoreCase("1"));
     }
 
     public void verifyLastPageIsUnClickable() {
@@ -128,9 +174,14 @@ public class AssetEditPage extends BasePage {
         Assert.assertTrue(!lastPageVerificationText.getText().equalsIgnoreCase("1"));  }
 
     public void verifyNextPageIsClickable() {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(5);
         String classAttribute = nextPage.getAttribute("class");
         Assert.assertTrue(!classAttribute.contains("disabled"));
+    }
+    public void verifyNextPageUserIsUnClickable() {
+        BrowserUtils.wait(5);
+        String classAttribute = nextPageUser.getAttribute("class");
+        Assert.assertTrue(classAttribute.contains("disabled"));
     }
 
     public void verifyFirstPageIsClickable() {
@@ -140,7 +191,12 @@ public class AssetEditPage extends BasePage {
     }
 
     public void clickUserPermission() {
-        BrowserUtils.waitForVisibility(userPermissions, 20);
+        BrowserUtils.wait(5);
         userPermissions.click();
     }
+    public void verifyLeftPreviousePageUserIsNotClicible() {
+        String classAttribute = leftPreviousPageUser.getAttribute("class");
+        Assert.assertTrue(classAttribute.contains("disabled"));
+    }
+
 }

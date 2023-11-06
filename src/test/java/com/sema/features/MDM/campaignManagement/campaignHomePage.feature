@@ -67,6 +67,37 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And The user declines the popup message
     Then The user verify that "TESTSETSET123123" is visible-campaign
 
+  Scenario Outline: User selects different options for show entries
+    Given The user clicks show entries button
+    When  The user selects "<entrie>" into show entries
+    Then  The user should see  "<entries>" entrie in everypage
+    Examples:
+      | entries|
+      |10 |
+
+  Scenario: Verify My Count Star Item Functionality- One Contact
+    And The user enters "TestWelcomeCampaignSecondPreview" into Code field
+    And the user clicks on Search button
+    And the user clicks on Star items
+
+  Scenario: Verify export button
+    When  The user clicks on Export button
+    Then  The user verify that the export was "Success"
+
+  Scenario: Verify Item Previous Button Unclickable Condition
+    And  The user verifies previous button is not clickable
+
+  Scenario: Verify Item next Button Unclickable Condition
+    When The user clicks last page button
+  #  And  The user verifies next button is not clickable
+
+  Scenario: Verify First Page Button Unclickable Condition
+    And  The user verifies first page button is not clickable
+
+  Scenario: Verify Last Page Button Unclickable Condition
+    When The user clicks last page button
+    And  The user verifies last page button is not clickable
+
   Scenario: Campaign Create List- cancel button
     And  The user clicks plus icon
     Then The user verifies New List pop up is open
@@ -99,7 +130,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And The user clicks cancel button in delete popup
     Then The user verifies "otomasyon" is visible
 
-  Scenario:Campaign Create List- delete list-cancel button
+  Scenario:Campaign Create List- delete list
     And The user selects deleted element
     And The user clicks delete button in delete popup
     Then The user verifies "otomasyon" is not visible

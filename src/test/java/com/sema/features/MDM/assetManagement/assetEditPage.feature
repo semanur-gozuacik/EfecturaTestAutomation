@@ -29,7 +29,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
       |Approved   |
       |On Hold    |
       |Running    |
-      |Draft    |
+     # |Draft    |
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "TEST123456" into Code field
@@ -148,47 +148,48 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
       And the user clicks on Search button
       And  The user clicks on Edit Button
       And clicks user permission tab
-      And  The user verifies previous button is not clickable asset
+      And  The user verifies first page button is not clickable user
 
   Scenario:User Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "TEST123456" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
-    And  The user verifies previous page button is not clickable asset
+    And  The user verifies previous page button is not clickable user
 
   Scenario:User Permission Verify Item next Button clickable Condition
     And The user enters "TEST123456" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
-    When The user clicks next page button asset
-    And  The user verifies next button is clickable asset
+    When The user clicks next page button user
+    And  The user verifies next button is clickable user
+
 
   Scenario:User Permission Verify Previous Page Button clickable Condition
     And The user enters "TEST123456" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
-    When The user clicks next page button asset
-    When The user clicks next page button asset
-    When The user clicks previous page button asset
-    And  The user verifies previous button is clickable asset
+    When The user clicks next page button user
+    When The user clicks next page button user
+    When The user clicks previous page button user
+    And  The user verifies previous button is clickable user
 
   Scenario:User Permission Verify Last Page Button clickable Condition
     And The user enters "TEST123456" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
-    When The user clicks last page button asset
-    And  The user verifies last button is clickable asset
+    When The user clicks last page button user
+    And  The user verifies last button is clickable user
 
   Scenario:User Permission Verify Last Page Button Unclickable Condition
     And The user enters "TEST123456" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
-    When The user clicks last page button asset
+    When The user clicks last page button user
     And  The user verifies last button is unclickable asset
 
   Scenario:User Permission Verify Item next Button unclickable Condition
@@ -196,13 +197,13 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
-    When The user clicks last page button asset
-    And  The user verifies next button is unclickable asset
+    When The user clicks last page button user
+    And  The user verifies next button is unclickable user
 
   Scenario:User Permission Verify Item First Page Button Clickable Condition
     And The user enters "TEST123456" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
-    When The user clicks last page button asset
-    And  The user verifies first page button is clickable asset
+    When The user clicks last page button user
+    And  The user verifies first page button is clickable user

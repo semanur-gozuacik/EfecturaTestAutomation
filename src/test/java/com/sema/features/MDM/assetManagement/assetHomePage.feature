@@ -74,7 +74,7 @@ Feature: Asset Management Test Cases- Asset Home Page
     And The user clicks cancel button in delete popup
     Then The user verifies "otomasyon" is visible
 
-  Scenario: Create List- delete list-cancel button
+  Scenario: Create List- delete list
     And The user selects deleted element
     And The user clicks delete button in delete popup
     Then The user verifies "otomasyon" is not visible
