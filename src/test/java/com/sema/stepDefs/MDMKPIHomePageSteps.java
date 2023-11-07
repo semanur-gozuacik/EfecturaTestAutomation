@@ -1,5 +1,6 @@
 package com.sema.stepDefs;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.devtools.v85.page.Page;
 
@@ -27,5 +28,9 @@ public class MDMKPIHomePageSteps extends BaseStep {
     public void the_user_presses_the_down_arrow_key_and_then_presses_enter_in_the_element(String family) {
        pages.kpiHomePage().selectKPIFamily(family);
 
+    }
+    @Given("The user is on the KPI item home page")
+    public void the_user_is_on_the_kpı_item_home_page() {
+pages.kpiHomePage().onTheKPIPage();
     }
 }

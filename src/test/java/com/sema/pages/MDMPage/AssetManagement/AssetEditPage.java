@@ -120,7 +120,7 @@ public class AssetEditPage extends BasePage {
         Assert.assertTrue(classAttribute.contains("disabled"));
     }
     public void clicksNextPageUserButton() {
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(15);
         nextPageUser.click();
     }
 
@@ -191,7 +191,7 @@ public class AssetEditPage extends BasePage {
     }
 
     public void clickUserPermission() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(6);
         userPermissions.click();
     }
     public void verifyLeftPreviousePageUserIsNotClicible() {

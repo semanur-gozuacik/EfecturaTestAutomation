@@ -22,7 +22,7 @@ Feature: Contact Management Test Cases-My Contact Page
     |Code|
     |sematestttt|
     |testforDIAGEOcontact|
-    |Test2123            |
+    |TEST_CONTACT_1      |
     |TestBirthday        |
     |8009202202          |
     |ExportDeneme        |
@@ -186,7 +186,7 @@ Feature: Contact Management Test Cases-My Contact Page
       |Code|
       |sematestttt|
       |testforDIAGEOcontact|
-      |Test2123            |
+      |TEST_CONTACT_1      |
       |TestBirthday        |
       |8009202202          |
       |ExportDeneme        |

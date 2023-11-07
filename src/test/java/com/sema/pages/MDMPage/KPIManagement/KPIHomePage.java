@@ -34,6 +34,9 @@ public class KPIHomePage extends BasePage {
         BrowserUtils.wait(5);
         if(familyKPI.isEnabled());
     }
+    public void onTheKPIPage(){
+        driver.navigate().to("https://sandbox.efectura.com/Enrich/Items?itemType=KPI");
+    }
 }
 
 

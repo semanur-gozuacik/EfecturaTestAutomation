@@ -3,7 +3,11 @@ package com.sema.pages;
 
 import com.sema.utilities.BrowserUtils;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
@@ -19,7 +23,7 @@ public class HomePage extends BasePage {
     private WebElement assetManagement;
     @FindBy(xpath = "//a[@id='KPI']")
     private WebElement KPI;
-    @FindBy(xpath = "//a[@id='KPI ManagementH']")
+    @FindBy(xpath = "//a[contains(text(), 'KPI Management')]")
     private WebElement KPIManagement;
     @FindBy(id = "Asset")
     private WebElement asset;
@@ -120,17 +124,19 @@ public class HomePage extends BasePage {
         BrowserUtils.hoverOver(contact);
     }
 
+
     public void clicksOnTheContactElement() {
         contact.click();
     }
 
     public void clicksOnTheKPIElement() {
+        BrowserUtils.waitForVisibility(KPI,20);
         KPI.click();
     }
 
     public void mouseoverOnTheKPIManagementElement() {
-        BrowserUtils.waitForVisibility(KPIManagement, 25);
-        BrowserUtils.hoverOver(KPIManagement);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("var event = new MouseEvent('mouseover', {'view': window, 'bubbles': true, 'cancelable': true}); arguments[0].dispatchEvent(event);", KPIManagement);
     }
     public void mouseoverOnTheKPIElement() {
         BrowserUtils.waitForVisibility(KPI, 10);
