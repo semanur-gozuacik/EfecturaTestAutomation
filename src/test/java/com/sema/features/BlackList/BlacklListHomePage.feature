@@ -49,7 +49,7 @@ Feature: BlackList Test Cases- Black List Home Page
     And  The user clicks on active button
     And  The user clicks active button in popup
     Then The user verify the number "fullNumber" is activated
-
+@semaalii
   Scenario Outline: Verify a Card Number Field - "<cardNumber>"
     When  The user enters "<cardNumber>" into the card number field
     Then  The user verifies that "<cardNumber>" is visible in blackList
