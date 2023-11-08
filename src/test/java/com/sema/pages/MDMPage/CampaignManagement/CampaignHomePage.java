@@ -15,7 +15,7 @@ public class CampaignHomePage extends BasePage {
     public CampaignHomePage() {
     }
     public void verifyCampaignCodeFilter(String code) {
-        BrowserUtils.waitForVisibility(verifyCampaignCodeFilter,25);
+        BrowserUtils.wait(10);
         assertTrue(verifyCampaignCodeFilter.getText().equalsIgnoreCase(code));
     }
     public void verifyDeletingObject(String code) {

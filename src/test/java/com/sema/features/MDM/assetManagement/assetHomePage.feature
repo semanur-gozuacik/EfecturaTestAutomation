@@ -78,3 +78,4 @@ Feature: Asset Management Test Cases- Asset Home Page
     And The user selects deleted element
     And The user clicks delete button in delete popup
     Then The user verifies "otomasyon" is not visible
+

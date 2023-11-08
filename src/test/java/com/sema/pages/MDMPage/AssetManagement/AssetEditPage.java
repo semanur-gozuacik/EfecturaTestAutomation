@@ -61,7 +61,7 @@ public class AssetEditPage extends BasePage {
     }
 
     public void clickListSecondItem() {
-        BrowserUtils.waitForVisibility(editListSecondItem, 20);
+        BrowserUtils.waitForVisibility(editListSecondItem, 25);
         editListSecondItem.click();
     }
 

@@ -58,7 +58,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     And The user enters "sema12345" into Label field
     And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
-
+@semaaaaaa
   Scenario: Search for Ekosystem Family
     And The user clicks on Ekosystem Filtre
     And the user clicks on Search button

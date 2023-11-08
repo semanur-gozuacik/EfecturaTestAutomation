@@ -1,3 +1,4 @@
+@semaa
 Feature: Event Management Test Cases- Event Home Page
   Background:
     When   The User opens the browser with the given url
@@ -5,21 +6,18 @@ Feature: Event Management Test Cases- Event Home Page
     And   The User inputs a valid password "validPassword"
     And   The User clicks the Submit button
     Then   The User waits until the MDM element is visible with a timeout of 120 seconds
-    And   The User performs a mouseover on the MDM element
-    And   The User performs a mouseover on the Event Management element
-    And   The User performs a mouseover on the Event element
-    And   The User clicks on the Event element
+    Given The user is on the Event item home page
     And   The User gets the current URL and stores it in "itemType=Event"
 
   Scenario: Verify Code Filter -Valid Unique Code
-    And The user enters "TransferTest" into Code field
+    And The user enters "Event-51314" into Code field
     And the user clicks on Search button
-    And the user verify on code filter functionality "TransferTest"
+    And the user verify on code filter functionality "Event-51314"
 
   Scenario:  Verify Code Filter -Valid Unique Code
-    And The user enters "Transfer" into Code field
+    And The user enters "Event-" into Code field
     And the user clicks on Search button
-    And the user verify on code filter functionality with partial unique code "Transfer"
+    And the user verify on code filter functionality with partial unique code "Event"
 
   Scenario: Verify Code Filter - Invalid Unique Code
     And The user enters "sema12345" into Code field
@@ -51,7 +49,7 @@ Feature: Event Management Test Cases- Event Home Page
     And the user clicks on Search button
     And the user verify on family filter IWSA functionality
 
-  Scenario: Search for IWSA Family
+  Scenario: Search for WSET Family
     And The user clicks on WSET Filtre
     And the user clicks on Search button
     And the user verify on family filter WSET functionality
