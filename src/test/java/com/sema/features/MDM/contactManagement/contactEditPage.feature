@@ -190,3 +190,63 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies first page button is clickable user
+
+  Scenario:Contact edit -Preview Tab
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Preview" tab
+    Then The user verifies preview tab details is displayed
+
+  Scenario:Contact edit -Item Comment Tab
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "ItemComment" tab
+    #Then The user verifies itemComment tab details is displayed
+
+
+  Scenario:Contact edit - My Account Tab
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "My Account" tab
+   # Then The user verifies My Account tab details is displayed
+
+  Scenario:Contact edit - My Account Tab export
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "My Account" tab
+    When  The user clicks on Export button ediitem
+    #Then  The user verify that the export was "Success"
+
+  Scenario:Contact edit - Gift Contact Tab
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Gift Contact" tab
+
+  Scenario:Contact edit - Categories Tab
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Categories" tab
+
+  Scenario:Contact edit - History Tab
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "History" tab
+
+  Scenario:Contact edit - Vanue-Contact Tab
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Vanue-Contact" tab
+
+  Scenario:Contact edit -Attributes Tab
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Attributes" tab

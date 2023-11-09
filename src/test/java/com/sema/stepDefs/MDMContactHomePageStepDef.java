@@ -264,6 +264,25 @@ public class MDMContactHomePageStepDef extends BaseStep {
 
     }
 
+    @Then("The user clicks {string} tab")
+    public void the_user_clicks_tab(String tabName) {
+     pages.contactHomePage().clickEditItemTab(tabName);
+    }
 
-
+    @Then("The user verifies preview tab details is displayed")
+    public void the_user_verifies_preview_tab_details_is_displayed() {
+     pages.contactHomePage().verifyPreviewTab();
+    }
+    @Then("The user verifies itemComment tab details is displayed")
+    public void the_user_verifies_itemComment_tab_details_is_displayed() {
+        pages.contactHomePage().verifyItemCommentTab();
+    }
+    @Then("The user verifies My Account tab details is displayed")
+    public void the_user_verifies_My_Account_tab_details_is_displayed() {
+        pages.contactHomePage().verifyMyAccountTab();
+    }
+    @When("The user clicks on Export button ediitem")
+    public void the_user_clicks_on_export_button_ediitem() {
+        pages.contactHomePage().exportButtonEditItem();
+    }
 }

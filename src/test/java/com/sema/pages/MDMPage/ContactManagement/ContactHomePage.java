@@ -2,8 +2,6 @@ package com.sema.pages.MDMPage.ContactManagement;
 
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
-import com.sema.utilities.ConfigurationReader;
-import com.sema.utilities.Constants;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -110,7 +108,7 @@ public class ContactHomePage extends BasePage {
     private List<WebElement> starFeaturesBadgeCountsMyContact;
     @FindBy(xpath = "//tr/td[11]/a[3]")
     private List<WebElement> starItems;
-    @FindBy(xpath = "//span[@id='export']//span[@class='icon']")
+    @FindBy(xpath = "//button[normalize-space()='Export']//span[@class='icon']")
     private WebElement exportButton;
     @FindBy(xpath = "//span[normalize-space()='Success']")
     private WebElement exportSuccessMessage;
@@ -126,6 +124,16 @@ public class ContactHomePage extends BasePage {
     private WebElement showEntriesText;
     @FindBy(id = "inputCode")
     private WebElement uniqueCodeElement;
+    @FindBy(xpath = "//ul[@class='nav nav-tabs current_nav_tabs']//li//a")
+    private List<WebElement> editItemTabs;
+    @FindBy(xpath = "//b[normalize-space()='Summary']")
+    private WebElement verifyPreviewTab;
+    @FindBy(id = "//input[@id='authorFilter']")
+    private WebElement verifyItemCommentTab;
+    @FindBy(id = "//th[@aria-label='Label: activate to sort column ascending']")
+    private WebElement verifyMyAccountTab;
+    @FindBy(id = "//button[@data-toggle='dropdown'][normalize-space()='']")
+    private WebElement exportButtonEdiitem;
     public ContactHomePage() {
     }
 
@@ -350,7 +358,7 @@ public class ContactHomePage extends BasePage {
 
     public void clickEditButton() {
         BrowserUtils.hoverOver(editButton);
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(6);
         editButton.click();
     }
 
@@ -488,6 +496,27 @@ public class ContactHomePage extends BasePage {
     }  public void setUniqueCodeElement(String code){
         uniqueCodeElement.sendKeys(code);
     }
+      public void clickEditItemTab(String tabName){
+        for (int i =0; i <editItemTabs.size(); i++) {
+            if (editItemTabs.get(i).getText().contains(tabName)){
+                editItemTabs.get(i).click();
+            }
 
-
+    }
+}     public void verifyPreviewTab(){
+        BrowserUtils.waitForVisibility(verifyPreviewTab,25);
+        Assert.assertTrue(verifyPreviewTab.isDisplayed());
+    }
+    public void verifyItemCommentTab(){
+        BrowserUtils.waitForVisibility(verifyItemCommentTab,25);
+        Assert.assertTrue(verifyItemCommentTab.isDisplayed());
+    }
+    public void verifyMyAccountTab(){
+        BrowserUtils.waitForVisibility(verifyMyAccountTab,25);
+        Assert.assertTrue(verifyMyAccountTab.isDisplayed());
+    }
+public void exportButtonEditItem(){
+        BrowserUtils.waitForVisibility(exportButton,20);
+        exportButton.click();
+}
 }

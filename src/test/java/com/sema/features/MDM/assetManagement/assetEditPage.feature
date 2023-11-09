@@ -207,3 +207,34 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies first page button is clickable user
+
+  Scenario:Asset edit -Item Comment Tab
+    And The user enters "Asset_19" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "ItemComment" tab
+    #Then The user verifies itemComment tab details is displayed
+
+  Scenario:Asset edit - Categories Tab
+    And The user enters "Asset_19" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Categories" tab
+
+  Scenario:Asset edit - History Tab
+    And The user enters "Asset_19" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "History" tab
+
+  Scenario:Asset edit - ACCOUNT_COOLER Tab
+    And The user enters "Asset_19" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "ACCOUNT_COOLER" tab
+
+  Scenario:Asset edit -Attributes Tab
+    And The user enters "Asset_19" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Attributes" tab

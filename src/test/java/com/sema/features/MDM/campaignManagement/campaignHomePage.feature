@@ -134,3 +134,56 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And The user selects deleted element
     And The user clicks delete button in delete popup
     Then The user verifies "otomasyon" is not visible
+
+  Scenario:Campaign edit -Attributes Tab
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Attributes" tab
+
+  Scenario:Campaign edit -Preview Tab
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Preview" tab
+   #  Then The user verifies preview tab details is displayed
+
+  Scenario:Campaign edit -Item Comment Tab
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "ItemComment" tab
+    #Then The user verifies itemComment tab details is displayed
+
+  Scenario:Campaign edit - AbstractPreview Tab
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "AbstractPreview" tab
+   # Then The user verifies My Account tab details is displayed
+
+  Scenario:Campaign edit - Campaign-Account Tab export
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Campaign-Account" tab
+    When  The user clicks on Export button ediitem
+    #Then  The user verify that the export was "Success"
+
+  Scenario:Campaign edit - Gift Contact Tab
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "RealtimeList" tab
+
+  Scenario:Campaign edit - Categories Tab
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Categories" tab
+
+  Scenario:Campaign edit - History Tab
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "History" tab

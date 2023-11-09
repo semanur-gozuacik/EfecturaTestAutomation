@@ -22,18 +22,6 @@ Feature: Contact Management Test Cases-My Contact Page
     |Code|
     |sematestttt|
     |testforDIAGEOcontact|
-    |TEST_CONTACT_1      |
-    |TestBirthday        |
-    |8009202202          |
-    |ExportDeneme        |
-    |gizem               |
-    |testcontact2322     |
-    |DenemeContact-2     |
-    |5393653877          |
-    |SubCategoryTest     |
-    |TEST104325022023    |
-    |TEST_306            |
-    |samtestsam          |
 
    Scenario: Verify My Contact Button
    When The user clicks My Contact button
@@ -186,15 +174,3 @@ Feature: Contact Management Test Cases-My Contact Page
       |Code|
       |sematestttt|
       |testforDIAGEOcontact|
-      |TEST_CONTACT_1      |
-      |TestBirthday        |
-      |8009202202          |
-      |ExportDeneme        |
-      |gizem               |
-      |testcontact2322     |
-      |DenemeContact-2     |
-      |5393653877          |
-      |SubCategoryTest     |
-      |TEST104325022023    |
-      |TEST_306            |
-      |samtestsam          |
