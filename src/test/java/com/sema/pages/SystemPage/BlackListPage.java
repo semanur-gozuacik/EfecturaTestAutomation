@@ -88,7 +88,7 @@ public class BlackListPage extends BasePage {
      BrowserUtils.wait(5);
     }
     public void verifyPhoneNumber(String phoneNumber) {
-        BrowserUtils.waitForVisibility(phoneNumberField, 25);
+        BrowserUtils.waitForVisibility(phoneNumberField, 30);
         if (phoneNumber.equalsIgnoreCase("fullNumber")) {
             Assert.assertTrue(phoneNumbers.size() == 1);
         } else if (phoneNumber.equalsIgnoreCase("partialNumber")) {

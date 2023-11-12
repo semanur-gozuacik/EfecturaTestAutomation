@@ -28,7 +28,7 @@ public class MDMContactHomePageMyContactStepDefs extends BaseStep {
     }
     @When("The user verifies next button is not clickable")
     public void the_user_verifies_next_button_is_not_clickable() {
-        pages.contactHomePageMyContactPage().verifyItemNextButtonUnclickable();
+        pages.contactHomePageMyContactPage().verifyNextPageButtonUnClickable();
 
     }
     @When("The user verifies previous button is not clickable")

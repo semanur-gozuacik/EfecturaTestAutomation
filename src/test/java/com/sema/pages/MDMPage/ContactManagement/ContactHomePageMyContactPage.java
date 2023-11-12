@@ -62,14 +62,12 @@ public class ContactHomePageMyContactPage extends BasePage {
         String classes = itemLeftPreviousButton.getAttribute("class");
         Assert.assertTrue(classes.contains("disabled"));
     }
-    public void verifyItemNextButtonUnclickable(){
+    public void verifyNextPageButtonUnClickable() {
         BrowserUtils.wait(5);
-        if (itemRightNextButton.isEnabled()){
-            itemRightNextButton.click();
-        }
-        BrowserUtils.wait(1);
         String classes = itemNextButton.getAttribute("class");
-        Assert.assertTrue(classes.contains("disabled"));
+        System.out.println(classes);
+        boolean isDisabled = classes.contains("disabled");
+        Assert.assertTrue(isDisabled);
     }
     public void setUniqueCodeElement(String uniqueCode1){
         uniqueCodeElement.sendKeys(uniqueCode1);

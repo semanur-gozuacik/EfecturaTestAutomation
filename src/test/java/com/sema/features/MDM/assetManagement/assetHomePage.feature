@@ -79,3 +79,50 @@ Feature: Asset Management Test Cases- Asset Home Page
     And The user clicks delete button in delete popup
     Then The user verifies "otomasyon" is not visible
 
+  Scenario Outline: Asset Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
+    Then  The user should see  "<entries>" entrie in everypage
+    Examples:
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
+      |250|
+
+  Scenario:Asset Home Page Verify First Page Button Unclickable Condition
+    And  The user verifies first page button is not clickable
+
+  Scenario:Asset Home Page Verify Previous Page Button Unclickable Condition
+    And  The user verifies previous page button is not clickable
+
+  Scenario:Asset Home Page Verify Item next Button Unclickable Condition
+    When The user clicks last page button
+    And  The user verifies next button is not clickable
+
+  Scenario:Asset Home Page Verify Last Page Button Unclickable Condition
+    When The user clicks last page button
+    And  The user verifies last page button is not clickable
+
+  Scenario:Asset Home Page Verify First Page Button Clickable Condition
+    When The user clicks last page button
+    And  The user verifies first page button is clickable
+
+  Scenario:Asset Home Page Verify Previous Page Button Clickable Condition
+    When The user clicks last page button
+    And  The user verifies previous page button is clickable
+
+  Scenario:Asset Home Page Verify Item next Button Clickable Condition
+    And  The user verifies next button is clickable
+
+  Scenario:Asset Home Page Verify Last Page Button Clickable Condition
+    And  The user verifies last page button is clickable
+
+  Scenario: Verify export button
+    When  The user clicks on Export button
+    Then  The user verify that the export was "Success"
+
+  Scenario: Reset Button Control
+    And The user enters "test2123" into Code field
+    And the user clicks on Reset button
+    And the user verify Reset button functionality

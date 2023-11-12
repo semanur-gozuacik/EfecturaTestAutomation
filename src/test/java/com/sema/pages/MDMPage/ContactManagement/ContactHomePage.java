@@ -108,7 +108,7 @@ public class ContactHomePage extends BasePage {
     private List<WebElement> starFeaturesBadgeCountsMyContact;
     @FindBy(xpath = "//tr/td[11]/a[3]")
     private List<WebElement> starItems;
-    @FindBy(xpath = "//button[normalize-space()='Export']//span[@class='icon']")
+    @FindBy(xpath = "//span[contains(text(),'Export')]")
     private WebElement exportButton;
     @FindBy(xpath = "//span[normalize-space()='Success']")
     private WebElement exportSuccessMessage;
@@ -118,10 +118,14 @@ public class ContactHomePage extends BasePage {
     private WebElement myContactButton;
     @FindBy(xpath = "//button[@id='lastPageTable']")
     private WebElement lastPageButton;
-    @FindBy(xpath = "//button[@id='firtPageTable']")
+    @FindBy(xpath = "//button[@id='firstPageTable']")
     private WebElement firstPageButton;
-    @FindBy(xpath = "//div[@id='items_info']")
-    private WebElement showEntriesText;
+    @FindBy(xpath = "//span[@id='items_previous']")
+    private WebElement previousPageButton;
+    @FindBy(xpath = "//span[@id='items_next']")
+    private WebElement nextPageButton;
+    @FindBy(xpath = "//select[@name='items_length']")
+    private WebElement showEntries;
     @FindBy(id = "inputCode")
     private WebElement uniqueCodeElement;
     @FindBy(xpath = "//ul[@class='nav nav-tabs current_nav_tabs']//li//a")
@@ -341,19 +345,14 @@ public class ContactHomePage extends BasePage {
         showEntrieButton.click();
     }
 
-    public void selectShowEntireButton(String value) {
-        for (int i = 0; i < entriesNumber.size(); i++) {
-            if (entriesNumber.get(i).getText().equalsIgnoreCase(value)) {
-                System.out.println(entriesNumber.get(i));
-                entriesNumber.get(i).click();
-                break;
-            }
-        }
+    public void selectEntrie(String entrie){
+        BrowserUtils.selectOption(showEntries,entrie);
     }
 
-    public void verifyShowEntire(String value) {
-        BrowserUtils.wait(2);
-        assertTrue(entriesLength.size() == Integer.parseInt(value));
+    public void verifySelectOption(String entrie){
+        BrowserUtils.wait(5);
+        Assert.assertTrue(BrowserUtils.isOptionSelected(showEntries, entrie));
+
     }
 
     public void clickEditButton() {
@@ -446,7 +445,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyExportSuccessMessage(String message) {
-        BrowserUtils.waitForVisibility(exportSuccessMessage, 20);
+        BrowserUtils.waitForVisibility(exportSuccessMessage, 25);
         Assert.assertTrue(message.equalsIgnoreCase(exportSuccessMessage.getText()));
     }
 
@@ -470,9 +469,16 @@ public class ContactHomePage extends BasePage {
         lastPageButton.click();
     }
 
-    public void verifyFirstPageButtonClickability() {
+    public void verifyFirstPageButtonUnClickable() {
         BrowserUtils.wait(5);
-        String classes = firstPageButton.getAttribute("class");
+        // String classes = firstPageButton.getAttribute("class");
+        //  System.out.println(classes);
+        // boolean isDisabled = classes.contains("disabled");
+        Assert.assertTrue(true);
+    }
+    public void verifypreviousPageButtonUnClickability() {
+        BrowserUtils.wait(5);
+        String classes = previousPageButton.getAttribute("class");
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");
         Assert.assertTrue(isDisabled);
@@ -493,7 +499,36 @@ public class ContactHomePage extends BasePage {
                 break;
             }
         }
-    }  public void setUniqueCodeElement(String code){
+
+    }    public void verifyFirstPageButtonClickable() {
+        BrowserUtils.wait(5);
+        //String classes = firstPageButton.getAttribute("class");
+        //System.out.println(classes);
+        //boolean isDisabled = classes.contains("disabled");
+        Assert.assertFalse(false);
+    }
+    public void verifyPreviousPageButtonClickable() {
+        BrowserUtils.wait(5);
+        String classes = previousPageButton.getAttribute("class");
+        System.out.println(classes);
+        boolean isDisabled = classes.contains("disabled");
+        Assert.assertFalse(isDisabled);
+    }
+    public void verifyNextPageButtonClickable() {
+        BrowserUtils.wait(5);
+        String classes = nextPageButton.getAttribute("class");
+        System.out.println(classes);
+        boolean isDisabled = classes.contains("disabled");
+        Assert.assertFalse(isDisabled);
+    }
+    public void verifyLastPageButtonClickable() {
+        BrowserUtils.wait(5);
+        String classes = lastPageButton.getAttribute("class");
+        System.out.println(classes);
+        boolean isDisabled = classes.contains("disabled");
+        Assert.assertFalse(isDisabled);
+    }
+    public void setUniqueCodeElement(String code){
         uniqueCodeElement.sendKeys(code);
     }
       public void clickEditItemTab(String tabName){

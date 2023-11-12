@@ -317,7 +317,16 @@ public class BrowserUtils {
             }
         }
     }
+    public static void selectOption(WebElement selectElement, String value) {
+        Select select = new Select(selectElement);
+        select.selectByValue(value);
+    }
 
+    // Seçenek seçilmiş mi kontrol etme metodunu tanımla
+    public static boolean isOptionSelected(WebElement selectElement, String value) {
+        Select select = new Select(selectElement);
+        return select.getFirstSelectedOption().getAttribute("value").equals(value);
+    }
 
 }
 

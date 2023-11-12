@@ -2,6 +2,7 @@ package com.sema.pages;
 
 
 import com.sema.utilities.BrowserUtils;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -13,7 +14,7 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends BasePage {
     @FindBy(xpath = "//img[@id='navLogo']")
     private WebElement basariliLoginDogrulama;
-    @FindBy(id = "MDM")
+    @FindBy(id = "Veriler")
     private WebElement MDM;
     @FindBy(id = "Contract ManagementH")
     private WebElement contractManagement;
@@ -49,13 +50,16 @@ public class HomePage extends BasePage {
     private WebElement systemElement;
     @FindBy(xpath = "//a[@id='blacklistid']")
     private WebElement blackListElement;
+    @FindBy(xpath="//a[@id='familiesid']")
+    private WebElement famiiliesElement;
+    @FindBy(xpath="//a[@id='settingnav']")
+    private WebElement settingsElement;
+
+
+    @FindBy(id="Kişiler")
+    private WebElement kisilerElement;
 
     public HomePage() {
-    }
-
-    public void loginVerification() {
-        String currentURL = driver.getCurrentUrl();
-        Assert.assertTrue(currentURL.contains("Home/Index"));
     }
 
     public void verifyMDMElement(int timeout) {
@@ -66,6 +70,10 @@ public class HomePage extends BasePage {
     public void mouseoverOnTheMdmElement() {
         BrowserUtils.hoverOver(MDM);
     }
+    public void mouseoverOnTheKisilerElement() {
+        BrowserUtils.hoverOver(kisilerElement);
+    }
+
 
     public void mouseoverOnTheContractManagementElement() {
         BrowserUtils.waitForVisibility(contractManagement, 10);
@@ -191,6 +199,21 @@ public class HomePage extends BasePage {
 
     public void clicksOnTheCampaignElement() {
         campaign.click();
+    }
+    public void mouseoverOnTheFamiliesElement() {
+        BrowserUtils.waitForVisibility(famiiliesElement, 20);
+        BrowserUtils.hoverOver(famiiliesElement);
+    }
+    public void clicksOnTheFamiliesElement() {
+        famiiliesElement.click();
+    }
+    public void mouseoverOnTheSettingsElement() {
+        BrowserUtils.waitForVisibility(settingsElement, 20);
+        BrowserUtils.hoverOver(settingsElement);
+    }
+    public void verifySettingsElement(int timeout) {
+        BrowserUtils.waitForVisibility(settingsElement, timeout);
+        Assert.assertTrue(settingsElement.isDisplayed());
     }
 
 }

@@ -76,11 +76,14 @@ public class MDMContactHomePageStepDef extends BaseStep {
     public void the_user_verifies_that_the_codes_shown_in_the_unassigned_label_filter_are_contact_categories() {
 
     }
+    @Then("The User performs a mouseover on the Kisiler element")
+    public void the_user_performs_a_mouseover_on_the_kisiler_element() {
+        pages.homePage().mouseoverOnTheKisilerElement();
+    }
 
     @Then("The user enters {string} into Code field")
     public void the_user_enters_into_code_field(String code) {
         pages.contactHomePage().setCodeFilter(code);
-
     }
     @Then("The User inputs the {string} from cont into the inputCode field")
     public void the_user_inputs_the_from_cont_into_the_input_code_field(String code) {
@@ -194,12 +197,12 @@ public class MDMContactHomePageStepDef extends BaseStep {
         pages.contactHomePage().clickShowEntrie();
     }
     @When("The user selects {string} into show entries")
-    public void the_user_selects_into_show_entries(String value) {
-        pages.contactHomePage().selectShowEntireButton(value);
+    public void the_user_selects_into_show_entries(String entrie) {
+  pages.contactHomePage().selectEntrie(entrie);
     }
     @Then("The user should see  {string} entrie in everypage")
-    public void the_user_should_see_entrie_in_everypage(String value) {
-        pages.contactHomePage().verifyShowEntire(value);
+    public void the_user_should_see_entrie_in_everypage(String entrie) {
+      pages.contactHomePage().verifySelectOption(entrie);
     }
     @Then("The user clicks on Edit Button")
     public void the_user_clicks_on_editButton() {
@@ -252,7 +255,11 @@ public class MDMContactHomePageStepDef extends BaseStep {
     }
     @Then("The user verifies first page button is not clickable")
     public void the_user_verifies_first_page_button_is_not_clickable() {
-      pages.contactHomePage().verifyFirstPageButtonClickability();
+        pages.contactHomePage().verifyFirstPageButtonUnClickable();
+    }
+    @Then("The user verifies previous page button is not clickable")
+    public void the_user_verifies_previous_page_button_is_not_clickable() {
+pages.contactHomePage().verifypreviousPageButtonUnClickability();
     }
     @Then("The user verifies last page button is not clickable")
     public void the_user_verifies_last_page_button_is_not_clickable() {
@@ -262,6 +269,23 @@ public class MDMContactHomePageStepDef extends BaseStep {
     public void the_user_clicks(String starFeature) {
         pages.contactHomePage().clicksStarFeatures(starFeature);
 
+    }
+
+    @When("The user verifies first page button is clickable")
+    public void the_user_verifies_first_page_button_is_clickable() {
+       pages.contactHomePage().verifyFirstPageButtonClickable();
+    }
+    @When("The user verifies previous page button is clickable")
+    public void the_user_verifies_previous_page_button_is_clickable() {
+        pages.contactHomePage().verifyPreviousPageButtonClickable();
+    }
+    @When("The user verifies next button is clickable")
+    public void the_user_verifies_next_button_is_clickable() {
+        pages.contactHomePage().verifyNextPageButtonClickable();
+    }
+    @When("The user verifies last page button is clickable")
+    public void the_user_verifies_last_page_button_is_clickable() {
+      pages.contactHomePage().verifyLastPageButtonClickable();
     }
 
     @Then("The user clicks {string} tab")

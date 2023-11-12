@@ -6,7 +6,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     And   The User inputs a valid password "validPassword"
     And   The User clicks the Submit button
     Then   The User waits until the MDM element is visible with a timeout of 15 seconds
-    And   The User performs a mouseover on the MDM element
+    And   The User performs a mouseover on the Kisiler element
     And   The User performs a mouseover on the Contact Management element
     And   The User performs a mouseover on the Contact element
     And   The User clicks on the Contact element
@@ -95,16 +95,16 @@ Feature: Contact Management Test Cases- Contact Home Page
     And The user declines the popup message
     Then The user verify that "sematestttt" is visible
 
-  Scenario Outline: User selects different options for show entries
-    Given The user clicks show entries button
-    When  The user selects "<entrie>" into show entries
+  Scenario Outline: Contact Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
     Then  The user should see  "<entries>" entrie in everypage
     Examples:
-    | entries|
-    |10 |
-    #|25 |
-    #|50 |
-    #|100|
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
+      |250|
 
   Scenario: Contact page edit verify
     And The user clicks on Contact  category
@@ -142,20 +142,33 @@ Feature: Contact Management Test Cases- Contact Home Page
     Then  The user verify that the export was "Success"
    # And   The user verify that the file is located in the downloads folder
     #And   The user verify that the file is in the correct format
-
-  Scenario: Verify Item Previous Button Unclickable Condition
-    And  The user verifies previous button is not clickable
-
-  Scenario: Verify Item next Button Unclickable Condition
-    When The user clicks last page button
-   # And  The user verifies next button is not clickable
-
-  Scenario: Verify First Page Button Unclickable Condition
+  Scenario:Contact Page Verify First Page Button Unclickable Condition
     And  The user verifies first page button is not clickable
 
-  Scenario: Verify Last Page Button Unclickable Condition
+  Scenario:Contact Page Verify Previous Page Button Unclickable Condition
+    And  The user verifies previous page button is not clickable
+
+  Scenario:Contact Page Verify Item next Button Unclickable Condition
+    When The user clicks last page button
+    And  The user verifies next button is not clickable
+
+  Scenario: Contact Page Verify Last Page Button Unclickable Condition
     When The user clicks last page button
     And  The user verifies last page button is not clickable
+
+  Scenario:Contact Page Verify First Page Button Clickable Condition
+    When The user clicks last page button
+    And  The user verifies first page button is clickable
+
+  Scenario:Contact Page Verify Previous Page Button Clickable Condition
+    When The user clicks last page button
+    And  The user verifies previous page button is clickable
+
+  Scenario:Contact Page Verify Item next Button Clickable Condition
+    And  The user verifies next button is clickable
+
+  Scenario: Contact Page Verify Last Page Button Clickable Condition
+    And  The user verifies last page button is clickable
 
   Scenario: Verify the redirection to the My Contacts page
     Then The user verifies that "My Contacts" is visible

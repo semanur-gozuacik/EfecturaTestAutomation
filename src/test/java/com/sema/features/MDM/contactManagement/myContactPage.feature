@@ -6,7 +6,7 @@ Feature: Contact Management Test Cases-My Contact Page
     And   The User inputs a valid password "validPassword"
     And   The User clicks the Submit button
     Then   The User waits until the MDM element is visible with a timeout of 15 seconds
-    And   The User performs a mouseover on the MDM element
+    And   The User performs a mouseover on the Kisiler element
     And   The User performs a mouseover on the Contact Management element
     And   The User performs a mouseover on the Contact element
     And   The User clicks on the Contact element
@@ -118,17 +118,15 @@ Feature: Contact Management Test Cases-My Contact Page
   # And The user clicks on Delete
    # And The user accepts the popup message
 
-  Scenario Outline: User selects different options for show entries
-    When The user clicks My Contact button
-    Given The user clicks show entries button
-    When  The user selects "<entrie>" into show entries
+  Scenario Outline: Contact Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
     Then  The user should see  "<entries>" entrie in everypage
     Examples:
       | entries|
       |10 |
-    #|25 |
-    #|50 |
-    #|100|
+      |25 |
+      |50 |
+      |100|
 
   Scenario: My Contact page edit verify
     When The user clicks My Contact button

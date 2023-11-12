@@ -52,7 +52,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
       |Active     |
       |Passive    |
       |On Hold    |
-       #|Draftt    |
+      |Draft   |
 
   Scenario: Reset Button Control
     And The user enters "welcometestgeneric1" into Code field

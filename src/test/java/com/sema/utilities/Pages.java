@@ -11,6 +11,8 @@ import com.sema.pages.MDMPage.ContractManagement.Contract;
 import com.sema.pages.MDMPage.EventManagement.EventHomePage;
 import com.sema.pages.MDMPage.GiftManagement.Gift;
 import com.sema.pages.MDMPage.KPIManagement.KPIHomePage;
+import com.sema.pages.SettingsPage.Attributes;
+import com.sema.pages.SettingsPage.Families;
 import com.sema.pages.SystemPage.BlackListPage;
 
 public class Pages {
@@ -28,7 +30,8 @@ public class Pages {
     private EventHomePage  eventHomePage;
     private CampaignHomePage campaignHomePage;
     private KPIHomePage kpiHomePage;
-
+    private Families families;
+    private Attributes attributes;
 
     public Pages() {
             this.homePage =new HomePage();
@@ -44,6 +47,8 @@ public class Pages {
             this.eventHomePage=new EventHomePage();
             this.campaignHomePage=new CampaignHomePage();
             this.kpiHomePage=new KPIHomePage();
+            this.families=new Families();
+            this.attributes=new Attributes();
 
     }
     // Getter metotları
@@ -65,6 +70,8 @@ public class Pages {
     public EventHomePage eventHomePage(){return eventHomePage;}
     public CampaignHomePage campaignHomePage(){return campaignHomePage;}
      public KPIHomePage kpiHomePage(){return kpiHomePage;}
+    public Families families(){return families;}
+    public Attributes attributes(){return attributes;}
 
 }
 
