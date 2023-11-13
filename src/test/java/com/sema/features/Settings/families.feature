@@ -5,7 +5,8 @@ Feature: Families Management Test Cases
     And    The User inputs a valid username "validUsername"
     And    The User inputs a valid password "validPassword"
     And    The User clicks the Submit button
-    Then  The User waits until the Settings element is visible with a timeout of 120 seconds
+    Then  The User waits until the System element is visible with a timeout of 120 seconds
+    And   The User performs a mouseover on the System element symbol
     And   The User performs a mouseover on the Settings element
     And   The User clicks on the Families element
     And   The User gets the current URL and stores it in "Settings/Families"

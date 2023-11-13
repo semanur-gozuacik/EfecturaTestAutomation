@@ -26,7 +26,7 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Verify Code Filter -Valid Unique Code
     And The user clicks on Contact  category
-    And The user enters "test2123" into Code field
+    And The user enters "Test2123" into Code field
     And the user clicks on Search button
     And the user verify on code filter functionality "Test2123"
 
@@ -34,7 +34,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     And The user clicks on Contact  category
     And The user enters "test" into Code field
     And the user clicks on Search button
-    And the user verify on code filter functionality with partial unique code "Test"
+    And the user verify on code filter functionality with partial unique code "test"
 
   Scenario: Verify Code Filter - Invalid Unique Code
     And The user clicks on Contact  category

@@ -2,19 +2,15 @@ package com.sema.pages;
 
 
 import com.sema.utilities.BrowserUtils;
-import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
     @FindBy(xpath = "//img[@id='navLogo']")
     private WebElement basariliLoginDogrulama;
-    @FindBy(id = "Veriler")
+    @FindBy(id = "MDM")
     private WebElement MDM;
     @FindBy(id = "Contract ManagementH")
     private WebElement contractManagement;
@@ -54,10 +50,8 @@ public class HomePage extends BasePage {
     private WebElement famiiliesElement;
     @FindBy(xpath="//a[@id='settingnav']")
     private WebElement settingsElement;
-
-
-    @FindBy(id="Kişiler")
-    private WebElement kisilerElement;
+    @FindBy(id="Persons")
+    private WebElement personsElement;
 
     public HomePage() {
     }
@@ -71,7 +65,7 @@ public class HomePage extends BasePage {
         BrowserUtils.hoverOver(MDM);
     }
     public void mouseoverOnTheKisilerElement() {
-        BrowserUtils.hoverOver(kisilerElement);
+        BrowserUtils.hoverOver(personsElement);
     }
 
 

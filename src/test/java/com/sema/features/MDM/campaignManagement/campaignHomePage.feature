@@ -67,13 +67,16 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And The user declines the popup message
     Then The user verify that "TESTSETSET123123" is visible-campaign
 
-  Scenario Outline: User selects different options for show entries
-    Given The user clicks show entries button
-    When  The user selects "<entrie>" into show entries
+  Scenario Outline: Contact Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
     Then  The user should see  "<entries>" entrie in everypage
     Examples:
       | entries|
       |10 |
+      |25 |
+      |50 |
+      |100|
+      |250|
 
   Scenario: Verify My Count Star Item Functionality- One Contact
     And The user enters "TestWelcomeCampaignSecondPreview" into Code field
