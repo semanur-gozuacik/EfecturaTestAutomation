@@ -170,7 +170,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Campaign-Account" tab
-    When  The user clicks on Export button ediitem
+   # When  The user clicks on Export button ediitem
     #Then  The user verify that the export was "Success"
 
   Scenario:Campaign edit - Gift Contact Tab

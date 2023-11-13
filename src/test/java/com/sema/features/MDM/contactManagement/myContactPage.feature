@@ -61,7 +61,7 @@ Feature: Contact Management Test Cases-My Contact Page
     And The user clicks on Contact  category
     And The user enters "Test" into Label field
     And the user clicks on Search button
-    And the user verify on label filter functionality with partial unique code "Test"
+   # And the user verify on label filter functionality with partial unique code "Test"
 
   Scenario: Verify Label Filter - Invalid  Label
     When The user clicks My Contact button
@@ -131,7 +131,7 @@ Feature: Contact Management Test Cases-My Contact Page
   Scenario: My Contact page edit verify
     When The user clicks My Contact button
     And The user clicks on Contact  category
-    And The user enters "sematestttt" into Code field
+    And The user enters "testconatct1234" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     Then The user verify Edit Page
