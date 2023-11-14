@@ -20,7 +20,7 @@ Feature: Contact Management Test Cases-My Contact Page
     And the user clicks on Reset button
     Examples:
     |Code|
-    |sematestttt|
+    |testcontact2322|
     |testforDIAGEOcontact|
 
    Scenario: Verify My Contact Button
@@ -130,7 +130,6 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario: My Contact page edit verify
     When The user clicks My Contact button
-    And The user clicks on Contact  category
     And The user enters "testconatct1234" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
@@ -156,6 +155,7 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario: Verify Item next Button Unclickable Condition
     When The user clicks My Contact button
+  When The user clicks last page button
     And  The user verifies next button is not clickable
 
   Scenario: Verify Item Right Last Button Unclickable Condition
@@ -170,5 +170,5 @@ Feature: Contact Management Test Cases-My Contact Page
     And the user clicks on Reset button
     Examples:
       |Code|
-      |sematestttt|
+      |testcontact2322|
       |testforDIAGEOcontact|

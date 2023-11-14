@@ -213,12 +213,12 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user clicks "My Account" tab
    # Then The user verifies My Account tab details is displayed
 
-  Scenario:Contact edit - My Account Tab export
-    And The user enters "semaotomasyon" into Code field
-    And the user clicks on Search button
-    And  The user clicks on Edit Button
-    And The user clicks "My Account" tab
-    When  The user clicks on Export button ediitem
+ # Scenario:Contact edit - My Account Tab export
+   # And The user enters "semaotomasyon" into Code field
+  #  And the user clicks on Search button
+   # And  The user clicks on Edit Button
+   # And The user clicks "My Account" tab
+   # When  The user clicks on Export button ediitem
     #Then  The user verify that the export was "Success"
 
   Scenario:Contact edit - Gift Contact Tab

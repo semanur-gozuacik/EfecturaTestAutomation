@@ -12,7 +12,7 @@ public class ContactHomePageMyContactPage extends BasePage {
     private List<WebElement> myContactsNames;
     @FindBy(xpath = "//input[@class='pagination-text']")
     private WebElement peginationText;
-    @FindBy(xpath = "//button[@id='lastPageTable']")
+    @FindBy(xpath = "//span[@id='items_next']")
     private WebElement itemNextButton;
     @FindBy(xpath = "//div[@id='items_info']")
     private WebElement showingEntriesText;
@@ -49,12 +49,12 @@ public class ContactHomePageMyContactPage extends BasePage {
         itemPreviousButton.click();
     }
     public void verifyItemPreviousShowingEntriesText() {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(5);
         System.out.println(showingEntriesText.getText());
         Assert.assertTrue(showingEntriesText.getText().contains("1 to 10"));
     }
     public void verifyItemPreviousButtonUnclickable(){
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(5);
         String classes = itemPreviousButton.getAttribute("class");
         Assert.assertTrue(classes.contains("disabled"));
     }

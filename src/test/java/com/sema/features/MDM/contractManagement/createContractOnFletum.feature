@@ -61,6 +61,6 @@ Background:
     And  The user clicks delete button in popup
     Then The User waits until the page contains "Item Deleted Succesfully." with a timeout of 120 seconds-Asset
 
-  Scenario: Verify export button
+  Scenario: Contract Home Verify export button
     When  The user clicks on Export button
     Then  The user verify that the export was "Success"

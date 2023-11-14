@@ -532,11 +532,12 @@ public class ContactHomePage extends BasePage {
         uniqueCodeElement.sendKeys(code);
     }
       public void clickEditItemTab(String tabName){
+        BrowserUtils.wait(5);
         for (int i =0; i <editItemTabs.size(); i++) {
             if (editItemTabs.get(i).getText().contains(tabName)){
                 editItemTabs.get(i).click();
+                BrowserUtils.wait(2);
             }
-
     }
 }     public void verifyPreviewTab(){
         BrowserUtils.waitForVisibility(verifyPreviewTab,25);
