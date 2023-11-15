@@ -31,9 +31,9 @@ Feature: Contact Management Test Cases-My Contact Page
   Scenario: Verify Code Filter -Valid Unique Code
     When The user clicks My Contact button
     And The user clicks on Contact  category
-    And The user enters "Test2123" into Code field
+    And The user enters "0058950138" into Code field
     And the user clicks on Search button
-    And the user verify on code filter functionality "Test2123"
+    And the user verify on code filter functionality "0058950138"
 
   Scenario:  Verify Code Filter -Valid Partial Unique Code
     When The user clicks My Contact button
@@ -130,37 +130,38 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario: My Contact page edit verify
     When The user clicks My Contact button
-    And The user enters "testconatct1234" into Code field
+    And The user enters "0058950138" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     Then The user verify Edit Page
 
-    Scenario: Verify Item Next Button
-      When The user clicks My Contact button
-      And  The user clicks item next button
-    #  Then The user verify next items is displayed
+  Scenario:My Contact Verify First Page Button Unclickable Condition
+    And  The user verifies first page button is not clickable
 
-  Scenario: Verify Item Previous Button
-    When The user clicks My Contact button
-    And  The user clicks item previous button
- #   Then The user verify previous items is displayed
+  Scenario:My Contact Verify Previous Page Button Unclickable Condition
+    And  The user verifies previous page button is not clickable
 
-  Scenario: Verify Item Previous Button Unclickable Condition
-    When The user clicks My Contact button
-   # And  The user verifies previous button is not clickable
-
-  Scenario: Verify Item Left Previous Button Unclickable Condition
-    When The user clicks My Contact button
-    And  The user verifies left previous button is not clickable
-
-  Scenario: Verify Item next Button Unclickable Condition
-    When The user clicks My Contact button
-  When The user clicks last page button
+  Scenario:My Contact Verify Item next Button Unclickable Condition
+    When The user clicks last page button
     And  The user verifies next button is not clickable
 
-  Scenario: Verify Item Right Last Button Unclickable Condition
-    When The user clicks My Contact button
-    And  The user verifies left previous button is not clickable
+  Scenario:My Contact Verify Last Page Button Unclickable Condition
+    When The user clicks last page button
+   # And  The user verifies last page button is not clickable
+
+  Scenario:My Contact Verify First Page Button Clickable Condition
+    When The user clicks last page button
+    And  The user verifies first page button is clickable
+
+  Scenario:My Contact Verify Previous Page Button Clickable Condition
+    When The user clicks last page button
+    And  The user verifies previous page button is clickable
+
+  Scenario:My Contact Verify Item next Button Clickable Condition
+    And  The user verifies next button is clickable
+
+  Scenario:My Contact Verify Last Page Button Clickable Condition
+    And  The user verifies last page button is clickable
 
   Scenario Outline:My Count Delete Star Item Functionality
     And The user clicks on Contact  category

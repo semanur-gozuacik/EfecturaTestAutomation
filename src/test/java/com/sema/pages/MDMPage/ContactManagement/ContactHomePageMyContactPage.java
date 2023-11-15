@@ -16,7 +16,7 @@ public class ContactHomePageMyContactPage extends BasePage {
     private WebElement itemNextButton;
     @FindBy(xpath = "//div[@id='items_info']")
     private WebElement showingEntriesText;
-    @FindBy(id = "items_previous")
+    @FindBy(xpath = "//span[@id='items_previous']")
     private WebElement itemPreviousButton;
     @FindBy(xpath = "//button[@id='firtPageTable']")
     private WebElement itemLeftPreviousButton;
@@ -44,8 +44,7 @@ public class ContactHomePageMyContactPage extends BasePage {
 
     }
     public void clickItemPreviousButton() {
-        itemNextButton.click();
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(5);
         itemPreviousButton.click();
     }
     public void verifyItemPreviousShowingEntriesText() {

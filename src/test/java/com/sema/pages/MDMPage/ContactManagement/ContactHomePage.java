@@ -310,6 +310,7 @@ public class ContactHomePage extends BasePage {
 
     public void verifyResetButton() {
         assertTrue(familyFilterText.getText().equalsIgnoreCase("Family"));
+        BrowserUtils.wait(5);
     }
 
     public void clickDeleteButton() {

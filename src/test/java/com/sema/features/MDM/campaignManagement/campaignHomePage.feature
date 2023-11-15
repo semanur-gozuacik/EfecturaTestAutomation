@@ -13,9 +13,9 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And   The User gets the current URL and stores it in "itemType=Campaign" Asset page
 
   Scenario: Verify Code Filter -Valid Unique Code
-    And The user enters "welcometestgeneric1" into Code field
+    And The user enters "welcometestgeneric122" into Code field
     And the user clicks on Search button
-    And the user verify on code filter functionality "welcometestgeneric1"-Campaign
+    And the user verify on code filter functionality "welcometestgeneric122"-Campaign
 
   Scenario:  Verify Code Filter -Valid Unique Code partial
     And The user enters "TEST" into Code field
@@ -55,7 +55,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
       |Draft   |
 
   Scenario: Reset Button Control
-    And The user enters "welcometestgeneric1" into Code field
+    And The user enters "welcometestgeneric122" into Code field
     And The user enters "testbirthday1561" into Label field
     And the user clicks on Reset button
     And the user verify Reset button functionality
@@ -113,16 +113,16 @@ Feature: Campaign Management Test Cases- Campaign Home Page
   Scenario:Campaign Create List- create button
     And  The user clicks plus icon
     Then The user verifies New List pop up is open
-    When The user enters "otomasyon" List Name
+    When The user enters "campaign-list" List Name
     And  The user enters "_5458429214" Can view
     And  The user enters "1757483988_5392786463" Can edit
     And The user clicks create button-New List
-    Then The user verifies "otomasyon" is visible
+    Then The user verifies "campaign-list" is visible
 
   Scenario:Campaign Create List- create button-exist user
     And  The user clicks plus icon
     Then The user verifies New List pop up is open
-    When The user enters "otomasyon" List Name
+    When The user enters "Sematestyeni" List Name
     And  The user enters "_5458429214" Can view
     And  The user enters "1757483988_5392786463" Can edit
     And  The user clicks create button-New List
@@ -131,12 +131,12 @@ Feature: Campaign Management Test Cases- Campaign Home Page
   Scenario:Campaign Create List- delete list-cancel button
     And The user selects deleted element
     And The user clicks cancel button in delete popup
-    Then The user verifies "otomasyon" is visible
+    Then The user verifies "campaign-list" is visible
 
   Scenario:Campaign Create List- delete list
     And The user selects deleted element
     And The user clicks delete button in delete popup
-    Then The user verifies "otomasyon" is not visible
+    Then The user verifies "campaign-list" is not visible
 
   Scenario:Campaign edit -Attributes Tab
     And The user enters "TestAutomation" into Code field

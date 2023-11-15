@@ -72,9 +72,9 @@ public class Asset extends BasePage {
     private WebElement deleteListCancelPopUp;
     @FindBy(xpath = "//button[@id='delete-list-button']")
     private WebElement deleteListDeletePopUp;
-    @FindBy(xpath = "//li[normalize-space()='otomasyon']")
+    @FindBy(xpath = "//li[normalize-space()='campaign-list']")
     private WebElement deletedListItem;
-    @FindBy(xpath = "//li[normalize-space()='otomasyon']//i[@class='fa fa-trash edit-icon']")
+    @FindBy(xpath = "//li[normalize-space()='campaign-list']//i[@class='fa fa-trash edit-icon']")
     private WebElement deleteListButton;
 
 
