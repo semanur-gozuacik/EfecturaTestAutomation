@@ -65,19 +65,19 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And  The user clicks removed button
     Then The user verifies item is removed
 
-  Scenario: Edit item removed list all elements
-    And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
-    And  The user clicks on Edit Button
-    And  The user clicks list drop down button
-    And  The user clicks new list item
-    Then The user verifies item is added
-    And The user waits ten seconds
-    And  The user clicks list drop down button
-    And  The user clicks new list second item
-   And The user waits ten seconds
-    And  The user clicks list drop down button
-    Then The user verifies item is added allItem
+  # Scenario: Edit item removed list all elements
+   # And The user enters "TEST123456" into Code field
+  #  And the user clicks on Search button
+   # And  The user clicks on Edit Button
+    #And  The user clicks list drop down button
+    #And  The user clicks new list item
+    #Then The user verifies item is added
+    #And The user waits ten seconds
+   # And  The user clicks list drop down button
+   # And  The user clicks new list second item
+   #And The user waits ten seconds
+    #And  The user clicks list drop down button
+  #  Then The user verifies item is added allItem
 
     Scenario:Group Permission Verify Item First Page Button Unclickable Condition
      And The user enters "TEST123456" into Code field

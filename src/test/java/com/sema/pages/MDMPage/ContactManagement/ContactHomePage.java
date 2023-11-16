@@ -446,7 +446,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyExportSuccessMessage(String message) {
-        BrowserUtils.waitForVisibility(exportSuccessMessage, 25);
+        BrowserUtils.waitForVisibility(exportSuccessMessage, 20);
         Assert.assertTrue(message.equalsIgnoreCase(exportSuccessMessage.getText()));
     }
 

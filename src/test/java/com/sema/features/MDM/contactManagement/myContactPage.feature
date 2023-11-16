@@ -164,7 +164,6 @@ Feature: Contact Management Test Cases-My Contact Page
     And  The user verifies last page button is clickable
 
   Scenario Outline:My Count Delete Star Item Functionality
-    And The user clicks on Contact  category
     And The user enters "<Code>" into Code field
     And the user clicks on Search button
     And the user clicks on Star items
@@ -173,3 +172,10 @@ Feature: Contact Management Test Cases-My Contact Page
       |Code|
       |testcontact2322|
       |testforDIAGEOcontact|
+
+  @ssssss
+  Scenario: My Count Verify export button
+    When The user clicks My Contact button
+    And The user waits ten seconds
+    When  The user clicks on Export button
+    Then  The user verify that the export was "Success"
