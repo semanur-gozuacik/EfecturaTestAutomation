@@ -13,7 +13,6 @@ Feature: Contact Management Test Cases-My Contact Page
     And   The User gets the current URL and stores it in "itemType=Contact"
 
   Scenario Outline:  My Count Add Star Item Functionality- One Contact
-    And The user clicks on Contact  category
     And The user enters "<Code>" into Code field
     And the user clicks on Search button
     And the user clicks on Star items
@@ -37,28 +36,24 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario:  Verify Code Filter -Valid Partial Unique Code
     When The user clicks My Contact button
-    And The user clicks on Contact  category
     And The user enters "test" into Code field
     And the user clicks on Search button
     And the user verify on code filter functionality with partial unique code "test"
 
   Scenario: Verify Code Filter - Invalid Unique Code
     When The user clicks My Contact button
-    And The user clicks on Contact  category
     And The user enters "sema12345" into Code field
     And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario: Verify Label Filter - Valid Label
     When The user clicks My Contact button
-    And The user clicks on Contact  category
     And The user enters "Test2123" into Label field
     And the user clicks on Search button
     And the user verify on label filter functionality with partial unique code "Test2123"
 
   Scenario: Verify Label Filter - Partial Unique Code
     When The user clicks My Contact button
-    And The user clicks on Contact  category
     And The user enters "Test" into Label field
     And the user clicks on Search button
    # And the user verify on label filter functionality with partial unique code "Test"
@@ -95,7 +90,6 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario: Reset Button Control
     When The user clicks My Contact button
-    And The user clicks on Contact  category
     And The user enters "Test2123" into Code field
     And The user clicks on Ekosystem Filtre
     And the user clicks on Reset button
@@ -103,7 +97,6 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario: Deleting an item and declining the popup message
     When The user clicks My Contact button
-    And The user clicks on Contact  category
     And The user enters "sematestttt" into Code field
     And the user clicks on Search button
     And The user clicks on Delete
@@ -173,7 +166,7 @@ Feature: Contact Management Test Cases-My Contact Page
       |testcontact2322|
       |testforDIAGEOcontact|
 
-  @ssssss
+
   Scenario: My Count Verify export button
     When The user clicks My Contact button
     And The user waits ten seconds

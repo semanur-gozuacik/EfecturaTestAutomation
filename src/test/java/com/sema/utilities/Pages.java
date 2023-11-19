@@ -14,6 +14,7 @@ import com.sema.pages.MDMPage.KPIManagement.KPIHomePage;
 import com.sema.pages.SettingsPage.Attributes;
 import com.sema.pages.SettingsPage.Families;
 import com.sema.pages.SystemPage.BlackListPage;
+import com.sema.pages.SystemPage.UserManagement.Users;
 
 public class Pages {
 
@@ -32,6 +33,7 @@ public class Pages {
     private KPIHomePage kpiHomePage;
     private Families families;
     private Attributes attributes;
+    private Users users;
 
     public Pages() {
             this.homePage =new HomePage();
@@ -49,6 +51,7 @@ public class Pages {
             this.kpiHomePage=new KPIHomePage();
             this.families=new Families();
             this.attributes=new Attributes();
+            this.users=new Users();
 
     }
     // Getter metotları
@@ -72,7 +75,7 @@ public class Pages {
      public KPIHomePage kpiHomePage(){return kpiHomePage;}
     public Families families(){return families;}
     public Attributes attributes(){return attributes;}
-
+    public  Users users(){return users;}
 }
 
 

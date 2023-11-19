@@ -13,6 +13,8 @@ public class Attributes extends BasePage {
     private WebElement attrbutesPageVerificationsElement;
     @FindBy(xpath="//tbody/tr[1]/td[9]/a[1]")
     private WebElement editButton;
+    @FindBy(name = "attributes_table_length")
+    private WebElement entrieNumber;
     public Attributes() {
     }
     public void clickAttributeElement(){
@@ -26,5 +28,13 @@ public class Attributes extends BasePage {
     public void clickEditButton() {
         BrowserUtils.wait(6);
         editButton.click();
+    }
+    public void selectEntrie(String entrie){
+        BrowserUtils.selectOption(entrieNumber,entrie);
+    }
+    public void verifySelectOption(String entrie){
+        BrowserUtils.wait(5);
+        Assert.assertTrue(BrowserUtils.isOptionSelected(entrieNumber, entrie));
+
     }
 }

@@ -41,7 +41,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[@id='Event ManagementH']")
     private WebElement eventManagement;
     @FindBy(xpath = "//a[@id='setting-wheel']")
-    private WebElement systemElementSymbol;
+    private WebElement settingsElementSymbol;
     @FindBy(xpath = "//a[@id='systemid']")
     private WebElement systemElement;
     @FindBy(xpath = "//a[@id='blacklistid']")
@@ -52,6 +52,11 @@ public class HomePage extends BasePage {
     private WebElement settingsElement;
     @FindBy(id="Persons")
     private WebElement personsElement;
+    @FindBy(id="usermanagementid")
+    private WebElement usersManagementElement;
+    @FindBy(id="usersid")
+    private WebElement usersElement;
+
 
     public HomePage() {
     }
@@ -146,12 +151,12 @@ public class HomePage extends BasePage {
     }
 
     public void mouseoverOnTheSystemElementSymbol() {
-        BrowserUtils.waitForVisibility(systemElementSymbol,20);
-        BrowserUtils.hoverOver(systemElementSymbol);
+        BrowserUtils.waitForVisibility(settingsElementSymbol,20);
+        BrowserUtils.hoverOver(settingsElementSymbol);
     }
     public void verifySystemElementSymbol(int timeout) {
-        BrowserUtils.waitForVisibility(systemElementSymbol, timeout);
-        Assert.assertTrue(systemElementSymbol.isDisplayed());
+        BrowserUtils.waitForVisibility(settingsElementSymbol, timeout);
+        Assert.assertTrue(settingsElementSymbol.isDisplayed());
     }
     public void mouseoverOnTheSystemElement() {
         BrowserUtils.waitForVisibility(systemElement,20);
@@ -209,5 +214,14 @@ public class HomePage extends BasePage {
         BrowserUtils.waitForVisibility(settingsElement, timeout);
         Assert.assertTrue(settingsElement.isDisplayed());
     }
-
+    public void clicksOnTheUsersElement() {usersElement.click();
+    }
+    public void mouseoverOnTheUsersElement() {
+        BrowserUtils.waitForVisibility(usersElement, 20);
+        BrowserUtils.hoverOver(usersElement);
+    }
+    public void mouseoverOnTheUsersManagementElement() {
+        BrowserUtils.waitForVisibility(usersManagementElement, 20);
+        BrowserUtils.hoverOver(usersManagementElement);
+    }
 }

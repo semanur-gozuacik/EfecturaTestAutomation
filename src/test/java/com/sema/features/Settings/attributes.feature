@@ -5,6 +5,7 @@ Feature: Attributes Management Test Cases
     And    The User inputs a valid username "validUsername"
     And    The User inputs a valid password "validPassword"
     And    The User clicks the Submit button
+    #isimlendirme değişecek
     Then  The User waits until the System element is visible with a timeout of 120 seconds
     And   The User performs a mouseover on the System element symbol
     And   The User performs a mouseover on the Settings element
@@ -130,3 +131,14 @@ Feature: Attributes Management Test Cases
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies first page button is clickable user
+
+
+  Scenario Outline:Families Page-User selects different options for show entries
+    When  The user selects "<entries>" into show entries attributes
+    Then  The user should see  "<entries>" entrie in everypage attributes
+    Examples:
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
