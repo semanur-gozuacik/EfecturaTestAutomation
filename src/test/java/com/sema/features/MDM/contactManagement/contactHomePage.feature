@@ -30,7 +30,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     And the user clicks on Search button
     And the user verify on code filter functionality "Test2123"
 
-  Scenario:  Verify Code Filter -Valid Unique Code
+  Scenario:Verify Code Filter -Valid partial Code
     And The user clicks on Contact  category
     And The user enters "test" into Code field
     And the user clicks on Search button
@@ -180,16 +180,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     Given The user clicks "My Events"
     And   The User gets the current URL and stores it in "ItemType=Event&isFavorite=true"
 
-  Scenario: Contact Create List- cancel button
-    And  The user clicks plus icon
-    Then The user verifies New List pop up is open
-    When The user enters "otomasyon" List Name
-    And  The user enters "_5458429214" Can view
-    And  The user enters "1757483988_5392786463" Can edit
-    And The user clicks cancel button-New List
-    Then The user verifies "otomasyon" is not visible
-
-  Scenario:Contact Create List- create button
+  Scenario: Create List- create button
     And  The user clicks plus icon
     Then The user verifies New List pop up is open
     When The user enters "otomasyon" List Name
@@ -198,21 +189,22 @@ Feature: Contact Management Test Cases- Contact Home Page
     And The user clicks create button-New List
     Then The user verifies "otomasyon" is visible
 
-  Scenario:Contact Create List- create button-exist user
+  Scenario: Create List- create button-exist user
     And  The user clicks plus icon
     Then The user verifies New List pop up is open
-    When The user enters "otomasyon" List Name
+    When The user enters "Sematestyeni" List Name
     And  The user enters "_5458429214" Can view
     And  The user enters "1757483988_5392786463" Can edit
     And  The user clicks create button-New List
     Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
 
-  Scenario:Contact Create List- delete list-cancel button
-    And The user selects deleted element
-    And The user clicks cancel button in delete popup
+  Scenario: Create List- delete list-cancel button
+    And The user selects deleted element-asset
+    And The user clicks cancel button in delete popup-asset
     Then The user verifies "otomasyon" is visible
 
-  Scenario:Contact Create List- delete list-cancel button
-    And The user selects deleted element
+  Scenario: Create List- delete list
+    And The user selects deleted element-asset
+    And The user clicks cancel button in delete popup-asset
     And The user clicks delete button in delete popup
     Then The user verifies "otomasyon" is not visible

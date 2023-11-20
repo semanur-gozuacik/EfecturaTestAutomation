@@ -76,6 +76,10 @@ public class Asset extends BasePage {
     private WebElement deletedListItem;
     @FindBy(xpath = "//li[normalize-space()='campaign-list']//i[@class='fa fa-trash edit-icon']")
     private WebElement deleteListButton;
+    @FindBy(xpath = "//li[normalize-space()='otomasyon']")
+    private WebElement deletedListItemAssetOtomasyonVerify;
+    @FindBy(xpath = "//li[normalize-space()='otomasyon']//i[@class='fa fa-trash edit-icon']")
+    private WebElement deleteListButtonAssetOtomasyon;
 
 
     public Asset() {
@@ -237,6 +241,14 @@ public class Asset extends BasePage {
     public void clickDeleteButtonPopUp() {
         BrowserUtils.waitForVisibility(deleteListDeletePopUp, 20);
         deleteListDeletePopUp.click();
+    }
+    public void clickDeleteButtonOtomasyon() {
+        BrowserUtils.hoverOver(deletedListItemAssetOtomasyonVerify);
+        BrowserUtils.waitForVisibility(deletedListItemAssetOtomasyonVerify, 30);
+    }
+    public void clickCancelButtonPopUpOtomasyon() {
+        BrowserUtils.waitForVisibility(deleteListButtonAssetOtomasyon, 20);
+        deleteListButtonAssetOtomasyon.click();
     }
 
 }

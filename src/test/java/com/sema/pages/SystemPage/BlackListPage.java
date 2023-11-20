@@ -97,6 +97,14 @@ public class BlackListPage extends BasePage {
           Assert.assertTrue(phoneNumbers.size()<1);
         }
     }
+    public void verifyPhoneNumberCancel(String phoneNumber) {
+        boolean isDisplayed = false;
+        if (phoneNumbers.size() == 1 || phoneNumbers.size() == 2) {
+            isDisplayed=true;
+            BrowserUtils.waitForVisibility(phoneNumberField, 30);
+            }
+        Assert.assertTrue(isDisplayed);
+        }
     public void verifyResetButton(){
         BrowserUtils.wait(1);
         Assert.assertTrue(phoneNumbers.size()>1);

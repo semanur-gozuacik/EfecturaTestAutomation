@@ -309,4 +309,16 @@ pages.contactHomePage().verifypreviousPageButtonUnClickability();
     public void the_user_clicks_on_export_button_ediitem() {
         pages.contactHomePage().exportButtonEditItem();
     }
+
+    @Then("The user selects deleted element-asset")
+    public void the_user_selects_deleted_element_asset() {
+       pages.asset().clickDeleteButtonOtomasyon();
+    }
+
+    @Then("The user clicks cancel button in delete popup-asset")
+    public void the_user_clicks_cancel_button_in_delete_popup_asset() {
+      pages.asset().clickCancelButtonPopUpOtomasyon();
+    }
+
+
 }

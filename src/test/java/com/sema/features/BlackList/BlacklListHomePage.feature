@@ -80,7 +80,7 @@ Feature: BlackList Test Cases- Black List Home Page
     When The user enters "fullNumber" into the passive card number field
     And  The user clicks on active button
     And  The user clicks on cancel button in active popup
-    Then The user verify the number "fullNumber" is visible
+    Then The user verify the number "fullNumber" is visible-cancel
 
   Scenario: Delete Button Functionality Control - Delete Button- CardNumber
     When The user enters "fullNumber" into the passive card number field

@@ -91,15 +91,18 @@ public class AssetEditPage extends BasePage {
     }
 
     public void verifyLeftPreviousePageIsNotClicible() {
+        BrowserUtils.wait(5);
         String classAttribute = leftPreviousPage.getAttribute("class");
         Assert.assertTrue(classAttribute.contains("disabled"));
     }
 
     public void verifyPreviousePageIsNotClicible() {
+        BrowserUtils.wait(5);
         String classAttribute = previousPage.getAttribute("class");
         Assert.assertTrue(classAttribute.contains("disabled"));
     }
     public void verifyPreviousePageUserIsNotClicible() {
+        BrowserUtils.wait(5);
         String classAttribute = previousPageUser.getAttribute("class");
         Assert.assertTrue(classAttribute.contains("disabled"));
     }
@@ -116,6 +119,7 @@ public class AssetEditPage extends BasePage {
     }
 
     public void verifyNextPageIsNotClickable() {
+        BrowserUtils.wait(5);
         String classAttribute = nextPage.getAttribute("class");
         Assert.assertTrue(classAttribute.contains("disabled"));
     }
@@ -126,12 +130,13 @@ public class AssetEditPage extends BasePage {
 
 
     public void verifyNextPageUserIsClickable() {
+        BrowserUtils.wait(5);
         String classAttribute = nextPageUser.getAttribute("class");
         Assert.assertTrue(!classAttribute.contains("disabled"));
     }
 
     public void clickPreviousPageButton() {
-        BrowserUtils.waitForVisibility(previousPage,20);
+        BrowserUtils.wait(5);
         previousPage.click();
     }
     public void clickPreviousPageUserButton() {
@@ -160,21 +165,21 @@ public class AssetEditPage extends BasePage {
     }
 
     public void clickLastPageUserButton() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
         lastPageUser.click();
     }
 
     public void verifyLastPageUserIsClickable() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
         Assert.assertTrue(!lastPageVerificationTextUser.getText().equalsIgnoreCase("1"));
     }
 
     public void verifyLastPageIsUnClickable() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
         Assert.assertTrue(!lastPageVerificationText.getText().equalsIgnoreCase("1"));  }
 
     public void verifyNextPageIsClickable() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
         String classAttribute = nextPage.getAttribute("class");
         Assert.assertTrue(!classAttribute.contains("disabled"));
     }

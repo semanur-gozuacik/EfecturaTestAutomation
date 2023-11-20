@@ -103,6 +103,10 @@ public class BlackListHomePageStepDefs extends BaseStep {
     public void the_user_verify_the_number_is_visible(String phoneNumber) {
         pages.blackListPage().verifyPhoneNumber(phoneNumber);
     }
+    @Then("The user verify the number {string} is visible-cancel")
+    public void the_user_verify_the_number_is_visible_cancel(String phoneNumber) {
+        pages.blackListPage().verifyPhoneNumberCancel(phoneNumber);
+    }
     @When("The user clicks on delete button in popup")
     public void the_user_clicks_on_delete_button_in_popup() {
      pages.blackListPage().clickDeleteButtonPopup();

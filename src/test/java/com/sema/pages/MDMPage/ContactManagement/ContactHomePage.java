@@ -238,7 +238,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyNoContentTextInvalidUniqueCode(String text) {
-        BrowserUtils.waitForVisibility(noContentsText, 20);
+        BrowserUtils.wait(4);
         assertTrue(noContentsText.getText().equalsIgnoreCase(text));
     }
 
@@ -358,12 +358,12 @@ public class ContactHomePage extends BasePage {
 
     public void clickEditButton() {
         BrowserUtils.hoverOver(editButton);
-        BrowserUtils.wait(6);
+        BrowserUtils.wait(8);
         editButton.click();
     }
 
     public void verifyEditPage() {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(5);
         assertTrue(verifyContactEditButton.isDisplayed());
 
     }
@@ -467,6 +467,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickLastPageButton() {
+        BrowserUtils.wait(2);
         lastPageButton.click();
     }
 
