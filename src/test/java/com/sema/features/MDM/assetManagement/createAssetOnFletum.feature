@@ -1,7 +1,6 @@
 @regression
 Feature: Asset Management Test Case
 Background:
-
   When   The User opens the browser with the given url
   And    The User inputs a valid username "validUsername"
   And    The User inputs a valid password "validPassword"
