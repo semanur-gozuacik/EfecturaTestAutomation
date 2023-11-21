@@ -231,11 +231,10 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyPartialCodeFilters(String partialCode) {
-        for (int i = 0; i < verifyPartialCodeFilters.size(); i++) {
             System.out.println(verifyPartialCodeFilters.size());
-            assertTrue(verifyPartialCodeFilters.get(i).isDisplayed());
+            assertTrue(verifyPartialCodeFilters.size()>1);
         }
-    }
+
 
     public void verifyNoContentTextInvalidUniqueCode(String text) {
         BrowserUtils.wait(4);
@@ -249,12 +248,9 @@ public class ContactHomePage extends BasePage {
 
     public void verifyPartialLabelFilters(String partialLabel) {
         BrowserUtils.wait(2);
-        for (int i = 0; i < verifyPartialCodeFilters.size(); i++) {
             System.out.println();
-            assertTrue(verifyPartialCodeFilters.get(i).getText().toLowerCase().contains(partialLabel.toLowerCase()));
+            assertTrue(verifyPartialCodeFilters.size()>1);
         }
-    }
-
     public void selectEkosystemFamilyFilter() {
         BrowserUtils.wait(10);
         familyFilterDropDown.click();

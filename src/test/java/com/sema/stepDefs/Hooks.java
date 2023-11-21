@@ -38,5 +38,12 @@ public class Hooks {
             logger.info("Test scenario :: {} :: Passed", scenario.getName());
         }
         Driver.closeDriver();
+
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }

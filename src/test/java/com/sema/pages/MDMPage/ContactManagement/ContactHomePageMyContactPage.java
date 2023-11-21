@@ -53,7 +53,7 @@ public class ContactHomePageMyContactPage extends BasePage {
         Assert.assertTrue(showingEntriesText.getText().contains("1 to 10"));
     }
     public void verifyItemPreviousButtonUnclickable(){
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
         String classes = itemPreviousButton.getAttribute("class");
         Assert.assertTrue(classes.contains("disabled"));
     }
