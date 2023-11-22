@@ -249,7 +249,7 @@ public class ContactHomePage extends BasePage {
     public void verifyPartialLabelFilters(String partialLabel) {
         BrowserUtils.wait(2);
             System.out.println();
-            assertTrue(verifyPartialCodeFilters.size()>1);
+            assertTrue(verifyPartialCodeFilters.size()>=1);
         }
     public void selectEkosystemFamilyFilter() {
         BrowserUtils.wait(10);

@@ -190,3 +190,33 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "History" tab
+
+  Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button-Asset
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And The user clicks on Edit Button
+    And the user selects "<ItemStatus>"
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks cancel button
+    And the user verifies item status not change
+
+    Examples:
+      |ItemStatus |
+      |Passive    |
+     # |Active     |
+
+  Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And The user clicks on Edit Button
+    And the user selects "<ItemStatus>"
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+    Examples:
+      |ItemStatus |
+      |Passive    |
+      |Active     |

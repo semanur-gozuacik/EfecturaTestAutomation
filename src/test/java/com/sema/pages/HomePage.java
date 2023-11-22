@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends BasePage {
     @FindBy(xpath = "//img[@id='navLogo']")
     private WebElement basariliLoginDogrulama;
-    @FindBy(id = "MDM")
+    @FindBy(id = "MDM_EN")
     private WebElement MDM;
     @FindBy(id = "Contract ManagementH")
     private WebElement contractManagement;
@@ -46,16 +46,20 @@ public class HomePage extends BasePage {
     private WebElement systemElement;
     @FindBy(xpath = "//a[@id='blacklistid']")
     private WebElement blackListElement;
-    @FindBy(xpath="//a[@id='familiesid']")
+    @FindBy(xpath = "//a[@id='familiesid']")
     private WebElement famiiliesElement;
-    @FindBy(xpath="//a[@id='settingnav']")
+    @FindBy(xpath = "//a[@id='settingnav']")
     private WebElement settingsElement;
-    @FindBy(id="Persons")
+    @FindBy(id = "Persons")
     private WebElement personsElement;
-    @FindBy(id="usermanagementid")
+    @FindBy(id = "usermanagementid")
     private WebElement usersManagementElement;
-    @FindBy(id="usersid")
+    @FindBy(id = "usersid")
     private WebElement usersElement;
+    @FindBy(id = "Connector")
+    private WebElement connector;
+    @FindBy(id = "Connector ManagementH")
+    private WebElement connectorManagement;
 
 
     public HomePage() {
@@ -69,6 +73,7 @@ public class HomePage extends BasePage {
     public void mouseoverOnTheMdmElement() {
         BrowserUtils.hoverOver(MDM);
     }
+
     public void mouseoverOnTheKisilerElement() {
         BrowserUtils.hoverOver(personsElement);
     }
@@ -138,7 +143,7 @@ public class HomePage extends BasePage {
     }
 
     public void clicksOnTheKPIElement() {
-        BrowserUtils.waitForVisibility(KPI,20);
+        BrowserUtils.waitForVisibility(KPI, 20);
         KPI.click();
     }
 
@@ -146,33 +151,38 @@ public class HomePage extends BasePage {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("var event = new MouseEvent('mouseover', {'view': window, 'bubbles': true, 'cancelable': true}); arguments[0].dispatchEvent(event);", KPIManagement);
     }
+
     public void mouseoverOnTheKPIElement() {
         BrowserUtils.waitForVisibility(KPI, 10);
         BrowserUtils.hoverOver(KPI);
     }
 
     public void mouseoverOnTheSystemElementSymbol() {
-        BrowserUtils.waitForVisibility(settingsElementSymbol,20);
+        BrowserUtils.waitForVisibility(settingsElementSymbol, 20);
         BrowserUtils.hoverOver(settingsElementSymbol);
     }
+
     public void verifySystemElementSymbol(int timeout) {
         BrowserUtils.waitForVisibility(settingsElementSymbol, timeout);
         Assert.assertTrue(settingsElementSymbol.isDisplayed());
     }
+
     public void mouseoverOnTheSystemElement() {
-        BrowserUtils.waitForVisibility(systemElement,20);
+        BrowserUtils.waitForVisibility(systemElement, 20);
         BrowserUtils.hoverOver(systemElement);
     }
 
     public void mouseoverOnTheBlackListElement() {
-        BrowserUtils.waitForVisibility(blackListElement,15);
+        BrowserUtils.waitForVisibility(blackListElement, 15);
         BrowserUtils.hoverOver(blackListElement);
     }
-    public void clickBlackListElement(){
-        BrowserUtils.waitForVisibility(blackListElement,20);
+
+    public void clickBlackListElement() {
+        BrowserUtils.waitForVisibility(blackListElement, 20);
         blackListElement.click();
 
     }
+
     public void mouseoverOnTheEventManagementElement() {
         BrowserUtils.waitForVisibility(eventManagement, 10);
         BrowserUtils.hoverOver(eventManagement);
@@ -187,6 +197,7 @@ public class HomePage extends BasePage {
         BrowserUtils.waitForVisibility(event, 20);
         event.click();
     }
+
     public void mouseoverOnTheCampaignManagementElement() {
         BrowserUtils.waitForVisibility(campaignManagement, 10);
         BrowserUtils.hoverOver(campaignManagement);
@@ -200,29 +211,52 @@ public class HomePage extends BasePage {
     public void clicksOnTheCampaignElement() {
         campaign.click();
     }
+
     public void mouseoverOnTheFamiliesElement() {
         BrowserUtils.waitForVisibility(famiiliesElement, 20);
         BrowserUtils.hoverOver(famiiliesElement);
     }
+
     public void clicksOnTheFamiliesElement() {
         famiiliesElement.click();
     }
+
     public void mouseoverOnTheSettingsElement() {
         BrowserUtils.waitForVisibility(settingsElement, 20);
         BrowserUtils.hoverOver(settingsElement);
     }
+
     public void verifySettingsElement(int timeout) {
         BrowserUtils.waitForVisibility(settingsElement, timeout);
         Assert.assertTrue(settingsElement.isDisplayed());
     }
-    public void clicksOnTheUsersElement() {usersElement.click();
+
+    public void clicksOnTheUsersElement() {
+        usersElement.click();
     }
+
     public void mouseoverOnTheUsersElement() {
         BrowserUtils.waitForVisibility(usersElement, 20);
         BrowserUtils.hoverOver(usersElement);
     }
+
     public void mouseoverOnTheUsersManagementElement() {
         BrowserUtils.waitForVisibility(usersManagementElement, 20);
         BrowserUtils.hoverOver(usersManagementElement);
     }
+
+    public void mouseoverOnTheConnectorManagementElement() {
+        BrowserUtils.waitForVisibility(connectorManagement, 10);
+        BrowserUtils.hoverOver(connectorManagement);
+    }
+
+    public void mouseoverOnTheConnectorElement() {
+        BrowserUtils.waitForVisibility(connector, 10);
+        BrowserUtils.hoverOver(connector);
+    }
+
+    public void clicksOnTheConnectorElement() {
+        connector.click();
+    }
 }
+

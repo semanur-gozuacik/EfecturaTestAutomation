@@ -4,6 +4,7 @@ import com.sema.pages.LoginPage;
 import com.sema.pages.MDMPage.AssetManagement.Asset;
 import com.sema.pages.MDMPage.AssetManagement.AssetEditPage;
 import com.sema.pages.MDMPage.CampaignManagement.CampaignHomePage;
+import com.sema.pages.MDMPage.ConnectorManagement4.ConnectorHomePage;
 import com.sema.pages.MDMPage.ContactManagement.ContactEditPage;
 import com.sema.pages.MDMPage.ContactManagement.ContactHomePage;
 import com.sema.pages.MDMPage.ContactManagement.ContactHomePageMyContactPage;
@@ -34,6 +35,7 @@ public class Pages {
     private Families families;
     private Attributes attributes;
     private Users users;
+    private ConnectorHomePage connectorHomePage;
 
     public Pages() {
             this.homePage =new HomePage();
@@ -52,6 +54,7 @@ public class Pages {
             this.families=new Families();
             this.attributes=new Attributes();
             this.users=new Users();
+            this.connectorHomePage= new ConnectorHomePage();
 
     }
     // Getter metotları
@@ -67,7 +70,6 @@ public class Pages {
     public ContactHomePage contactHomePage(){ return contactHomePage;}
     public ContactHomePageMyContactPage contactHomePageMyContactPage(){return contactHomePageMyContactPage;}
     public ContactEditPage contactEditPage(){return contactEditPage;}
-
     public AssetEditPage assetEditPage(){return assetEditPage;}
     public BlackListPage blackListPage(){return blackListPage;}
     public EventHomePage eventHomePage(){return eventHomePage;}
@@ -76,6 +78,8 @@ public class Pages {
     public Families families(){return families;}
     public Attributes attributes(){return attributes;}
     public  Users users(){return users;}
+    public ConnectorHomePage connectorHomePage(){return connectorHomePage;}
 }
+
 
 
