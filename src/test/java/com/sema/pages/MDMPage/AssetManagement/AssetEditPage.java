@@ -196,7 +196,7 @@ public class AssetEditPage extends BasePage {
     }
 
     public void clickUserPermission() {
-        BrowserUtils.wait(6);
+        BrowserUtils.wait(7);
         userPermissions.click();
     }
     public void verifyLeftPreviousePageUserIsNotClicible() {
