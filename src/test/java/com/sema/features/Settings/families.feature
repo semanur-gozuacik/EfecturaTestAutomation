@@ -29,7 +29,7 @@ Feature: Families Management Test Cases
       |25 |
       |50 |
       |100|
-
+@semaaan
   Scenario:Families Page Verify First Page Button Unclickable Condition
     And  The user verifies first page button is not clickable-families
 
