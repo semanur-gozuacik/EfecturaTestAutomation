@@ -12,6 +12,5 @@ public class BasePage {
     public BasePage() {
         PageFactory.initElements(driver, this);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
     }
 }

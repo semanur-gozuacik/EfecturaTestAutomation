@@ -55,7 +55,6 @@ public class Pages {
             this.attributes=new Attributes();
             this.users=new Users();
             this.connectorHomePage= new ConnectorHomePage();
-
     }
     // Getter metotları
     public HomePage homePage() {

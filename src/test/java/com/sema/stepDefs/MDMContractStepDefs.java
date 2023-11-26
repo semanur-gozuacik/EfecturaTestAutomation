@@ -8,6 +8,9 @@ import io.cucumber.java.en.When;
 import java.util.Random;
 
 public class MDMContractStepDefs extends BaseStep {
+    public MDMContractStepDefs() {
+    }
+
     @When("The User opens the browser with the given url")
     public void the_user_opens_the_browser_with_the_given_url() {
     }

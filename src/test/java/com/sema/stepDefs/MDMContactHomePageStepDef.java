@@ -66,7 +66,6 @@ public class MDMContactHomePageStepDef extends BaseStep {
     public void the_user_verifies_that_the_codes_shown_in_the_new_node_label_filter_are_contact_categories() {
         pages.contactHomePage().VerifyNewNodeCategory();
     }
-
     @Then("The user clicks on Unassigned Records Category category")
     public void the_user_clicks_on_unassigned_records_category_category() {
         pages.contactHomePage().clickUnassignedRecords();
@@ -89,9 +88,6 @@ public class MDMContactHomePageStepDef extends BaseStep {
     public void the_user_inputs_the_from_cont_into_the_input_code_field(String code) {
         pages.contactHomePage().setUniqueCodeElement(code);
     }
-
-
-
     @Then("the user clicks on Search button")
     public void the_user_clicks_on_search_button() {
         BrowserUtils.wait(5);
@@ -319,6 +315,4 @@ pages.contactHomePage().verifypreviousPageButtonUnClickability();
     public void the_user_clicks_cancel_button_in_delete_popup_asset() {
       pages.asset().clickCancelButtonPopUpOtomasyon();
     }
-
-
 }

@@ -1,4 +1,4 @@
-@semaa
+
 Feature: Event Management Test Cases- Event Home Page
   Background:
     When   The User opens the browser with the given url
@@ -33,8 +33,41 @@ Feature: Event Management Test Cases- Event Home Page
     And The user enters "Event" into Label field
     And the user clicks on Search button
     And the user verify on label filter functionality with partial unique code "Event"
+  @regression
+  Scenario:Event Verify export button
+    When  The user clicks on Export button
+    Then  The user verify that the export was "Success"
+  @regression
+  Scenario:Event Home Page Verify First Page Button Unclickable Condition
+    And  The user verifies first page button is not clickable
+  @regression
+  Scenario:Event Home Page Verify Previous Page Button Unclickable Condition
+    And  The user verifies previous page button is not clickable
+  @regression
+  Scenario:Event Home Page Verify Item next Button Unclickable Condition
+    When The user clicks last page button
+    And  The user verifies next button is not clickable
+  @regression
+  Scenario:Event Home Page Verify Last Page Button Unclickable Condition
+    When The user clicks last page button
+   # And  The user verifies last page button is not clickable
+  @regression
+  Scenario:Event Home Page Verify First Page Button Clickable Condition
+    When The user clicks last page button
+    And  The user verifies first page button is clickable
+  @regression
+  Scenario:Event Home Page Verify Previous Page Button Clickable Condition
+    When The user clicks last page button
+    And  The user verifies previous page button is clickable
+  @regression
+  Scenario:Event Home Page Verify Item next Button Clickable Condition
+    And  The user verifies next button is clickable
+  @regression
+  Scenario:Event Home Page Verify Last Page Button Clickable Condition
+    And  The user verifies last page button is clickable
 
-  Scenario: Verify Label Filter - Invalid  Label
+  @regression
+  Scenario:Event Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into Label field
     And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"

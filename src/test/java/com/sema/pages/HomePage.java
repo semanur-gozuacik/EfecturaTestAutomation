@@ -30,6 +30,10 @@ public class HomePage extends BasePage {
     private WebElement gift;
     @FindBy(id = "Contact")
     private WebElement contact;
+    @FindBy(id = "User")
+    private WebElement user;
+    @FindBy(id = "User ManagementH")
+    private WebElement userManagement;
     @FindBy(id = "Contact ManagementH")
     private WebElement contactManagement;
     @FindBy(id = "Campaign")
@@ -154,8 +158,22 @@ public class HomePage extends BasePage {
 
     public void mouseoverOnTheKPIElement() {
         BrowserUtils.waitForVisibility(KPI, 10);
-        BrowserUtils.hoverOver(KPI);
-    }
+        BrowserUtils.hoverOver(KPI);  }
+        public void mouseoverOnTheUserManagementElement() {
+            BrowserUtils.waitForVisibility(userManagement, 10);
+            BrowserUtils.hoverOver(userManagement);
+        }
+
+        public void mouseoverOnTheUserElement() {
+            BrowserUtils.waitForVisibility(user, 10);
+            BrowserUtils.hoverOver(user);
+        }
+
+
+        public void clicksOnTheUserElement() {
+            user.click();
+        }
+
 
     public void mouseoverOnTheSystemElementSymbol() {
         BrowserUtils.waitForVisibility(settingsElementSymbol, 20);
