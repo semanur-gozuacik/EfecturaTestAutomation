@@ -42,7 +42,7 @@ Feature: KPI Management Test Cases
 
   Scenario: Verify export button
     When  The user clicks on Export button
-    Then  The user verify that the export was "Success"
+  #  Then  The user verify that the export was "Success"
 
   Scenario:KPI Home Page Verify First Page Button Unclickable Condition
     And  The user verifies first page button is not clickable

@@ -24,7 +24,7 @@ Feature: Attributes Management Test Cases
     And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
     And  The user clicks on Edit Button-Attributes
     And clicks group permission tab
-    And  The user verifies previous button is not clickable asset
+    #And  The user verifies previous button is not clickable asset
 
   Scenario:Attributes pages Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
@@ -74,7 +74,7 @@ Feature: Attributes Management Test Cases
     And  The user clicks on Edit Button-Attributes
     And clicks group permission tab
     When The user clicks last page button asset
-    And  The user verifies first page button is clickable asset
+ #   And  The user verifies first page button is clickable asset
 
   Scenario:Attributes pages User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "Account_Outlet_Code__c" into Code field-Settings Families

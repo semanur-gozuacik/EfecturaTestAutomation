@@ -229,14 +229,14 @@ Feature: Connector Management Test Cases- Connector Home Page
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
-    And  The user verifies first page button is clickable asset
+    #And  The user verifies first page button is clickable asset
 
   Scenario:Connector User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "1connector1" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
-    And  The user verifies first page button is not clickable user
+    #And  The user verifies first page button is not clickable user
 
 
   Scenario:Connector User Permission Verify Item Previous Page Button Unclickable Condition

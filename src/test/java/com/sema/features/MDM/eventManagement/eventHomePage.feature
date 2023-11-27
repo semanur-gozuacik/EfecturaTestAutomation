@@ -71,7 +71,7 @@ Feature: Event Management Test Cases- Event Home Page
     And The user enters "sema12345" into Label field
     And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
-
+@semo
   Scenario: Search for Ekosystem Family
     And The user clicks on Ekosystem Filtre
     And the user clicks on Search button

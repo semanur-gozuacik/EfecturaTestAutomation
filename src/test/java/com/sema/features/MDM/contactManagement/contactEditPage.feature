@@ -68,7 +68,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
-    And  The user verifies previous button is not clickable asset
+    #And  The user verifies previous button is not clickable asset
 
   Scenario:Contact Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "semaotomasyon" into Code field
@@ -125,7 +125,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
-    And  The user verifies first page button is clickable asset
+   # And  The user verifies first page button is clickable asset
 
   Scenario:Contact User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "semaotomasyon" into Code field

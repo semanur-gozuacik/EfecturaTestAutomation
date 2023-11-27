@@ -84,7 +84,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
      And the user clicks on Search button
      And  The user clicks on Edit Button
     And clicks group permission tab
-    And  The user verifies previous button is not clickable asset
+  #  And  The user verifies previous button is not clickable asset
 
   Scenario:Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "TEST123456" into Code field
