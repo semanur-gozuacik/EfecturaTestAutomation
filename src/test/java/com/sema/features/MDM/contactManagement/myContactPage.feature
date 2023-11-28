@@ -97,11 +97,11 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario: Deleting an item and declining the popup message
     When The user clicks My Contact button
-    And The user enters "semaotomasyon" into Code field
+    And The user enters "SAMTEST" into Code field
     And the user clicks on Search button
     And The user clicks on Delete
     And The user declines the popup message
-    Then The user verify that "semaotomasyon" is visible
+    Then The user verify that "SAMTEST" is visible
 
   #Scenario: Deleting an item and accepting the popup message
    # When The user clicks My Contact button

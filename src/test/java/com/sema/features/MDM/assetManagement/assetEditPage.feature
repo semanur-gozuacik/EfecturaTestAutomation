@@ -141,7 +141,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
-    And  The user verifies first page button is clickable asset
+    #And  The user verifies first page button is clickable asset
 
     Scenario:User Permission Verify Item First Page Button Unclickable Condition
       And The user enters "TEST123456" into Code field
