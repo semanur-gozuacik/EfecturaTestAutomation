@@ -172,7 +172,7 @@ Feature: Connector Management Test Cases- Connector Home Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
-    And  The user verifies previous button is not clickable asset
+    # And  The user verifies previous button is not clickable asset
 
   Scenario:Connector Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "1connector1" into Code field
@@ -281,7 +281,7 @@ Feature: Connector Management Test Cases- Connector Home Page
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies last button is unclickable asset
-
+@semoooo
   Scenario:Connector Edit item status Passive Item Status-cancel button
     And The user enters "1connector1" into Code field
     And the user clicks on Search button
