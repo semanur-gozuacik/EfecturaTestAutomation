@@ -281,7 +281,7 @@ Feature: Connector Management Test Cases- Connector Home Page
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies last button is unclickable asset
-@semoooo
+
   Scenario:Connector Edit item status Passive Item Status-cancel button
     And The user enters "1connector1" into Code field
     And the user clicks on Search button

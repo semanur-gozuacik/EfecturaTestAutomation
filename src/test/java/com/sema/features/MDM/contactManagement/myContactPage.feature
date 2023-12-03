@@ -48,9 +48,9 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario: Verify Label Filter - Valid Label
     When The user clicks My Contact button
-    And The user enters "Test2123" into Label field
+    And The user enters "meltem_0101" into Label field
     And the user clicks on Search button
-    And the user verify on label filter functionality with partial unique code "Test2123"
+    And the user verify on label filter functionality with partial unique code "meltem_0101"
 
   Scenario: Verify Label Filter - Partial Unique Code
     When The user clicks My Contact button

@@ -16,6 +16,10 @@ public class EventHomePage extends BasePage {
     private WebElement familyFilterDropDown;
     @FindBy(xpath = "//td[.='WSET']")
     private List<WebElement> verifyWSETFamilyFilter;
+    @FindBy (xpath = "//a[normalize-space()='testttsema']")
+    private WebElement editListItem;
+    @FindBy (xpath = "//select[@id='filter-IsAssociated']")
+    private WebElement associatedStatus;
     public EventHomePage() {
     }
     public void selectIWSAFamilyFilter() {
@@ -32,4 +36,15 @@ public class EventHomePage extends BasePage {
     }public void onTheEventPage(){
         driver.navigate().to("https://sandbox.efectura.com/Enrich/Items?itemType=Event");
     }
+    public void clickListItem() {
+        BrowserUtils.waitForVisibility(editListItem, 20);
+        editListItem.click();
+    }
+    public void selectAssociatedFilter(String status){
+        BrowserUtils.wait(5);
+        associatedStatus.click();
+        BrowserUtils.selectOption(associatedStatus,status);
+
+    }
+
 }

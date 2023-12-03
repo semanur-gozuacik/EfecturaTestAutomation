@@ -28,4 +28,13 @@ public class MDMEventHomePageSteps extends BaseStep {
     public void the_user_is_on_the_event_item_home_page() {
 pages.eventHomePage().onTheEventPage();
     }
+    @Then("The user clicks new list item-event")
+    public void the_user_clicks_new_list_item() {
+        pages.eventHomePage().clickListItem();
+    }
+    @Given("The user clicks Associated status {string}")
+    public void the_user_clicks_associated_status(String status) {
+        pages.eventHomePage().selectAssociatedFilter(status);
+    }
+
 }

@@ -71,19 +71,131 @@ Feature: Event Management Test Cases- Event Home Page
     And The user enters "sema12345" into Label field
     And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
-@semo
-  Scenario: Search for Ekosystem Family
-    And The user clicks on Ekosystem Filtre
+  @regression
+  Scenario Outline: Event Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
+    Then  The user should see  "<entries>" entrie in everypage
+    Examples:
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
+      |250|
+  @regression
+  Scenario: Event page edit verify
+    And The user enters "Event-51314" into Code field
     And the user clicks on Search button
-    And the user verify on family filter Ekosystem functionality
-
-  Scenario: Search for IWSA Family
-    And The user clicks on IWSA Filtre
+    And The user clicks on Edit Button
+  @regression
+  Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button
+    And The user enters "Event-51314" into Code field
     And the user clicks on Search button
-    And the user verify on family filter IWSA functionality
+    And The user clicks on Edit Button
+    And the user selects "<ItemStatus>"
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks cancel button
+    And the user verifies item status not change
 
-  Scenario: Search for WSET Family
-    And The user clicks on WSET Filtre
+    Examples:
+      |ItemStatus |
+      |Active     |
+      # |Passive    |
+
+  @regression
+  Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
+    And The user enters "Event-51314" into Code field
     And the user clicks on Search button
-    And the user verify on family filter WSET functionality
+    And The user clicks on Edit Button
+    And the user selects "<ItemStatus>"
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
 
+    Examples:
+      |ItemStatus |
+      |Active     |
+      |Passive    |
+  @regression
+  Scenario: Edit item added list
+    And The user enters "Event-51314" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And  The user clicks list drop down button
+    And  The user clicks new list item-event
+    Then The user verifies item is added
+  @regression
+  Scenario: Edit item removed list
+    And  The user enters "Event-51314" into Code field
+    And  the user clicks on Search button
+    And  The user clicks on Edit Button
+    And  The user clicks removed button
+    Then The user verifies item is removed
+  @regression
+  Scenario:Event edit - EVENT_DIGITAL_ASSET Tab
+    And The user enters "Event-51314" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "EVENT_DIGITAL_ASSET" tab
+  @regression
+  Scenario:Event edit - EVENT_CONTACT Tab
+    And The user enters "Event-51314" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "EVENT_CONTACT" tab
+  @regression
+  Scenario:Event edit - Event-Gift Tab
+    And The user enters "Event-51314" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Event-Gift" tab
+  @regression
+  Scenario:Event edit - EVENT_LOCATION Tab
+    And The user enters "Event-51314" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "EVENT_LOCATION" tab
+  @regression
+  Scenario:Event edit - Event-Product Tab
+    And The user enters "Event-51314" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Event-Product" tab
+  @regression
+  Scenario:Event edit - ItemComment Tab
+    And The user enters "Event-51314" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "ItemComment" tab
+  @regression
+  Scenario:Event edit - history Tab
+    And The user enters "Event-51314" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "history" tab
+  @regression
+  Scenario:Event edit - Categories Tab
+    And The user enters "Event-51314" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Categories" tab
+  @sema
+  Scenario Outline:Event edit - Event-Product Tab-Associated
+    And The user enters "Event-51314" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Event-Product" tab
+    And The user clicks Associated status "<associated status>"
+Examples:
+    |associated status|
+    |Associated All   |
+    |Yes              |
+    |No               |
+  @regression
+  Scenario: Verify My Count Star Item Functionality- One Contact
+    And The user enters "event" into Code field
+    And the user clicks on Search button
+    And the user clicks on Star items
+    And the user verify My Count badge count is correct

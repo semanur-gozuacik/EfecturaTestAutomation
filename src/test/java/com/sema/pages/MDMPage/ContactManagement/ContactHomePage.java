@@ -184,7 +184,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyContactCategory() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
         for (int i = 0; i < verifyContactCategory.size(); i++) {
             assertTrue(verifyContactCategory.get(i).getText().equalsIgnoreCase("Contact"));
         }
@@ -196,7 +196,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void VerifyNewNodeCategory() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
         for (int i = 0; i < verifyNewNodeCategories.size(); i++) {
             assertTrue(verifyNewNodeCategories.get(i).getText().equalsIgnoreCase("New Node"));
         }
