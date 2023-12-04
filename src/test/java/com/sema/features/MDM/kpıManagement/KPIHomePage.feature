@@ -87,7 +87,7 @@ Feature: KPI Management Test Cases
     Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
 
   Scenario: KPI page edit verify
-    And The user enters "Event-51314" into Code field
+    And The user enters "YENİTEST1411" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
 
