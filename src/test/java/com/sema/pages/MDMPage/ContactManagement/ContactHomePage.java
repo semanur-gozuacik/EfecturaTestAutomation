@@ -323,7 +323,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void declineDeletePopUp() {
-        BrowserUtils.waitForVisibility(cancelDeletePopUp, 20);
+        BrowserUtils.wait(8);
         cancelDeletePopUp.click();
 
     }
