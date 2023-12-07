@@ -12,6 +12,7 @@ import com.sema.pages.MDMPage.ContractManagement.Contract;
 import com.sema.pages.MDMPage.EventManagement.EventHomePage;
 import com.sema.pages.MDMPage.GiftManagement.Gift;
 import com.sema.pages.MDMPage.KPIManagement.KPIHomePage;
+import com.sema.pages.MDMPage.UserManagement.UserHomePage;
 import com.sema.pages.SettingsPage.Attributes;
 import com.sema.pages.SettingsPage.Families;
 import com.sema.pages.SystemPage.BlackListPage;
@@ -36,6 +37,7 @@ public class Pages {
     private Attributes attributes;
     private Users users;
     private ConnectorHomePage connectorHomePage;
+    private UserHomePage userHomePage;
 
     public Pages() {
             this.homePage =new HomePage();
@@ -55,6 +57,7 @@ public class Pages {
             this.attributes=new Attributes();
             this.users=new Users();
             this.connectorHomePage= new ConnectorHomePage();
+             this.userHomePage= new UserHomePage();
     }
     // Getter metotları
     public HomePage homePage() {
@@ -78,7 +81,7 @@ public class Pages {
     public Attributes attributes(){return attributes;}
     public  Users users(){return users;}
     public ConnectorHomePage connectorHomePage(){return connectorHomePage;}
-}
+    public UserHomePage userHomePage(){return userHomePage;}}
 
 
 
