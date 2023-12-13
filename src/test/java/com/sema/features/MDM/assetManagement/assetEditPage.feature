@@ -199,7 +199,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies next button is unclickable user
-  @semoooo
+
   Scenario:User Permission Verify Item First Page Button Clickable Condition
     And The user enters "TEST123456" into Code field
     And the user clicks on Search button

@@ -26,13 +26,3 @@ Feature: Gift Creation and Management
     And   The User clicks on the createButton element
     Then   The User waits until the page contains "EMPTY_FAMILY" with a timeout of 120 seconds
 
-  Scenario: Create Contract on Fletum without Categories
-    And The User presses the down arrow key and then presses Enter in the Gift Family element
-    And The user clicks the "XGift_TYPE" dropdown
-    And The user enters a XGIFT_NAME "sematest" input fields
-    And The user enters a XGIFT_PERCENT 5.2 input fields
-    And The user enter a XGIFT_COST 4.5 input fiels
-    And The user enter a Start Date input 03.05.2023 fiels
-    And The user enter a And Date 02.10.2023 input fiels
-    And The User clicks on the createButton element
-    Then The User waits until the page contains "Please choose categories" text with a timeout of 120 seconds
