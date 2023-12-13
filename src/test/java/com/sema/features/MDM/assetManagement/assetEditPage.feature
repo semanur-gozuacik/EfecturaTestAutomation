@@ -30,7 +30,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
       |On Hold    |
       |Running    |
      # |Draft    |
-
+@semoooo
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "TEST123456" into Code field
     And the user clicks on Search button

@@ -127,3 +127,4 @@ Feature: Asset Management Test Cases- Asset Home Page
     And The user enters "test2123" into Code field
     And the user clicks on Reset button
     And the user verify Reset button functionality
+
