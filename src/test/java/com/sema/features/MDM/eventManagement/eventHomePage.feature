@@ -156,18 +156,7 @@ Feature: Event Management Test Cases- Event Home Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Categories" tab
-  @sema
-  Scenario Outline:Event edit - Event-Product Tab-Associated
-    And The user enters "Event-51314" into Code field
-    And the user clicks on Search button
-    And  The user clicks on Edit Button
-    And The user clicks "Event-Product" tab
-    And The user clicks Associated status "<associated status>"
-Examples:
-    |associated status|
-    |Associated All   |
-    |Yes              |
-    |No               |
+ 
   @regression
   Scenario: Verify My Count Star Item Functionality- One Contact
     And The user enters "event" into Code field

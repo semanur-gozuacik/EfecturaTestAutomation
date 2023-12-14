@@ -59,7 +59,7 @@ Background:
     And  the user clicks on Search button
     And  The user clicks delete button- "<Family>"
     And  The user clicks delete button in popup
-    Then The User waits until the page contains "Item Deleted Succesfully." with a timeout of 120 seconds-Asset
+     Then The User waits until the page contains "Item Deleted Succesfully." with a timeout of 120 seconds-Asset
 
   Scenario: Contract Home Verify export button
     And The user waits ten seconds
