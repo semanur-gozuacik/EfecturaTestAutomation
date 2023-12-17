@@ -163,3 +163,8 @@ Feature: Event Management Test Cases- Event Home Page
     And the user clicks on Search button
     And the user clicks on Star items
     And the user verify My Count badge count is correct
+  @regression
+  Scenario: Event Home Page Reset Button Control
+    And The user enters "test2123" into Code field
+    And the user clicks on Reset button
+    And the user verify Reset button functionality

@@ -508,7 +508,7 @@ public class ContactHomePage extends BasePage {
         Assert.assertFalse(false);
     }
     public void verifyPreviousPageButtonClickable() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(10);
         String classes = previousPageButton.getAttribute("class");
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");

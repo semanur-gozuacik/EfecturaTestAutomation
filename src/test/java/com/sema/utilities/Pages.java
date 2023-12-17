@@ -1,6 +1,7 @@
 package com.sema.utilities;
 import com.sema.pages.HomePage;
 import com.sema.pages.LoginPage;
+import com.sema.pages.MDMPage.AccountManagement.AccountHomePage;
 import com.sema.pages.MDMPage.AssetManagement.Asset;
 import com.sema.pages.MDMPage.AssetManagement.AssetEditPage;
 import com.sema.pages.MDMPage.CampaignManagement.CampaignHomePage;
@@ -38,6 +39,7 @@ public class Pages {
     private Users users;
     private ConnectorHomePage connectorHomePage;
     private UserHomePage userHomePage;
+    private AccountHomePage accountHomePage;
 
     public Pages() {
             this.homePage =new HomePage();
@@ -58,6 +60,7 @@ public class Pages {
             this.users=new Users();
             this.connectorHomePage= new ConnectorHomePage();
              this.userHomePage= new UserHomePage();
+             this.accountHomePage=new AccountHomePage();
     }
     // Getter metotları
     public HomePage homePage() {
@@ -81,7 +84,9 @@ public class Pages {
     public Attributes attributes(){return attributes;}
     public  Users users(){return users;}
     public ConnectorHomePage connectorHomePage(){return connectorHomePage;}
-    public UserHomePage userHomePage(){return userHomePage;}}
+    public UserHomePage userHomePage(){return userHomePage;}
+public AccountHomePage accountHomePage(){return accountHomePage;}
+}
 
 
 
