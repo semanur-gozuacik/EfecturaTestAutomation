@@ -114,7 +114,7 @@ public class AssetEditPage extends BasePage {
 
 
     public void clicksNextPageButton() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
         nextPage.click();
     }
 

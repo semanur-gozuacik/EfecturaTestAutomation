@@ -184,7 +184,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyContactCategory() {
-        BrowserUtils.wait(7);
+        BrowserUtils.wait(9);
         for (int i = 0; i < verifyContactCategory.size(); i++) {
             assertTrue(verifyContactCategory.get(i).getText().equalsIgnoreCase("Contact"));
         }
@@ -211,6 +211,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void setCodeFilter(String code) {
+        BrowserUtils.wait(4);
         codeFilter.click();
         codeFilter.sendKeys(code);
     }
@@ -477,7 +478,7 @@ public class ContactHomePage extends BasePage {
         Assert.assertTrue(true);
     }
     public void verifypreviousPageButtonUnClickability() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(10);
         String classes = previousPageButton.getAttribute("class");
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");

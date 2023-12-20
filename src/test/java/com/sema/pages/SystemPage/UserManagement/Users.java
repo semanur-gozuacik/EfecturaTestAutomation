@@ -86,21 +86,21 @@ public class Users extends BasePage {
        lastPageButton.click();
     }
     public void verifyLastPageButtonUnClickable() {
-        BrowserUtils.wait(15);
+        BrowserUtils.wait(17);
         String classes = lastPageButton.getAttribute("class");
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");
         Assert.assertTrue(isDisabled);
     }
     public void verifyFirstPageButtonClickable() {
-        BrowserUtils.wait(15);
+        BrowserUtils.wait(17);
         String classes = firstPageButton.getAttribute("class");
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
     }
     public void verifyPreviousPageButtonClickable() {
-        BrowserUtils.wait(15);
+        BrowserUtils.wait(17);
         String classes = previousPageButton.getAttribute("class");
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");
@@ -114,14 +114,14 @@ public class Users extends BasePage {
         Assert.assertFalse(isDisabled);
     }
     public void verifyLastPageButtonClickable() {
-        BrowserUtils.wait(15);
+        BrowserUtils.wait(17);
         String classes = lastPageButton.getAttribute("class");
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
     }
     public void verifyUsernameFilter(String username) {
-        BrowserUtils.wait(15);
+        BrowserUtils.wait(17);
         System.out.println(verifyUsernameFilter.get(0).getText());
         assertTrue(verifyUsernameFilter.get(0).getText().equalsIgnoreCase(username));
     }

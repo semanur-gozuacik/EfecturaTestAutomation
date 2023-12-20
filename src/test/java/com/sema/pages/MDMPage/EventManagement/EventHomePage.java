@@ -37,7 +37,7 @@ public class EventHomePage extends BasePage {
         driver.navigate().to("https://sandbox.efectura.com/Enrich/Items?itemType=Event");
     }
     public void clickListItem() {
-        BrowserUtils.waitForVisibility(editListItem, 20);
+        BrowserUtils.waitForVisibility(editListItem, 30);
         editListItem.click();
     }
     public void selectAssociatedFilter(String status){

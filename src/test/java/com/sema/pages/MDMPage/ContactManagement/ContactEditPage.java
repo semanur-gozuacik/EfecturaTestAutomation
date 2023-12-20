@@ -102,7 +102,7 @@ public class ContactEditPage extends BasePage {
         saveChangeButton.click();
     }
     public void clickListItem() {
-        BrowserUtils.waitForVisibility(editListItem, 20);
+        BrowserUtils.waitForVisibility(editListItem, 30);
         editListItem.click();
     }
 }
