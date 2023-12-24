@@ -211,6 +211,27 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "My Account" tab
+
+  Scenario:Account edit - My Account Tab Associated
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "My Account" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+  Scenario:Account edit - My Account Tab Associated Filter No
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "My Account" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
+
    # Then The user verifies My Account tab details is displayed
 
  # Scenario:Contact edit - My Account Tab export
@@ -226,6 +247,26 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Gift Contact" tab
+
+  Scenario:Account edit - Gift Contact Tab Associated
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Gift Contact" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+  Scenario:Contact edit - Gift Contact Tab Associated Filter No
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Gift Contact" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
 
   Scenario:Contact edit - Categories Tab
     And The user enters "semaotomasyon" into Code field
@@ -245,8 +286,80 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And  The user clicks on Edit Button
     And The user clicks "Vanue-Contact" tab
 
+  Scenario:Contact edit - Vanue-Contact Tab Associated
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Vanue-Contact" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+  Scenario:Contact edit - Vanue-Contact Tab Associated Filter No
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Vanue-Contact" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
+
   Scenario:Contact edit -Attributes Tab
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Attributes" tab
+
+  Scenario:Contact edit - CAMPAIGN_CONNT Tab
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "CAMPAIGN_CONNT" tab
+
+  Scenario:Contact edit - CAMPAIGN_CONNT Tab Associated
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "CAMPAIGN_CONNT" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+  Scenario:Contact edit -CAMPAIGN_CONNT Tab Associated Filter No
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "CAMPAIGN_CONNT" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
+
+  Scenario:Contact edit -Event-Contact Tab
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Event-Contact" tab
+
+  Scenario:Contact edit - Event-Contact Tab Associated
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Event-Contact" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+  Scenario:Contact edit -Event-Contact Tab Associated Filter No
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "vent-Contact" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter

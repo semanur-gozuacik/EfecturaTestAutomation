@@ -122,6 +122,18 @@ Feature: Account Management Test Cases- Event Home Page
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
 
+  Scenario:Account edit - Product-Account Tab Associated
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Product-Account" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
   Scenario:Account edit -My Contact Tab
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
@@ -151,3 +163,100 @@ Feature: Account Management Test Cases- Event Home Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "OrderDataView" tab
+
+  Scenario:Account edit -Training View Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Training View" tab
+
+  Scenario:Account edit - Guest Data View Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Guest Data" tab
+
+  Scenario:Account edit - VisitTransaction View Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "VisitTransaction" tab
+
+  Scenario:Account edit -InvoiceTransaction Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "InvoiceTransaction" tab
+
+  Scenario:Account edit -Nexio Data Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "NexioData" tab
+
+  Scenario:Account edit -Sales Order Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "SalesOrder" tab
+
+  Scenario:Account edit -Account Asset Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-Asset" tab
+
+
+  Scenario:Account edit -Account-MRP Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-MRP" tab
+
+  Scenario:Account edit -Event-Location Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Event-Location" tab
+
+  Scenario:Account edit -Account Financial Account Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "ACCOUNT_FINANCIALACCOUNT" tab
+
+
+  Scenario:Account edit -Categories Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Categories" tab
+
+  Scenario:Account edit -History Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "History" tab
+
+  Scenario:Account edit - My Account Tab Associated
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "My Contacts" tab
+    And The user Assocaited All filter
+    And The user clicks item
+   And the user clicks on unsaved change button
+   And The user enters "-------" in  comment area
+   And The user clicks save button
+   And the user verifies item status success message
+
+  Scenario:Account edit - My Contacts Tab Associated Filter No
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "My Contacts" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
+
+
+

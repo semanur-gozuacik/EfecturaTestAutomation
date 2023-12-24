@@ -98,7 +98,7 @@ public class ContactEditPage extends BasePage {
         Assert.assertTrue(changeSucessMessage.isDisplayed());
     }
     public void clickSaveChangeButton(){
-        BrowserUtils.waitForVisibility(saveChangeButton,20);
+        //BrowserUtils.waitForVisibility(saveChangeButton,20);
         saveChangeButton.click();
     }
     public void clickListItem() {
