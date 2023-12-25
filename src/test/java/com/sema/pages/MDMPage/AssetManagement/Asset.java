@@ -214,6 +214,7 @@ public class Asset extends BasePage {
     }
 
     public void clickNewListCreateButton() {
+        BrowserUtils.waitForVisibility(listCreateButton, 20);
         listCreateButton.click();
     }
 

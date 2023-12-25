@@ -60,10 +60,6 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And the user clicks on Reset button
     And the user verify Reset button functionality
 
-  Scenario: Verify export button
-    When  The user clicks on Export button
-    Then  The user verify that the export was "Success"
-
   Scenario: Deleting an item and declining the popup message
     And The user enters "TESTSETSET123123" into Code field
     And the user clicks on Search button

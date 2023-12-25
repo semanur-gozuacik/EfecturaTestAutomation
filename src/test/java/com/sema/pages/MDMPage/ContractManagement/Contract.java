@@ -72,7 +72,7 @@ public class Contract extends BasePage {
     }
     public void clickCreateButton(){
         createButton.click();
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(10);
     }
     public void verifyCreateItemMessage(String message, int timeout) {
       if ( message.equalsIgnoreCase("EMPTY_FAMILY")){

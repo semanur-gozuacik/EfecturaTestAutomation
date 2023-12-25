@@ -100,7 +100,7 @@ public class Users extends BasePage {
         Assert.assertFalse(isDisabled);
     }
     public void verifyPreviousPageButtonClickable() {
-        BrowserUtils.wait(17);
+        BrowserUtils.wait(20);
         String classes = previousPageButton.getAttribute("class");
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");

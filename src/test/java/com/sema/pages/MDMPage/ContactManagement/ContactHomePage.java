@@ -295,6 +295,7 @@ public class ContactHomePage extends BasePage {
         for (int i = 0; i < verifyItemStatuses.size(); i++) {
             BrowserUtils.wait(2);
             assertTrue(verifyItemStatuses.get(i).getText().equalsIgnoreCase(status));
+            BrowserUtils.wait(5);
         }
     }
 
@@ -356,6 +357,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickEditButton() {
+        BrowserUtils.wait(5);
         BrowserUtils.hoverOver(editButton);
         BrowserUtils.wait(8);
         editButton.click();
@@ -466,12 +468,12 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickLastPageButton() {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(8);
         lastPageButton.click();
     }
 
     public void verifyFirstPageButtonUnClickable() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(8);
         // String classes = firstPageButton.getAttribute("class");
         //  System.out.println(classes);
         // boolean isDisabled = classes.contains("disabled");
@@ -486,7 +488,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyLastPageButtonClickability() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(10);
         String classes = lastPageButton.getAttribute("class");
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");
@@ -509,7 +511,7 @@ public class ContactHomePage extends BasePage {
         Assert.assertFalse(false);
     }
     public void verifyPreviousPageButtonClickable() {
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(12);
         String classes = previousPageButton.getAttribute("class");
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");

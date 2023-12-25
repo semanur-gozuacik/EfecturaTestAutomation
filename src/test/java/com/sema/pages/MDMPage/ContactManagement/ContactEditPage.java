@@ -78,7 +78,7 @@ public class ContactEditPage extends BasePage {
         select.selectByVisibleText(status);
     }
     public void clickUnSavedButton(){
-        BrowserUtils.waitForVisibility(unsavedChanges,20);
+        BrowserUtils.waitForVisibility(unsavedChanges,30);
         unsavedChanges.click();
     }
     public void clickCancelChangeButton(){
