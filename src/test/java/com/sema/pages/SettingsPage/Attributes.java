@@ -11,7 +11,7 @@ public class Attributes extends BasePage {
     private WebElement attributesElement;
     @FindBy(xpath="//a[normalize-space()='Attributes Overview']")
     private WebElement attrbutesPageVerificationsElement;
-    @FindBy(xpath="//tbody/tr[1]/td[9]/a[1]")
+    @FindBy(xpath="//a[@title='Edit Attribute']")
     private WebElement editButton;
     @FindBy(name = "attributes_table_length")
     private WebElement entrieNumber;

@@ -205,18 +205,18 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user clicks "ItemComment" tab
     #Then The user verifies itemComment tab details is displayed
 
-
-  Scenario:Contact edit - My Account Tab
+  @semus
+  Scenario:Contact edit - ACCOUNT_CONTACT Tab
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "My Account" tab
-
-  Scenario:Account edit - My Account Tab Associated
+    And The user clicks "ACCOUNT_CONTACT" tab
+  @semus
+  Scenario:Contact edit -  ACCOUNT_CONTACT Tab Associated
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "My Account" tab
+    And The user clicks "ACCOUNT_CONTACT" tab
     And The user Assocaited All filter
     And The user clicks item
     And the user clicks on unsaved change button
@@ -224,11 +224,11 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user clicks save button
     And the user verifies item status success message
 
-  Scenario:Account edit - My Account Tab Associated Filter No
+  Scenario:Contact edit -  ACCOUNT_CONTACT Tab Associated Filter No
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "My Account" tab
+    And The user clicks "ACCOUNT_CONTACT" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 
@@ -252,7 +252,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "Gift Contact" tab
+    And The user clicks "Gift-Contact" tab
     And The user Assocaited All filter
     And The user clicks item
     And the user clicks on unsaved change button

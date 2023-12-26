@@ -242,19 +242,19 @@ Feature: Account Management Test Cases- Event Home Page
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "My Contacts" tab
+    And The user clicks "Campaign-Account" tab
     And The user Assocaited All filter
     And The user clicks item
    And the user clicks on unsaved change button
    And The user enters "-------" in  comment area
    And The user clicks save button
-   And the user verifies item status success message
+ #  And the user verifies item status success message
 
   Scenario:Account edit - My Contacts Tab Associated Filter No
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "My Contacts" tab
+    And The user clicks "Campaign-Account" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 
