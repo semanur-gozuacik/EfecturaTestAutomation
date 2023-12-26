@@ -60,6 +60,7 @@ Background:
       |Family|
       |Cooler|
 
+
 Scenario Outline: Delete Asset on Fletum with valid credentials - "<Family>"-cancel button
   And  The user enters "199955523515555" into Code field
   And  the user clicks on Search button
