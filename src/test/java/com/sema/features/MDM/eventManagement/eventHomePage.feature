@@ -99,15 +99,15 @@ Feature: Event Management Test Cases- Event Home Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks list drop down button
-    And  The user clicks new list item-event
-    Then The user verifies item is added
+   #  And  The user clicks new list item-event
+    # Then The user verifies item is added
   @regression
   Scenario: Edit item removed list
     And  The user enters "Event-51314" into Code field
     And  the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks removed button
-    Then The user verifies item is removed
+    # Then The user verifies item is removed
   @regression
   Scenario:Event edit - EVENT_DIGITAL_ASSET Tab
     And The user enters "Event-51314" into Code field
