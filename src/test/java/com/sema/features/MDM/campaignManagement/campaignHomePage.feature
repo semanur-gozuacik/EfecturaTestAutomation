@@ -48,11 +48,11 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And the user clicks on Search button
     And the incoming filter for "<ItemStatus>" should contain
     Examples:
-      |ItemStatus |
-      |Active     |
-      |Passive    |
-      |On Hold    |
-      |Draft   |
+       |ItemStatus |
+       |Active     |
+       |Passive    |
+       |On Hold    |
+       |Draft      |
 
   Scenario: Reset Button Control
     And The user enters "welcometestgeneric122" into Code field
