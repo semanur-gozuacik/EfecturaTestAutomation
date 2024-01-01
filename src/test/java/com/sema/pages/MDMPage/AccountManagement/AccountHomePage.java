@@ -24,12 +24,12 @@ public class AccountHomePage extends BasePage {
     }
 
     public void clickAssociatedFilter() {
-        BrowserUtils.waitForVisibility(associatedFilter, 20);
+        BrowserUtils.waitForVisibility(associatedFilter, 30);
         associatedFilter.click();
     }
 
     public void clickAssociatedAllFilter() {
-        BrowserUtils.waitForVisibility(associatedAllFilter, 20);
+        BrowserUtils.waitForVisibility(associatedAllFilter, 30);
         associatedAllFilter.click();
     }
 

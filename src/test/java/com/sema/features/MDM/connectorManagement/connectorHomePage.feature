@@ -283,7 +283,7 @@ Feature: Connector Management Test Cases- Connector Home Page
     And  The user verifies last button is unclickable asset
 
   Scenario:Connector Edit item status Passive Item Status-cancel button
-    And The user enters "1connector1" into Code field
+    And The user enters "test212129" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "Passive"

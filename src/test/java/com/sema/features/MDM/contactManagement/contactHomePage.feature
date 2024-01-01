@@ -208,3 +208,23 @@ Feature: Contact Management Test Cases- Contact Home Page
     And The user clicks cancel button in delete popup-asset
     And The user clicks delete button in delete popup
     Then The user verifies "otomasyon" is not visible
+
+  Scenario:Update On Tab DateTime Sorting Functionality
+    And The user clicks update on tab
+    And The user clicks update on tab
+    Then The user verifies that dates are sorted from "near to distant"
+
+  Scenario:Create On Tab DateTime Sorting Functionality
+    And The user clicks create on tab
+    And The user clicks create on tab
+    Then The user verifies that dates are sorted from "near to distant" create on
+
+  Scenario:ID Tab Sorting Functionality
+    And  The user clicks id tab
+    And  The user clicks id tab
+    Then The user verifies sort id numbers from "largest to smallest"
+
+  Scenario:Birthdate Sorting Functionality
+    And The user clicks birthdate on tab
+    And The user clicks birthdate on tab
+    Then The user verifies that birthdate are sorted from "near to distant"

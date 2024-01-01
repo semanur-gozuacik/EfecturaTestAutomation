@@ -6,6 +6,10 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -138,6 +142,22 @@ public class ContactHomePage extends BasePage {
     private WebElement verifyMyAccountTab;
     @FindBy(id = "//button[@data-toggle='dropdown'][normalize-space()='']")
     private WebElement exportButtonEdiitem;
+    @FindBy(xpath = "//th[normalize-space()='UpdatedOn']")
+    private WebElement updateOnTab;
+    @FindBy(xpath = "//th[normalize-space()='CreatedOnOverview']")
+    private WebElement createOnTab;
+    @FindBy(xpath = "//td[5]")
+    private List<WebElement> updateOnSorting;
+    @FindBy(xpath = "//td[6]")
+    private List<WebElement> createOnSorting;
+    @FindBy(xpath = "//th[normalize-space()='Id']")
+    private WebElement idTab;
+    @FindBy(xpath = "//td[7]")
+    private List<WebElement> idTabSorting;
+    @FindBy(xpath = "//th[normalize-space()='Birthdate']")
+    private WebElement birthdateTab;
+    @FindBy(xpath = "//td[3]")
+    private List<WebElement> birthdateTabSorting;
     public ContactHomePage() {
     }
 
@@ -558,4 +578,99 @@ public void exportButtonEditItem(){
         BrowserUtils.waitForVisibility(exportButton,20);
         exportButton.click();
 }
+    public void clickUpdateOn() {
+        BrowserUtils.waitForVisibility(updateOnTab, 25);
+        updateOnTab.click();
+        BrowserUtils.wait(5);
+    }
+
+    public void updateOnSorting(String sorting) {
+        for (int i = 0; i < updateOnSorting.size() - 1; i++) {
+            String dateString1 = updateOnSorting.get(i).getText();
+            String dateString2 = updateOnSorting.get(i + 1).getText();
+
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+
+            // String'i LocalDateTime nesnesine dönüştür
+            LocalDateTime dateTime1 = LocalDateTime.parse(dateString1, dateTimeFormatter);
+
+            // LocalDateTime nesnesini sayısal bir formata dönüştür
+            long numericValue1 = dateTime1.toEpochSecond(java.time.ZoneOffset.UTC);
+            LocalDateTime dateTime2 = LocalDateTime.parse(dateString2, dateTimeFormatter);
+            long numericValue2 = dateTime2.toEpochSecond(java.time.ZoneOffset.UTC);
+            if (sorting.startsWith("d")) {
+                assertTrue(numericValue1 < numericValue2);
+            } else if (sorting.startsWith("n")) {
+                assertTrue(numericValue2 < numericValue1);
+            }
+        }
+    }
+
+    public void clickCreateOn() {
+        BrowserUtils.waitForVisibility(createOnTab, 25);
+        createOnTab.click();
+        BrowserUtils.wait(5);
+
+    }
+
+    public void createOnSorting(String sorting) {
+        for (int i = 0; i < createOnSorting.size() - 1; i++) {
+            String dateString1 = createOnSorting.get(i).getText();
+            String dateString2 = createOnSorting.get(i + 1).getText();
+
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+
+            // String'i LocalDateTime nesnesine dönüştür
+            LocalDateTime dateTime1 = LocalDateTime.parse(dateString1, dateTimeFormatter);
+
+            // LocalDateTime nesnesini sayısal bir formata dönüştür
+            long numericValue1 = dateTime1.toEpochSecond(java.time.ZoneOffset.UTC);
+            LocalDateTime dateTime2 = LocalDateTime.parse(dateString2, dateTimeFormatter);
+            long numericValue2 = dateTime2.toEpochSecond(java.time.ZoneOffset.UTC);
+            if (sorting.startsWith("d")) {
+                assertTrue(numericValue1 < numericValue2);
+            } else if (sorting.startsWith("n")) {
+                assertTrue(numericValue2 < numericValue1);
+            }
+        }
+    }
+
+    public void clickIdTabSorting() {
+        BrowserUtils.waitForVisibility(idTab, 25);
+        idTab.click();
+        BrowserUtils.wait(5);
+    }
+
+    public void idTabSorting(String sorting) {
+        for (int i = 0; i < idTabSorting.size() - 1; i++) {
+            if (Integer.parseInt(idTabSorting.get(i).getText()) < Integer.parseInt(idTabSorting.get(i + 1).getText())) {
+                Assert.assertTrue(false);
+            }
+        }
+    }
+
+    public void clickBirthdateTabSorting() {
+        BrowserUtils.waitForVisibility(birthdateTab, 25);
+        birthdateTab.click();
+        BrowserUtils.wait(5);
+    }
+
+    public void birthdateSorting(String sorting) {
+        for (int i = 0; i < birthdateTabSorting.size() - 1; i++) {
+            String dateString1 = birthdateTabSorting.get(i).getText();
+            String dateString2 = birthdateTabSorting.get(i + 1).getText();
+
+            SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+            try {
+                Date dateTime1 = sdf.parse(dateString1);
+
+                Date dateTime2 = sdf.parse(dateString2);
+                if (dateTime1.compareTo(dateTime2)< 0) {
+                    Assert.assertTrue(false);
+                }
+            } catch (Exception e) {
+            }
+        }
+
+    }
 }

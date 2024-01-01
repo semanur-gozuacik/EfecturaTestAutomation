@@ -7,9 +7,7 @@ Feature: Attributes Management Test Cases
     And    The User clicks the Submit button
     #isimlendirme değişecek
     Then  The User waits until the System element is visible with a timeout of 120 seconds
-    And   The User performs a mouseover on the System element symbol
-    And   The User performs a mouseover on the Settings element
-    And   The User clicks on the Attributes element
+    Given The user on the settings attribute page
     And   The User gets the current URL and stores it in "Settings/Attributes"
 
   Scenario: Attributes pages tables verification
@@ -133,7 +131,7 @@ Feature: Attributes Management Test Cases
     And  The user verifies first page button is clickable user
 
 
-  Scenario Outline:Families Page-User selects different options for show entries
+  Scenario Outline:Attributes Page-User selects different options for show entries
     When  The user selects "<entries>" into show entries attributes
     Then  The user should see  "<entries>" entrie in everypage attributes
     Examples:

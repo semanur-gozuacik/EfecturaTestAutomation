@@ -315,4 +315,39 @@ pages.contactHomePage().verifypreviousPageButtonUnClickability();
     public void the_user_clicks_cancel_button_in_delete_popup_asset() {
       pages.asset().clickCancelButtonPopUpOtomasyon();
     }
+    @Then("The user clicks update on tab")
+    public void the_user_clicks_update_on_tab() {
+        pages.contactHomePage().clickUpdateOn();
+    }
+
+    @Then("The user verifies that dates are sorted from {string}")
+    public void the_user_verifies_that_dates_are_sorted_from(String sorting) {
+        pages.contactHomePage().updateOnSorting(sorting);
+    }
+    @Then("The user clicks create on tab")
+    public void the_user_clicks_create_on_tab() {
+        pages.contactHomePage().clickCreateOn();
+    }
+    @Then("The user verifies that dates are sorted from {string} create on")
+    public void the_user_verifies_that_dates_are_sorted_from_create_on(String sorting) {
+        pages.contactHomePage().createOnSorting(sorting);
+    }
+    @Then("The user clicks id tab")
+    public void the_user_clicks_id_tab( ) {
+        pages.contactHomePage().clickIdTabSorting();
+    }
+
+    @Then("The user verifies sort id numbers from {string}")
+    public void the_user_verifies_sort_id_numbers_from(String sorting) {
+        pages.contactHomePage().idTabSorting(sorting);
+    }
+
+    @Then("The user clicks birthdate on tab")
+    public void the_user_clicks_birthdate_on_tab() {
+        pages.contactHomePage().clickBirthdateTabSorting();
+    }
+    @Then("The user verifies that birthdate are sorted from {string}")
+    public void the_user_verifies_that_birthdate_are_sorted_from(String sorting) {
+        pages.contactHomePage().birthdateSorting(sorting);
+    }
 }

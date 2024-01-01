@@ -173,7 +173,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
    # When  The user clicks on Export button ediitem
     #Then  The user verify that the export was "Success"
 
-  Scenario:Campaign edit - Gift Contact Tab
+  Scenario:Campaign edit - RealtimeList Tab
     And The user enters "TestAutomation" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
@@ -220,3 +220,20 @@ Feature: Campaign Management Test Cases- Campaign Home Page
       |ItemStatus |
       |Passive    |
       |Active     |
+
+  Scenario:Campaign edit - Campaign-Account Associated
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "CAMPAIGN_ACCOUNT" tab
+    And The user Assocaited All filter
+
+
+  Scenario:Campaign edit - Campaign-Account Tab Associated Filter No
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "CAMPAIGN_ACCOUNT" tab
+    And The user clicks "vent-Contact" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter

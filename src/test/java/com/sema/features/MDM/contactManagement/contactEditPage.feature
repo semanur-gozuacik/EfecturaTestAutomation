@@ -360,6 +360,22 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "vent-Contact" tab
+    And The user clicks "Event-Contact" tab
     And The user Assocaited No filter
     Then The user verify No Filter
+
+  Scenario:Contact edit -Preview Tab Export Button
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Preview" tab
+    And The user clicks Export PDF button
+    Then The user verifies the file is downloaded
+
+  Scenario:Contact edit -Preview Tab Refresh  Button
+    And  The user enters "semaotomasyon" into Code field
+    And  the user clicks on Search button
+    And  The user clicks on Edit Button
+    And  The user clicks "Preview" tab
+    And  The user clicks Refresh button
+    Then The user verifies refresh button

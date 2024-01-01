@@ -1,5 +1,6 @@
 package com.sema.stepDefs;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -125,5 +126,8 @@ pages.users().selectIsRealFilter(isReal);
     public void the_incoming_filter_for_should_contain_is_real(String isReal) {
 
     }
-
+    @Given("The user on the settings users page")
+    public void the_user_on_the_settings_users_page() {
+pages.users().onTheUsersSettingPage();
+    }
 }

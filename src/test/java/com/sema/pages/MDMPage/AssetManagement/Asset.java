@@ -44,7 +44,7 @@ public class Asset extends BasePage {
     private WebElement selectCoolerFamily;
     @FindBy(xpath = "//a[@id='createNewList']")
     private WebElement createListButton;
-    @FindBy(xpath = "//div[@class='modal-dialog modal-confirm list-modal']//button[@type='button'][normalize-space()='Cancel']")
+    @FindBy(xpath = "//div[@id='create-new-list']//button[@type='button'][normalize-space()='Cancel']")
     private WebElement createListCancelButton;
     @FindBy(xpath = "//h4[normalize-space()='New List']")
     private WebElement verifyNewListPopup;

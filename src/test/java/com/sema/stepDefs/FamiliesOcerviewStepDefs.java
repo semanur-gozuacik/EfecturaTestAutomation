@@ -81,4 +81,9 @@ pages.families().verifySelectOption(entrie);
         pages.families().verifyLastPageButtonClickable();
     }
 
+
+    @Given("The user on the settings families page")
+    public void the_user_on_the_settings_families_page() {
+       pages.families().onTheFamiliesSettingPage();
+    }
 }

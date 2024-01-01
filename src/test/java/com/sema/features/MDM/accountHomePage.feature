@@ -258,5 +258,20 @@ Feature: Account Management Test Cases- Event Home Page
     And The user Assocaited No filter
     Then The user verify No Filter
 
+  Scenario:Account edit -Preview Tab Export Button
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Preview" tab
+    And The user clicks Export PDF button
+    Then The user verifies the file is downloaded
+
+  Scenario:Account edit -Preview Tab Refresh  Button
+    And  The user enters "semaaa" into Code field
+    And  the user clicks on Search button
+    And  The user clicks on Edit Button
+    And  The user clicks "Preview" tab
+    And  The user clicks Refresh button
+    Then The user verifies refresh button
 
 

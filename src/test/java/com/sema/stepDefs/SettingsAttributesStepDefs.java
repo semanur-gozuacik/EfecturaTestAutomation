@@ -1,6 +1,7 @@
 package com.sema.stepDefs;
 
 import com.sema.utilities.BrowserUtils;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -28,5 +29,11 @@ public class SettingsAttributesStepDefs extends BaseStep{
     public void the_user_should_see_entrie_in_everypage_attributes(String entrie) {
         pages.attributes().verifySelectOption(entrie);
     }
+
+    @Given("The user on the settings attribute page")
+    public void the_user_on_the_settings_attribute_page() {
+    pages.attributes().onTheAttributeSettingPage();
+    }
+
 
 }

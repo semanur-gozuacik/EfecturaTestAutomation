@@ -2,7 +2,6 @@ package com.sema.pages.SettingsPage;
 
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -112,6 +111,8 @@ public void verifySelectOption(String entrie){
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
+    }  public void onTheFamiliesSettingPage(){
+        driver.navigate().to("https://sandbox.efectura.com/Settings/Families");
     }
 }
 

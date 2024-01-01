@@ -283,3 +283,19 @@ Feature: User Management Test Cases- Contact Home Page
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies first page button is clickable user
+
+  Scenario:User edit -Preview Tab Export Button
+    And The user enters "testmrp" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Preview" tab
+    And The user clicks Export PDF button
+    Then The user verifies the file is downloaded
+
+  Scenario:User edit -Preview Tab Refresh  Button
+    And  The user enters "testmrp" into Code field
+    And  the user clicks on Search button
+    And  The user clicks on Edit Button
+    And  The user clicks "Preview" tab
+    And  The user clicks Refresh button
+    Then The user verifies refresh button

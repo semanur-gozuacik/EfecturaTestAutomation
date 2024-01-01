@@ -2,7 +2,6 @@ package com.sema.pages.SystemPage.UserManagement;
 
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
-import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -180,6 +179,9 @@ public class Users extends BasePage {
     }
     public void verifyResetButton() {
         assertTrue(true);
+    }
+    public void onTheUsersSettingPage(){
+        driver.navigate().to("https://sandbox.efectura.com/UserManage");
     }
 }
 

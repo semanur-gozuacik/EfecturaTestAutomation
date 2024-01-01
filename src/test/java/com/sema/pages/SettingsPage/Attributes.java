@@ -37,4 +37,7 @@ public class Attributes extends BasePage {
         Assert.assertTrue(BrowserUtils.isOptionSelected(entrieNumber, entrie));
 
     }
+    public void onTheAttributeSettingPage(){
+        driver.navigate().to("https://sandbox.efectura.com/Settings/Attributes");
+    }
 }

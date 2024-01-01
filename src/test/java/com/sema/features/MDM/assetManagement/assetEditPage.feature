@@ -233,6 +233,26 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And  The user clicks on Edit Button
     And The user clicks "ACCOUNT_COOLER" tab
 
+  Scenario:Asset edit - ACCOUNT_COOLER Tab Associated
+    And The user enters "Asset_19" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "ACCOUNT_COOLER" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+  Scenario:Asset edit -ACCOUNT_COOLER Tab Associated Filter No
+    And The user enters "Asset_19" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "ACCOUNT_COOLER" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
+
   Scenario:Asset edit -Attributes Tab
     And The user enters "Asset_19" into Code field
     And the user clicks on Search button

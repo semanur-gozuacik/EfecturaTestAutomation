@@ -37,6 +37,10 @@ public class ContactEditPage extends BasePage {
     private WebElement saveChangeButton;
     @FindBy (xpath = "//a[normalize-space()='testListesi']")
     private WebElement editListItem;
+    @FindBy(xpath = "//span[contains(text(),'ExportPDF')]")
+    private WebElement exportPDF;
+    @FindBy(xpath = "//span[@class='iconbtn iconbtn-green rrbutton']//i[@class='fa fa-refresh']")
+    private WebElement refreshButton;
     public ContactEditPage() {
     }
 
@@ -104,5 +108,13 @@ public class ContactEditPage extends BasePage {
     public void clickListItem() {
         BrowserUtils.waitForVisibility(editListItem, 30);
         editListItem.click();
+    }
+    public void clickExportPDF() {
+        BrowserUtils.waitForVisibility(exportPDF, 30);
+        exportPDF.click();
+    }
+    public void clickRefreshButton() {
+        BrowserUtils.waitForVisibility(refreshButton, 30);
+        refreshButton.click();
     }
 }
