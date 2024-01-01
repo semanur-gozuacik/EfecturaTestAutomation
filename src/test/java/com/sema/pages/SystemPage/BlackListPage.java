@@ -182,6 +182,8 @@ public class BlackListPage extends BasePage {
         }
         BrowserUtils.wait(5);
     }
-
+    public void onTheBlackListPage(){
+        driver.navigate().to("https://sandbox.efectura.com/Settings/BlackList");
+    }
 
 }

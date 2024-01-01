@@ -1,6 +1,7 @@
 package com.sema.stepDefs;
 
 import com.sema.utilities.BrowserUtils;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -152,5 +153,9 @@ public class BlackListHomePageStepDefs extends BaseStep {
     pages.loginPage().clickReturnToLoginPageText();
     }
 
+    @Given("The user on the black list users page")
+    public void the_user_on_the_black_list_users_page() {
+        pages.blackListPage().onTheBlackListPage();
+    }
 
 }
