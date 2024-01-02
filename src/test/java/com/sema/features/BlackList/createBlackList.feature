@@ -6,12 +6,8 @@ Feature: BlackList Test Cases- Create Black List
     And   The User inputs a valid password "validPassword"
     And   The User clicks the Submit button
     Then  The User waits until the System element is visible with a timeout of 120 seconds
-    And   The User performs a mouseover on the System element symbol
-    And   The User performs a mouseover on the System element
-    And   The User performs a mouseover on the BlackList element
-    And   The User clicks on the BlackList element
+    Given The user on the black list users page
     And   The User gets the current URL and stores it in "Settings/BlackList"
-    Then   The User waits until the black list create element is visible with a timeout of 120 seconds
 
   Scenario: Adding a New User with Phone Number and Card Details-Cancel Button
     And   The User clicks on the black list create new element
