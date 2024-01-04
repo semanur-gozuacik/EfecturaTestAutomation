@@ -109,69 +109,69 @@ Feature: User Management Test Cases- Contact Home Page
       |Passive    |
 
   Scenario:User edit -Preview tab control
-    And The user enters "testttttt7" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Preview" tab
 
   Scenario:User edit -ItemComment tab control
-    And The user enters "testttttt7" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
 
   Scenario:User edit -User tab control
-    And The user enters "testttttt7" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "User" tab
 
   Scenario:User edit -PaymentTransactions tab control
-    And The user enters "testttttt7" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "PaymentTransactions" tab
 
   Scenario:User edit -Account-MRP tab control
-    And The user enters "testttttt7" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Account-MRP" tab
 
   Scenario:User edit -Training-User tab control
-    And The user enters "testttttt7" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Training-User" tab
-
+  @samamus
   Scenario:User edit -History tab control
-    And The user enters "testttttt7" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "History" tab
 
   Scenario:User edit -Saha-Satış tab control
-    And The user enters "testttttt7" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Saha-Satış" tab
 
   Scenario:Group Permission Verify Item First Page Button Unclickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     #And  The user verifies previous button is not clickable asset
 
   Scenario:Group Permission Verify Item Previous Page Button Unclickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     And  The user verifies previous page button is not clickable asset
 
   Scenario:Group Permission Verify Item next Button clickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
@@ -179,7 +179,7 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user verifies next button is clickable asset
 
   Scenario: Group Permission Verify Previous Page Button clickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
@@ -189,7 +189,7 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user verifies previous button is clickable asset
 
   Scenario: Group Permission Verify Last Page Button clickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
@@ -197,7 +197,7 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user verifies last button is clickable asset
 
   Scenario: Group Permission Verify Last Page Button Unclickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
@@ -205,7 +205,7 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user verifies last button is unclickable asset
 
   Scenario:Group Permission Verify Item next Button unclickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
@@ -213,7 +213,7 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user verifies next button is unclickable asset
 
   Scenario:Group Permission Verify Item First Page Button Clickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
@@ -221,21 +221,21 @@ Feature: User Management Test Cases- Contact Home Page
    # And  The user verifies first page button is clickable asset
 
   Scenario: User Permission Verify Item First Page Button Unclickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     And  The user verifies first page button is not clickable user
 
   Scenario:User Permission Verify Item Previous Page Button Unclickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     And  The user verifies previous page button is not clickable user
 
   Scenario:User Permission Verify Item next Button clickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
@@ -243,7 +243,7 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user verifies next button is clickable user
 
   Scenario:User Permission Verify Previous Page Button clickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
@@ -253,7 +253,7 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user verifies previous button is clickable user
 
   Scenario:User Permission Verify Last Page Button clickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
@@ -261,7 +261,7 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user verifies last button is clickable user
 
   Scenario: User Permission Verify Last Page Button Unclickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
@@ -269,7 +269,7 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user verifies last button is unclickable asset
 
   Scenario:User Permission Verify Item next Button unclickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
@@ -277,7 +277,7 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user verifies next button is unclickable user
 
   Scenario: User Permission Verify Item First Page Button Clickable Condition
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
@@ -285,7 +285,7 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user verifies first page button is clickable user
 
   Scenario:User edit -Preview Tab Export Button
-    And The user enters "testmrp" into Code field
+    And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Preview" tab
@@ -293,7 +293,7 @@ Feature: User Management Test Cases- Contact Home Page
     Then The user verifies the file is downloaded
 
   Scenario:User edit -Preview Tab Refresh  Button
-    And  The user enters "testmrp" into Code field
+    And  The user enters "Otomasyon" into Code field
     And  the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks "Preview" tab
