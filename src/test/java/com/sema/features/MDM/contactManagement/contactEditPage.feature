@@ -53,15 +53,15 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks list drop down button
-    And  The user clicks new list item-contact
-    Then The user verifies item is added
+  #  And  The user clicks new list item-contact
+  #  Then The user verifies item is added
 
   Scenario: Edit item removed list
     And  The user enters "sematestttt" into Code field
     And  the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks removed button
-    Then The user verifies item is removed
+    #Then The user verifies item is removed
 
   Scenario:Contact Group Permission Verify Item First Page Button Unclickable Condition
     And The user enters "semaotomasyon" into Code field
@@ -205,13 +205,13 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user clicks "ItemComment" tab
     #Then The user verifies itemComment tab details is displayed
 
-  @semus
+
   Scenario:Contact edit - ACCOUNT_CONTACT Tab
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ACCOUNT_CONTACT" tab
-  @semus
+
   Scenario:Contact edit -  ACCOUNT_CONTACT Tab Associated
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button

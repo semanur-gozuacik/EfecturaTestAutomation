@@ -143,7 +143,7 @@ Feature: User Management Test Cases- Contact Home Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Training-User" tab
-  @samamus
+
   Scenario:User edit -History tab control
     And The user enters "Otomasyon" into Code field
     And the user clicks on Search button

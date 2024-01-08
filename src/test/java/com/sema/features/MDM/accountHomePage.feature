@@ -1,5 +1,5 @@
 @regression
-Feature: Account Management Test Cases- Event Home Page
+Feature: Account Management Test Cases- Account Home Page
   Background:
     When   The User opens the browser with the given url
     And   The User inputs a valid username "validUsername"
@@ -134,6 +134,14 @@ Feature: Account Management Test Cases- Event Home Page
     And The user clicks save button
     And the user verifies item status success message
 
+  Scenario:Account edit -Product-Account Tab Associated Filter No
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Product-Account" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
+
   Scenario:Account edit -My Contact Tab
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
@@ -200,18 +208,40 @@ Feature: Account Management Test Cases- Event Home Page
     And  The user clicks on Edit Button
     And The user clicks "SalesOrder" tab
 
-  Scenario:Account edit -Account Asset Tab
+  Scenario:Account edit -Account-Asset Tab Associated Filter No
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Account-Asset" tab
-
+    And The user Assocaited No filter
+    Then The user verify No Filter
 
   Scenario:Account edit -Account-MRP Tab
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Account-MRP" tab
+
+  Scenario:Account edit - Account-MRP Tab Associated
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-MRP" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+  Scenario:Account edit -Account-MRP Tab Associated Filter No
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-MRP" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
+
 
   Scenario:Account edit -Event-Location Tab
     And The user enters "semaaa" into Code field
@@ -238,7 +268,7 @@ Feature: Account Management Test Cases- Event Home Page
     And  The user clicks on Edit Button
     And The user clicks "History" tab
 
-  Scenario:Account edit - My Account Tab Associated
+  Scenario:Account edit - Campaign-Account Tab Associated
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
@@ -250,7 +280,7 @@ Feature: Account Management Test Cases- Event Home Page
    And The user clicks save button
  #  And the user verifies item status success message
 
-  Scenario:Account edit - My Contacts Tab Associated Filter No
+  Scenario:Account edit - Campaign-Account Tab Associated Filter No
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
@@ -274,4 +304,149 @@ Feature: Account Management Test Cases- Event Home Page
     And  The user clicks Refresh button
     Then The user verifies refresh button
 
+  Scenario:Account Group Permission Verify Item Previous Page Button Unclickable Condition
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And clicks group permission tab
+    And  The user verifies previous page button is not clickable asset
 
+  Scenario:Account User Permission Verify Item First Page Button Unclickable Condition
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And clicks user permission tab
+    And  The user verifies first page button is not clickable user
+
+  Scenario:Account Asset edit -Item Comment Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "ItemComment" tab
+
+    Scenario: Account Associated Tab Associated On Fılter
+      And The user enters "6193135977" into Code field
+      And the user clicks on Search button
+      And  The user clicks on Edit Button
+      And The user clicks "Account MRP" tab
+      And The user clicks Associated on filter
+     And  The user enters "09.01.2024" info from field
+      And The user enters "09.01.2024" info to field
+      And The user clicks update button
+     Then The user verifies that associated on filter functionality
+
+  Scenario: Account Associated Tab Label Filter Functionality
+    And The user enters "9932988664" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Product-Account" tab
+    And The user clicks on Label Filter
+    And The user enters "test_umit"
+    Then The user verifies that labet filter functionality
+
+  Scenario: Account Associated Tab Families  Fılter
+    And The user enters "9932988664" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Product-Account" tab
+   And The user associated selects "System Product" families filter
+    Then The user verifies that families filter functionality
+
+  Scenario Outline: Account Associated Tab Status Fılter "<Status>"
+    And The user enters "9932988664" into Code field
+    And  the user clicks on Search button
+    And  The user clicks on Edit Button
+    And  The user clicks "Product-Account" tab
+    And  The user clicks Associated status
+    And  The user selects  "<Status>"
+    Then The user verifies displayed "<Status>" is correct
+    Examples:
+    |Status|
+    |Status:All|
+    |Enabled   |
+    |Disabled  |
+
+  Scenario: Account Associated Tab Code Filter Functionality
+    And The user enters "9932988664" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Product-Account" tab
+    And The user clicks on code filter Filter
+    And The user enters "test_umit"
+    Then The user verifies that code filter functionality
+
+  Scenario: Account Associated Tab Code Filter Functionality
+    And The user enters "9932988664" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Product-Account" tab
+    And The user clicks on code filter Filter
+    And The user enters "test_umit"
+    And  The user clicks Reset button
+    Then The user verifies that code filter reset button functionality
+
+  Scenario: Account Associated Tab Code Filter Functionality
+    And The user enters "9932988664" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Product-Account" tab
+    And The user clicks on code filter Filter
+    And The user enters "test_umit"
+    And  The user clicks Reset button
+    Then The user verifies that code filter reset button functionality
+
+  Scenario Outline: Campaign-Account Associated Tab Status Fılter "<Status>"
+    And The user enters "9932988664" into Code field
+    And  the user clicks on Search button
+    And  The user clicks on Edit Button
+    And  The user clicks "Campaign-Account" tab
+    And  The user clicks Associated status
+    And  The user selects  "<Status>"
+    Then The user verifies displayed "<Status>" is correct
+    Examples:
+      |Status|
+      |Status:All|
+      |Enabled   |
+      |Disabled  |
+
+  Scenario: Campaign-Account Associated Tab Code Filter Functionality
+    And The user enters "9932988664" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Campaign-Account" tab
+    And The user clicks on code filter Filter
+    And The user enters "1310202301"
+    Then The user verifies that code filter functionality
+
+  Scenario: Account Associated Tab Fixed Point Filter Functionality
+    And The user enters "9932988664" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Product-Account" tab
+    And The user clicks on Fixed Point  Filter
+    And The user enters "1500"
+    Then The user verifies that Fixed Point filter functionality
+
+  Scenario: Account Export Entity Button - Attributes
+    And The user enters "9932988664" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks Export Entity Button
+    And The user clicks Export Attributes
+    Then The user dowloand Export Entity verifies
+
+  Scenario: Account Export Entity Button - Associations
+    And The user enters "9932988664" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks Export Entity Button
+    And The user clicks Export Associations
+    Then The user dowloand Export Entity verifies
+
+  Scenario: Account Export Entity Button - Permission
+    And The user enters "9932988664" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks Export Entity Button
+    And The user clicks Export Permission
+    Then The user dowloand Export Entity verifies
