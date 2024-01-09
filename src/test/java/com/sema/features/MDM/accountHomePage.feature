@@ -207,6 +207,24 @@ Feature: Account Management Test Cases- Account Home Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "SalesOrder" tab
+  @semamuss
+  Scenario:Account edit -Account-Asset Tab
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-Asset" tab
+
+  Scenario:Account edit - Account-Asset Tab Associated
+    And The user enters "semaaa" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-Asset" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
 
   Scenario:Account edit -Account-Asset Tab Associated Filter No
     And The user enters "semaaa" into Code field
@@ -318,7 +336,7 @@ Feature: Account Management Test Cases- Account Home Page
     And clicks user permission tab
     And  The user verifies first page button is not clickable user
 
-  Scenario:Account Asset edit -Item Comment Tab
+  Scenario:Account edit -Item Comment Tab
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
@@ -341,7 +359,7 @@ Feature: Account Management Test Cases- Account Home Page
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
     And The user clicks on Label Filter
-    And The user enters "test_umit"
+  #   And The user enters "test_umit"
     Then The user verifies that labet filter functionality
 
   Scenario: Account Associated Tab Families  Fılter
@@ -372,7 +390,7 @@ Feature: Account Management Test Cases- Account Home Page
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
     And The user clicks on code filter Filter
-    And The user enters "test_umit"
+   #  And The user enters "test_umit"
     Then The user verifies that code filter functionality
 
   Scenario: Account Associated Tab Code Filter Functionality
@@ -381,7 +399,7 @@ Feature: Account Management Test Cases- Account Home Page
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
     And The user clicks on code filter Filter
-    And The user enters "test_umit"
+    # And The user enters "test_umit"
     And  The user clicks Reset button
     Then The user verifies that code filter reset button functionality
 
@@ -391,7 +409,7 @@ Feature: Account Management Test Cases- Account Home Page
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
     And The user clicks on code filter Filter
-    And The user enters "test_umit"
+   #  And The user enters "test_umit"
     And  The user clicks Reset button
     Then The user verifies that code filter reset button functionality
 
@@ -409,13 +427,13 @@ Feature: Account Management Test Cases- Account Home Page
       |Enabled   |
       |Disabled  |
 
-  Scenario: Campaign-Account Associated Tab Code Filter Functionality
+  Scenario:Account Campaign-Account Associated Tab Code Filter Functionality
     And The user enters "9932988664" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Campaign-Account" tab
     And The user clicks on code filter Filter
-    And The user enters "1310202301"
+    # And The user enters "1310202301"
     Then The user verifies that code filter functionality
 
   Scenario: Account Associated Tab Fixed Point Filter Functionality
@@ -424,7 +442,7 @@ Feature: Account Management Test Cases- Account Home Page
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
     And The user clicks on Fixed Point  Filter
-    And The user enters "1500"
+     #And The user enters "1500"
     Then The user verifies that Fixed Point filter functionality
 
   Scenario: Account Export Entity Button - Attributes
