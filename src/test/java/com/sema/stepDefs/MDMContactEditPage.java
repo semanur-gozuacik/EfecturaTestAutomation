@@ -74,15 +74,15 @@ public class MDMContactEditPage extends BaseStep{
     public void the_user_clicks_export_pdf_button() {
         pages.contactEditPage().clickExportPDF();
     }
-
+    @Then("The user clicks Refresh button")
+    public void the_user_clicks_refresh_button() {
+        pages.contactEditPage().clickRefreshButton();
+    }
     @Then("The user verifies the file is downloaded")
     public void the_user_verifies_the_file_is_downloaded() {
 
     }
-    @Then("The user clicks Refresh button")
-    public void the_user_clicks_refresh_button() {
-pages.contactEditPage().clickRefreshButton();
-    }
+
     @Then("The user verifies refresh button")
     public void the_user_verifies_refresh_button() {
 

@@ -146,7 +146,7 @@ Feature: Account Management Test Cases- Account Home Page
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "My Contact" tab
+    And The user clicks "ACCOUNT_CONTACT" tab
 
   Scenario:Account edit -ReservationData Tab
     And The user enters "semaaa" into Code field
@@ -214,11 +214,11 @@ Feature: Account Management Test Cases- Account Home Page
     And  The user clicks on Edit Button
     And The user clicks "Account-Asset" tab
 
-  Scenario:Account edit - Account-Asset Tab Associated
+  Scenario:Account edit - Account_CONTACT Tab Associated
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "Account-Asset" tab
+    And The user clicks "ACCOUNT_CONTACT" tab
     And The user Assocaited All filter
     And The user clicks item
     And the user clicks on unsaved change button
