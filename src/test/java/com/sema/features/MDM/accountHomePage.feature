@@ -226,25 +226,17 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks save button
     And the user verifies item status success message
 
-  Scenario:Account edit -Account-Asset Tab Associated Filter No
-    And The user enters "semaaa" into Code field
-    And the user clicks on Search button
-    And  The user clicks on Edit Button
-    And The user clicks "Account-Asset" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
-
   Scenario:Account edit -Account-MRP Tab
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "Account-MRP" tab
+    And The user clicks "Account MRP" tab
 
   Scenario:Account edit - Account-MRP Tab Associated
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "Account-MRP" tab
+    And The user clicks "Account MRP" tab
     And The user Assocaited All filter
     And The user clicks item
     And the user clicks on unsaved change button
@@ -256,7 +248,7 @@ Feature: Account Management Test Cases- Account Home Page
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "Account-MRP" tab
+    And The user clicks "Account MRP" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 

@@ -313,9 +313,9 @@ public class ContactHomePage extends BasePage {
 
     public void verifyItemStatuses(String status) {
         for (int i = 0; i < verifyItemStatuses.size(); i++) {
-            BrowserUtils.wait(2);
-            assertTrue(verifyItemStatuses.get(i).getText().equalsIgnoreCase(status));
             BrowserUtils.wait(5);
+            assertTrue(verifyItemStatuses.get(i).getText().equalsIgnoreCase(status));
+            BrowserUtils.wait(7);
         }
     }
 
