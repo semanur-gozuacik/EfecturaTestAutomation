@@ -13,11 +13,13 @@ import com.sema.pages.MDMPage.ContractManagement.Contract;
 import com.sema.pages.MDMPage.EventManagement.EventHomePage;
 import com.sema.pages.MDMPage.GiftManagement.Gift;
 import com.sema.pages.MDMPage.KPIManagement.KPIHomePage;
+import com.sema.pages.MDMPage.ProductManagement.ProductHomePage;
 import com.sema.pages.MDMPage.UserManagement.UserHomePage;
 import com.sema.pages.SettingsPage.Attributes;
 import com.sema.pages.SettingsPage.Families;
 import com.sema.pages.SystemPage.BlackListPage;
 import com.sema.pages.SystemPage.UserManagement.Users;
+import com.sema.pages.SystemPage.UserManagement.UsersLogs;
 
 public class Pages {
 
@@ -39,7 +41,10 @@ public class Pages {
     private Users users;
     private ConnectorHomePage connectorHomePage;
     private UserHomePage userHomePage;
+    private UsersLogs usersLogs;
     private AccountHomePage accountHomePage;
+
+    private ProductHomePage productHomePage;
 
     public Pages() {
             this.homePage =new HomePage();
@@ -60,7 +65,9 @@ public class Pages {
             this.users=new Users();
             this.connectorHomePage= new ConnectorHomePage();
              this.userHomePage= new UserHomePage();
+        this.usersLogs= new UsersLogs();
              this.accountHomePage=new AccountHomePage();
+        this.productHomePage=new ProductHomePage();
     }
     // Getter metotları
     public HomePage homePage() {
@@ -85,7 +92,9 @@ public class Pages {
     public  Users users(){return users;}
     public ConnectorHomePage connectorHomePage(){return connectorHomePage;}
     public UserHomePage userHomePage(){return userHomePage;}
+    public UsersLogs userLogs(){return usersLogs;}
 public AccountHomePage accountHomePage(){return accountHomePage;}
+    public ProductHomePage productHomePage(){return productHomePage;}
 }
 
 

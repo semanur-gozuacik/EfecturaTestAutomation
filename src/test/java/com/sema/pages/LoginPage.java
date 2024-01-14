@@ -119,4 +119,5 @@ public class LoginPage extends BasePage {
         BrowserUtils.waitForVisibility(signInWithMicrosoftButton,20);
         signInWithMicrosoftButton.click();
     }
+
 }

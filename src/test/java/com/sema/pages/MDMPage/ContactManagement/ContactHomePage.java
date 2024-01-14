@@ -463,6 +463,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickExportButton() {
+        BrowserUtils.waitForVisibility(exportButton, 20);
         exportButton.click();
     }
 

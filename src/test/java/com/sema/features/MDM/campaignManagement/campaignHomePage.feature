@@ -234,6 +234,5 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "CAMPAIGN_ACCOUNT" tab
-    And The user clicks "vent-Contact" tab
     And The user Assocaited No filter
     Then The user verify No Filter

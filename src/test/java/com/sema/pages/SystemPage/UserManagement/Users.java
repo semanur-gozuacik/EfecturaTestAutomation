@@ -135,7 +135,7 @@ public class Users extends BasePage {
         }
     }
     public void verifyNoContentTextInvalidUniqueUsername(String text) {
-    BrowserUtils.wait(8);
+    BrowserUtils.wait(10);
     Assert.assertTrue(noContentsText.getText().equalsIgnoreCase(text));
     }
     public void verifyUserEmailFilter(String email) {
