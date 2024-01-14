@@ -21,7 +21,7 @@ Feature: Users Management Test Cases
       |25 |
       |50 |
       |100|
-
+@semaamuusus
   Scenario:Users Overview Verify First Page Button Unclickable Condition
     And  The user verifies first page button is not clickable-users
 

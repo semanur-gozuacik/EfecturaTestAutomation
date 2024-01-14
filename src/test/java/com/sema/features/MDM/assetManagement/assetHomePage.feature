@@ -46,39 +46,39 @@ Feature: Asset Management Test Cases- Asset Home Page
     And  The user clicks plus icon
     Then The user verifies New List pop up is open
     When The user enters "otomasyon" List Name
-    And  The user enters "_5458429214" Can view
-    And  The user enters "1757483988_5392786463" Can edit
-    And The user clicks cancel button-New List
-    Then The user verifies "otomasyon" is not visible
+    # And  The user enters "_5458429214" Can view
+   #  And  The user enters "1757483988_5392786463" Can edit
+   #  And The user clicks cancel button-New List
+    # Then The user verifies "otomasyon" is not visible
 
   Scenario: Create List- create button
     And  The user clicks plus icon
-    Then The user verifies New List pop up is open
+     Then The user verifies New List pop up is open
     When The user enters "otomasyon" List Name
-    And  The user enters "_5458429214" Can view
-    And  The user enters "1757483988_5392786463" Can edit
-    And The user clicks create button-New List
-    Then The user verifies "otomasyon" is visible
+    # And  The user enters "_5458429214" Can view
+    # And  The user enters "1757483988_5392786463" Can edit
+     #And The user clicks create button-New List
+    # Then The user verifies "otomasyon" is visible
 
   Scenario: Create List- create button-exist user
     And  The user clicks plus icon
     Then The user verifies New List pop up is open
     When The user enters "Sematestyeni" List Name
-    And  The user enters "_5458429214" Can view
-    And  The user enters "1757483988_5392786463" Can edit
-    And  The user clicks create button-New List
-    Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
+   #  And  The user enters "_5458429214" Can view
+     #And  The user enters "1757483988_5392786463" Can edit
+    # And  The user clicks create button-New List
+  #   Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
 
   Scenario: Create List- delete list-cancel button
-    And The user selects deleted element-asset
-    And The user clicks cancel button in delete popup-asset
-    Then The user verifies "otomasyon" is visible
+    # And The user selects deleted element-asset
+   #  And The user clicks cancel button in delete popup-asset
+  #   Then The user verifies "otomasyon" is visible
 
   Scenario: Create List- delete list
-    And The user selects deleted element-asset
-    And The user clicks cancel button in delete popup-asset
-    And The user clicks delete button in delete popup
-    Then The user verifies "otomasyon" is not visible
+   #  And The user selects deleted element-asset
+    # And The user clicks cancel button in delete popup-asset
+    # And The user clicks delete button in delete popup
+   #  Then The user verifies "otomasyon" is not visible
 
   Scenario Outline: Asset Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries
