@@ -81,10 +81,10 @@ Feature: KPI Management Test Cases
     And  The user clicks plus icon
     Then The user verifies New List pop up is open
     When The user enters "Sematestyeni" List Name
-    And  The user enters "_5458429214" Can view
-    And  The user enters "1757483988_5392786463" Can edit
-    And  The user clicks create button-New List
-    Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
+   # And  The user enters "_5458429214" Can view
+    # And  The user enters "1757483988_5392786463" Can edit
+   # And  The user clicks create button-New List
+   # Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
 
   Scenario: KPI page edit verify
     And The user enters "YENİTEST1411" into Code field

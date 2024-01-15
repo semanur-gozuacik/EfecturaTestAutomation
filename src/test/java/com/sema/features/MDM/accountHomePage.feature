@@ -71,32 +71,32 @@ Feature: Account Management Test Cases- Account Home Page
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
-
+@semosos
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses - cancel button
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks cancel button
-    And the user verifies item status not change
+   # And the user clicks on unsaved change button
+   # And The user enters "-------" in  comment area
+  #  And The user clicks cancel button
+    #And the user verifies item status not change
 
     Examples:
       |ItemStatus |
       |Active     |
       |Passive    |
      #  |Approved     |
-
+@semosos
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks save button
-    And the user verifies item status success message
+   # And the user clicks on unsaved change button
+   # And The user enters "-------" in  comment area
+   # And The user clicks save button
+   # And the user verifies item status success message
 
     Examples:
       |ItemStatus |

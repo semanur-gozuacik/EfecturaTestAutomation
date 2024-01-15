@@ -20,32 +20,31 @@ Feature: Users Management User Logs  Test Cases
   Scenario: Verify UserName Filter -Valid Unique UserName
     And The user enters "Yana" into username field
     And The user user logs search button
-  @semamusssss
+
   Scenario: Verify UserName Filter -Valid Unique UserName
     And The user enters "Yana" into username field
     And The user clicks Reset button user
-  @semamusssss
+
   Scenario: Verify UserName Filter -Valid Unique UserName
     And The user enters "Yana" into username field
     And The user clicks Refresh button user
-  @semamusssss
+
   Scenario: Verify UserEmail Filter -Valid Unique UserName
     And The user enters "yana@efectura.com" into logs userEmail field
-  @semamusssss
+
   Scenario: Verify Result Filter -Valid Unique Result
     And The user enters "Succes" into logs result field
-  @semamusssss
+
   Scenario:Users Overview Verify First Page Button Unclickable Condition
     And  The user verifies first page button is not clickable-users logs
-  @semamusssss
+
   Scenario:Users Overview Verify Previous Page Button Unclickable Condition
     And  The user verifies previous page button is not clickable-users logs
 
-  @semamusssss
   Scenario:Users Overview Verify Item next Button Unclickable Condition
     When The user clicks last page button-users logs
     And  The user verifies next button is not clickable-users logs
-  @semamusssss
+  
   Scenario Outline:Users Logs -User selects different options for show entries
     When  The user selects "<entries>" into show entries users logs
     Then  The user should see  "<entries>" entrie in everypage users logs

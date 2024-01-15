@@ -109,7 +109,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And  The user enters "1757483988_5392786463" Can edit
     And The user clicks cancel button-New List
     Then The user verifies "otomasyon" is not visible
-  @semusss
+
   Scenario:Campaign Create List- create button
     And  The user clicks plus icon
     Then The user verifies New List pop up is open

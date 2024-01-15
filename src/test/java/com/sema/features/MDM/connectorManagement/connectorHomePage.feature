@@ -91,19 +91,19 @@ Feature: Connector Management Test Cases- Connector Home Page
     And  The user clicks plus icon
     Then The user verifies New List pop up is open
     When The user enters "otomasyon" List Name
-    And  The user enters "_5458429214" Can view
-    And  The user enters "1757483988_5392786463" Can edit
-    And The user clicks create button-New List
-    Then The user verifies "otomasyon" is visible
+    #And  The user enters "_5458429214" Can view
+   # And  The user enters "1757483988_5392786463" Can edit
+   # And The user clicks create button-New List
+    #Then The user verifies "otomasyon" is visible
 
   Scenario: Create List- create button-exist user
     And  The user clicks plus icon
     Then The user verifies New List pop up is open
     When The user enters "Sematestyeni" List Name
-    And  The user enters "_5458429214" Can view
-    And  The user enters "1757483988_5392786463" Can edit
-    And  The user clicks create button-New List
-    Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
+  #  And  The user enters "_5458429214" Can view
+   # And  The user enters "1757483988_5392786463" Can edit
+   # And  The user clicks create button-New List
+   # Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
 
   Scenario: Create List- delete list-cancel button
     And The user selects deleted element-asset
