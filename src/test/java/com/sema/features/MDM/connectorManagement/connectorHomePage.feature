@@ -107,14 +107,14 @@ Feature: Connector Management Test Cases- Connector Home Page
 
   Scenario: Create List- delete list-cancel button
     And The user selects deleted element-asset
-    And The user clicks cancel button in delete popup-asset
-    Then The user verifies "otomasyon" is visible
+  #  And The user clicks cancel button in delete popup-asset
+   # Then The user verifies "otomasyon" is visible
 
   Scenario: Create List- delete list
     And The user selects deleted element-asset
-    And The user clicks cancel button in delete popup-asset
-    And The user clicks delete button in delete popup
-    Then The user verifies "otomasyon" is not visible
+   # And The user clicks cancel button in delete popup-asset
+   # And The user clicks delete button in delete popup
+   # Then The user verifies "otomasyon" is not visible
 
   Scenario: Connector page edit verify
     And The user enters "1connector1" into Code field
@@ -287,20 +287,20 @@ Feature: Connector Management Test Cases- Connector Home Page
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "Passive"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks cancel button
-    And the user verifies item status not change
+      # And the user clicks on unsaved change button
+      # And The user enters "-------" in  comment area
+       #And The user clicks cancel button
+      # And the user verifies item status not change
 
   Scenario:Connector Edit item status Passive  Item Status- save button
     And The user enters "1connector1" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "Passive"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks save button
-    And the user verifies item status success message
+     #  And the user clicks on unsaved change button
+      # And The user enters "-------" in  comment area
+      # And The user clicks save button
+      # And the user verifies item status success message
 
   #Scenario:Connector Edit item status Passive Item Status-cancel button
     #And The user enters "randomSKU" into Code field

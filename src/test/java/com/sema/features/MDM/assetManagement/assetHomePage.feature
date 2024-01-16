@@ -70,12 +70,12 @@ Feature: Asset Management Test Cases- Asset Home Page
   #   Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
 
   Scenario: Create List- delete list-cancel button
-    # And The user selects deleted element-asset
+     And The user selects deleted element-asset
    #  And The user clicks cancel button in delete popup-asset
   #   Then The user verifies "otomasyon" is visible
 
   Scenario: Create List- delete list
-   #  And The user selects deleted element-asset
+     And The user selects deleted element-asset
     # And The user clicks cancel button in delete popup-asset
     # And The user clicks delete button in delete popup
    #  Then The user verifies "otomasyon" is not visible

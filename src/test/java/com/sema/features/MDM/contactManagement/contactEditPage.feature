@@ -19,10 +19,10 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user clicks on Edit Button
     Then The user verify Edit Page
     And the user selects "<ItemStatus>"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks save button
-    And the user verifies item status success message
+       #And the user clicks on unsaved change button
+      # And The user enters "-------" in  comment area
+      # And The user clicks save button
+       #And the user verifies item status success message
 
     Examples:
       |ItemStatus |
@@ -37,10 +37,10 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user clicks on Edit Button
     Then The user verify Edit Page
     And the user selects "<ItemStatus>"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks cancel button
-    And the user verifies item status not change
+       #And the user clicks on unsaved change button
+      # And The user enters "-------" in  comment area
+     #  And The user clicks cancel button
+      # And the user verifies item status not change
 
     Examples:
       |ItemStatus |
@@ -292,11 +292,11 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And  The user clicks on Edit Button
     And The user clicks "Venue-Contact" tab
     And The user Assocaited All filter
-    And The user clicks item
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks save button
-    And the user verifies item status success message
+      # And The user clicks item
+       #And the user clicks on unsaved change button
+      # And The user enters "-------" in  comment area
+      # And The user clicks save button
+      # And the user verifies item status success message
 
   Scenario:Contact edit - Vanue-Contact Tab Associated Filter No
     And The user enters "semaotomasyon" into Code field

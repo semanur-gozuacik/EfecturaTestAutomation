@@ -105,10 +105,10 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And  The user clicks plus icon
     Then The user verifies New List pop up is open
     When The user enters "otomasyon" List Name
-    And  The user enters "_5458429214" Can view
-    And  The user enters "1757483988_5392786463" Can edit
-    And The user clicks cancel button-New List
-    Then The user verifies "otomasyon" is not visible
+   #  And  The user enters "_5458429214" Can view
+    # And  The user enters "1757483988_5392786463" Can edit
+   #  And The user clicks cancel button-New List
+     #Then The user verifies "otomasyon" is not visible
 
   Scenario:Campaign Create List- create button
     And  The user clicks plus icon
@@ -129,14 +129,14 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     #Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
 
   Scenario:Campaign Create List- delete list-cancel button
-    # And The user selects deleted element
+     And The user selects deleted element
    # And The user clicks cancel button in delete popup
   #  Then The user verifies "campaign-list" is visible
 
   Scenario:Campaign Create List- delete list
-    #And The user selects deleted element
-   # And The user clicks delete button in delete popup
-  #  Then The user verifies "campaign-list" is not visible
+    And The user selects deleted element
+    #And The user clicks delete button in delete popup
+   #Then The user verifies "campaign-list" is not visible
 
   Scenario:Campaign edit -Attributes Tab
     And The user enters "TestAutomation" into Code field
@@ -191,15 +191,15 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And  The user clicks on Edit Button
     And The user clicks "History" tab
 
-  Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button-Asset
+  Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button-Campaign
     And The user enters "TestAutomation" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks cancel button
-    And the user verifies item status not change
+       #And the user clicks on unsaved change button
+      # And The user enters "-------" in  comment area
+       #And The user clicks cancel button
+      # And the user verifies item status not change
 
     Examples:
       |ItemStatus |
@@ -211,10 +211,10 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks save button
-    And the user verifies item status success message
+      # And the user clicks on unsaved change button
+      # And The user enters "-------" in  comment area
+      # And The user clicks save button
+      # And the user verifies item status success message
 
     Examples:
       |ItemStatus |

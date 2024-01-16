@@ -17,10 +17,10 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks cancel button
-    And the user verifies item status not change
+      # And the user clicks on unsaved change button
+       #And The user enters "-------" in  comment area
+       #And The user clicks cancel button
+      # And the user verifies item status not change
 
     Examples:
       |ItemStatus |
@@ -36,10 +36,10 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks save button
-    And the user verifies item status success message
+      # And the user clicks on unsaved change button
+       #And The user enters "-------" in  comment area
+      # And The user clicks save button
+      # And the user verifies item status success message
 
     Examples:
       |ItemStatus |

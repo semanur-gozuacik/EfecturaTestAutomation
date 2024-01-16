@@ -46,7 +46,7 @@ public class MDMContactEditPage extends BaseStep{
     }
     @Then("the user clicks on unsaved change button")
     public void the_user_clicks_on_unsaved_change_button() {
-        pages.contactEditPage().clickUnSavedButton();
+           pages.contactEditPage().clickUnSavedButton();
     }
     @Then("The user clicks save button")
     public void the_user_clicks_save_button() {

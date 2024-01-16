@@ -3,6 +3,7 @@ package com.sema.pages.MDMPage.ContactManagement;
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -77,7 +78,9 @@ public class ContactEditPage extends BasePage {
         Assert.assertTrue(verifyUploadObject.isDisplayed());
     }
     public void selectItemStatus(String status){
-        BrowserUtils.waitForVisibility(editItemStatuses,20);
+        BrowserUtils.wait(5);
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", editItemStatuses);
         Select select =new Select(editItemStatuses);
         select.selectByVisibleText(status);
     }

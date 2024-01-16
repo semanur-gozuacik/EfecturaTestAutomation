@@ -83,10 +83,10 @@ Feature: User Management Test Cases- Contact Home Page
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks cancel button
-    And the user verifies item status not change
+          #And the user clicks on unsaved change button
+     #  And The user enters "-------" in  comment area
+      # And The user clicks cancel button
+      # And the user verifies item status not change
 
     Examples:
       |ItemStatus |

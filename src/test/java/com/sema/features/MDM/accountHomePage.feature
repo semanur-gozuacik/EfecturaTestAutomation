@@ -71,7 +71,7 @@ Feature: Account Management Test Cases- Account Home Page
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
-@semosos
+
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses - cancel button
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
@@ -87,7 +87,7 @@ Feature: Account Management Test Cases- Account Home Page
       |Active     |
       |Passive    |
      #  |Approved     |
-@semosos
+
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
