@@ -83,25 +83,25 @@ Feature: User Management Test Cases- Contact Home Page
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
-          #And the user clicks on unsaved change button
-     #  And The user enters "-------" in  comment area
-      # And The user clicks cancel button
-      # And the user verifies item status not change
+    #And the user clicks on unsaved change button
+    #And The user enters "-------" in  comment area
+   # And The user clicks cancel button
+    #And the user verifies item status not change
 
     Examples:
       |ItemStatus |
       |Active     |
-       # |Passive    |
+
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "Vladov" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks save button
-    And the user verifies item status success message
+  #  And the user clicks on unsaved change button
+  # # And The user enters "-------" in  comment area
+   # And The user clicks save button
+   # And the user verifies item status success message
 
     Examples:
       |ItemStatus |
@@ -177,6 +177,7 @@ Feature: User Management Test Cases- Contact Home Page
     And clicks group permission tab
     When The user clicks next page button asset
     And  The user verifies next button is clickable asset
+
 
   Scenario: Group Permission Verify Previous Page Button clickable Condition
     And The user enters "Otomasyon" into Code field

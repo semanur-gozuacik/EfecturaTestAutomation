@@ -215,7 +215,7 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks "Account-Asset" tab
 
   Scenario:Account edit - Account_CONTACT Tab Associated
-    And The user enters "semaaa" into Code field
+    And The user enters "1101202401" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ACCOUNT_CONTACT" tab
@@ -305,6 +305,7 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks "Preview" tab
     And The user clicks Export PDF button
     Then The user verifies the file is downloaded
+
 
   Scenario:Account edit -Preview Tab Refresh  Button
     And  The user enters "semaaa" into Code field

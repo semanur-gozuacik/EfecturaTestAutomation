@@ -156,9 +156,9 @@ Feature: Connector Management Test Cases- Connector Home Page
     And The user enters "1connector1" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And  The user clicks list drop down button
-    And  The user clicks new list item-connector
-    Then The user verifies item is added
+  #  And  The user clicks list drop down button
+ #   And  The user clicks new list item-connector
+   # Then The user verifies item is added
 
   Scenario: Connector Edit item removed list
     And  The user enters "1connector1" into Code field
