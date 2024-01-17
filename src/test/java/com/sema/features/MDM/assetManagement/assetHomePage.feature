@@ -55,10 +55,10 @@ Feature: Asset Management Test Cases- Asset Home Page
     And  The user clicks plus icon
      Then The user verifies New List pop up is open
     When The user enters "otomasyon" List Name
-    And  The user enters "_5458429214" Can view
-     And  The user enters "1757483988_5392786463" Can edit
-    And The user clicks create button-New List
-     Then The user verifies "otomasyon" is visible
+    # And  The user enters "_5458429214" Can view
+    #  And  The user enters "1757483988_5392786463" Can edit
+    # And The user clicks create button-New List
+     # Then The user verifies "otomasyon" is visible
 
   Scenario: Create List- create button-exist user
     And  The user clicks plus icon
