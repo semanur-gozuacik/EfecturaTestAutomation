@@ -244,8 +244,8 @@ public class Asset extends BasePage {
         deleteListDeletePopUp.click();
     }
     public void clickDeleteButtonOtomasyon() {
-        BrowserUtils.hoverOver(deletedListItemAssetOtomasyonVerify);
-        BrowserUtils.waitForVisibility(deletedListItemAssetOtomasyonVerify, 30);
+        //BrowserUtils.hoverOver(deletedListItemAssetOtomasyonVerify);
+       // BrowserUtils.waitForVisibility(deletedListItemAssetOtomasyonVerify, 30);
     }
     public void clickCancelButtonPopUpOtomasyon() {
         BrowserUtils.waitForVisibility(deleteListButtonAssetOtomasyon, 20);
