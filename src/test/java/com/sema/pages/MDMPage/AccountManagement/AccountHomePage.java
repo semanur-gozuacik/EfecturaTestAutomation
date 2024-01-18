@@ -24,7 +24,7 @@ public class AccountHomePage extends BasePage {
     }
 
     public void clickAssociatedFilter() {
-        BrowserUtils.waitForVisibility(associatedFilter, 30);
+        BrowserUtils.wait(7);
         associatedFilter.click();
     }
 
@@ -39,7 +39,7 @@ public class AccountHomePage extends BasePage {
         BrowserUtils.wait(3);
     }
     public void clickAssociatedNoFilter() {
-        BrowserUtils.waitForVisibility(associatedNoFilter, 20);
+        BrowserUtils.wait(7);
         associatedNoFilter.click();
     }
 public void verifyAssociatedNoFilter(){
