@@ -12,6 +12,7 @@ import com.sema.pages.MDMPage.ContactManagement.ContactHomePageMyContactPage;
 import com.sema.pages.MDMPage.ContractManagement.Contract;
 import com.sema.pages.MDMPage.EventManagement.EventHomePage;
 import com.sema.pages.MDMPage.GiftManagement.Gift;
+import com.sema.pages.MDMPage.GiftManagement.GiftHomePage;
 import com.sema.pages.MDMPage.KPIManagement.KPIHomePage;
 import com.sema.pages.MDMPage.ProductManagement.ProductHomePage;
 import com.sema.pages.MDMPage.UserManagement.UserHomePage;
@@ -28,6 +29,7 @@ public class Pages {
     private Contract contract;
     private Asset asset;
     private Gift gift;
+    private GiftHomePage giftHomePage;
     private ContactHomePage contactHomePage;
     private ContactHomePageMyContactPage contactHomePageMyContactPage;
     private ContactEditPage contactEditPage;
@@ -68,6 +70,7 @@ public class Pages {
         this.usersLogs= new UsersLogs();
              this.accountHomePage=new AccountHomePage();
         this.productHomePage=new ProductHomePage();
+        this.giftHomePage=new GiftHomePage();
     }
     // Getter metotları
     public HomePage homePage() {
@@ -95,6 +98,7 @@ public class Pages {
     public UsersLogs userLogs(){return usersLogs;}
 public AccountHomePage accountHomePage(){return accountHomePage;}
     public ProductHomePage productHomePage(){return productHomePage;}
+    public GiftHomePage giftHomePage(){return giftHomePage;}
 }
 
 

@@ -379,3 +379,41 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And  The user clicks "Preview" tab
     And  The user clicks Refresh button
     Then The user verifies refresh button
+
+  Scenario: Contact Export Entity Button - Attributes
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks Export Entity Button
+    And The user clicks Export Attributes
+    Then The user dowloand Export Entity verifies
+
+  Scenario: Contact Export Entity Button - Associations
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks Export Entity Button
+    And The user clicks Export Associations
+    Then The user dowloand Export Entity verifies
+
+  Scenario: Contact Export Entity Button - Permission
+    And The user enters "semaotomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks Export Entity Button
+    And The user clicks Export Permission
+    Then The user dowloand Export Entity verifies
+
+  Scenario Outline: Campaign-Account Associated Tab Status Fılter "<Status>"
+    And The user enters "semaotomasyon" into Code field
+    And  the user clicks on Search button
+    And  The user clicks on Edit Button
+    And  The user clicks "Event-Contact" tab
+    And  The user clicks Associated status
+    And  The user selects  "<Status>"
+    Then The user verifies displayed "<Status>" is correct
+    Examples:
+      |Status|
+      |Status:All|
+      |Enabled   |
+      |Disabled  |
