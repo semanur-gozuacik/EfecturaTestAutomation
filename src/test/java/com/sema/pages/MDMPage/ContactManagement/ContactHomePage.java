@@ -71,7 +71,7 @@ public class ContactHomePage extends BasePage {
     private List<WebElement> verifyNewNodeCategories;
     @FindBy(xpath = "//li[contains(@class, 'select2-results__option')]")
     private List<WebElement> itemStatuses;
-    @FindBy(xpath = "//tr/td[7]")
+    @FindBy(xpath = "//tr/td[9]")
     private List<WebElement> verifyItemStatuses;
     @FindBy(xpath = "(//span[@class='select2-selection__arrow' and @role='presentation'])[3]")
     private WebElement clicksItemStatus;
