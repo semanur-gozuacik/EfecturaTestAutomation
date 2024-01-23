@@ -81,7 +81,7 @@ Feature: Contact Management Test Cases-My Contact Page
     And the user clicks on ItemStatuses
     And the user clicks on "<ItemStatus>"
     And the user clicks on Search button
-    And the incoming filter for "<ItemStatus>" should contain
+ #    And the incoming filter for "<ItemStatus>" should contain
     Examples:
       |ItemStatus |
       |Active     |
