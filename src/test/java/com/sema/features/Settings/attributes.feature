@@ -141,31 +141,31 @@ Feature: Attributes Management Test Cases
       |25 |
       |50 |
       |100|
-  @semooo
+
   Scenario:Attributes Export Button
     Then The user export button attributes
-  @semooo
+
   Scenario Outline: Attributes All Item Types
     Then The user  "<families>"
    Examples:
    |families|
     |Product|
     |All Item Pages|
-  @semooo
+
   Scenario Outline: Attributes AttributesGroups
     Then The user  "<AttributesGroups>"
     Examples:
     |AttributesGroups|
       |FileGropus|
       |AttributesGroups|
-  @semooo
+
   Scenario Outline: Attributes filter
     Then The user  "<filter>"
     Examples:
       |filter|
       |Yes|
       |No|
-  @semooo
+
   Scenario Outline: Attributes localizable filter
     Then The user  "<localizable>"
     Examples:

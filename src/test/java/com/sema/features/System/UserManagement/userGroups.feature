@@ -1,4 +1,4 @@
-
+@regression
 Feature: Users Management User Logs  Test Cases
   Background:
     When  The User opens the browser with the given url
