@@ -34,6 +34,16 @@ public class SettingsAttributesStepDefs extends BaseStep{
     public void the_user_on_the_settings_attribute_page() {
     pages.attributes().onTheAttributeSettingPage();
     }
+    @Then("The user export button attributes")
+    public void the_user_export_button_attributes() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }@Then("The user  {string}")
+    public void the_user(String string) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
 
 
 }
+
