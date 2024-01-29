@@ -158,7 +158,7 @@ Feature: Attributes Management Test Cases
     |AttributesGroups|
       |FileGropus|
       |AttributesGroups|
-
+@semus
   Scenario Outline: Attributes filter
     Then The user  "<filter>"
     Examples:
