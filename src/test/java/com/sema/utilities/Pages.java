@@ -1,6 +1,5 @@
 package com.sema.utilities;
 
-import com.brienwheeler.svc.usergroups.domain.UserGroup;
 import com.sema.pages.HomePage;
 import com.sema.pages.LoginPage;
 import com.sema.pages.MDMPage.AccountManagement.AccountHomePage;
@@ -21,6 +20,7 @@ import com.sema.pages.MDMPage.UserManagement.UserHomePage;
 import com.sema.pages.SettingsPage.Attributes;
 import com.sema.pages.SettingsPage.Families;
 import com.sema.pages.SystemPage.BlackListPage;
+import com.sema.pages.SystemPage.CurrenciesPage;
 import com.sema.pages.SystemPage.UserManagement.Users;
 import com.sema.pages.SystemPage.UserManagement.UsersLogs;
 
@@ -49,8 +49,8 @@ public class Pages {
     private UserHomePage userHomePage;
     private UsersLogs usersLogs;
     private AccountHomePage accountHomePage;
-
     private ProductHomePage productHomePage;
+    private CurrenciesPage currenciesPage;
 
 
     public Pages() {
@@ -71,11 +71,12 @@ public class Pages {
             this.attributes=new Attributes();
             this.users=new Users();
             this.connectorHomePage= new ConnectorHomePage();
-             this.userHomePage= new UserHomePage();
-             this.usersLogs= new UsersLogs();
-             this.accountHomePage=new AccountHomePage();
+            this.userHomePage= new UserHomePage();
+            this.usersLogs= new UsersLogs();
+            this.accountHomePage=new AccountHomePage();
             this.productHomePage=new ProductHomePage();
-           this.giftHomePage=new GiftHomePage();
+            this.giftHomePage=new GiftHomePage();
+            this.currenciesPage = new CurrenciesPage();
     }
     // Getter metotları
     public HomePage homePage() {
@@ -104,6 +105,7 @@ public class Pages {
     public AccountHomePage accountHomePage(){return accountHomePage;}
     public ProductHomePage productHomePage(){return productHomePage;}
     public GiftHomePage giftHomePage(){return giftHomePage;}
+    public CurrenciesPage currenciesPage(){return currenciesPage;}
 
 }
 
