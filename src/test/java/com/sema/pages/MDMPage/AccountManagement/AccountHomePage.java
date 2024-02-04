@@ -43,7 +43,7 @@ public class AccountHomePage extends BasePage {
         associatedNoFilter.click();
     }
 public void verifyAssociatedNoFilter(){
-    BrowserUtils.wait(5);
+    BrowserUtils.wait(7);
 
     for (int i= 0; i<noAssociatedText.size();i++){
             Assert.assertTrue(noAssociatedText.get(i).getText().equals("No"));

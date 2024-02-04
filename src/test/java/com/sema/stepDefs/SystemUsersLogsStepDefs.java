@@ -25,6 +25,7 @@ public class SystemUsersLogsStepDefs extends BaseStep {
     @Given("The user clicks Reset button user")
     public void the_user_clicks_reset_button_user() {
 
+
     }
     @Given("The user clicks Refresh button user")
     public void the_user_clicks_refresh_button_user() {
@@ -60,6 +61,5 @@ public class SystemUsersLogsStepDefs extends BaseStep {
     public void the_user_should_see_entrie_in_everypage_users_logs(String string) {
 
     }
-
 
 }

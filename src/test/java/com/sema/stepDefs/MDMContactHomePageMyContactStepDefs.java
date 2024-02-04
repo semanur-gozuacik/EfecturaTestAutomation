@@ -18,6 +18,7 @@ public class MDMContactHomePageMyContactStepDefs extends BaseStep {
     public void the_user_verify_next_items_is_displayed() {
     pages.contactHomePageMyContactPage().verifyItemNextShowingEntriesText();
     }
+
     @When("The user clicks item previous button")
     public void the_user_clicks_item_previous_button() {
         pages.contactHomePageMyContactPage().clickItemPreviousButton();

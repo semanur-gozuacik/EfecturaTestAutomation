@@ -21,6 +21,7 @@ import com.sema.pages.MDMPage.UserManagement.UserHomePage;
 import com.sema.pages.SettingsPage.Attributes;
 import com.sema.pages.SettingsPage.Families;
 import com.sema.pages.SystemPage.BlackListPage;
+import com.sema.pages.SystemPage.CurrenciesPage;
 import com.sema.pages.SystemPage.UserManagement.Users;
 import com.sema.pages.SystemPage.UserManagement.UsersLogs;
 
@@ -51,7 +52,7 @@ public class Pages {
     private AccountHomePage accountHomePage;
 
     private ProductHomePage productHomePage;
-
+    private CurrenciesPage currenciesPage;
 
     public Pages() {
             this.homePage =new HomePage();
@@ -76,6 +77,7 @@ public class Pages {
              this.accountHomePage=new AccountHomePage();
             this.productHomePage=new ProductHomePage();
            this.giftHomePage=new GiftHomePage();
+           this.currenciesPage=new CurrenciesPage();
     }
     // Getter metotları
     public HomePage homePage() {
@@ -104,6 +106,7 @@ public class Pages {
     public AccountHomePage accountHomePage(){return accountHomePage;}
     public ProductHomePage productHomePage(){return productHomePage;}
     public GiftHomePage giftHomePage(){return giftHomePage;}
+    public  CurrenciesPage currenciesPage(){return currenciesPage;}
 
 }
 
