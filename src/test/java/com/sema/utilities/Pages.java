@@ -1,6 +1,5 @@
 package com.sema.utilities;
 
-import com.brienwheeler.svc.usergroups.domain.UserGroup;
 import com.sema.pages.HomePage;
 import com.sema.pages.LoginPage;
 import com.sema.pages.MDMPage.AccountManagement.AccountHomePage;
@@ -50,7 +49,6 @@ public class Pages {
     private UserHomePage userHomePage;
     private UsersLogs usersLogs;
     private AccountHomePage accountHomePage;
-
     private ProductHomePage productHomePage;
     private CurrenciesPage currenciesPage;
 
@@ -72,10 +70,12 @@ public class Pages {
             this.attributes=new Attributes();
             this.users=new Users();
             this.connectorHomePage= new ConnectorHomePage();
-             this.userHomePage= new UserHomePage();
-             this.usersLogs= new UsersLogs();
-             this.accountHomePage=new AccountHomePage();
+            this.userHomePage= new UserHomePage();
+            this.usersLogs= new UsersLogs();
+            this.accountHomePage=new AccountHomePage();
             this.productHomePage=new ProductHomePage();
+            this.giftHomePage=new GiftHomePage();
+            this.currenciesPage = new CurrenciesPage();
            this.giftHomePage=new GiftHomePage();
            this.currenciesPage=new CurrenciesPage();
     }
@@ -106,8 +106,7 @@ public class Pages {
     public AccountHomePage accountHomePage(){return accountHomePage;}
     public ProductHomePage productHomePage(){return productHomePage;}
     public GiftHomePage giftHomePage(){return giftHomePage;}
-    public  CurrenciesPage currenciesPage(){return currenciesPage;}
-
+    public CurrenciesPage currenciesPage(){return currenciesPage;}
 }
 
 

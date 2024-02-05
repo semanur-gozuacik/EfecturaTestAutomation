@@ -243,7 +243,7 @@ public class CurrenciesPage extends BasePage {
     public void enterPageNumberInToPaginationInputBox(String pageNumber) {
         paginationInputBox.clear();
         paginationInputBox.sendKeys(pageNumber);
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
     }
 
     public void verifyFirstAndPreviousButtonsAreInactiveInFirstPageOfTable() {
