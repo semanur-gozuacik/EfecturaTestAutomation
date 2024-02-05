@@ -72,3 +72,18 @@ Feature: User Management Test Cases- Contact Home Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Item Comment" tab
+
+  Scenario:Product edit -Product_Account Associated
+    And The user enters "Product_193" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Product_Account" tab
+    And The user Assocaited All filter
+
+  Scenario:Product  edit - Product_Account Tab Associated Filter No
+    And The user enters "Product_193" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Product_Account" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter

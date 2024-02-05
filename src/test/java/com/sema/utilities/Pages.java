@@ -52,7 +52,6 @@ public class Pages {
     private ProductHomePage productHomePage;
     private CurrenciesPage currenciesPage;
 
-
     public Pages() {
             this.homePage =new HomePage();
             this.loginPage =new LoginPage();
@@ -77,6 +76,8 @@ public class Pages {
             this.productHomePage=new ProductHomePage();
             this.giftHomePage=new GiftHomePage();
             this.currenciesPage = new CurrenciesPage();
+           this.giftHomePage=new GiftHomePage();
+           this.currenciesPage=new CurrenciesPage();
     }
     // Getter metotları
     public HomePage homePage() {
@@ -106,7 +107,6 @@ public class Pages {
     public ProductHomePage productHomePage(){return productHomePage;}
     public GiftHomePage giftHomePage(){return giftHomePage;}
     public CurrenciesPage currenciesPage(){return currenciesPage;}
-
 }
 
 

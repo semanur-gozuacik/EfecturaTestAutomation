@@ -132,17 +132,12 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user clicks on Edit Button
     And The user clicks "PaymentTransactions" tab
 
-  Scenario:User edit -Account-MRP tab control
+  Scenario:User edit -SBTransactions tab control
     And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "Account-MRP" tab
+    And The user clicks "SBTransactions" tab
 
-  Scenario:User edit -Training-User tab control
-    And The user enters "Otomasyon" into Code field
-    And the user clicks on Search button
-    And  The user clicks on Edit Button
-    And The user clicks "Training-User" tab
 
   Scenario:User edit -History tab control
     And The user enters "Otomasyon" into Code field
@@ -169,6 +164,7 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user clicks on Edit Button
     And clicks group permission tab
     And  The user verifies previous page button is not clickable asset
+
 
   Scenario:Group Permission Verify Item next Button clickable Condition
     And The user enters "Otomasyon" into Code field
@@ -300,3 +296,180 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user clicks "Preview" tab
     And  The user clicks Refresh button
     Then The user verifies refresh button
+
+  Scenario:User edit -Account-MRP tab- All Filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-MRP" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+  Scenario:User edit -Account-MRP tab No Filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-MRP" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
+
+  Scenario:User edit -Account-MRP tab- Valid Label Filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-MRP" tab
+    And The user Assocaited All filter
+    And The user enters valid label filter-"YENİTEST111111113"
+    And The user verifies that filter is displayed
+
+  Scenario:User edit -Account-MRP tab- Invalid Label Filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-MRP" tab
+    And The user Assocaited All filter
+    And The user enters invalid label filter-"invalidlabel"
+    And The user verifies that filter is not displayed
+
+  Scenario:User edit -Account-MRP tab- Reset Button
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-MRP" tab
+    And The user Assocaited All filter
+    And The user enters valid label filter-"YENİTEST111111113"
+    And The user clicks Reset button edit item
+
+  Scenario:User edit -Account-MRP tab- Refresh Button
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-MRP" tab
+    And The user Assocaited All filter
+    And The user enters valid label filter-"YENİTEST111111113"
+    And The user clicks Refresh button edit item
+
+
+  Scenario Outline: User edit -Account-MRP tab -Family Filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-MRP" tab
+    And The user Assocaited All filter
+    And The user clicks family filter
+    And The user selects "<family>"
+    Examples:
+    |family|
+    |NEXIO |
+    |DEF_ACCOUNT|
+    |HOSPITALITY|
+
+  Scenario: User Export Entity Button - Attributes
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks Export Entity Button
+    And The user clicks Export Attributes
+    Then The user dowloand Export Entity verifies
+
+  Scenario: User Export Entity Button - Associations
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks Export Entity Button
+    And The user clicks Export Associations
+    Then The user dowloand Export Entity verifies
+
+  Scenario: User Export Entity Button - Permission
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks Export Entity Button
+    And The user clicks Export Permission
+    Then The user dowloand Export Entity verifies
+
+  Scenario Outline:User edit -Account-MRP tab- Status Filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-MRP" tab
+    And The user Assocaited All filter
+    And The user selects edit item "<status>"
+    Examples:
+    |status|
+    |Enable|
+    |Disable|
+
+  Scenario:User edit -Training-User tab Assocaited All filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Training-User" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+  Scenario:User edit -Training-User tab  Assocaited No filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Training-User" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
+
+  Scenario Outline:User edit -Account-MRP tab- "<status>" Filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Training-User" tab
+    And The user Assocaited All filter
+    And The user selects edit item "<status>"
+    Examples:
+      |status|
+      |Enable|
+      |Disable|
+
+  Scenario:User edit -Banner-MRP tab Assocaited All filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Banner-MRP" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+  Scenario:User edit -Banner-MRP tab  Assocaited No filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Banner-MRP" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
+
+  Scenario Outline:User edit -Account-MRP tab "<export>" button
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Account-MRP" tab
+    And The user clicks export button "<export>"
+    Examples:
+    |export|
+    |Export Current View|
+    |Export Detailed View|
+    |Export All          |
+
+  Scenario:User edit -Attributes Tab
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Attributes" tab
