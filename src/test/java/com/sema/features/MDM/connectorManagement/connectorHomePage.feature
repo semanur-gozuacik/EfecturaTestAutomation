@@ -174,6 +174,7 @@ Feature: Connector Management Test Cases- Connector Home Page
     And clicks group permission tab
     # And  The user verifies previous button is not clickable asset
 
+
   Scenario:Connector Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "1connector1" into Code field
     And the user clicks on Search button
