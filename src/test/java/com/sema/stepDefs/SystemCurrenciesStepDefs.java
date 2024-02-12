@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+
 public class SystemCurrenciesStepDefs extends BaseStep{
 
     @When("The user on the currencies page")
@@ -74,14 +75,14 @@ public class SystemCurrenciesStepDefs extends BaseStep{
         pages.currenciesPage().verifyCodeFilterHasNoValue();
     }
 
-    @When("The user clicks first currency's edit button")
-    public void theUserClicksFirstCurrencySEditButton() {
-        pages.currenciesPage().clickEditButton();
+    @When("The user clicks a currency edit button")
+    public void theUserClicksACurrencyEditButton() {
+        pages.currenciesPage().clickCurrencyEditButton();
     }
 
     @Then("The user verifies that cancel button is active in EditCurrency popup")
     public void theUserVerifiesThatCancelButtonIsActiveInEditCurrencyPopup() {
-        pages.currenciesPage().verifyCancelButtonIsActive();
+        pages.currenciesPage().verifyCancelButtonIsActiveInEditCurrencyPopup();
     }
 
     @Then("The user verifies that Save button is inactive without change in EditCurrency popup")
@@ -149,5 +150,150 @@ public class SystemCurrenciesStepDefs extends BaseStep{
     @Then("The user verifies that first and previous pagination buttons are inactive in first page of table")
     public void theUserVerifiesThatFirstAndPreviousPaginationButtonsAreInactiveInFirstPageOfTable() {
         pages.currenciesPage().verifyFirstAndPreviousButtonsAreInactiveInFirstPageOfTable();
+    }
+
+    @When("The user enters {string} in to CurrencyCode input box in AddCurrency popup")
+    public void theUserEntersAInToCurrencyCodeInputBoxInAddCurrencyPopup(String addCurrencyCodeInput) {
+        pages.currenciesPage().enterInputToAddCurrencyCode(addCurrencyCodeInput);
+    }
+
+    @Then("The user verifies that Save button is active in AddCurrency popup")
+    public void theUserVerifiesThatSaveButtonIsActiveInAddCurrencyPopup() {
+        pages.currenciesPage().verifySaveButtonIsActiveInAddCurrencyPopup();
+    }
+
+    @When("The user enters an already existing Code value in to CurrencyCode input box {string}")
+    public void theUserEntersAnAlreadyExistingCodeValueInToCurrencyCodeInputBox(String popupName) {
+        pages.currenciesPage().enterAlreadyExistingCodeValueInTo(popupName);
+    }
+
+    @When("The user clicks Save button in AddCurrency popup")
+    public void theUserClicksSaveButtonInAddCurrencyPopup() {
+        pages.currenciesPage().clickSaveButtonInAddCurrencyPopup();
+    }
+
+    @Then("The user verifies that the {string} warning appears in the top right")
+    public void theUserVerifiesThatTheSKUShouldBeUniqueWarningAppearsInTheTopRight(String expectedWarning) {
+        pages.currenciesPage().verifySkuShouldBeUniqueWarningIsDisplayed(expectedWarning);
+    }
+
+    @When("The user clicks Save button in EditCurrency popup")
+    public void theUserClicksSaveButtonInEditCurrencyPopup() {
+        pages.currenciesPage().clickSaveButtonInEditCurrencyPopup();
+    }
+
+    @When("The user enters a non existing Code value in to CurrencyCode input box {string}")
+    public void theUserEntersANonExistingCodeValueInToCurrencyCodeInputBoxEditCurrency(String popupName) {
+        pages.currenciesPage().enterNonExistingCodeValueInTo(popupName);
+    }
+
+    @Then("The user verifies that the {string} info appears in the top right")
+    public void theUserVerifiesThatTheChangesSavedSuccessfullyInfoAppearsInTheTopRight(String expectedInfo) {
+        pages.currenciesPage().verifyChangesSavedSuccessfullyInfoIsDisplayed(expectedInfo);
+    }
+
+    @Then("The user verifies that current currencies include edited currency")
+    public void theUserVerifiesThatCurrentCurrenciesIncludeEditedCurrency() {
+        pages.currenciesPage().verifyEditedCurrencyIsInTable();
+    }
+
+    @Then("User verifies that status of the currency has changed")
+    public void userVerifiesThatStatusOfTheCurrencyHasChanged() {
+        pages.currenciesPage().verifyStatusOfEditedCurrencyHasChanged();
+    }
+
+    @Then("The user verifies that current currencies include new currency")
+    public void theUserVerifiesThatCurrentCurrenciesIncludeNewCurrency() {
+        pages.currenciesPage().verifyNewCurrencyIsInTable();
+    }
+
+    @When("The user clicks a currency delete button")
+    public void theUserClicksACurrencyDeleteButton() {
+        pages.currenciesPage().clickCurrencyDeleteButton();
+    }
+
+    @Then("The user verifies that Cancel button is active in DeleteCurrency popup")
+    public void theUserVerifiesThatCancelButtonIsActiveInDeleteCurrencyPopup() {
+        pages.currenciesPage().verifyThatCancelButtonIsActiveInDeleteCurrencyPopup();
+    }
+
+    @Then("The user verifies that Delete button is active in DeleteCurrency popup")
+    public void theUserVerifiesThatDeleteButtonIsActiveInDeleteCurrencyPopup() {
+        pages.currenciesPage().verifyThatDeleteButtonIsActiveInDeleteCurrencyPopup();
+    }
+
+    @When("The user clicks Cancel button in DeleteCurrency popup")
+    public void theUserClicksCancelButtonInDeleteCurrencyPopup() {
+        pages.currenciesPage().clickCancelButtonInDeleteCurrencyPopup();
+    }
+
+    @Then("The user verifies that DeleteCurrency popup is closed")
+    public void theUserVerifiesThatDeleteCurrencyPopupIsClosed() {
+        pages.currenciesPage().verifyDeleteCurrencyPopupIsClosed();
+    }
+
+    @When("The user clicks Delete button in DeleteCurrency popup")
+    public void theUserClicksDeleteButtonInDeleteCurrencyPopup() {
+        pages.currenciesPage().clickDeleteButtonInDeleteCurrencyPopup();
+    }
+
+    @Then("The user verifies that current currencies do not include edited currency")
+    public void theUserVerifiesThatCurrentCurrenciesDoNotIncludeEditedCurrency() {
+        pages.currenciesPage().verifyDeletedCurrencyIsNotInTable();
+    }
+
+    @Then("The user verifies that Cancel button is active in AddCurrency popup")
+    public void theUserVerifiesThatCancelButtonIsActiveInAddCurrencyPopup() {
+        pages.currenciesPage().verifyCancelButtonIsActiveInAddCurrencyPopup();
+    }
+
+    @When("The user enters last page number in to pagination input box")
+    public void theUserEntersLastPageNumberInToPaginationInputBox() {
+        pages.currenciesPage().enterLastPageNumberInToPaginationInputBox();
+    }
+
+    @Then("The user verifies that last and next pagination buttons are inactive in last page of table")
+    public void theUserVerifiesThatLastAndNextPaginationButtonsAreInactiveInLastPageOfTable() {
+        pages.currenciesPage().verifyLastAndNextButtonsAreInactiveInLastPageOfTable();
+    }
+
+    @When("The user clicks last pagination button in Currencies page")
+    public void theUserClicksLastPaginationButtonInCurrenciesPage() {
+        pages.currenciesPage().clickLastPaginationButtonInCurrenciesPage();
+    }
+
+    @Then("The user verifies that table is in last page")
+    public void theUserVerifiesThatTableIsInLastPage() {
+        pages.currenciesPage().verifyTableIsInLastPageInCurrenciesPage();
+    }
+
+    @When("The user clicks first pagination button in Currencies page")
+    public void theUserClicksFirstPaginationButtonInCurrenciesPage() {
+        pages.currenciesPage().clickFirstPaginationButtonInCurrenciesPage();
+    }
+
+    @Then("The user verifies that table is in first page")
+    public void theUserVerifiesThatTableIsInFirstPage() {
+        pages.currenciesPage().verifyTableIsInFirstPageInCurrenciesPage();
+    }
+
+    @When("The user clicks next pagination button in Currencies page")
+    public void theUserClicksNextPaginationButtonInCurrenciesPage() {
+        pages.currenciesPage().clickNextPaginationButtonInCurrenciesPage();
+    }
+
+    @Then("The user verifies that table go to next page in Currencies page")
+    public void theUserVerifiesThatTableGoToNextPageInCurrenciesPage() {
+        pages.currenciesPage().verifyTableIsInNextPageInCurrenciesPage();
+    }
+
+    @When("The user clicks previous pagination button in Currencies page")
+    public void theUserClicksPreviousPaginationButtonInCurrenciesPage() {
+        pages.currenciesPage().clickPreviousPaginationButtonInCurrenciesPage();
+    }
+
+    @Then("The user verifies that table go to previous page in Currencies page")
+    public void theUserVerifiesThatTableGoToPreviousPageInCurrenciesPage() {
+        pages.currenciesPage().verifyTableGoToPreviousPageInCurrenciesPage();
     }
 }

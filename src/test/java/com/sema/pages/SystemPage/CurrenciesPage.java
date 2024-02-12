@@ -3,13 +3,16 @@ package com.sema.pages.SystemPage;
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.Driver;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class CurrenciesPage extends BasePage {
 
@@ -17,7 +20,7 @@ public class CurrenciesPage extends BasePage {
     private WebElement currenciesTable;
 
     @FindBy(xpath = "//tr/td[1]")
-    public List<WebElement> codeValues;
+    private List<WebElement> codeValues;
 
     @FindBy(xpath = "//tr/td[2]")
     private List<WebElement> statusValues;
@@ -42,6 +45,18 @@ public class CurrenciesPage extends BasePage {
 
     @FindBy(xpath = "//td/a[1]")
     private List<WebElement> editButtonsInCurrenciesPage;
+
+    @FindBy(xpath = "//td/a[2]")
+    private List<WebElement> deleteButtonsInCurrenciesPage;
+
+    @FindBy(xpath = "//div[2]/div[3]/button[1]")
+    private WebElement cancelButtonInDeleteCurrencyPopup;
+
+    @FindBy(xpath = "//div[2]/div[3]/button[2]")
+    private WebElement deleteButtonInDeleteCurrencyPopup;
+
+    @FindBy(xpath = "(//div[@class='modal-dialog modal-confirm'])[1]")
+    private WebElement deleteCurrencyPopup;
 
     @FindBy(xpath = "//div[@id='edit-currency-modal']/div[2]/div")
     private WebElement editCurrencyPopup;
@@ -85,6 +100,18 @@ public class CurrenciesPage extends BasePage {
     @FindBy(xpath = "//input[@class='pagination-text']")
     private WebElement paginationInputBox;
 
+    @FindBy(xpath = "//input[@id='currency-code']")
+    private WebElement addCurrencyCodeInputBox;
+
+    @FindBy(xpath = "//span[text()='SKU should be unique']")
+    private WebElement skuShouldBeUniqueWarningPopup;
+    
+    @FindBy(xpath = "//span[text()='Changes saved successfully.']")
+    private WebElement changesSavedSuccessfullyInfoPopup;
+
+    @FindBy(xpath = "//select[@name='locales_table_length']")
+    private WebElement tableLengthSelectDropdown;
+
 
     public void goToCurrenciesPage() {
         Driver.getDriver().navigate().to("https://sandbox.efectura.com/Settings/Currencies");
@@ -102,16 +129,17 @@ public class CurrenciesPage extends BasePage {
         }
     }
 
-    private List<String> takeStringListFromWebElementList(List<WebElement> webElementList) {
-        List<String> stringList = new LinkedList<>();
+    private List<String> getStringListFromWebElementList(List<WebElement> webElementList) {
+        List<String> stringList = new ArrayList<>();
+        BrowserUtils.wait(2);
         for (WebElement element : webElementList) {
-            stringList.add(element.getText());
+            stringList.add(element.getText().toLowerCase());
         }
         return stringList;
     }
 
     public boolean areCodeValuesAscending() {
-        List<String> codeValuesAsString = takeStringListFromWebElementList(codeValues);
+        List<String> codeValuesAsString = getStringListFromWebElementList(codeValues);
         for (int i = 0; i < codeValuesAsString.size() - 1; i++) {
             if (codeValuesAsString.get(i).compareTo(codeValuesAsString.get(i + 1)) > 0) {
                 return false;
@@ -129,7 +157,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public boolean areCodeValuesDescending() {
-        List<String> codeValuesAsString = takeStringListFromWebElementList(codeValues);
+        List<String> codeValuesAsString = getStringListFromWebElementList(codeValues);
         for (int i = 0; i < codeValuesAsString.size() - 1; i++) {
             if (codeValuesAsString.get(i).compareTo(codeValuesAsString.get(i + 1)) < 0) {
                 return false;
@@ -148,7 +176,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public boolean areStatusValuesAscending() {
-        List<String> statusValuesAsString = takeStringListFromWebElementList(statusValues);
+        List<String> statusValuesAsString = getStringListFromWebElementList(statusValues);
         for (int i = 0; i < statusValuesAsString.size() - 1; i++) {
             if (statusValuesAsString.get(i).equals("Active") && statusValuesAsString.get(i + 1).equals("Inactive")) {
                 return false;
@@ -167,7 +195,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public boolean areStatusValuesDescending() {
-        List<String> statusValuesAsString = takeStringListFromWebElementList(statusValues);
+        List<String> statusValuesAsString = getStringListFromWebElementList(statusValues);
         for (int i = 0; i < statusValuesAsString.size() - 1; i++) {
             if (statusValuesAsString.get(i).equals("Inactive") && statusValuesAsString.get(i + 1).equals("Active")) {
                 return false;
@@ -185,22 +213,33 @@ public class CurrenciesPage extends BasePage {
     public void clickResetButton() {resetButton.click();}
 
     public void verifyCodeFilterHasNoValue() {
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        String actualValue = (String) js.executeScript("return arguments[0].value;", codeFilterInputBox);
+        String actualValue = getValueInInputBox(codeFilterInputBox);
         Assert.assertEquals("", actualValue);
     }
 
-    public void clickEditButton() {editButtonsInCurrenciesPage.get(0).click();}
+    String currencyStatusToBeClicked;
+    String currencyCodeToBeClicked;
+    public void clickCurrencyEditButton() {
+        List<String> codeValuesAsString = getStringListFromWebElementList(codeValues);
+        for (int i = 0; i < codeValuesAsString.size(); i++) {
+            if (!codeValuesAsString.get(i).equalsIgnoreCase("Dolar") && !codeValuesAsString.get(i).equalsIgnoreCase("Lira")) {
+                currencyStatusToBeClicked = statusValues.get(i).getText();
+                currencyCodeToBeClicked = codeValuesAsString.get(i);
+                editButtonsInCurrenciesPage.get(i).click();
+                break;
+            }
+        }
+    }
 
-    public void verifyCancelButtonIsActive() {Assert.assertTrue(cancelButtonInEditCurrencyPopup.isEnabled());}
+    public void verifyCancelButtonIsActiveInEditCurrencyPopup() {Assert.assertTrue(cancelButtonInEditCurrencyPopup.isEnabled());}
 
-    public boolean isButtonIsInactive(WebElement button) {
-        String classAttribute = saveButtonInEditCurrencyPopup.getAttribute("class");
-        return classAttribute.contains("disabled");
+    public boolean isButtonActive(WebElement button) {
+        String classAttribute = button.getAttribute("class");
+        return !classAttribute.contains("disabled");
     }
 
     public void verifySaveButtonIsInactiveInEditCurrencyPopup() {
-        Assert.assertTrue(isButtonIsInactive(saveButtonInEditCurrencyPopup));
+        Assert.assertFalse(isButtonActive(saveButtonInEditCurrencyPopup));
     }
 
     public void clickCancelButtonInEditCurrencyPopup() {cancelButtonInEditCurrencyPopup.click();}
@@ -222,13 +261,12 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void verifySaveButtonIsActiveInEditCurrencyPopup() {
-        String classAttribute = saveButtonInEditCurrencyPopup.getAttribute("class");
-        Assert.assertFalse(classAttribute.contains("disabled"));
+        Assert.assertTrue(isButtonActive(saveButtonInEditCurrencyPopup));
     }
 
     public void clickStatusCheckboxInEditCurrencyPopup() {statusCheckboxInEditCurrencyPopup.click();}
 
-    public void verifyRefreshButtonIsActiveInCurrencies() {Assert.assertTrue(refreshButton.isEnabled());}
+    public void verifyRefreshButtonIsActiveInCurrencies() {Assert.assertTrue(isButtonActive(refreshButton));}
 
     public void clickCreateNewButtonInCurrenciesPage() {createNewButton.click();}
 
@@ -237,7 +275,7 @@ public class CurrenciesPage extends BasePage {
     public void verifyAddCurrencyPopupIsClosed() {Assert.assertTrue(isPopupClosed(addCurrencyPopup));}
 
     public void verifySaveButtonIsInactiveInAddCurrencyPopup() {
-        Assert.assertTrue(isButtonIsInactive(saveButtonInAddCurrencyPopup));
+        Assert.assertFalse(isButtonActive(saveButtonInAddCurrencyPopup));
     }
 
     public void enterPageNumberInToPaginationInputBox(String pageNumber) {
@@ -247,6 +285,226 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void verifyFirstAndPreviousButtonsAreInactiveInFirstPageOfTable() {
-        Assert.assertTrue(isButtonIsInactive(firstPaginationButton) && isButtonIsInactive(previousPaginationButton));
+        Assert.assertFalse(isButtonActive(firstPaginationButton) || isButtonActive(previousPaginationButton));
+    }
+
+    public void enterInputToAddCurrencyCode(String addCurrencyCodeInput) {
+        addCurrencyCodeInputBox.sendKeys(addCurrencyCodeInput);
+        BrowserUtils.wait(1);
+    }
+
+    public void verifySaveButtonIsActiveInAddCurrencyPopup() {
+        Assert.assertTrue(isButtonActive(saveButtonInAddCurrencyPopup));
+    }
+
+    public void enterAlreadyExistingCodeValueInTo(String s) {
+        String alreadyExistingCodeValue = codeValues.get(1).getText();
+        if (s.contains("Add")) {
+            addCurrencyCodeInputBox.sendKeys(alreadyExistingCodeValue);
+        }else if(s.contains("Edit")) {
+            editCurrencyCodeInputBox.clear();
+            editCurrencyCodeInputBox.sendKeys(alreadyExistingCodeValue);
+        }
+    }
+
+    public void clickSaveButtonInAddCurrencyPopup() {saveButtonInAddCurrencyPopup.click();}
+
+    public void verifySkuShouldBeUniqueWarningIsDisplayed(String expectedWarning) {
+        BrowserUtils.waitForVisibility(skuShouldBeUniqueWarningPopup,2);
+        Assert.assertEquals(skuShouldBeUniqueWarningPopup.getText(), expectedWarning);
+    }
+
+    public void clickSaveButtonInEditCurrencyPopup() {
+        BrowserUtils.waitForClickability(saveButtonInEditCurrencyPopup,5);
+        saveButtonInEditCurrencyPopup.click();
+    }
+
+    String randomCurrencyCode;
+    public static String generateRandomCurrencyCode() {
+        int length = 5;
+        String characters = "ABCDEFGHJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder stringBuilder = new StringBuilder();
+
+        Random random = new Random();
+        for (int i = 0; i < length; i++) {
+            int randomIndex = random.nextInt(characters.length());
+            char randomChar = characters.charAt(randomIndex);
+            stringBuilder.append(randomChar);
+        }
+        return stringBuilder.toString();
+    }
+
+    public void enterNonExistingCodeValueInTo(String popupName) {
+        randomCurrencyCode = generateRandomCurrencyCode();
+
+        if (popupName.contains("Add")) {
+            addCurrencyCodeInputBox.sendKeys(randomCurrencyCode);
+        }else if(popupName.contains("Edit")) {
+            editCurrencyCodeInputBox.clear();
+            editCurrencyCodeInputBox.sendKeys(randomCurrencyCode);
+        }
+    }
+
+    public void verifyChangesSavedSuccessfullyInfoIsDisplayed(String expectedInfo) {
+        BrowserUtils.waitForVisibility(changesSavedSuccessfullyInfoPopup,5);
+        Assert.assertEquals(changesSavedSuccessfullyInfoPopup.getText(), expectedInfo);
+    }
+
+    public boolean isCurrencyCodeValueInTable(String currencyCodeToBeCheck) {
+        List<String> codeValuesAsString = getStringListFromWebElementList(codeValues);
+        System.out.println("AAAAAAAA : " + randomCurrencyCode);
+        System.out.println("BBBBBBBB : " + codeValuesAsString);
+
+        if (codeValuesAsString.contains(currencyCodeToBeCheck.toLowerCase())) {
+            return true;
+        }
+
+        while (isButtonActive(nextPaginationButton)) {
+            BrowserUtils.wait(3);
+            nextPaginationButton.click();
+            BrowserUtils.wait(3);
+            System.out.println("AAAAAAAA : " + randomCurrencyCode);
+            System.out.println("BBBBBBBB : " + codeValuesAsString);
+            codeValuesAsString = getStringListFromWebElementList(codeValues);
+            BrowserUtils.waitForVisibility(codeValues.get(0),5);
+            if (codeValuesAsString.contains(currencyCodeToBeCheck.toLowerCase())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void verifyEditedCurrencyIsInTable() {
+        Assert.assertTrue(isCurrencyCodeValueInTable(randomCurrencyCode));
+    }
+
+    public void verifyStatusOfEditedCurrencyHasChanged() {
+        BrowserUtils.wait(3);
+        String newStatus = "";
+        for (int i = 0; i < codeValues.size(); i++) {
+            if (codeValues.get(i).getText().equalsIgnoreCase(currencyCodeToBeClicked)) {
+                newStatus = statusValues.get(i).getText();
+            }
+        }
+        Assert.assertNotEquals(currencyStatusToBeClicked,newStatus);
+    }
+
+    public void verifyNewCurrencyIsInTable() {
+        Assert.assertTrue(isCurrencyCodeValueInTable(randomCurrencyCode));
+    }
+
+    String currencyCodeToBeDeleted;
+    public void clickCurrencyDeleteButton() {
+        List<String> codeValuesAsString = getStringListFromWebElementList(codeValues);
+        for (int i = 0; i < codeValuesAsString.size(); i++) {
+            if (!codeValuesAsString.get(i).equalsIgnoreCase("Dolar") && !codeValuesAsString.get(i).equalsIgnoreCase("Lira")) {
+                currencyCodeToBeDeleted = codeValuesAsString.get(i);
+                deleteButtonsInCurrenciesPage.get(i).click();
+                break;
+            }
+        }
+    }
+
+    public void verifyThatCancelButtonIsActiveInDeleteCurrencyPopup() {
+        Assert.assertTrue(isButtonActive(cancelButtonInDeleteCurrencyPopup));
+    }
+
+    public void verifyThatDeleteButtonIsActiveInDeleteCurrencyPopup() {
+        Assert.assertTrue(isButtonActive(deleteButtonInDeleteCurrencyPopup));
+    }
+
+    public void clickCancelButtonInDeleteCurrencyPopup() {cancelButtonInDeleteCurrencyPopup.click();}
+
+    public void verifyDeleteCurrencyPopupIsClosed() {
+        Assert.assertTrue(isPopupClosed(deleteCurrencyPopup));
+    }
+
+    public void clickDeleteButtonInDeleteCurrencyPopup() {deleteButtonInDeleteCurrencyPopup.click();}
+
+    public void verifyDeletedCurrencyIsNotInTable() {
+        Assert.assertFalse(isCurrencyCodeValueInTable(currencyCodeToBeDeleted));
+    }
+
+    public void verifyCancelButtonIsActiveInAddCurrencyPopup() {
+        Assert.assertTrue(isButtonActive(cancelButtonInAddCurrencyPopup));
+    }
+
+    public String getSelectedOption(WebElement selectElement) {
+        Select select = new Select(selectElement);
+        return select.getFirstSelectedOption().getText();
+    }
+
+    public int findLastPageNumber() {
+        int totalCurrencyCount = Integer.parseInt(tableInfoInCurrenciesPage.getText().split(" ")[5]);
+        int visibleCurrencyCount = Integer.parseInt(getSelectedOption(tableLengthSelectDropdown));
+        return (int) Math.ceil((double) totalCurrencyCount / visibleCurrencyCount);
+    }
+
+    public void enterLastPageNumberInToPaginationInputBox() {
+        paginationInputBox.clear();
+        paginationInputBox.sendKeys(findLastPageNumber() + "");
+        BrowserUtils.wait(3);
+    }
+
+    public void verifyLastAndNextButtonsAreInactiveInLastPageOfTable() {
+        Assert.assertFalse(isButtonActive(lastPaginationButton) || isButtonActive(nextPaginationButton));
+    }
+
+    public void waitForCondition(Boolean condition) {
+        while (condition) {
+            BrowserUtils.wait(1);
+        }
+    }
+
+    public void clickLastPaginationButtonInCurrenciesPage() {
+        lastPaginationButton.click();
+        while (isButtonActive(lastPaginationButton)) {
+            BrowserUtils.wait(1);
+        }
+    }
+
+    public String getValueInInputBox(WebElement inputBox) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        return (String) js.executeScript("return arguments[0].value;", inputBox);
+    }
+
+    public void verifyTableIsInLastPageInCurrenciesPage() {
+        String actualPageNumber = getValueInInputBox(paginationInputBox);
+        Assert.assertEquals(findLastPageNumber() + "",actualPageNumber);
+    }
+
+    public void clickFirstPaginationButtonInCurrenciesPage() {
+        firstPaginationButton.click();
+        while (isButtonActive(firstPaginationButton)) {
+            BrowserUtils.wait(1);
+        }
+    }
+
+    public void verifyTableIsInFirstPageInCurrenciesPage() {
+        String actualPageNumber = getValueInInputBox(paginationInputBox);
+        Assert.assertEquals("1",actualPageNumber);
+    }
+
+    public void clickNextPaginationButtonInCurrenciesPage() {
+        nextPaginationButton.click();
+        while (!isButtonActive(firstPaginationButton)) {
+            BrowserUtils.wait(1);
+        }
+    }
+
+    public void verifyTableIsInNextPageInCurrenciesPage() {
+        Assert.assertEquals("2", getValueInInputBox(paginationInputBox));
+    }
+
+    public void clickPreviousPaginationButtonInCurrenciesPage() {
+        previousPaginationButton.click();
+        while (isButtonActive(firstPaginationButton)) {
+            BrowserUtils.wait(1);
+        }
+    }
+
+    public void verifyTableGoToPreviousPageInCurrenciesPage() {
+        Assert.assertEquals("1", getValueInInputBox(paginationInputBox));
     }
 }
