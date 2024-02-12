@@ -1,4 +1,4 @@
-
+@regression
 Feature: Currencies Test Cases
   Background:
     Given The User opens the browser with the given url
@@ -23,7 +23,7 @@ Feature: Currencies Test Cases
       | l       |
       | dolar   |
 
-  @fatih
+
   Scenario: The user verifies code values are ascending order
     Then The user verifies that code values are ascending order with no action
 
