@@ -116,6 +116,7 @@ Feature: Gift Creation and Management Home Page
     And The user Assocaited No filter
     Then The user verify No Filter
 
+
   Scenario:Gift edit - Gifts image Tab Associated
     And The user enters "TestGiftForRecieved" into Code field
     And the user clicks on Search button

@@ -41,7 +41,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And The user enters "sema12345" into Label field
     And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
-  @smm
+
   Scenario Outline: Filter "<ItemStatus>" Item Statuses
     And the user clicks on ItemStatuses
     And the user clicks on "<ItemStatus>"

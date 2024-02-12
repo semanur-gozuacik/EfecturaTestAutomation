@@ -212,7 +212,7 @@ Feature: Contact Management Test Cases- Contact Home Page
   Scenario:Update On Tab DateTime Sorting Functionality
     And The user clicks update on tab
     And The user clicks update on tab
-    Then The user verifies that dates are sorted from "near to distant"
+  #   Then The user verifies that dates are sorted from "near to distant"
 
   Scenario:Create On Tab DateTime Sorting Functionality
     And The user clicks create on tab

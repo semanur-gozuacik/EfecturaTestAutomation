@@ -196,6 +196,7 @@ Feature: Account Management Test Cases- Account Home Page
     And  The user clicks on Edit Button
     And The user clicks "InvoiceTransaction" tab
 
+
   Scenario:Account edit -Nexio Data Tab
     And The user enters "semaaa" into Code field
     And the user clicks on Search button

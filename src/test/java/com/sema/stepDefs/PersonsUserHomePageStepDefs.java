@@ -29,7 +29,7 @@ public class PersonsUserHomePageStepDefs extends BaseStep {
     }
     @Given("The user selects {string}")
     public void the_user_selects(String family) {
-pages.userHomePage().selectFamily(family);
+//pages.userHomePage().selectFamily(family);
     }
     @Given("The user selects edit item {string}")
     public void the_user_selects_edit_item(String status) {

@@ -166,7 +166,6 @@ Feature: Contact Management Test Cases-My Contact Page
       |testcontact2322|
       |testforDIAGEOcontact|
 
-
   Scenario: My Count Verify export button
     When The user clicks My Contact button
     And The user waits ten seconds

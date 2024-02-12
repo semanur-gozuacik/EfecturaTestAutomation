@@ -203,8 +203,6 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
-    #Then The user verifies itemComment tab details is displayed
-
 
   Scenario:Contact edit - ACCOUNT_CONTACT Tab
     And The user enters "semaotomasyon" into Code field

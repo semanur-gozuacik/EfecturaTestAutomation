@@ -10,11 +10,13 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class UserHomePage extends BasePage {
-    @FindBy(xpath = "//input[@id='filter-Label']")
+    @FindBy(xpath = "//a[normalize-space()='Label']")
     private WebElement labelFilter;
+    @FindBy(xpath = "//input[@id='Label-associationTable']")
+    private WebElement labelFilterSendKey;
     @FindBy(xpath = "//tbody/tr/td[6]")
     private List<WebElement> labelVerifies;
-    @FindBy(xpath ="//span[@class='iconbtn iconbtn-green rrbutton reset_filter-assoc']//span[@class='icon']")
+    @FindBy(xpath ="//span[@class='iconbtn iconbtn-green rrbutton reset_filter-new']//i[@class='fa fa-undo']")
     private WebElement resetButton;
     @FindBy(xpath ="//span[@class='iconbtn iconbtn-green refresh-association-table rrbutton refresh']//span[@class='text'][normalize-space()='Refresh']")
     private WebElement refreshButton;
@@ -26,7 +28,7 @@ public class UserHomePage extends BasePage {
     private WebElement DEF_ACCOUNTFamilyFılter;
     @FindBy(xpath = "//li[contains(text(),'HOSPITALITY') and @role='treeitem']")
     private WebElement HOSPITALITYFamilyFılter;
-    @FindBy(xpath ="//span[@id='select2-filter-Status-container']")
+    @FindBy(xpath ="//a[normalize-space()='Status']//*[name()='svg']")
     private WebElement statusFilter;
     @FindBy(xpath ="//li[contains(text(),'Enable') and @role='treeitem']")
     private WebElement enabledStatusFilter;
@@ -40,8 +42,10 @@ public class UserHomePage extends BasePage {
         driver.navigate().to("https://sandbox.efectura.com/Enrich/Items?itemType=MRP");
     }
     public void validLabelFilter(String validLabel){
-    labelFilter.sendKeys(validLabel);
-    labelFilter.sendKeys(Keys.ENTER);
+        BrowserUtils.wait(5);
+        labelFilter.click();
+        labelFilterSendKey.sendKeys(validLabel);
+        labelFilterSendKey.sendKeys(Keys.ENTER);
 
     }
     public void inValidLabelFilter(String invalidLabel){
@@ -103,7 +107,7 @@ public class UserHomePage extends BasePage {
     }
 public void clickResetButton(){
         BrowserUtils.wait(2);
-    resetButton.click();
+        resetButton.click();
 
 }
     public void clickRefresgButton(){

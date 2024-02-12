@@ -3,11 +3,13 @@ package com.sema.pages.MDMPage.ContactManagement;
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
@@ -44,7 +46,9 @@ public class ContactHomePage extends BasePage {
     @FindBy(xpath = "//a[@class='select-jstree-node link-jstree-node'][normalize-space()='Contact']")
     private List<WebElement> verifyUnassignedRecordsCategory;
     @FindBy(xpath = "//input[@id='filter-SKU']")
-    private WebElement codeFilter;
+    private WebElement codeFilterSendKey;
+    @FindBy(xpath = "//a[normalize-space()='Code']")
+    private WebElement codeFilterClick;
     @FindBy(xpath = "//i[@class='fa fa-search-plus']")
     private WebElement searchButton;
     @FindBy(xpath = "//td[@class='sorting_1']")
@@ -53,8 +57,10 @@ public class ContactHomePage extends BasePage {
     private List<WebElement> verifyPartialCodeFilters;
     @FindBy(xpath = "//td[@class='dataTables_empty']")
     private WebElement noContentsText;
-    @FindBy(id = "filter-Label")
+    @FindBy(xpath = "//input[@id='filter-Label']")
     private WebElement labelFilter;
+    @FindBy(xpath = "//a[normalize-space()='Label']")
+    private WebElement labelFilterClick;
     @FindBy(xpath = "//tr[@role='row']//td[4]")
     private List<WebElement> verifyLabelFilter;
     @FindBy(xpath = "//td[.='Ekosystem']")
@@ -65,16 +71,20 @@ public class ContactHomePage extends BasePage {
     private WebElement EkosystemFamilyFılter;
     @FindBy(xpath = "//li[contains(text(),'IWSA') and @role='treeitem']")
     private WebElement IWSAFamilyFılter;
-    @FindBy(xpath = "(//span[@class='select2-selection__arrow' and @role='presentation'])[2]")
+    @FindBy(xpath = "//span[@class='select2-search select2-search--dropdown']//input[@role='textbox']")
     private WebElement familyFilterDropDown;
+    @FindBy(xpath = "//a[normalize-space()='Family']")
+    private WebElement familyFilterDropDownClick;
     @FindBy(xpath = "//td//a[@class='select-jstree-node link-jstree-node'][normalize-space()='New node']")
     private List<WebElement> verifyNewNodeCategories;
     @FindBy(xpath = "//li[contains(@class, 'select2-results__option')]")
     private List<WebElement> itemStatuses;
     @FindBy(xpath = "//tr/td[9]")
     private List<WebElement> verifyItemStatuses;
-    @FindBy(xpath = "(//span[@class='select2-selection__arrow' and @role='presentation'])[3]")
+    @FindBy(xpath = "//a[contains(@class,'filter-toggle')][normalize-space()='ItemStatuses']")
     private WebElement clicksItemStatus;
+    @FindBy(xpath = "//span[contains(@class,'select2-search select2-search--dropdown')]//input[contains(@role,'textbox')]")
+    private WebElement clicksItemStatusTextBox;
     @FindBy(xpath = "//span[contains(text(),'Reset')]")
     private WebElement resetButton;
     @FindBy(xpath = "//a[@class='t-delete danger-btn']")
@@ -146,17 +156,17 @@ public class ContactHomePage extends BasePage {
     private WebElement updateOnTab;
     @FindBy(xpath = "//th[normalize-space()='CreatedOnOverview']")
     private WebElement createOnTab;
-    @FindBy(xpath = "//td[5]")
+    @FindBy(xpath = "//td[7]")
     private List<WebElement> updateOnSorting;
-    @FindBy(xpath = "//td[6]")
+    @FindBy(xpath = "//td[8]")
     private List<WebElement> createOnSorting;
     @FindBy(xpath = "//th[normalize-space()='Id']")
     private WebElement idTab;
-    @FindBy(xpath = "//td[7]")
+    @FindBy(xpath = "//td[4]")
     private List<WebElement> idTabSorting;
     @FindBy(xpath = "//th[normalize-space()='Birthdate']")
     private WebElement birthdateTab;
-    @FindBy(xpath = "//td[3]")
+    @FindBy(xpath = "//td[9]")
     private List<WebElement> birthdateTabSorting;
     public ContactHomePage() {
     }
@@ -232,8 +242,8 @@ public class ContactHomePage extends BasePage {
 
     public void setCodeFilter(String code) {
         BrowserUtils.wait(4);
-        codeFilter.click();
-        codeFilter.sendKeys(code);
+        codeFilterClick.click();
+        codeFilterSendKey.sendKeys(code);
     }
 
     public void clickSearchButton() {
@@ -265,7 +275,8 @@ public class ContactHomePage extends BasePage {
     }
 
     public void setLabelFilter(String label) {
-        labelFilter.click();
+        BrowserUtils.wait(4);
+        labelFilterClick.click();
         labelFilter.sendKeys(label);
     }
 
@@ -276,9 +287,8 @@ public class ContactHomePage extends BasePage {
         }
     public void selectEkosystemFamilyFilter() {
         BrowserUtils.wait(10);
-        familyFilterDropDown.click();
-        BrowserUtils.wait(10);
-        EkosystemFamilyFılter.click();
+        familyFilterDropDownClick.click();
+        familyFilterDropDown.sendKeys("Ekosystem"+ Keys.ENTER);
     }
 
     public void verifyFamilyFilter() {
@@ -291,9 +301,8 @@ public class ContactHomePage extends BasePage {
 
     public void selectIWSAFamilyFilter() {
         BrowserUtils.wait(10);
-        familyFilterDropDown.click();
-        BrowserUtils.wait(10);
-        IWSAFamilyFılter.click();
+        familyFilterDropDownClick.click();
+        familyFilterDropDown.sendKeys("IWSA"+ Keys.ENTER);
     }
 
     public void verifyIWSAFamilyFilter() {
@@ -303,18 +312,22 @@ public class ContactHomePage extends BasePage {
         }
     }
     public void clicksItemStatuses(String itemStatus) {
-        for (int i = 0; i < itemStatuses.size(); i++) {
-            if (itemStatuses.get(i).getText().equalsIgnoreCase(itemStatus)) {
-                itemStatuses.get(i).click();
-                break;
-            }
+        if (clicksItemStatusTextBox.equals("Active")) {
+            clicksItemStatusTextBox.sendKeys("Active" + Keys.ENTER);
+        } else if (clicksItemStatusTextBox.equals("Passive")) {
+            clicksItemStatusTextBox.sendKeys("Passive" + Keys.ENTER);
+        } else if (clicksItemStatusTextBox.equals("On Hold")) {
+            clicksItemStatusTextBox.sendKeys("On Hold" + Keys.ENTER);
+        } else {
+            clicksItemStatusTextBox.sendKeys("Draft" + Keys.ENTER);
         }
+
     }
 
     public void verifyItemStatuses(String status) {
         for (int i = 0; i < verifyItemStatuses.size(); i++) {
             BrowserUtils.wait(5);
-            assertTrue(verifyItemStatuses.get(i).getText().equalsIgnoreCase(status));
+            assertTrue(verifyItemStatuses.get(i).getText().equals(status));
             BrowserUtils.wait(7);
         }
     }
@@ -329,8 +342,10 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyResetButton() {
-        assertTrue(familyFilterText.getText().equalsIgnoreCase("Family"));
         BrowserUtils.wait(5);
+        codeFilterClick.click();
+        assertTrue(codeFilterSendKey.getText().equalsIgnoreCase(""));
+
     }
 
     public void clickDeleteButton() {
@@ -352,7 +367,7 @@ public class ContactHomePage extends BasePage {
 
     public void verifyDeletingObject(String code) {
         BrowserUtils.waitForVisibility(deletingObject, 25);
-        assertTrue(deletingObject.getText().equalsIgnoreCase(code));
+        assertTrue(deletingObject.getText().equals(code));
     }
 
     public void verifyDeleteMessage() {
@@ -372,7 +387,7 @@ public class ContactHomePage extends BasePage {
 
     public void verifySelectOption(String entrie){
         BrowserUtils.wait(5);
-        Assert.assertTrue(BrowserUtils.isOptionSelected(showEntries, entrie));
+        assertTrue(BrowserUtils.isOptionSelected(showEntries, entrie));
 
     }
 
@@ -422,7 +437,7 @@ public class ContactHomePage extends BasePage {
             }
        }
        */
-        Assert.assertTrue(true);
+        assertTrue(true);
     }
     private static String extractNumberBeforeEntries(String text) {
         Pattern pattern = Pattern.compile("(\\d+)\\s+entries");
@@ -459,7 +474,7 @@ public class ContactHomePage extends BasePage {
                 assertTrue(false);
             }
         }*/
-        Assert.assertTrue(true);
+        assertTrue(true);
     }
 
     public void clickExportButton() {
@@ -469,18 +484,18 @@ public class ContactHomePage extends BasePage {
 
     public void verifyExportSuccessMessage(String message) {
         BrowserUtils.waitForVisibility(exportSuccessMessage, 20);
-        Assert.assertTrue(message.equalsIgnoreCase(exportSuccessMessage.getText()));
+        assertTrue(message.equals(exportSuccessMessage.getText()));
     }
 
     public void verifyExportedFile() {
         driver.navigate().to("chrome://downloads/");
-        Assert.assertTrue(exportedContactFile.isDisplayed());
+        assertTrue(exportedContactFile.isDisplayed());
         driver.navigate().back();
     }
 
     public void verifyExportedFileFormat() {
         driver.navigate().to("chrome://downloads/");
-        Assert.assertTrue(exportedContactFile.getText().contains(".xlsx"));
+        assertTrue(exportedContactFile.getText().contains(".xlsx"));
         driver.navigate().back();
     }
 
@@ -498,14 +513,14 @@ public class ContactHomePage extends BasePage {
         // String classes = firstPageButton.getAttribute("class");
         //  System.out.println(classes);
         // boolean isDisabled = classes.contains("disabled");
-        Assert.assertTrue(true);
+        assertTrue(true);
     }
     public void verifypreviousPageButtonUnClickability() {
         BrowserUtils.wait(10);
         String classes = previousPageButton.getAttribute("class");
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");
-        Assert.assertTrue(isDisabled);
+        assertTrue(isDisabled);
     }
 
     public void verifyLastPageButtonClickability() {
@@ -513,7 +528,7 @@ public class ContactHomePage extends BasePage {
         String classes = lastPageButton.getAttribute("class");
         System.out.println(classes);
         boolean isDisabled = classes.contains("disabled");
-        Assert.assertTrue(isDisabled);
+        assertTrue(isDisabled);
     }
 
     public void clicksStarFeatures(String starFeature) {
@@ -565,15 +580,15 @@ public class ContactHomePage extends BasePage {
     }
 }     public void verifyPreviewTab(){
         BrowserUtils.waitForVisibility(verifyPreviewTab,25);
-        Assert.assertTrue(verifyPreviewTab.isDisplayed());
+        assertTrue(verifyPreviewTab.isDisplayed());
     }
     public void verifyItemCommentTab(){
         BrowserUtils.waitForVisibility(verifyItemCommentTab,25);
-        Assert.assertTrue(verifyItemCommentTab.isDisplayed());
+        assertTrue(verifyItemCommentTab.isDisplayed());
     }
     public void verifyMyAccountTab(){
         BrowserUtils.waitForVisibility(verifyMyAccountTab,25);
-        Assert.assertTrue(verifyMyAccountTab.isDisplayed());
+        assertTrue(verifyMyAccountTab.isDisplayed());
     }
 public void exportButtonEditItem(){
         BrowserUtils.waitForVisibility(exportButton,20);
@@ -596,9 +611,9 @@ public void exportButtonEditItem(){
             LocalDateTime dateTime1 = LocalDateTime.parse(dateString1, dateTimeFormatter);
 
             // LocalDateTime nesnesini sayısal bir formata dönüştür
-            long numericValue1 = dateTime1.toEpochSecond(java.time.ZoneOffset.UTC);
+            long numericValue1 = dateTime1.toEpochSecond(ZoneOffset.UTC);
             LocalDateTime dateTime2 = LocalDateTime.parse(dateString2, dateTimeFormatter);
-            long numericValue2 = dateTime2.toEpochSecond(java.time.ZoneOffset.UTC);
+            long numericValue2 = dateTime2.toEpochSecond(ZoneOffset.UTC);
             if (sorting.startsWith("d")) {
                 assertTrue(numericValue1 < numericValue2);
             } else if (sorting.startsWith("n")) {
@@ -625,9 +640,9 @@ public void exportButtonEditItem(){
             LocalDateTime dateTime1 = LocalDateTime.parse(dateString1, dateTimeFormatter);
 
             // LocalDateTime nesnesini sayısal bir formata dönüştür
-            long numericValue1 = dateTime1.toEpochSecond(java.time.ZoneOffset.UTC);
+            long numericValue1 = dateTime1.toEpochSecond(ZoneOffset.UTC);
             LocalDateTime dateTime2 = LocalDateTime.parse(dateString2, dateTimeFormatter);
-            long numericValue2 = dateTime2.toEpochSecond(java.time.ZoneOffset.UTC);
+            long numericValue2 = dateTime2.toEpochSecond(ZoneOffset.UTC);
             if (sorting.startsWith("d")) {
                 assertTrue(numericValue1 < numericValue2);
             } else if (sorting.startsWith("n")) {
@@ -645,7 +660,7 @@ public void exportButtonEditItem(){
     public void idTabSorting(String sorting) {
         for (int i = 0; i < idTabSorting.size() - 1; i++) {
             if (Integer.parseInt(idTabSorting.get(i).getText()) < Integer.parseInt(idTabSorting.get(i + 1).getText())) {
-                Assert.assertTrue(false);
+                assertTrue(false);
             }
         }
     }
@@ -667,7 +682,7 @@ public void exportButtonEditItem(){
 
                 Date dateTime2 = sdf.parse(dateString2);
                 if (dateTime1.compareTo(dateTime2)< 0) {
-                    Assert.assertTrue(false);
+                    assertTrue(false);
                 }
             } catch (Exception e) {
             }
