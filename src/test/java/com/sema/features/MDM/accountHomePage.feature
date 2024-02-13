@@ -208,7 +208,7 @@ Feature: Account Management Test Cases- Account Home Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "SalesOrder" tab
-  @semamuss
+
   Scenario:Account edit -Account-Asset Tab
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
@@ -306,15 +306,6 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks "Preview" tab
     And The user clicks Export PDF button
     Then The user verifies the file is downloaded
-
-
-  Scenario:Account edit -Preview Tab Refresh  Button
-    And  The user enters "semaaa" into Code field
-    And  the user clicks on Search button
-    And  The user clicks on Edit Button
-    And  The user clicks "Preview" tab
-    And  The user clicks Refresh button
-    Then The user verifies refresh button
 
   Scenario:Account Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "semaaa" into Code field

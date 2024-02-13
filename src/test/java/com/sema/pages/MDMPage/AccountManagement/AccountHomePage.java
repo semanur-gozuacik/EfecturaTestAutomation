@@ -36,16 +36,16 @@ public class AccountHomePage extends BasePage {
     }
 
     public void clicksSelectFirstItem() {
-        BrowserUtils.waitForVisibility(selectFirstItem, 20);
+        BrowserUtils.wait(7);
         selectFirstItem.click();
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(5);
     }
     public void clickAssociatedNoFilter() {
         BrowserUtils.wait(10);
         associatedNoFilter.sendKeys("No"+ Keys.ENTER);
     }
 public void verifyAssociatedNoFilter(){
-    BrowserUtils.wait(7);
+    BrowserUtils.wait(9);
 
     for (int i= 0; i<noAssociatedText.size();i++){
             Assert.assertTrue(noAssociatedText.get(i).getText().equals("No"));

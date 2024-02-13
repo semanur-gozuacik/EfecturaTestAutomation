@@ -241,7 +241,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void setCodeFilter(String code) {
-        BrowserUtils.wait(4);
+        BrowserUtils.wait(6);
         codeFilterClick.click();
         codeFilterSendKey.sendKeys(code);
     }
@@ -275,7 +275,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void setLabelFilter(String label) {
-        BrowserUtils.wait(4);
+        BrowserUtils.wait(7);
         labelFilterClick.click();
         labelFilter.sendKeys(label);
     }

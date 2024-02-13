@@ -1,4 +1,4 @@
-@semoo
+@regression
 Feature: KPI Management Test Cases
   Background:
     When   The User opens the browser with the given url
@@ -43,21 +43,21 @@ Feature: KPI Management Test Cases
   Scenario: Verify export button
     When  The user clicks on Export button
   #  Then  The user verify that the export was "Success"
-
+  @semoo
   Scenario:KPI Home Page Verify First Page Button Unclickable Condition
     And  The user verifies first page button is not clickable
 
   Scenario:KPI Home Page Verify Previous Page Button Unclickable Condition
     And  The user verifies previous page button is not clickable
-
+  @deneme
   Scenario:KPI Home Page Verify Item next Button Unclickable Condition
     When The user clicks last page button
     And  The user verifies next button is not clickable
-
+  @deneme
   Scenario:KPI Home Page Verify Last Page Button Unclickable Condition
     When The user clicks last page button
    # And  The user verifies last page button is not clickable
-
+  @deneme
   Scenario:KPI Home Page Verify First Page Button Clickable Condition
     When The user clicks last page button
     And  The user verifies first page button is clickable

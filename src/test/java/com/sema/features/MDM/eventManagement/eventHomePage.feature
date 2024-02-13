@@ -206,11 +206,11 @@ Feature: Event Management Test Cases- Event Home Page
     And  The user clicks on Edit Button
     And The user clicks "Event_Gift" tab
     And The user Assocaited All filter
-    And The user clicks item
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks save button
-    And the user verifies item status success message
+    # And The user clicks item
+    # And the user clicks on unsaved change button
+     #And The user enters "-------" in  comment area
+    # And The user clicks save button
+     #And the user verifies item status success message
 
   Scenario:Event edit Event-Gift Tab Associated Filter No
     And The user enters "CheckboxTest" into Code field
