@@ -3,7 +3,6 @@ package com.sema.pages.SystemPage;
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.Driver;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -16,8 +15,8 @@ import java.util.Random;
 
 public class CurrenciesPage extends BasePage {
 
-    @FindBy(xpath = "//table[@id='locales_table']")
-    private WebElement currenciesTable;
+    @FindBy(xpath = "//tbody")
+    private WebElement currenciesTableValuePart;
 
     @FindBy(xpath = "//tr/td[1]")
     private List<WebElement> codeValues;
@@ -115,12 +114,12 @@ public class CurrenciesPage extends BasePage {
 
     public void goToCurrenciesPage() {
         Driver.getDriver().navigate().to("https://sandbox.efectura.com/Settings/Currencies");
-        BrowserUtils.waitForVisibility(currenciesTable, 10);
+        BrowserUtils.waitForVisibility(currenciesTableValuePart, 15);
     }
 
     public void enterInputToCodeFilter(String filterInput) {
         codeFilterInputBox.sendKeys(filterInput);
-        BrowserUtils.wait(4);
+        BrowserUtils.wait(5);
     }
 
     public void verifyFilterResultsAreCorrect(String filterInput) {
@@ -229,6 +228,7 @@ public class CurrenciesPage extends BasePage {
                 break;
             }
         }
+        BrowserUtils.waitForVisibility(cancelButtonInEditCurrencyPopup,5);
     }
 
     public void verifyCancelButtonIsActiveInEditCurrencyPopup() {Assert.assertTrue(cancelButtonInEditCurrencyPopup.isEnabled());}
@@ -247,6 +247,7 @@ public class CurrenciesPage extends BasePage {
     public void verifyEditCurrencyPopupIsClosed() {Assert.assertTrue(isPopupClosed(editCurrencyPopup));}
 
     public boolean isPopupClosed(WebElement popupName) {
+        BrowserUtils.wait(2);
         try {
             return !popupName.isDisplayed();
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -268,7 +269,11 @@ public class CurrenciesPage extends BasePage {
 
     public void verifyRefreshButtonIsActiveInCurrencies() {Assert.assertTrue(isButtonActive(refreshButton));}
 
-    public void clickCreateNewButtonInCurrenciesPage() {createNewButton.click();}
+    public void clickCreateNewButtonInCurrenciesPage() {
+        createNewButton.click();
+        BrowserUtils.wait(2);
+        BrowserUtils.waitForVisibility(cancelButtonInAddCurrencyPopup,10);
+    }
 
     public void clickCancelButtonInAddCurrencyPopup() {cancelButtonInAddCurrencyPopup.click();}
 
@@ -281,7 +286,7 @@ public class CurrenciesPage extends BasePage {
     public void enterPageNumberInToPaginationInputBox(String pageNumber) {
         paginationInputBox.clear();
         paginationInputBox.sendKeys(pageNumber);
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(6);
     }
 
     public void verifyFirstAndPreviousButtonsAreInactiveInFirstPageOfTable() {
@@ -298,7 +303,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void enterAlreadyExistingCodeValueInTo(String s) {
-        String alreadyExistingCodeValue = codeValues.get(1).getText();
+        String alreadyExistingCodeValue = "Dolar";
         if (s.contains("Add")) {
             addCurrencyCodeInputBox.sendKeys(alreadyExistingCodeValue);
         }else if(s.contains("Edit")) {
@@ -307,15 +312,30 @@ public class CurrenciesPage extends BasePage {
         }
     }
 
-    public void clickSaveButtonInAddCurrencyPopup() {saveButtonInAddCurrencyPopup.click();}
+    public void clickSaveButtonInAddCurrencyPopup() {
+        waitForClickableOfButton(saveButtonInAddCurrencyPopup);
+        saveButtonInAddCurrencyPopup.click();
+    }
 
     public void verifySkuShouldBeUniqueWarningIsDisplayed(String expectedWarning) {
-        BrowserUtils.waitForVisibility(skuShouldBeUniqueWarningPopup,2);
+        BrowserUtils.waitForVisibility(skuShouldBeUniqueWarningPopup,3);
         Assert.assertEquals(skuShouldBeUniqueWarningPopup.getText(), expectedWarning);
     }
 
+    public void waitForClickableOfButton(WebElement button) {
+        while (!isButtonActive(button)) {
+            BrowserUtils.wait(1);
+        }
+    }
+
+    public void waitForUnclickableOfButton(WebElement button) {
+        while (isButtonActive(button)) {
+            BrowserUtils.wait(1);
+        }
+    }
+
     public void clickSaveButtonInEditCurrencyPopup() {
-        BrowserUtils.waitForClickability(saveButtonInEditCurrencyPopup,5);
+        waitForClickableOfButton(saveButtonInEditCurrencyPopup);
         saveButtonInEditCurrencyPopup.click();
     }
 
@@ -404,6 +424,7 @@ public class CurrenciesPage extends BasePage {
                 break;
             }
         }
+        BrowserUtils.waitForVisibility(cancelButtonInDeleteCurrencyPopup,10);
     }
 
     public void verifyThatCancelButtonIsActiveInDeleteCurrencyPopup() {
@@ -444,24 +465,16 @@ public class CurrenciesPage extends BasePage {
     public void enterLastPageNumberInToPaginationInputBox() {
         paginationInputBox.clear();
         paginationInputBox.sendKeys(findLastPageNumber() + "");
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(5);
     }
 
     public void verifyLastAndNextButtonsAreInactiveInLastPageOfTable() {
         Assert.assertFalse(isButtonActive(lastPaginationButton) || isButtonActive(nextPaginationButton));
     }
 
-    public void waitForCondition(Boolean condition) {
-        while (condition) {
-            BrowserUtils.wait(1);
-        }
-    }
-
     public void clickLastPaginationButtonInCurrenciesPage() {
         lastPaginationButton.click();
-        while (isButtonActive(lastPaginationButton)) {
-            BrowserUtils.wait(1);
-        }
+        waitForUnclickableOfButton(lastPaginationButton);
     }
 
     public String getValueInInputBox(WebElement inputBox) {
@@ -476,9 +489,7 @@ public class CurrenciesPage extends BasePage {
 
     public void clickFirstPaginationButtonInCurrenciesPage() {
         firstPaginationButton.click();
-        while (isButtonActive(firstPaginationButton)) {
-            BrowserUtils.wait(1);
-        }
+        waitForUnclickableOfButton(firstPaginationButton);
     }
 
     public void verifyTableIsInFirstPageInCurrenciesPage() {
@@ -488,9 +499,7 @@ public class CurrenciesPage extends BasePage {
 
     public void clickNextPaginationButtonInCurrenciesPage() {
         nextPaginationButton.click();
-        while (!isButtonActive(firstPaginationButton)) {
-            BrowserUtils.wait(1);
-        }
+        waitForClickableOfButton(firstPaginationButton);
     }
 
     public void verifyTableIsInNextPageInCurrenciesPage() {
@@ -499,9 +508,7 @@ public class CurrenciesPage extends BasePage {
 
     public void clickPreviousPaginationButtonInCurrenciesPage() {
         previousPaginationButton.click();
-        while (isButtonActive(firstPaginationButton)) {
-            BrowserUtils.wait(1);
-        }
+        waitForUnclickableOfButton(firstPaginationButton);
     }
 
     public void verifyTableGoToPreviousPageInCurrenciesPage() {

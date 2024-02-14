@@ -102,6 +102,7 @@ Feature: Currencies Test Cases
     When The user enters '1' in to pagination input box
     Then The user verifies that first and previous pagination buttons are inactive in first page of table
 
+    #ArrayIndexOutOfBounds
   Scenario: Last and next buttons should be inactive in last page of currencies table
     When The user enters last page number in to pagination input box
     Then The user verifies that last and next pagination buttons are inactive in last page of table
