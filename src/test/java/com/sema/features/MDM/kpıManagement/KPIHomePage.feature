@@ -1,4 +1,4 @@
-@semoo
+@regression
 Feature: KPI Management Test Cases
   Background:
     When   The User opens the browser with the given url
