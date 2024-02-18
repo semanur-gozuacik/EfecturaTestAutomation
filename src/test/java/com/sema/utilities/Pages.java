@@ -19,6 +19,7 @@ import com.sema.pages.MDMPage.ProductManagement.ProductHomePage;
 import com.sema.pages.MDMPage.UserManagement.UserHomePage;
 import com.sema.pages.SettingsPage.Attributes;
 import com.sema.pages.SettingsPage.Families;
+import com.sema.pages.SettingsPage.TagsPage;
 import com.sema.pages.SystemPage.BlackListPage;
 import com.sema.pages.SystemPage.CurrenciesPage;
 import com.sema.pages.SystemPage.UserManagement.Users;
@@ -51,6 +52,7 @@ public class Pages {
     private AccountHomePage accountHomePage;
     private ProductHomePage productHomePage;
     private CurrenciesPage currenciesPage;
+    private TagsPage tagsPage;
 
     public Pages() {
             this.homePage =new HomePage();
@@ -76,8 +78,8 @@ public class Pages {
             this.productHomePage=new ProductHomePage();
             this.giftHomePage=new GiftHomePage();
             this.currenciesPage = new CurrenciesPage();
-           this.giftHomePage=new GiftHomePage();
-           this.currenciesPage=new CurrenciesPage();
+            this.giftHomePage=new GiftHomePage();
+            this.tagsPage=new TagsPage();
     }
     // Getter metotları
     public HomePage homePage() {
@@ -96,7 +98,7 @@ public class Pages {
     public BlackListPage blackListPage(){return blackListPage;}
     public EventHomePage eventHomePage(){return eventHomePage;}
     public CampaignHomePage campaignHomePage(){return campaignHomePage;}
-     public KPIHomePage kpiHomePage(){return kpiHomePage;}
+    public KPIHomePage kpiHomePage(){return kpiHomePage;}
     public Families families(){return families;}
     public Attributes attributes(){return attributes;}
     public  Users users(){return users;}
@@ -107,6 +109,7 @@ public class Pages {
     public ProductHomePage productHomePage(){return productHomePage;}
     public GiftHomePage giftHomePage(){return giftHomePage;}
     public CurrenciesPage currenciesPage(){return currenciesPage;}
+    public TagsPage tagsPage(){return tagsPage;}
 }
 
 

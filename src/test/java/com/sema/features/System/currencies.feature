@@ -16,13 +16,16 @@ Feature: Currencies Test Cases
 
   Scenario Outline: The User verify code filter works correctly
     When  The user enters "<entries>" in to code filter
-    Then  The User verifies that filter results contains "<entries>"
+    Then  The User verifies that code filter results contains "<entries>"
 
     Examples:
       | entries |
       | l       |
       | dolar   |
 
+  Scenario: If there is no value in the filter result, it should say 'No data available in table'
+    When The user enters 'quxysobekps' in to code filter
+    Then The user verifies that 'No matching records found' is displayed in table
 
   Scenario: The user verifies code values are ascending order
     Then The user verifies that code values are ascending order with no action
@@ -48,10 +51,12 @@ Feature: Currencies Test Cases
     When The user clicks a currency edit button
     Then The user verifies that cancel button is active in EditCurrency popup
 
+    #timeOut
   Scenario: The user verifies that Save button is inactive without changes in EditCurrency popup
     When The user clicks a currency edit button
     Then The user verifies that Save button is inactive without change in EditCurrency popup
 
+    #timeOut
   Scenario: The user verifies that closing of EditCurrency popup after clicking the cancel button
     When The user clicks a currency edit button
     When The user clicks cancel button in EditCurrency popup
@@ -61,10 +66,12 @@ Feature: Currencies Test Cases
     When The user clicks a currency delete button
     Then The user verifies that Cancel button is active in DeleteCurrency popup
 
+    #timeOut
   Scenario: The Delete button in DeleteCurrency popup should be active
     When The user clicks a currency delete button
     Then The user verifies that Delete button is active in DeleteCurrency popup
 
+  #timeout
   Scenario: The user should be able to close DeleteCurrency popup after clicking the cancel button
     When The user clicks a currency delete button
     When The user clicks Cancel button in DeleteCurrency popup
@@ -89,11 +96,12 @@ Feature: Currencies Test Cases
     When The user clicks cancel button in AddCurrency popup
     Then The user verifies that AddCurrency popup is closed
 
+    #timeOut
   Scenario: Save button should be inactive without changes in AddCurrency popup
     When The user clicks CreateNew button in Currencies page
     Then The user verifies that Save button is inactive without change in AddCurrency popup
 
-  Scenario: Whenever user enters Code value AddCurrency popup, Save button should be active
+  Scenario: Save button should be active, whenever user enters Code value AddCurrency popup
     When The user clicks CreateNew button in Currencies page
     When The user enters 'a' in to CurrencyCode input box in AddCurrency popup
     Then The user verifies that Save button is active in AddCurrency popup
@@ -102,7 +110,7 @@ Feature: Currencies Test Cases
     When The user enters '1' in to pagination input box
     Then The user verifies that first and previous pagination buttons are inactive in first page of table
 
-    #ArrayIndexOutOfBounds
+    #NoSuchElement
   Scenario: Last and next buttons should be inactive in last page of currencies table
     When The user enters last page number in to pagination input box
     Then The user verifies that last and next pagination buttons are inactive in last page of table
@@ -162,7 +170,7 @@ Feature: Currencies Test Cases
     When The user clicks a currency delete button
     When The user clicks Delete button in DeleteCurrency popup
     Then The user verifies that the 'Changes saved successfully.' info appears in the top right
-    Then The user verifies that current currencies do not include edited currency
+    Then The user verifies that current currencies do not include deleted currency
 
 
 

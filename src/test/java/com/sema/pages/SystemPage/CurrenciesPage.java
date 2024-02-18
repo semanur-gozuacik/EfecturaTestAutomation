@@ -111,6 +111,9 @@ public class CurrenciesPage extends BasePage {
     @FindBy(xpath = "//select[@name='locales_table_length']")
     private WebElement tableLengthSelectDropdown;
 
+    @FindBy(xpath = "//tr/td")
+    private WebElement emptyTableMessage;
+
 
     public void goToCurrenciesPage() {
         Driver.getDriver().navigate().to("https://sandbox.efectura.com/Settings/Currencies");
@@ -122,13 +125,13 @@ public class CurrenciesPage extends BasePage {
         BrowserUtils.wait(5);
     }
 
-    public void verifyFilterResultsAreCorrect(String filterInput) {
+    public void verifyCodeFilterResultsAreCorrect(String filterInput) {
         for (WebElement value : codeValues) {
             Assert.assertTrue(value.getText().toLowerCase().contains(filterInput));
         }
     }
 
-    private List<String> getStringListFromWebElementList(List<WebElement> webElementList) {
+    public static List<String> getStringListFromWebElementList(List<WebElement> webElementList) {
         List<String> stringList = new ArrayList<>();
         BrowserUtils.wait(2);
         for (WebElement element : webElementList) {
@@ -137,41 +140,57 @@ public class CurrenciesPage extends BasePage {
         return stringList;
     }
 
-    public boolean areCodeValuesAscending() {
-        List<String> codeValuesAsString = getStringListFromWebElementList(codeValues);
-        for (int i = 0; i < codeValuesAsString.size() - 1; i++) {
-            if (codeValuesAsString.get(i).compareTo(codeValuesAsString.get(i + 1)) > 0) {
+    public static boolean areValuesAscending(List<WebElement> values) {
+        List<String> valuesAsString = getStringListFromWebElementList(values);
+        for (int i = 0; i < valuesAsString.size() - 1; i++) {
+            if (valuesAsString.get(i).compareTo(valuesAsString.get(i + 1)) > 0) {
                 return false;
             }
         }
         return true;
     }
 
+    public boolean areCodeValuesAscending() {
+        return areValuesAscending(codeValues);
+    }
+
     public void clickCodeHeaderForDescending() {
-        waitForAttribute(codeHeader,"aria-sort");
-        while (codeHeader.getAttribute("aria-sort").equals("ascending")) {
-            codeHeader.click();
+        clickHeaderForDescendingSort(codeHeader);
+    }
+
+    public static boolean areValuesDescending(List<WebElement> values) {
+        List<String> valuesAsString = getStringListFromWebElementList(values);
+        for (int i = 0; i < valuesAsString.size() - 1; i++) {
+            if (valuesAsString.get(i).compareTo(valuesAsString.get(i + 1)) < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean areCodeValuesDescending() {
+        return areValuesDescending(codeValues);
+    }
+
+    public static void clickHeaderForAscendingSort(WebElement header) {
+        waitForAttribute(header,"aria-sort");
+        while (header.getAttribute("aria-sort").equals("descending")) {
+            header.click();
             BrowserUtils.wait(3);
         }
     }
 
-    public boolean areCodeValuesDescending() {
-        List<String> codeValuesAsString = getStringListFromWebElementList(codeValues);
-        for (int i = 0; i < codeValuesAsString.size() - 1; i++) {
-            if (codeValuesAsString.get(i).compareTo(codeValuesAsString.get(i + 1)) < 0) {
-                return false;
-            }
+    public static void clickHeaderForDescendingSort(WebElement header) {
+        waitForAttribute(header,"aria-sort");
+        while (header.getAttribute("aria-sort").equals("ascending")) {
+            header.click();
+            BrowserUtils.wait(3);
         }
-        return true;
     }
 
     public void clickStatusHeaderForAscending() {
         statusHeader.click();
-        waitForAttribute(statusHeader,"aria-sort");
-        while (statusHeader.getAttribute("aria-sort").equals("descending")) {
-            statusHeader.click();
-            BrowserUtils.wait(3);
-        }
+        clickHeaderForAscendingSort(statusHeader);
     }
 
     public boolean areStatusValuesAscending() {
@@ -186,11 +205,7 @@ public class CurrenciesPage extends BasePage {
 
     public void clickStatusHeaderForDescending() {
         statusHeader.click();
-        waitForAttribute(statusHeader,"aria-sort");
-        while (statusHeader.getAttribute("aria-sort").equals("ascending")) {
-            statusHeader.click();
-            BrowserUtils.wait(3);
-        }
+        clickHeaderForDescendingSort(statusHeader);
     }
 
     public boolean areStatusValuesDescending() {
@@ -203,7 +218,7 @@ public class CurrenciesPage extends BasePage {
         return true;
     }
 
-    public void waitForAttribute(WebElement element, String attribute) {
+    public static void waitForAttribute(WebElement element, String attribute) {
         while (element.getAttribute(attribute) == null) {
             BrowserUtils.wait(1);
         }
@@ -233,7 +248,7 @@ public class CurrenciesPage extends BasePage {
 
     public void verifyCancelButtonIsActiveInEditCurrencyPopup() {Assert.assertTrue(cancelButtonInEditCurrencyPopup.isEnabled());}
 
-    public boolean isButtonActive(WebElement button) {
+    public static boolean isButtonActive(WebElement button) {
         String classAttribute = button.getAttribute("class");
         return !classAttribute.contains("disabled");
     }
@@ -322,7 +337,7 @@ public class CurrenciesPage extends BasePage {
         Assert.assertEquals(skuShouldBeUniqueWarningPopup.getText(), expectedWarning);
     }
 
-    public void waitForClickableOfButton(WebElement button) {
+    public static void waitForClickableOfButton(WebElement button) {
         while (!isButtonActive(button)) {
             BrowserUtils.wait(1);
         }
@@ -371,28 +386,9 @@ public class CurrenciesPage extends BasePage {
     }
 
     public boolean isCurrencyCodeValueInTable(String currencyCodeToBeCheck) {
+        enterInputToCodeFilter(currencyCodeToBeCheck);
         List<String> codeValuesAsString = getStringListFromWebElementList(codeValues);
-        System.out.println("AAAAAAAA : " + randomCurrencyCode);
-        System.out.println("BBBBBBBB : " + codeValuesAsString);
-
-        if (codeValuesAsString.contains(currencyCodeToBeCheck.toLowerCase())) {
-            return true;
-        }
-
-        while (isButtonActive(nextPaginationButton)) {
-            BrowserUtils.wait(3);
-            nextPaginationButton.click();
-            BrowserUtils.wait(3);
-            System.out.println("AAAAAAAA : " + randomCurrencyCode);
-            System.out.println("BBBBBBBB : " + codeValuesAsString);
-            codeValuesAsString = getStringListFromWebElementList(codeValues);
-            BrowserUtils.waitForVisibility(codeValues.get(0),5);
-            if (codeValuesAsString.contains(currencyCodeToBeCheck.toLowerCase())) {
-                return true;
-            }
-        }
-
-        return false;
+        return codeValuesAsString.contains(currencyCodeToBeCheck.toLowerCase());
     }
 
     public void verifyEditedCurrencyIsInTable() {
@@ -400,13 +396,9 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void verifyStatusOfEditedCurrencyHasChanged() {
+        codeFilterInputBox.sendKeys(currencyCodeToBeClicked);
         BrowserUtils.wait(3);
-        String newStatus = "";
-        for (int i = 0; i < codeValues.size(); i++) {
-            if (codeValues.get(i).getText().equalsIgnoreCase(currencyCodeToBeClicked)) {
-                newStatus = statusValues.get(i).getText();
-            }
-        }
+        String newStatus = statusValues.get(0).getText();
         Assert.assertNotEquals(currencyStatusToBeClicked,newStatus);
     }
 
@@ -469,6 +461,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void verifyLastAndNextButtonsAreInactiveInLastPageOfTable() {
+        BrowserUtils.waitForVisibility(lastPaginationButton, 10);
         Assert.assertFalse(isButtonActive(lastPaginationButton) || isButtonActive(nextPaginationButton));
     }
 
@@ -477,7 +470,7 @@ public class CurrenciesPage extends BasePage {
         waitForUnclickableOfButton(lastPaginationButton);
     }
 
-    public String getValueInInputBox(WebElement inputBox) {
+    public static String getValueInInputBox(WebElement inputBox) {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         return (String) js.executeScript("return arguments[0].value;", inputBox);
     }
