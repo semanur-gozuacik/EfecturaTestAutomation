@@ -25,9 +25,9 @@ public class SystemCurrenciesStepDefs extends BaseStep{
         pages.currenciesPage().enterInputToCodeFilter(filterInput);
     }
 
-    @Then("The User verifies that filter results contains {string}")
-    public void theUserVerifiesThatFilterResultsContains(String filterInput) {
-        pages.currenciesPage().verifyFilterResultsAreCorrect(filterInput);
+    @Then("The User verifies that code filter results contains {string}")
+    public void theUserVerifiesThatCodeFilterResultsContains(String filterInput) {
+        pages.currenciesPage().verifyCodeFilterResultsAreCorrect(filterInput);
     }
 
     @Then("The user verifies that code values are ascending order with no action")
@@ -237,8 +237,8 @@ public class SystemCurrenciesStepDefs extends BaseStep{
         pages.currenciesPage().clickDeleteButtonInDeleteCurrencyPopup();
     }
 
-    @Then("The user verifies that current currencies do not include edited currency")
-    public void theUserVerifiesThatCurrentCurrenciesDoNotIncludeEditedCurrency() {
+    @Then("The user verifies that current currencies do not include deleted currency")
+    public void theUserVerifiesThatCurrentCurrenciesDoNotIncludeDeletedCurrency() {
         pages.currenciesPage().verifyDeletedCurrencyIsNotInTable();
     }
 
