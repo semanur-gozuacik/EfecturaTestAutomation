@@ -37,7 +37,6 @@ public class Driver {
             String browser = ConfigurationReader.getProperty("browser").toLowerCase();
             switch (browser) {
                 case "chrome":
-                    WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--remote-allow-origins=*");
 
@@ -46,7 +45,7 @@ public class Driver {
                     driverPool.set(new ChromeDriver(chromeOptions));
                     break;
                 case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
+                    //WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
                     break;
                 case "safari":

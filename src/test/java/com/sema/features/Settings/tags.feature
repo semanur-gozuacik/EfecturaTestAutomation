@@ -9,7 +9,7 @@ Feature: Tags Page Test Cases
     When  The user is on the Tags page
 
 
-  Scenario: Users should reach Tags page
+  Scenario: Users should reach Tags page.
     Then  The user verifies that reached the "Tags" page.
 
   Scenario: Refresh button should be active in Tags page
