@@ -44,8 +44,11 @@ public class TagsPage extends BasePage {
     @FindBy(xpath = "//input[@placeholder='Label']")
     private WebElement labelFilterInputBox;
 
-    @FindBy(xpath = "//span[@id='select2-ItemType-container']")
+    @FindBy(xpath = "//select[@id='ItemType']")
     private WebElement itemTypeSelectFilter;
+
+    @FindBy(xpath = "//span[@id='select2-ItemType-container']")
+    private WebElement itemTypeFilterBox;
 
     @FindBy(xpath = "//tbody")
     private WebElement tagsTableValuePart;
@@ -261,5 +264,75 @@ public class TagsPage extends BasePage {
     public void verifyIdFromMustBeLessThanIdToWarningIsDisplayed(String expectedWarning) {
         BrowserUtils.waitForVisibility(idFromMustBeLessThanIdToWaringPopup,5);
         Assert.assertEquals(idFromMustBeLessThanIdToWaringPopup.getText(), expectedWarning);
+    }
+
+    public void verifyIdFilterHasNoValue() {
+        /*BrowserUtils.wait(2);
+        idFilter.click();
+        BrowserUtils.waitForVisibility(idFromInputBox,8);*/
+        String actualValueFrom = CurrenciesPage.getValueInInputBox(idFromInputBox);
+        String actualValueTo = CurrenciesPage.getValueInInputBox(idToInputBox);
+        Assert.assertEquals("", actualValueFrom);
+        Assert.assertEquals("", actualValueTo);
+    }
+
+    public void selectValueFromTypeSelectFilter(String option) {
+        BrowserUtils.selectDropdownOptionByVisibleText(itemTypeSelectFilter, option);
+        BrowserUtils.wait(1);
+    }
+
+    public void verifyTableHasOnlyFilteredValues(String filteredValue) {
+        for (WebElement value : itemTypeValues) {
+            Assert.assertEquals(filteredValue, value.getText());
+        }
+    }
+
+    public void verifyItemTypeFilterHasValueTypeAll(String typeAll) {
+        Assert.assertEquals(typeAll, itemTypeFilterBox.getText());
+    }
+
+    public void verifyFirstAndPreviousButtonsAreInactiveInFirstPageOfTableInTagsPage() {
+        Assert.assertFalse(isButtonActive(firstPaginationButton) || isButtonActive(previousPaginationButton));
+    }
+
+    public void enterLastPageNumberInToPaginationInputBox() {
+        paginationInputBox.clear();
+        paginationInputBox.sendKeys(findLastPageNumber() + "");
+        BrowserUtils.wait(5);
+    }
+
+    public int findLastPageNumber() {
+        int totalCurrencyCount = Integer.parseInt(tableInfoInTagsPage.getText().split(" ")[5]);
+        int visibleCurrencyCount = Integer.parseInt(getSelectedOption(tableLengthSelectDropdown));
+        return (int) Math.ceil((double) totalCurrencyCount / visibleCurrencyCount);
+    }
+
+    public void verifyLastAndNextButtonsAreInactiveInLastPageOfTable() {
+        BrowserUtils.waitForVisibility(lastPaginationButton, 10);
+        Assert.assertFalse(isButtonActive(lastPaginationButton) || isButtonActive(nextPaginationButton));
+    }
+
+    public void clickLastPaginationButtonInTagsPage() {lastPaginationButton.click();}
+
+    public void verifyTableIsInLastPageInTagsPage() {
+        verifyTableIsInLastPage(paginationInputBox,tableInfoInTagsPage,tableLengthSelectDropdown);
+    }
+
+    public void clickFirstPaginationButton() {firstPaginationButton.click();}
+
+    public void verifyTableIsInFirstPageInTagsPage() {
+        verifyTableIsInFirstPage(paginationInputBox);
+    }
+
+    public void clickNextPaginationButtonInTagsPage() {nextPaginationButton.click();}
+
+    public void verifyTableGoToNextPageInTagsPage() {
+        Assert.assertEquals("2", getValueInInputBox(paginationInputBox));
+    }
+
+    public void clickPreviousPaginationButtonInTagsPage() {previousPaginationButton.click();}
+
+    public void verifyTableGoToPreviousPageInTagsPage() {
+        Assert.assertEquals("1", getValueInInputBox(paginationInputBox));
     }
 }

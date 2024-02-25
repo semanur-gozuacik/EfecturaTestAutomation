@@ -304,7 +304,7 @@ public class CurrenciesPage extends BasePage {
         BrowserUtils.wait(6);
     }
 
-    public void verifyFirstAndPreviousButtonsAreInactiveInFirstPageOfTable() {
+    public void verifyFirstAndPreviousButtonsAreInactiveInFirstPageOfTableInCurrencies() {
         Assert.assertFalse(isButtonActive(firstPaginationButton) || isButtonActive(previousPaginationButton));
     }
 
@@ -343,7 +343,7 @@ public class CurrenciesPage extends BasePage {
         }
     }
 
-    public void waitForUnclickableOfButton(WebElement button) {
+    public static void waitForUnclickableOfButton(WebElement button) {
         while (isButtonActive(button)) {
             BrowserUtils.wait(1);
         }
@@ -443,20 +443,20 @@ public class CurrenciesPage extends BasePage {
         Assert.assertTrue(isButtonActive(cancelButtonInAddCurrencyPopup));
     }
 
-    public String getSelectedOption(WebElement selectElement) {
+    public static String getSelectedOption(WebElement selectElement) {
         Select select = new Select(selectElement);
         return select.getFirstSelectedOption().getText();
     }
 
-    public int findLastPageNumber() {
-        int totalCurrencyCount = Integer.parseInt(tableInfoInCurrenciesPage.getText().split(" ")[5]);
+    public static int findLastPageNumber(WebElement tableInfo, WebElement tableLengthSelectDropdown) {
+        int totalCurrencyCount = Integer.parseInt(tableInfo.getText().split(" ")[5]);
         int visibleCurrencyCount = Integer.parseInt(getSelectedOption(tableLengthSelectDropdown));
         return (int) Math.ceil((double) totalCurrencyCount / visibleCurrencyCount);
     }
 
     public void enterLastPageNumberInToPaginationInputBox() {
         paginationInputBox.clear();
-        paginationInputBox.sendKeys(findLastPageNumber() + "");
+        paginationInputBox.sendKeys(findLastPageNumber(tableInfoInCurrenciesPage, tableLengthSelectDropdown) + "");
         BrowserUtils.wait(5);
     }
 
@@ -476,8 +476,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void verifyTableIsInLastPageInCurrenciesPage() {
-        String actualPageNumber = getValueInInputBox(paginationInputBox);
-        Assert.assertEquals(findLastPageNumber() + "",actualPageNumber);
+        verifyTableIsInLastPage(paginationInputBox,tableInfoInCurrenciesPage,tableLengthSelectDropdown);
     }
 
     public void clickFirstPaginationButtonInCurrenciesPage() {
@@ -486,11 +485,21 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void verifyTableIsInFirstPageInCurrenciesPage() {
-        String actualPageNumber = getValueInInputBox(paginationInputBox);
+        verifyTableIsInFirstPage(paginationInputBox);
+    }
+
+    public static void verifyTableIsInFirstPage(WebElement inputBox) {
+        String actualPageNumber = getValueInInputBox(inputBox);
         Assert.assertEquals("1",actualPageNumber);
     }
 
+    public static void verifyTableIsInLastPage(WebElement inputBox, WebElement tableInfo, WebElement tableLengthSelectDropdown) {
+        String actualPageNumber = getValueInInputBox(inputBox);
+        Assert.assertEquals(findLastPageNumber(tableInfo,tableLengthSelectDropdown) + "",actualPageNumber);
+    }
+
     public void clickNextPaginationButtonInCurrenciesPage() {
+        BrowserUtils.wait(1);
         nextPaginationButton.click();
         waitForClickableOfButton(firstPaginationButton);
     }

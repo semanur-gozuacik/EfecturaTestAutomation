@@ -108,12 +108,12 @@ Feature: Currencies Test Cases
 
   Scenario: First and previous buttons should be inactive in first page of currencies table
     When The user enters '1' in to pagination input box
-    Then The user verifies that first and previous pagination buttons are inactive in first page of table
+    Then The user verifies that first and previous pagination buttons are inactive in first page of table in Currencies
 
     #NoSuchElement
   Scenario: Last and next buttons should be inactive in last page of currencies table
-    When The user enters last page number in to pagination input box
-    Then The user verifies that last and next pagination buttons are inactive in last page of table
+    When The user enters last page number in to pagination input box in Currencies page
+    Then The user verifies that last and next pagination buttons are inactive in last page of table in Currencies page
 
   Scenario: The user should go to last page after clicking the last pagination button
     When The user clicks last pagination button in Currencies page
@@ -122,7 +122,7 @@ Feature: Currencies Test Cases
   Scenario: The user should go to first page after clicking the first pagination button
     When The user clicks last pagination button in Currencies page
     When The user clicks first pagination button in Currencies page
-    Then The user verifies that table is in first page
+    Then The user verifies that table is in first page in Currencies page
 
   Scenario: The user should be able to go next page after clicking next pagination button
     When The user clicks next pagination button in Currencies page

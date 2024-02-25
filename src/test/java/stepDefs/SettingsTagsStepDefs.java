@@ -105,4 +105,77 @@ public class SettingsTagsStepDefs extends BaseStep {
     public void theUserVerifiesThatIdFromMustBeLessThanIdToWarningIsDisplayed(String expectedWarning) {
         pages.tagsPage().verifyIdFromMustBeLessThanIdToWarningIsDisplayed(expectedWarning);
     }
+
+    @Then("The user verifies that Id filter has no value")
+    public void theUserVerifiesThatIdFilterHasNoValue() {pages.tagsPage().verifyIdFilterHasNoValue();}
+
+    @When("The user select {string} from Type filter")
+    public void theUserSelectAccountFromTypeFilter(String option) {
+        pages.tagsPage().selectValueFromTypeSelectFilter(option);
+    }
+
+    @Then("The user verifies that table has only {string} values")
+    public void theUserVerifiesThatTableHasOnlyFilteredValues(String filteredValue) {
+        pages.tagsPage().verifyTableHasOnlyFilteredValues(filteredValue);
+    }
+
+    @Then("The user verifies that ItemType filter has value {string}")
+    public void theUserVerifiesThatItemTypeFilterHasValueTypeAll(String typeAll) {
+        pages.tagsPage().verifyItemTypeFilterHasValueTypeAll(typeAll);
+    }
+
+    @Then("The user verifies that first and previous pagination buttons are inactive in first page of table in Tags page")
+    public void theUserVerifiesThatFirstAndPreviousPaginationButtonsAreInactiveInFirstPageOfTableInTagsPage() {
+        pages.tagsPage().verifyFirstAndPreviousButtonsAreInactiveInFirstPageOfTableInTagsPage();
+    }
+
+    @When("The user enters last page number in to pagination input box in Tags page")
+    public void theUserEntersLastPageNumberInToPaginationInputBoxInTagsPage() {
+        pages.tagsPage().enterLastPageNumberInToPaginationInputBox();
+    }
+
+    @Then("The user verifies that last and next pagination buttons are inactive in last page of table in Tags page")
+    public void theUserVerifiesThatLastAndNextPaginationButtonsAreInactiveInLastPageOfTableInTagsPage() {
+        pages.tagsPage().verifyLastAndNextButtonsAreInactiveInLastPageOfTable();
+    }
+
+    @When("The user clicks last pagination button in Tags page")
+    public void theUserClicksLastPaginationButtonInTagsPage() {
+        pages.tagsPage().clickLastPaginationButtonInTagsPage();
+    }
+
+    @Then("The user verifies that table is in last page in Tags page")
+    public void theUserVerifiesThatTableIsInLastPageInTagsPage() {
+        pages.tagsPage().verifyTableIsInLastPageInTagsPage();
+    }
+
+    @When("The user clicks first pagination button in Tags page")
+    public void theUserClicksFirstPaginationButtonInTagsPage() {
+        pages.tagsPage().clickFirstPaginationButton();
+    }
+
+    @Then("The user verifies that table is in first page in Tags page")
+    public void theUserVerifiesThatTableIsInFirstPageInTagsPage() {
+        pages.tagsPage().verifyTableIsInFirstPageInTagsPage();
+    }
+
+    @When("The user clicks next pagination button in Tags page")
+    public void theUserClicksNextPaginationButtonInTagsPage() {
+        pages.tagsPage().clickNextPaginationButtonInTagsPage();
+    }
+
+    @Then("The user verifies that table go to next page in Tags page")
+    public void theUserVerifiesThatTableGoToNextPageInTagsPage() {
+        pages.tagsPage().verifyTableGoToNextPageInTagsPage();
+    }
+
+    @When("The user clicks previous pagination button in Tags page")
+    public void theUserClicksPreviousPaginationButtonInTagsPage() {
+        pages.tagsPage().clickPreviousPaginationButtonInTagsPage();
+    }
+
+    @Then("The user verifies that table go to previous page in Tags page")
+    public void theUserVerifiesThatTableGoToPreviousPageInTagsPage() {
+        pages.tagsPage().verifyTableGoToPreviousPageInTagsPage();
+    }
 }
