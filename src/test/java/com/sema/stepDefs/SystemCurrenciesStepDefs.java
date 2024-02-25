@@ -147,9 +147,9 @@ public class SystemCurrenciesStepDefs extends BaseStep{
         pages.currenciesPage().enterPageNumberInToPaginationInputBox(firstPageNumber);
     }
 
-    @Then("The user verifies that first and previous pagination buttons are inactive in first page of table")
-    public void theUserVerifiesThatFirstAndPreviousPaginationButtonsAreInactiveInFirstPageOfTable() {
-        pages.currenciesPage().verifyFirstAndPreviousButtonsAreInactiveInFirstPageOfTable();
+    @Then("The user verifies that first and previous pagination buttons are inactive in first page of table in Currencies")
+    public void theUserVerifiesThatFirstAndPreviousPaginationButtonsAreInactiveInFirstPageOfTableInCurrencies() {
+        pages.currenciesPage().verifyFirstAndPreviousButtonsAreInactiveInFirstPageOfTableInCurrencies();
     }
 
     @When("The user enters {string} in to CurrencyCode input box in AddCurrency popup")
@@ -247,13 +247,13 @@ public class SystemCurrenciesStepDefs extends BaseStep{
         pages.currenciesPage().verifyCancelButtonIsActiveInAddCurrencyPopup();
     }
 
-    @When("The user enters last page number in to pagination input box")
-    public void theUserEntersLastPageNumberInToPaginationInputBox() {
+    @When("The user enters last page number in to pagination input box in Currencies page")
+    public void theUserEntersLastPageNumberInToPaginationInputBoxInCurrenciesPage() {
         pages.currenciesPage().enterLastPageNumberInToPaginationInputBox();
     }
 
-    @Then("The user verifies that last and next pagination buttons are inactive in last page of table")
-    public void theUserVerifiesThatLastAndNextPaginationButtonsAreInactiveInLastPageOfTable() {
+    @Then("The user verifies that last and next pagination buttons are inactive in last page of table in Currencies page")
+    public void theUserVerifiesThatLastAndNextPaginationButtonsAreInactiveInLastPageOfTableInCurrenciesPage() {
         pages.currenciesPage().verifyLastAndNextButtonsAreInactiveInLastPageOfTable();
     }
 
@@ -272,8 +272,8 @@ public class SystemCurrenciesStepDefs extends BaseStep{
         pages.currenciesPage().clickFirstPaginationButtonInCurrenciesPage();
     }
 
-    @Then("The user verifies that table is in first page")
-    public void theUserVerifiesThatTableIsInFirstPage() {
+    @Then("The user verifies that table is in first page in Currencies page")
+    public void theUserVerifiesThatTableIsInFirstPageInCurrenciesPage() {
         pages.currenciesPage().verifyTableIsInFirstPageInCurrenciesPage();
     }
 

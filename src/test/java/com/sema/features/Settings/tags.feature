@@ -38,10 +38,24 @@ Feature: Tags Page Test Cases
     When The user clicks update button in Id filter
     Then The user verifies that 'IdFromMustBeLessThanIdTo' warning is displayed
 
-  Scenario: The user verifies that filter reset button works correctly
+  Scenario: Type filter should filter the selected value
+    When The user select 'Account' from Type filter
+    Then The user verifies that table has only 'Account' values
+
+  Scenario: The user verifies that filter reset button works correctly on Label filter
     When The user enters "abcd" in to label filter
     When The user clicks reset button
     Then The user verifies that label filter has no value
+
+  Scenario: The user verifies that filter reset button works correctly on Id filter
+    When The user enters 67 and 63 in to Id filter
+    When The user clicks reset button
+    Then The user verifies that Id filter has no value
+
+  Scenario: The user verifies that filter reset button works correctly on ItemType filter
+    When The user select 'Account' from Type filter
+    When The user clicks reset button
+    Then The user verifies that ItemType filter has value 'TypeAll'
 
   Scenario: Id values should be ascending order with no action
     Then The user verifies that id values are ascending order with no action
@@ -65,3 +79,33 @@ Feature: Tags Page Test Cases
   Scenario: ItemType values should be able to be descending order
     When The user clicks ItemType header for descending sort
     Then The user verifies that ItemType values are descending order
+
+  Scenario: First and previous buttons should be inactive in first page of Tags table
+    When The user enters '1' in to pagination input box
+    Then The user verifies that first and previous pagination buttons are inactive in first page of table in Tags page
+
+  Scenario: Last and next buttons should be inactive in last page of Tags table
+    When The user enters last page number in to pagination input box in Tags page
+    Then The user verifies that last and next pagination buttons are inactive in last page of table in Tags page
+
+  Scenario: The user should go to last page after clicking the last pagination button
+    When The user clicks last pagination button in Tags page
+    Then The user verifies that table is in last page in Tags page
+
+  Scenario: The user should go to first page after clicking the first pagination button
+    When The user clicks last pagination button in Tags page
+    When The user clicks first pagination button in Tags page
+    Then The user verifies that table is in first page in Tags page
+
+  Scenario: The user should be able to go next page after clicking next pagination button
+    When The user clicks next pagination button in Tags page
+    Then The user verifies that table go to next page in Tags page
+
+  Scenario: The user should be able to go previous page after clicking previous pagination button
+    When The user clicks next pagination button in Tags page
+    When The user clicks previous pagination button in Tags page
+    Then The user verifies that table go to previous page in Tags page
+
+  Scenario: The Cancel button in DeleteCurrency popup should be active
+    When The user clicks a currency delete button
+    Then The user verifies that Cancel button is active in DeleteCurrency popup
