@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends BasePage {
     @FindBy(xpath = "//img[@id='navLogo']")
     private WebElement basariliLoginDogrulama;
-    @FindBy(id = "MDM_EN")
+    @FindBy(id = "MDM")
     private WebElement MDM;
     @FindBy(id = "Contract ManagementH")
     private WebElement contractManagement;
