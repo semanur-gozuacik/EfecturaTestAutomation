@@ -499,12 +499,13 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void clickNextPaginationButtonInCurrenciesPage() {
-        BrowserUtils.wait(1);
+        BrowserUtils.wait(5);
         nextPaginationButton.click();
         waitForClickableOfButton(firstPaginationButton);
     }
 
     public void verifyTableIsInNextPageInCurrenciesPage() {
+        BrowserUtils.wait(5);
         Assert.assertEquals("2", getValueInInputBox(paginationInputBox));
     }
 
