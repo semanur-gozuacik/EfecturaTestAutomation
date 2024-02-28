@@ -515,6 +515,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void verifyTableGoToPreviousPageInCurrenciesPage() {
+         BrowserUtils.wait(5);
         Assert.assertEquals("1", getValueInInputBox(paginationInputBox));
     }
 }
