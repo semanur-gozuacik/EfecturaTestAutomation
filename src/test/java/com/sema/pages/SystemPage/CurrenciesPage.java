@@ -501,6 +501,7 @@ public class CurrenciesPage extends BasePage {
     public void clickNextPaginationButtonInCurrenciesPage() {
         BrowserUtils.wait(1);
         nextPaginationButton.click();
+        BrowserUtils.wait(1);
         waitForClickableOfButton(firstPaginationButton);
     }
 
