@@ -12,6 +12,7 @@ Feature: Tags Page Test Cases
   Scenario: Users should reach Tags page.
     Then  The user verifies that reached the "Tags" page.
 
+    @fatih
   Scenario: Refresh button should be active in Tags page
     Then The user verifies that Refresh button is active
 
