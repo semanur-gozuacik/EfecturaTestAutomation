@@ -489,6 +489,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public static void verifyTableIsInFirstPage(WebElement inputBox) {
+        BrowserUtils.wait(2);
         String actualPageNumber = getValueInInputBox(inputBox);
         Assert.assertEquals("1",actualPageNumber);
     }
