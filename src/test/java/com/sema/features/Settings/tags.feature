@@ -27,7 +27,7 @@ Feature: Tags Page Test Cases
 
   Scenario: If there is no value in the filter result, it should say 'No data available in table'
     When The user enters 'quxysobekps' in to label filter
-    Then The user verifies that 'No data available in table' is displayed in table
+    Then The user verifies that 'No matching records found' is displayed in table
 
   Scenario: The filter should return IDs between 63 and 67 inclusive
     When The user enters 63 and 67 in to Id filter

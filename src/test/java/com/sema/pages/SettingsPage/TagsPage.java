@@ -3,6 +3,8 @@ package com.sema.pages.SettingsPage;
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
 import org.junit.Assert;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import com.sema.pages.SystemPage.CurrenciesPage;
@@ -44,10 +46,10 @@ public class TagsPage extends BasePage {
     @FindBy(xpath = "//input[@placeholder='Label']")
     private WebElement labelFilterInputBox;
 
-    @FindBy(xpath = "//select[@id='ItemType']")
+    @FindBy(xpath = "//select[@id='Type']")
     private WebElement itemTypeSelectFilter;
 
-    @FindBy(xpath = "//span[@id='select2-ItemType-container']")
+    @FindBy(xpath = "//span[@id='select2-Type-container']")
     private WebElement itemTypeFilterBox;
 
     @FindBy(xpath = "//tbody")
@@ -278,7 +280,7 @@ public class TagsPage extends BasePage {
 
     public void selectValueFromTypeSelectFilter(String option) {
         BrowserUtils.selectDropdownOptionByVisibleText(itemTypeSelectFilter, option);
-        BrowserUtils.wait(1);
+        BrowserUtils.wait(2);
     }
 
     public void verifyTableHasOnlyFilteredValues(String filteredValue) {
@@ -312,19 +314,29 @@ public class TagsPage extends BasePage {
         Assert.assertFalse(isButtonActive(lastPaginationButton) || isButtonActive(nextPaginationButton));
     }
 
-    public void clickLastPaginationButtonInTagsPage() {lastPaginationButton.click();}
+    public void clickLastPaginationButtonInTagsPage() {
+        waitForClickableOfButton(lastPaginationButton);
+        lastPaginationButton.click();
+    }
 
     public void verifyTableIsInLastPageInTagsPage() {
+        BrowserUtils.wait(2);
         verifyTableIsInLastPage(paginationInputBox,tableInfoInTagsPage,tableLengthSelectDropdown);
     }
 
-    public void clickFirstPaginationButton() {firstPaginationButton.click();}
+    public void clickFirstPaginationButton() {
+        waitForClickableOfButton(firstPaginationButton);
+        firstPaginationButton.click();
+    }
 
     public void verifyTableIsInFirstPageInTagsPage() {
         verifyTableIsInFirstPage(paginationInputBox);
     }
 
-    public void clickNextPaginationButtonInTagsPage() {nextPaginationButton.click();}
+    public void clickNextPaginationButtonInTagsPage() {
+        nextPaginationButton.click();
+        BrowserUtils.wait(2);
+    }
 
     public void verifyTableGoToNextPageInTagsPage() {
         Assert.assertEquals("2", getValueInInputBox(paginationInputBox));
@@ -333,6 +345,8 @@ public class TagsPage extends BasePage {
     public void clickPreviousPaginationButtonInTagsPage() {previousPaginationButton.click();}
 
     public void verifyTableGoToPreviousPageInTagsPage() {
+        BrowserUtils.wait(2);
         Assert.assertEquals("1", getValueInInputBox(paginationInputBox));
     }
+
 }
