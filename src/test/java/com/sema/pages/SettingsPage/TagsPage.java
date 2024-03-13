@@ -317,6 +317,7 @@ public class TagsPage extends BasePage {
     public void clickLastPaginationButtonInTagsPage() {
         waitForClickableOfButton(lastPaginationButton);
         lastPaginationButton.click();
+        waitForUnclickableOfButton(lastPaginationButton);
     }
 
     public void verifyTableIsInLastPageInTagsPage() {
@@ -325,8 +326,9 @@ public class TagsPage extends BasePage {
     }
 
     public void clickFirstPaginationButton() {
-        waitForClickableOfButton(firstPaginationButton);
+        BrowserUtils.wait(2);
         firstPaginationButton.click();
+        waitForUnclickableOfButton(firstPaginationButton);
     }
 
     public void verifyTableIsInFirstPageInTagsPage() {
