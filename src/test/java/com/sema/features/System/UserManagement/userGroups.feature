@@ -1,5 +1,5 @@
 @regression
-Feature: Users Management User Logs  Test Cases
+Feature: Users Management User Groups  Test Cases
   Background:
     When  The User opens the browser with the given url
     And   The User inputs a valid username "validUsername"
