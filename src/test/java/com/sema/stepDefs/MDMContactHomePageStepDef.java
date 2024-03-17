@@ -84,6 +84,14 @@ public class MDMContactHomePageStepDef extends BaseStep {
     public void the_user_enters_into_code_field(String code) {
         pages.contactHomePage().setCodeFilter(code);
     }
+    @Then("The user enters {string} into eventname field")
+    public void the_user_enters_into_eventname_field(String code) {
+        pages.contactHomePage().setEventNameFilter(code);
+    }
+    @Then("The user enters {string} into First field")
+    public void the_user_enters_into_first_field(String code) {
+        pages.contactHomePage().setFirstFilter(code);
+    }
     @Then("The User inputs the {string} from cont into the inputCode field")
     public void the_user_inputs_the_from_cont_into_the_input_code_field(String code) {
         pages.contactHomePage().setUniqueCodeElement(code);
