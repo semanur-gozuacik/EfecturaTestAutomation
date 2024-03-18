@@ -1,5 +1,6 @@
 package com.sema.utilities;
 
+import com.sema.pages.Analysis.CocpitGeneralDashboard;
 import com.sema.pages.HomePage;
 import com.sema.pages.LoginPage;
 import com.sema.pages.MDMPage.AccountManagement.AccountHomePage;
@@ -55,6 +56,7 @@ public class Pages {
     private CurrenciesPage currenciesPage;
     private TagsPage tagsPage;
     private Import importPage;
+    private CocpitGeneralDashboard cocpitGeneralDashboard;
 
     public Pages() {
             this.homePage =new HomePage();
@@ -83,6 +85,7 @@ public class Pages {
             this.giftHomePage=new GiftHomePage();
             this.tagsPage=new TagsPage();
             this.importPage=new Import();
+            this.cocpitGeneralDashboard = new CocpitGeneralDashboard();
     }
     // Getter metotları
     public HomePage homePage() {
@@ -114,6 +117,7 @@ public class Pages {
     public CurrenciesPage currenciesPage(){return currenciesPage;}
     public TagsPage tagsPage(){return tagsPage;}
     public Import importPage(){return importPage;}
+    public CocpitGeneralDashboard cocpit() {return cocpitGeneralDashboard;}
 }
 
 
