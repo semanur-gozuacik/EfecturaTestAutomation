@@ -1,5 +1,5 @@
 @regression
-Feature: User Management Test Cases- Contact Home Page
+Feature: Product Management Test Cases- Contact Home Page
   Background:
     When   The User opens the browser with the given url
     And   The User inputs a valid username "validUsername"

@@ -1,5 +1,6 @@
 package com.sema.utilities;
 
+
 import com.sema.pages.Analysis.CocpitGeneralDashboard;
 import com.sema.pages.HomePage;
 import com.sema.pages.LoginPage;
@@ -58,6 +59,7 @@ public class Pages {
     private Import importPage;
     private CocpitGeneralDashboard cocpitGeneralDashboard;
 
+
     public Pages() {
             this.homePage =new HomePage();
             this.loginPage =new LoginPage();
@@ -86,6 +88,7 @@ public class Pages {
             this.tagsPage=new TagsPage();
             this.importPage=new Import();
             this.cocpitGeneralDashboard = new CocpitGeneralDashboard();
+
     }
     // Getter metotları
     public HomePage homePage() {
@@ -118,6 +121,7 @@ public class Pages {
     public TagsPage tagsPage(){return tagsPage;}
     public Import importPage(){return importPage;}
     public CocpitGeneralDashboard cocpit() {return cocpitGeneralDashboard;}
+
 }
 
 

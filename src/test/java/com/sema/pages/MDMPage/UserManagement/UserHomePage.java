@@ -18,7 +18,7 @@ public class UserHomePage extends BasePage {
     private List<WebElement> labelVerifies;
     @FindBy(xpath ="//span[@class='iconbtn iconbtn-green rrbutton reset_filter-new']//i[@class='fa fa-undo']")
     private WebElement resetButton;
-    @FindBy(xpath ="//span[@class='iconbtn iconbtn-green refresh-association-table rrbutton refresh']//span[@class='text'][normalize-space()='Refresh']")
+    @FindBy(xpath ="//span[@class='iconbtn iconbtn-green rrbutton refresh']//span[@class='icon']")
     private WebElement refreshButton;
     @FindBy(xpath ="//span[@id='select2-filter-Family-container']")
     private WebElement familyFilter;
