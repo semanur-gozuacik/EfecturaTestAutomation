@@ -500,13 +500,14 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void clickNextPaginationButtonInCurrenciesPage() {
-        BrowserUtils.wait(1);
+        BrowserUtils.wait(5);
         nextPaginationButton.click();
         BrowserUtils.wait(1);
         waitForClickableOfButton(firstPaginationButton);
     }
 
     public void verifyTableIsInNextPageInCurrenciesPage() {
+        BrowserUtils.wait(5);
         Assert.assertEquals("2", getValueInInputBox(paginationInputBox));
     }
 
@@ -516,6 +517,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void verifyTableGoToPreviousPageInCurrenciesPage() {
+         BrowserUtils.wait(5);
         Assert.assertEquals("1", getValueInInputBox(paginationInputBox));
     }
 }

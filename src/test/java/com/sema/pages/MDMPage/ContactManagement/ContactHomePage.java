@@ -45,10 +45,18 @@ public class ContactHomePage extends BasePage {
     private WebElement unassignedRecords;
     @FindBy(xpath = "//a[@class='select-jstree-node link-jstree-node'][normalize-space()='Contact']")
     private List<WebElement> verifyUnassignedRecordsCategory;
-    @FindBy(xpath = "//input[@id='filter-SKU']")
+    @FindBy(xpath = "//div[@class='filter-box filter-box-items-page']")
     private WebElement codeFilterSendKey;
+    @FindBy(xpath = "//input[@id='filter-DIA_Event_Name']")
+    private WebElement EventNameFilterSendKey;
+    @FindBy(xpath = "//input[@id='filter-DIA_FirstName']")
+    private WebElement firstFilterSendKey;
     @FindBy(xpath = "//a[normalize-space()='Code']")
     private WebElement codeFilterClick;
+    @FindBy(xpath = "//a[text()='Event Name']")
+    private WebElement eventNameFilterClick;
+    @FindBy(xpath = "//a[@class='filter-toggle' and text()='DIA_FirstName']")
+    private WebElement firstFilterClick;
     @FindBy(xpath = "//i[@class='fa fa-search-plus']")
     private WebElement searchButton;
     @FindBy(xpath = "//td[@class='sorting_1']")
@@ -245,6 +253,19 @@ public class ContactHomePage extends BasePage {
         codeFilterClick.click();
         codeFilterSendKey.sendKeys(code);
     }
+    public void setEventNameFilter(String code) {
+        BrowserUtils.wait(6);
+        eventNameFilterClick.click();
+        BrowserUtils.wait(6);
+        EventNameFilterSendKey.sendKeys(code);
+    }
+    public void setFirstFilter(String code) {
+        BrowserUtils.wait(6);
+        firstFilterClick.click();
+        BrowserUtils.wait(6);
+        firstFilterSendKey.sendKeys(code);
+    }
+
 
     public void clickSearchButton() {
         searchButton.click();
