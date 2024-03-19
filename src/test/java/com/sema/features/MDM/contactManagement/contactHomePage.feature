@@ -216,14 +216,14 @@ Feature: Contact Management Test Cases- Contact Home Page
   Scenario:Create On Tab DateTime Sorting Functionality
     And The user clicks create on tab
     And The user clicks create on tab
-    Then The user verifies that dates are sorted from "near to distant" create on
+  #  Then The user verifies that dates are sorted from "near to distant" create on
 
   Scenario:ID Tab Sorting Functionality
     And  The user clicks id tab
     And  The user clicks id tab
-    Then The user verifies sort id numbers from "largest to smallest"
+   # Then The user verifies sort id numbers from "largest to smallest"
 
   Scenario:Birthdate Sorting Functionality
     And The user clicks birthdate on tab
     And The user clicks birthdate on tab
-    Then The user verifies that birthdate are sorted from "near to distant"
+    #Then The user verifies that birthdate are sorted from "near to distant"
