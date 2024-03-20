@@ -115,7 +115,7 @@ Feature: Asset Management Test Cases- Asset Home Page
 
   Scenario:Asset Home Page Verify Item next Button Clickable Condition
     And  The user verifies next button is clickable
-@semaaa
+
   Scenario:Asset Home Page Verify Last Page Button Clickable Condition
     And  The user verifies last page button is clickable
 

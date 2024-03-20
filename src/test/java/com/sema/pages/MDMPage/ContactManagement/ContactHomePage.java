@@ -45,7 +45,7 @@ public class ContactHomePage extends BasePage {
     private WebElement unassignedRecords;
     @FindBy(xpath = "//a[@class='select-jstree-node link-jstree-node'][normalize-space()='Contact']")
     private List<WebElement> verifyUnassignedRecordsCategory;
-    @FindBy(xpath = "//div[@class='filter-box filter-box-items-page']")
+    @FindBy(xpath = "//input[@id='filter-SKU']")
     private WebElement codeFilterSendKey;
     @FindBy(xpath = "//input[@id='filter-DIA_Event_Name']")
     private WebElement EventNameFilterSendKey;

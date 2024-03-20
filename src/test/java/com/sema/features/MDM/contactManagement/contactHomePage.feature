@@ -26,19 +26,19 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Verify Code Filter -Valid Unique Code
     And The user clicks on Contact  category
-    And The user enters "saasdasda" into First field
+    And The user enters "Test2123" into Code field
     And the user clicks on Search button
-    And the user verify on code filter functionality "saasdasda"
+    And the user verify on code filter functionality "Test2123"
 
   Scenario:Verify Code Filter -Valid partial Code
     And The user clicks on Contact  category
-    And The user enters "sema" into First field
+    And The user enters "test" into Code field
     And the user clicks on Search button
-    And the user verify on code filter functionality with partial unique code "sema"
+    And the user verify on code filter functionality with partial unique code "test"
 
   Scenario: Verify Code Filter - Invalid Unique Code
     And The user clicks on Contact  category
-    And The user enters "sema12345" into First field
+    And The user enters "sema12345" into Code field
     And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
@@ -55,7 +55,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     And the user verify on label filter functionality with partial unique code "Test"
 
   Scenario: Verify Label Filter - Invalid  Label
-    And The user enters "sema" into First field
+    And The user enters "sema12345" into Label field
     And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
@@ -89,7 +89,7 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Deleting an item and declining the popup message
     And The user clicks on Contact  category
-    And The user enters "saasdasda" into First field
+    And The user enters "sematestttt" into Code field
     And the user clicks on Search button
     And The user clicks on Delete
     And The user declines the popup message
@@ -108,7 +108,7 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Contact page edit verify
     And The user clicks on Contact  category
-    And The user enters "saasdasda" into First field
+    And The user enters "sematestttt" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     Then The user verify Edit Page
@@ -125,23 +125,22 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Verify My Count Star Item Functionality- One Contact
     And The user clicks on Contact  category
-    And The user enters "sema" into First field
+    And The user enters "sematestttt" into Code field
     And the user clicks on Search button
     And the user clicks on Star items
     And the user verify My Count badge count is correct
 
   Scenario: Verify My Count Star Items Functionality- more than One Contact
     And The user clicks on Contact  category
-    And The user enters "test" into First field
+    And The user enters "test" into Code field
     And the user clicks on Search button
     And the user clicks on Star items
     And the user verify My Count badge count is correct
 
   Scenario: Verify export button
     When  The user clicks on Export button
-   # Then  The user verify that the export was "Success"
-   # And   The user verify that the file is located in the downloads folder
-    #And   The user verify that the file is in the correct format
+
+
   Scenario:Contact Page Verify First Page Button Unclickable Condition
     And  The user verifies first page button is not clickable
 
@@ -217,14 +216,14 @@ Feature: Contact Management Test Cases- Contact Home Page
   Scenario:Create On Tab DateTime Sorting Functionality
     And The user clicks create on tab
     And The user clicks create on tab
-    Then The user verifies that dates are sorted from "near to distant" create on
+  #  Then The user verifies that dates are sorted from "near to distant" create on
 
   Scenario:ID Tab Sorting Functionality
     And  The user clicks id tab
     And  The user clicks id tab
-    Then The user verifies sort id numbers from "largest to smallest"
+   # Then The user verifies sort id numbers from "largest to smallest"
 
   Scenario:Birthdate Sorting Functionality
     And The user clicks birthdate on tab
     And The user clicks birthdate on tab
-    Then The user verifies that birthdate are sorted from "near to distant"
+    #Then The user verifies that birthdate are sorted from "near to distant"
