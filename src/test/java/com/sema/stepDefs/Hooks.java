@@ -6,6 +6,7 @@ import com.sema.utilities.Driver;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.slf4j.Logger;
@@ -24,6 +25,7 @@ public class Hooks {
         logger.info("Browser type :: {}", ConfigurationReader.getProperty("browser"));
         logger.info("Environment :: {}", ConfigurationReader.getProperty("url"));
         logger.info("Test scenario :: {}", scenario.getName());
+        Driver.getDriver().manage().window().setSize(new Dimension(1920, 1080));
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
