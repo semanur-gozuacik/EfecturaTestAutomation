@@ -71,7 +71,7 @@ Feature: Account Management Test Cases- Account Home Page
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
-
+@regre
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses - cancel button
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
