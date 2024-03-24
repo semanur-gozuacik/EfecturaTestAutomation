@@ -54,6 +54,12 @@ public class Driver {
                     driverPool.set(new SafariDriver());
                     driverPool.get().manage().window().maximize();
                     break;
+                     case "edge":
+                    WebDriverManager.edgedriver().setup();
+                    EdgeOptions edgeOptions = new EdgeOptions();
+                    edgeOptions.addArguments("--start-maximized");
+                    driverPool.set(new EdgeDriver());
+                    break;
                 default:
                     throw new RuntimeException("Wrong browser name !");
             }
