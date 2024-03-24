@@ -22,6 +22,7 @@ public class Driver {
      */
 
     public synchronized static WebDriver getDriver() {
+
         /*
          * Öncelikle bir web sürücüsü nesnesinin var olup olmadığını kontrol ediyoruz,
          * değilse, bu yöntem onu yaratacaktır.
