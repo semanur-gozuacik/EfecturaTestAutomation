@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class Driver {
 
@@ -45,6 +46,8 @@ public class Driver {
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.addArguments("--start-maximized");
                     driverPool.set(new FirefoxDriver());
                     break;
                 case "safari":
