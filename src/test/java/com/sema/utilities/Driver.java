@@ -45,6 +45,8 @@ public class Driver {
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.addArguments("--start-maximized");
                     driverPool.set(new FirefoxDriver());
                     break;
                 case "safari":
