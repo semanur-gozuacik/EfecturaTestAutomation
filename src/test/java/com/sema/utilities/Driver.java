@@ -37,6 +37,7 @@ public class Driver {
             String browser = ConfigurationReader.getProperty("browser").toLowerCase();
             switch (browser) {
                 case "chrome":
+                    //  WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--remote-allow-origins=*");
 
@@ -51,12 +52,6 @@ public class Driver {
                 case "safari":
                     driverPool.set(new SafariDriver());
                     driverPool.get().manage().window().maximize();
-                    break;
-                case "chromeheadless":
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless"); // Headless modu etkinleştir
-                    options.addArguments("--disable-gpu"); // GPU kullanımını devre dışı bırak
-                    driverPool.set(new ChromeDriver(options));
                     break;
                 default:
                     throw new RuntimeException("Wrong browser name !");

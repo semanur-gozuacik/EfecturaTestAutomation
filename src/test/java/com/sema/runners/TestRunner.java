@@ -29,24 +29,24 @@ import java.util.List;
         glue  = "com/sema/stepDefs",
         dryRun = false
 )
- public class TestRunner {
-        // Tüm senaryoların çalıştırılmasının ardından yapılacak işlemler
-        @AfterClass
-        public static void teardown() {
-                File reportOutputDirectory = new File("target/cucumber-reports");
-                generateReport(reportOutputDirectory.getAbsolutePath());
-        }
-        // Cucumber raporlarını üreten metot
-        public static void generateReport(String cucumberOutputPath) {
-                Collection<File> jsonFiles = FileUtils.listFiles(new File(cucumberOutputPath), new String[] {"json"}, true);
-                List<String> jsonPaths = new ArrayList<>(jsonFiles.size());
-                jsonFiles.forEach(file -> jsonPaths.add(file.getAbsolutePath()));
+public class TestRunner {
+    // Tüm senaryoların çalıştırılmasının ardından yapılacak işlemler
+    @AfterClass
+    public static void teardown() {
+        File reportOutputDirectory = new File("target/cucumber-reports");
+        generateReport(reportOutputDirectory.getAbsolutePath());
+    }
+    // Cucumber raporlarını üreten metot
+    public static void generateReport(String cucumberOutputPath) {
+        Collection<File> jsonFiles = FileUtils.listFiles(new File(cucumberOutputPath), new String[] {"json"}, true);
+        List<String> jsonPaths = new ArrayList<>(jsonFiles.size());
+        jsonFiles.forEach(file -> jsonPaths.add(file.getAbsolutePath()));
 
-                // HTML raporlarını oluşturur ve hedef dizine kaydeder
-                Configuration config = new Configuration(new File("target"), "Semaaa");
-                ReportBuilder reportBuilder = new ReportBuilder(jsonPaths, config);
-                reportBuilder.generateReports();
-        }
+        // HTML raporlarını oluşturur ve hedef dizine kaydeder
+        Configuration config = new Configuration(new File("target"), "Semaaa");
+        ReportBuilder reportBuilder = new ReportBuilder(jsonPaths, config);
+        reportBuilder.generateReports();
+    }
 
 
 }
