@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 import java.sql.SQLException;
 
 public class Hooks {
-    private static final Logger logger = LoggerFactory.getLogger(Hooks.class);
+       private static final Logger logger = LoggerFactory.getLogger(Hooks.class);
 
     @Before
     public void setup(Scenario scenario) {
