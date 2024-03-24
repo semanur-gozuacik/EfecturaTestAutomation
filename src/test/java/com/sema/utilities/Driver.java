@@ -42,10 +42,11 @@ public class Driver {
             switch (browser) {
 
                 case "chrome":
+            
                     ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.addArguments("--remote-allow-origins=*");
+                    WebDriverManager.chromedriver().clearDriverCache().setup();
+                    WebDriverManager.chromedriver().clearResolutionCache().setup();
                     chromeOptions.addArguments("--start-maximized");
-                    driverPool.set(new ChromeDriver(chromeOptions));;
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
