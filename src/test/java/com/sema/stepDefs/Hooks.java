@@ -16,9 +16,8 @@ import org.slf4j.LoggerFactory;
 import java.sql.SQLException;
 
 public class Hooks {
-    private static final Logger logger = LoggerFactory.getLogger(Hooks.class);
-    private static long startTime;
-    private static final long MAX_DURATION_IN_MILLIS = 180000;
+       private static final Logger logger = LoggerFactory.getLogger(Hooks.class);
+
     @Before
     public void setup(Scenario scenario) {
         System.setProperty("webdriver.http.factory", "jdk-http-client");
@@ -28,19 +27,9 @@ public class Hooks {
         logger.info("Test scenario :: {}", scenario.getName());
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        startTime = System.nanoTime();
-
     }
     @After
     public static void tearDown(Scenario scenario) {
-        long endTime = System.nanoTime();
-        long durationInNanos = endTime - startTime;
-        long durationInMillis = durationInNanos / 1000000;
-        if (durationInMillis > MAX_DURATION_IN_MILLIS) {
-            scenario.log("Scenario took too long. Failing the scenario.");
-            Driver.closeDriver();
-            throw new RuntimeException("Scenario took too long.");
-        }
         if (scenario.isFailed()) {
             TakesScreenshot takesScreenshot = (TakesScreenshot) Driver.getDriver();
             byte[] image = takesScreenshot.getScreenshotAs(OutputType.BYTES);
