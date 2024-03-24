@@ -13,7 +13,7 @@
         <java.version>17</java.version>
         <!-- Dependency versions -->
 
-        <selenium.version>4.13.0</selenium.version>
+         <selenium.version>4.13.0</selenium.version>
         <junit.version>4.13.2</junit.version>
         <bonigarcia.webdrivermanager.version>5.5.2</bonigarcia.webdrivermanager.version>
 

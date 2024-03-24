@@ -5,11 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class Driver {
 
 
-   private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<WebDriver>();
+
+    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<WebDriver>();
 
     private Driver() {
     }
@@ -38,18 +40,25 @@ public class Driver {
             String browser = ConfigurationReader.getProperty("browser").toLowerCase();
             switch (browser) {
                 case "chrome":
-                    WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--start-maximized");
                     driverPool.set(new ChromeDriver(chromeOptions));
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.addArguments("--start-maximized");
                     driverPool.set(new FirefoxDriver());
                     break;
                 case "safari":
                     driverPool.set(new SafariDriver());
                     driverPool.get().manage().window().maximize();
+                    break;
+                     case "edge":
+                    WebDriverManager.edgedriver().setup();
+                    EdgeOptions edgeOptions = new EdgeOptions();
+                    edgeOptions.addArguments("--start-maximized");
+                    driverPool.set(new EdgeDriver());
                     break;
                 default:
                     throw new RuntimeException("Wrong browser name !");

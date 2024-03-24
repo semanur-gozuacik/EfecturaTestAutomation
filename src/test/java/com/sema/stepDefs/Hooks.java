@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 import java.sql.SQLException;
 
 public class Hooks {
-    private static final Logger logger = LoggerFactory.getLogger(Hooks.class);
+       private static final Logger logger = LoggerFactory.getLogger(Hooks.class);
 
     @Before
     public void setup(Scenario scenario) {
@@ -39,5 +39,12 @@ public class Hooks {
             logger.info("Test scenario :: {} :: Passed", scenario.getName());
         }
         Driver.closeDriver();
+
+        try {
+           Thread.sleep(8000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }
