@@ -52,12 +52,6 @@ public class Driver {
                     driverPool.set(new SafariDriver());
                     driverPool.get().manage().window().maximize();
                     break;
-                case "chromeheadless":
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless"); // Headless modu etkinleştir
-                    options.addArguments("--disable-gpu"); // GPU kullanımını devre dışı bırak
-                    driverPool.set(new ChromeDriver(options));
-                    break;
                 default:
                     throw new RuntimeException("Wrong browser name !");
             }
