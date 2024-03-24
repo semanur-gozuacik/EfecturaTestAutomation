@@ -9,7 +9,7 @@ import org.openqa.selenium.safari.SafariDriver;
 public class Driver {
 
 
-    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<WebDriver>();
+   private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<WebDriver>();
 
     private Driver() {
     }
@@ -37,26 +37,18 @@ public class Driver {
             String browser = ConfigurationReader.getProperty("browser").toLowerCase();
             switch (browser) {
                 case "chrome":
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.addArguments("--remote-allow-origins=*");
-
-                    //     chromeOptions.setBinary("C:\\Users\\Sema\\Desktop\\PROGRAMLAR\\SELENİUM\\");
                     chromeOptions.addArguments("--start-maximized");
                     driverPool.set(new ChromeDriver(chromeOptions));
                     break;
                 case "firefox":
-                    //WebDriverManager.firefoxdriver().setup();
+                    WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
                     break;
                 case "safari":
                     driverPool.set(new SafariDriver());
                     driverPool.get().manage().window().maximize();
-                    break;
-                case "chromeheadless":
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless"); // Headless modu etkinleştir
-                    options.addArguments("--disable-gpu"); // GPU kullanımını devre dışı bırak
-                    driverPool.set(new ChromeDriver(options));
                     break;
                 default:
                     throw new RuntimeException("Wrong browser name !");
@@ -73,4 +65,3 @@ public class Driver {
         }
     }
 }
-
