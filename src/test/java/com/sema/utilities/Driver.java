@@ -35,7 +35,7 @@ public class Driver {
              * Burası ConfigurationReader.java sınıf nesnesini kullanarak tarayıcı tipini alacağımız yerdir.
              */
             String browser = ConfigurationReader.getProperty("browser").toLowerCase();
-            switch (browser) {
+           switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().clearDriverCache().setup();
                     WebDriverManager.chromedriver().clearResolutionCache().setup();
@@ -43,6 +43,7 @@ public class Driver {
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--start-maximized");
                     driverPool.set(new ChromeDriver(chromeOptions));
+                    break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
