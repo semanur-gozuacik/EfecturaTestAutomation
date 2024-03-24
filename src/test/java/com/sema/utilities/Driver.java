@@ -9,7 +9,7 @@ import org.openqa.selenium.safari.SafariDriver;
 public class Driver {
 
 
-    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<WebDriver>();
+   private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<WebDriver>();
 
     private Driver() {
     }
@@ -37,16 +37,13 @@ public class Driver {
             String browser = ConfigurationReader.getProperty("browser").toLowerCase();
             switch (browser) {
                 case "chrome":
-                    //  WebDriverManager.chromedriver().setup();
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.addArguments("--remote-allow-origins=*");
-
-                    //     chromeOptions.setBinary("C:\\Users\\Sema\\Desktop\\PROGRAMLAR\\SELENİUM\\");
                     chromeOptions.addArguments("--start-maximized");
                     driverPool.set(new ChromeDriver(chromeOptions));
                     break;
                 case "firefox":
-                    //WebDriverManager.firefoxdriver().setup();
+                    WebDriverManager.firefoxdriver().setup();
                     driverPool.set(new FirefoxDriver());
                     break;
                 case "safari":
