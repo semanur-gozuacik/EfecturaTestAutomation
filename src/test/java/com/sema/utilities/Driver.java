@@ -9,7 +9,8 @@ import org.openqa.selenium.safari.SafariDriver;
 public class Driver {
 
 
-   private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<WebDriver>();
+
+    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<WebDriver>();
 
     private Driver() {
     }
@@ -35,13 +36,10 @@ public class Driver {
              * Burası ConfigurationReader.java sınıf nesnesini kullanarak tarayıcı tipini alacağımız yerdir.
              */
             String browser = ConfigurationReader.getProperty("browser").toLowerCase();
-           switch (browser) {
+            switch (browser) {
                 case "chrome":
-                    //WebDriverManager.chromedriver().clearDriverCache().setup();
-                    //WebDriverManager.chromedriver().clearResolutionCache().setup();
-                    //WebDriverManager.chromedriver().setup();
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.addArguments("--remote-allow-origins=*");
                     chromeOptions.addArguments("--start-maximized");
                     driverPool.set(new ChromeDriver(chromeOptions));
                     break;
