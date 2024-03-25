@@ -95,17 +95,6 @@ Feature: Contact Management Test Cases- Contact Home Page
     And The user declines the popup message
     Then The user verify that "sematestttt" is visible
 
-  Scenario Outline: Contact Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
-    Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
-      |250|
-
   Scenario: Contact page edit verify
     And The user clicks on Contact  category
     And The user enters "sematestttt" into Code field
@@ -168,6 +157,19 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Contact Page Verify Last Page Button Clickable Condition
     And  The user verifies last page button is clickable
+
+
+  Scenario Outline: Contact Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
+    Then  The user should see  "<entries>" entrie in everypage
+    Examples:
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
+      |250|
+
 
   Scenario: Verify the redirection to the My Contacts page
     Then The user verifies that "My Contacts" is visible

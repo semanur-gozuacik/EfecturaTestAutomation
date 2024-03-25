@@ -13,6 +13,12 @@ Feature: Product Management Test Cases- Contact Home Page
     When  The user clicks on Export button
     #Then  The user verify that the export was "Success"
 
+  Scenario:Product Home Page Verify First Page Button Unclickable Condition
+    And  The user verifies first page button is not clickable
+
+  Scenario:Product Home Page Verify Previous Page Button Unclickable Condition
+    And  The user verifies previous page button is not clickable
+
   Scenario Outline: Product Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries
     Then  The user should see  "<entries>" entrie in everypage
@@ -20,12 +26,6 @@ Feature: Product Management Test Cases- Contact Home Page
       | entries|
       |10 |
       |25 |
-
-  Scenario:Product Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable
-
-  Scenario:Product Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies previous page button is not clickable
 
   Scenario: User Reset Button Control
     And The user enters "test2123" into Code field

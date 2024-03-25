@@ -651,6 +651,7 @@ public void exportButtonEditItem(){
     }
 
     public void createOnSorting(String sorting) {
+
         for (int i = 0; i < createOnSorting.size() - 1; i++) {
             String dateString1 = createOnSorting.get(i).getText();
             String dateString2 = createOnSorting.get(i + 1).getText();

@@ -11,7 +11,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And   The User performs a  mouseover on the Campaign element
     And   The User clicks on the Campaign element
     And   The User gets the current URL and stores it in "itemType=Campaign" Asset page
-@reg
+
   Scenario: Verify Code Filter -Valid Unique Code
     And The user enters "welcometestgeneric122" into Code field
     And the user clicks on Search button
@@ -67,16 +67,6 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And The user declines the popup message
     Then The user verify that "TESTSETSET123123" is visible-campaign
 
-  Scenario Outline: Contact Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
-    Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
-      |250|
 
   Scenario: Verify My Count Star Item Functionality- One Contact
     And The user enters "TestWelcomeCampaignSecondPreview" into Code field
@@ -100,6 +90,18 @@ Feature: Campaign Management Test Cases- Campaign Home Page
   Scenario: Verify Last Page Button Unclickable Condition
     When The user clicks last page button
     And  The user verifies last page button is not clickable
+
+
+  Scenario Outline: Contact Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
+    Then  The user should see  "<entries>" entrie in everypage
+    Examples:
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
+      |250|
 
   Scenario: Campaign Create List- cancel button
     And  The user clicks plus icon

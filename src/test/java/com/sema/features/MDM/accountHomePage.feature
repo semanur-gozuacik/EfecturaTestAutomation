@@ -23,17 +23,6 @@ Feature: Account Management Test Cases- Account Home Page
   Scenario:Account Verify export button
     When  The user clicks on Export button
 
-  Scenario Outline: Account Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
-    Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
-      |250|
-
   Scenario: Account Home Page Reset Button Control
     And The user enters "test2123" into Code field
     And the user clicks on Reset button
@@ -67,11 +56,23 @@ Feature: Account Management Test Cases- Account Home Page
   Scenario:Account Home Page Verify Last Page Button Clickable Condition
     And  The user verifies last page button is clickable
 
+
+  Scenario Outline: Account Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
+    Then  The user should see  "<entries>" entrie in everypage
+    Examples:
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
+      |250|
+
   Scenario: Account page edit verify
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
-@regre
+
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses - cancel button
     And The user enters "semaaa" into Code field
     And the user clicks on Search button
