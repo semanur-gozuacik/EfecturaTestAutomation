@@ -42,8 +42,6 @@ public class Driver {
             switch (browser) {
 
                case "chrome":
-                    WebDriverManager.chromedriver().clearDriverCache().setup();
-                    WebDriverManager.chromedriver().clearResolutionCache().setup();
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--start-maximized");
