@@ -25,10 +25,10 @@ public class TagsPage extends BasePage {
     @FindBy(xpath = "//a[@id='systemid']")
     private WebElement systemMenu;
 
-    @FindBy(xpath = "//li[4]/ul/li[1]/ul/li/a")
+    @FindBy(xpath = "//li[5]/ul/li[1]/ul/li/a")
     private List<WebElement> settingsOptions;
 
-    @FindBy(xpath = "//li[4]/ul/li[2]/ul/li/a")
+    @FindBy(xpath = "//li[5]/ul/li[2]/ul/li/a")
     private List<WebElement> systemOptions;
 
     @FindBy(xpath = "//span[contains(text(),'Id')]")
@@ -249,6 +249,7 @@ public class TagsPage extends BasePage {
     public void clickUpdateButtonInIdFilter() {
         idFilterUpdateButton.click();
         waitForInvisibilityOfElement(idFilterUpdateButton);
+        BrowserUtils.wait(2);
     }
 
     public void verifyIdsAreBetweenIdFromAndIdToInclusive(int idFrom, int idTo) {
