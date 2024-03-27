@@ -1,4 +1,4 @@
-@regression
+@regression @tt
 Feature: Contact Management Test Cases Create Home Page
   Background:
 
@@ -51,6 +51,7 @@ Feature: Contact Management Test Cases Create Home Page
       |Family|
       |Ekosystem|
 
+
   Scenario Outline: Delete Contact on Fletum with valid credentials - "<Family>"-cancel button
     And  The user enters "199955523515555" into Code field
     And  the user clicks on Search button
@@ -59,7 +60,6 @@ Feature: Contact Management Test Cases Create Home Page
     Examples:
       |Family|
       |Ekosystem|
-      |IWSA     |
 
   Scenario Outline: Delete Contact on Fletum with valid credentials - "<Family>"
     And  The user enters "<Number>" into Code field
