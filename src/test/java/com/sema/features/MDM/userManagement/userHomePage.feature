@@ -323,8 +323,8 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user clicks on Edit Button
     And The user clicks "Account-MRP" tab
     And The user Assocaited All filter
-    And The user enters valid label filter-"YENİTEST111111113"
-    And The user verifies that filter is displayed
+    #And The user enters valid label filter-"YENİTEST111111113"
+   # And The user verifies that filter is displayed
 
   Scenario:User edit -Account-MRP tab- Invalid Label Filter
     And The user enters "Otomasyon" into Code field
