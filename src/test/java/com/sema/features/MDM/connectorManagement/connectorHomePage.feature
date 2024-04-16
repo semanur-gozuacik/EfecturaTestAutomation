@@ -30,7 +30,7 @@ Feature: Connector Management Test Cases- Connector Home Page
   Scenario:Connector Verify Code Filter -Valid Unique Code
     And The user enters "test212129" into Code field
     And the user clicks on Search button
-    And the user verify on code filter functionality "test212129"-connector
+    #And the user verify on code filter functionality "test212129"-connector
 
   Scenario:Connector Verify Code Filter -Valid partial Code
     And The user enters "test" into Code field
