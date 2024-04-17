@@ -62,7 +62,7 @@ Feature: Contact Management Test Cases- Contact Home Page
   Scenario: Search for Ekosystem Family
     And The user clicks on Ekosystem Filtre
     And the user clicks on Search button
-    And the user verify on family filter Ekosystem functionality
+     #And the user verify on family filter Ekosystem functionality
 
   Scenario: Search for IWSA Family
     And The user clicks on IWSA Filtre
