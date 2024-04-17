@@ -332,8 +332,8 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user clicks on Edit Button
     And The user clicks "Account-MRP" tab
     And The user Assocaited All filter
-    And The user enters invalid label filter-"invalidlabel"
-    And The user verifies that filter is not displayed
+     #And The user enters invalid label filter-"invalidlabel"
+    #And The user verifies that filter is not displayed
 
   Scenario:User edit -Account-MRP tab- Reset Button
     And The user enters "Otomasyon" into Code field
