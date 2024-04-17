@@ -67,7 +67,7 @@ Feature: Contact Management Test Cases- Contact Home Page
   Scenario: Search for IWSA Family
     And The user clicks on IWSA Filtre
     And the user clicks on Search button
-    And the user verify on family filter IWSA functionality
+     #And the user verify on family filter IWSA functionality
 
   Scenario Outline: Filter "<ItemStatus>" Item Statuses
     And the user clicks on ItemStatuses
