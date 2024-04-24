@@ -6,6 +6,8 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class Attributes extends BasePage {
     @FindBy(id="attributesid")
     private WebElement attributesElement;
@@ -15,6 +17,10 @@ public class Attributes extends BasePage {
     private WebElement editButton;
     @FindBy(name = "attributes_table_length")
     private WebElement entrieNumber;
+    @FindBy(xpath = "//a[@class='filter-toggle-attributes_table filter-toggle']")
+    private List<WebElement> attributes;
+    @FindBy(xpath = "//input[@id='code-attributes_table']")
+    private WebElement codeField;
     public Attributes() {
     }
     public void clickAttributeElement(){
@@ -40,4 +46,27 @@ public class Attributes extends BasePage {
     public void onTheAttributeSettingPage(){
         driver.navigate().to("https://sandbox.efectura.com/Settings/Attributes");
     }
+    public void clickAttribute(String attribute) {
+        for (int i=0; i<attributes.size();i++){
+            System.out.println(attributes.get(i).getText());
+            if (attributes.get(i).getText().contains(attribute)){
+                attributes.get(i).click();
+                break;
+            }
+
+        }
+
+    }
+
+    public void setCodeField(String code){
+        BrowserUtils.waitForVisibility(codeField,30);
+        codeField.click();
+        codeField.sendKeys(code);
+    }
+    public void verifyResetButton() {
+        BrowserUtils.wait(5);
+        Assert.assertTrue(codeField.getAttribute("placeholder").contains("Code"));
+
+    }
+
 }

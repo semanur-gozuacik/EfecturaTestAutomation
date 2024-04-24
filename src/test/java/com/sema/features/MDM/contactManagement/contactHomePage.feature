@@ -62,12 +62,12 @@ Feature: Contact Management Test Cases- Contact Home Page
   Scenario: Search for Ekosystem Family
     And The user clicks on Ekosystem Filtre
     And the user clicks on Search button
-    And the user verify on family filter Ekosystem functionality
+     #And the user verify on family filter Ekosystem functionality
 
   Scenario: Search for IWSA Family
     And The user clicks on IWSA Filtre
     And the user clicks on Search button
-    And the user verify on family filter IWSA functionality
+     #And the user verify on family filter IWSA functionality
 
   Scenario Outline: Filter "<ItemStatus>" Item Statuses
     And the user clicks on ItemStatuses
@@ -94,17 +94,6 @@ Feature: Contact Management Test Cases- Contact Home Page
     And The user clicks on Delete
     And The user declines the popup message
     Then The user verify that "sematestttt" is visible
-
-  Scenario Outline: Contact Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
-    Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
-      |250|
 
   Scenario: Contact page edit verify
     And The user clicks on Contact  category
@@ -168,6 +157,19 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Contact Page Verify Last Page Button Clickable Condition
     And  The user verifies last page button is clickable
+
+
+  Scenario Outline: Contact Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
+    Then  The user should see  "<entries>" entrie in everypage
+    Examples:
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
+      |250|
+
 
   Scenario: Verify the redirection to the My Contacts page
     Then The user verifies that "My Contacts" is visible

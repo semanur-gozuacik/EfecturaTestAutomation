@@ -1,6 +1,7 @@
 package com.sema.stepDefs;
 
 import com.sema.utilities.BrowserUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -40,6 +41,21 @@ public class SettingsAttributesStepDefs extends BaseStep{
     }@Then("The user  {string}")
     public void the_user(String string) {
 
+    }
+
+    @And("The user clicks {string} attributes")
+    public void theUserClicksAttributes(String attribute) {
+        pages.attributes().clickAttribute(attribute);
+    }
+
+    @And("The user enters {string} into Code field-Settings Attributes")
+    public void theUserEntersIntoCodeFieldSettingsAttributes(String code) {
+        pages.attributes().setCodeField(code);
+    }
+
+    @And("the user verify Reset button functionality-Settings Attibutes")
+    public void theUserVerifyResetButtonFunctionalitySettingsAttibutes() {
+        pages.attributes().verifyResetButton();
     }
 }
 

@@ -111,16 +111,6 @@ Feature: Contact Management Test Cases-My Contact Page
   # And The user clicks on Delete
    # And The user accepts the popup message
 
-  Scenario Outline: Contact Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
-    Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
-
   Scenario: My Contact page edit verify
     When The user clicks My Contact button
     And The user enters "0058950138" into Code field
@@ -155,6 +145,18 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario:My Contact Verify Last Page Button Clickable Condition
     And  The user verifies last page button is clickable
+
+
+  Scenario Outline: Contact Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
+    Then  The user should see  "<entries>" entrie in everypage
+    Examples:
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
+
 
   Scenario Outline:My Count Delete Star Item Functionality
     And The user enters "<Code>" into Code field

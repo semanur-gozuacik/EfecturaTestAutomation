@@ -24,6 +24,7 @@ public class Driver {
      */
 
     public synchronized static WebDriver getDriver() {
+
         /*
          * Öncelikle bir web sürücüsü nesnesinin var olup olmadığını kontrol ediyoruz,
          * değilse, bu yöntem onu yaratacaktır.
@@ -38,7 +39,7 @@ public class Driver {
              */
             String browser = ConfigurationReader.getProperty("browser").toLowerCase();
             switch (browser) {
-                case "chrome":
+               case "chrome":
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--start-maximized");

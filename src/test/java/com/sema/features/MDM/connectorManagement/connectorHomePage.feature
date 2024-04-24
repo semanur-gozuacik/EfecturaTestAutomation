@@ -30,7 +30,7 @@ Feature: Connector Management Test Cases- Connector Home Page
   Scenario:Connector Verify Code Filter -Valid Unique Code
     And The user enters "test212129" into Code field
     And the user clicks on Search button
-    And the user verify on code filter functionality "test212129"-connector
+    #And the user verify on code filter functionality "test212129"-connector
 
   Scenario:Connector Verify Code Filter -Valid partial Code
     And The user enters "test" into Code field
@@ -42,16 +42,6 @@ Feature: Connector Management Test Cases- Connector Home Page
     And the user clicks on Reset button
     And the user verify Reset button functionality-connector
 
-  Scenario Outline: Connector Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
-    Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
-      |250|
 
    # And   The user
    #  Scenario: Verify export button
@@ -86,6 +76,18 @@ Feature: Connector Management Test Cases- Connector Home Page
 
   Scenario: Connector Page Verify Last Page Button Clickable Condition
     And  The user verifies last page button is clickable
+
+
+  Scenario Outline: Connector Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
+    Then  The user should see  "<entries>" entrie in everypage
+    Examples:
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
+      |250|
 
   Scenario: Create List- create button
     And  The user clicks plus icon

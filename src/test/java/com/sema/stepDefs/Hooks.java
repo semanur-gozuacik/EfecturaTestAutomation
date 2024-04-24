@@ -41,7 +41,7 @@ public class Hooks {
         Driver.closeDriver();
 
         try {
-           Thread.sleep(10000);
+           Thread.sleep(8000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
