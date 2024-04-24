@@ -82,10 +82,22 @@ Feature: Currencies Test Cases
     When The user enter 'a' in to CurrencyCode input box in EditCurrency popup
     Then The user verifies that Save button is active in EditCurrency popup
 
+  Scenario: When the CurrencyCode changed and the change is undone, Save button should be passive in EditCurrency Modal
+    When The user clicks a currency edit button
+    When The user enter 'a' in to CurrencyCode input box in EditCurrency popup
+    When The user undone the changes in CurrencyCode in EditCurrency modal
+    Then The user verifies that Save button is inactive without change in EditCurrency popup
+
   Scenario: Save button should be active after change Status in EditCurrency popup
     When The user clicks a currency edit button
     When The user clicks Status checkbox in EditCurrency popup
     Then The user verifies that Save button is active in EditCurrency popup
+
+  Scenario: When the status changed and the change is undone, Save button should be passive in EditCurrency Modal
+    When The user clicks a currency edit button
+    When The user clicks Status checkbox in EditCurrency popup
+    When The user clicks Status checkbox in EditCurrency popup
+    Then The user verifies that Save button is inactive without change in EditCurrency popup
 
   Scenario: Cancel button should be active in AddCurrency popup
     When The user clicks CreateNew button in Currencies page
@@ -115,10 +127,11 @@ Feature: Currencies Test Cases
     When The user enters last page number in to pagination input box in Currencies page
     Then The user verifies that last and next pagination buttons are inactive in last page of table in Currencies page
 
+    #stale(waitforunclickable)
   Scenario: The user should go to last page after clicking the last pagination button
     When The user clicks last pagination button in Currencies page
     Then The user verifies that table is in last page
-
+#stale(waitforunclickable)
   Scenario: The user should go to first page after clicking the first pagination button
     When The user clicks last pagination button in Currencies page
     When The user clicks first pagination button in Currencies page
@@ -137,13 +150,13 @@ Feature: Currencies Test Cases
     When The user clicks CreateNew button in Currencies page
     When The user enters an already existing Code value in to CurrencyCode input box 'AddCurrency'
     When The user clicks Save button in AddCurrency popup
-    Then The user verifies that the 'SKU should be unique' warning appears in the top right
+    Then The user verifies that the 'SKU should be unique' info appears in the top right
 
   Scenario: The user should not be able to edit a currency with an already existing Code value
     When The user clicks a currency edit button
     When The user enters an already existing Code value in to CurrencyCode input box 'EditCurrency'
     When The user clicks Save button in EditCurrency popup
-    Then The user verifies that the 'SKU should be unique' warning appears in the top right
+    Then The user verifies that the 'SKU should be unique' info appears in the top right
 
   Scenario: The user should be able to create a new currency with a non existing Code value
     When The user clicks CreateNew button in Currencies page
@@ -171,6 +184,16 @@ Feature: Currencies Test Cases
     When The user clicks Delete button in DeleteCurrency popup
     Then The user verifies that the 'Changes saved successfully.' info appears in the top right
     Then The user verifies that current currencies do not include deleted currency
+
+  Scenario Outline: If there is enough data in the table, there must be as many rows as the number selected in the table length
+    When The user select "<length>" from table length in Currencies Page
+    Then The user verifies that table contains right rows according to "<length>" in Currencies
+    Examples:
+      | length |
+      | 100    |
+      | 50     |
+      | 25     |
+      | 10     |
 
 
 

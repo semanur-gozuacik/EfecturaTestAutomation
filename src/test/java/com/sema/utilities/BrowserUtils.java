@@ -327,7 +327,6 @@ public class BrowserUtils {
         Select select = new Select(selectElement);
         return select.getFirstSelectedOption().getAttribute("value").equals(value);
     }
-
 }
 
 

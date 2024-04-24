@@ -5,6 +5,8 @@ import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -12,6 +14,9 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import static com.sema.pages.SettingsPage.TagsPage.isRowCountCorrectAccordingToTableLength;
+import static com.sema.pages.SettingsPage.TagsPage.selectLengthFromTableLength;
 
 public class CurrenciesPage extends BasePage {
 
@@ -102,12 +107,6 @@ public class CurrenciesPage extends BasePage {
     @FindBy(xpath = "//input[@id='currency-code']")
     private WebElement addCurrencyCodeInputBox;
 
-    @FindBy(xpath = "//span[text()='SKU should be unique']")
-    private WebElement skuShouldBeUniqueWarningPopup;
-    
-    @FindBy(xpath = "//span[text()='Changes saved successfully.']")
-    private WebElement changesSavedSuccessfullyInfoPopup;
-
     @FindBy(xpath = "//select[@name='locales_table_length']")
     private WebElement tableLengthSelectDropdown;
 
@@ -122,7 +121,7 @@ public class CurrenciesPage extends BasePage {
 
     public void enterInputToCodeFilter(String filterInput) {
         codeFilterInputBox.sendKeys(filterInput);
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(6);
     }
 
     public void verifyCodeFilterResultsAreCorrect(String filterInput) {
@@ -261,7 +260,7 @@ public class CurrenciesPage extends BasePage {
 
     public void verifyEditCurrencyPopupIsClosed() {Assert.assertTrue(isPopupClosed(editCurrencyPopup));}
 
-    public boolean isPopupClosed(WebElement popupName) {
+    public static boolean isPopupClosed(WebElement popupName) {
         BrowserUtils.wait(2);
         try {
             return !popupName.isDisplayed();
@@ -332,20 +331,19 @@ public class CurrenciesPage extends BasePage {
         saveButtonInAddCurrencyPopup.click();
     }
 
-    public void verifySkuShouldBeUniqueWarningIsDisplayed(String expectedWarning) {
-        BrowserUtils.waitForVisibility(skuShouldBeUniqueWarningPopup,3);
-        Assert.assertEquals(skuShouldBeUniqueWarningPopup.getText(), expectedWarning);
-    }
-
     public static void waitForClickableOfButton(WebElement button) {
         while (!isButtonActive(button)) {
-            BrowserUtils.wait(1);
+            BrowserUtils.wait(2);
         }
     }
 
     public static void waitForUnclickableOfButton(WebElement button) {
-        while (isButtonActive(button)) {
-            BrowserUtils.wait(1);
+        try {
+            while (isButtonActive(button)) {
+                BrowserUtils.wait(1);
+            }
+        } catch (StaleElementReferenceException e) {
+            System.out.println("Stale Element");
         }
     }
 
@@ -378,11 +376,6 @@ public class CurrenciesPage extends BasePage {
             editCurrencyCodeInputBox.clear();
             editCurrencyCodeInputBox.sendKeys(randomCurrencyCode);
         }
-    }
-
-    public void verifyChangesSavedSuccessfullyInfoIsDisplayed(String expectedInfo) {
-        BrowserUtils.waitForVisibility(changesSavedSuccessfullyInfoPopup,5);
-        Assert.assertEquals(changesSavedSuccessfullyInfoPopup.getText(), expectedInfo);
     }
 
     public boolean isCurrencyCodeValueInTable(String currencyCodeToBeCheck) {
@@ -519,5 +512,19 @@ public class CurrenciesPage extends BasePage {
     public void verifyTableGoToPreviousPageInCurrenciesPage() {
          BrowserUtils.wait(5);
         Assert.assertEquals("1", getValueInInputBox(paginationInputBox));
+    }
+
+    public void selectLengthFromTableLengthInCurrenciesPage(String length) {
+        selectLengthFromTableLength(tableLengthSelectDropdown,length);
+    }
+
+    public void verifyTableContainsRightRowsAccordingToLengthInCurrencies(String length) {
+        Assert.assertTrue(isRowCountCorrectAccordingToTableLength(tableInfoInCurrenciesPage,length));
+    }
+
+    public void undoneTheChangesInCurrencyCodeInEditCurrencyModal() {
+        String oldValue = editCurrencyCodeInputBox.getAttribute("data-old-value");
+        editCurrencyCodeInputBox.clear();
+        editCurrencyCodeInputBox.sendKeys(oldValue);
     }
 }

@@ -19,10 +19,7 @@ import com.sema.pages.MDMPage.GiftManagement.GiftHomePage;
 import com.sema.pages.MDMPage.KPIManagement.KPIHomePage;
 import com.sema.pages.MDMPage.ProductManagement.ProductHomePage;
 import com.sema.pages.MDMPage.UserManagement.UserHomePage;
-import com.sema.pages.SettingsPage.Attributes;
-import com.sema.pages.SettingsPage.Families;
-import com.sema.pages.SettingsPage.Import;
-import com.sema.pages.SettingsPage.TagsPage;
+import com.sema.pages.SettingsPage.*;
 import com.sema.pages.SystemPage.BlackListPage;
 import com.sema.pages.SystemPage.CurrenciesPage;
 import com.sema.pages.SystemPage.UserManagement.Users;
@@ -58,6 +55,7 @@ public class Pages {
     private TagsPage tagsPage;
     private Import importPage;
     private CocpitGeneralDashboard cocpitGeneralDashboard;
+    private ItemStatuses itemStatuses;
 
 
     public Pages() {
@@ -88,6 +86,7 @@ public class Pages {
             this.tagsPage=new TagsPage();
             this.importPage=new Import();
             this.cocpitGeneralDashboard = new CocpitGeneralDashboard();
+            this.itemStatuses = new ItemStatuses();
 
     }
     // Getter metotları
@@ -121,6 +120,7 @@ public class Pages {
     public TagsPage tagsPage(){return tagsPage;}
     public Import importPage(){return importPage;}
     public CocpitGeneralDashboard cocpit() {return cocpitGeneralDashboard;}
+    public ItemStatuses itemStatuses() {return itemStatuses;}
 
 }
 
