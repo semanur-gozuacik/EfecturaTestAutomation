@@ -55,7 +55,7 @@ public class Pages {
     private TagsPage tagsPage;
     private Import importPage;
     private CocpitGeneralDashboard cocpitGeneralDashboard;
-    private ItemStatuses itemStatuses;
+    private ItemStatusesPage itemStatusesPage;
 
 
     public Pages() {
@@ -86,7 +86,7 @@ public class Pages {
             this.tagsPage=new TagsPage();
             this.importPage=new Import();
             this.cocpitGeneralDashboard = new CocpitGeneralDashboard();
-            this.itemStatuses = new ItemStatuses();
+            this.itemStatusesPage = new ItemStatusesPage();
 
     }
     // Getter metotları
@@ -120,7 +120,7 @@ public class Pages {
     public TagsPage tagsPage(){return tagsPage;}
     public Import importPage(){return importPage;}
     public CocpitGeneralDashboard cocpit() {return cocpitGeneralDashboard;}
-    public ItemStatuses itemStatuses() {return itemStatuses;}
+    public ItemStatusesPage itemStatusesPage() {return itemStatusesPage;}
 
 }
 
