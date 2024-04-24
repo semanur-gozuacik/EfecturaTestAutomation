@@ -57,5 +57,34 @@ public class SettingsAttributesStepDefs extends BaseStep{
     public void theUserVerifyResetButtonFunctionalitySettingsAttibutes() {
         pages.attributes().verifyResetButton();
     }
+
+    @And("The user properties tab Transaction")
+    public void theUserPropertiesTabTransaction() {pages.attributes().clickPropertiesTransactionTab();
+    }
+
+    @And("The user properties tab generalPropertiesTab")
+    public void theUserPropertiesTabGeneralPropertiesTab() {pages.attributes().generalPropertiesTab();
+    }
+
+    @And("The user properties tab Validation_Rules")
+    public void theUserPropertiesTabValidation_Rules() {pages.attributes().Validation_Rules();
+    }
+
+    @And("The History Tab")
+    public void theHistoryTab() {pages.attributes().setHistoryTab();
+    }
+
+    @And("the user clicks on Reset button attribute edit")
+    public void theUserClicksOnResetButtonAttributeEdit() {pages.attributes().setResetButtonEditAttribute();
+    }
+
+    @When("The user selects {string} into show entries edit attribute")
+    public void theUserSelectsIntoShowEntriesEditAttribute(String entrie) {pages.attributes().showEntriesAttribute(entrie);
+        
+    }
+
+    @Then("The user should see  {string} entrie in everypage edit attribute")
+    public void theUserShouldSeeEntrieInEverypageEditAttribute(String entrie) {pages.attributes().verifySelectOptionAttribute(entrie);
+    }
 }
 

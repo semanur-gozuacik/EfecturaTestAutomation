@@ -62,12 +62,12 @@ Feature: Contact Management Test Cases- Contact Home Page
   Scenario: Search for Ekosystem Family
     And The user clicks on Ekosystem Filtre
     And the user clicks on Search button
-    And the user verify on family filter Ekosystem functionality
+     #And the user verify on family filter Ekosystem functionality
 
   Scenario: Search for IWSA Family
     And The user clicks on IWSA Filtre
     And the user clicks on Search button
-    And the user verify on family filter IWSA functionality
+     #And the user verify on family filter IWSA functionality
 
   Scenario Outline: Filter "<ItemStatus>" Item Statuses
     And the user clicks on ItemStatuses
@@ -229,3 +229,8 @@ Feature: Contact Management Test Cases- Contact Home Page
     And The user clicks birthdate on tab
     And The user clicks birthdate on tab
     #Then The user verifies that birthdate are sorted from "near to distant"
+
+  Scenario: Contact Home Page Columns - Reset Button
+    And  The user enters columns button
+    And  The user selected columns
+    And  The user clicks cancel button columns

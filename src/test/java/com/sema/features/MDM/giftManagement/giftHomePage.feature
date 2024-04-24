@@ -39,11 +39,18 @@ Feature: Gift Creation and Management Home Page
       | entries|
       |10 |
       |25 |
+      |50 |
+      |100|
+
+  Scenario: Gift Home Page Reset Button Control
+    And The user enters "TestGiftForRecieved" into Code field
+    And the user clicks on Reset button
 
   Scenario: Gift page edit verify
     And The user enters "TestGiftForRecieved" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
+
 
   Scenario Outline:Gift Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "TestGiftForRecieved" into Code field
@@ -128,6 +135,18 @@ Feature: Gift Creation and Management Home Page
     And The user enters "-------" in  comment area
     And The user clicks save button
     And the user verifies item status success message
+
+  Scenario:Gift edit - history Tab
+    And The user enters "TestGiftForRecieved" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "history" tab
+
+  Scenario:Gift edit - ItemComment Tab
+    And The user enters "TestGiftForRecieved" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "ItemComment" tab
 
   Scenario:Gift edit -Gifts image Tab Associated Filter No
     And The user enters "TestGiftForRecieved" into Code field

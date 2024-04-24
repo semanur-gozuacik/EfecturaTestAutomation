@@ -34,7 +34,16 @@ public class UserHomePage extends BasePage {
     private WebElement enabledStatusFilter;
     @FindBy(xpath ="//li[contains(text(),'Disabled') and @role='treeitem']")
     private WebElement disabledStatusFilter;
-
+    @FindBy(xpath ="//span[contains(text(),'Columns')]")
+    private WebElement columnsButton;
+    @FindBy(xpath ="//span[normalize-space()='SELECTED COLUMNS']")
+    private WebElement selectedColumns;
+    @FindBy(xpath ="//a[@id='cancelColumn']")
+    private WebElement columnsCancelButton;
+    @FindBy(xpath ="//a[@id='cancelColumn']")
+    private WebElement columnsSaveButton;
+    @FindBy(xpath ="//span[@class='text clear-btn']")
+    private WebElement defaultColumnsButton;
 
     public UserHomePage() {
     }
@@ -113,6 +122,31 @@ public void clickResetButton(){
     public void clickRefresgButton(){
         BrowserUtils.wait(2);
         refreshButton.click();
+
+    }
+    public void columnsButton(){
+        BrowserUtils.wait(4);
+        columnsButton.click();
+
+    }
+    public void setSelectedColumns(){
+        BrowserUtils.wait(5);
+        selectedColumns.isDisplayed();
+
+    }
+    public void setColumnsCancelButton(){
+        BrowserUtils.wait(5);
+        columnsCancelButton.isDisplayed();
+
+    }
+    public void setColumnsSaveButton(){
+        BrowserUtils.wait(5);
+        columnsSaveButton.isDisplayed();
+
+    }
+    public void setDefaultColumnsButton(){
+        BrowserUtils.wait(5);
+        defaultColumnsButton.isDisplayed();
 
     }
 }

@@ -238,3 +238,13 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And The user clicks "CAMPAIGN_ACCOUNT" tab
     And The user Assocaited No filter
     Then The user verify No Filter
+
+  Scenario: Campaign Home Page Columns - Reset Button
+    And  The user enters columns button
+    And  The user selected columns
+    And  The user clicks save button columns
+
+  Scenario: Campaign Home Page Columns - Default Button
+    And  The user enters columns button
+    And  The user selected columns
+    And  The user clicks Default button columns

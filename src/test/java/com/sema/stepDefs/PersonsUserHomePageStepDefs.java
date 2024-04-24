@@ -1,6 +1,7 @@
 package com.sema.stepDefs;
 
 import com.sema.pages.BasePage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 
 public class PersonsUserHomePageStepDefs extends BaseStep {
@@ -47,6 +48,28 @@ pages.userHomePage().clickRefresgButton();
     @Given("The user clicks export button {string}")
     public void the_user_clicks_export_button(String string) {
 
+    }
+
+    @And("The user enters columns button")
+    public void theUserEntersColumnsButton() {pages.userHomePage().columnsButton();
+        
+    }
+
+    @And("The user selected columns")
+    public void theUserSelectedColumns() {pages.userHomePage().setSelectedColumns();
+        
+    }
+
+    @And("The user clicks cancel button columns")
+    public void theUserClicksCancelButtonColumns() {pages.userHomePage().setColumnsCancelButton();
+    }
+
+    @And("The user clicks save button columns")
+    public void theUserClicksSaveButtonColumns() {pages.userHomePage().setColumnsSaveButton();
+    }
+
+    @And("The user clicks Default button columns")
+    public void theUserClicksDefaultButtonColumns() {pages.userHomePage().setDefaultColumnsButton();
     }
 }
 

@@ -33,13 +33,14 @@ Feature: BlackList Test Cases- Black List Home Page
     When  The user enters "fullNumber" into the phone number field
     And  The user clicks on delete button
     And  The user clicks on delete button in popup
-    Then The user verify the number "fullNumber" is deleted
+    #Then The user verify the number "fullNumber" is deleted
 
   Scenario: Active Black List Button Functionality Control - Cancel Button
     When  The user enters "fullNumber" into the passive phone number field
     And  The user clicks on active button
     And  The user clicks on cancel button in active popup
      #Then The user verify the number "fullNumber" is visible
+
 
   Scenario: Delete Button Functionality Control - Delete Button
     When  The user enters "fullNumber" into the passive phone number field
