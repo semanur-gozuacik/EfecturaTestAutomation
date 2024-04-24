@@ -172,11 +172,6 @@ public class SystemCurrenciesStepDefs extends BaseStep{
         pages.currenciesPage().clickSaveButtonInAddCurrencyPopup();
     }
 
-    @Then("The user verifies that the {string} warning appears in the top right")
-    public void theUserVerifiesThatTheSKUShouldBeUniqueWarningAppearsInTheTopRight(String expectedWarning) {
-        pages.currenciesPage().verifySkuShouldBeUniqueWarningIsDisplayed(expectedWarning);
-    }
-
     @When("The user clicks Save button in EditCurrency popup")
     public void theUserClicksSaveButtonInEditCurrencyPopup() {
         pages.currenciesPage().clickSaveButtonInEditCurrencyPopup();
@@ -185,11 +180,6 @@ public class SystemCurrenciesStepDefs extends BaseStep{
     @When("The user enters a non existing Code value in to CurrencyCode input box {string}")
     public void theUserEntersANonExistingCodeValueInToCurrencyCodeInputBoxEditCurrency(String popupName) {
         pages.currenciesPage().enterNonExistingCodeValueInTo(popupName);
-    }
-
-    @Then("The user verifies that the {string} info appears in the top right")
-    public void theUserVerifiesThatTheChangesSavedSuccessfullyInfoAppearsInTheTopRight(String expectedInfo) {
-        pages.currenciesPage().verifyChangesSavedSuccessfullyInfoIsDisplayed(expectedInfo);
     }
 
     @Then("The user verifies that current currencies include edited currency")
@@ -295,5 +285,20 @@ public class SystemCurrenciesStepDefs extends BaseStep{
     @Then("The user verifies that table go to previous page in Currencies page")
     public void theUserVerifiesThatTableGoToPreviousPageInCurrenciesPage() {
         pages.currenciesPage().verifyTableGoToPreviousPageInCurrenciesPage();
+    }
+
+    @When("The user select {string} from table length in Currencies Page")
+    public void theUserSelectFromTableLengthInCurrenciesPage(String length) {
+        pages.currenciesPage().selectLengthFromTableLengthInCurrenciesPage(length);
+    }
+
+    @Then("The user verifies that table contains right rows according to {string} in Currencies")
+    public void theUserVerifiesThatTableContainsRightRowsAccordingToInCurrencies(String length) {
+        pages.currenciesPage().verifyTableContainsRightRowsAccordingToLengthInCurrencies(length);
+    }
+
+    @When("The user undone the changes in CurrencyCode in EditCurrency modal")
+    public void theUserUndoneTheChangesInCurrencyCodeInEditCurrencyModal() {
+        pages.currenciesPage().undoneTheChangesInCurrencyCodeInEditCurrencyModal();
     }
 }

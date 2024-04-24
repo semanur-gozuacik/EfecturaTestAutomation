@@ -12,7 +12,7 @@ Feature: Tags Page Test Cases
   Scenario: Users should reach Tags page.
     Then  The user verifies that reached the "Tags" page.
 
-    @fatih
+  @fatih
   Scenario: Refresh button should be active in Tags page
     Then The user verifies that Refresh button is active
 
@@ -106,7 +106,145 @@ Feature: Tags Page Test Cases
     When The user clicks next pagination button in Tags page
     When The user clicks previous pagination button in Tags page
     Then The user verifies that table go to previous page in Tags page
+#--------------------------------------------------------------------------------------------------------
 
-  Scenario: The Cancel button in DeleteCurrency popup should be active
-    When The user clicks a currency delete button
-    Then The user verifies that Cancel button is active in DeleteCurrency popup
+  Scenario Outline: If there is enough data in the table, there must be as many rows as the number selected in the table length
+    When The user select "<length>" from table length in tags page
+    Then The user verifies that table contains right rows according to "<length>" in Tag
+    Examples:
+      | length |
+      | 100    |
+      | 50     |
+      | 25     |
+      | 10     |
+
+    #----------create-------------
+  Scenario: The Cancel button in CreateTag modal should be active
+    When The user clicks CreateNew button in Tags page
+    Then The user verifies that Cancel button is active in CreateTag modal
+
+  Scenario: Create button should be passive after only enter Label in CreateNewTag Modal
+    When The user clicks CreateNew button in Tags page
+    When The user fills the label input in CreateNewTag Modal
+    Then The user verifies that Create button is passive in CreateNewTag Modal
+
+  Scenario: Create button should be passive after only select itemType in CreateNewTag Modal
+    When The user clicks CreateNew button in Tags page
+    When The user select itemType "Account" in CreateOrEditTag Modal
+    Then The user verifies that Create button is passive in CreateNewTag Modal
+
+  Scenario: Create button should be active after enter Label and select itemType in CreateNewTag Modal
+    When The user clicks CreateNew button in Tags page
+    When The user fills the label input in CreateNewTag Modal
+    When The user select itemType "Account" in CreateOrEditTag Modal
+    Then The user verifies that Create button is active in CreateNewTag Modal
+
+  Scenario: A tag with the non existing label value should be able to create.
+    When The user clicks CreateNew button in Tags page
+    When The user fills the label input in CreateNewTag Modal
+    When The user select itemType "Account" in CreateOrEditTag Modal
+    When The user clicks create button in CreateNewTag Modal
+    Then The user verifies that the 'Changes saved successfully.' info appears in the top right
+    Then The user verifies that current tags include new tag with itemType "Account"
+
+  Scenario: A tag with the different itemType and existing label value should be able to create.
+    When The user clicks CreateNew button in Tags page
+    When The user fills the label input in CreateNewTag Modal
+    When The user select itemType "Contact" in CreateOrEditTag Modal
+    When The user clicks create button in CreateNewTag Modal
+    Then The user verifies that the 'Changes saved successfully.' info appears in the top right
+    Then The user verifies that current tags include new tag with itemType "Contact"
+
+  Scenario: A tag with the same itemType and existing label value should not be able to create.
+    When The user clicks CreateNew button in Tags page
+    When The user fills the label input in CreateNewTag Modal
+    When The user select itemType "Contact" in CreateOrEditTag Modal
+    When The user clicks create button in CreateNewTag Modal
+    Then The user verifies that the 'ExistingTag' info appears in the top right
+
+  Scenario: CreateNewTag Modal should be closed after clicking the cancel button
+    When The user clicks CreateNew button in Tags page
+    When The user clicks cancel button in CreateNewTag Modal
+    Then The user verifies that CreateNewTag Modal is closed
+
+#---------Edit-----------
+  Scenario: The Cancel button in EditTag modal should be active
+    When The user clicks EditTag button in Tags page
+    Then The user verifies that Cancel button is active in EditTag modal
+
+  Scenario: The Save button in EditTag modal should be passive without any changes
+    When The user clicks EditTag button in Tags page
+    Then The user verifies that Save button is passive in EditTag modal
+
+  Scenario: EditTag Modal should be closed after clicking the cancel button
+    When The user clicks EditTag button in Tags page
+    When The user clicks cancel button in EditTag Modal
+    Then The user verifies that EditTag Modal is closed
+
+  Scenario: The Save button in EditTag modal should be active after edit Label
+    When The user clicks EditTag button in Tags page
+    When The user edit Label in EditTag Modal
+    Then The user verifies that Save button is active in EditTag modal
+
+  Scenario: The Save button in EditTag modal should be active after edit itemType
+    When The user clicks EditTag button in Tags page
+    When The user select itemType "Event" in CreateOrEditTag Modal
+    Then The user verifies that Save button is active in EditTag modal
+
+  Scenario: When the label changed and the change is undone, Save button should be passive in EditTag Modal
+    When The user clicks EditTag button in Tags page
+    When The user edit Label in EditTag Modal
+    When The user undone the changes in Label
+    Then The user verifies that Save button is passive in EditTag modal
+
+  Scenario: When the itemType changed and the change is undone, Save button should be passive in EditTag Modal
+    When The user clicks EditTag button in Tags page
+    When The user select itemType "Event" in CreateOrEditTag Modal
+    When The user select itemType "Account" in CreateOrEditTag Modal
+    Then The user verifies that Save button is passive in EditTag modal
+
+  Scenario: A tag whose itemType has been changed should not be edited without selecting the 'AreYouSureTagEdit' checkbox
+    When The user clicks EditTag button in Tags page
+    When The user select itemType "Event" in CreateOrEditTag Modal
+    When The user clicks Save button in EditTag modal
+    Then The user verifies that the 'ConfirmCheckboxItemType' info appears in the top right
+
+    #bakılacak to-do
+#  Scenario: A tag should not be edited with an already existing label and itemType
+#    When The user clicks EditTag button in Tags page
+#    When The user select itemType "Contact" in CreateOrEditTag Modal
+#    When The user clicks Save button in EditTag modal
+#    Then The user verifies that the 'ExistingTag' info appears in the top right
+
+  Scenario: A tag with the non existing label value should be able to edit.
+    When The user clicks EditTag button in Tags page
+    When The user edit Label in EditTag Modal
+    When The user clicks Save button in EditTag modal
+    Then The user verifies that the 'Changes saved successfully.' info appears in the top right
+
+  Scenario: A tag with the different itemType and existing label value should be able to edit.
+    When The user clicks EditTag button in Tags page
+    When The user edit Label in EditTag Modal
+    When The user clicks Save button in EditTag modal
+    Then The user verifies that the 'Changes saved successfully.' info appears in the top right
+
+  #--------delete-----------------
+  Scenario: The Cancel button in DeleteTag modal should be active
+    When The user clicks DeleteTag button in Tags page
+    Then The user verifies that Cancel button is active in DeleteTag modal
+
+  Scenario: The Delete button in DeleteTag modal should be active
+    When The user clicks DeleteTag button in Tags page
+    Then The user verifies that Delete button is active in DeleteTag modal
+
+  Scenario: DeleteTag Modal should be closed after clicking the cancel button
+    When The user clicks DeleteTag button in Tags page
+    When The user clicks Cancel button in DeleteTag Modal
+    Then The user verifies that DeleteTag Modal is closed
+
+  Scenario: A tag should be able to delete
+    When The user clicks DeleteTag button in Tags page
+    When The user clicks Delete button in DeleteTag modal
+    When The user clicks DeleteTag button in Tags page
+    When The user clicks Delete button in DeleteTag modal
+    Then The user verifies that the 'Changes saved successfully.' info appears in the top right

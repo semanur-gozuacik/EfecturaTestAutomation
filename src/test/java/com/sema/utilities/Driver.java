@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
@@ -40,11 +41,11 @@ public class Driver {
              */
             String browser = ConfigurationReader.getProperty("browser").toLowerCase();
             switch (browser) {
-
                case "chrome":
                     WebDriverManager.chromedriver().setup();
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.addArguments("--start-maximized");
+                    //chromeOptions.addArguments("--remote-allow-origins=*");
                     driverPool.set(new ChromeDriver(chromeOptions));
                     break;
                 case "firefox":

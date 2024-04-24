@@ -178,4 +178,144 @@ public class SettingsTagsStepDefs extends BaseStep {
     public void theUserVerifiesThatTableGoToPreviousPageInTagsPage() {
         pages.tagsPage().verifyTableGoToPreviousPageInTagsPage();
     }
+
+    @When("The user clicks CreateNew button in Tags page")
+    public void theUserClicksCreateNewButtonInTagsPage() {
+        pages.tagsPage().clickCreateNewButtonInTagsPage();
+    }
+
+    @Then("The user verifies that Cancel button is active in CreateTag modal")
+    public void theUserVerifiesThatCancelButtonIsActiveInCreateTagModal() {
+        pages.tagsPage().verifyCancelButtonIsActiveInCreateTagModal();
+    }
+
+    @When("The user fills the label input in CreateNewTag Modal")
+    public void theUserFillsTheLabelInputInCreateNewTagModal() {
+        pages.tagsPage().fillLabelInputInCreateNewTagModal();
+    }
+
+    @When("The user select itemType {string} in CreateOrEditTag Modal")
+    public void theUserSelectItemTypeInCreateOrEditTagModal(String itemType) {
+        pages.tagsPage().selectItemTypeInCreateOrEditTagModal(itemType);
+    }
+
+    @Then("The user verifies that Create button is active in CreateNewTag Modal")
+    public void theUserVerifiesThatCreateButtonIsActiveInCreateNewTagModal() {
+        pages.tagsPage().verifyCreateButtonIsActiveInCreateNewTagModal();
+    }
+
+    @Then("The user verifies that Create button is passive in CreateNewTag Modal")
+    public void theUserVerifiesThatCreateButtonIsPassiveInCreateNewTagModal() {
+        pages.tagsPage().verifyCreateNewButtonIsInactiveInCreateNewTagModal();
+    }
+
+    @When("The user clicks create button in CreateNewTag Modal")
+    public void theUserClicksCreateButtonInCreateNewTagModal() {
+        pages.tagsPage().clickCreateButtonInCreateNewTagModal();
+    }
+
+    @Then("The user verifies that current tags include new tag with itemType {string}")
+    public void theUserVerifiesThatCurrentTagsIncludeNewTag(String itemType) {
+        pages.tagsPage().verifyNewTagIsInTable(itemType);
+    }
+
+    @Then("The user verifies that the {string} info appears in the top right")
+    public void theUserVerifiesThatTheChangesSavedSuccessfullyInfoAppearsInTheTopRight(String message) {
+        pages.tagsPage().verifyWarningMessageIsDisplayed(message);
+    }
+
+    @When("The user clicks EditTag button in Tags page")
+    public void theUserClicksEditTagButtonInTagsPage() {
+        pages.tagsPage().clickEditTagButton();
+    }
+
+    @Then("The user verifies that Cancel button is active in EditTag modal")
+    public void theUserVerifiesThatCancelButtonIsActiveInEditTagModal() {
+        pages.tagsPage().verifyCancelButtonIsActiveInEditTagModal();
+    }
+
+    @Then("The user verifies that Save button is passive in EditTag modal")
+    public void theUserVerifiesThatSaveButtonIsPassiveInEditTagModal() {
+        pages.tagsPage().verifySaveButtonIsPassiveInEditTagModal();
+    }
+
+    @When("The user clicks cancel button in CreateNewTag Modal")
+    public void theUserClicksCancelButtonInCreateNewTagModal() {
+        pages.tagsPage().clickCancelButtonInCreateNewTagModal();
+    }
+
+    @Then("The user verifies that CreateNewTag Modal is closed")
+    public void theUserVerifiesThatCreateNewTagModalIsClosed() {
+        pages.tagsPage().verifyCreateNewTagModalIsClosed();
+    }
+
+    @When("The user clicks cancel button in EditTag Modal")
+    public void theUserClicksCancelButtonInEditTagModal() {
+        pages.tagsPage().clickCancelButtonInEditTagModal();
+    }
+
+    @Then("The user verifies that EditTag Modal is closed")
+    public void theUserVerifiesThatEditTagModalIsClosed() {
+        pages.tagsPage().verifyEditTagModalIsClosed();
+    }
+
+    @When("The user edit Label in EditTag Modal")
+    public void theUserEditLabelInEditTagModal() {
+        pages.tagsPage().editLabelInEditTagModal();
+    }
+
+    @Then("The user verifies that Save button is active in EditTag modal")
+    public void theUserVerifiesThatSaveButtonIsActiveInEditTagModal() {
+        pages.tagsPage().verifySaveButtonIsActiveInEditTagModal();
+    }
+
+    @When("The user clicks Save button in EditTag modal")
+    public void theUserClicksSaveButtonInEditTagModal() {
+        pages.tagsPage().clickSaveButtonInEditTagModal();
+    }
+
+    @When("The user select {string} from table length in tags page")
+    public void theUserSelectFromTableLengthInTagsPage(String length) {
+        pages.tagsPage().selectLengthFromTableLengthInTagsPage(length);
+    }
+
+    @Then("The user verifies that table contains right rows according to {string} in Tag")
+    public void theUserVerifiesThatTableContainsRightRowsAccordingToInTag(String length) {
+        pages.tagsPage().verifyTableContainsRightRowsAccordingToLengthInTag(length);
+    }
+
+    @When("The user clicks DeleteTag button in Tags page")
+    public void theUserClicksDeleteTagButtonInTagsPage() {
+        pages.tagsPage().clickDeleteTagButton();
+    }
+
+    @Then("The user verifies that Cancel button is active in DeleteTag modal")
+    public void theUserVerifiesThatCancelButtonIsActiveInDeleteTagModal() {
+        pages.tagsPage().verifyCancelButtonIsActiveInDeleteTagButton();
+    }
+
+    @Then("The user verifies that Delete button is active in DeleteTag modal")
+    public void theUserVerifiesThatDeleteButtonIsActiveInDeleteTagModal() {
+        pages.tagsPage().verifyDeleteButtonIsActiveInDeleteTagButton();
+    }
+
+    @When("The user clicks Delete button in DeleteTag modal")
+    public void theUserClicksDeleteButtonInDeleteTagModal() {
+        pages.tagsPage().clickDeleteButtonInDeleteTagModal();
+    }
+
+    @When("The user clicks Cancel button in DeleteTag Modal")
+    public void theUserClicksCancelButtonInDeleteTagModal() {
+        pages.tagsPage().clickCancelButtonInDeleteTagModal();
+    }
+
+    @Then("The user verifies that DeleteTag Modal is closed")
+    public void theUserVerifiesThatDeleteTagModalIsClosed() {
+        pages.tagsPage().verifyDeleteTagModalIsClosed();
+    }
+
+    @When("The user undone the changes in Label")
+    public void theUserUndoneTheChangesInLabel() {
+        pages.tagsPage().undoneChangesInLabel();
+    }
 }
