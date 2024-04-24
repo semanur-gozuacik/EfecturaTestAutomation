@@ -29,17 +29,6 @@ Feature: KPI Management Test Cases
     And   The User clicks on the createButton element
     Then  The User waits until the page contains "Please choose categories" text with a timeout of 120 seconds
 
-  Scenario Outline: KPI Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
-    Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
-      |250|
-
   Scenario: Verify export button
     When  The user clicks on Export button
   #  Then  The user verify that the export was "Success"
@@ -85,6 +74,17 @@ Feature: KPI Management Test Cases
     # And  The user enters "1757483988_5392786463" Can edit
    # And  The user clicks create button-New List
    # Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
+
+  Scenario Outline: KPI Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
+    Then  The user should see  "<entries>" entrie in everypage
+    Examples:
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
+      |250|
 
   Scenario: KPI page edit verify
     And The user enters "YENİTEST1411" into Code field

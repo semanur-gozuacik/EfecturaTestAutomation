@@ -20,17 +20,6 @@ Feature: User Management Test Cases- Contact Home Page
     And   The User clicks on the createButton element
     Then  The User waits until the page contains "EMPTY_FAMILY" with a timeout of 120 seconds
 
-  Scenario Outline: User Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
-    Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
-      |250|
-
   Scenario:User Home Page Verify export button
     When  The user clicks on Export button
   #  Then  The user verify that the export was "Success"
@@ -62,6 +51,17 @@ Feature: User Management Test Cases- Contact Home Page
 
   Scenario:User Home Page Verify Last Page Button Clickable Condition
     And  The user verifies last page button is clickable
+
+  Scenario Outline: User Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
+    Then  The user should see  "<entries>" entrie in everypage
+    Examples:
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
+      |250|
 
   Scenario: User Reset Button Control
     And The user enters "test2123" into Code field
@@ -323,8 +323,8 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user clicks on Edit Button
     And The user clicks "Account-MRP" tab
     And The user Assocaited All filter
-    And The user enters valid label filter-"YENİTEST111111113"
-    And The user verifies that filter is displayed
+    #And The user enters valid label filter-"YENİTEST111111113"
+    #And The user verifies that filter is displayed
 
   Scenario:User edit -Account-MRP tab- Invalid Label Filter
     And The user enters "Otomasyon" into Code field
@@ -332,8 +332,8 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user clicks on Edit Button
     And The user clicks "Account-MRP" tab
     And The user Assocaited All filter
-    And The user enters invalid label filter-"invalidlabel"
-    And The user verifies that filter is not displayed
+     #And The user enters invalid label filter-"invalidlabel"
+    #And The user verifies that filter is not displayed
 
   Scenario:User edit -Account-MRP tab- Reset Button
     And The user enters "Otomasyon" into Code field

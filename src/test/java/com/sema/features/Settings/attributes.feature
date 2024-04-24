@@ -15,117 +15,134 @@ Feature: Attributes Management Test Cases
 
 
   Scenario: Attributes pages -Reset Button Control
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And the user clicks on Reset button
-    And the user verify Reset button functionality-Settings Families
-
+    And the user verify Reset button functionality-Settings Attibutes
+  @attributes
   Scenario:Attributes pages Group Permission Verify Item First Page Button Unclickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks group permission tab
     #And  The user verifies previous button is not clickable asset
-
+  @attributes
   Scenario:Attributes pages Group Permission Verify Item Previous Page Button Unclickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks group permission tab
     And  The user verifies previous page button is not clickable asset
-
+  @attributes
   Scenario:Attributes pages Group Permission Verify Item next Button clickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks group permission tab
     When The user clicks next page button asset
     And  The user verifies next button is clickable asset
-
+  @attributes
   Scenario:Attributes pages Group Permission Verify Previous Page Button clickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks group permission tab
     When The user clicks next page button asset
     When The user clicks next page button asset
     When The user clicks previous page button asset
     And  The user verifies previous button is clickable asset
-
+  @attributes
   Scenario:Attributes pages Group Permission Verify Last Page Button clickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies last button is clickable asset
-
+  @attributes
   Scenario:Attributes pages Group Permission Verify Last Page Button Unclickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies last button is unclickable asset
-
+  @attributes
   Scenario:Attributes pages Group Permission Verify Item next Button unclickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies next button is unclickable asset
-
+  @attributes
   Scenario:Attributes pages Group Permission Verify Item First Page Button Clickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks group permission tab
     When The user clicks last page button asset
  #   And  The user verifies first page button is clickable asset
-
+  @attributes
   Scenario:Attributes pages User Permission Verify Item First Page Button Unclickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks user permission tab
     And  The user verifies first page button is not clickable user
-
+  @attributes
   Scenario:Attributes pages User Permission Verify Item Previous Page Button Unclickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks user permission tab
     And  The user verifies previous page button is not clickable user
-
+  @attributes
   Scenario:Attributes pages User Permission Verify Item next Button clickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks user permission tab
     When The user clicks next page button user
     And  The user verifies next button is clickable user
-
+  @attributes
   Scenario:Attributes pages User Permission Verify Previous Page Button clickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks user permission tab
     When The user clicks next page button user
     When The user clicks next page button user
     When The user clicks previous page button user
     And  The user verifies previous button is clickable user
-
+  @attributes
   Scenario:Attributes pages User Permission Verify Last Page Button clickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies last button is clickable user
-
+  @attributes
   Scenario:Attributes pages User Permission Verify Last Page Button Unclickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies last button is unclickable asset
-
+  @attributes
   Scenario:Attributes pages User Permission Verify Item next Button unclickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies next button is unclickable user
-
+  @attributes
   Scenario:Attributes pages User Permission Verify Item First Page Button Clickable Condition
-    And The user enters "Account_Outlet_Code__c" into Code field-Settings Families
+    And The user clicks "Code" attributes
+    And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And  The user clicks on Edit Button-Attributes
     And clicks user permission tab
     When The user clicks last page button user
@@ -158,7 +175,7 @@ Feature: Attributes Management Test Cases
     |AttributesGroups|
       |FileGropus|
       |AttributesGroups|
-@semus
+
   Scenario Outline: Attributes filter
     Then The user  "<filter>"
     Examples:
