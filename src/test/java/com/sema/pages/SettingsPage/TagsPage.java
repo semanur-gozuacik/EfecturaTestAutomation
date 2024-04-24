@@ -191,7 +191,7 @@ public class TagsPage extends BasePage {
 
     public void verifyLabelFilterResultsAreCorrect(String input) {
         for (WebElement value : labelValues) {
-            Assert.assertTrue(value.getText().toLowerCase().contains(input));
+            Assert.assertTrue(value.getText().toLowerCase().contains(input.toLowerCase()));
         }
     }
 

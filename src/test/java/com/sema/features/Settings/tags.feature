@@ -24,7 +24,7 @@ Feature: Tags Page Test Cases
       | ika     |
       | patika  |
 
-  Scenario: If there is no value in the filter result, it should say 'No data available in table'
+  Scenario: If there is no value in the filter result, it should say 'No matching records found'
     When The user enters 'quxysobekps' in to label filter
     Then The user verifies that 'No matching records found' is displayed in table
 
