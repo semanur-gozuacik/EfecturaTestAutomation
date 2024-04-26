@@ -209,21 +209,24 @@ Feature: Tags Page Test Cases
     Then The user verifies that the 'ConfirmCheckboxItemType' info appears in the top right
 
     #bakılacak to-do
-#  Scenario: A tag should not be edited with an already existing label and itemType
-#    When The user clicks EditTag button in Tags page
-#    When The user select itemType "Contact" in CreateOrEditTag Modal
-#    When The user clicks Save button in EditTag modal
-#    Then The user verifies that the 'ExistingTag' info appears in the top right
+  Scenario: A tag should not be edited with an already existing label and itemType
+    When The user clicks EditTag button in Tags page
+    When The user select itemType "Contact" in CreateOrEditTag Modal
+    When The user select AreYouSureTagEdit check box
+    When The user clicks Save button in EditTag modal
+    Then The user verifies that the 'ExistingTag' info appears in the top right
 
   Scenario: A tag with the non existing label value should be able to edit.
     When The user clicks EditTag button in Tags page
     When The user edit Label in EditTag Modal
+    When The user select AreYouSureTagEdit check box
     When The user clicks Save button in EditTag modal
     Then The user verifies that the 'Changes saved successfully.' info appears in the top right
 
   Scenario: A tag with the different itemType and existing label value should be able to edit.
     When The user clicks EditTag button in Tags page
     When The user edit Label in EditTag Modal
+    When The user select AreYouSureTagEdit check box
     When The user clicks Save button in EditTag modal
     Then The user verifies that the 'Changes saved successfully.' info appears in the top right
 
