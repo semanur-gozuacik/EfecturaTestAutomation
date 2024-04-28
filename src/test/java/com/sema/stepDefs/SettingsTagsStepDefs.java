@@ -318,4 +318,9 @@ public class SettingsTagsStepDefs extends BaseStep {
     public void theUserUndoneTheChangesInLabel() {
         pages.tagsPage().undoneChangesInLabel();
     }
+
+    @When("The user select AreYouSureTagEdit check box")
+    public void theUserSelectAreYouSureTagEditCheckBox() {
+        pages.tagsPage().selectAreYouSureTagEditCheckBox();
+    }
 }

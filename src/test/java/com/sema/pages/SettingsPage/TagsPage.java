@@ -76,7 +76,7 @@ public class TagsPage extends BasePage {
     @FindBy(xpath = "//tr/td[4]/a[1]")
     private List<WebElement> editTagButtons;
 
-    @FindBy(xpath = "//tr/td[4]/a[2]")
+    @FindBy(xpath = "//a[@title='Delete']")
     private List<WebElement> deleteTagButtons;
 
     @FindBy(xpath = "//button[@id='tags_tableFirstPage']")
@@ -191,7 +191,7 @@ public class TagsPage extends BasePage {
 
     public void verifyLabelFilterResultsAreCorrect(String input) {
         for (WebElement value : labelValues) {
-            Assert.assertTrue(value.getText().toLowerCase().contains(input));
+            Assert.assertTrue(value.getText().toLowerCase().contains(input.toLowerCase()));
         }
     }
 
@@ -506,6 +506,7 @@ public class TagsPage extends BasePage {
 
     public void clickDeleteTagButton() {
         enterInputToLabelFilter(tagLabelForEdit);
+        BrowserUtils.wait(1);
         BrowserUtils.waitForVisibility(deleteTagButtons.get(0),10);
         deleteTagButtons.get(0).click();
     }
@@ -533,5 +534,9 @@ public class TagsPage extends BasePage {
     public void undoneChangesInLabel() {
         labelInputBoxInEditTagModal.clear();
         labelInputBoxInEditTagModal.sendKeys(tagLabelForCreate);
+    }
+
+    public void selectAreYouSureTagEditCheckBox() {
+        areYouSureTagEditCheckBox.click();
     }
 }
