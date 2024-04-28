@@ -123,6 +123,7 @@ public class Asset extends BasePage {
     }
 
     public void clickDeleteButtonAssetPopup() {
+        BrowserUtils.wait(2);
         deleteButtonAssetPopup.click();
     }
 
