@@ -51,6 +51,7 @@ public class BlackListHomePageStepDefs extends BaseStep {
     public void the_user_clicks_on_create_new() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
+
     }
 
     @When("The user clicks a phone Number into field {string}")
