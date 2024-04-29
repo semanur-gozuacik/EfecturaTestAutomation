@@ -249,7 +249,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void setCodeFilter(String code) {
-        BrowserUtils.wait(6);
+        BrowserUtils.wait(7);
         codeFilterClick.click();
         codeFilterSendKey.sendKeys(code);
     }
@@ -413,7 +413,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickEditButton() {
-        BrowserUtils.wait(6);
+        BrowserUtils.wait(7);
         BrowserUtils.hoverOver(editButton);
         BrowserUtils.wait(8);
         editButton.click();
