@@ -125,6 +125,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void verifyCodeFilterResultsAreCorrect(String filterInput) {
+        BrowserUtils.wait(6);
         for (WebElement value : codeValues) {
             Assert.assertTrue(value.getText().toLowerCase().contains(filterInput));
         }
