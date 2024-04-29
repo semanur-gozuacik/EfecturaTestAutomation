@@ -148,7 +148,7 @@ public class BlackListHomePageStepDefs extends BaseStep {
     }
     @When("The user clicks forgot your password button")
     public void the_user_clicks_forgot_your_password_button() {
-    //pages.loginPage().clickForgotYourPassword();
+    pages.loginPage().clickForgotYourPassword();
     }
     @When("The user clicks return to login page")
     public void the_user_clicks_return_to_login_page() {
