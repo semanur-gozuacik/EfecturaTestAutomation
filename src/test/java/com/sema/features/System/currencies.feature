@@ -184,7 +184,7 @@ Feature: Currencies Test Cases
     When The user clicks Delete button in DeleteCurrency popup
     Then The user verifies that the 'Changes saved successfully.' info appears in the top right
     Then The user verifies that current currencies do not include deleted currency
-
+@0105
   Scenario Outline: If there is enough data in the table, there must be as many rows as the number selected in the table length
     When The user select "<length>" from table length in Currencies Page
     Then The user verifies that table contains right rows according to "<length>" in Currencies

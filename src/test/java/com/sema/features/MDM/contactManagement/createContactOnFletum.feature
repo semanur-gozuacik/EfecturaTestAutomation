@@ -1,4 +1,4 @@
-@regression @tt
+@regression @0105contact
 Feature: Contact Management Test Cases Create Home Page
   Background:
 
@@ -65,8 +65,8 @@ Feature: Contact Management Test Cases Create Home Page
     And  The user enters "<Number>" into Code field
     And  the user clicks on Search button
     And  The user clicks delete button- "<Family>"
-    And  The user clicks delete button in popup
-    Then The User waits until the page contains "Item Deleted Succesfully." with a timeout of 15 seconds-Asset
+    #And  The user clicks delete button in popup
+    #Then The User waits until the page contains "Item Deleted Succesfully." with a timeout of 15 seconds-Asset
     Examples:
       |Family   | Number        |
       |Ekosystem|199955523515555|

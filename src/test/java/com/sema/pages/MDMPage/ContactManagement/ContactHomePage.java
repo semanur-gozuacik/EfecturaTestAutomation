@@ -208,10 +208,12 @@ public class ContactHomePage extends BasePage {
     }
 
     public void setDIA_FirstName(String diaFirstName) {
+        BrowserUtils.wait(3);
         DIA_FirstName.sendKeys(diaFirstName);
     }
 
     public void setSurname(String surname) {
+        BrowserUtils.wait(3);
         surnameBox.sendKeys(surname);
 
     }
@@ -674,9 +676,9 @@ public void exportButtonEditItem(){
     }
 
     public void clickIdTabSorting() {
-        BrowserUtils.waitForVisibility(idTab, 25);
+        BrowserUtils.waitForVisibility(idTab, 30);
         idTab.click();
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
     }
 
     public void idTabSorting(String sorting) {

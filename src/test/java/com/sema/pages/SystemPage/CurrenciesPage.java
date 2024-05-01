@@ -516,6 +516,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void selectLengthFromTableLengthInCurrenciesPage(String length) {
+        BrowserUtils.wait(5);
         selectLengthFromTableLength(tableLengthSelectDropdown,length);
     }
 

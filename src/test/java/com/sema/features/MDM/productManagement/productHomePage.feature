@@ -38,14 +38,14 @@ Feature: Product Management Test Cases- Contact Home Page
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario:Product edit -SO_MRP Associated
-    And The user enters "Product_193" into Code field
+    And The user enters "Product_179" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "SO_MRP" tab
     And The user Assocaited All filter
 
   Scenario:Product  edit - SO_MRP Tab Associated Filter No
-    And The user enters "Product_193" into Code field
+    And The user enters "Product_179" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "SO_MRP" tab
@@ -53,14 +53,14 @@ Feature: Product Management Test Cases- Contact Home Page
     Then The user verify No Filter
 
   Scenario:Product edit -EVENT_PRODUCT Associated
-    And The user enters "Product_193" into Code field
+    And The user enters "Product_179" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "EVENT_PRODUCT" tab
     And The user Assocaited All filter
 
   Scenario:Product  edit - EVENT_PRODUCT Tab Associated Filter No
-    And The user enters "Product_193" into Code field
+    And The user enters "Product_179" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "EVENT_PRODUCT" tab
@@ -69,20 +69,20 @@ Feature: Product Management Test Cases- Contact Home Page
 
 
   Scenario:Product edit -Item Comment Tab
-    And The user enters "Product_193" into Code field
+    And The user enters "Product_179" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Item Comment" tab
 
   Scenario:Product edit -Product_Account Associated
-    And The user enters "Product_193" into Code field
+    And The user enters "Product_179" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product_Account" tab
     And The user Assocaited All filter
 
   Scenario:Product  edit - Product_Account Tab Associated Filter No
-    And The user enters "Product_193" into Code field
+    And The user enters "Product_179" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product_Account" tab

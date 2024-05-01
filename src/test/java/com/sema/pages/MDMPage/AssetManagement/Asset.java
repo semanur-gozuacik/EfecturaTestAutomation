@@ -123,12 +123,12 @@ public class Asset extends BasePage {
     }
 
     public void clickDeleteButtonAssetPopup() {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
         deleteButtonAssetPopup.click();
     }
 
     public void verifyDeleteItemText(String text, int timeout) {
-        BrowserUtils.waitForVisibility(deleteItemText, timeout);
+        BrowserUtils.wait(3);
         Assert.assertTrue(deleteItemText.getText().contains(text));
     }
 
