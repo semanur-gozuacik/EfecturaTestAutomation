@@ -72,6 +72,7 @@ Feature: Contact Management Test Cases Create Home Page
       |Ekosystem|199955523515555|
       |IWSA     |testcontact2322|
 
+
   Scenario Outline: Create Contact on Fletum with valid credentials - "<Family>"
     And   The User clicks on the createItem element
     Then The User waits until the uniqueCode element is visible with a timeout of 15 seconds
