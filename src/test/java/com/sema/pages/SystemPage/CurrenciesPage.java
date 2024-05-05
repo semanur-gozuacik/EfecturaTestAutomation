@@ -126,6 +126,7 @@ public class CurrenciesPage extends BasePage {
 
     public void verifyCodeFilterResultsAreCorrect(String filterInput) {
         BrowserUtils.wait(1);
+        BrowserUtils.wait(6);
         for (WebElement value : codeValues) {
             Assert.assertTrue(value.getText().toLowerCase().contains(filterInput.toLowerCase()));
         }
@@ -517,6 +518,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void selectLengthFromTableLengthInCurrenciesPage(String length) {
+        BrowserUtils.wait(5);
         selectLengthFromTableLength(tableLengthSelectDropdown,length);
     }
 

@@ -153,7 +153,7 @@ public class TagsPage extends BasePage {
 
     public void goToTagsPage() {
         goToSubMenu("Settings", "Tags");
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
     }
 
     public void goToSubMenu(String dropdownMenu, String subMenu) {
@@ -437,7 +437,7 @@ public class TagsPage extends BasePage {
     }
 
     public void verifyWarningMessageIsDisplayed(String message) {
-        BrowserUtils.waitForVisibility(generalWarningElement,10);
+        BrowserUtils.waitForVisibility(generalWarningElement,20);
         Assert.assertEquals(generalWarningElement.getText(), message);
     }
 
@@ -491,6 +491,7 @@ public class TagsPage extends BasePage {
     }
 
     public void selectLengthFromTableLengthInTagsPage(String length) {
+        BrowserUtils.wait(3);
         selectLengthFromTableLength(tableLengthSelectDropdown,length);
     }
 

@@ -52,7 +52,8 @@ public class Contract extends BasePage {
         Assert.assertTrue(uniqueCodeElement.isDisplayed());
    }
    public void setUniqueCodeElement(){
-        uniqueCodeElement.sendKeys(ConfigurationReader.getProperty("createNewItemUniqueCode"));
+       BrowserUtils.waitForVisibility(uniqueCodeElement,20);
+       uniqueCodeElement.sendKeys(ConfigurationReader.getProperty("createNewItemUniqueCode"));
    }
    public void selectChooseFamily(){
         BrowserUtils.waitForVisibility(familyDropDown,20);
@@ -68,7 +69,8 @@ public class Contract extends BasePage {
         Assert.assertTrue(rootCategories.isDisplayed());
    }
    public void clickRootCategories(){
-      rootCategories.click();
+
+        rootCategories.click();
     }
     public void clickCreateButton(){
         createButton.click();
