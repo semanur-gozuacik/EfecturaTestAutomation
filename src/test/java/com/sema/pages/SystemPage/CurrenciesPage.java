@@ -125,9 +125,10 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void verifyCodeFilterResultsAreCorrect(String filterInput) {
+        BrowserUtils.wait(1);
         BrowserUtils.wait(6);
         for (WebElement value : codeValues) {
-            Assert.assertTrue(value.getText().toLowerCase().contains(filterInput));
+            Assert.assertTrue(value.getText().toLowerCase().contains(filterInput.toLowerCase()));
         }
     }
 
@@ -155,6 +156,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void clickCodeHeaderForDescending() {
+        codeHeader.click();
         clickHeaderForDescendingSort(codeHeader);
     }
 
@@ -528,5 +530,10 @@ public class CurrenciesPage extends BasePage {
         String oldValue = editCurrencyCodeInputBox.getAttribute("data-old-value");
         editCurrencyCodeInputBox.clear();
         editCurrencyCodeInputBox.sendKeys(oldValue);
+    }
+
+    public void clickCodeHeaderForAscending() {
+        codeHeader.click();
+        clickHeaderForAscendingSort(codeHeader);
     }
 }

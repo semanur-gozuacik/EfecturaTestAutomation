@@ -29,7 +29,8 @@ Feature: Currencies Test Cases
     Then The user verifies that 'No matching records found' is displayed in table
 
   Scenario: The user verifies code values are ascending order
-    Then The user verifies that code values are ascending order with no action
+    When The user clicks code header for ascending sort
+    Then The user verifies that code values are ascending order
 
   Scenario: The user verifies that code values descending order
     When The user clicks data header for descending sort

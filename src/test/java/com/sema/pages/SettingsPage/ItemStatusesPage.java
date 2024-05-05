@@ -1,6 +1,7 @@
 package com.sema.pages.SettingsPage;
 
 import com.sema.pages.BasePage;
+import com.sema.pages.SystemPage.CurrenciesPage;
 import com.sema.utilities.BrowserUtils;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
@@ -75,5 +76,10 @@ public class ItemStatusesPage extends BasePage {
         for (WebElement value : idValues) {
             Assert.assertTrue(value.getText().equalsIgnoreCase(idValue + ""));
         }
+    }
+
+    public void verifyIdFilterHasNoValueInItemStatusesPage() {
+        String actualValue = CurrenciesPage.getValueInInputBox(idFilterInputBox);
+        Assert.assertEquals("", actualValue);
     }
 }
