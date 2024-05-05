@@ -30,8 +30,8 @@ public class SystemCurrenciesStepDefs extends BaseStep{
         pages.currenciesPage().verifyCodeFilterResultsAreCorrect(filterInput);
     }
 
-    @Then("The user verifies that code values are ascending order with no action")
-    public void theUserVerifiesThatCodeValuesAreAscendingOrderWithNoAction() {
+    @Then("The user verifies that code values are ascending order")
+    public void theUserVerifiesThatCodeValuesAreAscendingOrder() {
         Assert.assertTrue(pages.currenciesPage().areCodeValuesAscending());
     }
 
@@ -300,5 +300,10 @@ public class SystemCurrenciesStepDefs extends BaseStep{
     @When("The user undone the changes in CurrencyCode in EditCurrency modal")
     public void theUserUndoneTheChangesInCurrencyCodeInEditCurrencyModal() {
         pages.currenciesPage().undoneTheChangesInCurrencyCodeInEditCurrencyModal();
+    }
+
+    @When("The user clicks code header for ascending sort")
+    public void theUserClicksCodeHeaderForAscendingSort() {
+        pages.currenciesPage().clickCodeHeaderForAscending();
     }
 }

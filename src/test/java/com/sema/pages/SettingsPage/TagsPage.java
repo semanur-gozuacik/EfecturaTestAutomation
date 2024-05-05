@@ -149,7 +149,6 @@ public class TagsPage extends BasePage {
     private WebElement deleteButtonInDeleteTagModal;
 
     String tagLabelForCreate = "newTagLabel";
-    String tagLabelWithDifferentItemType = "newTagLabel";
     String tagLabelForEdit = "editedTagLabel";
 
     public void goToTagsPage() {
@@ -325,6 +324,7 @@ public class TagsPage extends BasePage {
     }
 
     public void verifyTableHasOnlyFilteredValues(String filteredValue) {
+        BrowserUtils.wait(2);
         for (WebElement value : itemTypeValues) {
             Assert.assertEquals(filteredValue, value.getText());
         }
@@ -345,6 +345,7 @@ public class TagsPage extends BasePage {
     }
 
     public int findLastPageNumber() {
+        BrowserUtils.wait(1);
         int totalCurrencyCount = Integer.parseInt(tableInfoInTagsPage.getText().split(" ")[5]);
         int visibleCurrencyCount = Integer.parseInt(getSelectedOption(tableLengthSelectDropdown));
         return (int) Math.ceil((double) totalCurrencyCount / visibleCurrencyCount);

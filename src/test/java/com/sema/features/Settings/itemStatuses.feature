@@ -38,7 +38,13 @@ Feature: Tags Page Test Cases
     When The user enters 1546 in to Id filter
     Then The user verifies that 'No matching records found' is displayed in table
 
-  Scenario: The user verifies that filter reset button works correctly on Label filter
+  Scenario: Reset button should work correctly on Label filter
     When The user enters "abcd" in to label filter
     When The user clicks reset button
     Then The user verifies that label filter has no value
+
+    #03/05/2024-------------------------------------------------------------------
+  Scenario: Reset button should work correctly on id filter
+    When The user enters 3 in to Id filter
+    When The user clicks reset button
+    Then The user verifies that id filter has no value in ItemStatuses page
