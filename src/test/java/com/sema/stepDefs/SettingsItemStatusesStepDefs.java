@@ -19,4 +19,9 @@ public class SettingsItemStatusesStepDefs extends BaseStep {
     public void theUserVerifiesThatIdColumnHasOnly(int idValue) {
         pages.itemStatusesPage().verifyIdColumnHasOnlySearchValue(idValue);
     }
+
+    @Then("The user verifies that id filter has no value in ItemStatuses page")
+    public void theUserVerifiesThatIdFilterHasNoValueInItemStatusesPage() {
+        pages.itemStatusesPage().verifyIdFilterHasNoValueInItemStatusesPage();
+    }
 }
