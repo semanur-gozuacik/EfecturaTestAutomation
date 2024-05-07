@@ -63,14 +63,14 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
     And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
-  Scenario:Contact Group Permission Verify Item First Page Button Unclickable Condition
-    And The user enters "Sales Organization" into Code field
+  Scenario::Sales Organization Group Permission Verify Item First Page Button Unclickable Condition
+    And The user enters "TESTBM" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     #And  The user verifies previous button is not clickable asset
 
-  Scenario:Contact Group Permission Verify Item Previous Page Button Unclickable Condition
+  Scenario::Sales Organization Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "TESTBM" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button

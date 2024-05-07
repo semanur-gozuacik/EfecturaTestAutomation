@@ -527,7 +527,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickLastPageButton() {
-        BrowserUtils.wait(8);
+        BrowserUtils.wait(10);
         lastPageButton.click();
     }
 
