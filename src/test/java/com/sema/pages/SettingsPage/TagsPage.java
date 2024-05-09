@@ -411,6 +411,7 @@ public class TagsPage extends BasePage {
     public void selectItemTypeInCreateOrEditTagModal(String itemType) {
         BrowserUtils.waitForVisibility(itemTypesSelectInCreateNewTagModal,10);
         BrowserUtils.selectDropdownOptionByVisibleText(itemTypesSelectInCreateNewTagModal, itemType);
+        BrowserUtils.wait(2);
     }
 
     public void verifyCreateButtonIsActiveInCreateNewTagModal() {
@@ -536,6 +537,7 @@ public class TagsPage extends BasePage {
     public void undoneChangesInLabel() {
         labelInputBoxInEditTagModal.clear();
         labelInputBoxInEditTagModal.sendKeys(tagLabelForCreate);
+        BrowserUtils.wait(2);
     }
 
     public void selectAreYouSureTagEditCheckBox() {
