@@ -199,7 +199,7 @@ Feature: Tags Page Test Cases
   Scenario: When the itemType changed and the change is undone, Save button should be passive in EditTag Modal
     When The user clicks EditTag button in Tags page
     When The user select itemType "Event" in CreateOrEditTag Modal
-    When The user select itemType "Contact" in CreateOrEditTag Modal
+    When The user select itemType "Account" in CreateOrEditTag Modal
     Then The user verifies that Save button is passive in EditTag modal
 
   Scenario: A tag whose itemType has been changed should not be edited without selecting the 'AreYouSureTagEdit' checkbox
