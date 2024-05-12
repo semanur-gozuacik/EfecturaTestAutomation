@@ -194,7 +194,7 @@ Feature: Tags Page Test Cases
     When The user clicks EditTag button in Tags page
     When The user edit Label in EditTag Modal
     When The user undone the changes in Label
-   # Then The user verifies that Save button is passive in EditTag modal
+    Then The user verifies that Save button is passive in EditTag modal
 
   Scenario: When the itemType changed and the change is undone, Save button should be passive in EditTag Modal
     When The user clicks EditTag button in Tags page
