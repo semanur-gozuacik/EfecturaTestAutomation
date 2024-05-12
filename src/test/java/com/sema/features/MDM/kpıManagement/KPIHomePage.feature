@@ -257,3 +257,21 @@ Feature: KPI Management Test Cases
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies first page button is clickable user
+
+  Scenario:KPI edit -Item Comment Tab
+    And The user enters "sematest123" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "ItemComment" tab
+
+  Scenario:KPI Organization  edit - Categories Tab
+    And The user enters "sematest123" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Categories" tab
+
+  Scenario:KPI Organization edit - History Tab
+    And The user enters "sematest123" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "History" tab
