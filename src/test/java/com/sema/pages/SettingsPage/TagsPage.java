@@ -383,6 +383,7 @@ public class TagsPage extends BasePage {
     }
 
     public void verifyTableGoToNextPageInTagsPage() {
+        BrowserUtils.wait(2);
         Assert.assertEquals("2", getValueInInputBox(paginationInputBox));
     }
 
