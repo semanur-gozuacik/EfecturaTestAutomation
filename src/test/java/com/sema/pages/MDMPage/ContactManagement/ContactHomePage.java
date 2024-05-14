@@ -415,7 +415,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickEditButton() {
-        BrowserUtils.wait(8);
+        BrowserUtils.wait(10);
         BrowserUtils.hoverOver(editButton);
         BrowserUtils.wait(8);
         editButton.click();
