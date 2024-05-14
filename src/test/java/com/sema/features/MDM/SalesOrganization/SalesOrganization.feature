@@ -223,11 +223,9 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
     And The user clicks "History" tab
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
-    When The user clicks on Contact  category
     And The user enters "TESTBM" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
-    Then The user verify Edit Page
     And the user selects "<ItemStatus>"
        #And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area
