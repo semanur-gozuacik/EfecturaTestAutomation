@@ -10,6 +10,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+import static com.sema.pages.SystemPage.CurrenciesPage.clickHeaderForAscendingSort;
+
 public class ItemStatusesPage extends BasePage {
     @FindBy(id = "setting-wheel")
     private WebElement settingsWheelSymbol;
@@ -20,10 +22,10 @@ public class ItemStatusesPage extends BasePage {
     @FindBy(xpath = "//a[@id='systemid']")
     private WebElement systemMenu;
 
-    @FindBy(xpath = "//li[5]/ul/li[1]/ul/li/a")
+    @FindBy(xpath = "//li[6]/ul/li[1]/ul/li/a")
     private List<WebElement> settingsOptions;
 
-    @FindBy(xpath = "//li[5]/ul/li[2]/ul/li/a")
+    @FindBy(xpath = "//li[6]/ul/li[2]/ul/li/a")
     private List<WebElement> systemOptions;
 
     @FindBy(xpath = "//tbody")
@@ -35,11 +37,15 @@ public class ItemStatusesPage extends BasePage {
     @FindBy(xpath = "//tr/td[1]")
     private List<WebElement> idValues;
 
+    @FindBy(xpath = "//tr/th[1]")
+    private WebElement idHeader;
+
     public void goToSubMenu(String dropdownMenu, String subMenu) {
         if (dropdownMenu.equalsIgnoreCase("Settings")) {
             settingsWheelSymbol.click();
             settingsMenu.click();
-            BrowserUtils.waitForClickability(settingsOptions.get(0), 10);
+            BrowserUtils.wait(1);
+            BrowserUtils.waitForClickability(settingsOptions.get(4), 10);
 
             for (WebElement option : settingsOptions) {
                 if (option.getText().equalsIgnoreCase(subMenu)) {
@@ -82,5 +88,9 @@ public class ItemStatusesPage extends BasePage {
     public void verifyIdFilterHasNoValueInItemStatusesPage() {
         String actualValue = CurrenciesPage.getValueInInputBox(idFilterInputBox);
         Assert.assertEquals("", actualValue);
+    }
+
+    public void clickIdHeaderForAscendingSort() {
+        clickHeaderForAscendingSort(idHeader);
     }
 }
