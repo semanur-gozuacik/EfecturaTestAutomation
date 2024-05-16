@@ -48,3 +48,12 @@ Feature: Tags Page Test Cases
     When The user enters 3 in to Id filter
     When The user clicks reset button
     Then The user verifies that id filter has no value in ItemStatuses page
+
+#11/05/2024-------------------------------------------------------------------
+  Scenario: Id values should be able to be descending order
+    When The user clicks Id header for descending sort
+    Then The user verifies that id values are descending order
+
+  Scenario: Id values should be able to be ascending order
+    When The user clicks Id header for ascending sort
+    Then The user verifies that id values are ascending order

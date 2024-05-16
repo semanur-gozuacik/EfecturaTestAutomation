@@ -175,6 +175,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public static void clickHeaderForAscendingSort(WebElement header) {
+        header.click();
         waitForAttribute(header,"aria-sort");
         while (header.getAttribute("aria-sort").equals("descending")) {
             header.click();
@@ -183,6 +184,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public static void clickHeaderForDescendingSort(WebElement header) {
+        header.click();
         waitForAttribute(header,"aria-sort");
         while (header.getAttribute("aria-sort").equals("ascending")) {
             header.click();
