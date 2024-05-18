@@ -442,7 +442,7 @@ public class TagsPage extends BasePage {
     public void verifyWarningMessageIsDisplayed(String message) {
         BrowserUtils.wait(3);
         BrowserUtils.waitForVisibility(generalWarningElement,20);
-        Assert.assertEquals(generalWarningElement.getText(), message);
+        Assert.assertEquals(message, generalWarningElement.getText());
     }
 
     public void clickEditTagButton() {
