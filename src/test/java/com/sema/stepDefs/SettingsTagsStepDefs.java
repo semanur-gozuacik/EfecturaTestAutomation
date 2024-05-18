@@ -1,5 +1,6 @@
 package com.sema.stepDefs;
 
+import com.sema.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -53,6 +54,7 @@ public class SettingsTagsStepDefs extends BaseStep {
 
     @Then("The user verifies that Label values are ascending order")
     public void theUserVerifiesThatLabelValuesAreAscendingOrder() {
+        BrowserUtils.wait(2);
         Assert.assertTrue(pages.tagsPage().areLabelValuesAscending());
     }
 

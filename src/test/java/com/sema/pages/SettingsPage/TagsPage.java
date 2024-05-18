@@ -384,6 +384,7 @@ public class TagsPage extends BasePage {
     }
 
     public void verifyTableGoToNextPageInTagsPage() {
+        BrowserUtils.wait(2);
         Assert.assertEquals("2", getValueInInputBox(paginationInputBox));
     }
 
@@ -440,7 +441,7 @@ public class TagsPage extends BasePage {
 
     public void verifyWarningMessageIsDisplayed(String message) {
         BrowserUtils.waitForVisibility(generalWarningElement,20);
-        Assert.assertEquals(generalWarningElement.getText(), message);
+        Assert.assertEquals(message, generalWarningElement.getText());
     }
 
     public void clickEditTagButton() {
@@ -453,6 +454,7 @@ public class TagsPage extends BasePage {
     }
 
     public void verifySaveButtonIsPassiveInEditTagModal() {
+        BrowserUtils.wait(2);
         Assert.assertFalse(isButtonActive(saveButtonInEditTagModal));
     }
 
@@ -542,6 +544,7 @@ public class TagsPage extends BasePage {
     }
 
     public void selectAreYouSureTagEditCheckBox() {
+        BrowserUtils.wait(2);
         areYouSureTagEditCheckBox.click();
     }
 }
