@@ -78,7 +78,7 @@ public class ContactEditPage extends BasePage {
         Assert.assertTrue(verifyUploadObject.isDisplayed());
     }
     public void selectItemStatus(String status){
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(10);
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();", editItemStatuses);
         Select select =new Select(editItemStatuses);

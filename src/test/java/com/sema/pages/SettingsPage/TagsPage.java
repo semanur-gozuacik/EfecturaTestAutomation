@@ -440,6 +440,7 @@ public class TagsPage extends BasePage {
     }
 
     public void verifyWarningMessageIsDisplayed(String message) {
+        BrowserUtils.wait(3);
         BrowserUtils.waitForVisibility(generalWarningElement,20);
         Assert.assertEquals(message, generalWarningElement.getText());
     }
@@ -454,7 +455,7 @@ public class TagsPage extends BasePage {
     }
 
     public void verifySaveButtonIsPassiveInEditTagModal() {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
         Assert.assertFalse(isButtonActive(saveButtonInEditTagModal));
     }
 
