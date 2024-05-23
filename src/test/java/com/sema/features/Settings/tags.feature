@@ -106,10 +106,10 @@ Feature: Tags Page Test Cases
     When The user clicks previous pagination button in Tags page
     Then The user verifies that table go to previous page in Tags page
 #--------------------------------------------------------------------------------------------------------
-@0105
+  @0105
   Scenario Outline: If there is enough data in the table, there must be as many rows as the number selected in the table length
-    When The user select "<length>" from table length in tags page
-    Then The user verifies that table contains right rows according to "<length>" in Tag
+    When The user select "<length>" from table length
+    Then The user verifies that table contains right rows according to "<length>"
     Examples:
       | length |
       | 100    |
@@ -124,23 +124,23 @@ Feature: Tags Page Test Cases
 
   Scenario: Create button should be passive after only enter Label in CreateNewTag Modal
     When The user clicks CreateNew button in Tags page
-    When The user fills the label input in CreateNewTag Modal
-    Then The user verifies that Create button is passive in CreateNewTag Modal
+    When The user fills the label input in CreateNew Modal
+    Then The user verifies that Create button is passive in CreateNew Modal
 
   Scenario: Create button should be passive after only select itemType in CreateNewTag Modal
     When The user clicks CreateNew button in Tags page
     When The user select itemType "Account" in CreateOrEditTag Modal
-    Then The user verifies that Create button is passive in CreateNewTag Modal
+    Then The user verifies that Create button is passive in CreateNew Modal
 
   Scenario: Create button should be active after enter Label and select itemType in CreateNewTag Modal
     When The user clicks CreateNew button in Tags page
-    When The user fills the label input in CreateNewTag Modal
+    When The user fills the label input in CreateNew Modal
     When The user select itemType "Account" in CreateOrEditTag Modal
-    Then The user verifies that Create button is active in CreateNewTag Modal
+    Then The user verifies that Create button is active in CreateNew Modal
 
   Scenario: A tag with the non existing label value should be able to create.
     When The user clicks CreateNew button in Tags page
-    When The user fills the label input in CreateNewTag Modal
+    When The user fills the label input in CreateNew Modal
     When The user select itemType "Account" in CreateOrEditTag Modal
     When The user clicks create button in CreateNewTag Modal
     Then The user verifies that the 'Changes saved successfully.' info appears in the top right

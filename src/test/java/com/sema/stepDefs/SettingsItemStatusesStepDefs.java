@@ -1,5 +1,6 @@
 package com.sema.stepDefs;
 
+import com.sema.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -34,5 +35,25 @@ public class SettingsItemStatusesStepDefs extends BaseStep {
     @Then("The user verifies that id values are ascending order")
     public void theUserVerifiesThatIdValuesAreAscendingOrder() {
         Assert.assertTrue(pages.tagsPage().areIdValuesAscending());
+    }
+
+    @When("The user clicks CreateNew button in ItemStatus page")
+    public void theUserClicksCreateNewButtonInItemStatusPage() {
+        pages.itemStatusesPage().clickCreateNewButtonInItemStatus();
+    }
+
+    @Then("The user verifies that Cancel button is active in CreateItemStatus modal")
+    public void theUserVerifiesThatCancelButtonIsActiveInCreateItemStatusModal() {
+        pages.itemStatusesPage().verifyCancelButtonIsActiveInCreateItemStatusModal();
+    }
+
+    @When("The user fills locale inputs except one of them")
+    public void theUserFillsLocaleInputsExceptOneOfThem() {
+        pages.itemStatusesPage().fillLocaleInputsExceptOneOfThem();
+    }
+
+    @When("The user fills all locale inputs")
+    public void theUserFillsAllLocaleInputs() {
+        pages.itemStatusesPage().fillAllLocaleInputs();
     }
 }

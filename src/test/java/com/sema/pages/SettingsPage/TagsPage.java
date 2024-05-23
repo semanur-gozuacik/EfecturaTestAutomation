@@ -91,8 +91,8 @@ public class TagsPage extends BasePage {
     @FindBy(xpath = "//span[@id='tags_table_next']")
     private WebElement nextPaginationButton;
 
-    @FindBy(xpath = "//div[@id='tags_table_info']")
-    private WebElement tableInfoInTagsPage;
+    @FindBy(xpath = "//div[2]/div[1]/div/div[1]/div[4]")
+    private WebElement tableInfo;
 
     @FindBy(xpath = "//input[@class='pagination-text']")
     private WebElement paginationInputBox;
@@ -100,7 +100,7 @@ public class TagsPage extends BasePage {
     @FindBy(xpath = "//div[@id='notifyjs-container-top-right']/div/span")
     private WebElement generalWarningElement;
 
-    @FindBy(xpath = "//select[@name='tags_table_length']")
+    @FindBy(xpath = "//label/select")
     private WebElement tableLengthSelectDropdown;
 
     @FindBy(xpath = "//tr/td")
@@ -115,14 +115,14 @@ public class TagsPage extends BasePage {
     @FindBy(id = "cancelCreate")
     private WebElement cancelButtonInCreateNewTagModal;
 
-    @FindBy(id = "labelTag")
+    @FindBy(xpath = "//div/label[text()='Label']/following-sibling::input[1]")
     private WebElement labelInputBoxInCreateNewTagModal;
 
     @FindBy(xpath = "//div[2]/div/div[2]/div[2]/select")
     private WebElement itemTypesSelectInCreateNewTagModal;
 
-    @FindBy(id = "create-tag-button-modal")
-    private WebElement createButtonInCreateNewTagModal;
+    @FindBy(xpath = "//div[@class='pull-right']/a[contains(.,'Create')]")
+    private WebElement createButtonInCreateNewModal;
 
     @FindBy(id = "cancelEditTag")
     private WebElement cancelButtonInEditTagModal;
@@ -347,7 +347,7 @@ public class TagsPage extends BasePage {
 
     public int findLastPageNumber() {
         BrowserUtils.wait(1);
-        int totalCurrencyCount = Integer.parseInt(tableInfoInTagsPage.getText().split(" ")[5]);
+        int totalCurrencyCount = Integer.parseInt(tableInfo.getText().split(" ")[5]);
         int visibleCurrencyCount = Integer.parseInt(getSelectedOption(tableLengthSelectDropdown));
         return (int) Math.ceil((double) totalCurrencyCount / visibleCurrencyCount);
     }
@@ -365,7 +365,7 @@ public class TagsPage extends BasePage {
 
     public void verifyTableIsInLastPageInTagsPage() {
         BrowserUtils.wait(2);
-        verifyTableIsInLastPage(paginationInputBox,tableInfoInTagsPage,tableLengthSelectDropdown);
+        verifyTableIsInLastPage(paginationInputBox, tableInfo,tableLengthSelectDropdown);
     }
 
     public void clickFirstPaginationButton() {
@@ -416,16 +416,16 @@ public class TagsPage extends BasePage {
         BrowserUtils.wait(2);
     }
 
-    public void verifyCreateButtonIsActiveInCreateNewTagModal() {
-        Assert.assertTrue(isButtonActive(createButtonInCreateNewTagModal));
+    public void verifyCreateButtonIsActiveInCreateNewModal() {
+        Assert.assertTrue(isButtonActive(createButtonInCreateNewModal));
     }
 
-    public void verifyCreateNewButtonIsInactiveInCreateNewTagModal() {
-        Assert.assertFalse(isButtonActive(createButtonInCreateNewTagModal));
+    public void verifyCreateNewButtonIsInactiveInCreateNewModal() {
+        Assert.assertFalse(isButtonActive(createButtonInCreateNewModal));
     }
 
     public void clickCreateButtonInCreateNewTagModal() {
-        createButtonInCreateNewTagModal.click();
+        createButtonInCreateNewModal.click();
     }
 
     public void verifyNewTagIsInTable(String itemType) {
@@ -454,7 +454,7 @@ public class TagsPage extends BasePage {
     }
 
     public void verifySaveButtonIsPassiveInEditTagModal() {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(4);
         Assert.assertFalse(isButtonActive(saveButtonInEditTagModal));
     }
 
@@ -506,8 +506,8 @@ public class TagsPage extends BasePage {
         return rows.size() == Math.min(maxDataCount, lengthAsInt);
     }
 
-    public void verifyTableContainsRightRowsAccordingToLengthInTag(String length) {
-        Assert.assertTrue(isRowCountCorrectAccordingToTableLength(tableInfoInTagsPage,length));
+    public void verifyTableContainsRightRowsAccordingToLength(String length) {
+        Assert.assertTrue(isRowCountCorrectAccordingToTableLength(tableInfo,length));
     }
 
     public void clickDeleteTagButton() {
@@ -544,7 +544,7 @@ public class TagsPage extends BasePage {
     }
 
     public void selectAreYouSureTagEditCheckBox() {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
         areYouSureTagEditCheckBox.click();
     }
 }
