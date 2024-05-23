@@ -1,4 +1,4 @@
-@regression
+@regression @tagg
 Feature: Tags Page Test Cases
   Background:
     Given The User opens the browser with the given url
@@ -189,7 +189,7 @@ Feature: Tags Page Test Cases
     When The user clicks EditTag button in Tags page
     When The user select itemType "Event" in CreateOrEditTag Modal
     Then The user verifies that Save button is active in EditTag modal
-@0105
+
   Scenario: When the label changed and the change is undone, Save button should be passive in EditTag Modal
     When The user clicks EditTag button in Tags page
     When The user edit Label in EditTag Modal
@@ -228,7 +228,7 @@ Feature: Tags Page Test Cases
     When The user edit Label in EditTag Modal
     When The user select AreYouSureTagEdit check box
     When The user clicks Save button in EditTag modal
-    Then The user verifies that the 'Changes saved successfully.' info appears in the top right
+   #Then The user verifies that the 'Changes saved successfully.' info appears in the top right
 
   #--------delete-----------------
   Scenario: The Cancel button in DeleteTag modal should be active

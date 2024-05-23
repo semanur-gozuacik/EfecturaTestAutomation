@@ -259,7 +259,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And  The user clicks on Edit Button
     And The user clicks "Attributes" tab
 
-  Scenario: User Home Page Columns - Cancel Button
+  Scenario: Asset Home Page Columns - Cancel Button
     And  The user enters columns button
     And  The user selected columns
     And  The user clicks cancel button columns

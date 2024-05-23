@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-241.15989.150">
+    <data-source name="@192.168.129.5" uuid="0a83da1b-56db-4ab1-a4a4-4b17979d9c66">
+      <database-info product="Microsoft SQL Server" version="15.00.2000" jdbc-version="4.2" driver-name="Microsoft JDBC Driver 12.2 for SQL Server" driver-version="12.2.0.0" dbms="MSSQL" exact-version="15.0.2000" exact-driver-version="12.2">
+        <extra-name-characters>$#@</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>dev_hero</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node negative="1">
+            <node kind="database">
+              <name qname="DEV_MDM" />
+              <name qname="DIA_PREPROD" />
+              <name qname="MEDIAMARKT" />
+              <name qname="STAGING" />
+              <name qname="TEST_MDM" />
+              <name qname="TESTHANGFIRE" />
+              <node kind="schema" negative="1" />
+            </node>
+            <node kind="database">
+              <name qname="master" />
+              <name qname="TEST_MDM_020424" />
+              <name qname="TEST_MDM_RU" />
+            </node>
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+  </component>
+</project>

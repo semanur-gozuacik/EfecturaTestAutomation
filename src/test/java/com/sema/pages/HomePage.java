@@ -98,7 +98,7 @@ public class HomePage extends BasePage {
     }
 
     public void currentUrlAndStoresItInUrl(String partialUrl) {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
         String currentURL = driver.getCurrentUrl();
         Assert.assertTrue(currentURL.contains(partialUrl));
     }

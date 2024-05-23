@@ -88,6 +88,7 @@ public class ItemStatusesPage extends BasePage {
     }
 
     public void verifyIdColumnHasOnlySearchValue(int idValue) {
+        BrowserUtils.wait(2);
         Assert.assertEquals(1, idValues.size());
         for (WebElement value : idValues) {
             Assert.assertTrue(value.getText().equalsIgnoreCase(idValue + ""));
