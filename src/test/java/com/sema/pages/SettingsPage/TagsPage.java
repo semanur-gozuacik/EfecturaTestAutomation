@@ -275,7 +275,7 @@ public class TagsPage extends BasePage {
 
     public void enterIdFilterValues(int idFrom, int idTo) {
         idFilter.click();
-        BrowserUtils.waitForVisibility(idFromInputBox,8);
+        BrowserUtils.waitForVisibility(idFromInputBox,9);
         idFromInputBox.sendKeys(idFrom + "");
         idToInputBox.sendKeys(idTo + "");
     }
@@ -455,11 +455,7 @@ public class TagsPage extends BasePage {
     }
 
     public void verifySaveButtonIsPassiveInEditTagModal() {
-<<<<<<< HEAD
         BrowserUtils.wait(4);
-=======
-        BrowserUtils.wait(3);
->>>>>>> 97924717d6afa1b35efa5df9d17f15f3c311905d
         Assert.assertFalse(isButtonActive(saveButtonInEditTagModal));
     }
 
