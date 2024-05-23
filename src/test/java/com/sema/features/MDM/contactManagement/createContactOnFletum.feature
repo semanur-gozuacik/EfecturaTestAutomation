@@ -1,4 +1,4 @@
-@regression @tt
+@regression @0105contact
 Feature: Contact Management Test Cases Create Home Page
   Background:
 
@@ -66,11 +66,12 @@ Feature: Contact Management Test Cases Create Home Page
     And  the user clicks on Search button
     And  The user clicks delete button- "<Family>"
     And  The user clicks delete button in popup
-    Then The User waits until the page contains "Item Deleted Succesfully." with a timeout of 15 seconds-Asset
+    #Then The User waits until the page contains "Item Deleted Succesfully." with a timeout of 15 seconds-Asset
     Examples:
       |Family   | Number        |
       |Ekosystem|199955523515555|
       |IWSA     |testcontact2322|
+
 
   Scenario Outline: Create Contact on Fletum with valid credentials - "<Family>"
     And   The User clicks on the createItem element

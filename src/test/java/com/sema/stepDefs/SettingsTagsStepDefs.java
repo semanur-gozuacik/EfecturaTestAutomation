@@ -1,5 +1,6 @@
 package com.sema.stepDefs;
 
+import com.sema.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -53,6 +54,7 @@ public class SettingsTagsStepDefs extends BaseStep {
 
     @Then("The user verifies that Label values are ascending order")
     public void theUserVerifiesThatLabelValuesAreAscendingOrder() {
+        BrowserUtils.wait(3);
         Assert.assertTrue(pages.tagsPage().areLabelValuesAscending());
     }
 
@@ -189,8 +191,8 @@ public class SettingsTagsStepDefs extends BaseStep {
         pages.tagsPage().verifyCancelButtonIsActiveInCreateTagModal();
     }
 
-    @When("The user fills the label input in CreateNewTag Modal")
-    public void theUserFillsTheLabelInputInCreateNewTagModal() {
+    @When("The user fills the label input in CreateNew Modal")
+    public void theUserFillsTheLabelInputInCreateNewModal() {
         pages.tagsPage().fillLabelInputInCreateNewTagModal();
     }
 
@@ -199,14 +201,14 @@ public class SettingsTagsStepDefs extends BaseStep {
         pages.tagsPage().selectItemTypeInCreateOrEditTagModal(itemType);
     }
 
-    @Then("The user verifies that Create button is active in CreateNewTag Modal")
-    public void theUserVerifiesThatCreateButtonIsActiveInCreateNewTagModal() {
-        pages.tagsPage().verifyCreateButtonIsActiveInCreateNewTagModal();
+    @Then("The user verifies that Create button is active in CreateNew Modal")
+    public void theUserVerifiesThatCreateButtonIsActiveInCreateNewModal() {
+        pages.tagsPage().verifyCreateButtonIsActiveInCreateNewModal();
     }
 
-    @Then("The user verifies that Create button is passive in CreateNewTag Modal")
-    public void theUserVerifiesThatCreateButtonIsPassiveInCreateNewTagModal() {
-        pages.tagsPage().verifyCreateNewButtonIsInactiveInCreateNewTagModal();
+    @Then("The user verifies that Create button is passive in CreateNew Modal")
+    public void theUserVerifiesThatCreateButtonIsPassiveInCreateNewModal() {
+        pages.tagsPage().verifyCreateNewButtonIsInactiveInCreateNewModal();
     }
 
     @When("The user clicks create button in CreateNewTag Modal")
@@ -274,14 +276,14 @@ public class SettingsTagsStepDefs extends BaseStep {
         pages.tagsPage().clickSaveButtonInEditTagModal();
     }
 
-    @When("The user select {string} from table length in tags page")
-    public void theUserSelectFromTableLengthInTagsPage(String length) {
+    @When("The user select {string} from table length")
+    public void theUserSelectFromTableLength(String length) {
         pages.tagsPage().selectLengthFromTableLengthInTagsPage(length);
     }
 
-    @Then("The user verifies that table contains right rows according to {string} in Tag")
-    public void theUserVerifiesThatTableContainsRightRowsAccordingToInTag(String length) {
-        pages.tagsPage().verifyTableContainsRightRowsAccordingToLengthInTag(length);
+    @Then("The user verifies that table contains right rows according to {string}")
+    public void theUserVerifiesThatTableContainsRightRowsAccordingTo(String length) {
+        pages.tagsPage().verifyTableContainsRightRowsAccordingToLength(length);
     }
 
     @When("The user clicks DeleteTag button in Tags page")

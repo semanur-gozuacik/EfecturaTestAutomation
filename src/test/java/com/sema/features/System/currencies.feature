@@ -1,4 +1,5 @@
-@regression
+@regression @0105s
+
 Feature: Currencies Test Cases
   Background:
     Given The User opens the browser with the given url

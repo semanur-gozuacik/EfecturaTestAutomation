@@ -126,6 +126,7 @@ public class CurrenciesPage extends BasePage {
 
     public void verifyCodeFilterResultsAreCorrect(String filterInput) {
         BrowserUtils.wait(1);
+        BrowserUtils.wait(6);
         for (WebElement value : codeValues) {
             Assert.assertTrue(value.getText().toLowerCase().contains(filterInput.toLowerCase()));
         }
@@ -174,6 +175,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public static void clickHeaderForAscendingSort(WebElement header) {
+        header.click();
         waitForAttribute(header,"aria-sort");
         while (header.getAttribute("aria-sort").equals("descending")) {
             header.click();
@@ -182,6 +184,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public static void clickHeaderForDescendingSort(WebElement header) {
+        header.click();
         waitForAttribute(header,"aria-sort");
         while (header.getAttribute("aria-sort").equals("ascending")) {
             header.click();
@@ -517,6 +520,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void selectLengthFromTableLengthInCurrenciesPage(String length) {
+        BrowserUtils.wait(5);
         selectLengthFromTableLength(tableLengthSelectDropdown,length);
     }
 

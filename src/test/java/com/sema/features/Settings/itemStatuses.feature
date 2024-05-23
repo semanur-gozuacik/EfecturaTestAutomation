@@ -43,8 +43,53 @@ Feature: Tags Page Test Cases
     When The user clicks reset button
     Then The user verifies that label filter has no value
 
-    #03/05/2024-------------------------------------------------------------------
+ #03/05/2024-------------------------------------------------------------------
   Scenario: Reset button should work correctly on id filter
     When The user enters 3 in to Id filter
     When The user clicks reset button
     Then The user verifies that id filter has no value in ItemStatuses page
+
+#11/05/2024-------------------------------------------------------------------
+  Scenario: Id values should be able to be descending order
+    When The user clicks Id header for descending sort
+    Then The user verifies that id values are descending order
+
+  Scenario: Id values should be able to be ascending order
+    When The user clicks Id header for ascending sort
+    Then The user verifies that id values are ascending order
+
+#21/05/2024------------------------------------------------------------------------------
+  Scenario: Label values should be able to be ascending order
+    When The user clicks Label header for ascending sort
+    Then The user verifies that Label values are ascending order
+
+  Scenario: Label values should be able to be descending order
+    When The user clicks Label header for descending sort
+    Then The user verifies that Label values are descending order
+
+  Scenario Outline: If there is enough data in the table, there must be as many rows as the number selected in the table length
+    When The user select "<length>" from table length
+    Then The user verifies that table contains right rows according to "<length>"
+    Examples:
+      | length |
+      | 100    |
+      | 10     |
+
+
+#23/05/2024------------------------------------------------------------------------------
+    #----------create-------------
+  Scenario: The Cancel button in CreateItemStatus modal should be active
+    When The user clicks CreateNew button in ItemStatus page
+    Then The user verifies that Cancel button is active in CreateItemStatus modal
+
+  Scenario: If at least one input box is empty in the CreateNew Modal, the Create button must be passive.
+    When The user clicks CreateNew button in ItemStatus page
+    When The user fills the label input in CreateNew Modal
+    When The user fills locale inputs except one of them
+    Then The user verifies that Create button is passive in CreateNew Modal
+
+  Scenario: If all input boxes are filled in the CreateNew Modal, the Create button must be active.
+    When The user clicks CreateNew button in ItemStatus page
+    When The user fills the label input in CreateNew Modal
+    When The user fills all locale inputs
+    Then The user verifies that Create button is active in CreateNew Modal

@@ -10,6 +10,9 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+import static com.sema.pages.SystemPage.CurrenciesPage.clickHeaderForAscendingSort;
+import static com.sema.pages.SystemPage.CurrenciesPage.isButtonActive;
+
 public class ItemStatusesPage extends BasePage {
     @FindBy(id = "setting-wheel")
     private WebElement settingsWheelSymbol;
@@ -20,10 +23,10 @@ public class ItemStatusesPage extends BasePage {
     @FindBy(xpath = "//a[@id='systemid']")
     private WebElement systemMenu;
 
-    @FindBy(xpath = "//li[5]/ul/li[1]/ul/li/a")
+    @FindBy(xpath = "//li[6]/ul/li[1]/ul/li/a")
     private List<WebElement> settingsOptions;
 
-    @FindBy(xpath = "//li[5]/ul/li[2]/ul/li/a")
+    @FindBy(xpath = "//li[6]/ul/li[2]/ul/li/a")
     private List<WebElement> systemOptions;
 
     @FindBy(xpath = "//tbody")
@@ -35,11 +38,24 @@ public class ItemStatusesPage extends BasePage {
     @FindBy(xpath = "//tr/td[1]")
     private List<WebElement> idValues;
 
+    @FindBy(xpath = "//tr/th[1]")
+    private WebElement idHeader;
+
+    @FindBy(id = "createItem")
+    private WebElement createNewButton;
+
+    @FindBy(id = "cancelItem")
+    private WebElement cancelButtonInCreateNewModal;
+
+    @FindBy(xpath = "//input[contains(@class,'locale-input')]")
+    private List<WebElement> localeInputBoxesInCreateNewModal;
+
     public void goToSubMenu(String dropdownMenu, String subMenu) {
         if (dropdownMenu.equalsIgnoreCase("Settings")) {
             settingsWheelSymbol.click();
             settingsMenu.click();
-            BrowserUtils.waitForClickability(settingsOptions.get(0), 10);
+            BrowserUtils.wait(1);
+            BrowserUtils.waitForClickability(settingsOptions.get(4), 10);
 
             for (WebElement option : settingsOptions) {
                 if (option.getText().equalsIgnoreCase(subMenu)) {
@@ -72,6 +88,7 @@ public class ItemStatusesPage extends BasePage {
     }
 
     public void verifyIdColumnHasOnlySearchValue(int idValue) {
+        BrowserUtils.wait(2);
         Assert.assertEquals(1, idValues.size());
         for (WebElement value : idValues) {
             Assert.assertTrue(value.getText().equalsIgnoreCase(idValue + ""));
@@ -81,5 +98,31 @@ public class ItemStatusesPage extends BasePage {
     public void verifyIdFilterHasNoValueInItemStatusesPage() {
         String actualValue = CurrenciesPage.getValueInInputBox(idFilterInputBox);
         Assert.assertEquals("", actualValue);
+    }
+
+    public void clickIdHeaderForAscendingSort() {
+        clickHeaderForAscendingSort(idHeader);
+    }
+
+    public void clickCreateNewButtonInItemStatus() {
+        BrowserUtils.waitForVisibility(createNewButton,20);
+        createNewButton.click();
+    }
+
+    public void verifyCancelButtonIsActiveInCreateItemStatusModal() {
+        BrowserUtils.waitForVisibility(cancelButtonInCreateNewModal,20);
+        Assert.assertTrue(isButtonActive(cancelButtonInCreateNewModal));
+    }
+
+    public void fillLocaleInputsExceptOneOfThem() {
+        for (int i = 0; i < localeInputBoxesInCreateNewModal.size() - 1; i++) {
+            localeInputBoxesInCreateNewModal.get(i).sendKeys("testLocale");
+        }
+    }
+
+    public void fillAllLocaleInputs() {
+        for (WebElement webElement : localeInputBoxesInCreateNewModal) {
+            webElement.sendKeys("testLocale");
+        }
     }
 }

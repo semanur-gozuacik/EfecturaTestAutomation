@@ -208,10 +208,12 @@ public class ContactHomePage extends BasePage {
     }
 
     public void setDIA_FirstName(String diaFirstName) {
+        BrowserUtils.wait(3);
         DIA_FirstName.sendKeys(diaFirstName);
     }
 
     public void setSurname(String surname) {
+        BrowserUtils.wait(3);
         surnameBox.sendKeys(surname);
 
     }
@@ -249,7 +251,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void setCodeFilter(String code) {
-        BrowserUtils.wait(6);
+        BrowserUtils.wait(7);
         codeFilterClick.click();
         codeFilterSendKey.sendKeys(code);
     }
@@ -413,7 +415,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickEditButton() {
-        BrowserUtils.wait(6);
+        BrowserUtils.wait(10);
         BrowserUtils.hoverOver(editButton);
         BrowserUtils.wait(8);
         editButton.click();
@@ -525,7 +527,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickLastPageButton() {
-        BrowserUtils.wait(8);
+        BrowserUtils.wait(12);
         lastPageButton.click();
     }
 
@@ -674,9 +676,9 @@ public void exportButtonEditItem(){
     }
 
     public void clickIdTabSorting() {
-        BrowserUtils.waitForVisibility(idTab, 25);
+        BrowserUtils.waitForVisibility(idTab, 30);
         idTab.click();
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
     }
 
     public void idTabSorting(String sorting) {

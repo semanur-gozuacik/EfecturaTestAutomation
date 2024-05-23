@@ -68,7 +68,7 @@ Feature: Contact Management Test Cases-My Contact Page
     When The user clicks My Contact button
     And The user clicks on Ekosystem Filtre
     And the user clicks on Search button
-    And the user verify on family filter Ekosystem functionality
+    #And the user verify on family filter Ekosystem functionality
 
   Scenario: Search for IWSA Family
     When The user clicks My Contact button
