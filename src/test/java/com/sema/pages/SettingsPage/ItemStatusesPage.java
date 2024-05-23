@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static com.sema.pages.SystemPage.CurrenciesPage.clickHeaderForAscendingSort;
+import static com.sema.pages.SystemPage.CurrenciesPage.isButtonActive;
 
 public class ItemStatusesPage extends BasePage {
     @FindBy(id = "setting-wheel")
@@ -39,6 +40,15 @@ public class ItemStatusesPage extends BasePage {
 
     @FindBy(xpath = "//tr/th[1]")
     private WebElement idHeader;
+
+    @FindBy(id = "createItem")
+    private WebElement createNewButton;
+
+    @FindBy(id = "cancelItem")
+    private WebElement cancelButtonInCreateNewModal;
+
+    @FindBy(xpath = "//input[contains(@class,'locale-input')]")
+    private List<WebElement> localeInputBoxesInCreateNewModal;
 
     public void goToSubMenu(String dropdownMenu, String subMenu) {
         if (dropdownMenu.equalsIgnoreCase("Settings")) {
@@ -92,5 +102,27 @@ public class ItemStatusesPage extends BasePage {
 
     public void clickIdHeaderForAscendingSort() {
         clickHeaderForAscendingSort(idHeader);
+    }
+
+    public void clickCreateNewButtonInItemStatus() {
+        BrowserUtils.waitForVisibility(createNewButton,20);
+        createNewButton.click();
+    }
+
+    public void verifyCancelButtonIsActiveInCreateItemStatusModal() {
+        BrowserUtils.waitForVisibility(cancelButtonInCreateNewModal,20);
+        Assert.assertTrue(isButtonActive(cancelButtonInCreateNewModal));
+    }
+
+    public void fillLocaleInputsExceptOneOfThem() {
+        for (int i = 0; i < localeInputBoxesInCreateNewModal.size() - 1; i++) {
+            localeInputBoxesInCreateNewModal.get(i).sendKeys("testLocale");
+        }
+    }
+
+    public void fillAllLocaleInputs() {
+        for (WebElement webElement : localeInputBoxesInCreateNewModal) {
+            webElement.sendKeys("testLocale");
+        }
     }
 }
