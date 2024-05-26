@@ -14,6 +14,7 @@ import com.sema.pages.MDMPage.ContactManagement.ContactHomePage;
 import com.sema.pages.MDMPage.ContactManagement.ContactHomePageMyContactPage;
 import com.sema.pages.MDMPage.ContractManagement.Contract;
 import com.sema.pages.MDMPage.EventManagement.EventHomePage;
+import com.sema.pages.MDMPage.FileManagement.FileManagementHomePage;
 import com.sema.pages.MDMPage.GiftManagement.Gift;
 import com.sema.pages.MDMPage.GiftManagement.GiftHomePage;
 import com.sema.pages.MDMPage.KPIManagement.KPIHomePage;
@@ -58,6 +59,7 @@ public class Pages {
     private CocpitGeneralDashboard cocpitGeneralDashboard;
     private ItemStatusesPage itemStatusesPage;
     private SalesOrganization salesOrganization;
+    private FileManagementHomePage fileManagementHomePage;
 
 
     public Pages() {
@@ -90,6 +92,7 @@ public class Pages {
             this.cocpitGeneralDashboard = new CocpitGeneralDashboard();
             this.itemStatusesPage = new ItemStatusesPage();
             this.salesOrganization = new SalesOrganization();
+            this.fileManagementHomePage=new FileManagementHomePage();
 
     }
     // Getter metotları
@@ -125,6 +128,7 @@ public class Pages {
     public CocpitGeneralDashboard cocpit() {return cocpitGeneralDashboard;}
     public ItemStatusesPage itemStatusesPage() {return itemStatusesPage;}
     public SalesOrganization salesOrganization() {return salesOrganization;}
+    public FileManagementHomePage fileManagementHomePage(){return fileManagementHomePage;}
 
 }
 
