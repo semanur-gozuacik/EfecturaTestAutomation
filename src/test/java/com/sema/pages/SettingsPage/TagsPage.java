@@ -115,7 +115,7 @@ public class TagsPage extends BasePage {
     @FindBy(id = "cancelCreate")
     private WebElement cancelButtonInCreateNewTagModal;
 
-    @FindBy(xpath = "//div/label[text()='Label']/following-sibling::input[1]")
+    @FindBy(xpath = "//div[2]/div/div[2]/div[1]/input")
     private WebElement labelInputBoxInCreateNewTagModal;
 
     @FindBy(xpath = "//div[2]/div/div[2]/div[2]/select")
@@ -455,11 +455,7 @@ public class TagsPage extends BasePage {
     }
 
     public void verifySaveButtonIsPassiveInEditTagModal() {
-<<<<<<< HEAD
         BrowserUtils.wait(4);
-=======
-        BrowserUtils.wait(3);
->>>>>>> 97924717d6afa1b35efa5df9d17f15f3c311905d
         Assert.assertFalse(isButtonActive(saveButtonInEditTagModal));
     }
 

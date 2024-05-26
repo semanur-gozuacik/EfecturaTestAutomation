@@ -32,7 +32,7 @@ public class SystemCurrenciesStepDefs extends BaseStep{
 
     @Then("The user verifies that code values are ascending order")
     public void theUserVerifiesThatCodeValuesAreAscendingOrder() {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
         Assert.assertTrue(pages.currenciesPage().areCodeValuesAscending());
     }
 
