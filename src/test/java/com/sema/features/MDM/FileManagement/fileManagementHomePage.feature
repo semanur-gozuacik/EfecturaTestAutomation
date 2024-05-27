@@ -1,3 +1,4 @@
+
 Feature: File Management Test Cases- Contact Home Page
   Background:
     When   The User opens the browser with the given url
@@ -7,16 +8,16 @@ Feature: File Management Test Cases- Contact Home Page
     Then   The User waits until the MDM element is visible with a timeout of 15 seconds
     Given The user is on the File Managemenet item home page
     And   The User gets the current URL and stores it in "itemType=File"
-
+  @regression
   Scenario:File Verify export button
     When  The user clicks on Export button
-
+  @regression
   Scenario:File Home Page Verify First Page Button Unclickable Condition
     And  The user verifies first page button is not clickable
-
+  @regression
   Scenario:File Home Page Verify Previous Page Button Unclickable Condition
     And  The user verifies previous page button is not clickable
-
+  @regression
   Scenario Outline: File  Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries
     Then  The user should see  "<entries>" entrie in everypage
@@ -26,12 +27,12 @@ Feature: File Management Test Cases- Contact Home Page
       |25 |
       |50 |
 
-
+  @regression
   Scenario: File  Home Page Reset Button Control
     And The user enters "test2123" into Code field
     And the user clicks on Reset button
     And the user verify Reset button functionality
-
+  @regression
   Scenario:File  Home Page Verify Label Filter - Valid Label
     And The user enters "TEST123456" into Label field
     And the user clicks on Search button
