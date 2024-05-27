@@ -54,7 +54,7 @@ public class SettingsTagsStepDefs extends BaseStep {
 
     @Then("The user verifies that Label values are ascending order")
     public void theUserVerifiesThatLabelValuesAreAscendingOrder() {
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(4);
         Assert.assertTrue(pages.tagsPage().areLabelValuesAscending());
     }
 

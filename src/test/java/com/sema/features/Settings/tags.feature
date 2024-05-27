@@ -148,7 +148,7 @@ Feature: Tags Page Test Cases
 
   Scenario: A tag with the different itemType and existing label value should be able to create.
     When The user clicks CreateNew button in Tags page
-    When The user fills the label input in CreateNewTag Modal
+    When The user fills the label input in CreateNew Modal
     When The user select itemType "Contact" in CreateOrEditTag Modal
     When The user clicks create button in CreateNewTag Modal
     Then The user verifies that the 'Changes saved successfully.' info appears in the top right
@@ -156,7 +156,7 @@ Feature: Tags Page Test Cases
 
   Scenario: A tag with the same itemType and existing label value should not be able to create.
     When The user clicks CreateNew button in Tags page
-    When The user fills the label input in CreateNewTag Modal
+    When The user fills the label input in CreateNew Modal
     When The user select itemType "Contact" in CreateOrEditTag Modal
     When The user clicks create button in CreateNewTag Modal
     Then The user verifies that the 'ExistingTag' info appears in the top right

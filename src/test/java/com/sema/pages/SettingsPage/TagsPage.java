@@ -115,7 +115,7 @@ public class TagsPage extends BasePage {
     @FindBy(id = "cancelCreate")
     private WebElement cancelButtonInCreateNewTagModal;
 
-    @FindBy(xpath = "//div/label[text()='Label']/following-sibling::input[1]")
+    @FindBy(xpath = "//div[2]/div/div[2]/div[1]/input")
     private WebElement labelInputBoxInCreateNewTagModal;
 
     @FindBy(xpath = "//div[2]/div/div[2]/div[2]/select")
