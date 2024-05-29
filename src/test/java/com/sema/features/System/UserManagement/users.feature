@@ -51,27 +51,33 @@ Feature: Users Management Test Cases
     And  The user verifies last page button is clickable-users
 
   Scenario: Verify UserName Filter -Valid Unique UserName
+    And The click filter
     And The user enters "testtest99" into username field
     And the user verify on username filter functionality "testtest99"
 
   Scenario: Verify UserName Filter -Valid Partial UserName
+    And The click filter
     And The user enters "test" into username field
     And the user verify on username filter functionality "test"-partial username
 
   Scenario: Verify UserName Filter -Invalid Unique UserName
+    And The click filter
     And The user enters "1234semaaa" into username field
     And the user verify on username filter functionality "No matching records found"-invalid username
 
 
   Scenario: Verify UserEmail Filter -Valid Unique UserName
+    And The click filter username
     And The user enters "yana@efectura.com" into userEmail field
     And the user verify on userEmail filter functionality "yana@efectura.com"
 
   Scenario: Verify UserEmail Filter -Valid Partial UserName
+    And The click filter username
     And The user enters "test" into userEmail field
     And the user verify on username filter functionality "test"-partial username
 
   Scenario: Verify UserEmail Filter -Invalid Unique UserName
+    And The click filter username
     And The user enters "1234semaaa" into userEmail field
     And the user verify on username filter functionality "No matching records found"-invalid username
 

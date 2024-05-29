@@ -23,13 +23,13 @@ public class Users extends BasePage {
     private WebElement lastPageButton;
     @FindBy(xpath = "//span[@id='table_id_next']")
     private WebElement nextPageButton;
-    @FindBy(xpath = "//input[@id='username']")
+    @FindBy(xpath = "//input[@id='username-table_id']")
     private WebElement usernameFilter;
     @FindBy(xpath = "//td[contains(@class, 'td-select-edit')][1]")
     private List<WebElement> verifyUsernameFilter;
     @FindBy(xpath = "//td[@class='dataTables_empty']")
     private WebElement noContentsText;
-    @FindBy(xpath = "//input[@id='UserEmail']")
+    @FindBy(xpath = "//input[@id='UserEmail-table_id']")
     private WebElement userEmailFilter;
     @FindBy(xpath = "//td[contains(@class, 'td-select-edit')][2]")
     private List<WebElement> verifyUserEmailFilter;
@@ -45,6 +45,12 @@ public class Users extends BasePage {
     private WebElement enableFılter;
     @FindBy(xpath = "//li[contains(text(),'Disable') and @role='treeitem']")
     private WebElement disableFılter;
+    @FindBy(xpath = "//a[@class='filter-toggle-table_id filter-toggle'][normalize-space()='Username']")
+    private WebElement clickfilterUserName;
+    @FindBy(xpath = "//a[@class='filter-toggle-table_id filter-toggle'][normalize-space()='User Email']")
+    private WebElement clickEmail;
+    @FindBy(xpath = "//input[@id='username-table_id']")
+    private WebElement clickfilter;
 
     public Users() {
     }
@@ -183,5 +189,15 @@ public class Users extends BasePage {
     public void onTheUsersSettingPage(){
         driver.navigate().to("https://sandbox.efectura.com/UserManage");
     }
+    public void setClickfilter(){
+        clickfilterUserName.click();
+
+    }
+    public void setClickfilterEmail(){
+        clickEmail.click();
+
+    }
+
+
 }
 

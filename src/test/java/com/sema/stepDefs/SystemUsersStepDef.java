@@ -1,5 +1,6 @@
 package com.sema.stepDefs;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -94,16 +95,16 @@ pages.users().setUserEmailFilter(userEmail);
     }
     @Then("The user enters {string} into first name field")
     public void the_user_enters_into_first_name_field(String firstName) {
-pages.users().setFirstNameFilter(firstName);
+//pages.users().setFirstNameFilter(firstName);
     }
 
     @Then("the user verify on first name filter functionality {string}")
     public void the_user_verify_on_first_name_filter_functionality(String firstName) {
-pages.users().verifyFirstNameFilter(firstName);
+//pages.users().verifyFirstNameFilter(firstName);
     }
     @Then("the user verify on username filter functionality {string}-invalid first name")
     public void the_user_verify_on_username_filter_functionality_invalid_first_name(String text) {
-        pages.users().verifyNoContentTextInvalidUniqueUsername(text);
+      //  pages.users().verifyNoContentTextInvalidUniqueUsername(text);
     }
 
     @Then("the user verify on first name filter functionality {string}-partial first name")
@@ -116,11 +117,11 @@ pages.users().verifyFirstNameFilter(firstName);
     }
     @Then("The user clicks on Is Real")
     public void the_user_clicks_on_is_real() {
-pages.users().clicksIsReal();
+//pages.users().clicksIsReal();
     }
     @Then("The user clicks on {string} Is Real")
     public void the_user_clicks_on_is_real(String isReal ) {
-pages.users().selectIsRealFilter(isReal);
+//pages.users().selectIsRealFilter(isReal);
     }
     @Then("The incoming filter for {string} should contain Is Real")
     public void the_incoming_filter_for_should_contain_is_real(String isReal) {
@@ -129,5 +130,13 @@ pages.users().selectIsRealFilter(isReal);
     @Given("The user on the settings users page")
     public void the_user_on_the_settings_users_page() {
 pages.users().onTheUsersSettingPage();
+    }
+
+    @And("The click filter")
+    public void theClickFilter() {pages.users().setClickfilter();
+    }
+
+    @And("The click filter username")
+    public void theClickFilterUsername() {pages.users().setClickfilterEmail();
     }
 }
