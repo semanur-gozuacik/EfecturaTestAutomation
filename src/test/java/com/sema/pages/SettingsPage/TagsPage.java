@@ -31,13 +31,13 @@ public class TagsPage extends BasePage {
     @FindBy(xpath = "//li[6]/ul/li[2]/ul/li/a")
     private List<WebElement> systemOptions;
 
-    @FindBy(xpath = "//span[contains(text(),'Id')]")
+    @FindBy(xpath = "//a[contains(text(),'Id')]")
     private WebElement idFilter;
 
-    @FindBy(xpath = "//input[@id='Id_From']")
+    @FindBy(xpath = "//input[@id='Id_From-tags_table']")
     private WebElement idFromInputBox;
 
-    @FindBy(xpath = "//input[@id='Id_To']")
+    @FindBy(xpath = "//input[@id='Id_To-tags_table']")
     private WebElement idToInputBox;
 
     @FindBy(xpath = "//span[text()='Update']")
@@ -46,8 +46,14 @@ public class TagsPage extends BasePage {
     @FindBy(xpath = "//input[@placeholder='Label']")
     private WebElement labelFilterInputBox;
 
-    @FindBy(xpath = "//select[@id='Type']")
+    @FindBy(xpath = "//a[contains(text(),'Label')]")
+    private  WebElement labelFilter;
+
+    @FindBy(xpath = "//select[@id='Typetags_table']")
     private WebElement itemTypeSelectFilter;
+
+    @FindBy(xpath = "//a[contains(text(),'ItemType')]")
+    private WebElement itemTypeFilter;
 
     @FindBy(xpath = "//span[@id='select2-Type-container']")
     private WebElement itemTypeFilterBox;
@@ -184,6 +190,7 @@ public class TagsPage extends BasePage {
     }
 
     public void enterInputToLabelFilter(String input) {
+        labelFilter.click();
         labelFilterInputBox.clear();
         labelFilterInputBox.sendKeys(input);
         BrowserUtils.wait(5);
@@ -281,14 +288,19 @@ public class TagsPage extends BasePage {
     }
 
     public static void waitForInvisibilityOfElement(WebElement element) {
+        int count = 0;
         while (element.isDisplayed()) {
             BrowserUtils.wait(1);
+            if (count == 10) {
+                break;
+            }
+            count++;
         }
     }
 
     public void clickUpdateButtonInIdFilter() {
         idFilterUpdateButton.click();
-        waitForInvisibilityOfElement(idFilterUpdateButton);
+        //waitForInvisibilityOfElement(idFilterUpdateButton);
         BrowserUtils.wait(2);
     }
 
@@ -320,6 +332,7 @@ public class TagsPage extends BasePage {
     }
 
     public void selectValueFromTypeSelectFilter(String option) {
+        itemTypeFilter.click();
         BrowserUtils.selectDropdownOptionByVisibleText(itemTypeSelectFilter, option);
         BrowserUtils.wait(2);
     }
@@ -455,7 +468,7 @@ public class TagsPage extends BasePage {
     }
 
     public void verifySaveButtonIsPassiveInEditTagModal() {
-        BrowserUtils.wait(4);
+        BrowserUtils.wait(5);
         Assert.assertFalse(isButtonActive(saveButtonInEditTagModal));
     }
 
@@ -545,7 +558,7 @@ public class TagsPage extends BasePage {
     }
 
     public void selectAreYouSureTagEditCheckBox() {
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(4);
         areYouSureTagEditCheckBox.click();
     }
 }
