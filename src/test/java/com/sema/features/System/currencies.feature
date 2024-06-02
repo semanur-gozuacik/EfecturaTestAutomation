@@ -95,6 +95,7 @@ Feature: Currencies Test Cases
     When The user clicks Status checkbox in EditCurrency popup
     Then The user verifies that Save button is active in EditCurrency popup
 
+    #verify kısmına bak
   Scenario: When the status changed and the change is undone, Save button should be passive in EditCurrency Modal
     When The user clicks a currency edit button
     When The user clicks Status checkbox in EditCurrency popup

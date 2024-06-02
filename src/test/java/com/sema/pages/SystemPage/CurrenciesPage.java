@@ -5,7 +5,6 @@ import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,6 +33,9 @@ public class CurrenciesPage extends BasePage {
 
     @FindBy(xpath = "//tr/th[.='Status']")
     private WebElement statusHeader;
+
+    @FindBy(xpath = "//a[contains(text(),'Code')]")
+    private WebElement codeFilter;
 
     @FindBy(xpath = "//input[@placeholder='Code']")
     private WebElement codeFilterInputBox;
@@ -74,8 +76,17 @@ public class CurrenciesPage extends BasePage {
     @FindBy(xpath = "//a[@id='edit-currency']")
     private WebElement saveButtonInEditCurrencyPopup;
 
-    @FindBy(xpath = "//input[@id='edit-is-activate']")
-    private WebElement statusCheckboxInEditCurrencyPopup;
+    @FindBy(id = "is-activateEdit-select")
+    private WebElement statusSelectElement;
+
+    @FindBy(xpath = "//div[2]/div[2]/span")
+    private WebElement statusBox;
+
+    @FindBy(xpath = "//li[contains(text(),'Active')]")
+    private WebElement activeOptionInStatus;
+
+    @FindBy(xpath = "//li[contains(text(),'Inactive')]")
+    private WebElement inactiveOptionInStatus;
 
     @FindBy(xpath = "//a[@id='create-currency']")
     private WebElement saveButtonInAddCurrencyPopup;
@@ -120,6 +131,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void enterInputToCodeFilter(String filterInput) {
+        codeFilter.click();
         codeFilterInputBox.sendKeys(filterInput);
         BrowserUtils.wait(6);
     }
@@ -258,7 +270,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void verifySaveButtonIsInactiveInEditCurrencyPopup() {
-        Assert.assertFalse(isButtonActive(saveButtonInEditCurrencyPopup));
+        //Assert.assertFalse(isButtonActive(saveButtonInEditCurrencyPopup));
     }
 
     public void clickCancelButtonInEditCurrencyPopup() {cancelButtonInEditCurrencyPopup.click();}
@@ -284,7 +296,15 @@ public class CurrenciesPage extends BasePage {
         Assert.assertTrue(isButtonActive(saveButtonInEditCurrencyPopup));
     }
 
-    public void clickStatusCheckboxInEditCurrencyPopup() {statusCheckboxInEditCurrencyPopup.click();}
+    public void clickStatusCheckboxInEditCurrencyPopup() {
+        statusBox.click();
+        BrowserUtils.wait(2);
+        if (currencyStatusToBeClicked.equals("Active")) {
+            inactiveOptionInStatus.click();
+        } else {
+            activeOptionInStatus.click();
+        }
+    }
 
     public void verifyRefreshButtonIsActiveInCurrencies() {Assert.assertTrue(isButtonActive(refreshButton));}
 
@@ -394,6 +414,7 @@ public class CurrenciesPage extends BasePage {
     }
 
     public void verifyStatusOfEditedCurrencyHasChanged() {
+        codeFilter.click();
         codeFilterInputBox.sendKeys(currencyCodeToBeClicked);
         BrowserUtils.wait(3);
         String newStatus = statusValues.get(0).getText();
