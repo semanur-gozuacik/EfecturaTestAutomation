@@ -32,8 +32,11 @@ public class ItemStatusesPage extends BasePage {
     @FindBy(xpath = "//tbody")
     private WebElement itemStatusesTableValuePart;
 
-    @FindBy(id = "id")
+    @FindBy(xpath= "//input[@id='id-item-statuses-table']")
     private WebElement idFilterInputBox;
+
+    @FindBy(xpath = "//a[contains(text(),'Id')]")
+    private WebElement idFilter;
 
     @FindBy(xpath = "//tr/td[1]")
     private List<WebElement> idValues;
@@ -83,6 +86,7 @@ public class ItemStatusesPage extends BasePage {
     }
 
     public void enterIdInToIdFilter(int idValue) {
+        idFilter.click();
         idFilterInputBox.sendKeys(idValue + "");
         BrowserUtils.wait(2);
     }

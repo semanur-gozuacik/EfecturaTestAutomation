@@ -55,8 +55,11 @@ public class TagsPage extends BasePage {
     @FindBy(xpath = "//a[contains(text(),'ItemType')]")
     private WebElement itemTypeFilter;
 
-    @FindBy(xpath = "//span[@id='select2-Type-container']")
-    private WebElement itemTypeFilterBox;
+    @FindBy(xpath = "//span/span[1]/input")
+    private WebElement itemTypeFilterInputBox;
+
+    @FindBy(xpath = "//div[3]/div/span[1]/span[1]/span/span[1]")
+    private WebElement itemTypeSelectedValuePart;
 
     @FindBy(xpath = "//tbody")
     private WebElement tagsTableValuePart;
@@ -345,7 +348,8 @@ public class TagsPage extends BasePage {
     }
 
     public void verifyItemTypeFilterHasValueTypeAll(String typeAll) {
-        Assert.assertEquals(typeAll, itemTypeFilterBox.getText());
+        itemTypeFilter.click();
+        Assert.assertEquals(typeAll, getValueInInputBox(itemTypeSelectedValuePart));
     }
 
     public void verifyFirstAndPreviousButtonsAreInactiveInFirstPageOfTableInTagsPage() {
