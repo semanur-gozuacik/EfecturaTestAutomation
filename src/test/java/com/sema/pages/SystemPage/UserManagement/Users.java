@@ -25,6 +25,7 @@ public class Users extends BasePage {
     private WebElement nextPageButton;
     @FindBy(xpath = "//input[@id='username-table_id']")
     private WebElement usernameFilter;
+
     @FindBy(xpath = "//a[@class='filter-toggle-table_id filter-toggle'][normalize-space()='Username']")
     private WebElement usernameNewFilter;
     @FindBy(xpath = "//td[contains(@class, 'td-select-edit')][1]")
