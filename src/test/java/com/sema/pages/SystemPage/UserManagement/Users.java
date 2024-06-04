@@ -23,10 +23,10 @@ public class Users extends BasePage {
     private WebElement lastPageButton;
     @FindBy(xpath = "//span[@id='table_id_next']")
     private WebElement nextPageButton;
-    @FindBy(xpath = "//input[@id='username-table_id']")
+    @FindBy(xpath = "//input[@id='username-userLogs_table']")
     private WebElement usernameFilter;
 
-    @FindBy(xpath = "//a[@class='filter-toggle-table_id filter-toggle'][normalize-space()='Username']")
+    @FindBy(xpath = "//a[normalize-space()='Username']")
     private WebElement usernameNewFilter;
     @FindBy(xpath = "//td[contains(@class, 'td-select-edit')][1]")
     private List<WebElement> verifyUsernameFilter;
