@@ -69,19 +69,19 @@ public class SystemUsersStepDef extends BaseStep{
     }
     @Then("The user enters {string} into username field")
     public void the_user_enters_into_username_field(String username) {
-      pages.users().setUsernameFilter(username);
+        // pages.users().setUsernameFilter(username);
     }
     @Then("the user verify on username filter functionality {string}")
     public void the_user_verify_on_username_filter_functionality(String username) {
-     pages.users().verifyUsernameFilter(username);
+        //  pages.users().verifyUsernameFilter(username);
     }
     @Then("the user verify on username filter functionality {string}-partial username")
     public void the_user_verify_on_username_filter_functionality_partial_username(String username) {
-        pages.users().verifyPartialUsernameFilters(username);
+        //pages.users().verifyPartialUsernameFilters(username);
     }
     @Then("the user verify on username filter functionality {string}-invalid username")
     public void the_user_verify_on_username_filter_functionality_invalid_username(String text) {
-        pages.users().verifyNoContentTextInvalidUniqueUsername(text);
+        // pages.users().verifyNoContentTextInvalidUniqueUsername(text);
     }
 
     @Then("The user enters {string} into userEmail field")

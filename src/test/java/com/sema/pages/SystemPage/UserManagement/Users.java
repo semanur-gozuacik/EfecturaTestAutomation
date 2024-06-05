@@ -23,7 +23,7 @@ public class Users extends BasePage {
     private WebElement lastPageButton;
     @FindBy(xpath = "//span[@id='table_id_next']")
     private WebElement nextPageButton;
-    @FindBy(xpath = "//input[@id='username-userLogs_table']")
+    @FindBy(xpath = "//input[@id='username-table_id']")
     private WebElement usernameFilter;
 
     @FindBy(xpath = "//a[normalize-space()='Username']")
@@ -135,7 +135,7 @@ public class Users extends BasePage {
     }
     public void setUsernameFilter(String username) {
         usernameNewFilter.click();
-        usernameFilter.click();
+        BrowserUtils.wait(3);
         usernameFilter.sendKeys(username);
     }
     public void verifyPartialUsernameFilters(String partialUsername) {
