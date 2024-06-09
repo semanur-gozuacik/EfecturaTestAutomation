@@ -1,3 +1,4 @@
+@regression
 Feature: Membership_Account Rule Test Cases
 
   Background:
