@@ -36,7 +36,7 @@ Feature: Tags Page Test Cases
   Scenario: 'IdFromMustBeLessThanIdTo' warning should displayed if idFrom is greater than idTo
     When The user enters 67 and 63 in to Id filter
     When The user clicks update button in Id filter
-    Then The user verifies that 'IdFromMustBeLessThanIdTo' warning is displayed
+    Then The user verifies that "'from' cannot be greater than 'to'" warning is displayed
 
   Scenario: Type filter should filter the selected value
     When The user select 'Account' from Type filter

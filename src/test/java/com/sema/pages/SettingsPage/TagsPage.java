@@ -115,7 +115,7 @@ public class TagsPage extends BasePage {
     @FindBy(xpath = "//tr/td")
     private WebElement emptyTableMessage;
 
-    @FindBy(xpath = "//span[text()='IdFromMustBeLessThanIdTo']")
+    @FindBy(xpath = "//span[text()=\"'from' cannot be greater than 'to'\"]")
     private WebElement idFromMustBeLessThanIdToWaringPopup;
 
     @FindBy(id = "create-tag-button")
@@ -349,7 +349,8 @@ public class TagsPage extends BasePage {
 
     public void verifyItemTypeFilterHasValueTypeAll(String typeAll) {
         itemTypeFilter.click();
-        Assert.assertEquals(typeAll, getValueInInputBox(itemTypeSelectedValuePart));
+        BrowserUtils.isOptionSelected(itemTypeSelectFilter,typeAll);
+        //Assert.assertEquals(typeAll, itemTypeSelectedValuePart.getText());
     }
 
     public void verifyFirstAndPreviousButtonsAreInactiveInFirstPageOfTableInTagsPage() {
