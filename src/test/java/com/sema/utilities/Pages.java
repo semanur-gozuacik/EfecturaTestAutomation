@@ -15,6 +15,7 @@ import com.sema.pages.MDMPage.ContactManagement.ContactHomePageMyContactPage;
 import com.sema.pages.MDMPage.ContractManagement.Contract;
 import com.sema.pages.MDMPage.EventManagement.EventHomePage;
 import com.sema.pages.MDMPage.FileManagement.FileManagementHomePage;
+import com.sema.pages.MDMPage.FinancialAccount.FinancialAccount;
 import com.sema.pages.MDMPage.GiftManagement.Gift;
 import com.sema.pages.MDMPage.GiftManagement.GiftHomePage;
 import com.sema.pages.MDMPage.KPIManagement.KPIHomePage;
@@ -60,6 +61,7 @@ public class Pages {
     private ItemStatusesPage itemStatusesPage;
     private SalesOrganization salesOrganization;
     private FileManagementHomePage fileManagementHomePage;
+    private FinancialAccount financialAccount;
 
 
     public Pages() {
@@ -93,6 +95,7 @@ public class Pages {
             this.itemStatusesPage = new ItemStatusesPage();
             this.salesOrganization = new SalesOrganization();
             this.fileManagementHomePage=new FileManagementHomePage();
+            this.financialAccount= new FinancialAccount();
 
     }
     // Getter metotları
@@ -129,6 +132,7 @@ public class Pages {
     public ItemStatusesPage itemStatusesPage() {return itemStatusesPage;}
     public SalesOrganization salesOrganization() {return salesOrganization;}
     public FileManagementHomePage fileManagementHomePage(){return fileManagementHomePage;}
+    public FinancialAccount financialAccount(){return financialAccount;}
 
 }
 
