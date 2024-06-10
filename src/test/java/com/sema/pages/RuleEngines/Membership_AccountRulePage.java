@@ -440,12 +440,13 @@ public class Membership_AccountRulePage extends BasePage {
         accountAssociateTab.click();
         associatedFilter.click();
         associatedFilterYesOption.click();
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(4);
         List<String> idValuesAsString = getStringListFromWebElementList(idValues);
         for (String id : idValuesAsString) {
             Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/" + id);
             BrowserUtils.wait(3);
             accountInfoSection.click();
+            BrowserUtils.wait(1);
             String actualContactEmail = getValueInInputBox(contactEmailInputBox);
             String actualContactMobile = getValueInInputBox(contactMobileInputBox);
             Assert.assertTrue(contactEmailValue.equals(actualContactEmail) || contactMobileValue.equals(actualContactMobile));
@@ -472,7 +473,7 @@ public class Membership_AccountRulePage extends BasePage {
         accountAssociateTab.click();
         associatedFilter.click();
         associatedFilterYesOption.click();
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(4);
         List<String> idValuesAsString = getStringListFromWebElementList(idValues);
         for (String id : idValuesAsString) {
             Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/" + id);
