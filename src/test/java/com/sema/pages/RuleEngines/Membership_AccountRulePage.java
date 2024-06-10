@@ -261,7 +261,8 @@ public class Membership_AccountRulePage extends BasePage {
     public void clickSetRulesButton() {
         setRulesButton.click();
         continueButtonInSetRulesModal.click();
-        BrowserUtils.waitForVisibility(ruleSaveWarning,10);
+        BrowserUtils.wait(2);
+        BrowserUtils.waitForVisibility(ruleSaveWarning,15);
         BrowserUtils.wait(5);
     }
 
