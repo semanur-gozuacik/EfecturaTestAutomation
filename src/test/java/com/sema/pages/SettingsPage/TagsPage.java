@@ -271,6 +271,7 @@ public class TagsPage extends BasePage {
     }
 
     public boolean areItemTypesValuesAscending() {
+        BrowserUtils.wait(5);
         return areValuesAscending(itemTypeValues);
     }
 

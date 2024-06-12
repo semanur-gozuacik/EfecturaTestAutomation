@@ -12,6 +12,8 @@ public class HomePage extends BasePage {
     private WebElement basariliLoginDogrulama;
     @FindBy(id = "MDM")
     private WebElement MDM;
+    @FindBy(id = "Persons")
+    private WebElement Persons;
     @FindBy(id = "Contract ManagementH")
     private WebElement contractManagement;
     @FindBy(id = "Contract")
@@ -73,6 +75,14 @@ public class HomePage extends BasePage {
         BrowserUtils.waitForVisibility(MDM, timeout);
         Assert.assertTrue(MDM.isDisplayed());
     }
+    public void verifyPersonsElement(int timeout) {
+        BrowserUtils.waitForVisibility(Persons, timeout);
+        Assert.assertTrue(Persons.isDisplayed());
+    }
+    public void mouseoverOnThePersonsElement() {
+        BrowserUtils.hoverOver(Persons);
+    }
+
 
     public void mouseoverOnTheMdmElement() {
         BrowserUtils.hoverOver(MDM);

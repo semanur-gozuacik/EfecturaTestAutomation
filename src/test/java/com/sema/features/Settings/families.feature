@@ -12,7 +12,7 @@ Feature: Families Management Test Cases
 
     Scenario: Families pages tables verification
       Then The User verifies Families page table is displayed
-
+@test
   Scenario: Reset Button Control
     And The user enters "ACCOUNT_TEST" into Code field-Settings Families
     And the user clicks on Reset button

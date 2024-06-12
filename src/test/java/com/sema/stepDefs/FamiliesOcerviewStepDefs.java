@@ -25,7 +25,7 @@ public class FamiliesOcerviewStepDefs extends BaseStep{
     }
     @Then("The user enters {string} into Code field-Settings Families")
     public void the_user_enters_into_code_field_(String code) {
-    pages.families().setCodeField(code);
+    pages.families().setcodeFieldFamilies(code);
     }
     @Then("the user verify Reset button functionality-Settings Families")
     public void the_user_verify_reset_button_functionality() {
