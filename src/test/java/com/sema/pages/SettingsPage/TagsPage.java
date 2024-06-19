@@ -520,7 +520,8 @@ public class TagsPage extends BasePage {
 
     public static boolean isRowCountCorrectAccordingToTableLength(WebElement tableInfo, String length) {
         List<WebElement> rows = Driver.getDriver().findElements(By.xpath("//tr/td[1]"));
-        int maxDataCount = Integer.parseInt(tableInfo.getText().split(" ")[5]);
+        String maxDataCountAsString = tableInfo.getText().split(" ")[5].replace(",","");
+        int maxDataCount = Integer.parseInt(maxDataCountAsString);
         int lengthAsInt = Integer.parseInt(length);
         return rows.size() == Math.min(maxDataCount, lengthAsInt);
     }

@@ -1,5 +1,6 @@
 @regression
 Feature: Import Management Test Cases
+
   Background:
     When   The User opens the browser with the given url
     And    The User inputs a valid username "validUsername"
@@ -21,34 +22,65 @@ Feature: Import Management Test Cases
     When  The user selects "<entries>" into show entries import
     Then  The user should see  "<entries>" entrie in everypage import
     Examples:
-      | entries|
-      |10 |
-      |25 |
+      | entries |
+      | 25      |
+      | 10      |
 
-  Scenario: Refrest Button Control
-    And the user clicks on Refresh button
+  Scenario: Refresh Button Control
+    Then The user verifies that Refresh button is active
 
   Scenario: Name Filter Control
     And The user clicks name button
-    And The user "Account (2)-2575.xlsx" code field
-    And The user verifies name filter
+    And The user "Account" code field
+    And The User verifies that name filter results contains "Account"
 
   Scenario Outline:Import Page-Select status
     When  The user selects "<select status>" into select status
     Then  The user should see  "<select status>"  import select status
     Examples:
-      | select status|
-      |Completed|
-      |Progress|
-      |Uploaded|
-      |Failed|
+      | select status |
+      | Completed     |
+      | Progress      |
+      | Uploaded      |
+      | Failed        |
 
   Scenario: User Filter Control
-    And The user clicks user button
-    And The user "Efectura" user field
+    And The user clicks user filter
+    And The user "test" user field
     And The user verifies user filter
 
   Scenario: Username Filter Control
     And The user clicks username button
     And The user "Efectura" username field
     And The user verifies username filter import
+
+  #------------------------------------------AccountCallback----------------------------------------------------#
+
+  Scenario: AccountCallback - Point Adding
+    When The user update excel with point "120" and endDate "11-11-2024"
+    When The user select AccountCallback for importType
+    When The user upload AccountCallback file
+    When The user approve the import
+    Then The user verifies that one earning is added to point history
+
+  Scenario: AccountCallback - Point Delete
+    When The user update excel with point "-120" and endDate ""
+    When The user upload AccountCallback file
+    When The user approve the import
+    Then The user verifies that one earning is added to point history
+
+  Scenario: AccountCallback - Redemption
+    When The user update excel with point "-120" and endDate "11-11-2024"
+    When The user update excel with TransactionType "Redemption"
+    When The user update excel with TaskId "54932"
+    When The user upload AccountCallback file
+    When The user import the import
+    Then The user verifies that one earning is added to point history
+
+  Scenario: ResourceTranslations
+    When The user select ResourceTranslations for importType
+    When The user upload ResourceTranslations file
+    When The user import the import
+    Then The user verifies that the resource added to Resources
+    Then The user tear down changes in resources
+
