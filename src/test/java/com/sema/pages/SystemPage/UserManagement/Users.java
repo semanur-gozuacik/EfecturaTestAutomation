@@ -190,7 +190,7 @@ public class Users extends BasePage {
         assertTrue(true);
     }
     public void onTheUsersSettingPage(){
-        driver.navigate().to("https://sandbox.efectura.com/UserManage");
+        driver.navigate().to("https://sandbox-ui.efectura.com/UserManage");
     }
     public void setClickfilter(){
         clickfilterUserName.click();

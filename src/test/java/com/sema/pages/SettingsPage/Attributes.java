@@ -66,7 +66,7 @@ public class Attributes extends BasePage {
     }
 
     public void onTheAttributeSettingPage() {
-        driver.navigate().to("https://sandbox.efectura.com/Settings/Attributes");
+        driver.navigate().to("https://sandbox-ui.efectura.com/Settings/Attributes");
     }
 
     public void clickAttribute(String attribute) {

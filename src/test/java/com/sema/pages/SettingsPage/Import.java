@@ -105,7 +105,7 @@ public class Import extends BasePage {
 
 
     public void onTheImportSettingPage() {
-        driver.navigate().to("https://sandbox.efectura.com/Import");
+        driver.navigate().to("https://sandbox-ui.efectura.com/Import");
     }
 
     public void acceptPopUpElement() {
@@ -183,7 +183,7 @@ public class Import extends BasePage {
     }
 
     public void verifyOneEarningIsAddedToPointHistory() {
-        Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/6516");
+        Driver.getDriver().get("https://sandbox-ui.efectura.com/Enrich/EditItem/6516");
         pointHistoryTab.click();
         taskNameFilterInputBox.sendKeys(newDescription);
         BrowserUtils.wait(3);
@@ -225,7 +225,7 @@ public class Import extends BasePage {
     }
 
     public void verifyTheResourceIsAddedToResources() throws IOException {
-        Driver.getDriver().get("https://sandbox.efectura.com/Resources");
+        Driver.getDriver().get("https://sandbox-ui.efectura.com/Resources");
         String resourceCode = CommonExcelReader.getCellValue(resourceTranslationsExcel,"Code",1);
         resourceCodeFilterInputBox.sendKeys(resourceCode);
         resourceSearchButton.click();

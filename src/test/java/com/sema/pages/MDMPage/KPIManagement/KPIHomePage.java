@@ -35,7 +35,7 @@ public class KPIHomePage extends BasePage {
         if(familyKPI.isEnabled());
     }
     public void onTheKPIPage(){
-        driver.navigate().to("https://sandbox.efectura.com/Enrich/Items?itemType=KPI");
+        driver.navigate().to("https://sandbox-ui.efectura.com/Enrich/Items?itemType=KPI");
     }
 }
 
