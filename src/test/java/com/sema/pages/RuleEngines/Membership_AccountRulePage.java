@@ -2,6 +2,7 @@ package com.sema.pages.RuleEngines;
 
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
+import com.sema.utilities.ConfigurationReader;
 import com.sema.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -13,8 +14,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static com.sema.pages.SystemPage.CurrenciesPage.getStringListFromWebElementList;
-import static com.sema.pages.SystemPage.CurrenciesPage.getValueInInputBox;
+import static com.sema.pages.SystemPage.CurrenciesPage.*;
 
 public class Membership_AccountRulePage extends BasePage {
 
@@ -218,7 +218,7 @@ public class Membership_AccountRulePage extends BasePage {
 
     public void goToItemEditPage(String itemId) {
         BrowserUtils.wait(3);
-        Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/" + itemId);
+        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty(itemId));
         if (!accordionButton.getAttribute("class").contains("active")) {
             accordionButton.click();
         }
@@ -312,18 +312,18 @@ public class Membership_AccountRulePage extends BasePage {
 
     String idOfEditedItem = "50193";
     public void editAnAccountToMeetTheRules(String attributeValueToChange) {
-        Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/50193");
+        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + idOfEditedItem);
         accountInfoSection.click();
         scrollBy(0,distributorBasisCodeInputBox.getLocation().getY());
         distributorBasisCodeInputBox.clear();
         distributorBasisCodeInputBox.sendKeys(attributeValueToChange);
         scrollUpButton.click();
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
         unsavedChangesButton.click();
         BrowserUtils.wait(2);
         saveButtonInChangeItemModal.click();
         BrowserUtils.wait(2);
-        Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/295213");
+        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty("itemIdForRuleTests"));
     }
 
     public static void scrollBy(int xOffset, int yOffset) {
@@ -332,7 +332,7 @@ public class Membership_AccountRulePage extends BasePage {
     }
 
     public void verifyEditedItemIsAssociated() {
-        Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/295213");
+        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty("itemIdForRuleTests"));
         BrowserUtils.wait(5);
         BrowserUtils.waitForVisibility(accountAssociateTab,8);
         accountAssociateTab.click();
@@ -349,7 +349,7 @@ public class Membership_AccountRulePage extends BasePage {
     }
 
     public void deleteItemChanges() {
-        Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/50193");
+        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + idOfEditedItem);
         accountInfoSection.click();
         scrollBy(0,distributorBasisCodeInputBox.getLocation().getY());
         distributorBasisCodeInputBox.clear();
@@ -358,7 +358,7 @@ public class Membership_AccountRulePage extends BasePage {
 
     public void verifyAssociationOfTheItemRemoved() {
         BrowserUtils.wait(5);
-        Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/295213");
+        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty("itemIdForRuleTests"));
         BrowserUtils.waitForVisibility(accountAssociateTab,8);
         Driver.getDriver().navigate().refresh();
         BrowserUtils.wait(8);
@@ -409,7 +409,7 @@ public class Membership_AccountRulePage extends BasePage {
     }
 
     public void verifyItemThatIsSetOutRuleNotAssociated() {
-        Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/295213");
+        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty("itemIdForRuleTests"));
         BrowserUtils.waitForVisibility(accountAssociateTab,8);
         accountAssociateTab.click();
         associatedFilter.click();
@@ -443,7 +443,7 @@ public class Membership_AccountRulePage extends BasePage {
         BrowserUtils.wait(4);
         List<String> idValuesAsString = getStringListFromWebElementList(idValues);
         for (String id : idValuesAsString) {
-            Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/" + id);
+            Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + id);
             BrowserUtils.wait(3);
             accountInfoSection.click();
             BrowserUtils.wait(1);
@@ -476,12 +476,21 @@ public class Membership_AccountRulePage extends BasePage {
         BrowserUtils.wait(4);
         List<String> idValuesAsString = getStringListFromWebElementList(idValues);
         for (String id : idValuesAsString) {
-            Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/" + id);
+            Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + id);
             BrowserUtils.wait(3);
             accountInfoSection.click();
             String actualContactEmail = getValueInInputBox(contactEmailInputBox);
             String actualContactMobile = getValueInInputBox(contactMobileInputBox);
             Assert.assertTrue(contactEmailValue.equals(actualContactEmail) && contactMobileValue.equals(actualContactMobile));
+        }
+    }
+
+    public void deleteAllRulesIfAnyExists() {
+        BrowserUtils.wait(5);
+        if (deleteAllRulesButton.isEnabled()) {
+            deleteAllRulesButton.click();
+            deleteButtonInDeleteConfirmModal.click();
+            BrowserUtils.waitForVisibility(allRuleDeleteWarning,10);
         }
     }
 }

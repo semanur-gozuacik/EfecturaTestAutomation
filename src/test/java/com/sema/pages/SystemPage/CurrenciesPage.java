@@ -126,7 +126,7 @@ public class CurrenciesPage extends BasePage {
 
 
     public void goToCurrenciesPage() {
-        Driver.getDriver().navigate().to("https://sandbox.efectura.com/Settings/Currencies");
+        Driver.getDriver().navigate().to("https://sandbox-ui.efectura.com/Settings/Currencies");
         BrowserUtils.waitForVisibility(currenciesTableValuePart, 15);
     }
 

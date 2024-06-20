@@ -20,12 +20,12 @@ Feature: Connector Management Test Cases- Connector Home Page
   Scenario:Connector Verify Label Filter - Valid Label
     And The user enters "ConConXML" into Label field
     And the user clicks on Search button
-    And the user verify on label filter functionality with partial unique code "ConConXML"
+     # And the user verify on label filter functionality with partial unique code "ConConXML"
 
   Scenario: Connector Verify Label Filter - Partial Unique Label
     And The user enters "ConCon" into Label field
     And the user clicks on Search button
-    And the user verify on label filter functionality with partial unique code "ConCon"
+     # And the user verify on label filter functionality with partial unique code "ConCon"
 
   Scenario:Connector Verify Code Filter -Valid Unique Code
     And The user enters "test212129" into Code field

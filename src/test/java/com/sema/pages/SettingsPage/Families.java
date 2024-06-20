@@ -13,6 +13,10 @@ public class Families extends BasePage {
     private WebElement familiesPageVerificationsElement;
     @FindBy(xpath = "//input[@id='code']")
     private WebElement codeField;
+    @FindBy(xpath = "//a[normalize-space()='Code']//*[name()='svg']")
+    private WebElement codeFieldFamilies;
+    @FindBy(xpath = "//input[@id='code-families_table']")
+    private WebElement codeFieldFamiliesText;
     @FindBy(xpath = "//input[@id='code']")
     private WebElement showentries;
     @FindBy(name = "families_table_length")
@@ -36,9 +40,16 @@ public void setCodeField(String code){
         codeField.click();
         codeField.sendKeys(code);
 }
+    public void setcodeFieldFamilies(String code){
+        BrowserUtils.waitForVisibility(codeFieldFamilies,20);
+        BrowserUtils.wait(5);
+        codeFieldFamilies.click();
+        codeFieldFamiliesText.click();
+        codeFieldFamiliesText.sendKeys(code);
+    }
     public void verifyResetButton() {
         BrowserUtils.wait(5);
-     Assert.assertTrue(codeField.getAttribute("placeholder").contains("Code"));
+     Assert.assertTrue(codeFieldFamiliesText.getAttribute("placeholder").contains("Code"));
 
     }
 public void clickShowEntries(){

@@ -1,11 +1,8 @@
 package com.sema.stepDefs;
 
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import java.util.Random;
 
 public class MDMContractStepDefs extends BaseStep {
     public MDMContractStepDefs() {
@@ -36,11 +33,20 @@ public class MDMContractStepDefs extends BaseStep {
     public void the_user_waits_until_the_mdm_element_is_visible_with_a_timeout_of_seconds(Integer timeout) {
         pages.homePage().verifyMDMElement(timeout);
     }
+    @Then("The User waits until the Persons element is visible with a timeout of {int} seconds")
+    public void the_user_waits_until_the_mdmpersons_element_is_visible_with_a_timeout_of_seconds(Integer timeout) {
+pages.homePage().mouseoverOnThePersonsElement();
+    }
 
     @Then("The User performs a mouseover on the MDM element")
     public void the_user_performs_a_mouseover_on_the_mdm_element() {
         pages.homePage().mouseoverOnTheMdmElement();
     }
+    @Then("The User performs a mouseover on the Persons element")
+    public void the_user_performs_a_mouseover_on_the_persons_element() {
+     pages.homePage().mouseoverOnTheKisilerElement();
+    }
+
     @Then("The User performs a mouseover on the Contract Management element")
     public void the_user_performs_a_mouseover_on_the_contract_management_element() {
        pages.homePage().mouseoverOnTheContractManagementElement();
@@ -70,7 +76,7 @@ public class MDMContractStepDefs extends BaseStep {
     }
 
     @Then("The User clicks on the createItem element")
-    public void the_user_clicks_on_the_create_ıtem_element() {
+    public void the_user_clicks_on_the_create_item_element() {
         pages.contract().clickCreateNewItemButton();
     }
 

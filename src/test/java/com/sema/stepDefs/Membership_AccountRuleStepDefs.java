@@ -1,5 +1,6 @@
 package com.sema.stepDefs;
 
+import com.sema.utilities.ConfigurationReader;
 import com.sema.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -52,9 +53,9 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
         pages.membershipAccountRulePage().verifyTheItemThatIsSetInRuleIsAssociatedInAccountTab();
     }
 
-    @Then("The user tear down all rules")
-    public void theUserTearDownAllRules() {
-        Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/295213");
+    @Then("The user tear down all rules {string}")
+    public void theUserTearDownAllRules(String itemId) {
+        Driver.getDriver().get("https://sandbox-ui.efectura.com/Enrich/EditItem/" + ConfigurationReader.getProperty(itemId));
         pages.membershipAccountRulePage().clickRuleTab();
         pages.membershipAccountRulePage().tearDownAllChanges();
     }
@@ -123,5 +124,10 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
     @Then("The user verify detail info of associated items for and")
     public void theUserVerifyDetailInfoOfAssociatedItemsForAnd() {
         pages.membershipAccountRulePage().verifyDetailInfoOfAssociatedItemsForAnd();
+    }
+
+    @When("The user delete all rules if any exists")
+    public void theUserDeleteAllRulesIfAnyExists() {
+        pages.membershipAccountRulePage().deleteAllRulesIfAnyExists();
     }
 }
