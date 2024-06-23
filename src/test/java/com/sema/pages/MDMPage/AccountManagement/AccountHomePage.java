@@ -21,7 +21,7 @@ public class AccountHomePage extends BasePage {
     @FindBy(xpath = "//span[@class='select2-search select2-search--dropdown']//input[@role='textbox']")
     private WebElement associatedNoFilter;
     public void onTheAccountPage() {
-        driver.navigate().to("https://sandbox.efectura.com/Enrich/Items?itemType=Account");
+        driver.navigate().to("https://sandbox-ui.efectura.com/Enrich/Items?itemType=Account");
     }
 
     public void clickAssociatedFilter() {

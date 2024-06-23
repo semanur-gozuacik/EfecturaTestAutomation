@@ -6,7 +6,7 @@ public class ProductHomePage extends BasePage {
     public ProductHomePage() {
     }
     public void onTheUserPage(){
-        driver.navigate().to("https://sandbox.efectura.com/Enrich/Items?itemType=Product");
+        driver.navigate().to("https://sandbox-ui.efectura.com/Enrich/Items?itemType=Product");
     }
 }
 

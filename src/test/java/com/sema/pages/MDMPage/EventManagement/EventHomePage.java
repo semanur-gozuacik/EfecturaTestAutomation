@@ -34,7 +34,7 @@ public class EventHomePage extends BasePage {
             assertTrue(verifyWSETFamilyFilter.get(i).getText().equalsIgnoreCase("WSET"));
         }
     }public void onTheEventPage(){
-        driver.navigate().to("https://sandbox.efectura.com/Enrich/Items?itemType=Event");
+        driver.navigate().to("https://sandbox-ui.efectura.com/Enrich/Items?itemType=Event");
     }
     public void clickListItem() {
         BrowserUtils.wait(10);

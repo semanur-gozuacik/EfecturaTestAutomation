@@ -22,7 +22,7 @@ public class ContactEditPage extends BasePage {
     private WebElement uploadPhotoCancelButton;
     @FindBy(xpath = "//img[@id='previweImg' and @src='/Content/image_data/no_imageen-US.png']")
     private WebElement verifyUnUploadObject;
-    @FindBy(xpath = "//img[@id='previweImg' and starts-with(@src, 'https://sandbox.efectura.com/Content/image_data')]")
+    @FindBy(xpath = "//img[@id='previweImg' and starts-with(@src, 'https://sandbox-ui.efectura.com/Content/image_data')]")
     private WebElement verifyUploadObject;
     @FindBy(xpath ="//select[@id='itemStatusDropdown']")
     private WebElement editItemStatuses;

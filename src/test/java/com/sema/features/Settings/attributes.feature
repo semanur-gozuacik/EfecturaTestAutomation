@@ -13,7 +13,7 @@ Feature: Attributes Management Test Cases
   Scenario: Attributes pages tables verification
     Then The User verifies Attributes page table is displayed
 
-
+@SS
   Scenario: Attributes pages -Reset Button Control
     And The user clicks "Code" attributes
     And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes

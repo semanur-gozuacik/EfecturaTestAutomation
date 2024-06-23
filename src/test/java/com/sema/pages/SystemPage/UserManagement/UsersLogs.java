@@ -23,7 +23,7 @@ public class UsersLogs extends BasePage {
     }
 
     public void onTheUsersSettingPage() {
-        driver.navigate().to("https://sandbox.efectura.com/UserManage/UserLogs");
+        driver.navigate().to("https://sandbox-ui.efectura.com/UserManage/UserLogs");
     }
 
     public void logsClick() {

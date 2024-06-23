@@ -123,7 +123,7 @@ public void verifySelectOption(String entrie){
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
     }  public void onTheFamiliesSettingPage(){
-        driver.navigate().to("https://sandbox.efectura.com/Settings/Families");
+        driver.navigate().to("https://sandbox-ui.efectura.com/Settings/Families");
     }
 }
 
