@@ -440,7 +440,7 @@ public class Membership_AccountRulePage extends BasePage {
         accountAssociateTab.click();
         associatedFilter.click();
         associatedFilterYesOption.click();
-        BrowserUtils.wait(4);
+        BrowserUtils.wait(5);
         List<String> idValuesAsString = getStringListFromWebElementList(idValues);
         for (String id : idValuesAsString) {
             Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + id);

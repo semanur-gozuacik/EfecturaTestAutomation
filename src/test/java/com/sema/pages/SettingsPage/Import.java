@@ -3,12 +3,14 @@ package com.sema.pages.SettingsPage;
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.CommonExcelReader;
+import com.sema.utilities.ConfigurationReader;
 import com.sema.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.List;
 
 import static com.sema.pages.SettingsPage.TagsPage.isRowCountCorrectAccordingToTableLength;
@@ -105,7 +107,7 @@ public class Import extends BasePage {
 
 
     public void onTheImportSettingPage() {
-        driver.navigate().to("https://sandbox.efectura.com/Import");
+        driver.navigate().to("https://sandbox-ui.efectura.com/Import");
     }
 
     public void acceptPopUpElement() {
@@ -153,14 +155,18 @@ public class Import extends BasePage {
         }
     }
 
-    String accountCallbackExcel = "C:\\Users\\fkara\\Desktop\\workspace\\EfecturaTestAutomation\\src\\test\\resources\\testData\\AccountCallback.xlsx";
+    //String accountCallbackExcel = "C:\\Users\\fkara\\Desktop\\workspace\\EfecturaTestAutomation\\src\\test\\resources\\testData\\AccountCallback.xlsx";
     String newDescription;
+
+    String projectDir = System.getProperty("user.dir");
+    String accountCallbackRelativePath = "src/test/resources/testData/AccountCallback.xlsx";
+    String accountCallbackExcel = Paths.get(projectDir, accountCallbackRelativePath).toString();
 
     public void updateExcel(String point, String endDate) throws IOException {
         try {
             String currentDescription = CommonExcelReader.getCellValue(accountCallbackExcel,"Description",1);
-            newDescription = currentDescription.substring(0,currentDescription.length() - 1) +
-                    (Integer.parseInt(currentDescription.substring(currentDescription.length() - 1)) + 1);
+            newDescription = currentDescription.split(" ")[0] + " " +
+                    (Integer.parseInt(currentDescription.split(" ")[1]) + 1);
         } catch (IOException ioException) {
             System.out.println("IOException Is Threw !!!!!!");
         }
@@ -183,7 +189,7 @@ public class Import extends BasePage {
     }
 
     public void verifyOneEarningIsAddedToPointHistory() {
-        Driver.getDriver().get("https://sandbox.efectura.com/Enrich/EditItem/6516");
+        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + "6516");
         pointHistoryTab.click();
         taskNameFilterInputBox.sendKeys(newDescription);
         BrowserUtils.wait(3);
@@ -204,8 +210,8 @@ public class Import extends BasePage {
         importButton.click();
     }
 
-    String resourceTranslationsExcel = "C:\\Users\\fkara\\Desktop\\workspace\\EfecturaTestAutomation\\src\\test\\resources\\testData\\ResourceTranslations.xlsx";
-
+    String resourceTranslationsRelativePath = "src/test/resources/testData/ResourceTranslations.xlsx";
+    String resourceTranslationsExcel = Paths.get(projectDir, resourceTranslationsRelativePath).toString();
     public void selectAccountCallbackForImportType() {
         selectImportTypeElement.click();
         accountCallbackOption.click();
@@ -225,7 +231,7 @@ public class Import extends BasePage {
     }
 
     public void verifyTheResourceIsAddedToResources() throws IOException {
-        Driver.getDriver().get("https://sandbox.efectura.com/Resources");
+        Driver.getDriver().get("https://sandbox-ui.efectura.com/Resources");
         String resourceCode = CommonExcelReader.getCellValue(resourceTranslationsExcel,"Code",1);
         resourceCodeFilterInputBox.sendKeys(resourceCode);
         resourceSearchButton.click();
