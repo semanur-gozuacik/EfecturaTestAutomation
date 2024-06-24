@@ -314,13 +314,13 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "CAMPAIGN_CONNCT" tab
+    And The user clicks "Campaign- Contact" tab
 
   Scenario:Contact edit - CAMPAIGN_CONNT Tab Associated
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "CAMPAIGN_CONNCT" tab
+    And The user clicks "Campaign- Contact" tab
     And The user Assocaited All filter
     And The user clicks item
     And the user clicks on unsaved change button
@@ -332,7 +332,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "CAMPAIGN_CONNCT" tab
+    And The user clicks "Campaign- Contact" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 

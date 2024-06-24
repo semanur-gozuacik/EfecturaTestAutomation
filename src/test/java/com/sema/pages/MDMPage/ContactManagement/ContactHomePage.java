@@ -130,6 +130,7 @@ public class ContactHomePage extends BasePage {
     private List<WebElement> starFeaturesBadgeCountsMyContact;
     @FindBy(xpath = "//tr/td[11]/a[3]")
     private List<WebElement> starItems;
+
     @FindBy(xpath = "//span[contains(text(),'Export')]")
     private WebElement exportButton;
     @FindBy(xpath = "//span[normalize-space()='Success']")
@@ -476,8 +477,9 @@ public class ContactHomePage extends BasePage {
     public void clickStarItems() {
         for (int i = 0; i < starItems.size(); i++) {
             BrowserUtils.hoverOver(starItems.get(i));
-            BrowserUtils.wait(2);
+            BrowserUtils.wait(5);
             starItems.get(i).click();
+            BrowserUtils.wait(5);
             myCountsBadgeCounts++;
         }
     }
