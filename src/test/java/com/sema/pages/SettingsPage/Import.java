@@ -214,6 +214,7 @@ public class Import extends BasePage {
     String resourceTranslationsExcel = Paths.get(projectDir, resourceTranslationsRelativePath).toString();
     public void selectAccountCallbackForImportType() {
         selectImportTypeElement.click();
+        BrowserUtils.wait(1);
         accountCallbackOption.click();
     }
 
