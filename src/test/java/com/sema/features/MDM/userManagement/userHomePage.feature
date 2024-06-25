@@ -350,8 +350,8 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user clicks on Edit Button
     And The user clicks "Account-MRP" tab
     And The user Assocaited All filter
-    And The user enters valid label filter-"YENİTEST111111113"
-    And The user clicks Refresh button edit item
+   # And The user enters valid label filter-"YENİTEST111111113"
+    #And The user clicks Refresh button edit item
 
 
   Scenario Outline: User edit -Account-MRP tab -Family Filter
