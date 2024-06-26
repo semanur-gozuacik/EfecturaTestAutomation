@@ -427,6 +427,7 @@ public class Membership_AccountRulePage extends BasePage {
         searchedRuleOption.click();
         ruleAttributeValueInputBox.sendKeys(contactMobileValue);
         addRuleButton.click();
+        BrowserUtils.wait(1);
         globalOrButton.click();
         ruleAttributeDropDown.click();
         BrowserUtils.wait(2);

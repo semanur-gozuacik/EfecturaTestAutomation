@@ -215,6 +215,9 @@ public class Import extends BasePage {
     public void selectAccountCallbackForImportType() {
         selectImportTypeElement.click();
         BrowserUtils.wait(1);
+        if (!accountCallbackOption.isDisplayed()) {
+            selectImportTypeElement.click();
+        }
         accountCallbackOption.click();
     }
 
