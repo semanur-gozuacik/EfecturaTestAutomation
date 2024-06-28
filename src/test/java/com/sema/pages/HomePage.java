@@ -206,7 +206,7 @@ public class HomePage extends BasePage {
     }
 
     public void clickBlackListElement() {
-        BrowserUtils.waitForVisibility(blackListElement, 10;
+        BrowserUtils.waitForVisibility(blackListElement, 10);
         blackListElement.click();
 
     }
@@ -274,7 +274,7 @@ public class HomePage extends BasePage {
     }
 
     public void mouseoverOnTheConnectorManagementElement() {
-        BrowserUtils.waitForVisibility(connectorManagement, 8);
+        BrowserUtils.waitForVisibility(connectorManagement, 10);
         BrowserUtils.hoverOver(connectorManagement);
     }
 
