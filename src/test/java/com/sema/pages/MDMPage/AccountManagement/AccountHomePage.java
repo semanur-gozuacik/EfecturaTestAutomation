@@ -31,7 +31,7 @@ public class AccountHomePage extends BasePage {
     }
 
     public void clickAssociatedAllFilter() {
-        BrowserUtils.waitForVisibility(associatedAllFilter, 30);
+        BrowserUtils.waitForVisibility(associatedAllFilter, 15);
         associatedAllFilter.sendKeys("All"+ Keys.ENTER);
     }
 

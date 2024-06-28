@@ -379,7 +379,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void acceptDeletePopUp() {
-        BrowserUtils.waitForVisibility(acceptDeleteButton, 20);
+        BrowserUtils.waitForVisibility(acceptDeleteButton, 10);
         acceptDeleteButton.click();
     }
 
