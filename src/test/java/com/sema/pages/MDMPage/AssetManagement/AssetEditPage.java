@@ -51,17 +51,17 @@ public class AssetEditPage extends BasePage {
     private WebElement userPermissions;
 
     public void clickListDropDown() {
-        BrowserUtils.waitForVisibility(listDropDownButton, 20);
+        BrowserUtils.waitForVisibility(listDropDownButton, 10);
         listDropDownButton.click();
     }
 
     public void clickListItem() {
-        BrowserUtils.waitForVisibility(editListItem, 20);
+        BrowserUtils.waitForVisibility(editListItem, 10);
         editListItem.click();
     }
 
     public void clickListSecondItem() {
-        BrowserUtils.waitForVisibility(editListSecondItem, 25);
+        BrowserUtils.waitForVisibility(editListSecondItem, 12);
         editListSecondItem.click();
     }
 
@@ -71,17 +71,17 @@ public class AssetEditPage extends BasePage {
     }
 
     public void clicksDeleteEditList() {
-        BrowserUtils.waitForVisibility(deleteEditList, 20);
+        BrowserUtils.waitForVisibility(deleteEditList, 10);
         deleteEditList.click();
     }
 
     public void verifyEditRemoved() {
-        BrowserUtils.waitForVisibility(verifyRemovedListPopUp, 20);
+        BrowserUtils.waitForVisibility(verifyRemovedListPopUp, 10);
         Assert.assertTrue(verifyRemovedListPopUp.isDisplayed());
     }
 
     public void verifyAllItemList() {
-        BrowserUtils.waitForVisibility(allListAddedItem, 20);
+        BrowserUtils.waitForVisibility(allListAddedItem, 10);
         Assert.assertTrue(allListAddedItem.isDisplayed());
     }
 

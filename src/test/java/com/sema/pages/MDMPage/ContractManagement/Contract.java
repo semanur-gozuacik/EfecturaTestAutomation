@@ -52,13 +52,13 @@ public class Contract extends BasePage {
         Assert.assertTrue(uniqueCodeElement.isDisplayed());
    }
    public void setUniqueCodeElement(){
-       BrowserUtils.waitForVisibility(uniqueCodeElement,20);
+       BrowserUtils.waitForVisibility(uniqueCodeElement,15);
        uniqueCodeElement.sendKeys(ConfigurationReader.getProperty("createNewItemUniqueCode"));
    }
    public void selectChooseFamily(){
-        BrowserUtils.waitForVisibility(familyDropDown,20);
+        BrowserUtils.waitForVisibility(familyDropDown,15);
         familyDropDown.click();
-        BrowserUtils.waitForVisibility(chooseFamily,20);
+        BrowserUtils.waitForVisibility(chooseFamily,10);
         chooseFamily.click();
    }
    public void clickCategoriesButton(){

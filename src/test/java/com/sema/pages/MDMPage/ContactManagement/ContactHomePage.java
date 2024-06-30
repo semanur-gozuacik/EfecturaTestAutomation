@@ -190,20 +190,20 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickContactNewNode() {
-        BrowserUtils.waitForVisibility(clickContactNewNode, 20);
+        BrowserUtils.waitForVisibility(clickContactNewNode, 10);
         clickContactNewNode.click();
     }
 
     public void selectEkosystemFamily(String family) {
-        BrowserUtils.waitForVisibility(familyDropDown, 20);
+        BrowserUtils.waitForVisibility(familyDropDown, 10);
         familyDropDown.click();
         System.out.println();
         if (family.equalsIgnoreCase("Ekosystem")) {
-            BrowserUtils.waitForVisibility(selectEkosystemFamily, 20);
+            BrowserUtils.waitForVisibility(selectEkosystemFamily, 10);
             selectEkosystemFamily.click();
         }
         else {
-            BrowserUtils.waitForVisibility(selectIWSAFamily, 20);
+            BrowserUtils.waitForVisibility(selectIWSAFamily, 10);
             selectIWSAFamily.click();
         }
     }
@@ -225,7 +225,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyContactCategory() {
-        BrowserUtils.wait(9);
+        BrowserUtils.wait(5);
         for (int i = 0; i < verifyContactCategory.size(); i++) {
             assertTrue(verifyContactCategory.get(i).getText().equalsIgnoreCase("Contact"));
         }
@@ -310,7 +310,7 @@ public class ContactHomePage extends BasePage {
             assertTrue(verifyPartialCodeFilters.size()>=1);
         }
     public void selectEkosystemFamilyFilter() {
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(7);
         familyFilterDropDownClick.click();
         familyFilterDropDown.sendKeys("Ekosystem"+ Keys.ENTER);
     }
@@ -324,7 +324,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void selectIWSAFamilyFilter() {
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(7);
         familyFilterDropDownClick.click();
         familyFilterDropDown.sendKeys("IWSA"+ Keys.ENTER);
     }
@@ -379,7 +379,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void acceptDeletePopUp() {
-        BrowserUtils.waitForVisibility(acceptDeleteButton, 10);
+        BrowserUtils.waitForVisibility(acceptDeleteButton, 8);
         acceptDeleteButton.click();
     }
 
@@ -390,7 +390,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyDeletingObject(String code) {
-        BrowserUtils.waitForVisibility(deletingObject, 12);
+        BrowserUtils.waitForVisibility(deletingObject, 7);
         assertTrue(deletingObject.getText().equals(code));
     }
 
@@ -416,7 +416,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickEditButton() {
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(7);
         BrowserUtils.hoverOver(editButton);
         BrowserUtils.wait(8);
         editButton.click();
@@ -604,15 +604,15 @@ public class ContactHomePage extends BasePage {
             }
     }
 }     public void verifyPreviewTab(){
-        BrowserUtils.waitForVisibility(verifyPreviewTab,10);
+        BrowserUtils.waitForVisibility(verifyPreviewTab,7);
         assertTrue(verifyPreviewTab.isDisplayed());
     }
     public void verifyItemCommentTab(){
-        BrowserUtils.waitForVisibility(verifyItemCommentTab,12);
+        BrowserUtils.waitForVisibility(verifyItemCommentTab,8);
         assertTrue(verifyItemCommentTab.isDisplayed());
     }
     public void verifyMyAccountTab(){
-        BrowserUtils.waitForVisibility(verifyMyAccountTab,12);
+        BrowserUtils.waitForVisibility(verifyMyAccountTab,8);
         assertTrue(verifyMyAccountTab.isDisplayed());
     }
 public void exportButtonEditItem(){
@@ -620,7 +620,7 @@ public void exportButtonEditItem(){
         exportButton.click();
 }
     public void clickUpdateOn() {
-        BrowserUtils.waitForVisibility(updateOnTab, 12);
+        BrowserUtils.waitForVisibility(updateOnTab, 8);
         updateOnTab.click();
         BrowserUtils.wait(5);
     }
@@ -648,7 +648,7 @@ public void exportButtonEditItem(){
     }
 
     public void clickCreateOn() {
-        BrowserUtils.waitForVisibility(createOnTab, 12);
+        BrowserUtils.waitForVisibility(createOnTab, 8);
         createOnTab.click();
         BrowserUtils.wait(5);
 

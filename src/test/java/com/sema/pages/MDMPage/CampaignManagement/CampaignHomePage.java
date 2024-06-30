@@ -19,7 +19,7 @@ public class CampaignHomePage extends BasePage {
         assertTrue(verifyCampaignCodeFilter.getText().equalsIgnoreCase(code));
     }
     public void verifyDeletingObject(String code) {
-        BrowserUtils.waitForVisibility(deletingObject, 25);
+        BrowserUtils.waitForVisibility(deletingObject, 10);
         assertTrue(deletingObject.getText().equalsIgnoreCase(code));
     }
 }
