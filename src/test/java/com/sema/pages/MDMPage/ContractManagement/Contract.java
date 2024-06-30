@@ -89,9 +89,9 @@ public class Contract extends BasePage {
       }
     }
     public void selectContractFamily(){
-        BrowserUtils.waitForVisibility(familyDropDown,20);
+        BrowserUtils.waitForVisibility(familyDropDown,10);
         familyDropDown.click();
-        BrowserUtils.waitForVisibility(contractFamily,20);
+        BrowserUtils.waitForVisibility(contractFamily,10);
         contractFamily.click();
     }
     public void verifyEmptyCategories(String text, int timeout){

@@ -390,18 +390,18 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyDeletingObject(String code) {
-        BrowserUtils.waitForVisibility(deletingObject, 7);
+        BrowserUtils.waitForVisibility(deletingObject, 5);
         assertTrue(deletingObject.getText().equals(code));
     }
 
     public void verifyDeleteMessage() {
-        BrowserUtils.waitForVisibility(deleteErrorText, 10);
+        BrowserUtils.waitForVisibility(deleteErrorText, 7);
         assertTrue(deleteErrorText.isDisplayed());
 
     }
 
     public void clickShowEntrie() {
-        BrowserUtils.waitForVisibility(showEntrieButton, 10);
+        BrowserUtils.waitForVisibility(showEntrieButton, 7);
         showEntrieButton.click();
     }
 
