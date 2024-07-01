@@ -44,6 +44,7 @@ Feature: Membership_Account Rule Test Cases
 
 
   Scenario: When an account is edited to meet the rules, this account must be associated.
+    When The user edit an account to meet the rules 'TearDown'
     When The user go in to item 'itemIdForRuleTests'
     When The user click rule tab
     When The user delete all rules if any exists

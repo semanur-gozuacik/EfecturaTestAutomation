@@ -315,13 +315,16 @@ public class Membership_AccountRulePage extends BasePage {
         Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + idOfEditedItem);
         accountInfoSection.click();
         scrollBy(0,distributorBasisCodeInputBox.getLocation().getY());
-        distributorBasisCodeInputBox.clear();
-        distributorBasisCodeInputBox.sendKeys(attributeValueToChange);
-        scrollUpButton.click();
-        BrowserUtils.wait(3);
-        unsavedChangesButton.click();
-        BrowserUtils.wait(2);
-        saveButtonInChangeItemModal.click();
+        String currentDistributorBasisCodeInputBoxValue = getValueInInputBox(distributorBasisCodeInputBox);
+        if (!currentDistributorBasisCodeInputBoxValue.equals(attributeValueToChange)) {
+            distributorBasisCodeInputBox.clear();
+            distributorBasisCodeInputBox.sendKeys(attributeValueToChange);
+            scrollUpButton.click();
+            BrowserUtils.wait(3);
+            unsavedChangesButton.click();
+            BrowserUtils.wait(2);
+            saveButtonInChangeItemModal.click();
+        }
         BrowserUtils.wait(2);
         Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty("itemIdForRuleTests"));
     }
@@ -474,7 +477,7 @@ public class Membership_AccountRulePage extends BasePage {
         accountAssociateTab.click();
         associatedFilter.click();
         associatedFilterYesOption.click();
-        BrowserUtils.wait(4);
+        BrowserUtils.wait(5);
         List<String> idValuesAsString = getStringListFromWebElementList(idValues);
         for (String id : idValuesAsString) {
             Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + id);
