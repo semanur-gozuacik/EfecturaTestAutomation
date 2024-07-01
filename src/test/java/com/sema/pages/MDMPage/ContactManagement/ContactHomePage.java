@@ -190,20 +190,20 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickContactNewNode() {
-        BrowserUtils.waitForVisibility(clickContactNewNode, 20);
+        BrowserUtils.waitForVisibility(clickContactNewNode, 10);
         clickContactNewNode.click();
     }
 
     public void selectEkosystemFamily(String family) {
-        BrowserUtils.waitForVisibility(familyDropDown, 20);
+        BrowserUtils.waitForVisibility(familyDropDown, 10);
         familyDropDown.click();
         System.out.println();
         if (family.equalsIgnoreCase("Ekosystem")) {
-            BrowserUtils.waitForVisibility(selectEkosystemFamily, 20);
+            BrowserUtils.waitForVisibility(selectEkosystemFamily, 10);
             selectEkosystemFamily.click();
         }
         else {
-            BrowserUtils.waitForVisibility(selectIWSAFamily, 20);
+            BrowserUtils.waitForVisibility(selectIWSAFamily, 10);
             selectIWSAFamily.click();
         }
     }
@@ -225,7 +225,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyContactCategory() {
-        BrowserUtils.wait(9);
+        BrowserUtils.wait(5);
         for (int i = 0; i < verifyContactCategory.size(); i++) {
             assertTrue(verifyContactCategory.get(i).getText().equalsIgnoreCase("Contact"));
         }
@@ -310,7 +310,7 @@ public class ContactHomePage extends BasePage {
             assertTrue(verifyPartialCodeFilters.size()>=1);
         }
     public void selectEkosystemFamilyFilter() {
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(7);
         familyFilterDropDownClick.click();
         familyFilterDropDown.sendKeys("Ekosystem"+ Keys.ENTER);
     }
@@ -324,7 +324,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void selectIWSAFamilyFilter() {
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(7);
         familyFilterDropDownClick.click();
         familyFilterDropDown.sendKeys("IWSA"+ Keys.ENTER);
     }
@@ -379,29 +379,29 @@ public class ContactHomePage extends BasePage {
     }
 
     public void acceptDeletePopUp() {
-        BrowserUtils.waitForVisibility(acceptDeleteButton, 20);
+        BrowserUtils.waitForVisibility(acceptDeleteButton, 8);
         acceptDeleteButton.click();
     }
 
     public void declineDeletePopUp() {
-        BrowserUtils.wait(8);
+        BrowserUtils.wait(5);
         cancelDeletePopUp.click();
 
     }
 
     public void verifyDeletingObject(String code) {
-        BrowserUtils.waitForVisibility(deletingObject, 25);
+        BrowserUtils.waitForVisibility(deletingObject, 5);
         assertTrue(deletingObject.getText().equals(code));
     }
 
     public void verifyDeleteMessage() {
-        BrowserUtils.waitForVisibility(deleteErrorText, 20);
+        BrowserUtils.waitForVisibility(deleteErrorText, 7);
         assertTrue(deleteErrorText.isDisplayed());
 
     }
 
     public void clickShowEntrie() {
-        BrowserUtils.waitForVisibility(showEntrieButton, 20);
+        BrowserUtils.waitForVisibility(showEntrieButton, 7);
         showEntrieButton.click();
     }
 
@@ -416,7 +416,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickEditButton() {
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(7);
         BrowserUtils.hoverOver(editButton);
         BrowserUtils.wait(8);
         editButton.click();
@@ -503,12 +503,12 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clickExportButton() {
-        BrowserUtils.waitForVisibility(exportButton, 20);
+        BrowserUtils.waitForVisibility(exportButton, 10);
         exportButton.click();
     }
 
     public void verifyExportSuccessMessage(String message) {
-        BrowserUtils.waitForVisibility(exportSuccessMessage, 20);
+        BrowserUtils.waitForVisibility(exportSuccessMessage, 10);
         assertTrue(message.equals(exportSuccessMessage.getText()));
     }
 
@@ -604,23 +604,23 @@ public class ContactHomePage extends BasePage {
             }
     }
 }     public void verifyPreviewTab(){
-        BrowserUtils.waitForVisibility(verifyPreviewTab,25);
+        BrowserUtils.waitForVisibility(verifyPreviewTab,7);
         assertTrue(verifyPreviewTab.isDisplayed());
     }
     public void verifyItemCommentTab(){
-        BrowserUtils.waitForVisibility(verifyItemCommentTab,25);
+        BrowserUtils.waitForVisibility(verifyItemCommentTab,8);
         assertTrue(verifyItemCommentTab.isDisplayed());
     }
     public void verifyMyAccountTab(){
-        BrowserUtils.waitForVisibility(verifyMyAccountTab,25);
+        BrowserUtils.waitForVisibility(verifyMyAccountTab,8);
         assertTrue(verifyMyAccountTab.isDisplayed());
     }
 public void exportButtonEditItem(){
-        BrowserUtils.waitForVisibility(exportButton,20);
+        BrowserUtils.waitForVisibility(exportButton,10);
         exportButton.click();
 }
     public void clickUpdateOn() {
-        BrowserUtils.waitForVisibility(updateOnTab, 25);
+        BrowserUtils.waitForVisibility(updateOnTab, 8);
         updateOnTab.click();
         BrowserUtils.wait(5);
     }
@@ -648,7 +648,7 @@ public void exportButtonEditItem(){
     }
 
     public void clickCreateOn() {
-        BrowserUtils.waitForVisibility(createOnTab, 25);
+        BrowserUtils.waitForVisibility(createOnTab, 8);
         createOnTab.click();
         BrowserUtils.wait(5);
 
@@ -678,7 +678,7 @@ public void exportButtonEditItem(){
     }
 
     public void clickIdTabSorting() {
-        BrowserUtils.waitForVisibility(idTab, 30);
+        BrowserUtils.waitForVisibility(idTab, 16);
         idTab.click();
         BrowserUtils.wait(7);
     }
@@ -692,7 +692,7 @@ public void exportButtonEditItem(){
     }
 
     public void clickBirthdateTabSorting() {
-        BrowserUtils.waitForVisibility(birthdateTab, 25);
+        BrowserUtils.waitForVisibility(birthdateTab, 12);
         birthdateTab.click();
         BrowserUtils.wait(5);
     }

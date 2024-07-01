@@ -98,7 +98,7 @@ public class UserHomePage extends BasePage {
         }else {selectHOSPITALITYFamilyFilter();
         }
     }  public void selectStatus(String status){
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(7);
         statusFilter.click();
         if (status.startsWith("Enabled")){
             selectEnabled();
@@ -111,7 +111,7 @@ public class UserHomePage extends BasePage {
         enabledStatusFilter.click();
     }
     public void selectDisabled(){
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(5);
         disabledStatusFilter.click();
     }
 public void clickResetButton(){

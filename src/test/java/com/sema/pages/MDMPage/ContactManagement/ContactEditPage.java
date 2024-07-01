@@ -56,7 +56,7 @@ public class ContactEditPage extends BasePage {
         uploadButton.sendKeys("semafoto"+ Keys.ENTER);
     }
     public void uploadCommentArea(String comment) {
-        BrowserUtils.waitForVisibility(uploadButton, 20);
+        BrowserUtils.waitForVisibility(uploadButton, 10);
         uploadCommentArea.sendKeys(comment);
     }
 
@@ -69,12 +69,12 @@ public class ContactEditPage extends BasePage {
     }
 
     public void verifyUnUpload() {
-        BrowserUtils.waitForVisibility(verifyUnUploadObject, 20);
+        BrowserUtils.waitForVisibility(verifyUnUploadObject, 10);
         Assert.assertTrue(verifyUnUploadObject.isDisplayed());
     }
 
     public void verifyUpload() {
-        BrowserUtils.waitForVisibility(verifyUploadObject, 20);
+        BrowserUtils.waitForVisibility(verifyUploadObject, 10);
         Assert.assertTrue(verifyUploadObject.isDisplayed());
     }
     public void selectItemStatus(String status){
@@ -85,23 +85,23 @@ public class ContactEditPage extends BasePage {
         select.selectByVisibleText(status);
     }
     public void clickUnSavedButton(){
-        BrowserUtils.waitForVisibility(unsavedChanges,30);
+        BrowserUtils.waitForVisibility(unsavedChanges,15);
         unsavedChanges.click();
     }
     public void clickCancelChangeButton(){
-        BrowserUtils.waitForVisibility(cancelChangeButton,20);
+        BrowserUtils.waitForVisibility(cancelChangeButton,10);
         cancelChangeButton.click();
     }
    public void verifyCancelChange(){
-        BrowserUtils.waitForVisibility(unsavedChanges,25);
+        BrowserUtils.waitForVisibility(unsavedChanges,12);
         Assert.assertTrue(unsavedChanges.isDisplayed());
    }
     public void setChangeCommentArea(String comment) {
-        BrowserUtils.waitForVisibility(commentChange, 20);
+        BrowserUtils.waitForVisibility(commentChange, 10);
         commentChange.sendKeys(comment);
     }
     public void verifyChangeSuccesMessage(){
-        BrowserUtils.waitForVisibility(changeSucessMessage,20);
+        BrowserUtils.waitForVisibility(changeSucessMessage,10);
         Assert.assertTrue(changeSucessMessage.isDisplayed());
     }
     public void clickSaveChangeButton(){

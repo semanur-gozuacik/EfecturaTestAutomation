@@ -86,7 +86,7 @@ public class Asset extends BasePage {
     }
 
     public void verifyInfoItem() {
-        BrowserUtils.waitForVisibility(infoItem, 20);
+        BrowserUtils.waitForVisibility(infoItem, 15);
         Assert.assertTrue(infoItem.isDisplayed());
     }
 
@@ -96,12 +96,12 @@ public class Asset extends BasePage {
     }
 
     public void clickNewNode() {
-        BrowserUtils.waitForVisibility(newNodeClick, 20);
+        BrowserUtils.waitForVisibility(newNodeClick, 15);
         newNodeClick.click();
     }
 
     public void selectCoolerFamily() {
-        BrowserUtils.waitForVisibility(familyDropDown, 20);
+        BrowserUtils.waitForVisibility(familyDropDown, 15);
         familyDropDown.click();
         BrowserUtils.waitForVisibility(coolerFamily, 20);
         coolerFamily.click();
@@ -148,21 +148,21 @@ public class Asset extends BasePage {
     }
 
     public void selectAssetFamily(String family) {
-        BrowserUtils.waitForVisibility(familyDropDown, 20);
+        BrowserUtils.waitForVisibility(familyDropDown, 10);
         familyDropDown.click();
         if (family.equalsIgnoreCase("Cooler")) {
-            BrowserUtils.waitForVisibility(selectCoolerFamily, 20);
+            BrowserUtils.waitForVisibility(selectCoolerFamily, 10);
             selectCoolerFamily.click();
         }
     }
 
     public void clickNewList() {
-        BrowserUtils.waitForVisibility(createListButton, 20);
+        BrowserUtils.waitForVisibility(createListButton, 15);
         createListButton.click();
     }
 
     public void verifyNewListPopup() {
-        BrowserUtils.waitForVisibility(verifyNewListPopup, 20);
+        BrowserUtils.waitForVisibility(verifyNewListPopup, 10);
         Assert.assertTrue(verifyNewListPopup.isDisplayed());
     }
 
@@ -220,12 +220,12 @@ public class Asset extends BasePage {
     }
 
     public void verifyCreateListErrorMessageIsDisplayed(String message) {
-        BrowserUtils.waitForVisibility(createListErrorMessage, 30);
+        BrowserUtils.waitForVisibility(createListErrorMessage, 15);
         Assert.assertTrue(createListErrorMessage.isDisplayed());
     }
 
     public void verifyNoResultsFound() {
-        BrowserUtils.waitForVisibility(verifyNoResultsFound, 20);
+        BrowserUtils.waitForVisibility(verifyNoResultsFound, 10);
         Assert.assertTrue(verifyNoResultsFound.isDisplayed());
     }
 
@@ -241,7 +241,7 @@ public class Asset extends BasePage {
     }
 
     public void clickDeleteButtonPopUp() {
-        BrowserUtils.waitForVisibility(deleteListDeletePopUp, 20);
+        BrowserUtils.waitForVisibility(deleteListDeletePopUp, 15);
         deleteListDeletePopUp.click();
     }
     public void clickDeleteButtonOtomasyon() {
@@ -249,7 +249,7 @@ public class Asset extends BasePage {
        // BrowserUtils.waitForVisibility(deletedListItemAssetOtomasyonVerify, 30);
     }
     public void clickCancelButtonPopUpOtomasyon() {
-        BrowserUtils.waitForVisibility(deleteListButtonAssetOtomasyon, 20);
+        BrowserUtils.waitForVisibility(deleteListButtonAssetOtomasyon, 15);
         deleteListButtonAssetOtomasyon.click();
     }
 

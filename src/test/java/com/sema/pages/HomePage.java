@@ -114,12 +114,12 @@ public class HomePage extends BasePage {
     }
 
     public void mouseoverOnTheAssetManagement() {
-        BrowserUtils.waitForVisibility(assetManagement, 10);
+        BrowserUtils.waitForVisibility(assetManagement, 5);
         BrowserUtils.hoverOver(assetManagement);
     }
 
     public void mouseoverOnTheAssetManagementElement() {
-        BrowserUtils.waitForVisibility(assetManagement, 10);
+        BrowserUtils.waitForVisibility(assetManagement, 5);
         BrowserUtils.hoverOver(assetManagement);
     }
 
@@ -128,12 +128,12 @@ public class HomePage extends BasePage {
     }
 
     public void mouseoverOnTheGiftElement() {
-        BrowserUtils.waitForVisibility(gift, 10);
+        BrowserUtils.waitForVisibility(gift, 5);
         BrowserUtils.hoverOver(gift);
     }
 
     public void mouseoverOnTheGiftManagementElement() {
-        BrowserUtils.waitForVisibility(giftManagement, 10);
+        BrowserUtils.waitForVisibility(giftManagement, 5);
         BrowserUtils.hoverOver(giftManagement);
     }
 
@@ -142,12 +142,12 @@ public class HomePage extends BasePage {
     }
 
     public void mouseoverOnTheContactManagementElement() {
-        BrowserUtils.waitForVisibility(contactManagement, 10);
+        BrowserUtils.waitForVisibility(contactManagement, 5);
         BrowserUtils.hoverOver(contactManagement);
     }
 
     public void mouseoverOnTheContactElement() {
-        BrowserUtils.waitForVisibility(contact, 10);
+        BrowserUtils.waitForVisibility(contact, 5);
         BrowserUtils.hoverOver(contact);
     }
 
@@ -157,7 +157,7 @@ public class HomePage extends BasePage {
     }
 
     public void clicksOnTheKPIElement() {
-        BrowserUtils.waitForVisibility(KPI, 20);
+        BrowserUtils.waitForVisibility(KPI, 10);
         KPI.click();
     }
 
@@ -167,15 +167,15 @@ public class HomePage extends BasePage {
     }
 
     public void mouseoverOnTheKPIElement() {
-        BrowserUtils.waitForVisibility(KPI, 10);
+        BrowserUtils.waitForVisibility(KPI, 7);
         BrowserUtils.hoverOver(KPI);  }
         public void mouseoverOnTheUserManagementElement() {
-            BrowserUtils.waitForVisibility(userManagement, 10);
+            BrowserUtils.waitForVisibility(userManagement, 5);
             BrowserUtils.hoverOver(userManagement);
         }
 
         public void mouseoverOnTheUserElement() {
-            BrowserUtils.waitForVisibility(user, 10);
+            BrowserUtils.waitForVisibility(user, 5);
             BrowserUtils.hoverOver(user);
         }
 
@@ -196,23 +196,23 @@ public class HomePage extends BasePage {
     }
 
     public void mouseoverOnTheSystemElement() {
-        BrowserUtils.waitForVisibility(systemElement, 20);
+        BrowserUtils.waitForVisibility(systemElement, 10);
         BrowserUtils.hoverOver(systemElement);
     }
 
     public void mouseoverOnTheBlackListElement() {
-        BrowserUtils.waitForVisibility(blackListElement, 15);
+        BrowserUtils.waitForVisibility(blackListElement, 10);
         BrowserUtils.hoverOver(blackListElement);
     }
 
     public void clickBlackListElement() {
-        BrowserUtils.waitForVisibility(blackListElement, 20);
+        BrowserUtils.waitForVisibility(blackListElement, 10);
         blackListElement.click();
 
     }
 
     public void mouseoverOnTheEventManagementElement() {
-        BrowserUtils.waitForVisibility(eventManagement, 10);
+        BrowserUtils.waitForVisibility(eventManagement, 8);
         BrowserUtils.hoverOver(eventManagement);
     }
 
@@ -222,7 +222,7 @@ public class HomePage extends BasePage {
     }
 
     public void clicksOnTheEventElement() {
-        BrowserUtils.waitForVisibility(event, 20);
+        BrowserUtils.waitForVisibility(event, 10);
         event.click();
     }
 
@@ -232,7 +232,7 @@ public class HomePage extends BasePage {
     }
 
     public void mouseoverOnTheCampaignElement() {
-        BrowserUtils.waitForVisibility(campaign, 10);
+        BrowserUtils.waitForVisibility(campaign, 5);
         BrowserUtils.hoverOver(campaign);
     }
 
@@ -241,7 +241,7 @@ public class HomePage extends BasePage {
     }
 
     public void mouseoverOnTheFamiliesElement() {
-        BrowserUtils.waitForVisibility(famiiliesElement, 20);
+        BrowserUtils.waitForVisibility(famiiliesElement, 10);
         BrowserUtils.hoverOver(famiiliesElement);
     }
 
@@ -250,7 +250,7 @@ public class HomePage extends BasePage {
     }
 
     public void mouseoverOnTheSettingsElement() {
-        BrowserUtils.waitForVisibility(settingsElement, 20);
+        BrowserUtils.waitForVisibility(settingsElement, 10);
         BrowserUtils.hoverOver(settingsElement);
     }
 
@@ -264,12 +264,12 @@ public class HomePage extends BasePage {
     }
 
     public void mouseoverOnTheUsersElement() {
-        BrowserUtils.waitForVisibility(usersElement, 20);
+        BrowserUtils.waitForVisibility(usersElement, 10);
         BrowserUtils.hoverOver(usersElement);
     }
 
     public void mouseoverOnTheUsersManagementElement() {
-        BrowserUtils.waitForVisibility(usersManagementElement, 20);
+        BrowserUtils.waitForVisibility(usersManagementElement, 10);
         BrowserUtils.hoverOver(usersManagementElement);
     }
 

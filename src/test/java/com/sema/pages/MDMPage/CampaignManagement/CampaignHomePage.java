@@ -15,11 +15,11 @@ public class CampaignHomePage extends BasePage {
     public CampaignHomePage() {
     }
     public void verifyCampaignCodeFilter(String code) {
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(5);
         assertTrue(verifyCampaignCodeFilter.getText().equalsIgnoreCase(code));
     }
     public void verifyDeletingObject(String code) {
-        BrowserUtils.waitForVisibility(deletingObject, 25);
+        BrowserUtils.waitForVisibility(deletingObject, 5);
         assertTrue(deletingObject.getText().equalsIgnoreCase(code));
     }
 }
