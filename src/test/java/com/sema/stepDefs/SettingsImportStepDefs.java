@@ -123,8 +123,8 @@ public class SettingsImportStepDefs extends BaseStep {
         pages.importPage().updateExcelWithTaskId(taskId);
     }
 
-    @When("The user import the import")
-    public void theUserImportTheImport() {
+    @When("The user import the uploaded file")
+    public void theUserImportTheUploadedFile() {
         pages.importPage().importTheImport();
     }
 
@@ -151,5 +151,40 @@ public class SettingsImportStepDefs extends BaseStep {
     @Then("The user tear down changes in resources")
     public void theUserTearDownChangesInResources() {
         pages.importPage().tearDownChangesInResources();
+    }
+
+    @When("The user select {string} for importType")
+    public void theUserSelectForImportType(String importType) {
+        pages.importPage().selectImportType(importType);
+    }
+
+    @When("The user upload Contact file")
+    public void theUserUploadContactFile() {
+        pages.importPage().uploadContactFile();
+    }
+
+    @Then("The user verifies that the {string} is created")
+    public void theUserVerifiesThatTheContactIsCreated(String importType) throws IOException {
+        pages.importPage().verifyContactIsCreated(importType);
+    }
+
+    @Then("The user verifies that the contact is associated with stated account")
+    public void theUserVerifiesThatTheContactIsAssociatedWithStatedAccount() throws IOException {
+        pages.importPage().verifyThatContactIsAssociatedWithStatedAccount();
+    }
+
+    @Then("The user tear down all changes in Contact Case")
+    public void theUserTearDownAllChangesInContactCase() {
+        pages.importPage().tearDownAllChangesInContactCase();
+    }
+
+    @When("The user upload Account file")
+    public void theUserUploadAccountFile() {
+        pages.importPage().uploadAccountFile();
+    }
+
+    @Then("The user tear down all changes in Account Case")
+    public void theUserTearDownAllChangesInAccountCase() {
+        pages.importPage().tearDownAllChangesInAccountCase();
     }
 }

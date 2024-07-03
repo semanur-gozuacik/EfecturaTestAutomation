@@ -80,13 +80,30 @@ Feature: Import Management Test Cases
     When The user update excel with TaskId "54932"
     When The user select AccountCallback for importType
     When The user upload AccountCallback file
-    When The user import the import
+    When The user import the uploaded file
     Then The user verifies that one earning is added to point history
 
   Scenario: ResourceTranslations
     When The user select ResourceTranslations for importType
     When The user upload ResourceTranslations file
-    When The user import the import
+    When The user import the uploaded file
     Then The user verifies that the resource added to Resources
     Then The user tear down changes in resources
+
+
+  Scenario: Contact Case
+    When The user select "Contact" for importType
+    When The user upload Contact file
+    When The user import the uploaded file
+    Then The user verifies that the "contact" is created
+    Then The user verifies that the contact is associated with stated account
+    Then The user tear down all changes in Contact Case
+
+
+  Scenario: Account Case
+    When The user select "Account" for importType
+    When The user upload Account file
+    When The user import the uploaded file
+    Then The user verifies that the "account" is created
+    Then The user tear down all changes in Account Case
 

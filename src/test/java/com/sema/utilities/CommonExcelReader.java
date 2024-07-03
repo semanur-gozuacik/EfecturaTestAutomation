@@ -60,7 +60,6 @@ public class CommonExcelReader {
         workbook.close();
     }
 
-    // Yeni method: Değer alma
     public static String getCellValue(String filePath, String colName, int rowIndex) throws IOException {
         FileInputStream fileInputStream = new FileInputStream(new File(filePath));
         Workbook workbook = new XSSFWorkbook(fileInputStream);
@@ -103,8 +102,34 @@ public class CommonExcelReader {
             throw new IllegalArgumentException("Hücre bulunamadı: " + colName + ", " + rowIndex);
         }
 
-        // Hücre değerini oku
-        String cellValue = cell.toString();
+        // Hücre değerini oku ve doğru formatta dönüştür
+        String cellValue;
+        switch (cell.getCellType()) {
+            case STRING:
+                cellValue = cell.getStringCellValue();
+                break;
+            case NUMERIC:
+                if (DateUtil.isCellDateFormatted(cell)) {
+                    cellValue = cell.getDateCellValue().toString();
+                } else {
+                    // Eğer hücredeki sayı çok büyükse, uzun (long) olarak almayı deneyin
+                    double numericValue = cell.getNumericCellValue();
+                    if (numericValue == (long) numericValue) {
+                        cellValue = String.valueOf((long) numericValue);
+                    } else {
+                        cellValue = String.valueOf(numericValue);
+                    }
+                }
+                break;
+            case BOOLEAN:
+                cellValue = String.valueOf(cell.getBooleanCellValue());
+                break;
+            case FORMULA:
+                cellValue = cell.getCellFormula();
+                break;
+            default:
+                cellValue = "";
+        }
 
         fileInputStream.close();
         workbook.close();
