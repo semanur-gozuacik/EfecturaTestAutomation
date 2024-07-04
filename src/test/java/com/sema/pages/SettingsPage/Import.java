@@ -331,6 +331,7 @@ public class Import extends BasePage {
     public void verifyTheResourceIsAddedToResources() throws IOException {
         Driver.getDriver().get("https://sandbox-ui.efectura.com/Resources");
         String resourceCode = CommonExcelReader.getCellValue(resourceTranslationsExcel,"Code",1);
+        BrowserUtils.wait(2);
         resourceCodeFilterInputBox.sendKeys(resourceCode);
         resourceSearchButton.click();
         BrowserUtils.wait(3);
