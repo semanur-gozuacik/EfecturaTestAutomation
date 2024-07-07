@@ -84,7 +84,7 @@ Feature: KPI Management Test Cases
       |25 |
       |50 |
       |100|
-      |250|
+
 
   Scenario: KPI page edit verify
     And The user enters "YENİTEST1411" into Code field

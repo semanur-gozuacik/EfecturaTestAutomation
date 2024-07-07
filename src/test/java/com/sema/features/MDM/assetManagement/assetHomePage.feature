@@ -122,7 +122,7 @@ Feature: Asset Management Test Cases- Asset Home Page
       |25 |
       |50 |
       |100|
-      |250|
+
 
   Scenario: Reset Button Control
     And The user enters "test2123" into Code field

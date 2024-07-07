@@ -26,6 +26,7 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
       |10 |
       |25 |
       |50 |
+      |100|
 
   Scenario: Sales Organization Reset Button Control
     And The user enters "test2123" into Code field

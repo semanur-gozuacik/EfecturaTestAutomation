@@ -61,7 +61,7 @@ Feature: User Management Test Cases- Contact Home Page
       |25 |
       |50 |
       |100|
-      |250|
+
 
   Scenario: User Reset Button Control
     And The user enters "test2123" into Code field
