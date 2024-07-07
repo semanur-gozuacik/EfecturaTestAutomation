@@ -91,14 +91,14 @@ public class Import extends BasePage {
     @FindBy(xpath = "//input[contains(@placeholder,'Task Name')]")
     private WebElement taskNameFilterInputBox;
 
+    @FindBy(xpath = "//a[contains(text(),'Code')]")
+    private WebElement resourceCodeFilter;
+
     @FindBy(xpath = "//input[@placeholder='Code']")
     private WebElement resourceCodeFilterInputBox;
 
     @FindBy(xpath = "//tr/td[1]")
     private WebElement resourceCodeValue;
-
-    @FindBy(xpath = "//span[contains(text(),'Search')]")
-    private WebElement resourceSearchButton;
 
     @FindBy(xpath = "//tr/td/a")
     private WebElement resourceDeleteButton;
@@ -116,7 +116,7 @@ public class Import extends BasePage {
     private WebElement itemOverviewCodeFilterInputBox;
 
     @FindBy(xpath = "//tr/th")
-    private List<WebElement> contactOverviewTableHeaders;
+    private List<WebElement> overviewTableHeaders;
 
     @FindBy(xpath = "//tr[1]/td")
     private List<WebElement> firstRowOfContactOverviewTableValues;
@@ -130,17 +130,20 @@ public class Import extends BasePage {
     @FindBy(xpath = "//a[contains(text(),'ACCOUNT_CONTACT')]")
     private WebElement accountContactTabInContactEditItem;
 
-    @FindBy(xpath = "//tr[@role='row']/th")
-    private List<WebElement> contactEditItemTableHeaders;
+    @FindBy(xpath = "//a[contains(text(),'Account MRP')]")
+    private WebElement accountMrpTabInAccountEditItem;
 
-    @FindBy(xpath = "//tr[@role='row'][1]/td")
-    private List<WebElement> firstRowOfContactEditItemTableValues;
+    @FindBy(xpath = "//tr[@role='row']/th")
+    private List<WebElement> editItemAssociationTabsTableHeaders;
+
+    @FindBy(xpath = "//*[@id='DataTables_Table_0']/tbody/tr[1]/td")
+    private List<WebElement> firstRowOfEditItemAssociatedTabTableValues;
 
     @FindBy(xpath = "//span[contains(text(),'Search')]")
     private WebElement searchButton;
 
     @FindBy(xpath = "(//input[@id='userselect'])[1]")
-    private WebElement accountContactTabFirstRowCheckBox;
+    private WebElement associationTabsFirstRowCheckBox;
 
     @FindBy(xpath = "//span[contains(text(),'Unsaved Changes')]")
     private WebElement unsavedChangesButton;
@@ -156,6 +159,9 @@ public class Import extends BasePage {
 
     @FindBy(xpath = "//button[@id='deleteItemPopup']")
     private WebElement deleteButtonInOverviewDeleteConfirmationModal;
+
+    @FindBy(xpath = "//div[contains(@class,'associationsLinksNav')]/ul/li/a")
+    private List<WebElement> editItemTabs;
 
 
 
@@ -176,26 +182,26 @@ public class Import extends BasePage {
 
     public String getValueOfTableInContactOverview(String headerName) {
         int i = 0;
-        for (i = 0; i < contactOverviewTableHeaders.size(); i++) {
-            if (contactOverviewTableHeaders.get(i).getText().equals(headerName)) {
+        for (i = 0; i < overviewTableHeaders.size(); i++) {
+            if (overviewTableHeaders.get(i).getText().equals(headerName)) {
                 break;
             }
         }
         return firstRowOfContactOverviewTableValues.get(i).getText();
     }
 
-    public String getValueOfTableInContactEditItem(String headerName) {
+    public String getValueOfTableInEditItem(String headerName) {
         int j = 0;
-        for (int i = 1; i < contactEditItemTableHeaders.size(); i++) {
+        for (int i = 1; i < editItemAssociationTabsTableHeaders.size(); i++) {
             if (i == 2) {
                 continue;
             }
-            if (contactEditItemTableHeaders.get(i).getText().equals(headerName)) {
+            if (editItemAssociationTabsTableHeaders.get(i).getText().equals(headerName)) {
                 j = i;
                 break;
             }
         }
-        return firstRowOfContactEditItemTableValues.get(j).getText();
+        return firstRowOfEditItemAssociatedTabTableValues.get(j).getText();
     }
 
 
@@ -308,9 +314,11 @@ public class Import extends BasePage {
     String resourceTranslationsExcel = Paths.get(projectDir, resourceTranslationsRelativePath).toString();
     public void selectAccountCallbackForImportType() {
         selectImportTypeElement.click();
-        BrowserUtils.wait(1);
-        if (!accountCallbackOption.isDisplayed()) {
-            selectImportTypeElement.click();
+        for (int i = 0; i < 3; i++) {
+            BrowserUtils.wait(1);
+            if (!accountCallbackOption.isDisplayed()) {
+                selectImportTypeElement.click();
+            }
         }
         accountCallbackOption.click();
     }
@@ -329,11 +337,11 @@ public class Import extends BasePage {
     }
 
     public void verifyTheResourceIsAddedToResources() throws IOException {
-        Driver.getDriver().get("https://sandbox-ui.efectura.com/Resources");
+        Driver.getDriver().get(ConfigurationReader.getProperty("sbLink") + "Resources");
         String resourceCode = CommonExcelReader.getCellValue(resourceTranslationsExcel,"Code",1);
         BrowserUtils.wait(2);
+        resourceCodeFilter.click();
         resourceCodeFilterInputBox.sendKeys(resourceCode);
-        resourceSearchButton.click();
         BrowserUtils.wait(3);
         Assert.assertEquals(resourceCode,resourceCodeValue.getText());
     }
@@ -382,15 +390,15 @@ public class Import extends BasePage {
         itemOverviewTableValueEditButton.click();
         accountContactTabInContactEditItem.click();
         String expectedAccountNumber = CommonExcelReader.getCellValue(contactExcel,"Account Number",1);
-        String actualAssociatedValue = getValueOfTableInContactEditItem("ASSOCIATED");
-        Boolean isAccount = expectedAccountNumber.equals(getValueOfTableInContactEditItem("CODE"));
+        String actualAssociatedValue = getValueOfTableInEditItem("ASSOCIATED");
+        Boolean isAccount = expectedAccountNumber.equals(getValueOfTableInEditItem("CODE"));
         Boolean isAccountAssociated = actualAssociatedValue.equals("Yes");
 
         Assert.assertTrue(isAccount && isAccountAssociated);
     }
 
     public void tearDownAllChangesInContactCase() {
-        accountContactTabFirstRowCheckBox.click();
+        associationTabsFirstRowCheckBox.click();
         unsavedChangesButton.click();
         saveButtonInChangeItemModal.click();
         editItemDeleteButton.click();
@@ -408,5 +416,43 @@ public class Import extends BasePage {
     public void tearDownAllChangesInAccountCase() {
         itemOverviewTableValueDeleteButton.click();
         deleteButtonInOverviewDeleteConfirmationModal.click();
+    }
+
+
+    String associationRelativePath = "src/test/resources/testData/Association.xlsx";
+    String associationExcel = Paths.get(projectDir, associationRelativePath).toString();
+    public void uploadAssociationFile() {
+        addCsvInputElement.sendKeys(associationExcel);
+        BrowserUtils.wait(2);
+        saveChangesButtonInAreYouSureModal.click();
+    }
+
+    public void verifyTheAccountIsAssociatedWithTheMrp(String item1, String item2) throws IOException {
+        Driver.getDriver().get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + item1);
+        String SKUItem1 = CommonExcelReader.getCellValue(associationExcel,"SKUItem1",1);
+        String SKUItem2 = CommonExcelReader.getCellValue(associationExcel,"SKUItem2",1);
+        itemOverviewCodeFilter.click();
+        itemOverviewCodeFilterInputBox.sendKeys(SKUItem1);
+        searchButton.click();
+        BrowserUtils.wait(5);
+        overviewTableHeaders.stream().filter(e -> e.getText().contains("CODE")).findFirst().ifPresent(WebElement::click);
+        BrowserUtils.wait(5);
+        itemOverviewTableValueEditButton.click();
+        editItemTabs.stream().filter(e -> e.getText().contains(item2)).findFirst().ifPresent(WebElement::click);
+        String actualAssociatedValue = getValueOfTableInEditItem("ASSOCIATED");
+
+        Boolean isAccount = SKUItem2.equals(getValueOfTableInEditItem("CODE"));
+        Boolean isAccountAssociated = actualAssociatedValue.equals("Yes");
+
+        Assert.assertTrue(isAccount && isAccountAssociated);
+
+    }
+
+    public void tearDownAllChangesInAssociationCase() {
+        associationTabsFirstRowCheckBox.click();
+        unsavedChangesButton.click();
+        saveButtonInChangeItemModal.click();
+        editItemDeleteButton.click();
+        deleteButtonInAreYouSureModal.click();
     }
 }

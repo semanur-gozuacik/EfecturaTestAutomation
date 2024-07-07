@@ -60,7 +60,8 @@ Feature: Import Management Test Cases
     When The user update excel with point "300" and endDate "11-11-2024"
     When The user update excel with TransactionType "earning"
     When The user update excel with TaskId "53550"
-    When The user select AccountCallback for importType
+#    When The user select AccountCallback for importType
+    When The user select "AccountCallback" for importType
     When The user upload AccountCallback file
     When The user approve the import
     Then The user verifies that one earning is added to point history
@@ -69,7 +70,8 @@ Feature: Import Management Test Cases
     When The user update excel with point "-120" and endDate ""
     When The user update excel with TransactionType "earning"
     When The user update excel with TaskId "53550"
-    When The user select AccountCallback for importType
+#    When The user select AccountCallback for importType
+    When The user select "AccountCallback" for importType
     When The user upload AccountCallback file
     When The user approve the import
     Then The user verifies that one earning is added to point history
@@ -78,13 +80,15 @@ Feature: Import Management Test Cases
     When The user update excel with point "-120" and endDate "11-11-2024"
     When The user update excel with TransactionType "Redemption"
     When The user update excel with TaskId "54932"
-    When The user select AccountCallback for importType
+#    When The user select AccountCallback for importType
+    When The user select "AccountCallback" for importType
     When The user upload AccountCallback file
     When The user import the uploaded file
     Then The user verifies that one earning is added to point history
 
   Scenario: ResourceTranslations
-    When The user select ResourceTranslations for importType
+#    When The user select ResourceTranslations for importType
+    When The user select "ResourceTranslations" for importType
     When The user upload ResourceTranslations file
     When The user import the uploaded file
     Then The user verifies that the resource added to Resources
@@ -106,4 +110,13 @@ Feature: Import Management Test Cases
     When The user import the uploaded file
     Then The user verifies that the "account" is created
     Then The user tear down all changes in Account Case
+
+
+  Scenario: Association - Account_MRP
+    When The user select "Association" for importType
+    When The user upload Association file
+    When The user import the uploaded file
+    Then The user verifies that the "Account" is associated with the "MRP"
+    Then The user tear down all changes in Association Case
+
 

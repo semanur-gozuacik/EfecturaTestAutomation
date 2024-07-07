@@ -187,4 +187,19 @@ public class SettingsImportStepDefs extends BaseStep {
     public void theUserTearDownAllChangesInAccountCase() {
         pages.importPage().tearDownAllChangesInAccountCase();
     }
+
+    @When("The user upload Association file")
+    public void theUserUploadAssociationFile() {
+        pages.importPage().uploadAssociationFile();
+    }
+
+    @Then("The user verifies that the {string} is associated with the {string}")
+    public void theUserVerifiesThatAItemIsAssociatedWithAnotherItem(String item1, String item2) throws IOException {
+        pages.importPage().verifyTheAccountIsAssociatedWithTheMrp(item1,item2);
+    }
+
+    @Then("The user tear down all changes in Association Case")
+    public void theUserTearDownAllChangesInAssociationCase() {
+        pages.importPage().tearDownAllChangesInAssociationCase();
+    }
 }
