@@ -325,8 +325,7 @@ public class Membership_AccountRulePage extends BasePage {
             BrowserUtils.wait(2);
             saveButtonInChangeItemModal.click();
         }
-        BrowserUtils.wait(2);
-        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty("itemIdForRuleTests"));
+        BrowserUtils.wait(4);
     }
 
     public static void scrollBy(int xOffset, int yOffset) {
@@ -342,6 +341,7 @@ public class Membership_AccountRulePage extends BasePage {
         BrowserUtils.waitForVisibility(associatedFilter,30);
         associatedFilter.click();
         associatedFilterYesOption.click();
+        BrowserUtils.wait(3);
         Assert.assertEquals(idOfEditedItem, idValues.get(0).getText());
     }
 
@@ -443,13 +443,13 @@ public class Membership_AccountRulePage extends BasePage {
         accountAssociateTab.click();
         associatedFilter.click();
         associatedFilterYesOption.click();
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
         List<String> idValuesAsString = getStringListFromWebElementList(idValues);
         for (String id : idValuesAsString) {
             Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + id);
             BrowserUtils.wait(3);
             accountInfoSection.click();
-            BrowserUtils.wait(1);
+            BrowserUtils.wait(2);
             String actualContactEmail = getValueInInputBox(contactEmailInputBox);
             String actualContactMobile = getValueInInputBox(contactMobileInputBox);
             Assert.assertTrue(contactEmailValue.equals(actualContactEmail) || contactMobileValue.equals(actualContactMobile));
@@ -476,7 +476,7 @@ public class Membership_AccountRulePage extends BasePage {
         accountAssociateTab.click();
         associatedFilter.click();
         associatedFilterYesOption.click();
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(8);
         List<String> idValuesAsString = getStringListFromWebElementList(idValues);
         for (String id : idValuesAsString) {
             Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + id);

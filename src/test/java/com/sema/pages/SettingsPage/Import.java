@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Random;
 
 import static com.sema.pages.SettingsPage.TagsPage.isRowCountCorrectAccordingToTableLength;
 import static com.sema.pages.SettingsPage.TagsPage.selectLengthFromTableLength;
@@ -90,20 +91,118 @@ public class Import extends BasePage {
     @FindBy(xpath = "//input[contains(@placeholder,'Task Name')]")
     private WebElement taskNameFilterInputBox;
 
+    @FindBy(xpath = "//a[contains(text(),'Code')]")
+    private WebElement resourceCodeFilter;
+
     @FindBy(xpath = "//input[@placeholder='Code']")
     private WebElement resourceCodeFilterInputBox;
 
     @FindBy(xpath = "//tr/td[1]")
     private WebElement resourceCodeValue;
 
-    @FindBy(xpath = "//span[contains(text(),'Search')]")
-    private WebElement resourceSearchButton;
-
     @FindBy(xpath = "//tr/td/a")
     private WebElement resourceDeleteButton;
 
     @FindBy(xpath = "//button[contains(@id,'delete-confirmedResources')]")
     private WebElement deleteResourceButtonInDeleteResourceModal;
+
+    @FindBy(xpath = "//ul[@id='select2-ItemType-results']/li")
+    private List<WebElement> filteredImportTypeOptions;
+
+    @FindBy(xpath = "//a[contains(text(),'Code')]")
+    private WebElement itemOverviewCodeFilter;
+
+    @FindBy(xpath = "//input[@id='filter-SKU']")
+    private WebElement itemOverviewCodeFilterInputBox;
+
+    @FindBy(xpath = "//tr/th")
+    private List<WebElement> overviewTableHeaders;
+
+    @FindBy(xpath = "//tr[1]/td")
+    private List<WebElement> firstRowOfContactOverviewTableValues;
+    
+    @FindBy(xpath = "//a[@title='Edit']")
+    private WebElement itemOverviewTableValueEditButton;
+
+    @FindBy(xpath = "//a[contains(@class,'t-delete danger-btn')]")
+    private WebElement itemOverviewTableValueDeleteButton;
+
+    @FindBy(xpath = "//a[contains(text(),'ACCOUNT_CONTACT')]")
+    private WebElement accountContactTabInContactEditItem;
+
+    @FindBy(xpath = "//a[contains(text(),'Account MRP')]")
+    private WebElement accountMrpTabInAccountEditItem;
+
+    @FindBy(xpath = "//tr[@role='row']/th")
+    private List<WebElement> editItemAssociationTabsTableHeaders;
+
+    @FindBy(xpath = "//*[@id='DataTables_Table_0']/tbody/tr[1]/td")
+    private List<WebElement> firstRowOfEditItemAssociatedTabTableValues;
+
+    @FindBy(xpath = "//span[contains(text(),'Search')]")
+    private WebElement searchButton;
+
+    @FindBy(xpath = "(//input[@id='userselect'])[1]")
+    private WebElement associationTabsFirstRowCheckBox;
+
+    @FindBy(xpath = "//span[contains(text(),'Unsaved Changes')]")
+    private WebElement unsavedChangesButton;
+
+    @FindBy(xpath = "//a[@id='savebutton']")
+    private WebElement saveButtonInChangeItemModal;
+
+    @FindBy(xpath = "//button[@id='deletItemButton']")
+    private WebElement editItemDeleteButton;
+
+    @FindBy(xpath = "//button[@id='removeItemBtn']")
+    private WebElement deleteButtonInAreYouSureModal;
+
+    @FindBy(xpath = "//button[@id='deleteItemPopup']")
+    private WebElement deleteButtonInOverviewDeleteConfirmationModal;
+
+    @FindBy(xpath = "//div[contains(@class,'associationsLinksNav')]/ul/li/a")
+    private List<WebElement> editItemTabs;
+
+
+
+    public static String generateRandomImportDescription() {
+        int length = 10;
+        String characters = "ABCDEFGHJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder stringBuilder = new StringBuilder();
+
+        Random random = new Random();
+        for (int i = 0; i < length; i++) {
+            int randomIndex = random.nextInt(characters.length());
+            char randomChar = characters.charAt(randomIndex);
+            stringBuilder.append(randomChar);
+        }
+        return stringBuilder.toString();
+    }
+
+
+    public String getValueOfTableInContactOverview(String headerName) {
+        int i = 0;
+        for (i = 0; i < overviewTableHeaders.size(); i++) {
+            if (overviewTableHeaders.get(i).getText().equals(headerName)) {
+                break;
+            }
+        }
+        return firstRowOfContactOverviewTableValues.get(i).getText();
+    }
+
+    public String getValueOfTableInEditItem(String headerName) {
+        int j = 0;
+        for (int i = 1; i < editItemAssociationTabsTableHeaders.size(); i++) {
+            if (i == 2) {
+                continue;
+            }
+            if (editItemAssociationTabsTableHeaders.get(i).getText().equals(headerName)) {
+                j = i;
+                break;
+            }
+        }
+        return firstRowOfEditItemAssociatedTabTableValues.get(j).getText();
+    }
 
 
     public void onTheImportSettingPage() {
@@ -163,14 +262,15 @@ public class Import extends BasePage {
     String accountCallbackExcel = Paths.get(projectDir, accountCallbackRelativePath).toString();
 
     public void updateExcel(String point, String endDate) throws IOException {
-        try {
-            String currentDescription = CommonExcelReader.getCellValue(accountCallbackExcel,"Description",1);
-            newDescription = currentDescription.split(" ")[0] + " " +
-                    (Integer.parseInt(currentDescription.split(" ")[1]) + 1);
-        } catch (IOException ioException) {
-            System.out.println("IOException Is Threw !!!!!!");
-        }
+//        try {
+//            String currentDescription = CommonExcelReader.getCellValue(accountCallbackExcel,"Description",1);
+//            newDescription = currentDescription.split(" ")[0] + " " +
+//                    (Integer.parseInt(currentDescription.split(" ")[1]) + 1);
+//        } catch (IOException ioException) {
+//            System.out.println("IOException Is Threw !!!!!!");
+//        }
 
+        newDescription = generateRandomImportDescription();
         CommonExcelReader.updateCellValue(accountCallbackExcel,"Description", 1,newDescription);
         CommonExcelReader.updateCellValue(accountCallbackExcel,"Point", 1,point);
         CommonExcelReader.updateCellValue(accountCallbackExcel,"DateEnd",1,endDate);
@@ -214,9 +314,11 @@ public class Import extends BasePage {
     String resourceTranslationsExcel = Paths.get(projectDir, resourceTranslationsRelativePath).toString();
     public void selectAccountCallbackForImportType() {
         selectImportTypeElement.click();
-        BrowserUtils.wait(1);
-        if (!accountCallbackOption.isDisplayed()) {
-            selectImportTypeElement.click();
+        for (int i = 0; i < 3; i++) {
+            BrowserUtils.wait(1);
+            if (!accountCallbackOption.isDisplayed()) {
+                selectImportTypeElement.click();
+            }
         }
         accountCallbackOption.click();
     }
@@ -235,10 +337,11 @@ public class Import extends BasePage {
     }
 
     public void verifyTheResourceIsAddedToResources() throws IOException {
-        Driver.getDriver().get("https://sandbox-ui.efectura.com/Resources");
+        Driver.getDriver().get(ConfigurationReader.getProperty("sbLink") + "Resources");
         String resourceCode = CommonExcelReader.getCellValue(resourceTranslationsExcel,"Code",1);
+        BrowserUtils.wait(2);
+        resourceCodeFilter.click();
         resourceCodeFilterInputBox.sendKeys(resourceCode);
-        resourceSearchButton.click();
         BrowserUtils.wait(3);
         Assert.assertEquals(resourceCode,resourceCodeValue.getText());
     }
@@ -248,5 +351,108 @@ public class Import extends BasePage {
         BrowserUtils.waitForVisibility(deleteResourceButtonInDeleteResourceModal,10);
         deleteResourceButtonInDeleteResourceModal.click();
         BrowserUtils.wait(2);
+    }
+
+
+
+    String contactRelativePath = "src/test/resources/testData/Contact.xlsx";
+    String contactExcel = Paths.get(projectDir, contactRelativePath).toString();
+    public void selectImportType(String importType) {
+        BrowserUtils.wait(3);
+        selectImportTypeElement.click();
+        selectImportTypeInputBox.sendKeys(importType);
+        BrowserUtils.wait(1);
+        for (WebElement option : filteredImportTypeOptions) {
+            if (option.getText().equals(importType)) {
+                option.click();
+                break;
+            }
+        }
+    }
+
+    public void uploadContactFile() {
+        addCsvInputElement.sendKeys(contactExcel);
+        BrowserUtils.wait(2);
+        saveChangesButtonInAreYouSureModal.click();
+    }
+
+    public void verifyContactIsCreated(String importType) throws IOException {
+        Driver.getDriver().get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + importType);
+        String contactCode = CommonExcelReader.getCellValue(contactExcel,"SKU",1);
+        itemOverviewCodeFilter.click();
+        itemOverviewCodeFilterInputBox.sendKeys(contactCode);
+        searchButton.click();
+        BrowserUtils.wait(5);
+        Assert.assertEquals(contactCode, getValueOfTableInContactOverview("CODE"));
+    }
+
+    public void verifyThatContactIsAssociatedWithStatedAccount() throws IOException {
+        itemOverviewTableValueEditButton.click();
+        accountContactTabInContactEditItem.click();
+        String expectedAccountNumber = CommonExcelReader.getCellValue(contactExcel,"Account Number",1);
+        String actualAssociatedValue = getValueOfTableInEditItem("ASSOCIATED");
+        Boolean isAccount = expectedAccountNumber.equals(getValueOfTableInEditItem("CODE"));
+        Boolean isAccountAssociated = actualAssociatedValue.equals("Yes");
+
+        Assert.assertTrue(isAccount && isAccountAssociated);
+    }
+
+    public void tearDownAllChangesInContactCase() {
+        associationTabsFirstRowCheckBox.click();
+        unsavedChangesButton.click();
+        saveButtonInChangeItemModal.click();
+        editItemDeleteButton.click();
+        deleteButtonInAreYouSureModal.click();
+    }
+
+    String accountRelativePath = "src/test/resources/testData/Account.xlsx";
+    String accountExcel = Paths.get(projectDir, accountRelativePath).toString();
+    public void uploadAccountFile() {
+        addCsvInputElement.sendKeys(accountExcel);
+        BrowserUtils.wait(2);
+        saveChangesButtonInAreYouSureModal.click();
+    }
+
+    public void tearDownAllChangesInAccountCase() {
+        itemOverviewTableValueDeleteButton.click();
+        deleteButtonInOverviewDeleteConfirmationModal.click();
+    }
+
+
+    String associationRelativePath = "src/test/resources/testData/Association.xlsx";
+    String associationExcel = Paths.get(projectDir, associationRelativePath).toString();
+    public void uploadAssociationFile() {
+        addCsvInputElement.sendKeys(associationExcel);
+        BrowserUtils.wait(2);
+        saveChangesButtonInAreYouSureModal.click();
+    }
+
+    public void verifyTheAccountIsAssociatedWithTheMrp(String item1, String item2) throws IOException {
+        Driver.getDriver().get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + item1);
+        String SKUItem1 = CommonExcelReader.getCellValue(associationExcel,"SKUItem1",1);
+        String SKUItem2 = CommonExcelReader.getCellValue(associationExcel,"SKUItem2",1);
+        itemOverviewCodeFilter.click();
+        itemOverviewCodeFilterInputBox.sendKeys(SKUItem1);
+        searchButton.click();
+        BrowserUtils.wait(5);
+        overviewTableHeaders.stream().filter(e -> e.getText().contains("CODE")).findFirst().ifPresent(WebElement::click);
+        BrowserUtils.wait(5);
+        itemOverviewTableValueEditButton.click();
+        editItemTabs.stream().filter(e -> e.getText().contains(item2)).findFirst().ifPresent(WebElement::click);
+        String actualAssociatedValue = getValueOfTableInEditItem("ASSOCIATED");
+
+        Boolean isAccount = SKUItem2.equals(getValueOfTableInEditItem("CODE"));
+        Boolean isAccountAssociated = actualAssociatedValue.equals("Yes");
+
+        Assert.assertTrue(isAccount && isAccountAssociated);
+
+    }
+
+    public void tearDownAllChangesInAssociationCase() {
+        associationTabsFirstRowCheckBox.click();
+        unsavedChangesButton.click();
+        saveButtonInChangeItemModal.click();
+        editItemDeleteButton.click();
+        deleteButtonInAreYouSureModal.click();
     }
 }
