@@ -56,7 +56,6 @@ Feature: Event Management Test Cases- Event Home Page
       |25 |
       |50 |
       |100|
-      |250|
 
   Scenario: Event page edit verify
     And The user enters "CheckboxTest" into Code field

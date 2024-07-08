@@ -26,6 +26,8 @@ Feature: Product Management Test Cases- Contact Home Page
       | entries|
       |10 |
       |25 |
+      |50 |
+      |100|
 
   Scenario: User Reset Button Control
     And The user enters "test2123" into Code field

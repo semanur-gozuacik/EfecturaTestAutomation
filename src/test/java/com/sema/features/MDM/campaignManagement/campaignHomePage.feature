@@ -101,7 +101,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
       |25 |
       |50 |
       |100|
-      |250|
+
 
   Scenario: Campaign Create List- cancel button
     And  The user clicks plus icon

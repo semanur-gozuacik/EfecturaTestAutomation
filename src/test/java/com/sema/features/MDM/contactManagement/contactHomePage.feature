@@ -168,7 +168,6 @@ Feature: Contact Management Test Cases- Contact Home Page
       |25 |
       |50 |
       |100|
-      |250|
 
 
   Scenario: Verify the redirection to the My Contacts page

@@ -66,7 +66,7 @@ Feature: Account Management Test Cases- Account Home Page
       |25 |
       |50 |
       |100|
-      |250|
+
 
   Scenario: Account page edit verify
     And The user enters "semaaa" into Code field

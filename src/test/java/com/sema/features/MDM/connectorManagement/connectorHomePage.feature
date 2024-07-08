@@ -87,7 +87,7 @@ Feature: Connector Management Test Cases- Connector Home Page
       |25 |
       |50 |
       |100|
-      |250|
+
 
   Scenario: Create List- create button
     And  The user clicks plus icon

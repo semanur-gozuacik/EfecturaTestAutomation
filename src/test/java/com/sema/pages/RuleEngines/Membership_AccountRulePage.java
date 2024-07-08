@@ -359,7 +359,6 @@ public class Membership_AccountRulePage extends BasePage {
         distributorBasisCodeInputBox.clear();
         distributorBasisCodeInputBox.sendKeys("TestAutomation");
     }
-
     public void verifyAssociationOfTheItemRemoved() {
         BrowserUtils.wait(5);
         Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty("itemIdForRuleTests"));
