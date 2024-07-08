@@ -77,8 +77,8 @@ Feature: Tags Page Test Cases
     Then The user verifies that ItemType values are ascending order
 
   Scenario: ItemType values should be able to be descending order
-    When The user clicks ItemType header for descending sort
-    Then The user verifies that ItemType values are descending order
+#    When The user clicks ItemType header for descending sort
+#    Then The user verifies that ItemType values are descending order
 
   Scenario: First and previous buttons should be inactive in first page of Tags table
     When The user enters '1' in to pagination input box

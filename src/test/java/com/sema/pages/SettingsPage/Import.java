@@ -376,14 +376,20 @@ public class Import extends BasePage {
         saveChangesButtonInAreYouSureModal.click();
     }
 
-    public void verifyContactIsCreated(String importType) throws IOException {
+    public void verifyItemIsCreated(String importType) throws IOException {
         Driver.getDriver().get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + importType);
-        String contactCode = CommonExcelReader.getCellValue(contactExcel,"SKU",1);
+        String itemCode;
+        if (importType.equals("Contact")) {
+            itemCode = CommonExcelReader.getCellValue(contactExcel,"SKU",1);
+        }else {
+            itemCode = CommonExcelReader.getCellValue(accountExcel,"SKU",1);
+        }
+
         itemOverviewCodeFilter.click();
-        itemOverviewCodeFilterInputBox.sendKeys(contactCode);
+        itemOverviewCodeFilterInputBox.sendKeys(itemCode);
         searchButton.click();
         BrowserUtils.wait(5);
-        Assert.assertEquals(contactCode, getValueOfTableInContactOverview("CODE"));
+        Assert.assertEquals(itemCode, getValueOfTableInContactOverview("CODE"));
     }
 
     public void verifyThatContactIsAssociatedWithStatedAccount() throws IOException {
@@ -454,5 +460,16 @@ public class Import extends BasePage {
         saveButtonInChangeItemModal.click();
         editItemDeleteButton.click();
         deleteButtonInAreYouSureModal.click();
+    }
+
+    String randomSKU;
+    public void updateAccountExcelWithRandomSku() throws IOException {
+        randomSKU = generateRandomImportDescription();
+        CommonExcelReader.updateCellValue(accountExcel,"SKU",1,randomSKU);
+    }
+
+    public void updateContactExcelWithRandomSku() throws IOException {
+        randomSKU = generateRandomImportDescription();
+        CommonExcelReader.updateCellValue(contactExcel,"SKU",1,randomSKU);
     }
 }

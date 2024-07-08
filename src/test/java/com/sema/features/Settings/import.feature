@@ -63,7 +63,7 @@ Feature: Import Management Test Cases
 #    When The user select AccountCallback for importType
     When The user select "AccountCallback" for importType
     When The user upload AccountCallback file
-    When The user approve the import
+    When The user import the uploaded file
     Then The user verifies that one earning is added to point history
 
   Scenario: AccountCallback - Point Delete
@@ -73,7 +73,7 @@ Feature: Import Management Test Cases
 #    When The user select AccountCallback for importType
     When The user select "AccountCallback" for importType
     When The user upload AccountCallback file
-    When The user approve the import
+    When The user import the uploaded file
     Then The user verifies that one earning is added to point history
 
   Scenario: AccountCallback - Redemption
@@ -96,6 +96,7 @@ Feature: Import Management Test Cases
 
 
   Scenario: Contact Case
+    When The user update Contact excel with random sku
     When The user select "Contact" for importType
     When The user upload Contact file
     When The user import the uploaded file
@@ -105,6 +106,7 @@ Feature: Import Management Test Cases
 
 
   Scenario: Account Case
+    When The user update Account excel with random sku
     When The user select "Account" for importType
     When The user upload Account file
     When The user import the uploaded file

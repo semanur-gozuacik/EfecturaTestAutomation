@@ -164,8 +164,8 @@ public class SettingsImportStepDefs extends BaseStep {
     }
 
     @Then("The user verifies that the {string} is created")
-    public void theUserVerifiesThatTheContactIsCreated(String importType) throws IOException {
-        pages.importPage().verifyContactIsCreated(importType);
+    public void theUserVerifiesThatTheItemIsCreated(String importType) throws IOException {
+        pages.importPage().verifyItemIsCreated(importType);
     }
 
     @Then("The user verifies that the contact is associated with stated account")
@@ -201,5 +201,15 @@ public class SettingsImportStepDefs extends BaseStep {
     @Then("The user tear down all changes in Association Case")
     public void theUserTearDownAllChangesInAssociationCase() {
         pages.importPage().tearDownAllChangesInAssociationCase();
+    }
+
+    @When("The user update Account excel with random sku")
+    public void theUserUpdateAccountExcelWithRandomSku() throws IOException {
+        pages.importPage().updateAccountExcelWithRandomSku();
+    }
+
+    @When("The user update Contact excel with random sku")
+    public void theUserUpdateContactExcelWithRandomSku() throws IOException {
+        pages.importPage().updateContactExcelWithRandomSku();
     }
 }

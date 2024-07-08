@@ -251,6 +251,7 @@ public class Membership_AccountRulePage extends BasePage {
 
     String labelValueThatIsSetInRule;
     public void setAnItemInRuleWhichIsNotInRule() {
+        BrowserUtils.wait(2);
         BrowserUtils.selectDropdownOptionByVisibleText(inRuleFilterSelectElement, "No");
         BrowserUtils.wait(2);
         checkBoxesInViewList.get(0).click();
