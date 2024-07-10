@@ -181,6 +181,12 @@ public class Membership_AccountRulePage extends BasePage {
     @FindBy(xpath = "//span[text()='All rules deleted and saved.']")
     private WebElement allRuleDeleteWarning;
 
+    @FindBy(id = "_attributes")
+    private WebElement attributesTab;
+
+    @FindBy(xpath = "//a[contains(text(),'InRule')]")
+    private WebElement inRuleFilter;
+
 
 
 
@@ -251,9 +257,11 @@ public class Membership_AccountRulePage extends BasePage {
 
     String labelValueThatIsSetInRule;
     public void setAnItemInRuleWhichIsNotInRule() {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(4);
+        inRuleFilter.click();
         BrowserUtils.selectDropdownOptionByVisibleText(inRuleFilterSelectElement, "No");
         BrowserUtils.wait(2);
+        inRuleFilter.click();
         checkBoxesInViewList.get(0).click();
         labelValueThatIsSetInRule = labelValuesInViewList.get(0).getText();
         saveChangesButton.click();
@@ -294,6 +302,7 @@ public class Membership_AccountRulePage extends BasePage {
 
     String numberOfCalculatedBeforeEditItem;
     public void setTwoRuleWithOrOperator() {
+        BrowserUtils.wait(2);
         BrowserUtils.waitForVisibility(ruleAttributeDropDown,10);
         ruleAttributeDropDown.click();
         BrowserUtils.wait(2);
@@ -314,6 +323,7 @@ public class Membership_AccountRulePage extends BasePage {
     String idOfEditedItem = "50193";
     public void editAnAccountToMeetTheRules(String attributeValueToChange) {
         Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + idOfEditedItem);
+        attributesTab.click();
         accountInfoSection.click();
         scrollBy(0,distributorBasisCodeInputBox.getLocation().getY());
         String currentDistributorBasisCodeInputBoxValue = getValueInInputBox(distributorBasisCodeInputBox);

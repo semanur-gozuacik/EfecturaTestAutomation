@@ -92,10 +92,10 @@ public class Import extends BasePage {
     private WebElement taskNameFilterInputBox;
 
     @FindBy(xpath = "//a[contains(text(),'Code')]")
-    private WebElement resourceCodeFilter;
+    private WebElement codeFilter;
 
     @FindBy(xpath = "//input[@placeholder='Code']")
-    private WebElement resourceCodeFilterInputBox;
+    private WebElement codeFilterInputBox;
 
     @FindBy(xpath = "//tr/td[1]")
     private WebElement resourceCodeValue;
@@ -162,6 +162,13 @@ public class Import extends BasePage {
 
     @FindBy(xpath = "//div[contains(@class,'associationsLinksNav')]/ul/li/a")
     private List<WebElement> editItemTabs;
+
+    @FindBy(xpath = "//tr/td[1]")
+    private List<WebElement> codeValues;
+
+    @FindBy(xpath = "//tr/td/a[2]")
+    private List<WebElement> deleteButtons;
+
 
 
 
@@ -340,8 +347,8 @@ public class Import extends BasePage {
         Driver.getDriver().get(ConfigurationReader.getProperty("sbLink") + "Resources");
         String resourceCode = CommonExcelReader.getCellValue(resourceTranslationsExcel,"Code",1);
         BrowserUtils.wait(2);
-        resourceCodeFilter.click();
-        resourceCodeFilterInputBox.sendKeys(resourceCode);
+        codeFilter.click();
+        codeFilterInputBox.sendKeys(resourceCode);
         BrowserUtils.wait(3);
         Assert.assertEquals(resourceCode,resourceCodeValue.getText());
     }
@@ -459,6 +466,7 @@ public class Import extends BasePage {
         unsavedChangesButton.click();
         saveButtonInChangeItemModal.click();
         editItemDeleteButton.click();
+        BrowserUtils.wait(1);
         deleteButtonInAreYouSureModal.click();
     }
 
@@ -471,5 +479,14 @@ public class Import extends BasePage {
     public void updateContactExcelWithRandomSku() throws IOException {
         randomSKU = generateRandomImportDescription();
         CommonExcelReader.updateCellValue(contactExcel,"SKU",1,randomSKU);
+    }
+
+
+    String attributesRelativePath = "src/test/resources/testData/Attribute.xlsx";
+    String attributesExcel = Paths.get(projectDir, attributesRelativePath).toString();
+    public void uploadAttributeFile() {
+        addCsvInputElement.sendKeys(attributesExcel);
+        BrowserUtils.wait(2);
+        saveChangesButtonInAreYouSureModal.click();
     }
 }

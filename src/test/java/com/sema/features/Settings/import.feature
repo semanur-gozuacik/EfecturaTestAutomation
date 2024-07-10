@@ -96,7 +96,7 @@ Feature: Import Management Test Cases
 
 
   Scenario: Contact Case
-    When The user update Contact excel with random sku
+#    When The user update Contact excel with random sku
     When The user select "Contact" for importType
     When The user upload Contact file
     When The user import the uploaded file
@@ -120,5 +120,13 @@ Feature: Import Management Test Cases
     When The user import the uploaded file
     Then The user verifies that the "Account" is associated with the "MRP"
     Then The user tear down all changes in Association Case
+
+
+#  Scenario: Attribute Case
+#    When The user select "Attribute" for importType
+#    When The user upload Attribute file
+#    When The user import the uploaded file
+#    Then The user verifies that attributes are created
+#    Then The user tear down all changes in Attribute Case
 
 

@@ -212,4 +212,9 @@ public class SettingsImportStepDefs extends BaseStep {
     public void theUserUpdateContactExcelWithRandomSku() throws IOException {
         pages.importPage().updateContactExcelWithRandomSku();
     }
+
+    @When("The user upload Attribute file")
+    public void theUserUploadAttributeFile() {
+        pages.importPage().uploadAttributeFile();
+    }
 }
