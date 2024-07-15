@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.sema.pages.SystemPage.CurrenciesPage.*;
+import static com.sema.utilities.BrowserUtils.isButtonActive;
 
 public class TagsPage extends BasePage {
 

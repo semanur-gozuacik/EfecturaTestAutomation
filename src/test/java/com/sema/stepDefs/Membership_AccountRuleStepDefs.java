@@ -20,7 +20,7 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
 
     @When("The user click rule tab")
     public void theUserClickRuleTab() {
-        pages.membershipAccountRulePage().clickRuleTab();
+        pages.editItemPage().clickRuleTab();
     }
 
     @When("The user sets a rule")
@@ -48,15 +48,15 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
         pages.membershipAccountRulePage().verifyTheItemThatIsSetInRuleIsAppearInInList();
     }
 
-    @Then("The item that is set in rule should been associated according to Account Tab")
-    public void theItemThatIsSetInRuleShouldBeenAssociatedAccordingToAccountTab() {
-        pages.membershipAccountRulePage().verifyTheItemThatIsSetInRuleIsAssociatedInAccountTab();
+    @Then("The item that is set in rule should been associated according to {string}")
+    public void theItemThatIsSetInRuleShouldBeenAssociatedAccordingTo(String tabName) {
+        pages.membershipAccountRulePage().verifyTheItemThatIsSetInRuleIsAssociated(tabName);
     }
 
     @Then("The user tear down all rules {string}")
     public void theUserTearDownAllRules(String itemId) {
         Driver.getDriver().get("https://sandbox-ui.efectura.com/Enrich/EditItem/" + ConfigurationReader.getProperty(itemId));
-        pages.membershipAccountRulePage().clickRuleTab();
+        pages.editItemPage().clickRuleTab();
         pages.membershipAccountRulePage().tearDownAllChanges();
     }
 
@@ -70,9 +70,9 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
         pages.membershipAccountRulePage().editAnAccountToMeetTheRules(attributeValueToChange);
     }
 
-    @Then("The user verifies that the edited item is associated")
-    public void theUserVerifiesThatTheEditedItemIsAssociated() {
-        pages.membershipAccountRulePage().verifyEditedItemIsAssociated();
+    @Then("The user verifies that the edited item is associated {string} {string}")
+    public void theUserVerifiesThatTheEditedItemIsAssociated(String tabName, String itemIdForRule) {
+        pages.membershipAccountRulePage().verifyEditedItemIsAssociated(tabName,itemIdForRule);
     }
 
     @When("The user click Calculate button")
@@ -86,9 +86,9 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
     }
 
 
-    @Then("The user verifies that association of this item is removed")
-    public void theUserVerifiesThatAssociationOfThisItemIsRemoved() {
-        pages.membershipAccountRulePage().verifyAssociationOfTheItemRemoved();
+    @Then("The user verifies that association of this item is removed {string} {string}")
+    public void theUserVerifiesThatAssociationOfThisItemIsRemoved(String tabName, String itemIdForRule) {
+        pages.membershipAccountRulePage().verifyAssociationOfTheItemRemoved(tabName,itemIdForRule);
     }
 
     @When("The user set an item out rule which is in rule")
@@ -101,9 +101,9 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
         pages.membershipAccountRulePage().verifyTheItemThatIsSetOutRuleIsAppearInInList();
     }
 
-    @Then("The item that is set out rule should not been associated")
-    public void theItemThatIsSetOutRuleShouldNotBeenAssociated() {
-        pages.membershipAccountRulePage().verifyItemThatIsSetOutRuleNotAssociated();
+    @Then("The item that is set out rule should not been associated {string} {string}")
+    public void theItemThatIsSetOutRuleShouldNotBeenAssociated(String tabName,String itemIdForRule) {
+        pages.membershipAccountRulePage().verifyItemThatIsSetOutRuleNotAssociated(tabName,itemIdForRule);
     }
 
     @When("The user sets two different rule with or")
@@ -111,9 +111,14 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
         pages.membershipAccountRulePage().setTwoDifferentRuleWithOr();
     }
 
-    @Then("The user verify detail info of associated items for or")
-    public void theUserVerifyDetailInfoOfAssociatedItemsForOr() {
-        pages.membershipAccountRulePage().verifyDetailInfoOfAssociatedItemsForOr();
+    @Then("The user verify detail info of associated items for or {string}")
+    public void theUserVerifyDetailInfoOfAssociatedItemsForOr(String tabName) {
+        pages.membershipAccountRulePage().verifyDetailInfoOfAssociatedItemsForOr(tabName);
+    }
+
+    @Then("The user go to rule association tab {string}")
+    public void theUserGoToRuleAssociationTab(String tabName) {
+        pages.editItemPage().goToRuleAssociationTab(tabName);
     }
 
     @When("The user sets two different rule with and")

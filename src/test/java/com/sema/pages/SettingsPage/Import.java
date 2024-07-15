@@ -5,12 +5,15 @@ import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.CommonExcelReader;
 import com.sema.utilities.ConfigurationReader;
 import com.sema.utilities.Driver;
+import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -18,6 +21,8 @@ import static com.sema.pages.SettingsPage.TagsPage.isRowCountCorrectAccordingToT
 import static com.sema.pages.SettingsPage.TagsPage.selectLengthFromTableLength;
 
 public class Import extends BasePage {
+
+    SoftAssertions softAssertions = new SoftAssertions();
 
     @FindBy(xpath = "//button[contains(text(),'OK')]")
     private WebElement popUpOkButton;
@@ -36,7 +41,7 @@ public class Import extends BasePage {
 
     @FindBy(xpath = "//a[contains(text(),'Name')]")
     private WebElement nameFilter;
-    
+
     @FindBy(xpath = "//input[@placeholder='Name']")
     private WebElement nameFilterInputBox;
 
@@ -120,7 +125,7 @@ public class Import extends BasePage {
 
     @FindBy(xpath = "//tr[1]/td")
     private List<WebElement> firstRowOfContactOverviewTableValues;
-    
+
     @FindBy(xpath = "//a[@title='Edit']")
     private WebElement itemOverviewTableValueEditButton;
 
@@ -166,8 +171,14 @@ public class Import extends BasePage {
     @FindBy(xpath = "//tr/td[1]")
     private List<WebElement> codeValues;
 
+    @FindBy(xpath = "//tr/td[3]")
+    private List<WebElement> attributesTypeValues;
+
     @FindBy(xpath = "//tr/td/a[2]")
     private List<WebElement> deleteButtons;
+
+    @FindBy(xpath = "//button[contains(@class,'delete-confirmed')]")
+    private WebElement deleteButtonInModalInAttributes;
 
 
 
@@ -465,6 +476,7 @@ public class Import extends BasePage {
         associationTabsFirstRowCheckBox.click();
         unsavedChangesButton.click();
         saveButtonInChangeItemModal.click();
+        BrowserUtils.wait(1);
         editItemDeleteButton.click();
         BrowserUtils.wait(1);
         deleteButtonInAreYouSureModal.click();
@@ -488,5 +500,33 @@ public class Import extends BasePage {
         addCsvInputElement.sendKeys(attributesExcel);
         BrowserUtils.wait(2);
         saveChangesButtonInAreYouSureModal.click();
+    }
+
+    public void verifyAttributesAreCreated() {
+        List<String> expectedTypeValues = Arrays.asList("Date","MultipleSelect","Simple Select","Text","Number","Bool","Resource Select");
+        Driver.getDriver().get("https://sandbox-ui.efectura.com/Settings/Attributes");
+        codeFilter.click();
+        codeFilterInputBox.sendKeys("TestAutomationAtt" + Keys.ENTER);
+        BrowserUtils.wait(1);
+
+        for (int i = 0; i < codeValues.size(); i++) {
+            softAssertions.assertThat(codeValues.get(i).getText().contains("TestAutomationAtt"))
+                    .as("Check if code contains 'TestAutomationAtt' at index %d", i)
+                    .isTrue();
+
+            softAssertions.assertThat(attributesTypeValues.get(i).getText())
+                    .as("Check if attribute type matches expected type at index %d", i)
+                    .isEqualTo(expectedTypeValues.get(i));
+
+        }
+        softAssertions.assertAll();
+    }
+
+    public void tearDownAllChangesInAttributeCase() {
+        for (int i = 0; i < 7; i++) {
+            deleteButtons.get(0).click();
+            deleteButtonInModalInAttributes.click();
+            BrowserUtils.wait(2);
+        }
     }
 }

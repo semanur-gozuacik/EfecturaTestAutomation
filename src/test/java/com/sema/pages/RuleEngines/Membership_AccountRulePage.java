@@ -1,6 +1,7 @@
 package com.sema.pages.RuleEngines;
 
 import com.sema.pages.BasePage;
+import com.sema.pages.MDMPage.EditItemPage;
 import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.ConfigurationReader;
 import com.sema.utilities.Driver;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+import static com.sema.pages.MDMPage.EditItemPage.clickRuleTab2;
 import static com.sema.pages.SystemPage.CurrenciesPage.*;
 
 public class Membership_AccountRulePage extends BasePage {
@@ -45,7 +47,7 @@ public class Membership_AccountRulePage extends BasePage {
     @FindBy(xpath = "//a[text()='Similar']")
     private WebElement similarOverviewLink;
 
-    @FindBy(xpath = "//a[@class='showRuleTabLi']")
+    @FindBy(xpath = "//a[contains(@class,'showRuleTabLi')]")
     private WebElement ruleTab;
 
     @FindBy(xpath = "//a[contains(@class,'linkAssociation')]")
@@ -75,7 +77,7 @@ public class Membership_AccountRulePage extends BasePage {
     @FindBy(xpath = "//td[3]/input")
     private List<WebElement> checkBoxesInViewList;
 
-    @FindBy(xpath = "//td[7]")
+    @FindBy(xpath = "//table//tr/th[text()='Label']/ancestor::table//tbody/tr/td[count(//table//tr/th[text()='Label']/preceding-sibling::th)+1]")
     private List<WebElement> labelValuesInViewList;
 
     @FindBy(xpath = "//button[contains(text(),'Save Changes')]")
@@ -108,7 +110,7 @@ public class Membership_AccountRulePage extends BasePage {
     @FindBy(xpath = "//tr[1]/td")
     private List<WebElement> firstRowElementsInTable;
 
-    @FindBy(xpath = "//tr/td[7]")
+    @FindBy(xpath = "//table//tr/th[text()='Label']/ancestor::table//tbody/tr/td[count(//table//tr/th[text()='Label']/preceding-sibling::th)+1]\n")
     private List<WebElement> labelValues;
 
     @FindBy(xpath = "//tr/td[1]/a")
@@ -187,6 +189,9 @@ public class Membership_AccountRulePage extends BasePage {
     @FindBy(xpath = "//a[contains(text(),'InRule')]")
     private WebElement inRuleFilter;
 
+    @FindBy(xpath = "//span[@id='arrowbtn-down']")
+    private WebElement scrollRightButton;
+
 
 
 
@@ -228,6 +233,7 @@ public class Membership_AccountRulePage extends BasePage {
         if (!accordionButton.getAttribute("class").contains("active")) {
             accordionButton.click();
         }
+        BrowserUtils.wait(1);
     }
 
     public void goToSimilarOverview() {
@@ -237,9 +243,7 @@ public class Membership_AccountRulePage extends BasePage {
         similarOverviewLink.click();
     }
 
-    public void clickRuleTab() {
-        ruleTab.click();
-    }
+
 
     public void setARule() {
         BrowserUtils.waitForVisibility(ruleAttributeDropDown,10);
@@ -280,11 +284,16 @@ public class Membership_AccountRulePage extends BasePage {
         BrowserUtils.wait(10);
     }
 
-    public void verifyTheItemThatIsSetInRuleIsAssociatedInAccountTab() {
-        BrowserUtils.wait(2);
-        Driver.getDriver().navigate().refresh();
-        accountAssociateTab.click();
+    public void verifyTheItemThatIsSetInRuleIsAssociated(String tabName) {
+        BrowserUtils.wait(3);
+        driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
         BrowserUtils.wait(5);
+        driver.navigate().refresh();
+        driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
+        BrowserUtils.wait(5);
+        associatedFilter.click();
+        associatedFilterYesOption.click();
+        BrowserUtils.wait(3);
 //        associatedFilter.click();
 //        BrowserUtils.selectDropdownOptionByVisibleText(associatedFilterSelectElement,"Yes");
 //        List<String> tableHeaders = getStringListFromWebElementList(accountTabTableHeaders);
@@ -322,7 +331,7 @@ public class Membership_AccountRulePage extends BasePage {
 
     String idOfEditedItem = "50193";
     public void editAnAccountToMeetTheRules(String attributeValueToChange) {
-        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + idOfEditedItem);
+        driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + idOfEditedItem);
         attributesTab.click();
         accountInfoSection.click();
         scrollBy(0,distributorBasisCodeInputBox.getLocation().getY());
@@ -344,15 +353,15 @@ public class Membership_AccountRulePage extends BasePage {
         js.executeScript("window.scrollBy(" + xOffset + ", " + yOffset + ")");
     }
 
-    public void verifyEditedItemIsAssociated() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty("itemIdForRuleTests"));
-        BrowserUtils.wait(5);
-        BrowserUtils.waitForVisibility(accountAssociateTab,8);
-        accountAssociateTab.click();
+    public void verifyEditedItemIsAssociated(String tabName, String itemIdForRule) {
+        driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty(itemIdForRule));
+        driver.navigate().refresh();
+        BrowserUtils.wait(16);
+        driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
         BrowserUtils.waitForVisibility(associatedFilter,30);
         associatedFilter.click();
         associatedFilterYesOption.click();
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(6);
         Assert.assertEquals(idOfEditedItem, idValues.get(0).getText());
     }
 
@@ -369,19 +378,12 @@ public class Membership_AccountRulePage extends BasePage {
         distributorBasisCodeInputBox.clear();
         distributorBasisCodeInputBox.sendKeys("TestAutomation");
     }
-    public void verifyAssociationOfTheItemRemoved() {
+    public void verifyAssociationOfTheItemRemoved(String tabName, String itemIdForRule) {
         BrowserUtils.wait(5);
-        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty("itemIdForRuleTests"));
-        BrowserUtils.waitForVisibility(accountAssociateTab,8);
-        Driver.getDriver().navigate().refresh();
-        BrowserUtils.wait(8);
-        Driver.getDriver().navigate().refresh();
-        ruleTab.click();
-        accountAssociateTab.click();
-        Driver.getDriver().navigate().refresh();
-        BrowserUtils.wait(8);
-        Driver.getDriver().navigate().refresh();
-        accountAssociateTab.click();
+        driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty(itemIdForRule));
+        BrowserUtils.wait(16);
+        driver.navigate().refresh();
+        driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
         BrowserUtils.wait(8);
         BrowserUtils.waitForVisibility(associatedFilter,30);
         associatedFilter.click();
@@ -421,13 +423,13 @@ public class Membership_AccountRulePage extends BasePage {
         Assert.assertTrue(getValueInInputBox(notInListTextArea).contains(labelValueThatIsSetOutRule));
     }
 
-    public void verifyItemThatIsSetOutRuleNotAssociated() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty("itemIdForRuleTests"));
-        BrowserUtils.waitForVisibility(accountAssociateTab,8);
-        accountAssociateTab.click();
+    public void verifyItemThatIsSetOutRuleNotAssociated(String tabName, String itemIdForRule) {
+        Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty(itemIdForRule));
+        BrowserUtils.wait(5);
+        driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
         associatedFilter.click();
         associatedFilterYesOption.click();
-        Assert.assertTrue(noMatchingRecordsText.isDisplayed());
+        Assert.assertTrue(BrowserUtils.isElementDisplayed(noMatchingRecordsText));
     }
 
     String contactMobileValue = "5461146716";
@@ -450,13 +452,9 @@ public class Membership_AccountRulePage extends BasePage {
         ruleAttributeValueInputBoxes.get(1).sendKeys(contactEmailValue);
     }
 
-    public void verifyDetailInfoOfAssociatedItemsForOr() {
-        accountAssociateTab.click();
-        associatedFilter.click();
-        associatedFilterYesOption.click();
-        BrowserUtils.wait(7);
-        List<String> idValuesAsString = getStringListFromWebElementList(idValues);
-        for (String id : idValuesAsString) {
+    public void verifyDetailInfoForRuleOfOr(List<String> ids) {
+//        List<String> idValuesAsString = getStringListFromWebElementList(ids);
+        for (String id : ids) {
             Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + id);
             BrowserUtils.wait(3);
             accountInfoSection.click();
@@ -465,6 +463,10 @@ public class Membership_AccountRulePage extends BasePage {
             String actualContactMobile = getValueInInputBox(contactMobileInputBox);
             Assert.assertTrue(contactEmailValue.equals(actualContactEmail) || contactMobileValue.equals(actualContactMobile));
         }
+    }
+
+    public void verifyDetailInfoOfAssociatedItemsForOr(String tabName) {
+        verifyDetailInfoForRuleOfOr(getStringListFromWebElementList(idValues));
     }
 
     public void setTwoDifferentRuleWithAnd() {
@@ -483,13 +485,8 @@ public class Membership_AccountRulePage extends BasePage {
         ruleAttributeValueInputBoxes.get(1).sendKeys(contactEmailValue);
     }
 
-    public void verifyDetailInfoOfAssociatedItemsForAnd() {
-        accountAssociateTab.click();
-        associatedFilter.click();
-        associatedFilterYesOption.click();
-        BrowserUtils.wait(8);
-        List<String> idValuesAsString = getStringListFromWebElementList(idValues);
-        for (String id : idValuesAsString) {
+    public void verifyDetailInfoForRuleOfAnd(List<String> ids) {
+        for (String id : ids) {
             Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + id);
             BrowserUtils.wait(3);
             accountInfoSection.click();
@@ -499,12 +496,22 @@ public class Membership_AccountRulePage extends BasePage {
         }
     }
 
+    public void verifyDetailInfoOfAssociatedItemsForAnd() {
+        verifyDetailInfoForRuleOfAnd(getStringListFromWebElementList(idValues));
+    }
+
     public void deleteAllRulesIfAnyExists() {
         BrowserUtils.wait(5);
         if (deleteAllRulesButton.isEnabled()) {
             deleteAllRulesButton.click();
             deleteButtonInDeleteConfirmModal.click();
             BrowserUtils.waitForVisibility(allRuleDeleteWarning,10);
+            driver.navigate().refresh();
+            clickRuleTab2(ruleTab,scrollRightButton);
+            BrowserUtils.wait(1);
+            if (!accordionButton.getAttribute("class").contains("active")) {
+                accordionButton.click();
+            }
         }
     }
 }

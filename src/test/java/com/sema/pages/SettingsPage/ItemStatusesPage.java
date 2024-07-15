@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static com.sema.pages.SystemPage.CurrenciesPage.clickHeaderForAscendingSort;
-import static com.sema.pages.SystemPage.CurrenciesPage.isButtonActive;
+
 
 public class ItemStatusesPage extends BasePage {
     @FindBy(id = "setting-wheel")
@@ -115,7 +115,7 @@ public class ItemStatusesPage extends BasePage {
 
     public void verifyCancelButtonIsActiveInCreateItemStatusModal() {
         BrowserUtils.waitForVisibility(cancelButtonInCreateNewModal,20);
-        Assert.assertTrue(isButtonActive(cancelButtonInCreateNewModal));
+        Assert.assertTrue(BrowserUtils.isButtonActive(cancelButtonInCreateNewModal));
     }
 
     public void fillLocaleInputsExceptOneOfThem() {

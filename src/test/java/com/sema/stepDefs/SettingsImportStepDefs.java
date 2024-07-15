@@ -217,4 +217,14 @@ public class SettingsImportStepDefs extends BaseStep {
     public void theUserUploadAttributeFile() {
         pages.importPage().uploadAttributeFile();
     }
+
+    @Then("The user verifies that attributes are created")
+    public void theUserVerifiesThatAttributesAreCreated() {
+        pages.importPage().verifyAttributesAreCreated();
+    }
+
+    @Then("The user tear down all changes in Attribute Case")
+    public void theUserTearDownAllChangesInAttributeCase() {
+        pages.importPage().tearDownAllChangesInAttributeCase();
+    }
 }

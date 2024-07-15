@@ -122,11 +122,11 @@ Feature: Import Management Test Cases
     Then The user tear down all changes in Association Case
 
 
-#  Scenario: Attribute Case
-#    When The user select "Attribute" for importType
-#    When The user upload Attribute file
-#    When The user import the uploaded file
-#    Then The user verifies that attributes are created
-#    Then The user tear down all changes in Attribute Case
+  Scenario: Attribute Case
+    When The user select "Attribute" for importType
+    When The user upload Attribute file
+    When The user import the uploaded file
+    Then The user verifies that attributes are created
+    Then The user tear down all changes in Attribute Case
 
 

@@ -16,6 +16,7 @@ import java.util.Random;
 
 import static com.sema.pages.SettingsPage.TagsPage.isRowCountCorrectAccordingToTableLength;
 import static com.sema.pages.SettingsPage.TagsPage.selectLengthFromTableLength;
+import static com.sema.utilities.BrowserUtils.isButtonActive;
 
 public class CurrenciesPage extends BasePage {
 
@@ -264,10 +265,6 @@ public class CurrenciesPage extends BasePage {
 
     public void verifyCancelButtonIsActiveInEditCurrencyPopup() {Assert.assertTrue(cancelButtonInEditCurrencyPopup.isEnabled());}
 
-    public static boolean isButtonActive(WebElement button) {
-        String classAttribute = button.getAttribute("class");
-        return !classAttribute.contains("disabled");
-    }
 
     public void verifySaveButtonIsInactiveInEditCurrencyPopup() {
         //Assert.assertFalse(isButtonActive(saveButtonInEditCurrencyPopup));

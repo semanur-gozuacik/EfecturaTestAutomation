@@ -13,6 +13,7 @@ import com.sema.pages.MDMPage.ContactManagement.ContactEditPage;
 import com.sema.pages.MDMPage.ContactManagement.ContactHomePage;
 import com.sema.pages.MDMPage.ContactManagement.ContactHomePageMyContactPage;
 import com.sema.pages.MDMPage.ContractManagement.Contract;
+import com.sema.pages.MDMPage.EditItemPage;
 import com.sema.pages.MDMPage.EventManagement.EventHomePage;
 import com.sema.pages.MDMPage.FileManagement.FileManagementHomePage;
 import com.sema.pages.MDMPage.FinancialAccount.FinancialAccount;
@@ -22,6 +23,8 @@ import com.sema.pages.MDMPage.KPIManagement.KPIHomePage;
 import com.sema.pages.MDMPage.ProductManagement.ProductHomePage;
 import com.sema.pages.MDMPage.SalesOrganization.SalesOrganization;
 import com.sema.pages.MDMPage.UserManagement.UserHomePage;
+import com.sema.pages.RuleEngines.Campaign_AccountRulePage;
+import com.sema.pages.RuleEngines.Event_ContactRulePage;
 import com.sema.pages.RuleEngines.Membership_AccountRulePage;
 import com.sema.pages.SettingsPage.*;
 import com.sema.pages.SystemPage.BlackListPage;
@@ -66,6 +69,9 @@ public class Pages {
     private FinancialAccount financialAccount;
 
     private Membership_AccountRulePage membershipAccountRulePage;
+    private Event_ContactRulePage eventContactRulePage;
+    private EditItemPage editItemPage;
+    private Campaign_AccountRulePage campaignAccountRulePage;
 
 
 
@@ -102,7 +108,9 @@ public class Pages {
             this.fileManagementHomePage=new FileManagementHomePage();
             this.financialAccount= new FinancialAccount();
             this.membershipAccountRulePage = new Membership_AccountRulePage();
-
+            this.editItemPage = new EditItemPage();
+            this.eventContactRulePage = new Event_ContactRulePage();
+            this.campaignAccountRulePage = new Campaign_AccountRulePage();
 
     }
     // Getter metotları
@@ -143,6 +151,9 @@ public class Pages {
     public FinancialAccount financialAccount(){return financialAccount;}
 
     public Membership_AccountRulePage membershipAccountRulePage(){return membershipAccountRulePage;}
+    public EditItemPage editItemPage() {return editItemPage;}
+    public Event_ContactRulePage eventContactRulePage() {return eventContactRulePage;}
+    public Campaign_AccountRulePage campaign_accountRulePage() {return campaignAccountRulePage;}
 
 
 }
