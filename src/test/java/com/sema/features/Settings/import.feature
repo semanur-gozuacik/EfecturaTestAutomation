@@ -96,7 +96,7 @@ Feature: Import Management Test Cases
 
 
   Scenario: Contact Case
-#    When The user update Contact excel with random sku
+    When The user update Contact excel with random sku
     When The user select "Contact" for importType
     When The user upload Contact file
     When The user import the uploaded file

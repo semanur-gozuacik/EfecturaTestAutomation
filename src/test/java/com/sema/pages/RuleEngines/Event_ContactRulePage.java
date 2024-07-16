@@ -63,6 +63,7 @@ public class Event_ContactRulePage extends BasePage {
         for (String contactId : contactIds) {
             driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + contactId);
             accountContactTab.click();
+            BrowserUtils.wait(2);
             associatedFilter.click();
             associatedFilterYesOption.click();
             accountIds.add(idValues.get(0).getText());

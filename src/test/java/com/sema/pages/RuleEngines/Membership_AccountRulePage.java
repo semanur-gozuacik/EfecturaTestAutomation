@@ -294,11 +294,8 @@ public class Membership_AccountRulePage extends BasePage {
         associatedFilter.click();
         associatedFilterYesOption.click();
         BrowserUtils.wait(3);
-//        associatedFilter.click();
-//        BrowserUtils.selectDropdownOptionByVisibleText(associatedFilterSelectElement,"Yes");
-//        List<String> tableHeaders = getStringListFromWebElementList(accountTabTableHeaders);
-//        int labelValueIndex = tableHeaders.indexOf("Label");
         Assert.assertEquals(labelValueThatIsSetInRule, labelValues.get(0).getText());
+        BrowserUtils.wait(2);
     }
 
     public void tearDownAllChanges() {
@@ -379,9 +376,9 @@ public class Membership_AccountRulePage extends BasePage {
         distributorBasisCodeInputBox.sendKeys("TestAutomation");
     }
     public void verifyAssociationOfTheItemRemoved(String tabName, String itemIdForRule) {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(6);
         driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty(itemIdForRule));
-        BrowserUtils.wait(16);
+        BrowserUtils.wait(17);
         driver.navigate().refresh();
         driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
         BrowserUtils.wait(8);

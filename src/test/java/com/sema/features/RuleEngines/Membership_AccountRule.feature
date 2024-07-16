@@ -29,7 +29,6 @@ Feature: Membership_Account Rule Test Cases
     Then The user verify detail info of associated items for and
     Then The user tear down all rules 'itemIdForMembershipRuleTests'
 
-
   Scenario: While an account who does not meet with the relevant rule is added to the inList for this membership,
   this user should be added to the associates.
     When The user go in to item 'itemIdForMembershipRuleTests'

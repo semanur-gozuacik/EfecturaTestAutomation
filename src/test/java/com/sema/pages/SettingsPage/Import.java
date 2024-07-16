@@ -33,7 +33,7 @@ public class Import extends BasePage {
     @FindBy(xpath = "//label/select")
     private WebElement tableLengthSelectDropdown;
 
-    @FindBy(xpath = "//div[3]/div[1]/div/div[2]/div[1]/div[4]")
+    @FindBy(xpath = "//div[contains(text(),'Showing')]")
     private WebElement tableInfo;
 
     @FindBy(xpath = "//tr/td[1]")
@@ -93,6 +93,9 @@ public class Import extends BasePage {
     @FindBy(xpath = "//tr/td[13]")
     private List<WebElement> callbackStatusValues;
 
+    @FindBy(xpath = "//a[contains(text(),'Task Name')]")
+    private WebElement taskNameFilter;
+
     @FindBy(xpath = "//input[contains(@placeholder,'Task Name')]")
     private WebElement taskNameFilterInputBox;
 
@@ -147,6 +150,9 @@ public class Import extends BasePage {
     @FindBy(xpath = "//span[contains(text(),'Search')]")
     private WebElement searchButton;
 
+    @FindBy(xpath = "//span[contains(text(),'Refresh')]")
+    private WebElement refreshButton;
+
     @FindBy(xpath = "(//input[@id='userselect'])[1]")
     private WebElement associationTabsFirstRowCheckBox;
 
@@ -186,6 +192,20 @@ public class Import extends BasePage {
     public static String generateRandomImportDescription() {
         int length = 10;
         String characters = "ABCDEFGHJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder stringBuilder = new StringBuilder();
+
+        Random random = new Random();
+        for (int i = 0; i < length; i++) {
+            int randomIndex = random.nextInt(characters.length());
+            char randomChar = characters.charAt(randomIndex);
+            stringBuilder.append(randomChar);
+        }
+        return stringBuilder.toString();
+    }
+
+    public static String generateRandomSkuWithNumbers() {
+        int length = 10;
+        String characters = "0123456789";
         StringBuilder stringBuilder = new StringBuilder();
 
         Random random = new Random();
@@ -309,6 +329,9 @@ public class Import extends BasePage {
     public void verifyOneEarningIsAddedToPointHistory() {
         Driver.getDriver().get(ConfigurationReader.getProperty("editItemLinkWithoutId") + "6516");
         pointHistoryTab.click();
+        BrowserUtils.wait(2);
+        taskNameFilter.click();
+        BrowserUtils.wait(1);
         taskNameFilterInputBox.sendKeys(newDescription);
         BrowserUtils.wait(3);
         Assert.assertEquals(1,taskNameValues.size());
@@ -326,6 +349,7 @@ public class Import extends BasePage {
         BrowserUtils.wait(2);
         BrowserUtils.waitForVisibility(importButton,10);
         importButton.click();
+        BrowserUtils.wait(2);
     }
 
     String resourceTranslationsRelativePath = "src/test/resources/testData/ResourceTranslations.xlsx";
@@ -395,9 +419,10 @@ public class Import extends BasePage {
     }
 
     public void verifyItemIsCreated(String importType) throws IOException {
+        BrowserUtils.wait(2);
         Driver.getDriver().get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + importType);
         String itemCode;
-        if (importType.equals("Contact")) {
+        if (importType.equals("contact")) {
             itemCode = CommonExcelReader.getCellValue(contactExcel,"SKU",1);
         }else {
             itemCode = CommonExcelReader.getCellValue(accountExcel,"SKU",1);
@@ -407,6 +432,7 @@ public class Import extends BasePage {
         itemOverviewCodeFilterInputBox.sendKeys(itemCode);
         searchButton.click();
         BrowserUtils.wait(5);
+//        refreshButton.click();
         Assert.assertEquals(itemCode, getValueOfTableInContactOverview("CODE"));
     }
 
@@ -489,7 +515,7 @@ public class Import extends BasePage {
     }
 
     public void updateContactExcelWithRandomSku() throws IOException {
-        randomSKU = generateRandomImportDescription();
+        randomSKU = generateRandomSkuWithNumbers();
         CommonExcelReader.updateCellValue(contactExcel,"SKU",1,randomSKU);
     }
 
