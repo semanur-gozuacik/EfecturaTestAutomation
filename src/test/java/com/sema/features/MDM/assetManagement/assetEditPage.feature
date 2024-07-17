@@ -119,6 +119,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     When The user clicks last page button asset
     And  The user verifies last button is clickable asset
 
+
   Scenario:Group Permission Verify Last Page Button Unclickable Condition
     And The user enters "TEST123456" into Code field
     And the user clicks on Search button
