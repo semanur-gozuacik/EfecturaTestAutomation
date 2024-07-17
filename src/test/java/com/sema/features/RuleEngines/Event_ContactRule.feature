@@ -90,4 +90,26 @@ Feature: EVENT_CONTACT Rule Test Cases
     Then The user tear down all rules 'itemIdForEventRuleTests'
 
 
+  Scenario: When rule is created with association name, this name should be seen in association table for event
+    When The user go in to item 'itemIdForEventRuleTests'
+    When The user click rule tab
+    When The user delete all rules if any exists
+    When The user sets two different rule with and
+    When The user clicks Set Rules button with association name 'RuleTestAutomation'
+    Then The user go to rule association tab 'EVENT_CONTACT'
+    Then The user verifies that associated item has association name 'RuleTestAutomation'
+    Then The user tear down all rules 'itemIdForEventRuleTests'
+
+
+  Scenario: When rule is created with a random association name,this name should be seen in association table for event
+    When The user go in to item 'itemIdForEventRuleTests'
+    When The user click rule tab
+    When The user delete all rules if any exists
+    When The user sets two different rule with and
+    When The user clicks Set Rules button with random association name
+    Then The user go to rule association tab 'EVENT_CONTACT'
+    Then The user verifies that associated item has association name 'Random'
+    Then The user tear down all rules 'itemIdForEventRuleTests'
+
+
 

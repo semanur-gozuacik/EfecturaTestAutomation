@@ -113,6 +113,9 @@ public class Membership_AccountRulePage extends BasePage {
     @FindBy(xpath = "//table//tr/th[text()='Label']/ancestor::table//tbody/tr/td[count(//table//tr/th[text()='Label']/preceding-sibling::th)+1]\n")
     private List<WebElement> labelValues;
 
+    @FindBy(xpath = "//table//tr/th[text()='AssociationName']/ancestor::table//tbody/tr/td[count(//table//tr/th[text()='AssociationName']/preceding-sibling::th)+1]")
+    private List<WebElement> assocNameValues;
+
     @FindBy(xpath = "//tr/td[1]/a")
     private List<WebElement> idValues;
 
@@ -191,6 +194,12 @@ public class Membership_AccountRulePage extends BasePage {
 
     @FindBy(xpath = "//span[@id='arrowbtn-down']")
     private WebElement scrollRightButton;
+
+    @FindBy(xpath = "//input[@id='rule-assoc-name']")
+    private WebElement ruleAssociationNameInputBox;
+
+    @FindBy(xpath = "//input[@id='rule-random-assoc']")
+    private WebElement ruleRandomAssociationNameCheckBox;
 
 
 
@@ -301,6 +310,7 @@ public class Membership_AccountRulePage extends BasePage {
     public void tearDownAllChanges() {
         BrowserUtils.wait(3);
         BrowserUtils.waitForVisibility(deleteAllRulesButton,10);
+        BrowserUtils.waitForClickability(deleteAllRulesButton,10);
         deleteAllRulesButton.click();
         deleteButtonInDeleteConfirmModal.click();
         BrowserUtils.waitForVisibility(allRuleDeleteWarning,10);
@@ -376,7 +386,7 @@ public class Membership_AccountRulePage extends BasePage {
         distributorBasisCodeInputBox.sendKeys("TestAutomation");
     }
     public void verifyAssociationOfTheItemRemoved(String tabName, String itemIdForRule) {
-        BrowserUtils.wait(6);
+        BrowserUtils.wait(7);
         driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty(itemIdForRule));
         BrowserUtils.wait(17);
         driver.navigate().refresh();
@@ -510,5 +520,29 @@ public class Membership_AccountRulePage extends BasePage {
                 accordionButton.click();
             }
         }
+    }
+
+    public void clickSetRulesButtonWithAssociationName(String assocName) {
+        setRulesButton.click();
+        ruleAssociationNameInputBox.sendKeys(assocName);
+        continueButtonInSetRulesModal.click();
+        BrowserUtils.wait(1);
+        BrowserUtils.waitForVisibility(ruleSaveWarning,18);
+        BrowserUtils.wait(5);
+    }
+
+    public void verifyAssociatedItemHasAssociationName(String expectedAssocName) {
+        for (WebElement assocNameValue : assocNameValues) {
+            Assert.assertEquals(expectedAssocName,assocNameValue.getText());
+        }
+    }
+
+    public void clickSetRulesButtonWithRandomAssociationName() {
+        setRulesButton.click();
+        ruleRandomAssociationNameCheckBox.click();
+        continueButtonInSetRulesModal.click();
+        BrowserUtils.wait(1);
+        BrowserUtils.waitForVisibility(ruleSaveWarning,18);
+        BrowserUtils.wait(5);
     }
 }

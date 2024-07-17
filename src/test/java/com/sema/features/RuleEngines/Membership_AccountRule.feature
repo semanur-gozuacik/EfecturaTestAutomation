@@ -89,5 +89,26 @@ Feature: Membership_Account Rule Test Cases
     Then The user edit an account to meet the rules 'TearDown'
 
 
+  Scenario: When rule is created with a association name, this name should be seen in association table for membership
+    When The user go in to item 'itemIdForMembershipRuleTests'
+    When The user click rule tab
+    When The user delete all rules if any exists
+    When The user sets two different rule with and
+    When The user clicks Set Rules button with association name 'RuleTestAutomation'
+    Then The user go to rule association tab 'MEMBERSHIP_ACCOUNT'
+    Then The user verifies that associated item has association name 'RuleTestAutomation'
+    Then The user tear down all rules 'itemIdForMembershipRuleTests'
+
+
+  Scenario: When rule is created with a random association name,this name should be seen in association table for membership
+    When The user go in to item 'itemIdForMembershipRuleTests'
+    When The user click rule tab
+    When The user delete all rules if any exists
+    When The user sets two different rule with and
+    When The user clicks Set Rules button with random association name
+    Then The user go to rule association tab 'MEMBERSHIP_ACCOUNT'
+    Then The user verifies that associated item has association name 'Random'
+    Then The user tear down all rules 'itemIdForMembershipRuleTests'
+
 
 

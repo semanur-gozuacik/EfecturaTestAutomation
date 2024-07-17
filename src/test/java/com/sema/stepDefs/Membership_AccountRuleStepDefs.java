@@ -135,4 +135,19 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
     public void theUserDeleteAllRulesIfAnyExists() {
         pages.membershipAccountRulePage().deleteAllRulesIfAnyExists();
     }
+
+    @When("The user clicks Set Rules button with association name {string}")
+    public void theUserClicksSetRulesButtonWithAssociationName(String assocName) {
+        pages.membershipAccountRulePage().clickSetRulesButtonWithAssociationName(assocName);
+    }
+
+    @Then("The user verifies that associated item has association name {string}")
+    public void theUserVerifiesThatAssociatedItemHasAssociationNameRuleTestAutomation(String assocName) {
+        pages.membershipAccountRulePage().verifyAssociatedItemHasAssociationName(assocName);
+    }
+
+    @When("The user clicks Set Rules button with random association name")
+    public void theUserClicksSetRulesButtonWithRandomAssociationName() {
+        pages.membershipAccountRulePage().clickSetRulesButtonWithRandomAssociationName();
+    }
 }
