@@ -44,9 +44,8 @@ public class EditItemPage extends BasePage {
 
     public void goToRuleAssociationTab(String tabName) {
         driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
-        //accountAssociateTab.click();
         associatedFilter.click();
         associatedFilterYesOption.click();
-        BrowserUtils.wait(7);
+        BrowserUtils.wait(9);
     }
 }
