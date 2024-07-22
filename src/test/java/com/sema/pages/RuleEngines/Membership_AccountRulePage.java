@@ -532,6 +532,7 @@ public class Membership_AccountRulePage extends BasePage {
     }
 
     public void verifyAssociatedItemHasAssociationName(String expectedAssocName) {
+        BrowserUtils.wait(5);
         for (WebElement assocNameValue : assocNameValues) {
             Assert.assertEquals(expectedAssocName,assocNameValue.getText());
         }
