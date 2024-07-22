@@ -451,6 +451,7 @@ public class Import extends BasePage {
         associationTabsFirstRowCheckBox.click();
         unsavedChangesButton.click();
         saveButtonInChangeItemModal.click();
+        BrowserUtils.wait(2);
         editItemDeleteButton.click();
         deleteButtonInAreYouSureModal.click();
     }

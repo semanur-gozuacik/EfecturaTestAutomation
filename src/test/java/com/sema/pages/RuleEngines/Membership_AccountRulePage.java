@@ -312,6 +312,7 @@ public class Membership_AccountRulePage extends BasePage {
         BrowserUtils.waitForVisibility(deleteAllRulesButton,10);
         BrowserUtils.waitForClickability(deleteAllRulesButton,10);
         deleteAllRulesButton.click();
+        BrowserUtils.wait(1);
         deleteButtonInDeleteConfirmModal.click();
         BrowserUtils.waitForVisibility(allRuleDeleteWarning,10);
     }
