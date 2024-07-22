@@ -84,3 +84,42 @@ Feature: File Management Test Cases- Contact Home Page
       |Status:All|
       |Enabled   |
       |Disabled  |
+
+  Scenario:File edit -Event-Contact Tab
+    And The user enters "File_14222378" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Previeew" tab
+
+  Scenario:File edit -Event-Contact Tab
+    And The user enters "File_14222378" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "ItemComment" tab
+
+  Scenario:File edit -Event-Contact Tab
+    And The user enters "File_14222378" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Training-File" tab
+
+
+  Scenario:File edit - Event-Contact Tab Associated
+    And The user enters "File_14222378" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Training-File" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+  Scenario:File edit -Event-Contact Tab Associated Filter No
+    And The user enters "File_14222378" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Training-File" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
