@@ -72,7 +72,7 @@ Feature: File Management Test Cases- Contact Home Page
 
 
   Scenario Outline: File  Home Page Associated Tab Status Fılter "<Status>"
-    And The user enters "File_14222378" into Code field
+    And The user enters "File_296034" into Code field
     And  the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks "BANNER_MRP" tab
@@ -86,26 +86,26 @@ Feature: File Management Test Cases- Contact Home Page
       |Disabled  |
 
   Scenario:File edit -Event-Contact Tab
-    And The user enters "File_14222378" into Code field
+    And The user enters "File_296034" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Previeew" tab
 
   Scenario:File edit -Event-Contact Tab
-    And The user enters "File_14222378" into Code field
+    And The user enters "File_296034" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
 
   Scenario:File edit -Event-Contact Tab
-    And The user enters "File_14222378" into Code field
+    And The user enters "File_296034" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Training-File" tab
 
 
   Scenario:File edit - Event-Contact Tab Associated
-    And The user enters "File_14222378" into Code field
+    And The user enters "File_296034" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Training-File" tab
@@ -117,7 +117,7 @@ Feature: File Management Test Cases- Contact Home Page
     And the user verifies item status success message
 
   Scenario:File edit -Event-Contact Tab Associated Filter No
-    And The user enters "File_14222378" into Code field
+    And The user enters "File_296034" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Training-File" tab
