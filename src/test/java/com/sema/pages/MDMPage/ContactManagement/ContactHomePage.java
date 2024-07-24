@@ -91,7 +91,7 @@ public class ContactHomePage extends BasePage {
     private List<WebElement> verifyItemStatuses;
     @FindBy(xpath = "//a[contains(@class,'filter-toggle')][normalize-space()='ItemStatuses']")
     private WebElement clicksItemStatus;
-    @FindBy(xpath = "//span[contains(@class,'select2-search select2-search--dropdown')]//input[contains(@role,'textbox')]")
+    @FindBy(xpath = "//input[@placeholder='ItemStatuses']")
     private WebElement clicksItemStatusTextBox;
     @FindBy(xpath = "//span[contains(text(),'Reset')]")
     private WebElement resetButton;
@@ -272,6 +272,7 @@ public class ContactHomePage extends BasePage {
 
     public void clickSearchButton() {
         searchButton.click();
+        BrowserUtils.wait(5);
     }
 
     public void verifyCodeFilter(String code) {

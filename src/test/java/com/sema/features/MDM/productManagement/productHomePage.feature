@@ -43,7 +43,7 @@ Feature: Product Management Test Cases- Contact Home Page
     And The user enters "Product_179" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "Product_Asset" tab
+    And The user clicks "Web_Images" tab
     And The user Assocaited All filter
 
 
@@ -51,7 +51,7 @@ Feature: Product Management Test Cases- Contact Home Page
     And The user enters "Product_179" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "Product_Asset" tab
+    And The user clicks "Web_Images" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 
