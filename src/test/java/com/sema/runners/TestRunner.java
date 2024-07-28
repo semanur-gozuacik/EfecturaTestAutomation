@@ -24,7 +24,7 @@ import java.util.List;
                 "rerun:target/rerun.txt"
         },
         // Hangi senaryoların çalıştırılacağını belirten etiket
-        tags ="@testtttt",
+        tags ="@regression",
         features ="src/test/java/com/sema/features",
         glue  = "com/sema/stepDefs",
         dryRun = false
