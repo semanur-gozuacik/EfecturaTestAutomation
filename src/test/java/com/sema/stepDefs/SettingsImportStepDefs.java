@@ -98,11 +98,6 @@ public class SettingsImportStepDefs extends BaseStep {
         pages.importPage().updateExcel(point,endDate);
     }
 
-    @When("The user upload AccountCallback file")
-    public void theUserUploadAccountCallbackFile() {
-        pages.importPage().uploadAccountCallbackFile();
-    }
-
     @When("The user approve the import")
     public void theUserApproveTheImport() {
         pages.importPage().approveImport();
@@ -128,21 +123,6 @@ public class SettingsImportStepDefs extends BaseStep {
         pages.importPage().importTheImport();
     }
 
-    @When("The user select AccountCallback for importType")
-    public void theUserSelectAccountCallbackForImportType() {
-        pages.importPage().selectAccountCallbackForImportType();
-    }
-
-    @When("The user select ResourceTranslations for importType")
-    public void theUserSelectResourceTranslationsForImportType() {
-        pages.importPage().selectResourceTranslationsForImportType();
-    }
-
-    @When("The user upload ResourceTranslations file")
-    public void theUserUploadResourceTranslationsFile() {
-        pages.importPage().uploadResourceTranslationsFile();
-    }
-
     @Then("The user verifies that the resource added to Resources")
     public void theUserVerifiesThatTheResourceAddedToResources() throws IOException {
         pages.importPage().verifyTheResourceIsAddedToResources();
@@ -156,11 +136,6 @@ public class SettingsImportStepDefs extends BaseStep {
     @When("The user select {string} for importType")
     public void theUserSelectForImportType(String importType) {
         pages.importPage().selectImportType(importType);
-    }
-
-    @When("The user upload Contact file")
-    public void theUserUploadContactFile() {
-        pages.importPage().uploadContactFile();
     }
 
     @Then("The user verifies that the {string} is created")
@@ -178,19 +153,9 @@ public class SettingsImportStepDefs extends BaseStep {
         pages.importPage().tearDownAllChangesInContactCase();
     }
 
-    @When("The user upload Account file")
-    public void theUserUploadAccountFile() {
-        pages.importPage().uploadAccountFile();
-    }
-
     @Then("The user tear down all changes in Account Case")
     public void theUserTearDownAllChangesInAccountCase() {
         pages.importPage().tearDownAllChangesInAccountCase();
-    }
-
-    @When("The user upload Association file")
-    public void theUserUploadAssociationFile() {
-        pages.importPage().uploadAssociationFile();
     }
 
     @Then("The user verifies that the {string} is associated with the {string}")
@@ -203,19 +168,14 @@ public class SettingsImportStepDefs extends BaseStep {
         pages.importPage().tearDownAllChangesInAssociationCase();
     }
 
-    @When("The user update Account excel with random sku")
-    public void theUserUpdateAccountExcelWithRandomSku() throws IOException {
-        pages.importPage().updateAccountExcelWithRandomSku();
-    }
+//    @When("The user update Account excel with random sku")
+//    public void theUserUpdateAccountExcelWithRandomSku() throws IOException {
+//        pages.importPage().updateAccountExcelWithRandomSku();
+//    }
 
-    @When("The user update Contact excel with random sku")
-    public void theUserUpdateContactExcelWithRandomSku() throws IOException {
-        pages.importPage().updateContactExcelWithRandomSku();
-    }
-
-    @When("The user upload Attribute file")
-    public void theUserUploadAttributeFile() {
-        pages.importPage().uploadAttributeFile();
+    @When("The user update {string} excel with random sku")
+    public void theUserUpdateExcelWithRandomSku(String excelFile) throws IOException {
+        pages.importPage().updateExcelWithRandomSku(excelFile);
     }
 
     @Then("The user verifies that attributes are created")
@@ -226,5 +186,10 @@ public class SettingsImportStepDefs extends BaseStep {
     @Then("The user tear down all changes in Attribute Case")
     public void theUserTearDownAllChangesInAttributeCase() {
         pages.importPage().tearDownAllChangesInAttributeCase();
+    }
+
+    @When("The user upload {string} file")
+    public void theUserUploadFile(String excelFile) {
+        pages.importPage().uploadExcelFile(excelFile);
     }
 }
