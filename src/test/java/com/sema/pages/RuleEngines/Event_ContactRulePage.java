@@ -56,16 +56,17 @@ public class Event_ContactRulePage extends BasePage {
         }
     }
 
-    public void goToItemsToVerifyDetailInfoWithTwoStepForOr() {
+    public void goToItemsToVerifyDetailInfoWithTwoStepForOr(String tabName) {
         List<String> contactIds = getStringListFromWebElementList(idValues);
         List<String> accountIds = new ArrayList<>();
 
         for (String contactId : contactIds) {
             driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + contactId);
-            accountContactTab.click();
+            driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
             BrowserUtils.wait(2);
             associatedFilter.click();
             associatedFilterYesOption.click();
+            BrowserUtils.wait(1);
             accountIds.add(idValues.get(0).getText());
         }
         verifyDetailInfoForRuleOfOr(accountIds);
@@ -84,30 +85,34 @@ public class Event_ContactRulePage extends BasePage {
         }
     }
 
-    public void goToItemsToVerifyDetailInfoWithTwoStepForAnd() {
+    public void goToItemsToVerifyDetailInfoWithTwoStepForAnd(String tabName) {
         List<String> contactIds = getStringListFromWebElementList(idValues);
         List<String> accountIds = new ArrayList<>();
 
         for (String contactId : contactIds) {
             driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + contactId);
-            accountContactTab.click();
+            driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
             associatedFilter.click();
             associatedFilterYesOption.click();
+            BrowserUtils.wait(1);
             accountIds.add(idValues.get(0).getText());
         }
         verifyDetailInfoForRuleOfAnd(accountIds);
     }
 
-    String idOfItemWhichIsAssociatedWithEditedItem = "7";
-    public void verifyEditedItemIsAssociatedWithTwoStep(String tabName, String itemIdForRule) {
+    String itemIdForAssociationForContact = "7";
+    String itemIdForAssociationForUser = "292374";
+    public void verifyEditedItemIsAssociatedWithTwoStep(String tabName, String itemIdForRule, String itemIdForAssociation) {
         driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty(itemIdForRule));
         driver.navigate().refresh();
-        BrowserUtils.wait(18);
+        BrowserUtils.wait(17);
+        driver.navigate().refresh();
+        BrowserUtils.wait(4);
         driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
         BrowserUtils.waitForVisibility(associatedFilter,30);
         associatedFilter.click();
         associatedFilterYesOption.click();
         BrowserUtils.wait(6);
-        Assert.assertEquals(idOfItemWhichIsAssociatedWithEditedItem, idValues.get(0).getText());
+        Assert.assertEquals(ConfigurationReader.getProperty(itemIdForAssociation), idValues.get(0).getText());
     }
 }

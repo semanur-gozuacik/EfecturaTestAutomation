@@ -4,19 +4,19 @@ import io.cucumber.java.en.Then;
 
 public class Event_ContactRuleStepDef extends BaseStep{
 
-    @Then("The user go to items to verify detail info with two step for or")
-    public void theUserGoToItemsToVerifyDetailInfoWithTwoStepForOr() {
-        pages.eventContactRulePage().goToItemsToVerifyDetailInfoWithTwoStepForOr();
+    @Then("The user go to items to verify detail info with two step for or {string}")
+    public void theUserGoToItemsToVerifyDetailInfoWithTwoStepForOr(String tabName) {
+        pages.eventContactRulePage().goToItemsToVerifyDetailInfoWithTwoStepForOr(tabName);
     }
 
-    @Then("The user go to items to verify detail info with two step for and")
-    public void theUserGoToItemsToVerifyDetailInfoWithTwoStepForAnd() {
-        pages.eventContactRulePage().goToItemsToVerifyDetailInfoWithTwoStepForAnd();
+    @Then("The user go to items to verify detail info with two step for and {string}")
+    public void theUserGoToItemsToVerifyDetailInfoWithTwoStepForAnd(String tabName) {
+        pages.eventContactRulePage().goToItemsToVerifyDetailInfoWithTwoStepForAnd(tabName);
     }
 
 
-    @Then("The user verifies that the edited item is associated with two step {string} {string}")
-    public void theUserVerifiesThatTheEditedItemIsAssociatedWithTwoStep(String tabName, String itemIdForRule) {
-        pages.eventContactRulePage().verifyEditedItemIsAssociatedWithTwoStep(tabName,itemIdForRule);
+    @Then("The user verifies edited item is associated with two step {string} {string} {string}")
+    public void theUserVerifiesEditedItemIsAssociatedWithTwoStep(String tabName, String itemIdForRule, String itemIdForAssociation) {
+        pages.eventContactRulePage().verifyEditedItemIsAssociatedWithTwoStep(tabName,itemIdForRule,itemIdForAssociation);
     }
 }
