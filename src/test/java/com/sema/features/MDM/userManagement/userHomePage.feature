@@ -492,3 +492,42 @@ Feature: User Management Test Cases- Contact Home Page
 
 
 
+  Scenario:User edit -Training-User tab Assocaited All filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "MRP_SURVEY" tab
+    And The user Assocaited All filter
+    And The user clicks item
+    And the user clicks on unsaved change button
+    And The user enters "-------" in  comment area
+    And The user clicks save button
+    And the user verifies item status success message
+
+  Scenario:User edit -Training-User tab  Assocaited No filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "MRP_SURVEY" tab
+    And The user Assocaited No filter
+    Then The user verify No Filter
+
+  Scenario Outline:User edit -Account-MRP tab- "<status>" Filter
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "MRP_SURVEY" tab
+    And The user Assocaited All filter
+    And The user selects edit item "<status>"
+    Examples:
+      |status|
+      |Enable|
+      |Disable|
+
+  Scenario:User edit -Attributes Tab
+    And The user enters "Otomasyon" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "User" tab
+
+
