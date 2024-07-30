@@ -141,7 +141,7 @@ public class Import extends BasePage {
     @FindBy(xpath = "//a[contains(text(),'Account MRP')]")
     private WebElement accountMrpTabInAccountEditItem;
 
-    @FindBy(xpath = "//tr[@role='row']/th")
+    @FindBy(xpath = "//table[@id='DataTables_Table_0']/thead/tr/th")
     private List<WebElement> editItemAssociationTabsTableHeaders;
 
     @FindBy(xpath = "//*[@id='DataTables_Table_0']/tbody/tr[1]/td")
@@ -389,6 +389,7 @@ public class Import extends BasePage {
         Boolean isAccount = expectedAccountNumber.equals(getValueOfTableInEditItem("CODE"));
         Boolean isAccountAssociated = actualAssociatedValue.equals("Yes");
 
+//        Assert.assertEquals(expectedAccountNumber,getValueOfTableInEditItem("CODE"));
         Assert.assertTrue(isAccount && isAccountAssociated);
     }
 
