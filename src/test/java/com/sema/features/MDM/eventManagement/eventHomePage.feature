@@ -58,12 +58,12 @@ Feature: Event Management Test Cases- Event Home Page
       |100|
 
   Scenario: Event page edit verify
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
@@ -79,7 +79,7 @@ Feature: Event Management Test Cases- Event Home Page
 
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
@@ -94,7 +94,7 @@ Feature: Event Management Test Cases- Event Home Page
       |Passive    |
 
   Scenario: Edit item added list
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks list drop down button
@@ -102,32 +102,32 @@ Feature: Event Management Test Cases- Event Home Page
     # Then The user verifies item is added
 
   Scenario: Edit item removed list
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And  the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks removed button
     # Then The user verifies item is removed
 
   Scenario:Event edit - EVENT_LOCATION Tab
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "EVENT_LOCATION" tab
 
   Scenario:Event edit - ItemComment Tab
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
 
   Scenario:Event edit - history Tab
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "history" tab
 
   Scenario:Event edit - Categories Tab
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Categories" tab
@@ -144,13 +144,13 @@ Feature: Event Management Test Cases- Event Home Page
     And the user verify Reset button functionality
 
   Scenario:Event edit - Event-Product Tab
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Event-Product" tab
 
   Scenario:Contact edit - Event-Product Tab Associated
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Event-Product" tab
@@ -162,7 +162,7 @@ Feature: Event Management Test Cases- Event Home Page
     And the user verifies item status success message
 
   Scenario:Contact edit -Event-Product Tab Associated Filter No
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Event-Product" tab
@@ -171,13 +171,13 @@ Feature: Event Management Test Cases- Event Home Page
 
 
   Scenario:Event edit - EVENT_CONTACT Tab
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "EVENT_CONTACT" tab
 
   Scenario:Event edit - EVENT_CONTACT Tab Associated
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "EVENT_CONTACT" tab
@@ -185,7 +185,7 @@ Feature: Event Management Test Cases- Event Home Page
 
 
   Scenario:Event edit EVENT_CONTACT Tab Associated Filter No
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "EVENT_CONTACT" tab
@@ -194,13 +194,13 @@ Feature: Event Management Test Cases- Event Home Page
 
 
   Scenario:Event edit - Event-Gift Tab
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Event_Gift" tab
 
   Scenario:Event edit - Event-Gift Tab Associated
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Event_Gift" tab
@@ -212,7 +212,7 @@ Feature: Event Management Test Cases- Event Home Page
      #And the user verifies item status success message
 
   Scenario:Event edit Event-Gift Tab Associated Filter No
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Event_Gift" tab
@@ -220,13 +220,13 @@ Feature: Event Management Test Cases- Event Home Page
     Then The user verify No Filter
 
   Scenario:Event edit - EVENT_DIGITAL_ASSET Tab
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "EVENT_DIGITAL_ASSET" tab
 
   Scenario:Event edit - EVENT_DIGITAL_ASSET Tab Associated
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "EVENT_DIGITAL_ASSET" tab
@@ -238,7 +238,7 @@ Feature: Event Management Test Cases- Event Home Page
     And the user verifies item status success message
 
   Scenario:Event edit EVENT_DIGITAL_ASSET Tab Associated Filter No
-    And The user enters "CheckboxTest" into Code field
+    And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "EVENT_DIGITAL_ASSET" tab
