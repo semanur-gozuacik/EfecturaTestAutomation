@@ -90,7 +90,7 @@ Feature: Campaign_Account Rule Test Cases
     Then The user edit an account to meet the rules 'TearDown'
 
 
-  Scenario: When rule is created with association name, this name should be seen in association table for campaign
+  Scenario: When a campaign rule is created with association name, this name should be seen in association table
     When The user go in to item 'itemIdForCampaignRuleTests'
     When The user click rule tab
     When The user delete all rules if any exists
@@ -101,7 +101,7 @@ Feature: Campaign_Account Rule Test Cases
     Then The user tear down all rules 'itemIdForCampaignRuleTests'
 
 
-  Scenario: When rule is created with a random association name,this name should be seen in association table for event
+  Scenario: When a campaign rule is created with a random association name,this name should be seen in association table
     When The user go in to item 'itemIdForCampaignRuleTests'
     When The user click rule tab
     When The user delete all rules if any exists
