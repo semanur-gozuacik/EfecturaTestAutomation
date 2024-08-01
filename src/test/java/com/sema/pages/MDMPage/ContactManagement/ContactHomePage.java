@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class ContactHomePage extends BasePage {
@@ -131,8 +132,12 @@ public class ContactHomePage extends BasePage {
     @FindBy(xpath = "//tr/td[11]/a[3]")
     private List<WebElement> starItems;
 
-    @FindBy(xpath = "//span[contains(text(),'Export')]")
+    @FindBy(xpath = "//button[contains(normalize-space(),'Export')]")
     private WebElement exportButton;
+
+    @FindBy(xpath = "//a[contains(text(),'ExportAll')]")
+    private WebElement exportAllOption;
+
     @FindBy(xpath = "//span[normalize-space()='Success']")
     private WebElement exportSuccessMessage;
     @FindBy(xpath = "//div[@id='details']/div[@id='title-area']/a[@id='file-link']")
@@ -392,7 +397,7 @@ public class ContactHomePage extends BasePage {
 
     public void verifyDeletingObject(String code) {
         BrowserUtils.waitForVisibility(deletingObject, 5);
-        assertTrue(deletingObject.getText().equals(code));
+        assertEquals(deletingObject.getText(), code);
     }
 
     public void verifyDeleteMessage() {
@@ -506,6 +511,7 @@ public class ContactHomePage extends BasePage {
     public void clickExportButton() {
         BrowserUtils.waitForVisibility(exportButton, 10);
         exportButton.click();
+        exportAllOption.click();
     }
 
     public void verifyExportSuccessMessage(String message) {

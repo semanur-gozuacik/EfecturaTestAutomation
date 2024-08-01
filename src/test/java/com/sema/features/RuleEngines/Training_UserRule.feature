@@ -109,7 +109,7 @@ Feature: TRAINING_USER Rule Test Cases
     When The user clicks Set Rules button with random association name
     Then The user go to rule association tab 'TRAINING_USER'
     Then The user verifies that associated item has association name 'Random'
-    Then The user tear down all rules 'itemIdForEventRuleTests'
+    Then The user tear down all rules 'itemIdForGoalRuleTests'
 
 
 
