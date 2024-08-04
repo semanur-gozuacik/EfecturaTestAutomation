@@ -223,6 +223,12 @@ Feature: Campaign Management Test Cases- Campaign Home Page
       |Passive    |
       |Active     |
 
+  Scenario:Campaign edit - Campaign-point Associated
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And The user clicks "Campaign Points" tab
+
   Scenario:Campaign edit - Campaign-Account Associated
     And The user enters "TestAutomation" into Code field
     And the user clicks on Search button
@@ -248,3 +254,41 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And  The user enters columns button
     And  The user selected columns
     And  The user clicks Default button columns
+
+  Scenario:Group Permission Verify Last Page Button Unclickable Condition
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And clicks group permission tab
+    When The user clicks last page button asset
+    And  The user verifies last button is unclickable asset
+
+  Scenario:Group Permission Verify Item next Button unclickable Condition
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And clicks group permission tab
+    When The user clicks last page button asset
+    And  The user verifies next button is unclickable asset
+
+  Scenario:Group Permission Verify Item First Page Button Clickable Condition
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And clicks group permission tab
+    When The user clicks last page button asset
+    #And  The user verifies first page button is clickable asset
+
+  Scenario:User Permission Verify Item First Page Button Unclickable Condition
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And clicks user permission tab
+    And  The user verifies first page button is not clickable user
+
+  Scenario:User Permission Verify Item Previous Page Button Unclickable Condition
+    And The user enters "TestAutomation" into Code field
+    And the user clicks on Search button
+    And  The user clicks on Edit Button
+    And clicks user permission tab
+    And  The user verifies previous page button is not clickable user
