@@ -9,7 +9,7 @@ Feature: EVENT_CONTACT Rule Test Cases
     When  The User waits until the System element is visible with a timeout of 120 seconds
 
 
-  Scenario: When a rule is created, Contacts that meet the rule with or operator must be associated.
+  Scenario: When a rule is created, Contacts that meet the event rule with or operator must be associated.
     When The user go in to item 'itemIdForEventRuleTests'
     When The user click rule tab
     When The user delete all rules if any exists
@@ -20,7 +20,7 @@ Feature: EVENT_CONTACT Rule Test Cases
     Then The user tear down all rules 'itemIdForEventRuleTests'
 
 
-  Scenario: When a rule is created, Contacts that meet the rule with and operator must be associated.
+  Scenario: When a rule is created, Contacts that meet the event rule with and operator must be associated.
     When The user go in to item 'itemIdForEventRuleTests'
     When The user click rule tab
     When The user delete all rules if any exists
@@ -62,7 +62,7 @@ Feature: EVENT_CONTACT Rule Test Cases
     Then The user tear down all rules 'itemIdForEventRuleTests'
     Then The user edit an account to meet the rules 'TearDown'
 
-  Scenario: When an account is edited to meet the rules, contact that is associated with this account must be associated.
+  Scenario: When an account is edited to meet the event rules, contact that is associated with this account must be associated.
     When The user edit an account to meet the rules 'TearDown'
     When The user go in to item 'itemIdForEventRuleTests'
     When The user click rule tab
@@ -76,7 +76,7 @@ Feature: EVENT_CONTACT Rule Test Cases
     Then The user tear down all rules 'itemIdForEventRuleTests'
 
 
-  Scenario: When an account is edited to not meet the rules, associate of this item should be removed
+  Scenario: When an account is edited to not meet the event rules, associate of this item should be removed
     When The user edit an account to meet the rules 'TestAutomation'
     When The user go in to item 'itemIdForEventRuleTests'
     When The user click rule tab

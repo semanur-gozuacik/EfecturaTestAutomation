@@ -400,9 +400,9 @@ Feature: User Management Test Cases- Contact Home Page
     And The user Assocaited All filter
     And The user selects edit item "<status>"
     Examples:
-    |status|
-    |Enable|
-    |Disable|
+      | status  |
+      | Active  |
+      | Passive |
 
   Scenario:User edit -Training-User tab Assocaited All filter
     And The user enters "Otomasyon" into Code field
@@ -428,13 +428,13 @@ Feature: User Management Test Cases- Contact Home Page
     And The user enters "Otomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "Training-User" tab
+    And The user clicks "Account-MRP" tab
     And The user Assocaited All filter
     And The user selects edit item "<status>"
     Examples:
-      |status|
-      |Enable|
-      |Disable|
+      | status  |
+      | Active  |
+      | Passive |
 
   Scenario:User edit -Banner-MRP tab Assocaited All filter
     And The user enters "Otomasyon" into Code field
@@ -520,9 +520,9 @@ Feature: User Management Test Cases- Contact Home Page
     And The user Assocaited All filter
     And The user selects edit item "<status>"
     Examples:
-      |status|
-      |Enable|
-      |Disable|
+      | status  |
+      | Active  |
+      | Passive |
 
   Scenario:User edit -Attributes Tab
     And The user enters "Otomasyon" into Code field

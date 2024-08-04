@@ -34,7 +34,7 @@ public class PersonsUserHomePageStepDefs extends BaseStep {
     }
     @Given("The user selects edit item {string}")
     public void the_user_selects_edit_item(String status) {
-pages.userHomePage().selectStatus(status);
+        pages.userHomePage().selectStatus(status);
     }
     @Given("The user clicks Reset button edit item")
     public void the_user_clicks_reset_button_edit_item() {

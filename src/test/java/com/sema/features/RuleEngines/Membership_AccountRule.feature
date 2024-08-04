@@ -44,7 +44,7 @@ Feature: Membership_Account Rule Test Cases
     Then The user tear down all rules 'itemIdForMembershipRuleTests'
 
 
-  Scenario: When an account is edited to meet the rules, this account must be associated.
+  Scenario: When an account is edited to meet the rules, this account must be associated for membership.
     When The user edit an account to meet the rules 'TearDown'
     When The user go in to item 'itemIdForMembershipRuleTests'
     When The user click rule tab
@@ -58,7 +58,7 @@ Feature: Membership_Account Rule Test Cases
     Then The user tear down all rules 'itemIdForMembershipRuleTests'
 
 
-  Scenario: When an account is edited to not meet the rules, associate of this item should be removed
+  Scenario: When an account is edited to not meet the rules, associate of this item should be removed for membership
     When The user edit an account to meet the rules 'TestAutomation'
     When The user go in to item 'itemIdForMembershipRuleTests'
     When The user click rule tab

@@ -107,7 +107,7 @@ public class Event_ContactRulePage extends BasePage {
         driver.navigate().refresh();
         BrowserUtils.wait(17);
         driver.navigate().refresh();
-        BrowserUtils.wait(4);
+        BrowserUtils.wait(5);
         driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
         BrowserUtils.waitForVisibility(associatedFilter,30);
         associatedFilter.click();

@@ -9,7 +9,7 @@ Feature: TRAINING_USER Rule Test Cases
     When  The User waits until the System element is visible with a timeout of 120 seconds
 
 
-  Scenario: When a rule is created, Contacts that meet the rule with or operator must be associated.
+  Scenario: When a goal rule is created, Users that meet the rule with or operator must be associated.
     When The user go in to item 'itemIdForGoalRuleTests'
     When The user click rule tab
     When The user delete all rules if any exists
@@ -20,7 +20,7 @@ Feature: TRAINING_USER Rule Test Cases
     Then The user tear down all rules 'itemIdForGoalRuleTests'
 
 
-  Scenario: When a rule is created, Contacts that meet the rule with and operator must be associated.
+  Scenario: When a goal rule is created, Users that meet the rule with and operator must be associated.
     When The user go in to item 'itemIdForGoalRuleTests'
     When The user click rule tab
     When The user delete all rules if any exists
@@ -31,7 +31,7 @@ Feature: TRAINING_USER Rule Test Cases
     Then The user tear down all rules 'itemIdForGoalRuleTests'
 
 
-  Scenario: While a contact who does not meet with the relevant rule is added to the inList for this goal,
+  Scenario: While a user who does not meet with the relevant rule is added to the inList for this goal,
   this user should be added to the associates.
     When The user go in to item 'itemIdForGoalRuleTests'
     When The user click rule tab
@@ -46,7 +46,7 @@ Feature: TRAINING_USER Rule Test Cases
     Then The user tear down all rules 'itemIdForGoalRuleTests'
 
 
-  Scenario: While a contact who meet the rule is added to the NotInList for this goal,
+  Scenario: While a user who meet the rule is added to the NotInList for this goal,
   this user should be removed from the associates.
     When The user edit an account to meet the rules 'TestAutomation'
     When The user go in to item 'itemIdForGoalRuleTests'
@@ -62,7 +62,7 @@ Feature: TRAINING_USER Rule Test Cases
     Then The user tear down all rules 'itemIdForGoalRuleTests'
     Then The user edit an account to meet the rules 'TearDown'
 
-  Scenario: When an account is edited to meet the rules, contact that is associated with this account must be associated.
+  Scenario: When an account is edited to meet the rules, user that is associated with this account must be associated.
     When The user edit an account to meet the rules 'TearDown'
     When The user go in to item 'itemIdForGoalRuleTests'
     When The user click rule tab
@@ -76,7 +76,7 @@ Feature: TRAINING_USER Rule Test Cases
     Then The user tear down all rules 'itemIdForGoalRuleTests'
 
 
-  Scenario: When an account is edited to not meet the rules, associate of this item should be removed
+  Scenario: When an account is edited to not meet the rules, associate of this item should be removed for goal
     When The user edit an account to meet the rules 'TestAutomation'
     When The user go in to item 'itemIdForGoalRuleTests'
     When The user click rule tab
@@ -90,7 +90,7 @@ Feature: TRAINING_USER Rule Test Cases
     Then The user tear down all rules 'itemIdForGoalRuleTests'
 
 
-  Scenario: When rule is created with association name, this name should be seen in association table for event
+  Scenario: When goal rule is created with association name, this name should be seen in association table
     When The user go in to item 'itemIdForGoalRuleTests'
     When The user click rule tab
     When The user delete all rules if any exists
@@ -101,15 +101,15 @@ Feature: TRAINING_USER Rule Test Cases
     Then The user tear down all rules 'itemIdForGoalRuleTests'
 
 
-  Scenario: When rule is created with a random association name,this name should be seen in association table for event
-    When The user go in to item 'itemIdForEventRuleTests'
+  Scenario: When goal rule is created with a random association name,this name should be seen in association table
+    When The user go in to item 'itemIdForGoalRuleTests'
     When The user click rule tab
     When The user delete all rules if any exists
     When The user sets two different rule with and
     When The user clicks Set Rules button with random association name
     Then The user go to rule association tab 'TRAINING_USER'
     Then The user verifies that associated item has association name 'Random'
-    Then The user tear down all rules 'itemIdForEventRuleTests'
+    Then The user tear down all rules 'itemIdForGoalRuleTests'
 
 
 

@@ -28,11 +28,11 @@ public class UserHomePage extends BasePage {
     private WebElement DEF_ACCOUNTFamilyFılter;
     @FindBy(xpath = "//li[contains(text(),'HOSPITALITY') and @role='treeitem']")
     private WebElement HOSPITALITYFamilyFılter;
-    @FindBy(xpath ="//a[normalize-space()='Status']//*[name()='svg']")
+    @FindBy(xpath ="//div[contains(@id,'ItemStatuses')]/a[contains(text(),'ItemStatuses')]")
     private WebElement statusFilter;
-    @FindBy(xpath ="//li[contains(text(),'Enable') and @role='treeitem']")
+    @FindBy(xpath ="//li[contains(text(),'Active') and @role='treeitem']")
     private WebElement enabledStatusFilter;
-    @FindBy(xpath ="//li[contains(text(),'Disabled') and @role='treeitem']")
+    @FindBy(xpath ="//li[contains(text(),'Passive') and @role='treeitem']")
     private WebElement disabledStatusFilter;
     @FindBy(xpath ="//span[contains(text(),'Columns')]")
     private WebElement columnsButton;
@@ -100,7 +100,7 @@ public class UserHomePage extends BasePage {
     }  public void selectStatus(String status){
         BrowserUtils.wait(7);
         statusFilter.click();
-        if (status.startsWith("Enabled")){
+        if (status.startsWith("Active")){
             selectEnabled();
 
         }else {selectDisabled();
