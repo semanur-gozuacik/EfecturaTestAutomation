@@ -1,5 +1,5 @@
 @regression
-Feature: EVENT_CONTACT Rule Test Cases
+Feature: GIFT_CONTACT Rule Test Cases
 
   Background:
     Given The User opens the browser with the given url

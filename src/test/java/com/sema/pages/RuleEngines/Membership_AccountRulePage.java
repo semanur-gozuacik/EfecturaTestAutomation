@@ -296,7 +296,7 @@ public class Membership_AccountRulePage extends BasePage {
     public void verifyTheItemThatIsSetInRuleIsAssociated(String tabName) {
         BrowserUtils.wait(3);
         driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(6);
         driver.navigate().refresh();
         driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
         BrowserUtils.wait(5);

@@ -117,7 +117,7 @@ public class Import extends BasePage {
     @FindBy(xpath = "//ul[@id='select2-ItemType-results']/li")
     private List<WebElement> filteredImportTypeOptions;
 
-    @FindBy(xpath = "//a[contains(text(),'Code')]")
+    @FindBy(xpath = "//a[starts-with(text(),'Code')]")
     private WebElement itemOverviewCodeFilter;
 
     @FindBy(xpath = "//input[@id='filter-SKU']")
