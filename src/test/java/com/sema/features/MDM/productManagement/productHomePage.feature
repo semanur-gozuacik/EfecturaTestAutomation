@@ -60,14 +60,14 @@ Feature: Product Management Test Cases- Contact Home Page
     And The user enters "Product_179" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "EVENT_PRODUCT" tab
+    And The user clicks "Event-Product" tab
     And The user Assocaited All filter
 
   Scenario:Product  edit - EVENT_PRODUCT Tab Associated Filter No
     And The user enters "Product_179" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "EVENT_PRODUCT" tab
+    And The user clicks "Event-Product" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 
