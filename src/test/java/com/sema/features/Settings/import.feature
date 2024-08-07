@@ -87,7 +87,7 @@ Feature: Import Management Test Cases
     When The user select "ResourceTranslations" for importType
     When The user upload "ResourceTranslations" file
     When The user import the uploaded file
-    Then The user verifies that the resource added to Resources
+    Then The user verifies that the "ResourceTranslations" added to Resources
     Then The user tear down changes in resources
 
   Scenario: Contact Case
@@ -95,8 +95,8 @@ Feature: Import Management Test Cases
     When The user select "Contact" for importType
     When The user upload "Contact" file
     When The user import the uploaded file
-    Then The user verifies that the "contact" is created
-    Then The user verifies that the contact is associated with stated account
+    Then The user verifies that the "Contact" is created
+    Then The user verifies that the "Contact" is associated with stated account
     Then The user tear down all changes in Contact Case
 
   Scenario: Account Case
@@ -104,7 +104,7 @@ Feature: Import Management Test Cases
     When The user select "Account" for importType
     When The user upload "Account" file
     When The user import the uploaded file
-    Then The user verifies that the "account" is created
+    Then The user verifies that the "Account" is created
     Then The user tear down all changes in Account Case
 
   Scenario: Association - Account_MRP

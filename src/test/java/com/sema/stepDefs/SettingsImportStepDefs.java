@@ -123,9 +123,9 @@ public class SettingsImportStepDefs extends BaseStep {
         pages.importPage().importTheImport();
     }
 
-    @Then("The user verifies that the resource added to Resources")
-    public void theUserVerifiesThatTheResourceAddedToResources() throws IOException {
-        pages.importPage().verifyTheResourceIsAddedToResources();
+    @Then("The user verifies that the {string} added to Resources")
+    public void theUserVerifiesThatTheResourceAddedToResources(String fileName) throws IOException {
+        pages.importPage().verifyTheResourceIsAddedToResources(fileName);
     }
 
     @Then("The user tear down changes in resources")
@@ -143,9 +143,9 @@ public class SettingsImportStepDefs extends BaseStep {
         pages.importPage().verifyItemIsCreated(importType);
     }
 
-    @Then("The user verifies that the contact is associated with stated account")
-    public void theUserVerifiesThatTheContactIsAssociatedWithStatedAccount() throws IOException {
-        pages.importPage().verifyThatContactIsAssociatedWithStatedAccount();
+    @Then("The user verifies that the {string} is associated with stated account")
+    public void theUserVerifiesThatTheContactIsAssociatedWithStatedAccount(String itemType) throws IOException {
+        pages.importPage().verifyThatContactIsAssociatedWithStatedAccount(itemType);
     }
 
     @Then("The user tear down all changes in Contact Case")
