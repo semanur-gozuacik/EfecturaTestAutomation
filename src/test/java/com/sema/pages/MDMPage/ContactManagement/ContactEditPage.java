@@ -85,6 +85,7 @@ public class ContactEditPage extends BasePage {
         select.selectByVisibleText(status);
     }
     public void clickUnSavedButton(){
+        accordionButton.click();
         BrowserUtils.waitForVisibility(unsavedChanges,15);
         unsavedChanges.click();
     }

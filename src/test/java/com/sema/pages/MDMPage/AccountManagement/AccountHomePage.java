@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.Optional;
 
 public class AccountHomePage extends BasePage {
     @FindBy(xpath = "//a[normalize-space()='Associated']")
@@ -36,6 +37,7 @@ public class AccountHomePage extends BasePage {
     }
 
     public void clicksSelectFirstItem() {
+        accordionButton.click();
         BrowserUtils.wait(7);
         selectFirstItem.click();
         BrowserUtils.wait(5);

@@ -182,6 +182,7 @@ public class ContactHomePage extends BasePage {
     private WebElement birthdateTab;
     @FindBy(xpath = "//td[9]")
     private List<WebElement> birthdateTabSorting;
+
     public ContactHomePage() {
     }
 
@@ -206,8 +207,7 @@ public class ContactHomePage extends BasePage {
         if (family.equalsIgnoreCase("Ekosystem")) {
             BrowserUtils.waitForVisibility(selectEkosystemFamily, 10);
             selectEkosystemFamily.click();
-        }
-        else {
+        } else {
             BrowserUtils.waitForVisibility(selectIWSAFamily, 10);
             selectIWSAFamily.click();
         }
@@ -261,12 +261,14 @@ public class ContactHomePage extends BasePage {
         codeFilterClick.click();
         codeFilterSendKey.sendKeys(code);
     }
+
     public void setEventNameFilter(String code) {
         BrowserUtils.wait(6);
         eventNameFilterClick.click();
         BrowserUtils.wait(6);
         EventNameFilterSendKey.sendKeys(code);
     }
+
     public void setFirstFilter(String code) {
         BrowserUtils.wait(6);
         firstFilterClick.click();
@@ -283,7 +285,9 @@ public class ContactHomePage extends BasePage {
     public void verifyCodeFilter(String code) {
         BrowserUtils.wait(5);
         System.out.println(verifyCodeFilter.getText());
-        assertTrue(verifyCodeFilter.getText().equalsIgnoreCase(code));
+        BrowserUtils.wait(3);
+        assertEquals(getColumnData(table, "CODE").get(0) , code);
+//        assertTrue(verifyCodeFilter.getText().equalsIgnoreCase(code));
     }
 
     public void verifyLabelFilter(String label) {
@@ -294,9 +298,9 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyPartialCodeFilters(String partialCode) {
-            System.out.println(verifyPartialCodeFilters.size());
-            assertTrue(verifyPartialCodeFilters.size()>1);
-        }
+        System.out.println(verifyPartialCodeFilters.size());
+        assertTrue(verifyPartialCodeFilters.size() > 1);
+    }
 
 
     public void verifyNoContentTextInvalidUniqueCode(String text) {
@@ -312,13 +316,14 @@ public class ContactHomePage extends BasePage {
 
     public void verifyPartialLabelFilters(String partialLabel) {
         BrowserUtils.wait(2);
-            System.out.println();
-            assertTrue(verifyPartialCodeFilters.size()>=1);
-        }
+        assertTrue(verifyPartialCodeFilters.size() >= 1);
+        assertEquals(getColumnData(table,"LABEL").get(0) , partialLabel);
+    }
+
     public void selectEkosystemFamilyFilter() {
         BrowserUtils.wait(7);
         familyFilterDropDownClick.click();
-        familyFilterDropDown.sendKeys("Ekosystem"+ Keys.ENTER);
+        familyFilterDropDown.sendKeys("Ekosystem" + Keys.ENTER);
     }
 
     public void verifyFamilyFilter() {
@@ -332,7 +337,7 @@ public class ContactHomePage extends BasePage {
     public void selectIWSAFamilyFilter() {
         BrowserUtils.wait(7);
         familyFilterDropDownClick.click();
-        familyFilterDropDown.sendKeys("IWSA"+ Keys.ENTER);
+        familyFilterDropDown.sendKeys("IWSA" + Keys.ENTER);
     }
 
     public void verifyIWSAFamilyFilter() {
@@ -341,6 +346,7 @@ public class ContactHomePage extends BasePage {
             assertTrue(verifyIWSAFamilyFilter.get(i).getText().equalsIgnoreCase("IWSA"));
         }
     }
+
     public void clicksItemStatuses(String itemStatus) {
         if (clicksItemStatusTextBox.equals("Active")) {
             clicksItemStatusTextBox.sendKeys("Active" + Keys.ENTER);
@@ -396,8 +402,9 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyDeletingObject(String code) {
-        BrowserUtils.waitForVisibility(deletingObject, 5);
-        assertEquals(deletingObject.getText(), code);
+        BrowserUtils.waitForVisibility(getColumnDataAsWebElement(table,"CODE").get(0), 5);
+        assertEquals(getColumnData(table,"CODE").get(0),code);
+//        assertEquals(deletingObject.getText(), code);
     }
 
     public void verifyDeleteMessage() {
@@ -411,11 +418,11 @@ public class ContactHomePage extends BasePage {
         showEntrieButton.click();
     }
 
-    public void selectEntrie(String entrie){
-        BrowserUtils.selectOption(showEntries,entrie);
+    public void selectEntrie(String entrie) {
+        BrowserUtils.selectOption(showEntries, entrie);
     }
 
-    public void verifySelectOption(String entrie){
+    public void verifySelectOption(String entrie) {
         BrowserUtils.wait(5);
         assertTrue(BrowserUtils.isOptionSelected(showEntries, entrie));
 
@@ -450,6 +457,7 @@ public class ContactHomePage extends BasePage {
             assertTrue(false);
         }
     }
+
     public void verifyStarFeatureBadgeCount() {
         BrowserUtils.wait(5);
       /* for (int i = 0; i <starFeaturesBadgeCounts.size(); i++) {
@@ -469,6 +477,7 @@ public class ContactHomePage extends BasePage {
        */
         assertTrue(true);
     }
+
     private static String extractNumberBeforeEntries(String text) {
         Pattern pattern = Pattern.compile("(\\d+)\\s+entries");
         Matcher matcher = pattern.matcher(text);
@@ -547,6 +556,7 @@ public class ContactHomePage extends BasePage {
         // boolean isDisabled = classes.contains("disabled");
         assertTrue(true);
     }
+
     public void verifypreviousPageButtonUnClickability() {
         BrowserUtils.wait(10);
         String classes = previousPageButton.getAttribute("class");
@@ -571,13 +581,16 @@ public class ContactHomePage extends BasePage {
             }
         }
 
-    }    public void verifyFirstPageButtonClickable() {
+    }
+
+    public void verifyFirstPageButtonClickable() {
         BrowserUtils.wait(5);
         //String classes = firstPageButton.getAttribute("class");
         //System.out.println(classes);
         //boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(false);
     }
+
     public void verifyPreviousPageButtonClickable() {
         BrowserUtils.wait(12);
         String classes = previousPageButton.getAttribute("class");
@@ -585,6 +598,7 @@ public class ContactHomePage extends BasePage {
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
     }
+
     public void verifyNextPageButtonClickable() {
         BrowserUtils.wait(5);
         String classes = nextPageButton.getAttribute("class");
@@ -592,6 +606,7 @@ public class ContactHomePage extends BasePage {
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
     }
+
     public void verifyLastPageButtonClickable() {
         BrowserUtils.wait(5);
         String classes = lastPageButton.getAttribute("class");
@@ -599,33 +614,41 @@ public class ContactHomePage extends BasePage {
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
     }
-    public void setUniqueCodeElement(String code){
+
+    public void setUniqueCodeElement(String code) {
         uniqueCodeElement.sendKeys(code);
     }
-      public void clickEditItemTab(String tabName){
+
+    public void clickEditItemTab(String tabName) {
         BrowserUtils.wait(5);
-        for (int i =0; i <editItemTabs.size(); i++) {
-            if (editItemTabs.get(i).getText().contains(tabName)){
+        for (int i = 0; i < editItemTabs.size(); i++) {
+            if (editItemTabs.get(i).getText().contains(tabName)) {
                 editItemTabs.get(i).click();
                 BrowserUtils.wait(2);
             }
+        }
     }
-}     public void verifyPreviewTab(){
-        BrowserUtils.waitForVisibility(verifyPreviewTab,7);
+
+    public void verifyPreviewTab() {
+        BrowserUtils.waitForVisibility(verifyPreviewTab, 7);
         assertTrue(verifyPreviewTab.isDisplayed());
     }
-    public void verifyItemCommentTab(){
-        BrowserUtils.waitForVisibility(verifyItemCommentTab,8);
+
+    public void verifyItemCommentTab() {
+        BrowserUtils.waitForVisibility(verifyItemCommentTab, 8);
         assertTrue(verifyItemCommentTab.isDisplayed());
     }
-    public void verifyMyAccountTab(){
-        BrowserUtils.waitForVisibility(verifyMyAccountTab,8);
+
+    public void verifyMyAccountTab() {
+        BrowserUtils.waitForVisibility(verifyMyAccountTab, 8);
         assertTrue(verifyMyAccountTab.isDisplayed());
     }
-public void exportButtonEditItem(){
-        BrowserUtils.waitForVisibility(exportButton,10);
+
+    public void exportButtonEditItem() {
+        BrowserUtils.waitForVisibility(exportButton, 10);
         exportButton.click();
-}
+    }
+
     public void clickUpdateOn() {
         BrowserUtils.waitForVisibility(updateOnTab, 8);
         updateOnTab.click();
@@ -714,7 +737,7 @@ public void exportButtonEditItem(){
                 Date dateTime1 = sdf.parse(dateString1);
 
                 Date dateTime2 = sdf.parse(dateString2);
-                if (dateTime1.compareTo(dateTime2)< 0) {
+                if (dateTime1.compareTo(dateTime2) < 0) {
                     assertTrue(false);
                 }
             } catch (Exception e) {

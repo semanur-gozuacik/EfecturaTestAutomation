@@ -100,6 +100,7 @@ public class MDMContactHomePageStepDef extends BaseStep {
     public void the_user_clicks_on_search_button() {
         BrowserUtils.wait(5);
         pages.contactHomePage().clickSearchButton();
+        BrowserUtils.wait(2);
     }
 
     @Then("the user verify on code filter functionality {string}")
