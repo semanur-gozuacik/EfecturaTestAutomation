@@ -37,7 +37,7 @@ public class MDMContactHomePageStepDef extends BaseStep {
     }
 
     @Then("The user enters a DIA_FirstName {string} input fields")
-    public void the_user_enters_a_dıa_first_name_input_fields(String DIA_firstName) {
+    public void the_user_enters_a_dia_first_name_input_fields(String DIA_firstName) {
         pages.contactHomePage().setDIA_FirstName(DIA_firstName);
     }
 
@@ -139,12 +139,12 @@ public class MDMContactHomePageStepDef extends BaseStep {
     }
 
     @Then("The user clicks on IWSA Filtre")
-    public void the_user_clicks_on_ıwsa_filtre() {
+    public void the_user_clicks_on_iwsa_filtre() {
         pages.contactHomePage().selectIWSAFamilyFilter();
     }
 
     @Then("the user verify on family filter IWSA functionality")
-    public void the_user_verify_on_family_filter_ıwsa_functionality() {
+    public void the_user_verify_on_family_filter_iwsa_functionality() {
         pages.contactHomePage().verifyIWSAFamilyFilter();
     }
 

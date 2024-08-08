@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-import java.util.Optional;
 
 public class AccountHomePage extends BasePage {
     @FindBy(xpath = "//a[normalize-space()='Associated']")
@@ -49,10 +48,9 @@ public class AccountHomePage extends BasePage {
 public void verifyAssociatedNoFilter(){
     BrowserUtils.wait(9);
 
-    for (int i= 0; i<noAssociatedText.size();i++){
-            Assert.assertTrue(noAssociatedText.get(i).getText().equals("No"));
-
-        }
+    for (WebElement element : noAssociatedText) {
+        Assert.assertEquals("No", element.getText());
+    }
 
 }
 }

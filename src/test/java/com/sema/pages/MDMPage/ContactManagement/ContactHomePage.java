@@ -77,9 +77,9 @@ public class ContactHomePage extends BasePage {
     @FindBy(xpath = "//td[.='IWSA']")
     private List<WebElement> verifyIWSAFamilyFilter;
     @FindBy(xpath = "//li[contains(text(),'Ekosystem') and @role='treeitem']")
-    private WebElement EkosystemFamilyFılter;
+    private WebElement EkosystemFamilyFilter;
     @FindBy(xpath = "//li[contains(text(),'IWSA') and @role='treeitem']")
-    private WebElement IWSAFamilyFılter;
+    private WebElement IWSAFamilyFilter;
     @FindBy(xpath = "//span[@class='select2-search select2-search--dropdown']//input[@role='textbox']")
     private WebElement familyFilterDropDown;
     @FindBy(xpath = "//a[normalize-space()='Family']")
@@ -231,8 +231,8 @@ public class ContactHomePage extends BasePage {
 
     public void verifyContactCategory() {
         BrowserUtils.wait(5);
-        for (int i = 0; i < verifyContactCategory.size(); i++) {
-            assertTrue(verifyContactCategory.get(i).getText().equalsIgnoreCase("Contact"));
+        for (WebElement element : verifyContactCategory) {
+            assertTrue(element.getText().equalsIgnoreCase("Contact"));
         }
     }
 
@@ -243,8 +243,8 @@ public class ContactHomePage extends BasePage {
 
     public void VerifyNewNodeCategory() {
         BrowserUtils.wait(7);
-        for (int i = 0; i < verifyNewNodeCategories.size(); i++) {
-            assertTrue(verifyNewNodeCategories.get(i).getText().equalsIgnoreCase("New Node"));
+        for (WebElement newNodeCategory : verifyNewNodeCategories) {
+            assertTrue(newNodeCategory.getText().equalsIgnoreCase("New Node"));
         }
     }
 
@@ -253,7 +253,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyUnassignedRecordsCategory() {
-        assertTrue(verifyUnassignedRecordsCategory.size() == 0);
+        assertEquals(0, verifyUnassignedRecordsCategory.size());
     }
 
     public void setCodeFilter(String code) {
@@ -291,9 +291,8 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyLabelFilter(String label) {
-        for (int i = 0; i < verifyPartialCodeFilters.size(); i++) {
-            System.out.println("");
-            assertTrue(verifyPartialCodeFilters.get(i).getText().equalsIgnoreCase(label));
+        for (WebElement verifyPartialCodeFilter : verifyPartialCodeFilters) {
+            assertTrue(verifyPartialCodeFilter.getText().equalsIgnoreCase(label));
         }
     }
 
@@ -327,9 +326,9 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyFamilyFilter() {
-        for (int i = 0; i < verifyEkosystemFamilyFilter.size(); i++) {
+        for (WebElement element : verifyEkosystemFamilyFilter) {
             System.out.println("");
-            assertTrue(verifyEkosystemFamilyFilter.get(i).getText().equalsIgnoreCase("Ekosystem"));
+            assertTrue(element.getText().equalsIgnoreCase("Ekosystem"));
         }
 
     }
@@ -341,9 +340,8 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyIWSAFamilyFilter() {
-        for (int i = 0; i < verifyIWSAFamilyFilter.size(); i++) {
-            System.out.println("");
-            assertTrue(verifyIWSAFamilyFilter.get(i).getText().equalsIgnoreCase("IWSA"));
+        for (WebElement element : verifyIWSAFamilyFilter) {
+            assertTrue(element.getText().equalsIgnoreCase("IWSA"));
         }
     }
 
@@ -361,9 +359,9 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyItemStatuses(String status) {
-        for (int i = 0; i < verifyItemStatuses.size(); i++) {
+        for (WebElement verifyItemStatus : verifyItemStatuses) {
             BrowserUtils.wait(5);
-            assertTrue(verifyItemStatuses.get(i).getText().equals(status));
+            assertEquals(verifyItemStatus.getText(), status);
             BrowserUtils.wait(7);
         }
     }
@@ -444,10 +442,10 @@ public class ContactHomePage extends BasePage {
     public void verifyStarFeatures(String starFeature) {
         BrowserUtils.wait(2);
         int count = 0;
-        for (int i = 0; i < starFeatures.size(); i++) {
-            if (starFeatures.get(i).getText().contains(starFeature)) {
+        for (WebElement feature : starFeatures) {
+            if (feature.getText().contains(starFeature)) {
                 count++;
-                System.out.println(starFeatures.get(i).getText());
+                System.out.println(feature.getText());
                 break;
             }
         }
@@ -490,10 +488,10 @@ public class ContactHomePage extends BasePage {
     int myCountsBadgeCounts = 0;
 
     public void clickStarItems() {
-        for (int i = 0; i < starItems.size(); i++) {
-            BrowserUtils.hoverOver(starItems.get(i));
+        for (WebElement starItem : starItems) {
+            BrowserUtils.hoverOver(starItem);
             BrowserUtils.wait(5);
-            starItems.get(i).click();
+            starItem.click();
             BrowserUtils.wait(5);
             myCountsBadgeCounts++;
         }
@@ -525,7 +523,7 @@ public class ContactHomePage extends BasePage {
 
     public void verifyExportSuccessMessage(String message) {
         BrowserUtils.waitForVisibility(exportSuccessMessage, 10);
-        assertTrue(message.equals(exportSuccessMessage.getText()));
+        assertEquals(message, exportSuccessMessage.getText());
     }
 
     public void verifyExportedFile() {
@@ -574,9 +572,9 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clicksStarFeatures(String starFeature) {
-        for (int i = 0; i < starFeatures.size(); i++) {
-            if (starFeatures.get(i).getText().contains(starFeature)) {
-                starFeatures.get(i).click();
+        for (WebElement feature : starFeatures) {
+            if (feature.getText().contains(starFeature)) {
+                feature.click();
                 break;
             }
         }
@@ -621,9 +619,9 @@ public class ContactHomePage extends BasePage {
 
     public void clickEditItemTab(String tabName) {
         BrowserUtils.wait(5);
-        for (int i = 0; i < editItemTabs.size(); i++) {
-            if (editItemTabs.get(i).getText().contains(tabName)) {
-                editItemTabs.get(i).click();
+        for (WebElement editItemTab : editItemTabs) {
+            if (editItemTab.getText().contains(tabName)) {
+                editItemTab.click();
                 BrowserUtils.wait(2);
             }
         }
