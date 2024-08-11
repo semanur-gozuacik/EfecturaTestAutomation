@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
 
 public class ContactEditPage extends BasePage {
     @FindBy(xpath ="//label[@id='buttonSubmitFileAvatar']")
@@ -85,6 +84,7 @@ public class ContactEditPage extends BasePage {
         select.selectByVisibleText(status);
     }
     public void clickUnSavedButton(){
+        accordionButton.click();
         BrowserUtils.waitForVisibility(unsavedChanges,15);
         unsavedChanges.click();
     }

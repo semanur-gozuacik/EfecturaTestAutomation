@@ -332,9 +332,9 @@ public class Import extends BasePage {
         BrowserUtils.wait(3);
     }
 
-    public void verifyTheResourceIsAddedToResources() throws IOException {
+    public void verifyTheResourceIsAddedToResources(String fileName) throws IOException {
         Driver.getDriver().get(ConfigurationReader.getProperty("sbLink") + "Resources");
-        String resourceCode = CommonExcelReader.getCellValue(excel,"Code",1);
+        String resourceCode = CommonExcelReader.getCellValue(getExcelPath(fileName),"Code",1);
         BrowserUtils.wait(2);
         codeFilter.click();
         codeFilterInputBox.sendKeys(resourceCode);
@@ -366,12 +366,7 @@ public class Import extends BasePage {
     public void verifyItemIsCreated(String importType) throws IOException {
         BrowserUtils.wait(2);
         Driver.getDriver().get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + importType);
-        String itemCode;
-        if (importType.equals("contact")) {
-            itemCode = CommonExcelReader.getCellValue(excel,"SKU",1);
-        }else {
-            itemCode = CommonExcelReader.getCellValue(excel,"SKU",1);
-        }
+        String itemCode = CommonExcelReader.getCellValue(getExcelPath(importType),"SKU",1);
 
         itemOverviewCodeFilter.click();
         itemOverviewCodeFilterInputBox.sendKeys(itemCode);
@@ -381,10 +376,10 @@ public class Import extends BasePage {
         Assert.assertEquals(itemCode, getValueOfTableInContactOverview("CODE"));
     }
 
-    public void verifyThatContactIsAssociatedWithStatedAccount() throws IOException {
+    public void verifyThatContactIsAssociatedWithStatedAccount(String itemType) throws IOException {
         itemOverviewTableValueEditButton.click();
         accountContactTabInContactEditItem.click();
-        String expectedAccountNumber = CommonExcelReader.getCellValue(excel,"Account Number",1);
+        String expectedAccountNumber = CommonExcelReader.getCellValue(getExcelPath(itemType),"Account Number",1);
         String actualAssociatedValue = getValueOfTableInEditItem("ASSOCIATED");
         Boolean isAccount = expectedAccountNumber.equals(getValueOfTableInEditItem("CODE"));
         Boolean isAccountAssociated = actualAssociatedValue.equals("Yes");
@@ -412,8 +407,8 @@ public class Import extends BasePage {
 
     public void verifyTheAccountIsAssociatedWithTheMrp(String item1, String item2) throws IOException {
         Driver.getDriver().get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + item1);
-        String SKUItem1 = CommonExcelReader.getCellValue(excel,"SKUItem1",1);
-        String SKUItem2 = CommonExcelReader.getCellValue(excel,"SKUItem2",1);
+        String SKUItem1 = CommonExcelReader.getCellValue(getExcelPath("Association"),"SKUItem1",1);
+        String SKUItem2 = CommonExcelReader.getCellValue(getExcelPath("Association"),"SKUItem2",1);
         itemOverviewCodeFilter.click();
         itemOverviewCodeFilterInputBox.sendKeys(SKUItem1);
         searchButton.click();
@@ -448,10 +443,8 @@ public class Import extends BasePage {
 //    }
 
     public void updateExcelWithRandomSku(String excelFile) throws IOException {
-        relativePath = "src/test/resources/testData/" + excelFile + ".xlsx";
-        excel = Paths.get(projectDir, relativePath).toString();
         randomSKU = generateRandomSkuWithNumbers();
-        CommonExcelReader.updateCellValue(excel,"SKU",1,randomSKU);
+        CommonExcelReader.updateCellValue(getExcelPath(excelFile),"SKU",1,randomSKU);
     }
 
     public void verifyAttributesAreCreated() {
@@ -477,24 +470,27 @@ public class Import extends BasePage {
     public void tearDownAllChangesInAttributeCase() {
         for (int i = 0; i < 7; i++) {
             deleteButtons.get(0).click();
+            BrowserUtils.wait(1);
             deleteButtonInModalInAttributes.click();
             BrowserUtils.wait(2);
         }
     }
 
     String projectDir = System.getProperty("user.dir");
-    String relativePath;
-    String excel;
 
     String accountCallbackRelativePath = "src/test/resources/testData/AccountCallback.xlsx";
     String accountCallbackExcel = Paths.get(projectDir, accountCallbackRelativePath).toString();
 
-    public void uploadExcelFile(String excelFile) {
-        relativePath = "src/test/resources/testData/" + excelFile + ".xlsx";
-        excel = Paths.get(projectDir, relativePath).toString();
-        addCsvInputElement.sendKeys(excel);
+    public void uploadExcelFile(String fileName) {
+        addCsvInputElement.sendKeys(getExcelPath(fileName));
         BrowserUtils.wait(2);
         saveChangesButtonInAreYouSureModal.click();
+    }
+
+    public static String getExcelPath(String fileName) {
+        String projectDir = System.getProperty("user.dir");
+        String relativePath = "src/test/resources/testData/" + fileName + ".xlsx";
+        return Paths.get(projectDir, relativePath).toString();
     }
 
 }

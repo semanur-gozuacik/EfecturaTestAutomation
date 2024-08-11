@@ -36,6 +36,7 @@ public class AccountHomePage extends BasePage {
     }
 
     public void clicksSelectFirstItem() {
+        accordionButton.click();
         BrowserUtils.wait(7);
         selectFirstItem.click();
         BrowserUtils.wait(5);
@@ -47,10 +48,9 @@ public class AccountHomePage extends BasePage {
 public void verifyAssociatedNoFilter(){
     BrowserUtils.wait(9);
 
-    for (int i= 0; i<noAssociatedText.size();i++){
-            Assert.assertTrue(noAssociatedText.get(i).getText().equals("No"));
-
-        }
+    for (WebElement element : noAssociatedText) {
+        Assert.assertEquals("No", element.getText());
+    }
 
 }
 }

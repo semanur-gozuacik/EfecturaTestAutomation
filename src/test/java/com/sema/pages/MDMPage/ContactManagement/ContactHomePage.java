@@ -77,9 +77,9 @@ public class ContactHomePage extends BasePage {
     @FindBy(xpath = "//td[.='IWSA']")
     private List<WebElement> verifyIWSAFamilyFilter;
     @FindBy(xpath = "//li[contains(text(),'Ekosystem') and @role='treeitem']")
-    private WebElement EkosystemFamilyFılter;
+    private WebElement EkosystemFamilyFilter;
     @FindBy(xpath = "//li[contains(text(),'IWSA') and @role='treeitem']")
-    private WebElement IWSAFamilyFılter;
+    private WebElement IWSAFamilyFilter;
     @FindBy(xpath = "//span[@class='select2-search select2-search--dropdown']//input[@role='textbox']")
     private WebElement familyFilterDropDown;
     @FindBy(xpath = "//a[normalize-space()='Family']")
@@ -182,6 +182,7 @@ public class ContactHomePage extends BasePage {
     private WebElement birthdateTab;
     @FindBy(xpath = "//td[9]")
     private List<WebElement> birthdateTabSorting;
+
     public ContactHomePage() {
     }
 
@@ -206,8 +207,7 @@ public class ContactHomePage extends BasePage {
         if (family.equalsIgnoreCase("Ekosystem")) {
             BrowserUtils.waitForVisibility(selectEkosystemFamily, 10);
             selectEkosystemFamily.click();
-        }
-        else {
+        } else {
             BrowserUtils.waitForVisibility(selectIWSAFamily, 10);
             selectIWSAFamily.click();
         }
@@ -231,8 +231,8 @@ public class ContactHomePage extends BasePage {
 
     public void verifyContactCategory() {
         BrowserUtils.wait(5);
-        for (int i = 0; i < verifyContactCategory.size(); i++) {
-            assertTrue(verifyContactCategory.get(i).getText().equalsIgnoreCase("Contact"));
+        for (WebElement element : verifyContactCategory) {
+            assertTrue(element.getText().equalsIgnoreCase("Contact"));
         }
     }
 
@@ -243,8 +243,8 @@ public class ContactHomePage extends BasePage {
 
     public void VerifyNewNodeCategory() {
         BrowserUtils.wait(7);
-        for (int i = 0; i < verifyNewNodeCategories.size(); i++) {
-            assertTrue(verifyNewNodeCategories.get(i).getText().equalsIgnoreCase("New Node"));
+        for (WebElement newNodeCategory : verifyNewNodeCategories) {
+            assertTrue(newNodeCategory.getText().equalsIgnoreCase("New Node"));
         }
     }
 
@@ -253,7 +253,7 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyUnassignedRecordsCategory() {
-        assertTrue(verifyUnassignedRecordsCategory.size() == 0);
+        assertEquals(0, verifyUnassignedRecordsCategory.size());
     }
 
     public void setCodeFilter(String code) {
@@ -261,12 +261,14 @@ public class ContactHomePage extends BasePage {
         codeFilterClick.click();
         codeFilterSendKey.sendKeys(code);
     }
+
     public void setEventNameFilter(String code) {
         BrowserUtils.wait(6);
         eventNameFilterClick.click();
         BrowserUtils.wait(6);
         EventNameFilterSendKey.sendKeys(code);
     }
+
     public void setFirstFilter(String code) {
         BrowserUtils.wait(6);
         firstFilterClick.click();
@@ -283,20 +285,21 @@ public class ContactHomePage extends BasePage {
     public void verifyCodeFilter(String code) {
         BrowserUtils.wait(5);
         System.out.println(verifyCodeFilter.getText());
-        assertTrue(verifyCodeFilter.getText().equalsIgnoreCase(code));
+        BrowserUtils.wait(3);
+        assertEquals(getColumnData(table, "CODE").get(0) , code);
+//        assertTrue(verifyCodeFilter.getText().equalsIgnoreCase(code));
     }
 
     public void verifyLabelFilter(String label) {
-        for (int i = 0; i < verifyPartialCodeFilters.size(); i++) {
-            System.out.println("");
-            assertTrue(verifyPartialCodeFilters.get(i).getText().equalsIgnoreCase(label));
+        for (WebElement verifyPartialCodeFilter : verifyPartialCodeFilters) {
+            assertTrue(verifyPartialCodeFilter.getText().equalsIgnoreCase(label));
         }
     }
 
     public void verifyPartialCodeFilters(String partialCode) {
-            System.out.println(verifyPartialCodeFilters.size());
-            assertTrue(verifyPartialCodeFilters.size()>1);
-        }
+        System.out.println(verifyPartialCodeFilters.size());
+        assertTrue(verifyPartialCodeFilters.size() > 1);
+    }
 
 
     public void verifyNoContentTextInvalidUniqueCode(String text) {
@@ -312,19 +315,20 @@ public class ContactHomePage extends BasePage {
 
     public void verifyPartialLabelFilters(String partialLabel) {
         BrowserUtils.wait(2);
-            System.out.println();
-            assertTrue(verifyPartialCodeFilters.size()>=1);
-        }
+        assertTrue(verifyPartialCodeFilters.size() >= 1);
+        assertEquals(getColumnData(table,"LABEL").get(0) , partialLabel);
+    }
+
     public void selectEkosystemFamilyFilter() {
         BrowserUtils.wait(7);
         familyFilterDropDownClick.click();
-        familyFilterDropDown.sendKeys("Ekosystem"+ Keys.ENTER);
+        familyFilterDropDown.sendKeys("Ekosystem" + Keys.ENTER);
     }
 
     public void verifyFamilyFilter() {
-        for (int i = 0; i < verifyEkosystemFamilyFilter.size(); i++) {
+        for (WebElement element : verifyEkosystemFamilyFilter) {
             System.out.println("");
-            assertTrue(verifyEkosystemFamilyFilter.get(i).getText().equalsIgnoreCase("Ekosystem"));
+            assertTrue(element.getText().equalsIgnoreCase("Ekosystem"));
         }
 
     }
@@ -332,15 +336,15 @@ public class ContactHomePage extends BasePage {
     public void selectIWSAFamilyFilter() {
         BrowserUtils.wait(7);
         familyFilterDropDownClick.click();
-        familyFilterDropDown.sendKeys("IWSA"+ Keys.ENTER);
+        familyFilterDropDown.sendKeys("IWSA" + Keys.ENTER);
     }
 
     public void verifyIWSAFamilyFilter() {
-        for (int i = 0; i < verifyIWSAFamilyFilter.size(); i++) {
-            System.out.println("");
-            assertTrue(verifyIWSAFamilyFilter.get(i).getText().equalsIgnoreCase("IWSA"));
+        for (WebElement element : verifyIWSAFamilyFilter) {
+            assertTrue(element.getText().equalsIgnoreCase("IWSA"));
         }
     }
+
     public void clicksItemStatuses(String itemStatus) {
         if (clicksItemStatusTextBox.equals("Active")) {
             clicksItemStatusTextBox.sendKeys("Active" + Keys.ENTER);
@@ -355,9 +359,9 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyItemStatuses(String status) {
-        for (int i = 0; i < verifyItemStatuses.size(); i++) {
+        for (WebElement verifyItemStatus : verifyItemStatuses) {
             BrowserUtils.wait(5);
-            assertTrue(verifyItemStatuses.get(i).getText().equals(status));
+            assertEquals(verifyItemStatus.getText(), status);
             BrowserUtils.wait(7);
         }
     }
@@ -396,8 +400,9 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyDeletingObject(String code) {
-        BrowserUtils.waitForVisibility(deletingObject, 5);
-        assertEquals(deletingObject.getText(), code);
+        BrowserUtils.waitForVisibility(getColumnDataAsWebElement(table,"CODE").get(0), 5);
+        assertEquals(getColumnData(table,"CODE").get(0),code);
+//        assertEquals(deletingObject.getText(), code);
     }
 
     public void verifyDeleteMessage() {
@@ -411,11 +416,11 @@ public class ContactHomePage extends BasePage {
         showEntrieButton.click();
     }
 
-    public void selectEntrie(String entrie){
-        BrowserUtils.selectOption(showEntries,entrie);
+    public void selectEntrie(String entrie) {
+        BrowserUtils.selectOption(showEntries, entrie);
     }
 
-    public void verifySelectOption(String entrie){
+    public void verifySelectOption(String entrie) {
         BrowserUtils.wait(5);
         assertTrue(BrowserUtils.isOptionSelected(showEntries, entrie));
 
@@ -437,10 +442,10 @@ public class ContactHomePage extends BasePage {
     public void verifyStarFeatures(String starFeature) {
         BrowserUtils.wait(2);
         int count = 0;
-        for (int i = 0; i < starFeatures.size(); i++) {
-            if (starFeatures.get(i).getText().contains(starFeature)) {
+        for (WebElement feature : starFeatures) {
+            if (feature.getText().contains(starFeature)) {
                 count++;
-                System.out.println(starFeatures.get(i).getText());
+                System.out.println(feature.getText());
                 break;
             }
         }
@@ -450,6 +455,7 @@ public class ContactHomePage extends BasePage {
             assertTrue(false);
         }
     }
+
     public void verifyStarFeatureBadgeCount() {
         BrowserUtils.wait(5);
       /* for (int i = 0; i <starFeaturesBadgeCounts.size(); i++) {
@@ -469,6 +475,7 @@ public class ContactHomePage extends BasePage {
        */
         assertTrue(true);
     }
+
     private static String extractNumberBeforeEntries(String text) {
         Pattern pattern = Pattern.compile("(\\d+)\\s+entries");
         Matcher matcher = pattern.matcher(text);
@@ -481,10 +488,10 @@ public class ContactHomePage extends BasePage {
     int myCountsBadgeCounts = 0;
 
     public void clickStarItems() {
-        for (int i = 0; i < starItems.size(); i++) {
-            BrowserUtils.hoverOver(starItems.get(i));
+        for (WebElement starItem : starItems) {
+            BrowserUtils.hoverOver(starItem);
             BrowserUtils.wait(5);
-            starItems.get(i).click();
+            starItem.click();
             BrowserUtils.wait(5);
             myCountsBadgeCounts++;
         }
@@ -516,7 +523,7 @@ public class ContactHomePage extends BasePage {
 
     public void verifyExportSuccessMessage(String message) {
         BrowserUtils.waitForVisibility(exportSuccessMessage, 10);
-        assertTrue(message.equals(exportSuccessMessage.getText()));
+        assertEquals(message, exportSuccessMessage.getText());
     }
 
     public void verifyExportedFile() {
@@ -547,6 +554,7 @@ public class ContactHomePage extends BasePage {
         // boolean isDisabled = classes.contains("disabled");
         assertTrue(true);
     }
+
     public void verifypreviousPageButtonUnClickability() {
         BrowserUtils.wait(10);
         String classes = previousPageButton.getAttribute("class");
@@ -564,20 +572,23 @@ public class ContactHomePage extends BasePage {
     }
 
     public void clicksStarFeatures(String starFeature) {
-        for (int i = 0; i < starFeatures.size(); i++) {
-            if (starFeatures.get(i).getText().contains(starFeature)) {
-                starFeatures.get(i).click();
+        for (WebElement feature : starFeatures) {
+            if (feature.getText().contains(starFeature)) {
+                feature.click();
                 break;
             }
         }
 
-    }    public void verifyFirstPageButtonClickable() {
+    }
+
+    public void verifyFirstPageButtonClickable() {
         BrowserUtils.wait(5);
         //String classes = firstPageButton.getAttribute("class");
         //System.out.println(classes);
         //boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(false);
     }
+
     public void verifyPreviousPageButtonClickable() {
         BrowserUtils.wait(12);
         String classes = previousPageButton.getAttribute("class");
@@ -585,6 +596,7 @@ public class ContactHomePage extends BasePage {
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
     }
+
     public void verifyNextPageButtonClickable() {
         BrowserUtils.wait(5);
         String classes = nextPageButton.getAttribute("class");
@@ -592,6 +604,7 @@ public class ContactHomePage extends BasePage {
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
     }
+
     public void verifyLastPageButtonClickable() {
         BrowserUtils.wait(5);
         String classes = lastPageButton.getAttribute("class");
@@ -599,33 +612,41 @@ public class ContactHomePage extends BasePage {
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
     }
-    public void setUniqueCodeElement(String code){
+
+    public void setUniqueCodeElement(String code) {
         uniqueCodeElement.sendKeys(code);
     }
-      public void clickEditItemTab(String tabName){
+
+    public void clickEditItemTab(String tabName) {
         BrowserUtils.wait(5);
-        for (int i =0; i <editItemTabs.size(); i++) {
-            if (editItemTabs.get(i).getText().contains(tabName)){
-                editItemTabs.get(i).click();
+        for (WebElement editItemTab : editItemTabs) {
+            if (editItemTab.getText().contains(tabName)) {
+                editItemTab.click();
                 BrowserUtils.wait(2);
             }
+        }
     }
-}     public void verifyPreviewTab(){
-        BrowserUtils.waitForVisibility(verifyPreviewTab,7);
+
+    public void verifyPreviewTab() {
+        BrowserUtils.waitForVisibility(verifyPreviewTab, 7);
         assertTrue(verifyPreviewTab.isDisplayed());
     }
-    public void verifyItemCommentTab(){
-        BrowserUtils.waitForVisibility(verifyItemCommentTab,8);
+
+    public void verifyItemCommentTab() {
+        BrowserUtils.waitForVisibility(verifyItemCommentTab, 8);
         assertTrue(verifyItemCommentTab.isDisplayed());
     }
-    public void verifyMyAccountTab(){
-        BrowserUtils.waitForVisibility(verifyMyAccountTab,8);
+
+    public void verifyMyAccountTab() {
+        BrowserUtils.waitForVisibility(verifyMyAccountTab, 8);
         assertTrue(verifyMyAccountTab.isDisplayed());
     }
-public void exportButtonEditItem(){
-        BrowserUtils.waitForVisibility(exportButton,10);
+
+    public void exportButtonEditItem() {
+        BrowserUtils.waitForVisibility(exportButton, 10);
         exportButton.click();
-}
+    }
+
     public void clickUpdateOn() {
         BrowserUtils.waitForVisibility(updateOnTab, 8);
         updateOnTab.click();
@@ -714,7 +735,7 @@ public void exportButtonEditItem(){
                 Date dateTime1 = sdf.parse(dateString1);
 
                 Date dateTime2 = sdf.parse(dateString2);
-                if (dateTime1.compareTo(dateTime2)< 0) {
+                if (dateTime1.compareTo(dateTime2) < 0) {
                     assertTrue(false);
                 }
             } catch (Exception e) {

@@ -426,6 +426,7 @@ public class TagsPage extends BasePage {
     }
 
     public void fillLabelInputInCreateNewTagModal() {
+        BrowserUtils.wait(1);
         BrowserUtils.waitForVisibility(labelInputBoxInCreateNewTagModal,20);
         labelInputBoxInCreateNewTagModal.sendKeys(tagLabelForCreate);
     }

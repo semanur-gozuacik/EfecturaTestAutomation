@@ -48,9 +48,9 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario: Verify Label Filter - Valid Label
     When The user clicks My Contact button
-    And The user enters "testcon" into Label field
+    And The user enters "t_aut" into Label field
     And the user clicks on Search button
-    And the user verify on label filter functionality with partial unique code "meltem_0101"
+    And the user verify on label filter functionality with partial unique code "test_automation"
 
   Scenario: Verify Label Filter - Partial Unique Code
     When The user clicks My Contact button
@@ -97,11 +97,11 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario: Deleting an item and declining the popup message
     When The user clicks My Contact button
-    And The user enters "testcon" into Code field
+    And The user enters "test_auto" into Code field
     And the user clicks on Search button
     And The user clicks on Delete
     And The user declines the popup message
-    Then The user verify that "0712testcontact" is visible
+    Then The user verify that "test_automation" is visible
 
   #Scenario: Deleting an item and accepting the popup message
    # When The user clicks My Contact button

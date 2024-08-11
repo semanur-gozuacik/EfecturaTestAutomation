@@ -26,9 +26,9 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Verify Code Filter -Valid Unique Code
     And The user clicks on Contact  category
-    And The user enters "Test2123" into Code field
+    And The user enters "test_automation" into Code field
     And the user clicks on Search button
-    And the user verify on code filter functionality "Test2123"
+    And the user verify on code filter functionality "test_automation"
 
   Scenario:Verify Code Filter -Valid partial Code
     And The user clicks on Contact  category
@@ -44,9 +44,9 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Verify Label Filter - Valid Label
     And The user clicks on Contact  category
-    And The user enters "test2123" into Label field
+    And The user enters "semaotoma" into Label field
     And the user clicks on Search button
-    And the user verify on label filter functionality with partial unique code "Test2123"
+    And the user verify on label filter functionality with partial unique code "semaotomasyon"
 
   Scenario: Verify Label Filter - Partial Unique Code
     And The user clicks on Contact  category
