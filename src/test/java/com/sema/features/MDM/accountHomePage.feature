@@ -69,12 +69,12 @@ Feature: Account Management Test Cases- Account Home Page
 
 
   Scenario: Account page edit verify
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
 
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses - cancel button
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
@@ -90,7 +90,7 @@ Feature: Account Management Test Cases- Account Home Page
      #  |Approved     |
 
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses- save button
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
@@ -106,25 +106,25 @@ Feature: Account Management Test Cases- Account Home Page
       |Approved     |
 
   Scenario:Account edit -Preview Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Preview" tab
 
   Scenario:Account edit -Campaign-Account Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Campaign-Account" tab
 
   Scenario:Account edit -Product-Account Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
 
   Scenario:Account edit - Product-Account Tab Associated
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
@@ -136,7 +136,7 @@ Feature: Account Management Test Cases- Account Home Page
     And the user verifies item status success message
 
   Scenario:Account edit -Product-Account Tab Associated Filter No
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
@@ -144,80 +144,80 @@ Feature: Account Management Test Cases- Account Home Page
     Then The user verify No Filter
 
   Scenario:Account edit -My Contact Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ACCOUNT_CONTACT" tab
 
   Scenario:Account edit -ReservationData Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ReservationData" tab
 
   Scenario:Account edit -Point History Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Point History" tab
 
   Scenario:Account edit -Invoice Data Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Invoice Data" tab
 
   Scenario:Account edit -Order Data View Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "OrderDataView" tab
 
   Scenario:Account edit -Training View Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Training View" tab
 
   Scenario:Account edit - Guest Data View Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Guest Data" tab
 
   Scenario:Account edit - VisitTransaction View Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "VisitTransaction" tab
 
   Scenario:Account edit -InvoiceTransaction Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "InvoiceTransaction" tab
 
 
   Scenario:Account edit -Nexio Data Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "NexioData" tab
 
   Scenario:Account edit -Sales Order Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "SalesOrder" tab
 
   Scenario:Account edit -Account-Asset Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Account-Asset" tab
 
   Scenario:Account edit - Account_CONTACT Tab Associated
-    And The user enters "1101202401" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ACCOUNT_CONTACT" tab
@@ -229,13 +229,13 @@ Feature: Account Management Test Cases- Account Home Page
     And the user verifies item status success message
 
   Scenario:Account edit -Account-MRP Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Account MRP" tab
 
   Scenario:Account edit - Account-MRP Tab Associated
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Account MRP" tab
@@ -247,7 +247,7 @@ Feature: Account Management Test Cases- Account Home Page
     And the user verifies item status success message
 
   Scenario:Account edit -Account-MRP Tab Associated Filter No
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Account MRP" tab
@@ -256,31 +256,31 @@ Feature: Account Management Test Cases- Account Home Page
 
 
   Scenario:Account edit -Event-Location Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Event-Location" tab
 
   Scenario:Account edit -Account Financial Account Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ACCOUNT_FINANCIALACCOUNT" tab
 
   Scenario:Account edit -Categories Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Categories" tab
 
   Scenario:Account edit -History Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "History" tab
 
   Scenario:Account edit - Campaign-Account Tab Associated
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Campaign-Account" tab
@@ -292,7 +292,7 @@ Feature: Account Management Test Cases- Account Home Page
  #  And the user verifies item status success message
 
   Scenario:Account edit - Campaign-Account Tab Associated Filter No
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Campaign-Account" tab
@@ -300,7 +300,7 @@ Feature: Account Management Test Cases- Account Home Page
     Then The user verify No Filter
 
   Scenario:Account edit -Preview Tab Export Button
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Preview" tab
@@ -308,27 +308,27 @@ Feature: Account Management Test Cases- Account Home Page
     Then The user verifies the file is downloaded
 
   Scenario:Account Group Permission Verify Item Previous Page Button Unclickable Condition
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     And  The user verifies previous page button is not clickable asset
 
   Scenario:Account User Permission Verify Item First Page Button Unclickable Condition
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     And  The user verifies first page button is not clickable user
 
   Scenario:Account edit -Item Comment Tab
-    And The user enters "semaaa" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
 
     Scenario: Account Associated Tab Associated On Fılter
-      And The user enters "6193135977" into Code field
+      And The user enters "2943740465" into Code field
       And the user clicks on Search button
       And  The user clicks on Edit Button
       And The user clicks "Account MRP" tab
@@ -339,7 +339,7 @@ Feature: Account Management Test Cases- Account Home Page
      Then The user verifies that associated on filter functionality
 
   Scenario: Account Associated Tab Label Filter Functionality
-    And The user enters "9932988664" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
@@ -348,7 +348,7 @@ Feature: Account Management Test Cases- Account Home Page
     Then The user verifies that labet filter functionality
 
   Scenario: Account Associated Tab Families  Fılter
-    And The user enters "9932988664" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
@@ -356,7 +356,7 @@ Feature: Account Management Test Cases- Account Home Page
     Then The user verifies that families filter functionality
 
   Scenario Outline: Account Associated Tab Status Fılter "<Status>"
-    And The user enters "9932988664" into Code field
+    And The user enters "2943740465" into Code field
     And  the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks "Product-Account" tab
@@ -370,7 +370,7 @@ Feature: Account Management Test Cases- Account Home Page
     |Disabled  |
 
   Scenario: Account Associated Tab Code Filter Functionality
-    And The user enters "9932988664" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
@@ -379,7 +379,7 @@ Feature: Account Management Test Cases- Account Home Page
     Then The user verifies that code filter functionality
 
   Scenario: Account Associated Tab Code Filter Functionality
-    And The user enters "9932988664" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
@@ -389,7 +389,7 @@ Feature: Account Management Test Cases- Account Home Page
     Then The user verifies that code filter reset button functionality
 
   Scenario: Account Associated Tab Code Filter Functionality
-    And The user enters "9932988664" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
@@ -399,7 +399,7 @@ Feature: Account Management Test Cases- Account Home Page
     Then The user verifies that code filter reset button functionality
 
   Scenario Outline: Campaign-Account Associated Tab Status Fılter "<Status>"
-    And The user enters "9932988664" into Code field
+    And The user enters "2943740465" into Code field
     And  the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks "Campaign-Account" tab
@@ -413,7 +413,7 @@ Feature: Account Management Test Cases- Account Home Page
       |Disabled  |
 
   Scenario:Account Campaign-Account Associated Tab Code Filter Functionality
-    And The user enters "9932988664" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Campaign-Account" tab
@@ -422,7 +422,7 @@ Feature: Account Management Test Cases- Account Home Page
     Then The user verifies that code filter functionality
 
   Scenario: Account Associated Tab Fixed Point Filter Functionality
-    And The user enters "9932988664" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product-Account" tab
@@ -431,7 +431,7 @@ Feature: Account Management Test Cases- Account Home Page
     Then The user verifies that Fixed Point filter functionality
 
   Scenario: Account Export Entity Button - Attributes
-    And The user enters "9932988664" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks Export Entity Button
@@ -439,7 +439,7 @@ Feature: Account Management Test Cases- Account Home Page
     Then The user dowloand Export Entity verifies
 
   Scenario: Account Export Entity Button - Associations
-    And The user enters "9932988664" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks Export Entity Button
@@ -447,7 +447,7 @@ Feature: Account Management Test Cases- Account Home Page
     Then The user dowloand Export Entity verifies
 
   Scenario: Account Export Entity Button - Permission
-    And The user enters "9932988664" into Code field
+    And The user enters "2943740465" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks Export Entity Button

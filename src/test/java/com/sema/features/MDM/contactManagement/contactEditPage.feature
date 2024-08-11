@@ -14,7 +14,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     When The user clicks on Contact  category
-    And The user enters "sematestttt" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     Then The user verify Edit Page
@@ -32,7 +32,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button
     When The user clicks on Contact  category
-    And The user enters "sematestttt" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     Then The user verify Edit Page
@@ -49,7 +49,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
       #|Approved   |
 
   Scenario: Edit item added list
-    And The user enters "sematestttt" into Code field
+    And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks list drop down button
@@ -57,7 +57,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
   #  Then The user verifies item is added
 
   Scenario: Edit item removed list
-    And The user enters "sematestttt" into Code field
+    And The user enters "semaotomasyon" into Code field
     And  the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks removed button
@@ -159,6 +159,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     When The user clicks previous page button user
     And  The user verifies previous button is clickable user
 
+
   Scenario:Contact User Permission Verify Last Page Button clickable Condition
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
@@ -184,7 +185,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And  The user verifies next button is unclickable user
 
   Scenario:Contact User Permission Verify Item First Page Button Clickable Condition
-    And The user enters "semaotomasyon" into Code field
+    And The user enters "1219205316" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
