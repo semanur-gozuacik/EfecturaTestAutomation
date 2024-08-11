@@ -201,6 +201,9 @@ public class Membership_AccountRulePage extends BasePage {
     @FindBy(xpath = "//input[@id='rule-random-assoc']")
     private WebElement ruleRandomAssociationNameCheckBox;
 
+    @FindBy(xpath = "//span[contains(text(),'ClearAll')]")
+    private List<WebElement> clearAllButtonsInRuleTab;
+
 
 
 
@@ -342,6 +345,7 @@ public class Membership_AccountRulePage extends BasePage {
         driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + idOfEditedItem);
         attributesTab.click();
         accountInfoSection.click();
+        BrowserUtils.wait(2);
         scrollBy(0,distributorBasisCodeInputBox.getLocation().getY());
         String currentDistributorBasisCodeInputBoxValue = getValueInInputBox(distributorBasisCodeInputBox);
         if (!currentDistributorBasisCodeInputBoxValue.equals(attributeValueToChange)) {
@@ -546,5 +550,15 @@ public class Membership_AccountRulePage extends BasePage {
         BrowserUtils.wait(1);
         BrowserUtils.waitForVisibility(ruleSaveWarning,18);
         BrowserUtils.wait(5);
+    }
+
+    public void clickClearAllButton(String ruleListType) {
+        if (ruleListType.equals("inList")) {
+            clearAllButtonsInRuleTab.get(0).click();
+        } else {
+            clearAllButtonsInRuleTab.get(1).click();
+        }
+        BrowserUtils.wait(2);
+        driver.navigate().refresh();
     }
 }

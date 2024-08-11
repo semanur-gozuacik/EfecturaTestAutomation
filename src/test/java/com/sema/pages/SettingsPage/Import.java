@@ -2,11 +2,11 @@ package com.sema.pages.SettingsPage;
 
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
-import com.sema.utilities.CommonExcelReader;
 import com.sema.utilities.ConfigurationReader;
 import com.sema.utilities.Driver;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,6 +19,7 @@ import java.util.Random;
 
 import static com.sema.pages.SettingsPage.TagsPage.isRowCountCorrectAccordingToTableLength;
 import static com.sema.pages.SettingsPage.TagsPage.selectLengthFromTableLength;
+import static com.sema.utilities.CommonExcelReader.*;
 
 public class Import extends BasePage {
 
@@ -295,9 +296,9 @@ public class Import extends BasePage {
     String newDescription;
     public void updateExcel(String point, String endDate) throws IOException {
         newDescription = generateRandomImportDescription();
-        CommonExcelReader.updateCellValue(accountCallbackExcel,"Description", 1,newDescription);
-        CommonExcelReader.updateCellValue(accountCallbackExcel,"Point", 1,point);
-        CommonExcelReader.updateCellValue(accountCallbackExcel,"DateEnd",1,endDate);
+        updateCellValue(accountCallbackExcel,"Description", 1,newDescription);
+        updateCellValue(accountCallbackExcel,"Point", 1,point);
+        updateCellValue(accountCallbackExcel,"DateEnd",1,endDate);
     }
 
     public void approveImport() {
@@ -318,11 +319,11 @@ public class Import extends BasePage {
     }
 
     public void updateExcelWithTransActionType(String transactionType) throws IOException {
-        CommonExcelReader.updateCellValue(accountCallbackExcel,"TransactionType",1,transactionType);
+        updateCellValue(accountCallbackExcel,"TransactionType",1,transactionType);
     }
 
     public void updateExcelWithTaskId(String taskId) throws IOException {
-        CommonExcelReader.updateCellValue(accountCallbackExcel,"TaskId",1,taskId);
+        updateCellValue(accountCallbackExcel,"TaskId",1,taskId);
     }
 
     public void importTheImport() {
@@ -334,7 +335,7 @@ public class Import extends BasePage {
 
     public void verifyTheResourceIsAddedToResources(String fileName) throws IOException {
         Driver.getDriver().get(ConfigurationReader.getProperty("sbLink") + "Resources");
-        String resourceCode = CommonExcelReader.getCellValue(getExcelPath(fileName),"Code",1);
+        String resourceCode = getCellValue(getExcelPath(fileName),"Code",1);
         BrowserUtils.wait(2);
         codeFilter.click();
         codeFilterInputBox.sendKeys(resourceCode);
@@ -366,7 +367,7 @@ public class Import extends BasePage {
     public void verifyItemIsCreated(String importType) throws IOException {
         BrowserUtils.wait(2);
         Driver.getDriver().get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + importType);
-        String itemCode = CommonExcelReader.getCellValue(getExcelPath(importType),"SKU",1);
+        String itemCode = getCellValue(getExcelPath(importType),"SKU",1);
 
         itemOverviewCodeFilter.click();
         itemOverviewCodeFilterInputBox.sendKeys(itemCode);
@@ -379,7 +380,7 @@ public class Import extends BasePage {
     public void verifyThatContactIsAssociatedWithStatedAccount(String itemType) throws IOException {
         itemOverviewTableValueEditButton.click();
         accountContactTabInContactEditItem.click();
-        String expectedAccountNumber = CommonExcelReader.getCellValue(getExcelPath(itemType),"Account Number",1);
+        String expectedAccountNumber = getCellValue(getExcelPath(itemType),"Account Number",1);
         String actualAssociatedValue = getValueOfTableInEditItem("ASSOCIATED");
         Boolean isAccount = expectedAccountNumber.equals(getValueOfTableInEditItem("CODE"));
         Boolean isAccountAssociated = actualAssociatedValue.equals("Yes");
@@ -407,8 +408,8 @@ public class Import extends BasePage {
 
     public void verifyTheAccountIsAssociatedWithTheMrp(String item1, String item2) throws IOException {
         Driver.getDriver().get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + item1);
-        String SKUItem1 = CommonExcelReader.getCellValue(getExcelPath("Association"),"SKUItem1",1);
-        String SKUItem2 = CommonExcelReader.getCellValue(getExcelPath("Association"),"SKUItem2",1);
+        String SKUItem1 = getCellValue(getExcelPath("Association"),"SKUItem1",1);
+        String SKUItem2 = getCellValue(getExcelPath("Association"),"SKUItem2",1);
         itemOverviewCodeFilter.click();
         itemOverviewCodeFilterInputBox.sendKeys(SKUItem1);
         searchButton.click();
@@ -417,6 +418,7 @@ public class Import extends BasePage {
         BrowserUtils.wait(5);
         itemOverviewTableValueEditButton.click();
         editItemTabs.stream().filter(e -> e.getText().contains(item2)).findFirst().ifPresent(WebElement::click);
+        BrowserUtils.wait(2);
         String actualAssociatedValue = getValueOfTableInEditItem("ASSOCIATED");
 
         Boolean isAccount = SKUItem2.equals(getValueOfTableInEditItem("CODE"));
@@ -436,15 +438,15 @@ public class Import extends BasePage {
 //        deleteButtonInAreYouSureModal.click();
     }
 
-    String randomSKU;
+    String randomValue;
 //    public void updateAccountExcelWithRandomSku() throws IOException {
 //        randomSKU = generateRandomImportDescription();
 //        CommonExcelReader.updateCellValue(accountExcel,"SKU",1,randomSKU);
 //    }
 
-    public void updateExcelWithRandomSku(String excelFile) throws IOException {
-        randomSKU = generateRandomSkuWithNumbers();
-        CommonExcelReader.updateCellValue(getExcelPath(excelFile),"SKU",1,randomSKU);
+    public void updateExcelWithRandom(String excelFile, String columnName, int index) throws IOException {
+        randomValue = generateRandomSkuWithNumbers();
+        updateCellValue(getExcelPath(excelFile),columnName,index, randomValue);
     }
 
     public void verifyAttributesAreCreated() {
@@ -493,4 +495,20 @@ public class Import extends BasePage {
         return Paths.get(projectDir, relativePath).toString();
     }
 
+    public WebElement getEditItemShowcaseElement(String attributeLabel) {
+        return driver.
+                findElement(By.xpath(
+                        "//div[contains(@class, 'line-name-div')]//div[contains(@class, 'title-input-block') and .//b[text()='"
+                        + attributeLabel + "']]/following-sibling::div[contains(@class, 'line-div-right')]"));
+    }
+
+    public void verifyAttributeIsEdited(String attributeLabel,String columnName,String fileName) throws IOException {
+        driver.get(
+                ConfigurationReader.getProperty("editItemLinkWithoutId") + getCellValue(getExcelPath(fileName),
+                        "Id",
+                        2)
+        );
+        WebElement actualAttribute = getEditItemShowcaseElement(attributeLabel);
+        Assert.assertEquals(getCellValue(getExcelPath(fileName),columnName,2),actualAttribute.getText());
+    }
 }

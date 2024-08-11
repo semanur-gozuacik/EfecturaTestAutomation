@@ -111,4 +111,21 @@ Feature: Membership_Account Rule Test Cases
     Then The user tear down all rules 'itemIdForMembershipRuleTests'
 
 
+  Scenario: When an account which is inList is deleted from inList without saving rules, it should not be deleted
+    When The user go in to item 'itemIdForMembershipRuleTests'
+    When The user click rule tab
+    When The user delete all rules if any exists
+    When The user sets a rule
+    When The user click Calculate button
+    When The user clicks view list button
+    When The user set an item in rule which is not in rule
+    When The user clicks Set Rules button
+    Then The item that is set in rule should appear in InList
+    When The user clicks clearAll button in "inList"
+    When The user click rule tab
+    Then The item that is set in rule should appear in InList
+    Then The user tear down all rules 'itemIdForMembershipRuleTests'
+
+
+
 

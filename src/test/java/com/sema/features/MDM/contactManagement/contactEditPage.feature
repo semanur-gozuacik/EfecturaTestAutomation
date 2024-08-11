@@ -53,7 +53,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks list drop down button
-  #  And  The user clicks new list item-contact
+    And  The user clicks new list item-contact
   #  Then The user verifies item is added
 
   Scenario: Edit item removed list

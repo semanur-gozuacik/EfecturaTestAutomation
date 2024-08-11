@@ -316,7 +316,7 @@ public class ContactHomePage extends BasePage {
     public void verifyPartialLabelFilters(String partialLabel) {
         BrowserUtils.wait(2);
         assertTrue(verifyPartialCodeFilters.size() >= 1);
-        assertEquals(getColumnData(table,"LABEL").get(0) , partialLabel);
+        assertTrue(getColumnData(table,"LABEL").get(0).contains(partialLabel));
     }
 
     public void selectEkosystemFamilyFilter() {

@@ -52,7 +52,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     And The user clicks on Contact  category
     And The user enters "test" into Label field
     And the user clicks on Search button
-    And the user verify on label filter functionality with partial unique code "Test"
+    And the user verify on label filter functionality with partial unique code "test"
 
   Scenario: Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into Label field

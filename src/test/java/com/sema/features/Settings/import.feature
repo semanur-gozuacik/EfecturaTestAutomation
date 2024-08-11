@@ -91,7 +91,7 @@ Feature: Import Management Test Cases
     Then The user tear down changes in resources
 
   Scenario: Contact Case
-    When The user update "Contact" excel with random sku
+    When The user update "Contact" excel with random "SKU" in index 1
     When The user select "Contact" for importType
     When The user upload "Contact" file
     When The user import the uploaded file
@@ -100,7 +100,7 @@ Feature: Import Management Test Cases
     Then The user tear down all changes in Contact Case
 
   Scenario: Account Case
-    When The user update "Account" excel with random sku
+    When The user update "Account" excel with random "SKU" in index 1
     When The user select "Account" for importType
     When The user upload "Account" file
     When The user import the uploaded file
@@ -120,5 +120,58 @@ Feature: Import Management Test Cases
     When The user import the uploaded file
     Then The user verifies that attributes are created
     Then The user tear down all changes in Attribute Case
+
+  Scenario: DynamicEdit - Account
+    When The user update "AccountEdit" excel with random "Account_Name" in index 2
+    When The user select "DynamicEditItemImport" for importType
+    When The user upload "AccountEdit" file
+    When The user import the uploaded file
+    Then The user verifies that attribute is edited
+      | Attribute Label | Account Name |
+      | File Name       | AccountEdit  |
+      | Column Name     | Account_Name |
+
+  Scenario: DynamicEdit - Contact
+    When The user update "ContactEdit" excel with random "DIA_Assistant_Name" in index 2
+    When The user select "DynamicEditItemImport" for importType
+    When The user upload "ContactEdit" file
+    When The user import the uploaded file
+    Then The user verifies that attribute is edited
+      | Attribute Label | Assistant Name     |
+      | File Name       | ContactEdit        |
+      | Column Name     | DIA_Assistant_Name |
+
+
+  Scenario: DynamicEdit - Event
+    When The user update "EventEdit" excel with random "DIA_Event_Name" in index 2
+    When The user select "DynamicEditItemImport" for importType
+    When The user upload "EventEdit" file
+    When The user import the uploaded file
+    Then The user verifies that attribute is edited
+      | Attribute Label | Event Name     |
+      | File Name       | EventEdit      |
+      | Column Name     | DIA_Event_Name |
+
+
+  Scenario: DynamicEdit - User
+    When The user update "UserEdit" excel with random "ebMobile__UserCode__c" in index 2
+    When The user select "DynamicEditItemImport" for importType
+    When The user upload "UserEdit" file
+    When The user import the uploaded file
+    Then The user verifies that attribute is edited
+      | Attribute Label | User Code             |
+      | File Name       | UserEdit              |
+      | Column Name     | ebMobile__UserCode__c |
+
+
+  Scenario: DynamicEdit - Product
+    When The user update "ProductEdit" excel with random "DIA_P_REFERANS" in index 2
+    When The user select "DynamicEditItemImport" for importType
+    When The user upload "ProductEdit" file
+    When The user import the uploaded file
+    Then The user verifies that attribute is edited
+      | Attribute Label | Reference      |
+      | File Name       | ProductEdit    |
+      | Column Name     | DIA_P_REFERANS |
 
 

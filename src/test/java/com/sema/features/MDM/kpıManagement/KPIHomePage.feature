@@ -92,7 +92,7 @@ Feature: KPI Management Test Cases
     And The user clicks on Edit Button
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button
-    And The user enters "Montly Point Sum" into Code field
+    And The user enters "Total Earning Points" into Code field
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
@@ -107,25 +107,25 @@ Feature: KPI Management Test Cases
       # |Passive    |
 
   Scenario:Contact edit -History Tab
-    And The user enters "Montly Point Sum" into Code field
+    And The user enters "Total Earning Points" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "History" tab
 
   Scenario:Contact edit -Categories Tab
-    And The user enters "Montly Point Sum" into Code field
+    And The user enters "Total Earning Points" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Categories" tab
 
   Scenario:Contact edit - Transaction Tab
-    And The user enters "Montly Point Sum" into Code field
+    And The user enters "Total Earning Points" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Transaction History" tab
 
   Scenario:Contact edit -ItemComment Tab
-    And The user enters "Montly Point Sum" into Code field
+    And The user enters "Total Earning Points" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab

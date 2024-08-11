@@ -1,11 +1,13 @@
 package com.sema.stepDefs;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class SettingsImportStepDefs extends BaseStep {
     @Given("The user on the settings ımport page")
@@ -173,9 +175,9 @@ public class SettingsImportStepDefs extends BaseStep {
 //        pages.importPage().updateAccountExcelWithRandomSku();
 //    }
 
-    @When("The user update {string} excel with random sku")
-    public void theUserUpdateExcelWithRandomSku(String excelFile) throws IOException {
-        pages.importPage().updateExcelWithRandomSku(excelFile);
+    @When("The user update {string} excel with random {string} in index {int}")
+    public void theUserUpdateExcelWithRandomInIndex(String excelFile, String columnName, int index) throws IOException {
+        pages.importPage().updateExcelWithRandom(excelFile, columnName,index);
     }
 
     @Then("The user verifies that attributes are created")
@@ -191,5 +193,16 @@ public class SettingsImportStepDefs extends BaseStep {
     @When("The user upload {string} file")
     public void theUserUploadFile(String excelFile) {
         pages.importPage().uploadExcelFile(excelFile);
+    }
+
+
+    @Then("The user verifies that attribute is edited")
+    public void theUserVerifiesThatAttributeIsEdited(DataTable dataTable) throws IOException {
+        Map<String,String> mapParam = dataTable.asMap(String.class, String.class);
+        pages.importPage().verifyAttributeIsEdited(
+                mapParam.get("Attribute Label"),
+                mapParam.get("Column Name"),
+                mapParam.get("File Name")
+        );
     }
 }

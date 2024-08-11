@@ -150,4 +150,10 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
     public void theUserClicksSetRulesButtonWithRandomAssociationName() {
         pages.membershipAccountRulePage().clickSetRulesButtonWithRandomAssociationName();
     }
+
+
+    @Then("The user clicks clearAll button in {string}")
+    public void theUserClicksClearAllButtonIn(String ruleListType) {
+        pages.membershipAccountRulePage().clickClearAllButton(ruleListType);
+    }
 }
