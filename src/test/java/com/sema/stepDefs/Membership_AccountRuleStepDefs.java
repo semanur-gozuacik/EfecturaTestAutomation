@@ -1,5 +1,6 @@
 package com.sema.stepDefs;
 
+import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.ConfigurationReader;
 import com.sema.utilities.Driver;
 import io.cucumber.java.en.Then;
@@ -155,5 +156,21 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
     @Then("The user clicks clearAll button in {string}")
     public void theUserClicksClearAllButtonIn(String ruleListType) {
         pages.membershipAccountRulePage().clickClearAllButton(ruleListType);
+    }
+
+    @Then("The item that is set in rule should not appear in InList")
+    public void theItemThatIsSetInRuleShouldNotAppearInInList() {
+        pages.membershipAccountRulePage().verifyTheItemThatIsSetInRuleIsNotAppearInInList();
+    }
+
+    @When("The user refresh the page")
+    public void theUserRefreshThePage() {
+        BrowserUtils.wait(2);
+        Driver.getDriver().navigate().refresh();
+    }
+
+    @Then("The item that is set out rule should not appear in NotInList")
+    public void theItemThatIsSetOutRuleShouldNotAppearInNotInList() {
+        pages.membershipAccountRulePage().verifyTheItemThatIsSetOutRuleIsNotAppearInInList();
     }
 }

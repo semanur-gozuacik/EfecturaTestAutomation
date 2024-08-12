@@ -122,8 +122,64 @@ Feature: Membership_Account Rule Test Cases
     When The user clicks Set Rules button
     Then The item that is set in rule should appear in InList
     When The user clicks clearAll button in "inList"
+    When The user refresh the page
     When The user click rule tab
     Then The item that is set in rule should appear in InList
+    Then The user tear down all rules 'itemIdForMembershipRuleTests'
+
+
+  Scenario: When an account which is inList is deleted from inList by saving rules, it should be deleted
+    When The user go in to item 'itemIdForMembershipRuleTests'
+    When The user click rule tab
+    When The user delete all rules if any exists
+    When The user sets a rule
+    When The user click Calculate button
+    When The user clicks view list button
+    When The user set an item in rule which is not in rule
+    When The user clicks Set Rules button
+    Then The item that is set in rule should appear in InList
+    When The user clicks clearAll button in "inList"
+    When The user clicks Set Rules button
+    When The user refresh the page
+    When The user click rule tab
+    Then The item that is set in rule should not appear in InList
+    Then The user tear down all rules 'itemIdForMembershipRuleTests'
+
+
+  Scenario: When an account which is notInList is deleted from notInList without saving rules, it should not be deleted
+    When The user edit an account to meet the rules 'TestAutomation'
+    When The user go in to item 'itemIdForMembershipRuleTests'
+    When The user click rule tab
+    When The user delete all rules if any exists
+    When The user sets two rule with or operator
+    When The user click Calculate button
+    When The user clicks view list button
+    When The user set an item out rule which is in rule
+    When The user clicks Set Rules button
+    Then The item that is set out rule should appear in NotInList
+    When The user clicks clearAll button in "notInList"
+    When The user refresh the page
+    When The user click rule tab
+    Then The item that is set out rule should appear in NotInList
+    Then The user tear down all rules 'itemIdForMembershipRuleTests'
+
+
+  Scenario: When an account which is notInList is deleted from notInList by saving rules, it should be deleted
+    When The user edit an account to meet the rules 'TestAutomation'
+    When The user go in to item 'itemIdForMembershipRuleTests'
+    When The user click rule tab
+    When The user delete all rules if any exists
+    When The user sets two rule with or operator
+    When The user click Calculate button
+    When The user clicks view list button
+    When The user set an item out rule which is in rule
+    When The user clicks Set Rules button
+    Then The item that is set out rule should appear in NotInList
+    When The user clicks clearAll button in "notInList"
+    When The user clicks Set Rules button
+    When The user refresh the page
+    When The user click rule tab
+    Then The item that is set out rule should not appear in NotInList
     Then The user tear down all rules 'itemIdForMembershipRuleTests'
 
 

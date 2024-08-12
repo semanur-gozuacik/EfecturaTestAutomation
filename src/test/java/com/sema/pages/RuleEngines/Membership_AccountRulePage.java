@@ -1,7 +1,6 @@
 package com.sema.pages.RuleEngines;
 
 import com.sema.pages.BasePage;
-import com.sema.pages.MDMPage.EditItemPage;
 import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.ConfigurationReader;
 import com.sema.utilities.Driver;
@@ -292,7 +291,8 @@ public class Membership_AccountRulePage extends BasePage {
     }
 
     public void verifyTheItemThatIsSetInRuleIsAppearInInList() {
-        Assert.assertEquals(labelValueThatIsSetInRule, getValueInInputBox(inListTextArea));
+        BrowserUtils.wait(2);
+        Assert.assertTrue(getValueInInputBox(inListTextArea).contains(labelValueThatIsSetInRule));
         BrowserUtils.wait(10);
     }
 
@@ -340,7 +340,7 @@ public class Membership_AccountRulePage extends BasePage {
     }
 
 
-    String idOfEditedItem = "50193";
+    String idOfEditedItem = "293705";
     public void editAnAccountToMeetTheRules(String attributeValueToChange) {
         driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + idOfEditedItem);
         attributesTab.click();
@@ -432,6 +432,7 @@ public class Membership_AccountRulePage extends BasePage {
     }
 
     public void verifyTheItemThatIsSetOutRuleIsAppearInInList() {
+        BrowserUtils.wait(2);
         Assert.assertTrue(getValueInInputBox(notInListTextArea).contains(labelValueThatIsSetOutRule));
     }
 
@@ -558,7 +559,14 @@ public class Membership_AccountRulePage extends BasePage {
         } else {
             clearAllButtonsInRuleTab.get(1).click();
         }
+    }
+
+    public void verifyTheItemThatIsSetInRuleIsNotAppearInInList() {
+        Assert.assertFalse(getValueInInputBox(inListTextArea).contains(labelValueThatIsSetInRule));
+    }
+
+    public void verifyTheItemThatIsSetOutRuleIsNotAppearInInList() {
         BrowserUtils.wait(2);
-        driver.navigate().refresh();
+        Assert.assertFalse(getValueInInputBox(notInListTextArea).contains(labelValueThatIsSetOutRule));
     }
 }

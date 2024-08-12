@@ -414,11 +414,11 @@ public class Import extends BasePage {
         itemOverviewCodeFilterInputBox.sendKeys(SKUItem1);
         searchButton.click();
         BrowserUtils.wait(5);
-        overviewTableHeaders.stream().filter(e -> e.getText().contains("CODE")).findFirst().ifPresent(WebElement::click);
+//        overviewTableHeaders.stream().filter(e -> e.getText().contains("CODE")).findFirst().ifPresent(WebElement::click);
         BrowserUtils.wait(5);
         itemOverviewTableValueEditButton.click();
         editItemTabs.stream().filter(e -> e.getText().contains(item2)).findFirst().ifPresent(WebElement::click);
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
         String actualAssociatedValue = getValueOfTableInEditItem("ASSOCIATED");
 
         Boolean isAccount = SKUItem2.equals(getValueOfTableInEditItem("CODE"));

@@ -185,7 +185,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And  The user verifies next button is unclickable user
 
   Scenario:Contact User Permission Verify Item First Page Button Clickable Condition
-    And The user enters "1219205316" into Code field
+    And The user enters "5325589874" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
