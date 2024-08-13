@@ -14,7 +14,7 @@ public class AccountHomePage extends BasePage {
     private WebElement associatedFilterClick;
     @FindBy(xpath = "//span[@class='select2-search select2-search--dropdown']//input[@role='textbox']")
     private WebElement associatedAllFilter;
-    @FindBy(xpath = "(//tr[@class='odd']//input[@id='userselect'])[1]")
+    @FindBy(xpath = "(//input[@id='userselect'])[1]")
     private WebElement selectFirstItem;
     @FindBy(xpath = "//tbody/tr/td[3]/div[1]")
     private List<WebElement> noAssociatedText;

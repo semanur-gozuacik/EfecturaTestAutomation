@@ -367,6 +367,7 @@ public class Membership_AccountRulePage extends BasePage {
 
     public void verifyEditedItemIsAssociated(String tabName, String itemIdForRule) {
         driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty(itemIdForRule));
+        BrowserUtils.wait(1);
         driver.navigate().refresh();
         BrowserUtils.wait(16);
         driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
@@ -514,9 +515,10 @@ public class Membership_AccountRulePage extends BasePage {
     }
 
     public void deleteAllRulesIfAnyExists() {
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(6);
         if (deleteAllRulesButton.isEnabled()) {
             deleteAllRulesButton.click();
+            BrowserUtils.wait(1);
             deleteButtonInDeleteConfirmModal.click();
             BrowserUtils.waitForVisibility(allRuleDeleteWarning,10);
             driver.navigate().refresh();
