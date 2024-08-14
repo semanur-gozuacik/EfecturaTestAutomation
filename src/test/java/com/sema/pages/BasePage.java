@@ -15,7 +15,7 @@ import java.util.List;
 public class BasePage {
 
     @FindBy(id = "items")
-    public WebElement table;
+    public WebElement itemOverviewTable;
 
     @FindBy(xpath = "//*[@id='renderBodyWrap']/div[6]/div[1]")
     protected WebElement accordionButton;

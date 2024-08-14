@@ -203,6 +203,15 @@ public class Membership_AccountRulePage extends BasePage {
     @FindBy(xpath = "//span[contains(text(),'ClearAll')]")
     private List<WebElement> clearAllButtonsInRuleTab;
 
+    @FindBy(xpath = "//span[contains(text(),'AddFromList')]")
+    private List<WebElement> addFromListButtonsInListAndNotInList;
+
+    @FindBy(xpath = "//ul[contains(@class,'menu-notin')]/li/a")
+    private List<WebElement> notInListOptions;
+
+    @FindBy(xpath = "//ul[contains(@class,'menu-in')]/li/a")
+    private List<WebElement> inListOptions;
+
 
 
 
@@ -570,5 +579,29 @@ public class Membership_AccountRulePage extends BasePage {
     public void verifyTheItemThatIsSetOutRuleIsNotAppearInInList() {
         BrowserUtils.wait(2);
         Assert.assertFalse(getValueInInputBox(notInListTextArea).contains(labelValueThatIsSetOutRule));
+    }
+
+
+    public void takeValueOfItemInItemOverview(String header) {
+        labelValueThatIsSetInRule = getColumnData(itemOverviewTable,header).get(0);
+    }
+
+    public void selectListIn(String listName, String area) {
+        if (area.equals("InList")) {
+            addFromListButtonsInListAndNotInList.get(0).click();
+            BrowserUtils.wait(1);
+            inListOptions.stream()
+                    .filter(listOption -> listOption.getText().equals(listName))
+                    .findFirst()
+                    .ifPresent(WebElement::click);
+
+        } else if (area.equals("NotInList")) {
+            addFromListButtonsInListAndNotInList.get(1).click();
+            notInListOptions.stream()
+                    .filter(listOption -> listOption.getText().equals(listName))
+                    .findFirst()
+                    .ifPresent(WebElement::click);
+        }
+
     }
 }

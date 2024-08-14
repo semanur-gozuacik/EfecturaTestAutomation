@@ -173,4 +173,24 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
     public void theItemThatIsSetOutRuleShouldNotAppearInNotInList() {
         pages.membershipAccountRulePage().verifyTheItemThatIsSetOutRuleIsNotAppearInInList();
     }
+
+    @When("The user go to {string} overview page")
+    public void theUserGoToAccountOverviewPage(String item) {
+        pages.itemOverviewPage().goToItemOverviewPage(item);
+    }
+
+    @When("The user select {string} list")
+    public void theUserSelectRuleTestAutomationList(String listName) {
+        pages.itemOverviewPage().selectList(listName);
+    }
+
+    @When("The user take the {string} values of item in item overview")
+    public void theUserTakeTheValuesOfItemInItemOverview(String header) {
+        pages.membershipAccountRulePage().takeValueOfItemInItemOverview(header);
+    }
+
+    @When("The user select {string} list in {string} area")
+    public void theUserSelectListIn(String listName, String area) {
+        pages.membershipAccountRulePage().selectListIn(listName, area);
+    }
 }

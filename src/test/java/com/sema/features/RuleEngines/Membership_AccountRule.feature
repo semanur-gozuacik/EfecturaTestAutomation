@@ -183,5 +183,19 @@ Feature: Membership_Account Rule Test Cases
     Then The user tear down all rules 'itemIdForMembershipRuleTests'
 
 
-
+  Scenario: While an account who does not meet with the relevant rule is added to the inList via list selection
+  for this membership, this user should be added to the associates.
+    When The user go to 'Account' overview page
+    When The user select 'ruleTestAutomation' list
+    When The user take the "CODE" values of item in item overview
+    When The user go in to item 'itemIdForMembershipRuleTests'
+    When The user click rule tab
+    When The user delete all rules if any exists
+    When The user sets a rule
+    When The user click Calculate button
+    When The user select 'ruleTestAutomation' list in "InList" area
+    Then The item that is set in rule should appear in InList
+    When The user clicks Set Rules button
+    Then The item that is set in rule should been associated according to 'MEMBERSHIP_ACCOUNT'
+    Then The user tear down all rules 'itemIdForMembershipRuleTests'
 

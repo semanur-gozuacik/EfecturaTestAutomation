@@ -19,6 +19,7 @@ import com.sema.pages.MDMPage.FileManagement.FileManagementHomePage;
 import com.sema.pages.MDMPage.FinancialAccount.FinancialAccount;
 import com.sema.pages.MDMPage.GiftManagement.Gift;
 import com.sema.pages.MDMPage.GiftManagement.GiftHomePage;
+import com.sema.pages.MDMPage.ItemOverviewPage;
 import com.sema.pages.MDMPage.KPIManagement.KPIHomePage;
 import com.sema.pages.MDMPage.MembershipManagement.MembershipHomePage;
 import com.sema.pages.MDMPage.ProductManagement.ProductHomePage;
@@ -72,6 +73,7 @@ public class Pages {
     private Membership_AccountRulePage membershipAccountRulePage;
     private Event_ContactRulePage eventContactRulePage;
     private EditItemPage editItemPage;
+    private ItemOverviewPage itemOverviewPage;
     private Campaign_AccountRulePage campaignAccountRulePage;
     private MembershipHomePage membershipHomePage;
 
@@ -112,6 +114,7 @@ public class Pages {
             this.financialAccount= new FinancialAccount();
             this.membershipAccountRulePage = new Membership_AccountRulePage();
             this.editItemPage = new EditItemPage();
+            this.itemOverviewPage = new ItemOverviewPage();
             this.eventContactRulePage = new Event_ContactRulePage();
             this.campaignAccountRulePage = new Campaign_AccountRulePage();
             this.membershipHomePage=new MembershipHomePage();
@@ -158,6 +161,7 @@ public class Pages {
 
     public Membership_AccountRulePage membershipAccountRulePage(){return membershipAccountRulePage;}
     public EditItemPage editItemPage() {return editItemPage;}
+    public ItemOverviewPage itemOverviewPage() {return itemOverviewPage;}
     public Event_ContactRulePage eventContactRulePage() {return eventContactRulePage;}
     public Campaign_AccountRulePage campaign_accountRulePage() {return campaignAccountRulePage;}
     public MembershipHomePage membershipHomePage(){return membershipHomePage;}

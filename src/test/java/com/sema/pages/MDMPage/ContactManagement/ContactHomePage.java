@@ -286,7 +286,7 @@ public class ContactHomePage extends BasePage {
         BrowserUtils.wait(5);
         System.out.println(verifyCodeFilter.getText());
         BrowserUtils.wait(3);
-        assertEquals(getColumnData(table, "CODE").get(0) , code);
+        assertEquals(getColumnData(itemOverviewTable, "CODE").get(0) , code);
 //        assertTrue(verifyCodeFilter.getText().equalsIgnoreCase(code));
     }
 
@@ -316,7 +316,7 @@ public class ContactHomePage extends BasePage {
     public void verifyPartialLabelFilters(String partialLabel) {
         BrowserUtils.wait(2);
         assertTrue(verifyPartialCodeFilters.size() >= 1);
-        assertTrue(getColumnData(table,"LABEL").get(0).contains(partialLabel));
+        assertTrue(getColumnData(itemOverviewTable,"LABEL").get(0).contains(partialLabel));
     }
 
     public void selectEkosystemFamilyFilter() {
@@ -400,8 +400,8 @@ public class ContactHomePage extends BasePage {
     }
 
     public void verifyDeletingObject(String code) {
-        BrowserUtils.waitForVisibility(getColumnDataAsWebElement(table,"CODE").get(0), 5);
-        assertEquals(getColumnData(table,"CODE").get(0),code);
+        BrowserUtils.waitForVisibility(getColumnDataAsWebElement(itemOverviewTable,"CODE").get(0), 5);
+        assertEquals(getColumnData(itemOverviewTable,"CODE").get(0),code);
 //        assertEquals(deletingObject.getText(), code);
     }
 

@@ -149,11 +149,11 @@ Feature: Event Management Test Cases- Event Home Page
     And  The user clicks on Edit Button
     And The user clicks "Event-Product" tab
 
-  Scenario:Contact edit - Event-Product Tab Associated
+  Scenario:Event edit - Event-Product Tab Associated
     And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "Event-Product" tab
+    And The user clicks "EVENT_PRODUCT" tab
     And The user Assocaited All filter
     And The user clicks item
     And the user clicks on unsaved change button
@@ -161,11 +161,11 @@ Feature: Event Management Test Cases- Event Home Page
     And The user clicks save button
     And the user verifies item status success message
 
-  Scenario:Contact edit -Event-Product Tab Associated Filter No
+  Scenario:Event edit -Event-Product Tab Associated Filter No
     And The user enters "DIAGEOEVENT" into Code field
     And the user clicks on Search button
     And  The user clicks on Edit Button
-    And The user clicks "Event-Product" tab
+    And The user clicks "EVENT_PRODUCT" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 
