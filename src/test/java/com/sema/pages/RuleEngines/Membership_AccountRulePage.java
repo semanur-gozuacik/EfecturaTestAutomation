@@ -452,6 +452,7 @@ public class Membership_AccountRulePage extends BasePage {
         driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
         associatedFilter.click();
         associatedFilterYesOption.click();
+        BrowserUtils.wait(1);
         Assert.assertTrue(BrowserUtils.isElementDisplayed(noMatchingRecordsText));
     }
 

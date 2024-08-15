@@ -199,3 +199,21 @@ Feature: Membership_Account Rule Test Cases
     Then The item that is set in rule should been associated according to 'MEMBERSHIP_ACCOUNT'
     Then The user tear down all rules 'itemIdForMembershipRuleTests'
 
+
+  Scenario: While an account which meet with the relevant rule is added to the inList via list selection
+  for this membership, this user should not be added to the associates.
+    When The user go to 'Account' overview page
+    When The user select 'rule_for_notInList' list
+    When The user take the "CODE" values of item in item overview
+    When The user edit an account to meet the rules 'TestAutomation'
+    When The user go in to item 'itemIdForMembershipRuleTests'
+    When The user click rule tab
+    When The user delete all rules if any exists
+    When The user sets two rule with or operator
+    When The user click Calculate button
+    When The user select 'rule_for_notInList' list in "NotInList" area
+    When The user clicks Set Rules button
+    Then The item that is set out rule should appear in NotInList
+    Then The item that is set out rule should not been associated 'MEMBERSHIP_ACCOUNT' 'itemIdForMembershipRuleTests'
+    Then The user tear down all rules 'itemIdForMembershipRuleTests'
+    Then The user edit an account to meet the rules 'TearDown'

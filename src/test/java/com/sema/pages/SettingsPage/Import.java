@@ -330,7 +330,7 @@ public class Import extends BasePage {
         BrowserUtils.wait(2);
         BrowserUtils.waitForVisibility(importButton,10);
         importButton.click();
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(4);
     }
 
     public void verifyTheResourceIsAddedToResources(String fileName) throws IOException {
