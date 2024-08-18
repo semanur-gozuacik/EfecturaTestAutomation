@@ -284,8 +284,7 @@ public class ContactHomePage extends BasePage {
 
     public void verifyCodeFilter(String code) {
         BrowserUtils.wait(5);
-        System.out.println(verifyCodeFilter.getText());
-        BrowserUtils.wait(3);
+//        BrowserUtils.wait(3);
         assertEquals(getColumnData(itemOverviewTable, "CODE").get(0) , code);
 //        assertTrue(verifyCodeFilter.getText().equalsIgnoreCase(code));
     }

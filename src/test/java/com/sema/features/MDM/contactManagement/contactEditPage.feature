@@ -13,6 +13,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And   The User gets the current URL and stores it in "itemType=Contact"
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
+    When The user open side accordion in overview
     When The user clicks on Contact  category
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button
@@ -31,6 +32,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
       |Approved   |
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button
+    When The user open side accordion in overview
     When The user clicks on Contact  category
     And The user enters "semaotomasyon" into Code field
     And the user clicks on Search button

@@ -41,5 +41,8 @@ public class MDMContactHomePageMyContactStepDefs extends BaseStep {
        pages.contactHomePageMyContactPage().verifyItemLeftPreviousButtonUnclickable();
     }
 
-
+    @When("The user open side accordion in overview")
+    public void theUserOpenSideAccordionInOverview() {
+        pages.itemOverviewPage().openSideAccordionInOverview();
+    }
 }

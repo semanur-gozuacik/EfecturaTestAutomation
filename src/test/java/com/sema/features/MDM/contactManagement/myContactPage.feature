@@ -28,6 +28,7 @@ Feature: Contact Management Test Cases-My Contact Page
    And The user verifies its contacts is displayed
 
   Scenario: Verify Code Filter -Valid Unique Code
+    When The user open side accordion in overview
     When The user clicks My Contact button
     And The user clicks on Contact  category
     And The user enters "0058950138" into Code field

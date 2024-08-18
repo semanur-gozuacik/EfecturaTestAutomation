@@ -11,10 +11,11 @@ Feature: Contact Management Test Cases- Contact Home Page
     And   The User performs a mouseover on the Contact element
     And   The User clicks on the Contact element
     And   The User gets the current URL and stores it in "itemType=Contact"
+    When The user open side accordion in overview
 
   Scenario: Contact category functionality check
-        And The user clicks on Contact  category
-        And The user verifies that the codes shown in the Contact label filter are contact categories
+    And The user clicks on Contact  category
+    And The user verifies that the codes shown in the Contact label filter are contact categories
 
    Scenario:Contact category - subcategory New Node functionality check
      And The user clicks on New node

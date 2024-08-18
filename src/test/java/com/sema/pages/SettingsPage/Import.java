@@ -334,9 +334,9 @@ public class Import extends BasePage {
     }
 
     public void verifyTheResourceIsAddedToResources(String fileName) throws IOException {
+        BrowserUtils.wait(1);
         Driver.getDriver().get(ConfigurationReader.getProperty("sbLink") + "Resources");
         String resourceCode = getCellValue(getExcelPath(fileName),"Code",1);
-        BrowserUtils.wait(2);
         codeFilter.click();
         codeFilterInputBox.sendKeys(resourceCode);
         BrowserUtils.wait(3);

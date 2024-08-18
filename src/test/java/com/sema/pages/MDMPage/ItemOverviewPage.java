@@ -15,6 +15,9 @@ public class ItemOverviewPage extends BasePage {
     @FindBy(xpath = "//ul[@class='lists-name']/li/p")
     private List<WebElement> listOptions;
 
+    @FindBy(xpath = "//div[contains(@class,'category-accordion')]")
+    private WebElement overviewSideAccordion;
+
     public void goToItemOverviewPage(String item) {
         driver.get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + item);
     }
@@ -28,7 +31,17 @@ public class ItemOverviewPage extends BasePage {
                 .filter(element -> element.getText().equals(listName))
                 .findFirst()
                 .ifPresent(WebElement::click);
+    }
 
+    public void openSideAccordionInOverview() {
+        if (overviewSideAccordion.getAttribute("title").equals("ShowSidebar")) {
+            overviewSideAccordion.click();
+        }
+    }
 
+    public void closeSideAccordionInOverview() {
+        if (overviewSideAccordion.getAttribute("title").equals("HideSidebar")) {
+            overviewSideAccordion.click();
+        }
     }
 }

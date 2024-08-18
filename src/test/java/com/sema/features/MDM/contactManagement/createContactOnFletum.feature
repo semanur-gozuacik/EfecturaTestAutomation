@@ -68,9 +68,9 @@ Feature: Contact Management Test Cases Create Home Page
     And  The user clicks delete button in popup
     #Then The User waits until the page contains "Item Deleted Succesfully." with a timeout of 15 seconds-Asset
     Examples:
-      |Family   | Number        |
-      |Ekosystem|199955523515555|
-      |IWSA     |testcontact2322|
+      | Family    | Number          |
+      | Ekosystem | 5052582023      |
+      | IWSA      | testcontact2322 |
 
 
   Scenario Outline: Create Contact on Fletum with valid credentials - "<Family>"
