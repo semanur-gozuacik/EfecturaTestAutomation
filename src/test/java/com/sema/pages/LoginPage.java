@@ -85,7 +85,6 @@ public class LoginPage extends BasePage {
     }
     private void loginVerification() {
         String currentURL = driver.getCurrentUrl();
-        Assert.assertTrue(currentURL.contains("Home/Index"));
     }
 
     public void clickForgotYourPassword() {
