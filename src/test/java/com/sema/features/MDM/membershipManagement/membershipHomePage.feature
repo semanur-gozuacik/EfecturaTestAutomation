@@ -74,3 +74,23 @@ Feature: Membership Management Test Cases
     And The user clicks "MEMBERSHIP_ACCOUNT" tab
     And The user Assocaited No filter
     Then The user verify No Filter
+
+  Scenario Outline: Membership Home Page User selects different options for show entries
+    When  The user selects "<entries>" into show entries
+    Then  The user should see  "<entries>" entrie in everypage
+    Examples:
+      | entries|
+      |10 |
+      |25 |
+      |50 |
+      |100|
+
+  Scenario: Membership Home Page Columns - Reset Button
+    And  The user enters columns button
+    And  The user selected columns
+    And  The user clicks cancel button columns
+
+  Scenario: Membership Page Columns - Reset Button
+    And  The user enters columns button
+    And  The user selected columns
+    And  The user clicks save button columns
