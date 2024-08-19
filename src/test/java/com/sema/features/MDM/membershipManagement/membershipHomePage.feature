@@ -94,3 +94,28 @@ Feature: Membership Management Test Cases
     And  The user enters columns button
     And  The user selected columns
     And  The user clicks save button columns
+
+  Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button
+    And The user enters "TestMember" into Code field
+    And the user clicks on Search button
+    And The user clicks on Edit Button
+    And the user selects "<ItemStatus>"
+      # And the user clicks on unsaved change button
+      # And The user enters "-------" in  comment area
+      # And The user clicks cancel button
+       #And the user verifies item status not change
+
+    Examples:
+      |ItemStatus |
+      |Active     |
+
+
+  Scenario Outline: Filter "<ItemStatus>" Item Statuses
+    And the user clicks on ItemStatuses
+    And the user clicks on "<ItemStatus>"
+    And the user clicks on Search button
+     #And the incoming filter for "<ItemStatus>" should contain
+    Examples:
+      |ItemStatus |
+      |Active     |
+      |Passive    |
