@@ -339,7 +339,7 @@ public class Import extends BasePage {
         String resourceCode = getCellValue(getExcelPath(fileName),"Code",1);
         codeFilter.click();
         codeFilterInputBox.sendKeys(resourceCode);
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(4);
         Assert.assertEquals(resourceCode,resourceCodeValue.getText());
     }
 

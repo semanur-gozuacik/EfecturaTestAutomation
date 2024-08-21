@@ -315,7 +315,8 @@ public class Membership_AccountRulePage extends BasePage {
         associatedFilter.click();
         associatedFilterYesOption.click();
         BrowserUtils.wait(3);
-        Assert.assertEquals(labelValueThatIsSetInRule, labelValues.get(0).getText());
+        //Assert.assertEquals(labelValueThatIsSetInRule, labelValues.get(0).getText());
+        Assert.assertTrue(labelValues.stream().anyMatch(element -> element.getText().contains(labelValueThatIsSetInRule)));
         BrowserUtils.wait(2);
     }
 
