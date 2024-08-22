@@ -377,7 +377,7 @@ public class Membership_AccountRulePage extends BasePage {
 
     public void verifyEditedItemIsAssociated(String tabName, String itemIdForRule) {
         driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty(itemIdForRule));
-        BrowserUtils.wait(1);
+        BrowserUtils.wait(2);
         driver.navigate().refresh();
         BrowserUtils.wait(16);
         driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
@@ -444,6 +444,8 @@ public class Membership_AccountRulePage extends BasePage {
 
     public void verifyTheItemThatIsSetOutRuleIsAppearInInList() {
         BrowserUtils.wait(2);
+        System.out.println("AAAAAAAAAA:  " + labelValueThatIsSetOutRule);
+        System.out.println("BBBBBBBBBB:  " + getValueInInputBox(notInListTextArea));
         Assert.assertTrue(getValueInInputBox(notInListTextArea).contains(labelValueThatIsSetOutRule));
     }
 
@@ -585,7 +587,7 @@ public class Membership_AccountRulePage extends BasePage {
 
 
     public void takeValueOfItemInItemOverview(String header) {
-        labelValueThatIsSetInRule = getColumnData(itemOverviewTable,header).get(0);
+        labelValueThatIsSetOutRule = getColumnData(itemOverviewTable,header).get(0);
     }
 
     public void selectListIn(String listName, String area) {
