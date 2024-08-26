@@ -205,4 +205,24 @@ public class SettingsImportStepDefs extends BaseStep {
                 mapParam.get("File Name")
         );
     }
+
+    @Then("The user verifies that attribute option is added")
+    public void theUserVerifiesThatAttributeOptionIsAdded() {
+        pages.importPage().verifyAttributeOptionIsAdded();
+    }
+
+    @When("The user go to attributes page and find the attribute {string}")
+    public void theUserGoToAttributesPageAndFindTheAttribute(String attributeCode) {
+        pages.importPage().findAttribute(attributeCode);
+    }
+
+    @When("The user go into attribute edit page")
+    public void theUserGoIntoAttributeEditPage() {
+        pages.importPage().goIntoAttributeEditPage();
+    }
+
+    @When("The user clicks Values tab")
+    public void theUserClicksValuesTab() {
+        pages.importPage().clickValuesTab();
+    }
 }

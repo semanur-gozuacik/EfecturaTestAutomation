@@ -184,9 +184,9 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
         pages.itemOverviewPage().selectList(listName);
     }
 
-    @When("The user take the {string} values of item in item overview")
-    public void theUserTakeTheValuesOfItemInItemOverview(String header) {
-        pages.membershipAccountRulePage().takeValueOfItemInItemOverview(header);
+    @When("The user take the {string} values of item in item overview for {string}")
+    public void theUserTakeTheValuesOfItemInItemOverview(String header, String inOrNotInList) {
+        pages.membershipAccountRulePage().takeValueOfItemInItemOverview(header, inOrNotInList);
     }
 
     @When("The user select {string} list in {string} area")

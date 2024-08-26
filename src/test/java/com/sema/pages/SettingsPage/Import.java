@@ -187,6 +187,15 @@ public class Import extends BasePage {
     @FindBy(xpath = "//button[contains(@class,'delete-confirmed')]")
     private WebElement deleteButtonInModalInAttributes;
 
+    @FindBy(xpath = "//a[@title='Edit Attribute']")
+    private List<WebElement> attributeEditButtons;
+
+    @FindBy(xpath = "//a[text()='Values']")
+    private WebElement attributeValuesTab;
+
+    @FindBy(xpath = "//input[contains(@class,'o-code input-options-attr')]")
+    private List<WebElement> selectAttributeOptionsCodeValues;
+
 
 
 
@@ -339,7 +348,7 @@ public class Import extends BasePage {
         String resourceCode = getCellValue(getExcelPath(fileName),"Code",1);
         codeFilter.click();
         codeFilterInputBox.sendKeys(resourceCode);
-        BrowserUtils.wait(4);
+        BrowserUtils.wait(5);
         Assert.assertEquals(resourceCode,resourceCodeValue.getText());
     }
 
@@ -510,5 +519,25 @@ public class Import extends BasePage {
         );
         WebElement actualAttribute = getEditItemShowcaseElement(attributeLabel);
         Assert.assertEquals(getCellValue(getExcelPath(fileName),columnName,2),actualAttribute.getText());
+    }
+
+    public void verifyAttributeOptionIsAdded() {
+        Assert.assertTrue(selectAttributeOptionsCodeValues.stream()
+                .anyMatch(element -> element.getAttribute("value").contains(randomValue)));
+    }
+
+    public void findAttribute(String attributeCode) {
+        Driver.getDriver().get("https://sandbox-ui.efectura.com/Settings/Attributes");
+        codeFilter.click();
+        codeFilterInputBox.sendKeys(attributeCode + Keys.ENTER);
+        BrowserUtils.wait(1);
+    }
+
+    public void goIntoAttributeEditPage() {
+        attributeEditButtons.get(0).click();
+    }
+
+    public void clickValuesTab() {
+        attributeValuesTab.click();
     }
 }

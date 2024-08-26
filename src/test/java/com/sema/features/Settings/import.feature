@@ -175,3 +175,15 @@ Feature: Import Management Test Cases
       | Column Name     | DIA_P_REFERANS |
 
 
+  Scenario: Attribute Option Case
+    When The user update "Option" excel with random "Code" in index 1
+    When The user select "Option" for importType
+    When The user upload "Option" file
+    When The user import the uploaded file
+    When The user go to attributes page and find the attribute "option_import_automation"
+    When The user go into attribute edit page
+    When The user clicks Values tab
+    Then The user verifies that attribute option is added
+
+
+

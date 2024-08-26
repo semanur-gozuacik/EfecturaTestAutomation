@@ -21,7 +21,7 @@ public class Contract extends BasePage {
     private WebElement categoriesButton;
     @FindBy(xpath = "//div[@id='create-new-item-modal']//a[@id='34_anchor']//i[1]")
     private WebElement rootCategories;
-    @FindBy(xpath = "//div[@class='modalFooter']//div[@class='pull-right del-btn']")
+    @FindBy(xpath = "//a[@id='saveItem']")
     private WebElement createButton;
     @FindBy(xpath = "//div[@class='notifyjs-warning']//div//*[name()='svg']")
     private WebElement emptyFamily;
@@ -35,7 +35,7 @@ public class Contract extends BasePage {
     private WebElement emptyFamilyText;
     @FindBy(xpath = "//span[normalize-space()='Changes saved succesfully.']")
     private WebElement savedCategoriesText;
-    @FindBy(xpath = "//span[@class='iconbtn iconbtn-gray']//a[@id='cancelItem']")
+    @FindBy(xpath = "//*[@id='create-new-item-modal']/div[2]/div/div[3]/div[1]/span/a")
     private WebElement cancelButton;
     public Contract() {
     }

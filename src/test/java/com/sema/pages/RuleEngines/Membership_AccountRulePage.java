@@ -586,8 +586,12 @@ public class Membership_AccountRulePage extends BasePage {
     }
 
 
-    public void takeValueOfItemInItemOverview(String header) {
-        labelValueThatIsSetOutRule = getColumnData(itemOverviewTable,header).get(0);
+    public void takeValueOfItemInItemOverview(String header, String inOrNotInList) {
+        if (inOrNotInList.equalsIgnoreCase("inList")) {
+            labelValueThatIsSetInRule = getColumnData(itemOverviewTable,header).get(0);
+        } else if (inOrNotInList.equalsIgnoreCase("notInList")) {
+            labelValueThatIsSetOutRule = getColumnData(itemOverviewTable,header).get(0);
+        }
     }
 
     public void selectListIn(String listName, String area) {

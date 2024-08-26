@@ -187,7 +187,7 @@ Feature: Membership_Account Rule Test Cases
   for this membership, this user should be added to the associates.
     When The user go to 'Account' overview page
     When The user select 'ruleTestAutomation' list
-    When The user take the "CODE" values of item in item overview
+    When The user take the "CODE" values of item in item overview for "inList"
     When The user go in to item 'itemIdForMembershipRuleTests'
     When The user click rule tab
     When The user delete all rules if any exists
@@ -204,7 +204,7 @@ Feature: Membership_Account Rule Test Cases
   for this membership, this user should not be added to the associates.
     When The user go to 'Account' overview page
     When The user select 'rule_for_notInList' list
-    When The user take the "CODE" values of item in item overview
+    When The user take the "CODE" values of item in item overview for "notInlist"
     When The user edit an account to meet the rules 'TestAutomation'
     When The user go in to item 'itemIdForMembershipRuleTests'
     When The user click rule tab
