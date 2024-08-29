@@ -56,7 +56,7 @@ public class CurrenciesPage extends BasePage {
     @FindBy(xpath = "//td/a[2]")
     private List<WebElement> deleteButtonsInCurrenciesPage;
 
-    @FindBy(xpath = "//div[2]/div[3]/button[1]")
+    @FindBy(xpath = "//div/div[6]/div/div[3]/button[1]")
     private WebElement cancelButtonInDeleteCurrencyPopup;
 
     @FindBy(xpath = "//div[2]/div[3]/button[2]")
@@ -71,7 +71,7 @@ public class CurrenciesPage extends BasePage {
     @FindBy(xpath = "//input[@id='edit-currency-code']")
     private WebElement editCurrencyCodeInputBox;
 
-    @FindBy(xpath = "//div[2]/div/div[3]/div/a[2]")
+    @FindBy(xpath = "//div[5]/div/div/div[3]/div/a[2]")
     private WebElement cancelButtonInEditCurrencyPopup;
 
     @FindBy(xpath = "//a[@id='edit-currency']")
@@ -92,7 +92,7 @@ public class CurrenciesPage extends BasePage {
     @FindBy(xpath = "//a[@id='create-currency']")
     private WebElement saveButtonInAddCurrencyPopup;
 
-    @FindBy(xpath = "//div[2]/div/div[3]/div/a[2]")
+    @FindBy(xpath = "//div/div[4]/div/div/div[3]/div/a[2]")
     private WebElement cancelButtonInAddCurrencyPopup;
 
     @FindBy(xpath = "//*[@id='add-currency-modal']/div[2]")

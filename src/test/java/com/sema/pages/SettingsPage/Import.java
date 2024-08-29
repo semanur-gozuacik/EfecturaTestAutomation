@@ -345,6 +345,7 @@ public class Import extends BasePage {
     public void verifyTheResourceIsAddedToResources(String fileName) throws IOException {
         BrowserUtils.wait(1);
         Driver.getDriver().get(ConfigurationReader.getProperty("sbLink") + "Resources");
+        BrowserUtils.wait(2);
         String resourceCode = getCellValue(getExcelPath(fileName),"Code",1);
         codeFilter.click();
         codeFilterInputBox.sendKeys(resourceCode);
@@ -480,6 +481,7 @@ public class Import extends BasePage {
 
     public void tearDownAllChangesInAttributeCase() {
         for (int i = 0; i < 7; i++) {
+            BrowserUtils.wait(1);
             deleteButtons.get(0).click();
             BrowserUtils.wait(1);
             deleteButtonInModalInAttributes.click();

@@ -125,11 +125,23 @@ public class TagsPage extends BasePage {
     @FindBy(id = "cancelCreate")
     private WebElement cancelButtonInCreateNewTagModal;
 
-    @FindBy(xpath = "//div[2]/div/div[2]/div[1]/input")
+    @FindBy(xpath = "//*[text()='Label']/following-sibling::input[@type='text']")
     private WebElement labelInputBoxInCreateNewTagModal;
 
-    @FindBy(xpath = "//div[2]/div/div[2]/div[2]/select")
+    @FindBy(xpath = "//span/span[1]/span/span[1]/span")
+    private WebElement itemTypesSelectBoxInCreateNewTagModal;
+
+    @FindBy(xpath = "//div[6]/div/div/div[2]/div[2]/span/span[1]/span/span[1]")
+    private WebElement itemTypesSelectBoxInEditTagModal;
+
+    @FindBy(xpath = "//h4[contains(@class,'modal-title modalTitle')]")
+    private WebElement modalTitle;
+
+    @FindBy(xpath = "//div/div[4]/div/div/div[2]/div[2]/select")
     private WebElement itemTypesSelectInCreateNewTagModal;
+
+    @FindBy(xpath = "//div[6]/div/div/div[2]/div[2]/select")
+    private WebElement itemTypesSelectInEditTagModal;
 
     @FindBy(xpath = "//div[@class='pull-right']/a[contains(.,'Create')]")
     private WebElement createButtonInCreateNewModal;
@@ -426,15 +438,27 @@ public class TagsPage extends BasePage {
     }
 
     public void fillLabelInputInCreateNewTagModal() {
-        BrowserUtils.wait(1);
+        BrowserUtils.wait(2);
         BrowserUtils.waitForVisibility(labelInputBoxInCreateNewTagModal,20);
         labelInputBoxInCreateNewTagModal.sendKeys(tagLabelForCreate);
     }
 
     public void selectItemTypeInCreateOrEditTagModal(String itemType) {
-        BrowserUtils.waitForVisibility(itemTypesSelectInCreateNewTagModal,10);
-        BrowserUtils.selectDropdownOptionByVisibleText(itemTypesSelectInCreateNewTagModal, itemType);
-        BrowserUtils.wait(2);
+//        BrowserUtils.waitForVisibility(itemTypesSelectInCreateNewTagModal,10);
+        if (modalTitle.getText().contains("Edit")) {
+            itemTypesSelectBoxInEditTagModal.click();
+            BrowserUtils.wait(1);
+            BrowserUtils.selectDropdownOptionByVisibleText(itemTypesSelectInEditTagModal, itemType);
+            BrowserUtils.wait(1);
+            labelInputBoxInEditTagModal.click();
+
+        } else if (modalTitle.getText().contains("Create")) {
+            itemTypesSelectBoxInCreateNewTagModal.click();
+            BrowserUtils.wait(2);
+            BrowserUtils.selectDropdownOptionByVisibleText(itemTypesSelectInCreateNewTagModal, itemType);
+            BrowserUtils.wait(2);
+            labelInputBoxInCreateNewTagModal.click();
+        }
     }
 
     public void verifyCreateButtonIsActiveInCreateNewModal() {

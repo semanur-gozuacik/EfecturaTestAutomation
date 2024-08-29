@@ -35,7 +35,7 @@ public class Contract extends BasePage {
     private WebElement emptyFamilyText;
     @FindBy(xpath = "//span[normalize-space()='Changes saved succesfully.']")
     private WebElement savedCategoriesText;
-    @FindBy(xpath = "//*[@id='create-new-item-modal']/div[2]/div/div[3]/div[1]/span/a")
+    @FindBy(xpath = "//span/a")
     private WebElement cancelButton;
     public Contract() {
     }
