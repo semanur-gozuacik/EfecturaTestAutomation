@@ -196,9 +196,14 @@ public class SettingsTagsStepDefs extends BaseStep {
         pages.tagsPage().fillLabelInputInCreateNewTagModal();
     }
 
-    @When("The user select itemType {string} in CreateOrEditTag Modal")
-    public void theUserSelectItemTypeInCreateOrEditTagModal(String itemType) {
-        pages.tagsPage().selectItemTypeInCreateOrEditTagModal(itemType);
+    @When("The user select itemType {string} in CreateTag Modal")
+    public void theUserSelectItemTypeInCreateTagModal(String itemType) {
+        pages.tagsPage().selectItemTypeInCreateTagModal(itemType);
+    }
+
+    @When("The user select itemType {string} in EditTag Modal")
+    public void theUserSelectItemTypeInEditTagModal(String itemType) {
+        pages.tagsPage().selectItemTypeInEditTagModal(itemType);
     }
 
     @Then("The user verifies that Create button is active in CreateNew Modal")
@@ -325,4 +330,5 @@ public class SettingsTagsStepDefs extends BaseStep {
     public void theUserSelectAreYouSureTagEditCheckBox() {
         pages.tagsPage().selectAreYouSureTagEditCheckBox();
     }
+
 }

@@ -59,7 +59,7 @@ public class CurrenciesPage extends BasePage {
     @FindBy(xpath = "//div/div[6]/div/div[3]/button[1]")
     private WebElement cancelButtonInDeleteCurrencyPopup;
 
-    @FindBy(xpath = "//div[2]/div[3]/button[2]")
+    @FindBy(xpath = "//button[@id='delete-currency']")
     private WebElement deleteButtonInDeleteCurrencyPopup;
 
     @FindBy(xpath = "(//div[@class='modal-dialog modal-confirm'])[1]")
@@ -432,6 +432,7 @@ public class CurrenciesPage extends BasePage {
                 break;
             }
         }
+        BrowserUtils.wait(1);
         BrowserUtils.waitForVisibility(cancelButtonInDeleteCurrencyPopup,10);
     }
 

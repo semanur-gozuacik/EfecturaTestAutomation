@@ -443,22 +443,22 @@ public class TagsPage extends BasePage {
         labelInputBoxInCreateNewTagModal.sendKeys(tagLabelForCreate);
     }
 
-    public void selectItemTypeInCreateOrEditTagModal(String itemType) {
+    public void selectItemTypeInCreateTagModal(String itemType) {
 //        BrowserUtils.waitForVisibility(itemTypesSelectInCreateNewTagModal,10);
-        if (modalTitle.getText().contains("Edit")) {
-            itemTypesSelectBoxInEditTagModal.click();
-            BrowserUtils.wait(1);
-            BrowserUtils.selectDropdownOptionByVisibleText(itemTypesSelectInEditTagModal, itemType);
-            BrowserUtils.wait(1);
-            labelInputBoxInEditTagModal.click();
+        itemTypesSelectBoxInCreateNewTagModal.click();
+        BrowserUtils.wait(2);
+        BrowserUtils.selectDropdownOptionByVisibleText(itemTypesSelectInCreateNewTagModal, itemType);
+        BrowserUtils.wait(2);
+        labelInputBoxInCreateNewTagModal.click();
 
-        } else if (modalTitle.getText().contains("Create")) {
-            itemTypesSelectBoxInCreateNewTagModal.click();
-            BrowserUtils.wait(2);
-            BrowserUtils.selectDropdownOptionByVisibleText(itemTypesSelectInCreateNewTagModal, itemType);
-            BrowserUtils.wait(2);
-            labelInputBoxInCreateNewTagModal.click();
-        }
+    }
+
+    public void selectItemTypeInEditTagModal(String itemType) {
+        itemTypesSelectBoxInEditTagModal.click();
+        BrowserUtils.wait(1);
+        BrowserUtils.selectDropdownOptionByVisibleText(itemTypesSelectInEditTagModal, itemType);
+        BrowserUtils.wait(1);
+        labelInputBoxInEditTagModal.click();
     }
 
     public void verifyCreateButtonIsActiveInCreateNewModal() {
@@ -594,4 +594,5 @@ public class TagsPage extends BasePage {
         BrowserUtils.wait(4);
         areYouSureTagEditCheckBox.click();
     }
+
 }

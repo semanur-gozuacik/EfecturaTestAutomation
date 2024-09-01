@@ -29,7 +29,7 @@ public class EditItemPage extends BasePage {
 
 
     public void clickRuleTab() {
-        BrowserUtils.wait(1);
+        BrowserUtils.wait(2);
         while (!BrowserUtils.isElementDisplayed(ruleTab)) {
             scrollRightButton.click();
         }

@@ -375,7 +375,7 @@ public class Import extends BasePage {
     }
 
     public void verifyItemIsCreated(String importType) throws IOException {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(3);
         Driver.getDriver().get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + importType);
         String itemCode = getCellValue(getExcelPath(importType),"SKU",1);
 
@@ -383,7 +383,7 @@ public class Import extends BasePage {
         itemOverviewCodeFilterInputBox.sendKeys(itemCode);
         searchButton.click();
         BrowserUtils.wait(5);
-//        refreshButton.click();
+        refreshButton.click();
         Assert.assertEquals(itemCode, getValueOfTableInContactOverview("CODE"));
     }
 
