@@ -382,7 +382,7 @@ public class Import extends BasePage {
         itemOverviewCodeFilter.click();
         itemOverviewCodeFilterInputBox.sendKeys(itemCode);
         searchButton.click();
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
         refreshButton.click();
         Assert.assertEquals(itemCode, getValueOfTableInContactOverview("CODE"));
     }
