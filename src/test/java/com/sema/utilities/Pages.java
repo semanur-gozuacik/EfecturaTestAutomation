@@ -25,6 +25,7 @@ import com.sema.pages.MDMPage.MembershipManagement.MembershipHomePage;
 import com.sema.pages.MDMPage.ProductManagement.ProductHomePage;
 import com.sema.pages.MDMPage.SalesOrganization.SalesOrganization;
 import com.sema.pages.MDMPage.UserManagement.UserHomePage;
+import com.sema.pages.MDMPage.roofCardManagement.RoofCardPage;
 import com.sema.pages.RuleEngines.Campaign_AccountRulePage;
 import com.sema.pages.RuleEngines.Event_ContactRulePage;
 import com.sema.pages.RuleEngines.Membership_AccountRulePage;
@@ -76,6 +77,7 @@ public class Pages {
     private ItemOverviewPage itemOverviewPage;
     private Campaign_AccountRulePage campaignAccountRulePage;
     private MembershipHomePage membershipHomePage;
+    private RoofCardPage roofCardPage;
 
 
 
@@ -118,6 +120,7 @@ public class Pages {
             this.eventContactRulePage = new Event_ContactRulePage();
             this.campaignAccountRulePage = new Campaign_AccountRulePage();
             this.membershipHomePage=new MembershipHomePage();
+            this.roofCardPage=new RoofCardPage();
 
 
 
@@ -165,6 +168,7 @@ public class Pages {
     public Event_ContactRulePage eventContactRulePage() {return eventContactRulePage;}
     public Campaign_AccountRulePage campaign_accountRulePage() {return campaignAccountRulePage;}
     public MembershipHomePage membershipHomePage(){return membershipHomePage;}
+    public RoofCardPage roofCardPage(){return roofCardPage;}
 
 
 
