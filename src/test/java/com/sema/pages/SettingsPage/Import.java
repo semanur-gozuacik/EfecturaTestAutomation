@@ -487,6 +487,7 @@ public class Import extends BasePage {
             deleteButtonInModalInAttributes.click();
             BrowserUtils.wait(2);
         }
+        BrowserUtils.wait(2);
     }
 
     String projectDir = System.getProperty("user.dir");

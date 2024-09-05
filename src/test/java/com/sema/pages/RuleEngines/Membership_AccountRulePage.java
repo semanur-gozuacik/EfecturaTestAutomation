@@ -327,7 +327,7 @@ public class Membership_AccountRulePage extends BasePage {
         deleteAllRulesButton.click();
         BrowserUtils.wait(2);
         deleteButtonInDeleteConfirmModal.click();
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(4);
         BrowserUtils.waitForVisibility(allRuleDeleteWarning,20);
     }
 
@@ -378,7 +378,7 @@ public class Membership_AccountRulePage extends BasePage {
 
     public void verifyEditedItemIsAssociated(String tabName, String itemIdForRule) {
         driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + ConfigurationReader.getProperty(itemIdForRule));
-        BrowserUtils.wait(8);
+        BrowserUtils.wait(11);
         driver.navigate().refresh();
         BrowserUtils.wait(16);
         driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
@@ -534,7 +534,7 @@ public class Membership_AccountRulePage extends BasePage {
             deleteAllRulesButton.click();
             BrowserUtils.wait(2);
             deleteButtonInDeleteConfirmModal.click();
-            BrowserUtils.wait(2);
+            BrowserUtils.wait(4);
             BrowserUtils.waitForVisibility(allRuleDeleteWarning,20);
             driver.navigate().refresh();
             clickRuleTab2(ruleTab,scrollRightButton);

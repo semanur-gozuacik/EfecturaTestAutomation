@@ -192,7 +192,7 @@ public class CurrenciesPage extends BasePage {
         waitForAttribute(header,"aria-sort");
         while (header.getAttribute("aria-sort").equals("descending")) {
             header.click();
-            BrowserUtils.wait(3);
+            BrowserUtils.wait(4);
         }
     }
 
