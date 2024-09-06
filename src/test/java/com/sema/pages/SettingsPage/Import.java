@@ -384,6 +384,7 @@ public class Import extends BasePage {
         searchButton.click();
         BrowserUtils.wait(7);
         refreshButton.click();
+        BrowserUtils.wait(2);
         Assert.assertEquals(itemCode, getValueOfTableInContactOverview("CODE"));
     }
 

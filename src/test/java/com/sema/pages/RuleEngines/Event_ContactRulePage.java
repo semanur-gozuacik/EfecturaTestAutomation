@@ -63,7 +63,7 @@ public class Event_ContactRulePage extends BasePage {
         for (String contactId : contactIds) {
             driver.get(ConfigurationReader.getProperty("editItemLinkWithoutId") + contactId);
             driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
-            BrowserUtils.wait(2);
+            BrowserUtils.wait(4);
             associatedFilter.click();
             associatedFilterYesOption.click();
             BrowserUtils.wait(1);
@@ -107,7 +107,7 @@ public class Event_ContactRulePage extends BasePage {
         driver.navigate().refresh();
         BrowserUtils.wait(17);
         driver.navigate().refresh();
-        BrowserUtils.wait(13);
+        BrowserUtils.wait(15);
         driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
         BrowserUtils.waitForVisibility(associatedFilter,30);
         associatedFilter.click();
