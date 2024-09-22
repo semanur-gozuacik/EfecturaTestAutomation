@@ -382,8 +382,9 @@ public class Import extends BasePage {
         itemOverviewCodeFilter.click();
         itemOverviewCodeFilterInputBox.sendKeys(itemCode);
         searchButton.click();
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(7);
         refreshButton.click();
+        BrowserUtils.wait(2);
         Assert.assertEquals(itemCode, getValueOfTableInContactOverview("CODE"));
     }
 
@@ -487,6 +488,7 @@ public class Import extends BasePage {
             deleteButtonInModalInAttributes.click();
             BrowserUtils.wait(2);
         }
+        BrowserUtils.wait(2);
     }
 
     String projectDir = System.getProperty("user.dir");
