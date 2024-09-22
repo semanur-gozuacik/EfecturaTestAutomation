@@ -14,7 +14,7 @@ Feature: Tags Page Test Cases
 
   Scenario: Refresh button should be active in Tags page
     Then The user verifies that Refresh button is active
-
+@semoo
   Scenario Outline: The User verify label filter works correctly
     When  The user enters "<entries>" in to label filter
     Then  The User verifies that label filter results contains "<entries>"
