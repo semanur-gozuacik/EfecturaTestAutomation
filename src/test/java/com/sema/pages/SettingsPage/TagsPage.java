@@ -122,10 +122,10 @@ public class TagsPage extends BasePage {
     @FindBy(id = "create-tag-button")
     private WebElement createNewTagButton;
 
-    @FindBy(id = "cancelCreate")
+    @FindBy(xpath= "//button[@id='create-tag-button-modal']/preceding-sibling::button[contains(text(),'Cancel')]")
     private WebElement cancelButtonInCreateNewTagModal;
 
-    @FindBy(xpath = "//*[text()='Label']/following-sibling::input[@type='text']")
+    @FindBy(xpath = "//input[@id='labelTag']")
     private WebElement labelInputBoxInCreateNewTagModal;
 
     @FindBy(xpath = "//span/span[1]/span/span[1]/span")
@@ -143,7 +143,7 @@ public class TagsPage extends BasePage {
     @FindBy(xpath = "//div[6]/div/div/div[2]/div[2]/select")
     private WebElement itemTypesSelectInEditTagModal;
 
-    @FindBy(xpath = "//div[@class='pull-right']/a[contains(.,'Create')]")
+    @FindBy(xpath = "//button[contains(text(),'Cancel')]/following-sibling::button[@title='Create']")
     private WebElement createButtonInCreateNewModal;
 
     @FindBy(id = "cancelEditTag")

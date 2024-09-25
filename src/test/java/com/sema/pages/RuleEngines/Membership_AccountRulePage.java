@@ -563,6 +563,7 @@ public class Membership_AccountRulePage extends BasePage {
 
     public void clickSetRulesButtonWithRandomAssociationName() {
         setRulesButton.click();
+        BrowserUtils.wait(1);
         ruleRandomAssociationNameCheckBox.click();
         continueButtonInSetRulesModal.click();
         BrowserUtils.wait(1);
