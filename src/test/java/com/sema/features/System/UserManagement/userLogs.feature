@@ -7,7 +7,7 @@ Feature: Users Management User Logs  Test Cases
     And   The User clicks the Submit button
     Then  The User waits until the System element is visible with a timeout of 120 seconds
     Given The user on the settings users logs page
-    And   The User gets the current URL and stores it in "UserLogs"
+    And   The User gets the current URL and stores it in "LoginLogs"
     And The user click
 
   Scenario: Users Logs tables verification
