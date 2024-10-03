@@ -163,7 +163,7 @@ public class Membership_AccountRulePage extends BasePage {
     @FindBy(xpath = "//body")
     private WebElement body;
 
-    @FindBy(xpath = "/html/body/div[3]/div/div[8]/a")
+    @FindBy(xpath = "//*[@id='oz-scroll']")
     private WebElement scrollUpButton;
 
 //span[contains(text(),'Unsaved Changes')]
@@ -469,6 +469,8 @@ public class Membership_AccountRulePage extends BasePage {
         ruleAttributeSearchInputBox.sendKeys("Contact Mobile");
         searchedRuleOption.click();
         ruleAttributeValueInputBox.sendKeys(contactMobileValue);
+        BrowserUtils.scrollToRightEnd(driver);
+        BrowserUtils.wait(1);
         addRuleButton.click();
         BrowserUtils.wait(1);
         globalOrButton.click();

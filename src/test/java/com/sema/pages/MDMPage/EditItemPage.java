@@ -30,6 +30,8 @@ public class EditItemPage extends BasePage {
 
     public void clickRuleTab() {
         BrowserUtils.wait(5);
+        BrowserUtils.scrollToRightEnd(driver);
+        BrowserUtils.wait(1);
         while (!BrowserUtils.isElementDisplayed(ruleTab)) {
             scrollRightButton.click();
         }

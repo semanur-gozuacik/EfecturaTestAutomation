@@ -175,6 +175,7 @@ public class CurrenciesPage extends BasePage {
 
     public static boolean areValuesDescending(List<WebElement> values) {
         List<String> valuesAsString = getStringListFromWebElementList(values);
+        BrowserUtils.wait(3);
         for (int i = 0; i < valuesAsString.size() - 1; i++) {
             if (valuesAsString.get(i).compareTo(valuesAsString.get(i + 1)) < 0) {
                 return false;
@@ -182,6 +183,7 @@ public class CurrenciesPage extends BasePage {
         }
         return true;
     }
+
 
     public boolean areCodeValuesDescending() {
         return areValuesDescending(codeValues);
