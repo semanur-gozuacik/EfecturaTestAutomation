@@ -348,6 +348,18 @@ public class BrowserUtils {
         String classAttribute = button.getAttribute("class");
         return !classAttribute.contains("disabled");
     }
+
+    public static void scrollToRightEnd(WebDriver driver) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        // Sayfanın toplam genişliği kadar sağa kaydır
+        js.executeScript("window.scrollTo(document.body.scrollWidth, 0)");
+    }
+
+    public static void scrollToElement(WebDriver driver, WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        // Elementi hem yatayda hem dikeyde görünür hale getirir
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
 }
 
 

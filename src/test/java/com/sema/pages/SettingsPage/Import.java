@@ -389,6 +389,8 @@ public class Import extends BasePage {
     }
 
     public void verifyThatContactIsAssociatedWithStatedAccount(String itemType) throws IOException {
+        BrowserUtils.scrollToElement(driver,itemOverviewTableValueEditButton);
+        BrowserUtils.wait(5);
         itemOverviewTableValueEditButton.click();
         accountContactTabInContactEditItem.click();
         String expectedAccountNumber = getCellValue(getExcelPath(itemType),"Account Number",1);
@@ -402,6 +404,8 @@ public class Import extends BasePage {
 
     public void tearDownAllChangesInContactCase() {
         associationTabsFirstRowCheckBox.click();
+        BrowserUtils.scrollToRightEnd(driver);
+        BrowserUtils.wait(2);
         unsavedChangesButton.click();
         saveButtonInChangeItemModal.click();
         BrowserUtils.wait(2);
@@ -413,8 +417,10 @@ public class Import extends BasePage {
     }
 
     public void tearDownAllChangesInAccountCase() {
+        BrowserUtils.scrollToElement(driver,itemOverviewTableValueDeleteButton);
         itemOverviewTableValueDeleteButton.click();
         deleteButtonInOverviewDeleteConfirmationModal.click();
+        BrowserUtils.wait(2);
     }
 
     public void verifyTheAccountIsAssociatedWithTheMrp(String item1, String item2) throws IOException {
@@ -427,6 +433,8 @@ public class Import extends BasePage {
         BrowserUtils.wait(5);
 //        overviewTableHeaders.stream().filter(e -> e.getText().contains("CODE")).findFirst().ifPresent(WebElement::click);
         BrowserUtils.wait(5);
+        BrowserUtils.scrollToRightEnd(driver);
+        BrowserUtils.wait(1);
         itemOverviewTableValueEditButton.click();
         editItemTabs.stream().filter(e -> e.getText().contains(item2)).findFirst().ifPresent(WebElement::click);
         BrowserUtils.wait(3);
@@ -441,6 +449,8 @@ public class Import extends BasePage {
 
     public void tearDownAllChangesInAssociationCase() {
         associationTabsFirstRowCheckBox.click();
+        BrowserUtils.scrollToRightEnd(driver);
+        BrowserUtils.wait(1);
         unsavedChangesButton.click();
         saveButtonInChangeItemModal.click();
         BrowserUtils.wait(2);

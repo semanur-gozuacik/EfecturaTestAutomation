@@ -47,7 +47,7 @@ public class ItemStatusesPage extends BasePage {
     @FindBy(id = "createItem")
     private WebElement createNewButton;
 
-    @FindBy(id = "cancelItem")
+    @FindBy(xpath= "//button[@id='save-resource']/preceding-sibling::button[contains(text(),'Cancel')]")
     private WebElement cancelButtonInCreateNewModal;
 
     @FindBy(xpath = "//input[contains(@class,'locale-input')]")

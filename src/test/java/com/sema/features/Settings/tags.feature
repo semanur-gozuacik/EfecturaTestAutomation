@@ -29,9 +29,9 @@ Feature: Tags Page Test Cases
     Then The user verifies that 'No matching records found' is displayed in table
 
   Scenario: The filter should return IDs between 63 and 67 inclusive
-    When The user enters 63 and 67 in to Id filter
+    When The user enters 44 and 88 in to Id filter
     When The user clicks update button in Id filter
-    Then The user verifies that ids are between 63 and 67 inclusive
+    Then The user verifies that ids are between 44 and 88 inclusive
 
   Scenario: 'IdFromMustBeLessThanIdTo' warning should displayed if idFrom is greater than idTo
     When The user enters 67 and 63 in to Id filter

@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class UsersLogs extends BasePage {
-    @FindBy(xpath = "//a[@class='breadcrumbs__item'][normalize-space()='User Logs']")
-    private WebElement usersLogsVerificationsElement;
+    @FindBy(xpath = "//table[@id='userLogs_table']")
+    private WebElement usersLogsTableElement;
     @FindBy(xpath = "//button[@class='btn btn-primary' and @data-dismiss='modal' and text()='OK']")
     private WebElement logsclick;
     @FindBy(xpath = "//span[contains(text(),'Search')]")
@@ -19,11 +19,11 @@ public class UsersLogs extends BasePage {
 
     public void verifyUsers() {
         BrowserUtils.wait(5);
-        Assert.assertTrue(usersLogsVerificationsElement.isDisplayed());
+        Assert.assertTrue(usersLogsTableElement.isDisplayed());
     }
 
     public void onTheUsersSettingPage() {
-        driver.navigate().to("https://sandbox-ui.efectura.com/UserManage/UserLogs");
+        driver.navigate().to("https://sandbox-ui.efectura.com/UserManage/LoginLogs");
     }
 
     public void logsClick() {
