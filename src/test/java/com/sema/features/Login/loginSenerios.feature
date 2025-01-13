@@ -1,4 +1,4 @@
-@regression
+@regression @login
 Feature: MDM Session Verification
 
   Background:
@@ -21,7 +21,7 @@ Feature: MDM Session Verification
       | invalidUsername    | validPassword    | session opening error |
       | invalidUsername    |                  | session opening error |
       | validUsername      | validPassword    | successful login      |
-  @login
+
     Scenario: Verify Forgot Your Password Button Functionality- return to login page
       When The user clicks forgot your password button
       Then  The User gets the current URL and stores it in "Account/ForgotPassword"
@@ -41,6 +41,7 @@ Feature: MDM Session Verification
     When The user enters "invalid format email"
     And  The user clicks send button
    Then  The User gets the current URL and stores it in "Account/ForgotPassword"
+
 
   Scenario: Verify sign in with Microsoft button functionality
     When The user clicks sign in with microsoft button
