@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class AccountHomePage extends BasePage {
+    
     @FindBy(xpath = "//a[normalize-space()='Associated']")
     private WebElement associatedFilterClick;
     @FindBy(xpath = "//span[@class='select2-search select2-search--dropdown']//input[@role='textbox']")
@@ -41,6 +42,7 @@ public class AccountHomePage extends BasePage {
         selectFirstItem.click();
         BrowserUtils.wait(5);
     }
+    
     public void clickAssociatedNoFilter() {
         BrowserUtils.wait(10);
         associatedNoFilter.sendKeys("No"+ Keys.ENTER);
