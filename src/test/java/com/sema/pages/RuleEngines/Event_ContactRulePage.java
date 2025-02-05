@@ -39,7 +39,6 @@ public class Event_ContactRulePage extends BasePage {
     private WebElement contactEmailInputBox;
 
 
-
     String contactMobileValue = "5461146716";
     String contactEmailValue = "rule@rule.com";
 
