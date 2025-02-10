@@ -11,7 +11,7 @@ public class UsersLogs extends BasePage {
     private WebElement usersLogsTableElement;
     @FindBy(xpath = "//button[@class='btn btn-primary' and @data-dismiss='modal' and text()='OK']")
     private WebElement logsclick;
-    @FindBy(xpath = "//span[contains(text(),'Search')]")
+    @FindBy(xpath = "//span[@id='userLogs_table-Search']//span[@class='icon']")
     private WebElement userlogsSeachButtons;
 
     public UsersLogs() {
