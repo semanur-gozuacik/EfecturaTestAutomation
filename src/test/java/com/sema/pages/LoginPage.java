@@ -39,6 +39,12 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//img[@src='https://docs.microsoft.com/en-us/azure/active-directory/develop/media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_signin_dark.png']")
     private WebElement signInWithMicrosoftButton;
 
+    @FindBy(id = "login_email")
+    private WebElement mediamarktemail;
+
+    @FindBy(id = "login_password")
+    private WebElement mediamarktpassword;
+
     public LoginPage() {
     }
 
@@ -75,7 +81,7 @@ public class LoginPage extends BasePage {
     public void loginVerify(String expectedResult) {
         if (expectedResult.equalsIgnoreCase("successful login")) {
             loginVerification();
-        } else if (expectedResult.equalsIgnoreCase("session opening error empty")) {
+        } else if (expectedResult.equalsIgnoreCase("session opening error")) {
             BrowserUtils.waitForVisibility(emptyLoginErrorText, 20);
             Assert.assertTrue(emptyLoginErrorText.isDisplayed());
         } else {
@@ -118,5 +124,7 @@ public class LoginPage extends BasePage {
         BrowserUtils.waitForVisibility(signInWithMicrosoftButton,20);
         signInWithMicrosoftButton.click();
     }
+
+
 
 }

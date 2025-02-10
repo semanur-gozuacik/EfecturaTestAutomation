@@ -5,8 +5,11 @@ Feature: Tags Page Test Cases
     Given The User inputs a valid username "validUsername"
     Given The User inputs a valid password "validPassword"
     Given The User clicks the Submit button
-    When  The User waits until the System element is visible with a timeout of 120 seconds
-    When  The user is on the Tags page
+    Then  The User waits until the System element is visible with a timeout of 120 seconds
+    And   The User performs a mouseover on the System element symbol
+    Given The user on the settings tags page
+    And   The User gets the current URL and stores it in "Settings/Tags"
+
 
 
   Scenario: Users should reach Tags page.

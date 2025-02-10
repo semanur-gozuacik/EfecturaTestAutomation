@@ -2,6 +2,8 @@ package com.sema.pages.Analysis;
 
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
+import com.sema.utilities.ConfigurationReader;
+import com.sema.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -42,6 +44,11 @@ public class CocpitGeneralDashboard extends BasePage {
         cocpit.click();
     }
     public void overviewVerifies(){
+        Driver.getDriver().get("https://mediamarkt-ui.efectura.com/Enrich/EmbedDashboard?dashboardName=mm-admin-dashboard");
+        BrowserUtils.wait(10);
+
+
+
         driver.switchTo().frame(0);
         BrowserUtils.waitForVisibility(overview,25);
         Assert.assertTrue(overview.isDisplayed());

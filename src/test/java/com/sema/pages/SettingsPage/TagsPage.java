@@ -211,7 +211,9 @@ public class TagsPage extends BasePage {
         labelFilterInputBox.sendKeys(input);
         BrowserUtils.wait(5);
     }
-
+    public void onTheTagsSettingPage(){
+        driver.navigate().to("https://sandbox-ui.efectura.com/Settings/Tags");
+    }
     public void verifyLabelFilterResultsAreCorrect(String input) {
         for (WebElement value : labelValues) {
             Assert.assertTrue(value.getText().toLowerCase().contains(input.toLowerCase()));
