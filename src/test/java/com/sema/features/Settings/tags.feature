@@ -36,6 +36,7 @@ Feature: Tags Page Test Cases
     When The user clicks update button in Id filter
     Then The user verifies that ids are between 44 and 88 inclusive
 
+
   Scenario: 'IdFromMustBeLessThanIdTo' warning should displayed if idFrom is greater than idTo
     When The user enters 67 and 63 in to Id filter
     When The user clicks update button in Id filter
