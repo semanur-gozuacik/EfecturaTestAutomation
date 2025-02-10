@@ -1,6 +1,7 @@
 package com.sema.stepDefs;
 
 import com.sema.utilities.BrowserUtils;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -21,7 +22,10 @@ public class SettingsTagsStepDefs extends BaseStep {
     public void theUserVerifiesThatLabelFilterResultsContains(String input) {
         pages.tagsPage().verifyLabelFilterResultsAreCorrect(input);
     }
-
+    @Given("The user on the settings tags page")
+    public void the_user_on_the_settings_tags_page() {
+        pages.tagsPage().onTheTagsSettingPage();
+    }
     @Then("The user verifies that {string} is displayed in table")
     public void theUserVerifiesThatNoDataAvailableInTableIsDisplayedInTable(String message) {
         pages.tagsPage().verifyNoMatchingRecordsFoundIsDisplayed(message);

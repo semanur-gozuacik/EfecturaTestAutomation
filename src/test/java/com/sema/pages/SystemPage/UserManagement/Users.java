@@ -47,7 +47,7 @@ public class Users extends BasePage {
     private WebElement enableFılter;
     @FindBy(xpath = "//li[contains(text(),'Disable') and @role='treeitem']")
     private WebElement disableFılter;
-    @FindBy(xpath = "//a[@class='filter-toggle-table_id filter-toggle'][normalize-space()='Username']")
+    @FindBy(xpath = "//input[@data-field-name='UserName']")
     private WebElement clickfilterUserName;
     @FindBy(xpath = "//a[@class='filter-toggle-table_id filter-toggle'][normalize-space()='User Email']")
     private WebElement clickEmail;

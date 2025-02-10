@@ -21,7 +21,7 @@ public class Attributes extends BasePage {
     private WebElement entrieNumber;
     @FindBy(xpath = "//a[@class='filter-toggle-attributes_table filter-toggle']")
     private List<WebElement> attributes;
-    @FindBy(xpath = "//input[@id='code-attributes_table']")
+    @FindBy(xpath = "//input[@id='Code-attributes_table']")
     private WebElement codeField;
     @FindBy(xpath = "//a[normalize-space()='Properties']")
     private WebElement propertiesTab;

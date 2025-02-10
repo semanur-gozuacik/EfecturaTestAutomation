@@ -28,6 +28,7 @@ import java.util.List;
         features ="src/test/java/com/sema/features",
         glue  = "com/sema/stepDefs",
         dryRun = false
+        
 )
 public class TestRunner {
     // Tüm senaryoların çalıştırılmasının ardından yapılacak işlemler

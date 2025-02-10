@@ -65,8 +65,6 @@ Feature: Users Management Test Cases
     And The user enters "1234semaaa" into username field
     And the user verify on username filter functionality "No matching records found"-invalid username
 
-
-
   Scenario: Verify UserEmail Filter -Valid Unique UserName
     And The click filter username
     And The user enters "yana@efectura.com" into userEmail field
