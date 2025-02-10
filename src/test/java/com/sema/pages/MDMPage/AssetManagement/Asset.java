@@ -58,7 +58,7 @@ public class Asset extends BasePage {
     private WebElement canEdit;
     @FindBy(xpath = "//select[@id='can-edit-select']//optgroup[@label='Users']//option")
     private List<WebElement> canEditList;
-    @FindBy(xpath = "//li[@class='list-item']")
+    @FindBy(xpath = "//li[@class='list-item']/p")
     private List<WebElement> listItemsName;
     @FindBy(xpath = "//li[@id='select2-can-view-select-result-ejbv-user0007d59c-20cc-4ce2-a7f3-8031f22b03ce'and @role='treeitem']")
     private WebElement selectedCanView;

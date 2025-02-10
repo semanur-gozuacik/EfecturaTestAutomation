@@ -46,7 +46,7 @@ public class ContactHomePage extends BasePage {
     private WebElement unassignedRecords;
     @FindBy(xpath = "//a[@class='select-jstree-node link-jstree-node'][normalize-space()='Contact']")
     private List<WebElement> verifyUnassignedRecordsCategory;
-    @FindBy(xpath = "//input[@id='filter-SKU']")
+    @FindBy(xpath = "//thead/tr[2]/th[position()=count(//thead/tr[1]/th[contains(text(), 'Code')]/preceding-sibling::th) + 1]/input")
     private WebElement codeFilterSendKey;
     @FindBy(xpath = "//input[@id='filter-DIA_Event_Name']")
     private WebElement EventNameFilterSendKey;
@@ -66,7 +66,7 @@ public class ContactHomePage extends BasePage {
     private List<WebElement> verifyPartialCodeFilters;
     @FindBy(xpath = "//td[@class='dataTables_empty']")
     private WebElement noContentsText;
-    @FindBy(xpath = "//input[@id='filter-Label']")
+    @FindBy(xpath = "//thead/tr[2]/th[position()=count(//thead/tr[1]/th[contains(text(), 'Label')]/preceding-sibling::th) + 1]/input")
     private WebElement labelFilter;
     @FindBy(xpath = "//a[normalize-space()='Label']")
     private WebElement labelFilterClick;
@@ -258,7 +258,7 @@ public class ContactHomePage extends BasePage {
 
     public void setCodeFilter(String code) {
         BrowserUtils.wait(7);
-        codeFilterClick.click();
+//        codeFilterClick.click();
         codeFilterSendKey.sendKeys(code);
     }
 
@@ -285,7 +285,7 @@ public class ContactHomePage extends BasePage {
     public void verifyCodeFilter(String code) {
         BrowserUtils.wait(5);
 //        BrowserUtils.wait(3);
-        assertEquals(getColumnData(itemOverviewTable, "CODE").get(0) , code);
+        assertEquals(getColumnData(itemOverviewTable, "Code").get(0) , code);
 //        assertTrue(verifyCodeFilter.getText().equalsIgnoreCase(code));
     }
 
@@ -308,14 +308,14 @@ public class ContactHomePage extends BasePage {
 
     public void setLabelFilter(String label) {
         BrowserUtils.wait(7);
-        labelFilterClick.click();
+//        labelFilterClick.click();
         labelFilter.sendKeys(label);
     }
 
     public void verifyPartialLabelFilters(String partialLabel) {
         BrowserUtils.wait(2);
         assertTrue(verifyPartialCodeFilters.size() >= 1);
-        assertTrue(getColumnData(itemOverviewTable,"LABEL").get(0).contains(partialLabel));
+        assertTrue(getColumnData(itemOverviewTable,"Label").get(0).contains(partialLabel));
     }
 
     public void selectEkosystemFamilyFilter() {

@@ -14,32 +14,32 @@ Feature: Asset Management Test Cases- Asset Home Page
 
   Scenario: Verify Code Filter -Valid Unique Code
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
-   # And the user verify on code filter functionality "TEST123456"
+#    And the user clicks on Search button
+    And the user verify on code filter functionality "TEST123456"
 
   Scenario:  Verify Code Filter -Valid Unique Code partial
     And The user enters "TEST" into Code field
-    And the user clicks on Search button
-  #  And the user verify on code filter functionality with partial unique code "TEST"
+#    And the user clicks on Search button
+#    And the user verify on code filter functionality with partial unique code "TEST"
 
   Scenario: Verify Code Filter - Invalid Unique Code
     And The user enters "sema12345" into Code field
-    And the user clicks on Search button
+#    And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario: Verify Label Filter - Valid Label
-    And The user enters "TEST123456" into Label field
-    And the user clicks on Search button
-    #And the user verify on label filter functionality with partial unique code "TEST123456"
+    And The user enters "TEST12345" into Label field
+#    And the user clicks on Search button
+    And the user verify on label filter functionality with partial unique code "TEST12345"
 
   Scenario: Verify Label Filter - Partial Label
     And The user enters "test" into Label field
-    And the user clicks on Search button
-#    And the user verify on label filter functionality with partial unique code "Test"
+#    And the user clicks on Search button
+    And the user verify on label filter functionality with partial unique code "test"
 
   Scenario: Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into Label field
-    And the user clicks on Search button
+#    And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario: Create List- cancel button
@@ -48,8 +48,8 @@ Feature: Asset Management Test Cases- Asset Home Page
     When The user enters "otomasyon" List Name
     # And  The user enters "_5458429214" Can view
    #  And  The user enters "1757483988_5392786463" Can edit
-   #  And The user clicks cancel button-New List
-    # Then The user verifies "otomasyon" is not visible
+     And The user clicks cancel button-New List
+     Then The user verifies "otomasyon" is not visible
 
   Scenario: Create List- create button
     And  The user clicks plus icon
