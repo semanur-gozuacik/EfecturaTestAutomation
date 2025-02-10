@@ -61,6 +61,9 @@ public class Import extends BasePage {
     @FindBy(xpath = "//span[text()='Select import type']")
     private WebElement selectImportTypeElement;
 
+    @FindBy(xpath = "//span[contains(@id,'select2-FamiliesTemplate-container')]")
+    private WebElement selectFamilyElement;
+
     @FindBy(xpath = "//span/span/span[1]/input")
     private WebElement selectImportTypeInputBox;
 
@@ -115,7 +118,7 @@ public class Import extends BasePage {
     @FindBy(xpath = "//button[contains(@id,'delete-confirmedResources')]")
     private WebElement deleteResourceButtonInDeleteResourceModal;
 
-    @FindBy(xpath = "//ul[@id='select2-ItemType-results']/li")
+    @FindBy(xpath = "//ul/li[contains(@id,'select2')]")
     private List<WebElement> filteredImportTypeOptions;
 
     @FindBy(xpath = "//a[starts-with(text(),'Code')]")
@@ -507,6 +510,7 @@ public class Import extends BasePage {
     String accountCallbackExcel = Paths.get(projectDir, accountCallbackRelativePath).toString();
 
     public void uploadExcelFile(String fileName) {
+        BrowserUtils.wait(2);
         addCsvInputElement.sendKeys(getExcelPath(fileName));
         BrowserUtils.wait(2);
         saveChangesButtonInAreYouSureModal.click();
@@ -553,5 +557,29 @@ public class Import extends BasePage {
 
     public void clickValuesTab() {
         attributeValuesTab.click();
+    }
+
+    public void selectItemTypeAndFamily(String itemType, String family) {
+
+        BrowserUtils.wait(3);
+        selectImportTypeElement.click();
+        selectImportTypeInputBox.sendKeys(itemType);
+        BrowserUtils.wait(1);
+        for (WebElement option : filteredImportTypeOptions) {
+            if (option.getText().equals(itemType)) {
+                option.click();
+                break;
+            }
+        }
+        BrowserUtils.wait(1);
+        selectFamilyElement.click();
+        selectImportTypeInputBox.sendKeys(family);
+        BrowserUtils.wait(1);
+        for (WebElement option : filteredImportTypeOptions) {
+            if (option.getText().equals(family)) {
+                option.click();
+                break;
+            }
+        }
     }
 }

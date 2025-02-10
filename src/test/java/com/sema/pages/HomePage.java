@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends BasePage {
     @FindBy(xpath = "//img[@id='navLogo']")
     private WebElement basariliLoginDogrulama;
-    @FindBy(id = "MDM")
+    @FindBy(xpath = "//a[contains(text(),'Entities')]")
     private WebElement MDM;
     @FindBy(id = "Persons")
     private WebElement Persons;
@@ -24,7 +24,7 @@ public class HomePage extends BasePage {
     private WebElement KPI;
     @FindBy(xpath = "//a[contains(text(), 'KPI Management')]")
     private WebElement KPIManagement;
-    @FindBy(id = "Asset")
+    @FindBy(xpath = "//a[text()='Asset']")
     private WebElement asset;
     @FindBy(id = "Gift ManagementH")
     private WebElement giftManagement;

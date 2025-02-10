@@ -7,8 +7,8 @@ Feature: Asset Management Test Cases- Asset Home Page
     And    The User clicks the Submit button
     Then   The User waits until the MDM element is visible with a timeout of 120 seconds
     And   The User performs a mouseover on the MDM element
-    And   The User performs a    mouseover on the Asset Management element
-    And   The User performs a    mouseover on the Asset element
+#    And   The User performs a    mouseover on the Asset Management element
+#    And   The User performs a    mouseover on the Asset element
     And   The User clicks on the Asset element
     And   The User gets the current URL and stores it in "itemType=Asset" Asset page
 

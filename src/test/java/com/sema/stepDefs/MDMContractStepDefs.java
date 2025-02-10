@@ -1,6 +1,7 @@
 package com.sema.stepDefs;
 
 
+import com.sema.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -31,6 +32,7 @@ public class MDMContractStepDefs extends BaseStep {
 
     @Then("The User waits until the MDM element is visible with a timeout of {int} seconds")
     public void the_user_waits_until_the_mdm_element_is_visible_with_a_timeout_of_seconds(Integer timeout) {
+//        BrowserUtils.handleAlertAccept();
         pages.homePage().verifyMDMElement(timeout);
     }
     @Then("The User waits until the Persons element is visible with a timeout of {int} seconds")

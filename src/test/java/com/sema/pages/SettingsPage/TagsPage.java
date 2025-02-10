@@ -174,7 +174,8 @@ public class TagsPage extends BasePage {
     String tagLabelForEdit = "editedTagLabel";
 
     public void goToTagsPage() {
-        goToSubMenu("Settings", "Tags");
+//        goToSubMenu("Settings", "Tags");
+        driver.get("https://sandbox-ui.efectura.com/Settings/Tags");
         BrowserUtils.wait(3);
     }
 

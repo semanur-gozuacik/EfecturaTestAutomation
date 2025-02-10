@@ -57,7 +57,7 @@ Feature: Import Management Test Cases
   #------------------------------------------AccountCallback----------------------------------------------------#
 
   Scenario: AccountCallback - Point Adding
-    When The user update excel with point "300" and endDate "11-11-2024"
+    When The user update excel with point "300" and endDate "11-11-2028"
     When The user update excel with TransactionType "earning"
     When The user update excel with TaskId "53550"
     When The user select "AccountCallback" for importType
@@ -75,7 +75,7 @@ Feature: Import Management Test Cases
     Then The user verifies that one earning is added to point history
 
   Scenario: AccountCallback - Redemption
-    When The user update excel with point "-120" and endDate "11-11-2024"
+    When The user update excel with point "-120" and endDate "11-11-2028"
     When The user update excel with TransactionType "Redemption"
     When The user update excel with TaskId "54932"
     When The user select "AccountCallback" for importType
@@ -184,6 +184,16 @@ Feature: Import Management Test Cases
     When The user go into attribute edit page
     When The user clicks Values tab
     Then The user verifies that attribute option is added
+
+
+  Scenario: Dynamic Import - Event
+    When The user update "DynamicEvent" excel with random "Code (Optional)" in index 2
+    When The user select "DynamicItemImport" for importType
+    When The user select "Event" for itemType and "IWSA" for family
+    When The user upload "DynamicEvent" file
+    When The user import the uploaded file
+    Then The user verifies that the "Event" is created
+    Then The user tear down all changes in Account Case
 
 
 

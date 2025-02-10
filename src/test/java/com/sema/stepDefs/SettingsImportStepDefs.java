@@ -226,4 +226,9 @@ public class SettingsImportStepDefs extends BaseStep {
     public void theUserClicksValuesTab() {
         pages.importPage().clickValuesTab();
     }
+
+    @When("The user select {string} for itemType and {string} for family")
+    public void theUserSelectForItemTypeAndForFamily(String itemType, String family) {
+        pages.importPage().selectItemTypeAndFamily(itemType,family);
+    }
 }
