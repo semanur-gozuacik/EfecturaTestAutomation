@@ -29,4 +29,7 @@ public class CampaignHomePage extends BasePage {
         BrowserUtils.waitForVisibility(deletingObject, 5);
         assertTrue(deletingObject.getText().equalsIgnoreCase(code));
     }
+    public void onTheUserPage(){
+        driver.navigate().to("https://sandbox-ui.efectura.com/Enrich/Items?itemType=Campaign");
+    }
 }

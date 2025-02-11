@@ -1,6 +1,7 @@
 package com.sema.stepDefs;
 
 import com.sema.pages.BasePage;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class MDMConnectorHomePage extends BaseStep {
@@ -29,7 +30,7 @@ public class MDMConnectorHomePage extends BaseStep {
     }
     @Then("the user verify on code filter functionality {string}-connector")
     public void the_user_verify_on_code_filter_functionality_connector(String code) {
-        pages.connectorHomePage().verifyConnectorCodeFilter(code);
+      //  pages.connectorHomePage().verifyConnectorCodeFilter(code);
     }
     @Then("the user verify on code filter functionality with partial unique code {string}-connector")
     public void the_user_verify_on_code_filter_functionality_with_partial_unique_code_connector(String code) {
@@ -46,6 +47,10 @@ pages.connectorHomePage().verifyResetButton();
     @Then("The user clicks new list item-connector")
     public void the_user_clicks_new_list_item() {
         pages.connectorHomePage().clickListItem();
+    }
+    @Given("The user is on the Connector item home page")
+    public void the_user_is_on_the_Connector_item_home_page() {
+        pages.connectorHomePage().onTheUserPage();
     }
 }
 

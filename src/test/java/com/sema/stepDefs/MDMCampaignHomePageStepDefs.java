@@ -1,5 +1,6 @@
 package com.sema.stepDefs;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class MDMCampaignHomePageStepDefs extends BaseStep {
@@ -39,6 +40,10 @@ public class MDMCampaignHomePageStepDefs extends BaseStep {
     @Then("The user verify that {string} is visible-campaign")
     public void the_user_verify_that_is_visible(String code) {
         pages.campaignHomePage().verifyDeletingObject(code);
+    }
+    @Given("The user is on the Campaign item home page")
+    public void the_user_is_on_the_Campaign_item_home_page() {
+        pages.campaignHomePage().onTheUserPage();
     }
 
 }

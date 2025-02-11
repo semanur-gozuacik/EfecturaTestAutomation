@@ -5,47 +5,36 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And    The User inputs a valid username "validUsername"
     And    The User inputs a valid password "validPassword"
     And    The User clicks the Submit button
-    Then   The User waits until the MDM element is visible with a timeout of 120 seconds
-    And   The User performs a mouseover on the MDM element
-    And   The User performs a  mouseover on the Campaign Management element
-    And   The User performs a  mouseover on the Campaign element
-    And   The User clicks on the Campaign element
-    And   The User gets the current URL and stores it in "itemType=Campaign" Asset page
+    Given The user is on the Campaign item home page
+    And   The User gets the current URL and stores it in "itemType=Campaign"
 
   Scenario: Verify Code Filter -Valid Unique Code
     And The user enters "welcometestgeneric122" into Code field
-    And the user clicks on Search button
     And the user verify on code filter functionality "welcometestgeneric122"-Campaign
 
   Scenario:  Verify Code Filter -Valid Unique Code partial
     And The user enters "TEST" into Code field
-    And the user clicks on Search button
     And the user verify on code filter functionality with partial unique code "TEST"- Campaign
 
   Scenario: Verify Code Filter - Invalid Unique Code
     And The user enters "sema12345" into Code field
-    And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario: Verify Label Filter - Valid Label
     And The user enters "testbirthday1561" into Label field
-    And the user clicks on Search button
     And the user verify on label filter functionality with partial unique code "testbirthday1561"- Campaign
 
   Scenario: Verify Label Filter - Partial Label
     And The user enters "test" into Label field
-    And the user clicks on Search button
     And the user verify on label filter functionality with partial unique code "Test"- Campaign
 
   Scenario: Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into Label field
-    And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario Outline: Filter "<ItemStatus>" Item Statuses
     And the user clicks on ItemStatuses
     And the user clicks on "<ItemStatus>"
-    And the user clicks on Search button
     # And the incoming filter for "<ItemStatus>" should contain
     Examples:
        |ItemStatus |
@@ -70,7 +59,6 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario: Verify My Count Star Item Functionality- One Contact
     And The user enters "TestWelcomeCampaignSecondPreview" into Code field
-    And the user clicks on Search button
     And the user clicks on Star items
 
   Scenario: Verify export button
@@ -142,34 +130,29 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario:Campaign edit -Attributes Tab
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Attributes" tab
 
   Scenario:Campaign edit -Preview Tab
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Preview" tab
    #  Then The user verifies preview tab details is displayed
 
   Scenario:Campaign edit -Item Comment Tab
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
     #Then The user verifies itemComment tab details is displayed
 
   Scenario:Campaign edit - AbstractPreview Tab
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "AbstractPreview" tab
    # Then The user verifies My Account tab details is displayed
 
   Scenario:Campaign edit - Campaign-Account Tab export
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Campaign-Account" tab
    # When  The user clicks on Export button ediitem
@@ -177,25 +160,21 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario:Campaign edit - RealtimeList Tab
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "RealtimeList" tab
 
   Scenario:Campaign edit - Categories Tab
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Categories" tab
 
   Scenario:Campaign edit - History Tab
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "History" tab
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button-Campaign
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
        #And the user clicks on unsaved change button
@@ -210,7 +189,6 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
       # And the user clicks on unsaved change button
@@ -225,13 +203,11 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario:Campaign edit - Campaign-point Associated
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Campaign Points" tab
 
   Scenario:Campaign edit - Campaign-Account Associated
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "CAMPAIGN_ACCOUNT" tab
     And The user Assocaited All filter
@@ -239,7 +215,6 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario:Campaign edit - Campaign-Account Tab Associated Filter No
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "CAMPAIGN_ACCOUNT" tab
     And The user Assocaited No filter
@@ -257,7 +232,6 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario:Group Permission Verify Last Page Button Unclickable Condition
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
@@ -265,7 +239,6 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario:Group Permission Verify Item next Button unclickable Condition
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
@@ -273,7 +246,6 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario:Group Permission Verify Item First Page Button Clickable Condition
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
@@ -281,14 +253,12 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario:User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     And  The user verifies first page button is not clickable user
 
   Scenario:User Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "TestAutomation" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     And  The user verifies previous page button is not clickable user

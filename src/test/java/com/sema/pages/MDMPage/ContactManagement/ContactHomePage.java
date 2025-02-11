@@ -261,6 +261,9 @@ public class ContactHomePage extends BasePage {
 //        codeFilterClick.click();
         codeFilterSendKey.sendKeys(code);
     }
+    public void onTheUserPage(){
+        driver.navigate().to("https://sandbox-ui.efectura.com/Enrich/Items?itemType=Contact");
+    }
 
     public void setEventNameFilter(String code) {
         BrowserUtils.wait(6);

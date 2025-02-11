@@ -84,6 +84,10 @@ public class MDMContactHomePageStepDef extends BaseStep {
     public void the_user_enters_into_code_field(String code) {
         pages.contactHomePage().setCodeFilter(code);
     }
+    @Given("The user is on the Contact item home page")
+    public void the_user_is_on_the_Contact_item_home_page() {
+        pages.contactHomePage().onTheUserPage();
+    }
     @Then("The user enters {string} into eventname field")
     public void the_user_enters_into_eventname_field(String code) {
         pages.contactHomePage().setEventNameFilter(code);
