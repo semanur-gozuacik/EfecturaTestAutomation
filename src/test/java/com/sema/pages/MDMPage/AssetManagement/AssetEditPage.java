@@ -168,6 +168,9 @@ public class AssetEditPage extends BasePage {
         BrowserUtils.wait(7);
         lastPageUser.click();
     }
+    public void onTheUserPage(){
+        driver.navigate().to("https://sandbox-ui.efectura.com/Enrich/Items?itemType=Asset");
+    }
 
     public void verifyLastPageUserIsClickable() {
         BrowserUtils.wait(7);

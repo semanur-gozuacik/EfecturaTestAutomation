@@ -5,22 +5,19 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And    The User inputs a valid username "validUsername"
     And    The User inputs a valid password "validPassword"
     And    The User clicks the Submit button
-    Then   The User waits until the MDM element is visible with a timeout of 120 seconds
-    And   The User performs a mouseover on the MDM element
-    And   The User performs a    mouseover on the Asset Management element
-    And   The User performs a    mouseover on the Asset element
-    And   The User clicks on the Asset element
-    And   The User gets the current URL and stores it in "itemType=Asset" Asset page
-
+    Given The user is on the Asset item home page
+    And   The User gets the current URL and stores it in "itemType=Asset"
+#search kaldırıldı buton olarak eklenirse  And the user clicks on Search button
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button-Asset
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
+  #  And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
       # And the user clicks on unsaved change button
        #And The user enters "-------" in  comment area
        #And The user clicks cancel button
       # And the user verifies item status not change
+
 
     Examples:
       |ItemStatus |
@@ -33,7 +30,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
       # And the user clicks on unsaved change button
@@ -52,7 +48,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario: Edit item added list
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks list drop down button
     And  The user clicks new list item
@@ -60,7 +55,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario: Edit item removed list
     And  The user enters "TEST123456" into Code field
-    And  the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks removed button
   #   Then The user verifies item is removed
@@ -81,21 +75,18 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
     Scenario:Group Permission Verify Item First Page Button Unclickable Condition
      And The user enters "TEST123456" into Code field
-     And the user clicks on Search button
      And  The user clicks on Edit Button
     And clicks group permission tab
   #  And  The user verifies previous button is not clickable asset
 
   Scenario:Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     And  The user verifies previous page button is not clickable asset
 
   Scenario:Group Permission Verify Item next Button clickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks next page button asset
@@ -103,7 +94,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:Group Permission Verify Previous Page Button clickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks next page button asset
@@ -113,7 +103,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:Group Permission Verify Last Page Button clickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
@@ -122,7 +111,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:Group Permission Verify Last Page Button Unclickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
@@ -130,7 +118,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:Group Permission Verify Item next Button unclickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
@@ -138,7 +125,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:Group Permission Verify Item First Page Button Clickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
@@ -146,21 +132,21 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
     Scenario:User Permission Verify Item First Page Button Unclickable Condition
       And The user enters "TEST123456" into Code field
-      And the user clicks on Search button
+      #search kaldırıldı buton olarak eklenirse  And the user clicks on Search button
       And  The user clicks on Edit Button
       And clicks user permission tab
       And  The user verifies first page button is not clickable user
 
   Scenario:User Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
+   #search kaldırıldı buton olarak eklenirse  And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     And  The user verifies previous page button is not clickable user
 
   Scenario:User Permission Verify Item next Button clickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
+  #search kaldırıldı buton olarak eklenirse   And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks next page button user
@@ -169,7 +155,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:User Permission Verify Previous Page Button clickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
+ #search kaldırıldı buton olarak eklenirse    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks next page button user
@@ -179,7 +165,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:User Permission Verify Last Page Button clickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button user
@@ -187,7 +172,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:User Permission Verify Last Page Button Unclickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button user
@@ -195,7 +179,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:User Permission Verify Item next Button unclickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button user
@@ -203,7 +186,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:User Permission Verify Item First Page Button Clickable Condition
     And The user enters "TEST123456" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button user
@@ -211,32 +193,27 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:Asset edit -Item Comment Tab
     And The user enters "Asset_19" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
     #Then The user verifies itemComment tab details is displayed
 
   Scenario:Asset edit - Categories Tab
     And The user enters "Asset_19" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Categories" tab
 
   Scenario:Asset edit - History Tab
     And The user enters "Asset_19" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "History" tab
 
   Scenario:Asset edit - ACCOUNT_COOLER Tab
     And The user enters "Asset_19" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ACCOUNT_COOLER" tab
 
   Scenario:Asset edit - ACCOUNT_COOLER Tab Associated
     And The user enters "Asset_19" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ACCOUNT_COOLER" tab
     And The user Assocaited All filter
@@ -248,7 +225,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:Asset edit -ACCOUNT_COOLER Tab Associated Filter No
     And The user enters "Asset_19" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ACCOUNT_COOLER" tab
     And The user Assocaited No filter
@@ -256,7 +232,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario:Asset edit -Attributes Tab
     And The user enters "Asset_19" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Attributes" tab
 

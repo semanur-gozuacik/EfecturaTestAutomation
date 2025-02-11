@@ -5,13 +5,9 @@ Background:
   And    The User inputs a valid username "validUsername"
   And    The User inputs a valid password "validPassword"
   And    The User clicks the Submit button
-  Then   The User waits until the MDM element is visible with a timeout of 120 seconds
-  And   The User performs a mouseover on the MDM element
-  And   The User performs a    mouseover on the Asset Management element
-  And   The User performs a    mouseover on the Asset element
-  And   The User clicks on the Asset element
-  And   The User gets the current URL and stores it in "itemType=Asset" Asset page
-  Then   The User waits until the createItem element is visible with a timeout of 120 seconds
+  Given The user is on the Asset item home page
+  And   The User gets the current URL and stores it in "itemType=Asset"
+
 
   Scenario: Create Asset on Fletum with invalid family
     And   The User clicks on the createItem element

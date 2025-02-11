@@ -52,7 +52,7 @@ public class ContactHomePage extends BasePage {
     private WebElement EventNameFilterSendKey;
     @FindBy(xpath = "//input[@id='filter-DIA_FirstName']")
     private WebElement firstFilterSendKey;
-    @FindBy(xpath = "//a[normalize-space()='Code']")
+    @FindBy(xpath = "//input[@id='items-SKU']")
     private WebElement codeFilterClick;
     @FindBy(xpath = "//a[text()='Event Name']")
     private WebElement eventNameFilterClick;
@@ -94,7 +94,7 @@ public class ContactHomePage extends BasePage {
     private WebElement clicksItemStatus;
     @FindBy(xpath = "//input[@placeholder='ItemStatuses']")
     private WebElement clicksItemStatusTextBox;
-    @FindBy(xpath = "//span[@id='families_table-Reset']//span[@class='icon']")
+    @FindBy(xpath = "//button[@id='items-reset-basic']")
     private WebElement resetButton;
     @FindBy(xpath = "//a[@class='t-delete danger-btn']")
     private WebElement deleteButton;
@@ -115,7 +115,7 @@ public class ContactHomePage extends BasePage {
     private List<WebElement> entriesLength;
     @FindBy(xpath = "//select[@name='items_length']//option")
     private List<WebElement> entriesNumber;
-    @FindBy(xpath = "//a[@title='Edit']")
+    @FindBy(xpath = "//a[contains(@class,'t-edit edit-btn')]")
     private WebElement editButton;
     @FindBy(xpath = "//a[normalize-space()='Contact Overview']")
     private WebElement verifyContactEditButton;
@@ -132,7 +132,7 @@ public class ContactHomePage extends BasePage {
     @FindBy(xpath = "//tr/td[11]/a[3]")
     private List<WebElement> starItems;
 
-    @FindBy(xpath = "//button[contains(normalize-space(),'Export')]")
+    @FindBy(xpath = "//button[@id='export-dropdown']//span[@class='icon']")
     private WebElement exportButton;
 
     @FindBy(xpath = "//a[contains(text(),'ExportAll')]")

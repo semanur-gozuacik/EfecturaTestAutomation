@@ -1,5 +1,6 @@
 package com.sema.stepDefs;
 import com.sema.utilities.BrowserUtils;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -141,6 +142,10 @@ pages.assetEditPage().verifyNextPageUserIsClickable();
     @When("The user clicks last page button user")
     public void the_user_clicks_last_page_button_user() {
 pages.assetEditPage().clickLastPageUserButton();
+    }
+    @Given("The user is on the Asset item home page")
+    public void the_user_is_on_the_Asset_item_home_page() {
+        pages.assetEditPage().onTheUserPage();
     }
     @When("The user verifies last button is clickable user")
     public void the_user_verifies_last_button_is_clickable_user() {
