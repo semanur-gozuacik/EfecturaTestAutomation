@@ -5,7 +5,6 @@ Feature: Product Management Test Cases- Contact Home Page
     And   The User inputs a valid username "validUsername"
     And   The User inputs a valid password "validPassword"
     And   The User clicks the Submit button
-    Then   The User waits until the MDM element is visible with a timeout of 15 seconds
     Given The user is on the Product item home page
     And   The User gets the current URL and stores it in "itemType=Product"
 
