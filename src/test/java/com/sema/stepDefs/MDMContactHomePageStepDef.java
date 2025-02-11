@@ -363,4 +363,8 @@ pages.contactHomePage().verifypreviousPageButtonUnClickability();
     public void the_user_verifies_that_birthdate_are_sorted_from(String sorting) {
         pages.contactHomePage().birthdateSorting(sorting);
     }
+    @Given("The user is on the Gift item home page")
+    public void theUserIsOnTheGiftHomePage() {
+        pages.financialAccount().onTheUserPageGift();
+    }
 }

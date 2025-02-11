@@ -17,11 +17,11 @@ public class Contract extends BasePage {
     private WebElement familyDropDown;
     @FindBy(xpath = "//li[normalize-space()='Choose Family']")
     private WebElement chooseFamily;
-    @FindBy(id = "_fast-categories")
+    @FindBy(xpath = "//p[normalize-space()='Category']")
     private WebElement categoriesButton;
-    @FindBy(xpath = "//div[@id='create-new-item-modal']//a[@id='34_anchor']//i[1]")
+    @FindBy(xpath = "//a[@id='34_anchor']")
     private WebElement rootCategories;
-    @FindBy(xpath = "//i[@class='fa-lg fa-solid fa-plus']")
+    @FindBy(xpath = "//button[@id='saveItem']")
     private WebElement createButton;
     @FindBy(xpath = "//div[@class='notifyjs-warning']//div//*[name()='svg']")
     private WebElement emptyFamily;
@@ -35,7 +35,7 @@ public class Contract extends BasePage {
     private WebElement emptyFamilyText;
     @FindBy(xpath = "//span[normalize-space()='Changes saved succesfully.']")
     private WebElement savedCategoriesText;
-    @FindBy(xpath = "//span/a")
+    @FindBy(xpath = "//button[@class='efe-btn-new cancelItem' and @title='Cancel' and normalize-space()='Cancel']")
     private WebElement cancelButton;
     public Contract() {
     }
@@ -105,6 +105,9 @@ public class Contract extends BasePage {
         cancelButton.click();
 
       }
+    public void onTheUserPage(){
+        driver.navigate().to("https://sandbox-ui.efectura.com/Enrich/Items?itemType=Contract");
+    }
     }
 
 

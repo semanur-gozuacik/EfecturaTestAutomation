@@ -2,6 +2,7 @@ package com.sema.stepDefs;
 
 
 import com.sema.utilities.BrowserUtils;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -92,6 +93,7 @@ pages.homePage().mouseoverOnThePersonsElement();
         pages.contract().setUniqueCodeElement();
 
     }
+
     @Then("The User presses the down arrow key and then presses Enter in the Choose Family element")
     public void the_user_presses_the_down_arrow_key_and_then_presses_enter_in_the_choose_family_element() {
         pages.contract().selectChooseFamily();
@@ -142,6 +144,9 @@ pages.homePage().mouseoverOnThePersonsElement();
     public void the_user_presses_the_down_arrow_key_and_then_presses_enter_in_the_element(String family) {
     pages.contactHomePage().selectEkosystemFamily(family);
 
+    }  @Given("The user is on the Contract item home page")
+    public void the_user_is_on_the_Contract_item_home_page() {
+        pages.contract().onTheUserPage();
     }
 
 

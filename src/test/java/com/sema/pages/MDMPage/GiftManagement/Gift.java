@@ -8,9 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class Gift extends BasePage {
-    @FindBy(xpath = "//ul[@role='group']//ul[@role='group']//i[2]")
+    @FindBy(xpath = "//a[@id='454_anchor']")
     private WebElement testCategories;
-    @FindBy(xpath = "//a[@id='31']")
+    @FindBy(xpath = "//a[@id='31_anchor']")
     private WebElement rootCategoriesGift;
 
     public Gift() {

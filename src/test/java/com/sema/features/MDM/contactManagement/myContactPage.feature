@@ -6,15 +6,11 @@ Feature: Contact Management Test Cases-My Contact Page
     And   The User inputs a valid password "validPassword"
     And   The User clicks the Submit button
     Then   The User waits until the Persons element is visible with a timeout of 15 seconds
-    And   The User performs a mouseover on the Persons element
-    And   The User performs a mouseover on the Contact Management element
-    And   The User performs a mouseover on the Contact element
-    And   The User clicks on the Contact element
+    Given The user is on the Contact item home page
     And   The User gets the current URL and stores it in "itemType=Contact"
 
   Scenario Outline:  My Count Add Star Item Functionality- One Contact
     And The user enters "<Code>" into Code field
-    And the user clicks on Search button
     And the user clicks on Star items
     And the user clicks on Reset button
     Examples:
@@ -32,25 +28,21 @@ Feature: Contact Management Test Cases-My Contact Page
     When The user clicks My Contact button
     And The user clicks on Contact  category
     And The user enters "0058950138" into Code field
-    And the user clicks on Search button
     And the user verify on code filter functionality "0058950138"
 
   Scenario:  Verify Code Filter -Valid Partial Unique Code
     When The user clicks My Contact button
     And The user enters "test" into Code field
-    And the user clicks on Search button
     And the user verify on code filter functionality with partial unique code "test"
 
   Scenario: Verify Code Filter - Invalid Unique Code
     When The user clicks My Contact button
     And The user enters "sema12345" into Code field
-    And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario: Verify Label Filter - Valid Label
     When The user clicks My Contact button
     And The user enters "t_aut" into Label field
-    And the user clicks on Search button
     And the user verify on label filter functionality with partial unique code "test_automation"
 
   Scenario: Verify Label Filter - Partial Unique Code
@@ -62,26 +54,22 @@ Feature: Contact Management Test Cases-My Contact Page
   Scenario: Verify Label Filter - Invalid  Label
     When The user clicks My Contact button
     And The user enters "sema12345" into Label field
-    And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario: Search for Ekosystem Family
     When The user clicks My Contact button
     And The user clicks on Ekosystem Filtre
-    And the user clicks on Search button
     #And the user verify on family filter Ekosystem functionality
 
   Scenario: Search for IWSA Family
     When The user clicks My Contact button
     And The user clicks on IWSA Filtre
-    And the user clicks on Search button
     And the user verify on family filter IWSA functionality
 
   Scenario Outline: Filter "<ItemStatus>" Item Statuses
     When The user clicks My Contact button
     And the user clicks on ItemStatuses
     And the user clicks on "<ItemStatus>"
-    And the user clicks on Search button
  #    And the incoming filter for "<ItemStatus>" should contain
     Examples:
       |ItemStatus |
@@ -99,7 +87,6 @@ Feature: Contact Management Test Cases-My Contact Page
   Scenario: Deleting an item and declining the popup message
     When The user clicks My Contact button
     And The user enters "test_auto" into Code field
-    And the user clicks on Search button
     And The user clicks on Delete
     And The user declines the popup message
     Then The user verify that "test_automation" is visible
@@ -115,7 +102,6 @@ Feature: Contact Management Test Cases-My Contact Page
   Scenario: My Contact page edit verify
     When The user clicks My Contact button
     And The user enters "0058950138" into Code field
-    And the user clicks on Search button
     And The user clicks on Edit Button
     Then The user verify Edit Page
 
@@ -161,7 +147,6 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario Outline:My Count Delete Star Item Functionality
     And The user enters "<Code>" into Code field
-    And the user clicks on Search button
     And the user clicks on Star items
     And the user clicks on Reset button
     Examples:

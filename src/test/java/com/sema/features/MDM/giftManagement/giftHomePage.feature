@@ -5,11 +5,7 @@ Feature: Gift Creation and Management Home Page
     And   The User inputs a valid username "validUsername"
     And   The User inputs a valid password "validPassword"
     And   The User clicks the Submit button
-    Then   The User waits until the MDM element is visible with a timeout of 120 seconds
-    And   The User performs a mouseover on the MDM element
-    And   The User performs a mouseover on the Gift Management element
-    And   The User performs a mouseover on the Gift element
-    And   The User clicks on the Gİft element
+    Given The user is on the Gift item home page
     And   The User gets the current URL and stores it in "itemType=Gift"
 
   Scenario:Gift Verify export button
@@ -48,13 +44,11 @@ Feature: Gift Creation and Management Home Page
 
   Scenario: Gift page edit verify
     And The user enters "TestGiftForRecieved" into Code field
-    And the user clicks on Search button
     And The user clicks on Edit Button
 
 
   Scenario Outline:Gift Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "TestGiftForRecieved" into Code field
-    And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
       # And the user clicks on unsaved change button
@@ -70,13 +64,11 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift edit - Certificate Tab
     And The user enters "TestGiftForRecieved" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Certificate" tab
 
   Scenario:Gift edit - Gifts image Tab Associated
     And The user enters "TestGiftForRecieved" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Gifts image" tab
     And The user Assocaited All filter
@@ -88,7 +80,6 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift edit -Gifts image Tab Associated Filter No
     And The user enters "TestGiftForRecieved" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Gifts image" tab
     And The user Assocaited No filter
@@ -96,7 +87,6 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift Gifts image Associated Tab Code Filter Functionality
     And The user enters "TestGiftForRecieved" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Gifts image" tab
     And The user clicks on code filter Filter
@@ -105,7 +95,6 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift edit - GIFT_CONTACT Tab Associated
     And The user enters "TestGiftForRecieved" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "GIFT_CONTACT" tab
     And The user Assocaited All filter
@@ -117,7 +106,6 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift edit -GIFT_CONTACT Tab Associated Filter No
     And The user enters "TestGiftForRecieved" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "GIFT_CONTACT" tab
     And The user Assocaited No filter
@@ -126,7 +114,6 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift edit - Gifts image Tab Associated
     And The user enters "TestGiftForRecieved" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Event-Gift" tab
     And The user Assocaited All filter
@@ -138,19 +125,16 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift edit - history Tab
     And The user enters "TestGiftForRecieved" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "history" tab
 
   Scenario:Gift edit - ItemComment Tab
     And The user enters "TestGiftForRecieved" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
 
   Scenario:Gift edit -Gifts image Tab Associated Filter No
     And The user enters "TestGiftForRecieved" into Code field
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Event-Gift" tab
     And The user Assocaited No filter
