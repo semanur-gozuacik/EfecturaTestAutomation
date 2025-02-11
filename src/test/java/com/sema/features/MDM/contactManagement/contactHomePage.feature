@@ -5,13 +5,8 @@ Feature: Contact Management Test Cases- Contact Home Page
     And   The User inputs a valid username "validUsername"
     And   The User inputs a valid password "validPassword"
     And   The User clicks the Submit button
-    Then   The User waits until the Persons element is visible with a timeout of 15 seconds
-    And   The User performs a mouseover on the Persons element
-    And   The User performs a mouseover on the Contact Management element
-    And   The User performs a mouseover on the Contact element
-    And   The User clicks on the Contact element
+    Given The user is on the Contact item home page
     And   The User gets the current URL and stores it in "itemType=Contact"
-    When The user open side accordion in overview
 
   Scenario: Contact category functionality check
     And The user clicks on Contact  category
