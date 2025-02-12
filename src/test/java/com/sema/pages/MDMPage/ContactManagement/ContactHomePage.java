@@ -94,7 +94,7 @@ public class ContactHomePage extends BasePage {
     private WebElement clicksItemStatus;
     @FindBy(xpath = "//input[@placeholder='ItemStatuses']")
     private WebElement clicksItemStatusTextBox;
-    @FindBy(xpath = "//button[@id='items-reset-basic']")
+    @FindBy(xpath = "//i[@class='fa fa-lg fa-undo']")
     private WebElement resetButton;
     @FindBy(xpath = "//a[@class='t-delete danger-btn']")
     private WebElement deleteButton;

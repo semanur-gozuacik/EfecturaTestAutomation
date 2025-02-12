@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 public class UsersLogs extends BasePage {
     @FindBy(xpath = "//table[@id='userLogs_table']")
     private WebElement usersLogsTableElement;
-    @FindBy(xpath = "//button[@class='btn btn-primary' and @data-dismiss='modal' and text()='OK']")
+    @FindBy(xpath = "//button[normalize-space()='OK']")
     private WebElement logsclick;
     @FindBy(xpath = "//span[@id='userLogs_table-Search']//span[@class='icon']")
     private WebElement userlogsSeachButtons;

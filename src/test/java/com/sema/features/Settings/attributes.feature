@@ -13,7 +13,7 @@ Feature: Attributes Management Test Cases
   Scenario: Attributes pages tables verification
     Then The User verifies Attributes page table is displayed
 
-@SS
+
   Scenario: Attributes pages -Reset Button Control
     And The user clicks "Code" attributes
     And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
@@ -26,6 +26,7 @@ Feature: Attributes Management Test Cases
     And  The user clicks on Edit Button-Attributes
     And clicks group permission tab
     #And  The user verifies previous button is not clickable asset
+
 
   Scenario:Attributes pages Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user clicks "Code" attributes
