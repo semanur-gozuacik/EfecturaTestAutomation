@@ -1,5 +1,6 @@
 package com.sema.pages;
 import com.sema.utilities.Driver;
+import com.sema.utilities.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,9 @@ import java.util.List;
 
 public class BasePage {
 
+
+
+
     @FindBy(id = "items")
     public WebElement itemOverviewTable;
 
@@ -25,6 +29,7 @@ public class BasePage {
     public BasePage() {
         PageFactory.initElements(driver, this);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
     }
 
     public static List<String> getColumnData(WebElement table, String header) {

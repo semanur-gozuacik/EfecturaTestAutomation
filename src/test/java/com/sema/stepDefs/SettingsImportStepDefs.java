@@ -142,7 +142,7 @@ public class SettingsImportStepDefs extends BaseStep {
 
     @Then("The user verifies that the {string} is created")
     public void theUserVerifiesThatTheItemIsCreated(String importType) throws IOException {
-        pages.importPage().verifyItemIsCreated(importType);
+        pages.importPage().verifyItemIsCreated(importType,pages);
     }
 
     @Then("The user verifies that the {string} is associated with stated account")
@@ -157,7 +157,7 @@ public class SettingsImportStepDefs extends BaseStep {
 
     @Then("The user tear down all changes in Account Case")
     public void theUserTearDownAllChangesInAccountCase() {
-        pages.importPage().tearDownAllChangesInAccountCase();
+        pages.importPage().tearDownAllChangesInAccountCase(pages);
     }
 
     @Then("The user verifies that the {string} is associated with the {string}")

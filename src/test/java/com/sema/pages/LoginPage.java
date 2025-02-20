@@ -6,6 +6,7 @@ import com.sema.utilities.ConfigurationReader;
 import com.sema.utilities.Constants;
 import com.sema.utilities.Pages;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

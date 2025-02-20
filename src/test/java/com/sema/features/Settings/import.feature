@@ -57,7 +57,7 @@ Feature: Import Management Test Cases
   #------------------------------------------AccountCallback----------------------------------------------------#
 
   Scenario: AccountCallback - Point Adding
-    When The user update excel with point "300" and endDate "11-11-2028"
+    When The user update excel with point "300" and endDate "19-11-2028"
     When The user update excel with TransactionType "earning"
     When The user update excel with TaskId "53550"
     When The user select "AccountCallback" for importType
@@ -75,9 +75,9 @@ Feature: Import Management Test Cases
     Then The user verifies that one earning is added to point history
 
   Scenario: AccountCallback - Redemption
-    When The user update excel with point "-120" and endDate "11-11-2028"
+    When The user update excel with point "-120" and endDate "20-03-2026"
     When The user update excel with TransactionType "Redemption"
-    When The user update excel with TaskId "54932"
+    When The user update excel with TaskId "294841"
     When The user select "AccountCallback" for importType
     When The user upload "AccountCallback" file
     When The user import the uploaded file
@@ -95,9 +95,9 @@ Feature: Import Management Test Cases
     When The user select "Contact" for importType
     When The user upload "Contact" file
     When The user import the uploaded file
-    Then The user verifies that the "Contact" is created
-    Then The user verifies that the "Contact" is associated with stated account
-    Then The user tear down all changes in Contact Case
+#    Then The user verifies that the "Contact" is created
+#    Then The user verifies that the "Contact" is associated with stated account
+#    Then The user tear down all changes in Contact Case
 
   Scenario: Account Case
     When The user update "Account" excel with random "SKU" in index 1

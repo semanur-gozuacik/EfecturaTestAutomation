@@ -4,9 +4,11 @@ import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.ConfigurationReader;
 import com.sema.utilities.Driver;
+import com.sema.utilities.Pages;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -377,18 +379,25 @@ public class Import extends BasePage {
         }
     }
 
-    public void verifyItemIsCreated(String importType) throws IOException {
+    public void verifyItemIsCreated(String importType, Pages pages) throws IOException {
         BrowserUtils.wait(3);
         Driver.getDriver().get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + importType);
+
+        // JavaScript kullanarak zoom seviyesini %80 yap
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.body.style.zoom='70%'");
+
         String itemCode = getCellValue(getExcelPath(importType),"SKU",1);
 
-        itemOverviewCodeFilter.click();
-        itemOverviewCodeFilterInputBox.sendKeys(itemCode);
-        searchButton.click();
+//        itemOverviewCodeFilter.click();
+
+        pages.itemOverviewPage().getItemOverviewCodeFilterInputBox().sendKeys(itemCode);
+//        itemOverviewCodeFilterInputBox.sendKeys(itemCode);
+//        searchButton.click();
         BrowserUtils.wait(7);
-        refreshButton.click();
+        pages.itemOverviewPage().getItemOverviewRefreshButton().click();
         BrowserUtils.wait(2);
-        Assert.assertEquals(itemCode, getValueOfTableInContactOverview("CODE"));
+        Assert.assertEquals(itemCode, getValueOfTableInContactOverview("Code"));
     }
 
     public void verifyThatContactIsAssociatedWithStatedAccount(String itemType) throws IOException {
@@ -419,8 +428,10 @@ public class Import extends BasePage {
 //        BrowserUtils.wait(2);
     }
 
-    public void tearDownAllChangesInAccountCase() {
+    public void tearDownAllChangesInAccountCase(Pages pages) {
+        pages.itemOverviewPage().closeSideAccordionInOverview();
         BrowserUtils.scrollToElement(driver,itemOverviewTableValueDeleteButton);
+        BrowserUtils.wait(2);
         itemOverviewTableValueDeleteButton.click();
         deleteButtonInOverviewDeleteConfirmationModal.click();
         BrowserUtils.wait(2);
