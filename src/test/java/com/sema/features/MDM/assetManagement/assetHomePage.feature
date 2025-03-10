@@ -9,32 +9,38 @@ Feature: Asset Management Test Cases- Asset Home Page
     And   The User gets the current URL and stores it in "itemType=Asset"
 
   Scenario: Verify Code Filter -Valid Unique Code
-    And The user enters "TEST123456" into Code field
+#    And The user enters "TEST123456" into Code field
+    And The user enters "TEST123456" into "Code" filter text input box
 #    And the user clicks on Search button
     And the user verify on code filter functionality "TEST123456"
 
   Scenario:  Verify Code Filter -Valid Unique Code partial
-    And The user enters "TEST" into Code field
+#    And The user enters "TEST" into Code field
+    And The user enters "TEST" into "Code" filter text input box
 #    And the user clicks on Search button
 #    And the user verify on code filter functionality with partial unique code "TEST"
 
   Scenario: Verify Code Filter - Invalid Unique Code
-    And The user enters "sema12345" into Code field
+#    And The user enters "sema12345" into Code field
+    And The user enters "sema12345" into "Code" filter text input box
 #    And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario: Verify Label Filter - Valid Label
-    And The user enters "TEST12345" into Label field
+#    And The user enters "TEST12345" into Label field
+    And The user enters "TEST12345" into "Label" filter text input box
 #    And the user clicks on Search button
     And the user verify on label filter functionality with partial unique code "TEST12345"
 
   Scenario: Verify Label Filter - Partial Label
-    And The user enters "test" into Label field
+#    And The user enters "test" into Label field
+    And The user enters "test" into "Label" filter text input box
 #    And the user clicks on Search button
     And the user verify on label filter functionality with partial unique code "test"
 
   Scenario: Verify Label Filter - Invalid  Label
-    And The user enters "sema12345" into Label field
+#    And The user enters "sema12345" into Label field
+    And The user enters "sema12345" into "Label" filter text input box
 #    And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
@@ -121,7 +127,9 @@ Feature: Asset Management Test Cases- Asset Home Page
 
 
   Scenario: Reset Button Control
-    And The user enters "test2123" into Code field
+#    And The user enters "test2123" into Code field
+    And The user enters "test2123" into "Code" filter text input box
     And the user clicks on Reset button
-    And the user verify Reset button functionality
+#    And the user verify Reset button functionality
+    And The user verify Reset button func for "Code" filter
 

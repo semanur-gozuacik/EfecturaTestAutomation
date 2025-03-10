@@ -109,7 +109,7 @@ public class Membership_AccountRuleStepDefs extends BaseStep {
 
     @When("The user sets two different rule with or")
     public void theUserSetsTwoDifferentRuleWithOr() {
-        pages.membershipAccountRulePage().setTwoDifferentRuleWithOr();
+        pages.membershipAccountRulePage().setTwoDifferentRuleWithOr(pages);
     }
 
     @Then("The user verify detail info of associated items for or {string}")

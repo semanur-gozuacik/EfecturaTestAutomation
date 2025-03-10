@@ -384,8 +384,7 @@ public class Import extends BasePage {
         Driver.getDriver().get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + importType);
 
         // JavaScript kullanarak zoom seviyesini %80 yap
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("document.body.style.zoom='70%'");
+        BrowserUtils.adjustScreenSize(70,Driver.getDriver());
 
         String itemCode = getCellValue(getExcelPath(importType),"SKU",1);
 

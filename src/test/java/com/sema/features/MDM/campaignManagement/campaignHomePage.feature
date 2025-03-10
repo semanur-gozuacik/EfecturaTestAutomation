@@ -9,23 +9,29 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And   The User gets the current URL and stores it in "itemType=Campaign"
 
   Scenario: Verify Code Filter -Valid Unique Code
-    And The user enters "welcometestgeneric122" into Code field
+#    And The user enters "welcometestgeneric122" into Code field
+    And The user enters "welcometestgeneric122" into "Code" filter text input box
     And the user verify on code filter functionality "welcometestgeneric122"-Campaign
 
   Scenario:  Verify Code Filter -Valid Unique Code partial
-    And The user enters "TEST" into Code field
+#    And The user enters "TEST" into Code field
+    And The user enters "TEST" into "Code" filter text input box
     And the user verify on code filter functionality with partial unique code "TEST"- Campaign
+    And the user verify on code filter functionality "TEST"-Campaign
 
   Scenario: Verify Code Filter - Invalid Unique Code
-    And The user enters "sema12345" into Code field
+#    And The user enters "sema12345" into Code field
+    And The user enters "sema12345" into "Code" filter text input box
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario: Verify Label Filter - Valid Label
-    And The user enters "testbirthday1561" into Label field
+#    And The user enters "testbirthday1561" into Label field
+    And The user enters "testbirthday1561" into "Label" filter text input box
     And the user verify on label filter functionality with partial unique code "testbirthday1561"- Campaign
 
   Scenario: Verify Label Filter - Partial Label
     And The user enters "test" into Label field
+    And The user enters "test" into "Label" filter text input box
     And the user verify on label filter functionality with partial unique code "Test"- Campaign
 
   Scenario: Verify Label Filter - Invalid  Label

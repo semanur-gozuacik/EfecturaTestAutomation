@@ -4,6 +4,7 @@ import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.ConfigurationReader;
 import com.sema.utilities.Driver;
+import com.sema.utilities.Pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -93,6 +94,9 @@ public class Membership_AccountRulePage extends BasePage {
 
     @FindBy(xpath = "//button[contains(text(),'Continue')]")
     private WebElement continueButtonInSetRulesModal;
+
+    @FindBy(xpath = "//input[@id='rule-name']")
+    private WebElement ruleNameInputBox;
 
     @FindBy(xpath = "//select[@id='IsAssociatedassociationTable']")
     private WebElement associatedFilterSelectElement;
@@ -293,6 +297,7 @@ public class Membership_AccountRulePage extends BasePage {
 
     public void clickSetRulesButton() {
         setRulesButton.click();
+        ruleNameInputBox.sendKeys("test automation");
         continueButtonInSetRulesModal.click();
         BrowserUtils.wait(2);
         BrowserUtils.waitForVisibility(ruleSaveWarning,18);
@@ -462,8 +467,11 @@ public class Membership_AccountRulePage extends BasePage {
 
     String contactMobileValue = "5461146716";
     String contactEmailValue = "rule@rule.com";
-    public void setTwoDifferentRuleWithOr() {
+    public void setTwoDifferentRuleWithOr(Pages pages) {
+        pages.editItemPage().closeShowcase();
+//        BrowserUtils.adjustScreenSize(70,driver);
         BrowserUtils.waitForVisibility(ruleAttributeDropDown,10);
+        BrowserUtils.wait(2);
         ruleAttributeDropDown.click();
         BrowserUtils.wait(2);
         ruleAttributeSearchInputBox.sendKeys("Contact Mobile");

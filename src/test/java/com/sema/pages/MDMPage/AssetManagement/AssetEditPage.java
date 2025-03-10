@@ -27,7 +27,7 @@ public class AssetEditPage extends BasePage {
     private WebElement allListAddedItem;
     @FindBy(xpath = "//a[@id='_group-permissions']")
     private WebElement groupPermissions;
-    @FindBy(xpath = "//button[@id='firtPageTableGroup']")
+    @FindBy(xpath = "//button[@id='group-permissions-tableFirstPage']")
     private WebElement leftPreviousPage;
     @FindBy(xpath = "//button[@id='user-permissions-tableFirstPage']")
     private WebElement leftPreviousPageUser;

@@ -82,7 +82,8 @@ public class MDMContactHomePageStepDef extends BaseStep {
 
     @Then("The user enters {string} into Code field")
     public void the_user_enters_into_code_field(String code) {
-        pages.contactHomePage().setCodeFilter(code);
+//        pages.contactHomePage().setCodeFilter(code);
+        pages.itemOverviewPage().useTextFilter("Code",code);
     }
     @Given("The user is on the Contact item home page")
     public void the_user_is_on_the_Contact_item_home_page() {
@@ -169,7 +170,9 @@ public class MDMContactHomePageStepDef extends BaseStep {
 
     @Then("the user clicks on Reset button")
     public void the_user_clicks_on_reset_button() {
-        pages.contactHomePage().clicksResetButton();
+//        pages.contactHomePage().clicksResetButton();
+        pages.itemOverviewPage().getBasicFilterResetBtn().click();
+        BrowserUtils.wait(3);
     }
 
     @Then("the user verify Reset button functionality")

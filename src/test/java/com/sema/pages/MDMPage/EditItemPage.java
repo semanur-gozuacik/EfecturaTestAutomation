@@ -18,7 +18,7 @@ public class EditItemPage extends BasePage {
     @FindBy(xpath = "//a[contains(@class,'showRuleTabLi')]")
     private WebElement ruleTab;
 
-    @FindBy(xpath = "//a[contains(.,'Associated')]")
+    @FindBy(xpath = "//span[@id='select2-association-table-IsAssociated-container']")
     private WebElement associatedFilter;
 
     @FindBy(xpath = "//li[contains(text(),'Yes')]")
@@ -26,6 +26,21 @@ public class EditItemPage extends BasePage {
 
     @FindBy(xpath = "//tr/td[1]/a")
     private List<WebElement> idValues;
+
+    @FindBy(xpath = "//div[contains(@class,'accordion-title')]")
+    private WebElement accordionTitle;
+
+    @FindBy(xpath = "//button[@id='group-permissions-tableFirstPage']")
+    private WebElement groupFirstPageBtn;
+
+    @FindBy(xpath = "//button[@id='group-permissions-tableLastPage']")
+    private WebElement groupLastPageBtn;
+
+    @FindBy(xpath = "//span[@id='group-permissions-table_previous']")
+    private WebElement groupPreviousPageBtn;
+
+    @FindBy(xpath = "//span[@id='group-permissions-table_next']")
+    private WebElement groupNextPageBtn;
 
 
     public void clickRuleTab() {
@@ -46,9 +61,18 @@ public class EditItemPage extends BasePage {
     }
 
     public void goToRuleAssociationTab(String tabName) {
-        driver.findElement(By.xpath("//a[contains(text(),'" + tabName + "')]")).click();
+        BrowserUtils.wait(10);
+        driver.findElement(By.xpath("//li[@data-order-code='Associations']")).click();
+        driver.findElement(By.xpath("//a[@href='#AssociationTab']/text[contains(.,'" + tabName + "')]")).click();
+        BrowserUtils.wait(60);
         associatedFilter.click();
         associatedFilterYesOption.click();
         BrowserUtils.wait(9);
+    }
+
+    public void closeShowcase() {
+        if (!accordionTitle.getAttribute("class").contains("active")) {
+            accordionTitle.click();
+        }
     }
 }

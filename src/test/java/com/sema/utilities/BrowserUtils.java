@@ -360,6 +360,18 @@ public class BrowserUtils {
         // Elementi hem yatayda hem dikeyde görünür hale getirir
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
+
+    // JavaScript kullanarak zoom seviyesini %80 yap
+    public static void adjustScreenSize(int size, WebDriver driver) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.body.style.zoom='" + size + "%'");
+    }
+
+    public static String getValueInInputBox(WebElement inputBox) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        return (String) js.executeScript("return arguments[0].value;", inputBox);
+    }
+
 }
 
 
