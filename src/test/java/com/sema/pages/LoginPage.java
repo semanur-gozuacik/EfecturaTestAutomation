@@ -23,9 +23,9 @@ public class LoginPage extends BasePage {
     private WebElement loginButton;
     @FindBy(xpath = "//img[@id='navLogo']")
     private WebElement successfulLoginConfirmation;
-    @FindBy(xpath = "//div[@class='validation-summary-errors text-danger']")
-    private WebElement loginErrorText;
     @FindBy(xpath = "//label[@id='warning-text']")
+    private WebElement loginErrorText;
+    @FindBy(xpath = "//div[@class='validation-summary-errors text-danger']")
     private WebElement emptyLoginErrorText;
     @FindBy(xpath = "//a[@class='colorWhite']")
     private WebElement forgotYourPasswordText;
