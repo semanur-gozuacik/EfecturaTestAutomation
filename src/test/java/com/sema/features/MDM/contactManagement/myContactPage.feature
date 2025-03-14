@@ -27,33 +27,32 @@ Feature: Contact Management Test Cases-My Contact Page
     When The user open side accordion in overview
     When The user clicks My Contact button
     And The user clicks on Contact  category
-    And The user enters "0058950138" into Code field
+    And The user enters "0058950138" into "Code" filter text input box
     And the user verify on code filter functionality "0058950138"
 
   Scenario:  Verify Code Filter -Valid Partial Unique Code
     When The user clicks My Contact button
-    And The user enters "test" into Code field
+    And The user enters "test" into "Code" filter text input box
     And the user verify on code filter functionality with partial unique code "test"
 
   Scenario: Verify Code Filter - Invalid Unique Code
     When The user clicks My Contact button
-    And The user enters "sema12345" into Code field
+    And The user enters "sema12345" into "Code" filter text input box
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario: Verify Label Filter - Valid Label
     When The user clicks My Contact button
-    And The user enters "t_aut" into Label field
+    And The user enters "t_aut" into "Label" filter text input box
     And the user verify on label filter functionality with partial unique code "test_automation"
 
   Scenario: Verify Label Filter - Partial Unique Code
     When The user clicks My Contact button
-    And The user enters "Test" into Label field
-    And the user clicks on Search button
+    And The user enters "Test" into "Label" filter text input box
    # And the user verify on label filter functionality with partial unique code "Test"
 
   Scenario: Verify Label Filter - Invalid  Label
     When The user clicks My Contact button
-    And The user enters "sema12345" into Label field
+    And The user enters "sema12345" into "Label" filter text input box
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario: Search for Ekosystem Family
@@ -79,29 +78,21 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario: Reset Button Control
     When The user clicks My Contact button
-    And The user enters "Test2123" into Code field
+    And The user enters "Test2123" into "Code" filter text input box
     And The user clicks on Ekosystem Filtre
     And the user clicks on Reset button
     And the user verify Reset button functionality
 
   Scenario: Deleting an item and declining the popup message
     When The user clicks My Contact button
-    And The user enters "test_auto" into Code field
+    And The user enters "test_auto" into "Code" filter text input box
     And The user clicks on Delete
     And The user declines the popup message
     Then The user verify that "test_automation" is visible
 
-  #Scenario: Deleting an item and accepting the popup message
-   # When The user clicks My Contact button
-   # And The user clicks on Contact  category
-    #And The user enters "sematestttt" into Code field
-   # And the user clicks on Search button
-  # And The user clicks on Delete
-   # And The user accepts the popup message
-
   Scenario: My Contact page edit verify
     When The user clicks My Contact button
-    And The user enters "0058950138" into Code field
+    And The user enters "0058950138" into "Code" filter text input box
     And The user clicks on Edit Button
     Then The user verify Edit Page
 
