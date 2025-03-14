@@ -26,6 +26,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
       |Passive    |
       |Approved   |
 
+
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button
     When The user open side accordion in overview
     When The user clicks on Contact  category
