@@ -13,13 +13,13 @@ Feature: MDM Session Verification
       | username           | password         | expectedResult       |
       | invalidUsername    | validPassword    | session opening error |
       | validUsername      | invalidPassword  | session opening error |
-      | validUsername      |                  | session opening error |
+      | validUsername      |                  | session opening error empty |
       |                    | invalidPassword  | session opening error empty|
       |                    | validPassword    | session opening error empty|
       |                    |                  | session opening error empty|
       | invalidUsername    | invalidPassword  | session opening error |
       | invalidUsername    | validPassword    | session opening error |
-      | invalidUsername    |                  | session opening error |
+      | invalidUsername    |                  | session opening error empty|
       | validUsername      | validPassword    | successful login      |
 
     Scenario: Verify Forgot Your Password Button Functionality- return to login page
@@ -45,5 +45,4 @@ Feature: MDM Session Verification
 
   Scenario: Verify sign in with Microsoft button functionality
     When The user clicks sign in with microsoft button
-   # Then  The User gets the current URL and stores it in "https://login.microsoftonline.com/efectura0.onmicrosoft.com/oauth2/authorize?client_id=fdbd59f4-331f-4ede-9292-b1e78fe070d6&response_type=code&redirect_uri=https://sandbox-ui.efectura.com/Account/AzureADAuth&sso_reload=true"
 
