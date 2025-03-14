@@ -22,53 +22,44 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Verify Code Filter -Valid Unique Code
     And The user clicks on Contact  category
-    And The user enters "test_automation" into Code field
-    And the user clicks on Search button
+    And The user enters "semaotomasyon" into "Code" filter text input box
     And the user verify on code filter functionality "test_automation"
 
   Scenario:Verify Code Filter -Valid partial Code
     And The user clicks on Contact  category
-    And The user enters "test" into Code field
-    And the user clicks on Search button
+    And The user enters "test" into "Code" filter text input box
     And the user verify on code filter functionality with partial unique code "test"
 
   Scenario: Verify Code Filter - Invalid Unique Code
     And The user clicks on Contact  category
-    And The user enters "sema12345" into Code field
-    And the user clicks on Search button
+    And The user enters "sema12345" into "Code" filter text input box
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario: Verify Label Filter - Valid Label
     And The user clicks on Contact  category
-    And The user enters "semaotoma" into Label field
-    And the user clicks on Search button
+    And The user enters "semaotoma" into "Label" filter text input box
     And the user verify on label filter functionality with partial unique code "semaotomasyon"
 
   Scenario: Verify Label Filter - Partial Unique Code
     And The user clicks on Contact  category
-    And The user enters "test" into Label field
-    And the user clicks on Search button
+    And The user enters "test" into "Label" filter text input box
     And the user verify on label filter functionality with partial unique code "test"
 
   Scenario: Verify Label Filter - Invalid  Label
-    And The user enters "sema12345" into Label field
-    And the user clicks on Search button
+    And The user enters "sema12345" into "Label" filter text input box
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario: Search for Ekosystem Family
     And The user clicks on Ekosystem Filtre
-    And the user clicks on Search button
      #And the user verify on family filter Ekosystem functionality
 
   Scenario: Search for IWSA Family
     And The user clicks on IWSA Filtre
-    And the user clicks on Search button
      #And the user verify on family filter IWSA functionality
 
   Scenario Outline: Filter "<ItemStatus>" Item Statuses
     And the user clicks on ItemStatuses
     And the user clicks on "<ItemStatus>"
-    And the user clicks on Search button
      #And the incoming filter for "<ItemStatus>" should contain
     Examples:
     |ItemStatus |
@@ -78,23 +69,23 @@ Feature: Contact Management Test Cases- Contact Home Page
 
     Scenario: Reset Button Control
       And The user clicks on Contact  category
-      And The user enters "test2123" into Code field
+      And The user enters "test2123" into "Code" filter text input box
       And The user clicks on Ekosystem Filtre
       And the user clicks on Reset button
       And the user verify Reset button functionality
 
   Scenario: Deleting an item and declining the popup message
     And The user clicks on Contact  category
-    And The user enters "sematestttt" into Code field
-    And the user clicks on Search button
+    And The user enters "sematestttt" into "Code" filter text input box
+   #search button kaldırıldı. And the user clicks on Search button
     And The user clicks on Delete
     And The user declines the popup message
     Then The user verify that "sematestttt" is visible
 
   Scenario: Contact page edit verify
     And The user clicks on Contact  category
-    And The user enters "sematestttt" into Code field
-    And the user clicks on Search button
+    And The user enters "sematestttt" into "Code" filter text input box
+   #search button kaldırıldı. And the user clicks on Search button
     And The user clicks on Edit Button
     Then The user verify Edit Page
 
@@ -110,15 +101,13 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Verify My Count Star Item Functionality- One Contact
     And The user clicks on Contact  category
-    And The user enters "sematestttt" into Code field
-    And the user clicks on Search button
+    And The user enters "sematestttt" into "Code" filter text input box
     And the user clicks on Star items
     And the user verify My Count badge count is correct
 
   Scenario: Verify My Count Star Items Functionality- more than One Contact
     And The user clicks on Contact  category
-    And The user enters "test" into Code field
-    And the user clicks on Search button
+    And The user enters "test" into "Code" filter text input box
     And the user clicks on Star items
     And the user verify My Count badge count is correct
 
