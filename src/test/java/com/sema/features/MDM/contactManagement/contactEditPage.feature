@@ -185,12 +185,12 @@ Feature: Contact Management Test Cases- Contact Edit Page
   Scenario:Contact edit - ACCOUNT_CONTACT Tab
     And The user enters "semaotomasyon" into "Code" filter text input box
     And  The user clicks on Edit Button
-    And The user clicks "ACCOUNT_CONTACT" tab
+    And The user clicks "Account_Contact" tab
 
   Scenario:Contact edit -  ACCOUNT_CONTACT Tab Associated
     And The user enters "semaotomasyon" into "Code" filter text input box
     And  The user clicks on Edit Button
-    And The user clicks "ACCOUNT_CONTACT" tab
+    And The user clicks "Account_Contact" tab
     And The user Assocaited All filter
     And The user clicks item
     And the user clicks on unsaved change button
@@ -201,7 +201,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
   Scenario:Contact edit -  ACCOUNT_CONTACT Tab Associated Filter No
     And The user enters "semaotomasyon" into "Code" filter text input box
     And  The user clicks on Edit Button
-    And The user clicks "ACCOUNT_CONTACT" tab
+    And The user clicks "Account_Contact" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 

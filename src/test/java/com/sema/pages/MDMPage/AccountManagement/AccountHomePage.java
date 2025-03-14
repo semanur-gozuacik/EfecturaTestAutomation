@@ -11,7 +11,7 @@ import java.util.List;
 
 public class AccountHomePage extends BasePage {
     
-    @FindBy(xpath = "//span[@class='select2 select2-container select2-container--default select2-container--below select2-container--focus']//span[@role='presentation']")
+    @FindBy(xpath = "//span[contains(@class, 'select2-selection') and contains(@class, 'select2-selection--single')]\n")
     private WebElement associatedFilterClick;
     @FindBy(xpath = "//span[@class='select2-search select2-search--dropdown']//input[@role='textbox']")
     private WebElement associatedAllFilter;
