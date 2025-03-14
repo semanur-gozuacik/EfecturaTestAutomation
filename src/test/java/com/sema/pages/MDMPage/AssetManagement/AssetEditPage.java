@@ -2,6 +2,7 @@ package com.sema.pages.MDMPage.AssetManagement;
 
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
+import com.sema.utilities.Pages;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,7 +40,7 @@ public class AssetEditPage extends BasePage {
     private WebElement nextPage;
     @FindBy(xpath = "//span[@id='user-permissions-table_next']")
     private WebElement nextPageUser;
-    @FindBy(xpath = "//div[@class='custom-button-right groupPermissions custom-button-page']")
+    @FindBy(xpath = "//button[@id='group-permissions-tableLastPage']")
     private WebElement lastPage;
     @FindBy(xpath = "//div[@class='custom-button-right userPermissions custom-button-page']")
     private WebElement lastPageUser;
@@ -113,8 +114,9 @@ public class AssetEditPage extends BasePage {
     }
 
 
-    public void clicksNextPageButton() {
+    public void clicksNextPageButton(Pages pages) {
         BrowserUtils.wait(8);
+//        pages.editItemPage().closeShowcase();
         nextPage.click();
     }
 

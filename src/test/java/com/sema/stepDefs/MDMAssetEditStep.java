@@ -65,7 +65,7 @@ public class MDMAssetEditStep extends BaseStep {
 
     @When("The user clicks next page button asset")
     public void the_user_clicks_next_page_button_asset() {
-        pages.assetEditPage().clicksNextPageButton();
+        pages.assetEditPage().clicksNextPageButton(pages);
     }
 
     @When("The user verifies next button is clickable asset")

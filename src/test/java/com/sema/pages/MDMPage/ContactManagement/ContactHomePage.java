@@ -156,8 +156,6 @@ public class ContactHomePage extends BasePage {
     private WebElement showEntries;
     @FindBy(id = "inputCode")
     private WebElement uniqueCodeElement;
-    @FindBy(xpath = "//ul[@class='nav nav-tabs current_nav_tabs']//li//a")
-    private List<WebElement> editItemTabs;
     @FindBy(xpath = "//b[normalize-space()='Summary']")
     private WebElement verifyPreviewTab;
     @FindBy(id = "//input[@id='authorFilter']")
@@ -617,16 +615,6 @@ public class ContactHomePage extends BasePage {
 
     public void setUniqueCodeElement(String code) {
         uniqueCodeElement.sendKeys(code);
-    }
-
-    public void clickEditItemTab(String tabName) {
-        BrowserUtils.wait(5);
-        for (WebElement editItemTab : editItemTabs) {
-            if (editItemTab.getText().contains(tabName)) {
-                editItemTab.click();
-                BrowserUtils.wait(2);
-            }
-        }
     }
 
     public void verifyPreviewTab() {
