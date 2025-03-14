@@ -22,27 +22,25 @@ Feature: File Management Test Cases- Contact Home Page
     Then  The user should see  "<entries>" entrie in everypage
     Examples:
       | entries|
-      |10 |
-      |25 |
+      |100 |
       |50 |
+      |25 |
+      |10|
 
 
   Scenario: File  Home Page Reset Button Control
-    And The user enters "test2123" into Code field
+    And The user enters "test2123" into "Code" filter text input box
     And the user clicks on Reset button
-    And the user verify Reset button functionality
 
   Scenario:File  Home Page Verify Label Filter - Valid Label
-    And The user enters "TEST123456" into Label field
-    And the user clicks on Search button
+    And The user enters "TEST123456" into "Label" filter text input box
 
 
   Scenario: File  Home Page Verify Label Filter - Invalid  Label
-    And The user enters "596348452" into Label field
+    And The user enters "596348452" into "Label" filter text input box
     And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
-  @testtttt
   Scenario Outline: File  Home Page Filter "<ItemStatus>" Item Statuses
     And the user clicks on ItemStatuses
     And the user clicks on "<ItemStatus>"
@@ -72,7 +70,7 @@ Feature: File Management Test Cases- Contact Home Page
 
 
   Scenario Outline: File  Home Page Associated Tab Status Fılter "<Status>"
-    And The user enters "File_296034" into Code field
+    And The user enters "File_296034" into "Code" filter text input box
     And  the user clicks on Search button
     And  The user clicks on Edit Button
     And  The user clicks "BANNER_MRP" tab
@@ -86,25 +84,25 @@ Feature: File Management Test Cases- Contact Home Page
       |Disabled  |
 
   Scenario:File edit -Event-Contact Tab
-    And The user enters "File_296034" into Code field
+    And The user enters "File_296034" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Previeew" tab
 
   Scenario:File edit -Event-Contact Tab
-    And The user enters "File_296034" into Code field
+    And The user enters "File_296034" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
 
   Scenario:File edit -Event-Contact Tab
-    And The user enters "File_296034" into Code field
+    And The user enters "File_296034" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Training-File" tab
 
   Scenario:File edit - Event-Contact Tab Associated
-    And The user enters "File_296034" into Code field
+    And The user enters "File_296034" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Training-File" tab
@@ -116,7 +114,7 @@ Feature: File Management Test Cases- Contact Home Page
     And the user verifies item status success message
 
   Scenario:File edit -Event-Contact Tab Associated Filter No
-    And The user enters "File_296034" into Code field
+    And The user enters "File_296034" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Training-File" tab

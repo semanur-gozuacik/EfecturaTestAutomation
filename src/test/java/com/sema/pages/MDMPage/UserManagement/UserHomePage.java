@@ -41,9 +41,9 @@ public class UserHomePage extends BasePage {
     private WebElement columnsButton;
     @FindBy(xpath = "//span[normalize-space()='SELECTED COLUMNS']")
     private WebElement selectedColumns;
-    @FindBy(xpath = "//a[@id='cancelColumn']")
+    @FindBy(xpath = "//button[@id='cancelColumn']")
     private WebElement columnsCancelButton;
-    @FindBy(xpath = "//a[@id='cancelColumn']")
+    @FindBy(xpath = "//button[@id='EfSaveColumns']")
     private WebElement columnsSaveButton;
     @FindBy(xpath = "//span[@class='text clear-btn']")
     private WebElement defaultColumnsButton;
