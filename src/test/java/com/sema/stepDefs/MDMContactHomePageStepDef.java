@@ -300,11 +300,6 @@ pages.contactHomePage().verifypreviousPageButtonUnClickability();
       pages.contactHomePage().verifyLastPageButtonClickable();
     }
 
-    @Then("The user clicks {string} tab")
-    public void the_user_clicks_tab(String tabName) {
-     pages.contactHomePage().clickEditItemTab(tabName);
-    }
-
     @Then("The user verifies preview tab details is displayed")
     public void the_user_verifies_preview_tab_details_is_displayed() {
      pages.contactHomePage().verifyPreviewTab();
