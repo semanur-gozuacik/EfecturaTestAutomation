@@ -27,7 +27,9 @@ Feature: Users Management User Logs  Test Cases
     And The user clicks Refresh button user
 
   Scenario: Verify UserEmail Filter -Valid Unique UserName
-    And The user enters "yana@efectura.com" into logs userEmail field
+    #And The user enters "yana@efectura.com" into logs userEmail field
+    And The user enters "yana@efectura.com" into "Email" filter text input box
+
 
   Scenario: Verify Result Filter -Valid Unique Result
     And The user enters "Succes" into logs result field
