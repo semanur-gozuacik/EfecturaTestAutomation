@@ -26,8 +26,7 @@ Feature: RoofCard Management Test Cases- Contact Home Page
       |10 |
 
   Scenario: RoofCard Home Page Reset Button Control
-    And The user enters "roofcard" into Code field
-    And the user clicks on Reset button
+    And The user enters "roofcard" into "Code" filter text input box
     And the user verify Reset button functionality
 
   Scenario:RoofCard Home Page Verify Label Filter - Invalid  Label
@@ -36,42 +35,38 @@ Feature: RoofCard Management Test Cases- Contact Home Page
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario:RoofCard Organization  edit - Categories Tab
-    And The user enters "roof_card_test" into Code field
+    And The user enters "roof_card_test" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Categories" tab
 
   Scenario:RoofCard Organization  edit - Categories Tab
-    And The user enters "roof_card_test" into Code field
+    And The user enters "roof_card_test" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "History" tab
 
   Scenario:RoofCard Organization  edit - Categories Tab
-    And The user enters "roof_card_test" into Code field
-    And the user clicks on Search button
+    And The user enters "roof_card_test" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Attributes" tab
 
   Scenario: RoofCard Export Entity Button - Associations
-    And The user enters "roof_card_test" into Code field
-    And the user clicks on Search button
+    And The user enters "roof_card_test" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks Export Entity Button
     And The user clicks Export Associations
     Then The user dowloand Export Entity verifies
 
   Scenario: RoofCard Export Entity Button - Permission
-    And The user enters "roof_card_test" into Code field
-    And the user clicks on Search button
+    And The user enters "roof_card_test" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks Export Entity Button
     And The user clicks Export Permission
     Then The user dowloand Export Entity verifies
 
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses - cancel button
-    And The user enters "2943740465" into Code field
-    And the user clicks on Search button
+    And The user enters "roof_card_test" into "Code" filter text input box
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
 
@@ -82,8 +77,7 @@ Feature: RoofCard Management Test Cases- Contact Home Page
 
 
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses- save button
-    And The user enters "2943740465" into Code field
-    And the user clicks on Search button
+    And The user enters "roof_card_test" into "Code" filter text input box
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
 

@@ -28,16 +28,15 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
       |100|
 
   Scenario: Sales Organization Reset Button Control
-    And The user enters "test2123" into Code field
+    And The user enters "test2123" into "Code" filter text input box
     And the user clicks on Reset button
     And the user verify Reset button functionality
 
   Scenario:Sales Organization Verify Label Filter - Valid Label
-    And The user enters "TEST123456" into Label field
-    And the user clicks on Search button
+    And The user enters "TEST123456" into "Label" filter text input box
 
   Scenario: Verify Label Filter - Invalid  Label
-    And The user enters "44444" into Label field
+    And The user enters "44444" into "Label" filter text input box
     And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
@@ -65,35 +64,30 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
       |Blanks    |
 
   Scenario:Sales Organization Verify Code Filter - Invalid Unique Code
-    And The user enters "sema12345" into Code field
-    And the user clicks on Search button
+    And The user enters "sema12345" into "Code" filter text input box
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario::Sales Organization Group Permission Verify Item First Page Button Unclickable Condition
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     #And  The user verifies previous button is not clickable asset
 
   Scenario::Sales Organization Group Permission Verify Item Previous Page Button Unclickable Condition
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     And  The user verifies previous page button is not clickable asset
 
   Scenario:Sales Organization Group Permission Verify Item next Button clickable Condition
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks next page button asset
     And  The user verifies next button is clickable asset
 
   Scenario:Sales Organization  Group Permission Verify Previous Page Button clickable Condition
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks next page button asset
@@ -102,16 +96,14 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
     And  The user verifies previous button is clickable asset
 
   Scenario:Sales Organization Group Permission Verify Last Page Button clickable Condition
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies last button is clickable asset
 
   Scenario:Sales Organization  User Permission Verify Previous Page Button clickable Condition
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks next page button user
@@ -120,39 +112,34 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
     And  The user verifies previous button is clickable user
 
   Scenario:Sales Organization  User Permission Verify Last Page Button clickable Condition
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies last button is clickable user
 
   Scenario:Sales Organization  User Permission Verify Last Page Button Unclickable Condition
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies last button is unclickable asset
 
   Scenario:Sales Organization edit -SO_MRP Associated
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "BM_SM" tab
     And The user Assocaited All filter
 
   Scenario:Sales Organization  edit - SO_MRP Tab Associated Filter No
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "BM_SM" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 
   Scenario:Sales Organization  edit -SO_MRP  tab- All Filter
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "BM_SM" tab
     And The user Assocaited All filter
@@ -173,8 +160,7 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
     And  The user clicks save button columns
 
   Scenario Outline: Sales Organization Associated Tab Status Fılter "<Status>"
-    And The user enters "TESTBM" into Code field
-    And  the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And  The user clicks "BM_SM" tab
     And  The user clicks Associated status
@@ -187,44 +173,38 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
       |Disabled  |
 
   Scenario: Sales Organization  Export Entity Button - Attributes
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks Export Entity Button
     And The user clicks Export Attributes
     Then The user dowloand Export Entity verifies
 
   Scenario: Sales Organization  Export Entity Button - Associations
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks Export Entity Button
     And The user clicks Export Associations
     Then The user dowloand Export Entity verifies
 
   Scenario: Sales Organization Export Entity Button - Permission
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks Export Entity Button
     And The user clicks Export Permission
     Then The user dowloand Export Entity verifies
 
   Scenario:Sales Organization  edit - Categories Tab
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Categories" tab
 
   Scenario:Sales Organization edit - History Tab
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "History" tab
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
-    And The user enters "TESTBM" into Code field
-    And the user clicks on Search button
+    And The user enters "TESTBM" into "Code" filter text input box
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
        #And the user clicks on unsaved change button

@@ -24,8 +24,7 @@ Feature: Gift Creation and Management Home Page
     And  The user verifies last page button is clickable
 
   Scenario:Gift Verify Label Filter - Invalid  Label
-    And The user enters "sema12345" into Label field
-    And the user clicks on Search button
+    And The user enters "sema12345" into "Label" filter text input box
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario Outline: Gift Home Page User selects different options for show entries
@@ -39,16 +38,16 @@ Feature: Gift Creation and Management Home Page
       |100|
 
   Scenario: Gift Home Page Reset Button Control
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And the user clicks on Reset button
 
   Scenario: Gift page edit verify
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And The user clicks on Edit Button
 
 
   Scenario Outline:Gift Edit item status "<ItemStatus>" Item Statuses- save button
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
       # And the user clicks on unsaved change button
@@ -63,12 +62,12 @@ Feature: Gift Creation and Management Home Page
       #|Draft    |
 
   Scenario:Gift edit - Certificate Tab
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Certificate" tab
 
   Scenario:Gift edit - Gifts image Tab Associated
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Gifts image" tab
     And The user Assocaited All filter
@@ -79,14 +78,14 @@ Feature: Gift Creation and Management Home Page
     And the user verifies item status success message
 
   Scenario:Gift edit -Gifts image Tab Associated Filter No
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Gifts image" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 
   Scenario:Gift Gifts image Associated Tab Code Filter Functionality
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Gifts image" tab
     And The user clicks on code filter Filter
@@ -94,7 +93,7 @@ Feature: Gift Creation and Management Home Page
     Then The user verifies that code filter functionality
 
   Scenario:Gift edit - GIFT_CONTACT Tab Associated
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "GIFT_CONTACT" tab
     And The user Assocaited All filter
@@ -105,7 +104,7 @@ Feature: Gift Creation and Management Home Page
     And the user verifies item status success message
 
   Scenario:Gift edit -GIFT_CONTACT Tab Associated Filter No
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "GIFT_CONTACT" tab
     And The user Assocaited No filter
@@ -113,7 +112,7 @@ Feature: Gift Creation and Management Home Page
 
 
   Scenario:Gift edit - Gifts image Tab Associated
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Event-Gift" tab
     And The user Assocaited All filter
@@ -124,17 +123,17 @@ Feature: Gift Creation and Management Home Page
     And the user verifies item status success message
 
   Scenario:Gift edit - history Tab
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "history" tab
 
   Scenario:Gift edit - ItemComment Tab
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
 
   Scenario:Gift edit -Gifts image Tab Associated Filter No
-    And The user enters "TestGiftForRecieved" into Code field
+    And The user enters "TestGiftForRecieved" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Event-Gift" tab
     And The user Assocaited No filter

@@ -29,25 +29,23 @@ Feature: Product Management Test Cases- Contact Home Page
       |100|
 
   Scenario: User Reset Button Control
-    And The user enters "test2123" into Code field
+    And The user enters "test2123" into "Code" filter text input box
     And the user clicks on Reset button
     And the user verify Reset button functionality
 
   Scenario:Product Home Page Verify Label Filter - Invalid  Label
-    And The user enters "sema12345" into Label field
-    And the user clicks on Search button
+    And The user enters "sema12345" into "Label" filter text input box
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario:Product edit -SO_MRP Associated
-    And The user enters "Product_179" into Code field
-    And the user clicks on Search button
+    And The user enters "Product_179" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Web_Images" tab
     And The user Assocaited All filter
 
 
   Scenario:Product  edit - SO_MRP Tab Associated Filter No
-    And The user enters "Product_179" into Code field
+    And The user enters "Product_179" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Web_Images" tab
@@ -56,14 +54,14 @@ Feature: Product Management Test Cases- Contact Home Page
 
 
   Scenario:Product edit -EVENT_PRODUCT Associated
-    And The user enters "Product_179" into Code field
+    And The user enters "Product_179" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Event-Product" tab
     And The user Assocaited All filter
 
   Scenario:Product  edit - EVENT_PRODUCT Tab Associated Filter No
-    And The user enters "Product_179" into Code field
+    And The user enters "Product_179" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Event-Product" tab
@@ -72,20 +70,20 @@ Feature: Product Management Test Cases- Contact Home Page
 
 
   Scenario:Product edit -Item Comment Tab
-    And The user enters "Product_179" into Code field
+    And The user enters "Product_179" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Item Comment" tab
 
   Scenario:Product edit -Product_Account Associated
-    And The user enters "Product_179" into Code field
+    And The user enters "Product_179" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product_Account" tab
     And The user Assocaited All filter
 
   Scenario:Product  edit - Product_Account Tab Associated Filter No
-    And The user enters "Product_179" into Code field
+    And The user enters "Product_179" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Product_Account" tab

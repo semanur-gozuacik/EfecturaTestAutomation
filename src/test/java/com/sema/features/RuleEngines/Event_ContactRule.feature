@@ -62,6 +62,7 @@ Feature: EVENT_CONTACT Rule Test Cases
     Then The user tear down all rules 'itemIdForEventRuleTests'
     Then The user edit an account to meet the rules 'TearDown'
 
+
   Scenario: When an account is edited to meet the event rules, contact that is associated with this account must be associated.
     When The user edit an account to meet the rules 'TearDown'
     When The user go in to item 'itemIdForEventRuleTests'

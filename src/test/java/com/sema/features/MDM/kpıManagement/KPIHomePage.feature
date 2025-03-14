@@ -86,12 +86,11 @@ Feature: KPI Management Test Cases
 
 
   Scenario: KPI page edit verify
-    And The user enters "YENİTEST1411" into Code field
-    And the user clicks on Search button
+    And The user enters "YENİTEST1411" into "Code" filter text input box
     And The user clicks on Edit Button
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button
-    And The user enters "Total Earning Points" into Code field
+    And The user enters "Total Earning Points" into "Code" filter text input box
     And the user clicks on Search button
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
@@ -106,54 +105,46 @@ Feature: KPI Management Test Cases
       # |Passive    |
 
   Scenario:Contact edit -History Tab
-    And The user enters "Total Earning Points" into Code field
-    And the user clicks on Search button
+    And The user enters "Total Earning Points" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "History" tab
 
   Scenario:Contact edit -Categories Tab
-    And The user enters "Total Earning Points" into Code field
-    And the user clicks on Search button
+    And The user enters "Total Earning Points" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Categories" tab
 
   Scenario:Contact edit - Transaction Tab
-    And The user enters "Total Earning Points" into Code field
-    And the user clicks on Search button
+    And The user enters "Total Earning Points" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Transaction History" tab
 
   Scenario:Contact edit -ItemComment Tab
-    And The user enters "Total Earning Points" into Code field
-    And the user clicks on Search button
+    And The user enters "Total Earning Points" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
 
   Scenario:KPI Group Permission Verify Item First Page Button Unclickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     #And  The user verifies previous button is not clickable asset
 
   Scenario:KPI Group Permission Verify Item Previous Page Button Unclickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     And  The user verifies previous page button is not clickable asset
 
   Scenario:KPI Group Permission Verify Item next Button clickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks next page button asset
     And  The user verifies next button is clickable asset
 
   Scenario:KPI Group Permission Verify Previous Page Button clickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks next page button asset
@@ -162,62 +153,54 @@ Feature: KPI Management Test Cases
     And  The user verifies previous button is clickable asset
 
   Scenario:KPI Group Permission Verify Last Page Button clickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies last button is clickable asset
 
   Scenario:KPI Group Permission Verify Last Page Button Unclickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies last button is unclickable asset
 
   Scenario:KPI Group Permission Verify Item next Button unclickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies next button is unclickable asset
 
   Scenario:KPI Group Permission Verify Item First Page Button Clickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
    # And  The user verifies first page button is clickable asset
 
   Scenario:KPI User Permission Verify Item First Page Button Unclickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     And  The user verifies first page button is not clickable user
 
   Scenario:KPI User Permission Verify Item Previous Page Button Unclickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     And  The user verifies previous page button is not clickable user
 
   Scenario:KPI User Permission Verify Item next Button clickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks next page button user
     And  The user verifies next button is clickable user
 
   Scenario:KPI User Permission Verify Previous Page Button clickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks next page button user
@@ -226,51 +209,44 @@ Feature: KPI Management Test Cases
     And  The user verifies previous button is clickable user
 
   Scenario:KPI User Permission Verify Last Page Button clickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies last button is clickable user
 
   Scenario:KPI User Permission Verify Last Page Button Unclickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies last button is unclickable asset
 
   Scenario:KPI User Permission Verify Item next Button unclickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies next button is unclickable user
 
   Scenario:KPI User Permission Verify Item First Page Button Clickable Condition
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies first page button is clickable user
 
   Scenario:KPI edit -Item Comment Tab
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
 
   Scenario:KPI Organization  edit - Categories Tab
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Categories" tab
 
   Scenario:KPI Organization edit - History Tab
-    And The user enters "sematest123" into Code field
-    And the user clicks on Search button
+    And The user enters "sematest123" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "History" tab
