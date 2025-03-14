@@ -50,13 +50,15 @@ Feature: Campaign Management Test Cases- Campaign Home Page
        |Draft      |
 
   Scenario: Reset Button Control
-    And The user enters "welcometestgeneric122" into Code field
+   # And The user enters "sema12345" into Code field
+    And The user enters "sema12345" into "Label" filter text input box
     And The user enters "testbirthday1561" into Label field
     And the user clicks on Reset button
     And the user verify Reset button functionality
 
   Scenario: Deleting an item and declining the popup message
-    And The user enters "TESTSETSET123123" into Code field
+    #And The user enters "TESTSETSET123123" into Code field
+    And The user enters "TESTSETSET123123" into "Code" filter text input box
     And the user clicks on Search button
     And The user clicks on Delete
     And The user declines the popup message
@@ -64,7 +66,8 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
 
   Scenario: Verify My Count Star Item Functionality- One Contact
-    And The user enters "TestWelcomeCampaignSecondPreview" into Code field
+  #  And The user enters "TestWelcomeCampaignSecondPreview" into Code field
+    And The user enters "TestWelcomeCampaignSecondPreview" into "Code" filter text input box
     And the user clicks on Star items
 
   Scenario: Verify export button
@@ -135,52 +138,53 @@ Feature: Campaign Management Test Cases- Campaign Home Page
    #Then The user verifies "campaign-list" is not visible
 
   Scenario:Campaign edit -Attributes Tab
-    And The user enters "TestAutomation" into Code field
+    #And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Attributes" tab
 
   Scenario:Campaign edit -Preview Tab
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Preview" tab
    #  Then The user verifies preview tab details is displayed
 
   Scenario:Campaign edit -Item Comment Tab
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "ItemComment" tab
     #Then The user verifies itemComment tab details is displayed
 
   Scenario:Campaign edit - AbstractPreview Tab
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "AbstractPreview" tab
    # Then The user verifies My Account tab details is displayed
 
   Scenario:Campaign edit - Campaign-Account Tab export
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Campaign-Account" tab
    # When  The user clicks on Export button ediitem
     #Then  The user verify that the export was "Success"
 
   Scenario:Campaign edit - RealtimeList Tab
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "RealtimeList" tab
 
   Scenario:Campaign edit - Categories Tab
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Categories" tab
 
   Scenario:Campaign edit - History Tab
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "History" tab
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button-Campaign
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
        #And the user clicks on unsaved change button
@@ -194,7 +198,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
      # |Active     |
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on Edit Button
     And the user selects "<ItemStatus>"
       # And the user clicks on unsaved change button
@@ -208,19 +212,19 @@ Feature: Campaign Management Test Cases- Campaign Home Page
       |Active     |
 
   Scenario:Campaign edit - Campaign-point Associated
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Campaign Points" tab
 
   Scenario:Campaign edit - Campaign-Account Associated
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "CAMPAIGN_ACCOUNT" tab
     And The user Assocaited All filter
 
 
   Scenario:Campaign edit - Campaign-Account Tab Associated Filter No
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "CAMPAIGN_ACCOUNT" tab
     And The user Assocaited No filter
@@ -237,34 +241,34 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And  The user clicks Default button columns
 
   Scenario:Group Permission Verify Last Page Button Unclickable Condition
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies last button is unclickable asset
 
   Scenario:Group Permission Verify Item next Button unclickable Condition
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies next button is unclickable asset
 
   Scenario:Group Permission Verify Item First Page Button Clickable Condition
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks group permission tab
     When The user clicks last page button asset
     #And  The user verifies first page button is clickable asset
 
   Scenario:User Permission Verify Item First Page Button Unclickable Condition
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     And  The user verifies first page button is not clickable user
 
   Scenario:User Permission Verify Item Previous Page Button Unclickable Condition
-    And The user enters "TestAutomation" into Code field
+    And The user enters "TestAutomation" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     And  The user verifies previous page button is not clickable user
