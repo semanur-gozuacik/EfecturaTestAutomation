@@ -14,19 +14,16 @@ Feature: Users Management User Logs  Test Cases
     Then The User verifies User logs table is displayed
 
   Scenario: Verify UserName Filter -Invalid Unique UserName
-    And The user enters "1234semaaa" into username field
-    And The user user logs search button
+    And The user enters "1234semaaa" into "Username" filter text input box
 
   Scenario: Verify UserName Filter -Valid Unique UserName
-    And The user enters "Yana" into username field
-    And The user user logs search button
+    And The user enters "Yana" into "Username" filter text input box
 
   Scenario: Verify UserName Filter -Valid Unique UserName
-    And The user enters "Yana" into username field
-    And The user clicks Reset button user
+    And The user enters "Yana" into "Username" filter text input box
 
   Scenario: Verify UserName Filter -Valid Unique UserName
-    And The user enters "Yana" into username field
+    And The user enters "Yana" into "Username" filter text input box
     And The user clicks Refresh button user
 
   Scenario: Verify UserEmail Filter -Valid Unique UserName
