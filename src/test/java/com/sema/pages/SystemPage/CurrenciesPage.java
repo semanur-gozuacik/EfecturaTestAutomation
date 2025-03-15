@@ -44,7 +44,7 @@ public class CurrenciesPage extends BasePage {
     @FindBy(id = "create-tag-button")
     private WebElement createNewButton;
 
-    @FindBy(xpath = "//span[@class='iconbtn iconbtn-green rrbutton refresh imp-refresh']//span[@class='icon']")
+    @FindBy(xpath = "//i[@class='fa fa-lg fa-refresh']")
     private WebElement refreshButton;
 
     @FindBy(xpath = "//span[text()='Reset']")
