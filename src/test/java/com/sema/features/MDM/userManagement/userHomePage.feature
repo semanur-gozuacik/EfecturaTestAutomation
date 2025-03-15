@@ -121,7 +121,6 @@ Feature: User Management Test Cases- Contact Home Page
 
   Scenario:User edit -PaymentTransactions tab control
     And The user enters "Otomasyon" into "Code" filter text input box
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "PaymentTransactions" tab
 
@@ -138,7 +137,6 @@ Feature: User Management Test Cases- Contact Home Page
 
   Scenario:User edit -Saha-Satış tab control
     And The user enters "Otomasyon" into "Code" filter text input box
-    And the user clicks on Search button
     And  The user clicks on Edit Button
     And The user clicks "Saha-Satış" tab
 

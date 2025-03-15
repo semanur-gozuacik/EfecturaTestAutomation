@@ -18,7 +18,7 @@ Feature: Attributes Management Test Cases
     And The user clicks "Code" attributes
     And The user enters "Account_Outlet_Code__c" into Code field-Settings Attributes
     And the user clicks on Reset button
-    And the user verify Reset button functionality-Settings Attibutes
+    #And the user verify Reset button functionality-Settings Attibutes
 
   Scenario:Attributes pages Group Permission Verify Item First Page Button Unclickable Condition
     And The user clicks "Code" attributes

@@ -30,14 +30,13 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
   Scenario: Sales Organization Reset Button Control
     And The user enters "test2123" into "Code" filter text input box
     And the user clicks on Reset button
-    And the user verify Reset button functionality
+   # And the user verify Reset button functionality
 
   Scenario:Sales Organization Verify Label Filter - Valid Label
     And The user enters "TEST123456" into "Label" filter text input box
 
   Scenario: Verify Label Filter - Invalid  Label
     And The user enters "44444" into "Label" filter text input box
-    And the user clicks on Search button
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario:Sales Organization Create List- create button

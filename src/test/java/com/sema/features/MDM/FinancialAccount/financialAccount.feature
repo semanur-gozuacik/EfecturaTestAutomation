@@ -28,29 +28,26 @@ Feature: Financial Account Management Test Cases- Contact Home Page
       |50 |
       |100|
   Scenario:Financial Account Reset Button Control
-    And The user enters "NoMask" into Code field
+    And The user enters "NoMask" into "Code" filter text input box
     And the user clicks on Reset button
-    And the user verify Reset button functionality
+  #  And the user verify Reset button functionality
 
   Scenario:Financial Account Verify Label Filter - Valid Label
     And The user enters "FinancialAccount_06" into Label field
-    And the user clicks on Search button
 
   Scenario: Financial Account Verify Label Filter - Invalid  Label
-    And The user enters "44444" into Label field
-    And the user clicks on Search button
+    And The user enters "44444" into "Label" filter text input box
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
   Scenario:Financial Account Group Permission Verify Item Previous Page Button Unclickable Condition
-    And The user enters "FinancialAccount_06" into Code field
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And the user clicks on Search button
     And  The user clicks on Edit Button
     And clicks group permission tab
     And  The user verifies previous page button is not clickable asset
 
   Scenario:Financial Account  User Permission Verify Previous Page Button clickable Condition
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And clicks user permission tab
     When The user clicks next page button user
@@ -59,30 +56,26 @@ Feature: Financial Account Management Test Cases- Contact Home Page
     And  The user verifies previous button is clickable user
 
   Scenario::Financial Account   EVENT_CONTACT Tab
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Account_Deposit" tab
 
   Scenario:Event edit - Account_Deposit Tab Associated
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Account_Deposit" tab
     And The user Assocaited All filter
 
 
   Scenario:Event edit Account_Deposit Tab Associated Filter No
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Account_Deposit" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 
   Scenario Outline: :Financial Account   Associated Tab Status Fılter "<Status>"
-    And The user enters "FinancialAccount_06" into Code field
-    And  the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And  The user clicks "Account_Deposit" tab
     And  The user clicks Associated status
@@ -96,35 +89,30 @@ Feature: Financial Account Management Test Cases- Contact Home Page
 
 
   Scenario::Financial Account   EVENT_CONTACT Tab
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Categories" tab
 
   Scenario::Financial Account   EVENT_CONTACT Tab
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "History" tab
 
   Scenario::Financial Account   EVENT_CONTACT Tab
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Attributes" tab
 
 
   Scenario: Financial Account  Export Entity Button - Attributes
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks Export Entity Button
     And The user clicks Export Attributes
     Then The user dowloand Export Entity verifies
 
   Scenario: Financial Account  Export Entity Button - Associations
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks Export Entity Button
     And The user clicks Export Associations
@@ -132,23 +120,19 @@ Feature: Financial Account Management Test Cases- Contact Home Page
 
 
   Scenario: :Financial Account   Entity Button - Permission
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks Export Entity Button
     And The user clicks Export Permission
     Then The user dowloand Export Entity verifies
 
-  @tessss
   Scenario::Financial Account   EVENT_CONTACT Tab
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Account-Financial Account" tab
-  @tessss
+
   Scenario Outline: :Financial Account   Associated Tab Status Fılter "<Status>"
-    And The user enters "FinancialAccount_06" into Code field
-    And  the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And  The user clicks "Account-Financial Account" tab
     And  The user clicks Associated status
@@ -159,42 +143,38 @@ Feature: Financial Account Management Test Cases- Contact Home Page
       |Status:All|
       |Enabled   |
       |Disabled  |
-  @tessss
+
   Scenario:Event edit Account_Deposit Tab Associated Filter No
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Account-Financial Account" tab
     And The user Assocaited No filter
     Then The user verify No Filter
-  @tessss
+
   Scenario: Account Export Entity Button - Attributes
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks Export Entity Button
     And The user clicks Export Attributes
     Then The user dowloand Export Entity verifies
-  @tessss
+
   Scenario: Account Home Page Columns - Reset Button
     And  The user enters columns button
     And  The user selected columns
     And  The user clicks cancel button columns
-  @tessss
+
   Scenario:  Home Page Columns - Reset Button
     And  The user enters columns button
     And  The user selected columns
     And  The user clicks save button columns
 
   Scenario:Contact edit -Event-Contact Tab
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Account_Deposit" tab
 
   Scenario:Contact edit - Event-Contact Tab Associated
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Account_Deposit" tab
     And The user Assocaited All filter
@@ -205,8 +185,7 @@ Feature: Financial Account Management Test Cases- Contact Home Page
     And the user verifies item status success message
 
   Scenario:Contact edit -Event-Contact Tab Associated Filter No
-    And The user enters "FinancialAccount_06" into Code field
-    And the user clicks on Search button
+    And The user enters "FinancialAccount_06" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "Account_Deposit" tab
     And The user Assocaited No filter

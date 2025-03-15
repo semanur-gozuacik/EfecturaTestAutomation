@@ -29,7 +29,7 @@ public class ItemOverviewPage extends BasePage {
     @FindBy(xpath = "//span[@id='refresh']")
     private WebElement itemOverviewRefreshButton;
 
-    @FindBy(xpath = "//button[@id='items-reset-basic']")
+    @FindBy(xpath = "//a[@title='Reset Filters SB']//i[@class='fa fa-undo']")
     private WebElement basicFilterResetBtn;
 
     public void goToItemOverviewPage(String item) {
