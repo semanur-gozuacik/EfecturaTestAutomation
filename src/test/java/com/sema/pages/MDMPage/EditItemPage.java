@@ -2,6 +2,7 @@ package com.sema.pages.MDMPage;
 
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
+import lombok.Getter;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,6 +14,7 @@ import java.util.List;
 import static com.sema.utilities.BrowserUtils.isButtonActive;
 
 
+@Getter
 public class EditItemPage extends BasePage {
 
 
@@ -56,6 +58,21 @@ public class EditItemPage extends BasePage {
 
     @FindBy(xpath = "//ul[@class='nav nav-tabs current_nav_tabs']//li//a")
     private List<WebElement> editItemTabs;
+
+    @FindBy(xpath = "//*[@id='association-table']/tbody/tr/td/input")
+    private List<WebElement> associateCheckBoxes;
+
+    @FindBy(xpath = "//div[@id='saveChangeButton']")
+    private WebElement saveChangesBtn;
+
+    @FindBy(xpath = "//textarea[@id='comment']")
+    private WebElement saveCommentTextarea;
+
+    @FindBy(xpath = "//button[@id='floatingSaveButton']")
+    private WebElement saveButtonInSaveChanges;
+
+    @FindBy(xpath = "/html/body/div[7]/div/div[1]/div[2]")
+    private WebElement infoMessage;
 
 
     public void clickRuleTab() {
@@ -131,16 +148,10 @@ public class EditItemPage extends BasePage {
         return stringList;
     }
 
-    public void useTextFilterInAssocTab(String value, String columnName) {
-        List<String> headers = getStringListFromWebElementList(assocTabTableHeaders);
-        System.out.println(headers.toString());
-        int index = headers.indexOf(columnName.toLowerCase());
-        System.out.println("AAAAAAAAAAAAA + " + index);
-        WebElement filter = assocTabFilters.get(index);
-        BrowserUtils.wait(2);
-//        filter.findElement(By.xpath("//input")).sendKeys(value);
-        filter.sendKeys(value);
-        BrowserUtils.wait(30);
-    }
+    // you can use selectFilter as IsAssociated, Family, ItemStatuses in feature file
+    public void selectOptionInSelectFilter(String selectOption, String selectFilter) {
+        WebElement selectElement = driver.findElement(By.xpath("//select[@id='association-table-" + selectFilter + "']"));
+        BrowserUtils.selectDropdownOptionByVisibleText(selectElement,selectOption);
 
+    }
 }

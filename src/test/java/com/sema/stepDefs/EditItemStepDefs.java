@@ -1,8 +1,10 @@
 package com.sema.stepDefs;
 
+import com.sema.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class EditItemStepDefs extends BaseStep{
 
@@ -21,8 +23,28 @@ public class EditItemStepDefs extends BaseStep{
         pages.editItemPage().clickPermissionPageBtn(tabName,btnName);
     }
 
-    @And("The user enter {string} into {string} filter text")
-    public void theUserEnterIntoFilterText(String value, String filterName) {
-        pages.editItemPage().useTextFilterInAssocTab(value,filterName);
+    @And("The user select {string} in {string} select filter")
+    public void theUserSelectInSelectFilter(String selectOption, String selectFilter) {
+        pages.editItemPage().selectOptionInSelectFilter(selectOption,selectFilter);
+    }
+
+    @And("The user select item at order {int} in association tab")
+    public void theUserSelectItemAtOrderInAssociationTab(int assocCheckboxOrder) {
+        BrowserUtils.wait(2);
+        pages.editItemPage().getAssociateCheckBoxes().get(assocCheckboxOrder - 1).click();
+    }
+
+    @And("The user saves changes with comment {string}")
+    public void theUserSavesChangesWithComment(String saveComment) {
+        pages.editItemPage().getSaveChangesBtn().click();
+        pages.editItemPage().getSaveCommentTextarea().sendKeys(saveComment);
+        pages.editItemPage().getSaveButtonInSaveChanges().click();
+    }
+
+    @Then("The user verifies info {string} appears")
+    public void theUserVerifiesInfoAppears(String expectedMessage) {
+        BrowserUtils.wait(3);
+        BrowserUtils.waitForVisibility(pages.editItemPage().getInfoMessage(),20);
+        Assert.assertEquals(expectedMessage, pages.editItemPage().getInfoMessage().getText());
     }
 }

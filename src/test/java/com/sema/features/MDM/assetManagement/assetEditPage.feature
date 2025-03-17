@@ -267,19 +267,23 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And  The user clicks on Edit Button
     And The user clicks "ACCOUNT_COOLER" tab
 #    And The user Assocaited All filter
-    And The user enter "familytest" into "Label" filter text
-    And The user clicks item
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
-    And The user clicks save button
-    And the user verifies item status success message
+    And The user select "No" in "IsAssociated" select filter
+#    And The user clicks item
+    And The user select item at order 1 in association tab
+#    And the user clicks on unsaved change button
+#    And The user enters "-------" in  comment area
+#    And The user clicks save button
+    And The user saves changes with comment "-------"
+#    And the user verifies item status success message
+    Then The user verifies info "Changes saved successfully." appears
 
   Scenario:Asset edit -ACCOUNT_COOLER Tab Associated Filter No
 #    And The user enters "Asset_19" into Code field
     And The user enters "Asset_19" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "ACCOUNT_COOLER" tab
-    And The user Assocaited No filter
+#    And The user Assocaited No filter
+    And The user select "No" in "IsAssociated" select filter
     Then The user verify No Filter
 
   Scenario:Asset edit -Attributes Tab
