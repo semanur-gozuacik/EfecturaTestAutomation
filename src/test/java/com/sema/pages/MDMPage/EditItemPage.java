@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.sema.utilities.BrowserUtils.isButtonActive;
@@ -33,23 +34,25 @@ public class EditItemPage extends BasePage {
     @FindBy(xpath = "//div[contains(@class,'accordion-title')]")
     private WebElement accordionTitle;
 
-    @FindBy(xpath = "//button[@id='group-permissions-tableFirstPage']")
-    private WebElement groupFirstPageBtn;
-
-    @FindBy(xpath = "//button[@id='group-permissions-tableLastPage']")
-    private WebElement groupLastPageBtn;
-
-    @FindBy(xpath = "//span[@id='group-permissions-table_previous']")
-    private WebElement groupPreviousPageBtn;
-
-    @FindBy(xpath = "//span[@id='group-permissions-table_next']")
-    private WebElement groupNextPageBtn;
-
-//    @FindBy(xpath = "//a[@id='_group-permissions']")
-//    private WebElement groupPermissionsTab;
+//    @FindBy(xpath = "//button[@id='group-permissions-tableFirstPage']")
+//    private WebElement groupFirstPageBtn;
 //
-//    @FindBy(xpath = "//a[@id='_user-permissions']")
-//    private WebElement userPermissionsTab;
+//    @FindBy(xpath = "//button[@id='group-permissions-tableLastPage']")
+//    private WebElement groupLastPageBtn;
+//
+//    @FindBy(xpath = "//span[@id='group-permissions-table_previous']")
+//    private WebElement groupPreviousPageBtn;
+//
+//    @FindBy(xpath = "//span[@id='group-permissions-table_next']")
+//    private WebElement groupNextPageBtn;
+
+    @FindBy(xpath = "//table[@id='association-table']/thead/tr[1]/th")
+    private List<WebElement> assocTabTableHeaders;
+
+    //table[@id='association-table']/thead/tr[2]/th/div/input   id'ler için
+
+    @FindBy(xpath = "//table[@id='association-table']/thead/tr[2]/th")
+    private List<WebElement> assocTabFilters;
 
     @FindBy(xpath = "//ul[@class='nav nav-tabs current_nav_tabs']//li//a")
     private List<WebElement> editItemTabs;
@@ -117,6 +120,27 @@ public class EditItemPage extends BasePage {
         BrowserUtils.wait(6);
         WebElement btn = driver.findElement(By.id(tabName.toLowerCase() + "-permissions-table" + btnName));
         btn.click();
+    }
+
+    public static List<String> getStringListFromWebElementList(List<WebElement> webElementList) {
+        List<String> stringList = new ArrayList<>();
+        BrowserUtils.wait(2);
+        for (WebElement element : webElementList) {
+            stringList.add(element.getText().toLowerCase());
+        }
+        return stringList;
+    }
+
+    public void useTextFilterInAssocTab(String value, String columnName) {
+        List<String> headers = getStringListFromWebElementList(assocTabTableHeaders);
+        System.out.println(headers.toString());
+        int index = headers.indexOf(columnName.toLowerCase());
+        System.out.println("AAAAAAAAAAAAA + " + index);
+        WebElement filter = assocTabFilters.get(index);
+        BrowserUtils.wait(2);
+//        filter.findElement(By.xpath("//input")).sendKeys(value);
+        filter.sendKeys(value);
+        BrowserUtils.wait(30);
     }
 
 }

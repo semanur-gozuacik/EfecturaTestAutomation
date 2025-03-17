@@ -21,4 +21,8 @@ public class EditItemStepDefs extends BaseStep{
         pages.editItemPage().clickPermissionPageBtn(tabName,btnName);
     }
 
+    @And("The user enter {string} into {string} filter text")
+    public void theUserEnterIntoFilterText(String value, String filterName) {
+        pages.editItemPage().useTextFilterInAssocTab(value,filterName);
+    }
 }

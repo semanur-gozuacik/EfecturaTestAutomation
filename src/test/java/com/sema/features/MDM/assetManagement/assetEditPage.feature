@@ -266,7 +266,8 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user enters "Asset_19" into "Code" filter text input box
     And  The user clicks on Edit Button
     And The user clicks "ACCOUNT_COOLER" tab
-    And The user Assocaited All filter
+#    And The user Assocaited All filter
+    And The user enter "familytest" into "Label" filter text
     And The user clicks item
     And the user clicks on unsaved change button
     And The user enters "-------" in  comment area
