@@ -11,6 +11,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     When The user open side accordion in overview
     When The user clicks on Contact  category
+    When The user selects "Contact" as main category
     And The user enters "5071245698" into "Code" filter text input box
     And The user clicks on Edit Button
     Then The user verify Edit Page

@@ -1,6 +1,5 @@
 package com.sema.pages;
 import com.sema.utilities.Driver;
-import com.sema.utilities.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,6 +22,9 @@ public class BasePage {
 
     @FindBy(xpath = "//*[@id='renderBodyWrap']/div[6]/div[1]")
     protected WebElement accordionButton;
+
+    @FindBy(xpath = "//button[@id='configure-columns']")
+    private WebElement columnsBtn;
 
     protected WebDriver driver = Driver.getDriver();
     protected WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

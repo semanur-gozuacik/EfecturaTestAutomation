@@ -36,18 +36,6 @@ public class EditItemPage extends BasePage {
     @FindBy(xpath = "//div[contains(@class,'accordion-title')]")
     private WebElement accordionTitle;
 
-//    @FindBy(xpath = "//button[@id='group-permissions-tableFirstPage']")
-//    private WebElement groupFirstPageBtn;
-//
-//    @FindBy(xpath = "//button[@id='group-permissions-tableLastPage']")
-//    private WebElement groupLastPageBtn;
-//
-//    @FindBy(xpath = "//span[@id='group-permissions-table_previous']")
-//    private WebElement groupPreviousPageBtn;
-//
-//    @FindBy(xpath = "//span[@id='group-permissions-table_next']")
-//    private WebElement groupNextPageBtn;
-
     @FindBy(xpath = "//table[@id='association-table']/thead/tr[1]/th")
     private List<WebElement> assocTabTableHeaders;
 
@@ -73,6 +61,15 @@ public class EditItemPage extends BasePage {
 
     @FindBy(xpath = "/html/body/div[7]/div/div[1]/div[2]")
     private WebElement infoMessage;
+
+    @FindBy(xpath = "//*[@id='association-table']/tbody/tr/td[4]/div")
+    private List<WebElement> isAssociatedValues;
+
+    @FindBy(id = "association-table")
+    private WebElement associationTable;
+
+    @FindBy(xpath = "//div[3]/div/div/div[1]/h4[contains(text(),'Column Selection')]")
+    private WebElement associationTableColumnsBtn;
 
 
     public void clickRuleTab() {
