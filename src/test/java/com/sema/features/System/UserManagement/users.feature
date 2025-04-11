@@ -85,6 +85,7 @@ Feature: Users Management Test Cases
     And the user verify on first name filter functionality "98765"
 
 
+
   Scenario: Verify First Name Filter -Valid Partial UserName
     And The user enters "98" into first name field
     And the user verify on first name filter functionality "98"-partial first name
