@@ -170,8 +170,7 @@ public class MDMContactHomePageStepDef extends BaseStep {
 
     @Then("the user clicks on Reset button")
     public void the_user_clicks_on_reset_button() {
-//        pages.contactHomePage().clicksResetButton();
-        pages.itemOverviewPage().getBasicFilterResetBtn().click();
+        pages.contactHomePage().clicksResetButton();
         BrowserUtils.wait(5);
     }
 

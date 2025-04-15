@@ -1,6 +1,7 @@
 package com.sema.stepDefs;
 
 import com.sema.utilities.BrowserUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -160,4 +161,7 @@ public class BlackListHomePageStepDefs extends BaseStep {
        pages.blackListPage().onTheBlackListPage();
     }
 
+    @And("the user clicks on Reset button black list")
+    public void theUserClicksOnResetButtonBlackList() {pages.blackListPage().clickresetbuttun();
+    }
 }

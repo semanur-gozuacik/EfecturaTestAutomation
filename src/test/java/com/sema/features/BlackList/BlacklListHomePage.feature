@@ -20,8 +20,8 @@ Feature: BlackList Test Cases- Black List Home Page
 
   Scenario: Reset Button Control
     When  The user enters "fullNumber" into the phone number field
-    And the user clicks on Reset button
-    And the user verify Reset button functionality in blackList
+    And the user clicks on Reset button black list
+
 
   Scenario: Delete Button Functionality Control - Cancel Button
     When  The user enters "fullNumber" into the phone number field
