@@ -137,6 +137,54 @@ public class CommonExcelReader {
 
         return cellValue;
     }
+
+    public static void updateColumnRange(String filePath, String colName, int startRowIndex, int endRowIndex, String newValue) throws IOException {
+        FileInputStream fileInputStream = new FileInputStream(new File(filePath));
+        Workbook workbook = new XSSFWorkbook(fileInputStream);
+        Sheet sheet = workbook.getSheetAt(0);
+
+        // Başlık satırını al
+        Row headerRow = sheet.getRow(0);
+
+        // Sütun adını sütun indeksine çevir
+        int colIndex = -1;
+        for (Cell cell : headerRow) {
+            if (cell.getStringCellValue().equalsIgnoreCase(colName)) {
+                colIndex = cell.getColumnIndex();
+                break;
+            }
+        }
+
+        // Sütun bulunamazsa hata fırlat
+        if (colIndex == -1) {
+            workbook.close();
+            fileInputStream.close();
+            throw new IllegalArgumentException("Sütun adı bulunamadı: " + colName);
+        }
+
+        // Belirtilen aralıktaki satırları güncelle
+        for (int i = startRowIndex; i <= endRowIndex; i++) {
+            Row row = sheet.getRow(i);
+            if (row == null) {
+                row = sheet.createRow(i);
+            }
+
+            Cell cell = row.getCell(colIndex);
+            if (cell == null) {
+                cell = row.createCell(colIndex);
+            }
+
+            cell.setCellValue(newValue);
+        }
+
+        // Değişiklikleri kaydet
+        fileInputStream.close();
+        FileOutputStream fileOutputStream = new FileOutputStream(new File(filePath));
+        workbook.write(fileOutputStream);
+        fileOutputStream.close();
+        workbook.close();
+    }
+
 }
 
 
