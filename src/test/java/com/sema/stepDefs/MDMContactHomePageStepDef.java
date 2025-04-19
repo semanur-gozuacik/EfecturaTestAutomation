@@ -172,6 +172,7 @@ public class MDMContactHomePageStepDef extends BaseStep {
     public void the_user_clicks_on_reset_button() {
         pages.contactHomePage().clicksResetButton();
         BrowserUtils.wait(5);
+        BrowserUtils.wait(120);
     }
 
     @Then("the user verify Reset button functionality")

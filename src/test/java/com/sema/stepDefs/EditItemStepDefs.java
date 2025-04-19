@@ -1,10 +1,13 @@
 package com.sema.stepDefs;
 
+import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+
+import java.util.List;
 
 public class EditItemStepDefs extends BaseStep{
 
@@ -46,5 +49,17 @@ public class EditItemStepDefs extends BaseStep{
         BrowserUtils.wait(3);
         BrowserUtils.waitForVisibility(pages.editItemPage().getInfoMessage(),20);
         Assert.assertEquals(expectedMessage, pages.editItemPage().getInfoMessage().getText());
+    }
+
+    @Then("The user verify {string} filter with value {string}")
+    public void theUserVerifyFilterWithValue(String columnName, String expectedValue) {
+        BrowserUtils.wait(2);
+        List<String> values =  BasePage.getColumnData(pages.editItemPage().getAssociationTable(),columnName);
+
+        System.out.println(values);
+        BrowserUtils.wait(10);
+        for (String actualValue : values) {
+            Assert.assertEquals(expectedValue,actualValue);
+        }
     }
 }

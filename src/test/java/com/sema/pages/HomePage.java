@@ -193,6 +193,7 @@ public class HomePage extends BasePage {
     public void verifySystemElementSymbol(int timeout) {
         BrowserUtils.waitForVisibility(settingsElementSymbol, timeout);
         Assert.assertTrue(settingsElementSymbol.isDisplayed());
+        BrowserUtils.wait(50);
     }
 
     public void mouseoverOnTheSystemElement() {

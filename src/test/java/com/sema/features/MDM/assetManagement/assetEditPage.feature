@@ -284,7 +284,8 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user clicks "ACCOUNT_COOLER" tab
 #    And The user Assocaited No filter
     And The user select "No" in "IsAssociated" select filter
-    Then The user verify No Filter
+#    Then The user verify No Filter
+    Then The user verify "Associated" filter with value "No"
 
   Scenario:Asset edit -Attributes Tab
 #    And The user enters "Asset_19" into Code field

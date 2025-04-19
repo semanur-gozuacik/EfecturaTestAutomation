@@ -1,9 +1,9 @@
 package com.sema.stepDefs;
 
-import com.sema.pages.SystemPage.CurrenciesPage;
 import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.Driver;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -23,5 +23,10 @@ public class ItemOverviewStepDefs extends BaseStep {
         WebElement textFilterInputBox = Driver.getDriver().findElement(By.xpath(locate));
         String actualValue = BrowserUtils.getValueInInputBox(textFilterInputBox);
         Assert.assertEquals("", actualValue);
+    }
+
+    @When("The user selects {string} as main category")
+    public void theUserSelectsAsMainCategory(String mainCategory) {
+        BrowserUtils.selectDropdownOptionByVisibleText(pages.itemOverviewPage().getCategorySelect(), mainCategory);
     }
 }

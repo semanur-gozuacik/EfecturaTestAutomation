@@ -32,6 +32,11 @@ public class ItemOverviewPage extends BasePage {
     @FindBy(xpath = "//a[@title='Reset Filters SB']//i[@class='fa fa-undo']")
     private WebElement basicFilterResetBtn;
 
+    @FindBy(xpath = "//select[@id='categories']")
+    private WebElement categorySelect;
+
+
+
     public void goToItemOverviewPage(String item) {
         driver.get(ConfigurationReader.getProperty("itemLinkWithoutItemName") + item);
     }

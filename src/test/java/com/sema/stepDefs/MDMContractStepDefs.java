@@ -1,10 +1,9 @@
 package com.sema.stepDefs;
 
-
-import com.sema.utilities.BrowserUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 
 public class MDMContractStepDefs extends BaseStep {
     public MDMContractStepDefs() {
