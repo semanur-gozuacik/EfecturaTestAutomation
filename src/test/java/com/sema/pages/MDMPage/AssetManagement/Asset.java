@@ -2,6 +2,7 @@ package com.sema.pages.MDMPage.AssetManagement;
 
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
+import lombok.Getter;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,6 +13,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
+@Getter
 public class Asset extends BasePage {
 
     @FindBy(xpath = "//a[@id='_fast-item-info']")
@@ -80,6 +82,8 @@ public class Asset extends BasePage {
     private WebElement deletedListItemAssetOtomasyonVerify;
     @FindBy(xpath = "//li[normalize-space()='otomasyon']//i[@class='fa fa-trash edit-icon']")
     private WebElement deleteListButtonAssetOtomasyon;
+
+
 
 
     public Asset() {

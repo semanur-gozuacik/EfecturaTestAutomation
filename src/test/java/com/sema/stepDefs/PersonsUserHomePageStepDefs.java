@@ -1,6 +1,7 @@
 package com.sema.stepDefs;
 
-import com.sema.pages.BasePage;
+
+import com.sema.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 
@@ -51,21 +52,34 @@ pages.userHomePage().clickRefresgButton();
     }
 
     @And("The user enters columns button")
-    public void theUserEntersColumnsButton() {pages.userHomePage().columnsButton();
-        
+    public void theUserEntersColumnsButton() {
+        BrowserUtils.waitForVisibility(pages.itemOverviewPage().getConfigureColumnsButton(),20);
+        pages.itemOverviewPage().getConfigureColumnsButton().click();
+        BrowserUtils.wait(3);
+//        pages.userHomePage().columnsButton();
     }
 
     @And("The user selected columns")
-    public void theUserSelectedColumns() {pages.userHomePage().setSelectedColumns();
+    public void theUserSelectedColumns() {
+        BrowserUtils.wait(1);
+        BrowserUtils.dragAndDrop(pages.itemOverviewPage().getToBeSelectedColumns().get(0),
+                pages.itemOverviewPage().getAlreadySelectedColumns().get(0));
         
     }
 
     @And("The user clicks cancel button columns")
-    public void theUserClicksCancelButtonColumns() {pages.userHomePage().setColumnsCancelButton();
+    public void theUserClicksCancelButtonColumns() {
+        BrowserUtils.wait(3);
+        BrowserUtils.waitForVisibility(pages.itemOverviewPage().getColumnsCancelButton(),15);
+        pages.itemOverviewPage().getColumnsCancelButton().click();
     }
 
     @And("The user clicks save button columns")
-    public void theUserClicksSaveButtonColumns() {pages.userHomePage().setColumnsSaveButton();
+    public void theUserClicksSaveButtonColumns() {
+        BrowserUtils.waitForVisibility(pages.itemOverviewPage().getColumnsSaveButton(),5);
+        pages.itemOverviewPage().getColumnsSaveButton().click();
+        BrowserUtils.wait(5);
+//        pages.userHomePage().setColumnsSaveButton();
     }
 
     @And("The user clicks Default button columns")
