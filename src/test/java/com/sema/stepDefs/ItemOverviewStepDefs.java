@@ -29,4 +29,28 @@ public class ItemOverviewStepDefs extends BaseStep {
     public void theUserSelectsAsMainCategory(String mainCategory) {
         BrowserUtils.selectDropdownOptionByVisibleText(pages.itemOverviewPage().getCategorySelect(), mainCategory);
     }
+
+    @And("The user add {string} to columns")
+    public void theUserAddAbcToColumns(String columnName) {
+        WebElement matchingElement = pages.itemOverviewPage().getToBeSelectedColumns().stream()
+                .filter(el -> el.getText().trim().equalsIgnoreCase(columnName))
+                .findFirst()
+                .orElse(null);
+
+        BrowserUtils.dragAndDrop(matchingElement, pages.itemOverviewPage().getAlreadySelectedColumns().get(0));
+        BrowserUtils.wait(1);
+
+    }
+
+    @And("The user remove {string} to columns")
+    public void theUserRemoveAbcToColumns(String columnName) {
+        WebElement matchingElement = pages.itemOverviewPage().getAlreadySelectedColumns().stream()
+                .filter(el -> el.getText().trim().equalsIgnoreCase(columnName))
+                .findFirst()
+                .orElse(null);
+        System.out.println("already Element: " + matchingElement.getText());
+
+        BrowserUtils.dragAndDrop(matchingElement, pages.itemOverviewPage().getToBeSelectedArea());
+        BrowserUtils.wait(5);
+    }
 }

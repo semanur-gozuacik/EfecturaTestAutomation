@@ -35,6 +35,30 @@ public class ItemOverviewPage extends BasePage {
     @FindBy(xpath = "//select[@id='categories']")
     private WebElement categorySelect;
 
+    @FindBy(xpath = "//button[@id='configure-columns']")
+    private WebElement configureColumnsButton;
+
+    @FindBy(xpath = "//button[@id='cancelColumn']")
+    private WebElement columnsCancelButton;
+
+    @FindBy(xpath = "//button[@id='EfSaveColumns']")
+    private WebElement columnsSaveButton;
+
+    @FindBy(xpath = "//ul[@id='sortable2']/li")
+    private List<WebElement> alreadySelectedColumns;
+
+    @FindBy(xpath = "//ul[@id='sortable1']/li")
+    private List<WebElement> toBeSelectedColumns;
+
+    @FindBy(xpath = "//ul[@id='sortable1']")
+    private WebElement toBeSelectedArea;
+
+    @FindBy(xpath = "//a[@id='_fast-categories']")
+    private WebElement categoriesTabInCreateNewModal;
+
+    @FindBy(id = "createItem")
+    private WebElement createNewItemButton;
+
 
 
     public void goToItemOverviewPage(String item) {

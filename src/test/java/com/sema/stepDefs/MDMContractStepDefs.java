@@ -79,7 +79,8 @@ pages.homePage().mouseoverOnThePersonsElement();
 
     @Then("The User clicks on the createItem element")
     public void the_user_clicks_on_the_create_item_element() {
-        pages.contract().clickCreateNewItemButton();
+//        pages.contract().clickCreateNewItemButton();
+        pages.itemOverviewPage().getCreateNewItemButton().click();
     }
 
     @Then("The User waits until the uniqueCode element is visible with a timeout of {int} seconds")
@@ -112,7 +113,8 @@ pages.homePage().mouseoverOnThePersonsElement();
     }
     @Then("The User clicks on the Categories element")
     public void the_user_clicks_on_the_categories_element() {
-       pages.contract().clickCategoriesButton();
+//       pages.contract().clickCategoriesButton();
+       pages.itemOverviewPage().getCategoriesTabInCreateNewModal().click();
     }
     @Then("The User clicks on the createButton element")
     public void the_user_clicks_on_the_create_button_element() {

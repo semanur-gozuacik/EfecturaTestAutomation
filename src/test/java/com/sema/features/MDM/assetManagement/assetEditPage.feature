@@ -295,10 +295,16 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario: Asset Home Page Columns - Cancel Button
     And  The user enters columns button
-    And  The user selected columns
+#    And  The user selected columns
     And  The user clicks cancel button columns
+
+  Scenario: Asset Home Page Columns - remove column
+    And  The user enters columns button
+    And The user remove 'Family' to columns
+    And  The user clicks save button columns
 
   Scenario: Asset Home Page Columns - save Button
     And  The user enters columns button
-    And  The user selected columns
+#    And  The user selected columns
+    And The user add 'Family' to columns
     And  The user clicks save button columns
