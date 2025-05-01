@@ -17,9 +17,13 @@ Background:
     And  The User presses the down arrow key and then presses Enter in the Choose Family element
     And  The User clicks on the Categories element
     Then The User waits until the Asset Categories element is visible with a timeout of 120 seconds
-    And   The User clicks on the new node element
-    And   The User clicks on the createButton element
-    Then   The User waits until the page contains "EMPTY_FAMILY" with a timeout of 15 seconds
+#    And   The User clicks on the new node element
+    And The user select 'New node' for category in create
+#    And   The User clicks on the createButton element
+    And The user click on 'Create' button in create modal
+#    Then   The User waits until the page contains "EMPTY_FAMILY" with a timeout of 15 seconds
+    Then The user verify 'EMPTY_FAMILY' warning
+
 
   Scenario: Create Asset on Fletum without Categories
     And   The User clicks on the createItem element
@@ -42,19 +46,22 @@ Background:
     And   The User clicks on the cancelButton element
     Then   The User waits until the createItem element is visible with a timeout of 120 seconds
 
-  Scenario Outline: Create Asset on Fletum with valid credentials - "<Family>"
+  Scenario: Create Asset on Fletum with valid credentials - "<Family>"
     And   The User clicks on the createItem element
     Given The user waits until the element with id  Infoitem is visible.
     Then The User waits until the uniqueCode element is visible with a timeout of 120 seconds
     And   The User inputs the value from cont into the inputCode field
-    And   The User presses the down arrow key and then presses enter in the "<Family>" element in Asset
+#    And   The User presses the down arrow key and then presses enter in the "<Family>" element in Asset
+    And The user select family 'Cooler' in create modal
     And  The User clicks on the Categories element
     And  The User clicks on the Asset Categories element
-    And  The User clicks on the new node element
-    And  The User clicks on the createButton element
-    Examples:
-      |Family|
-      |Cooler|
+#    And  The User clicks on the new node element
+    And The user select 'New node' for category in create
+#    And  The User clicks on the createButton element
+    And The user click on 'Create' button in create modal
+#    Examples:
+#      |Family|
+#      |Cooler|
 
 
 Scenario Outline: Delete Asset on Fletum with valid credentials - "<Family>"-cancel button

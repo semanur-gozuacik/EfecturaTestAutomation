@@ -31,7 +31,7 @@ public class ItemOverviewStepDefs extends BaseStep {
     }
 
     @And("The user add {string} to columns")
-    public void theUserAddAbcToColumns(String columnName) {
+    public void theUserAddToColumns(String columnName) {
         WebElement matchingElement = pages.itemOverviewPage().getToBeSelectedColumns().stream()
                 .filter(el -> el.getText().trim().equalsIgnoreCase(columnName))
                 .findFirst()
@@ -42,8 +42,8 @@ public class ItemOverviewStepDefs extends BaseStep {
 
     }
 
-    @And("The user remove {string} to columns")
-    public void theUserRemoveAbcToColumns(String columnName) {
+    @And("The user remove {string} from columns")
+    public void theUserRemoveFromColumns(String columnName) {
         WebElement matchingElement = pages.itemOverviewPage().getAlreadySelectedColumns().stream()
                 .filter(el -> el.getText().trim().equalsIgnoreCase(columnName))
                 .findFirst()
@@ -53,4 +53,22 @@ public class ItemOverviewStepDefs extends BaseStep {
         BrowserUtils.dragAndDrop(matchingElement, pages.itemOverviewPage().getToBeSelectedArea());
         BrowserUtils.wait(5);
     }
+
+    @And("The user select {string} for category in create")
+    public void theUserSelectNewNodeForCategoryInCreate(String category) {
+        WebElement categoryElement = Driver.getDriver().findElement(By.xpath("//ul/li/ul/li/a[text()='" + category + "']"));
+        categoryElement.click();
+    }
+
+    @And("The user click on {string} button in create modal")
+    public void theUserClickOnCreateButtonInCreateModal(String btnName) {
+        if (btnName.equalsIgnoreCase("Create")) {
+            pages.itemOverviewPage().getCreateButtonInCreateModal().click();
+        } else if (btnName.equalsIgnoreCase("Cancel")) {
+            pages.itemOverviewPage().getCancelButtonInCreateModal().click();
+        } else {
+            throw new RuntimeException("Invalid Button Name in this modal: " + btnName);
+        }
+    }
+
 }
