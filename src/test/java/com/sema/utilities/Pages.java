@@ -2,6 +2,7 @@ package com.sema.utilities;
 
 
 import com.sema.pages.Analysis.CocpitGeneralDashboard;
+import com.sema.pages.GeneralPage;
 import com.sema.pages.HomePage;
 import com.sema.pages.LoginPage;
 import com.sema.pages.MDMPage.AccountManagement.AccountHomePage;
@@ -78,6 +79,7 @@ public class Pages {
     private Campaign_AccountRulePage campaignAccountRulePage;
     private MembershipHomePage membershipHomePage;
     private RoofCardPage roofCardPage;
+    private GeneralPage generalPage;
 
 
 
@@ -121,6 +123,7 @@ public class Pages {
             this.campaignAccountRulePage = new Campaign_AccountRulePage();
             this.membershipHomePage=new MembershipHomePage();
             this.roofCardPage=new RoofCardPage();
+            this.generalPage = new GeneralPage();
 
 
 
@@ -169,6 +172,7 @@ public class Pages {
     public Campaign_AccountRulePage campaign_accountRulePage() {return campaignAccountRulePage;}
     public MembershipHomePage membershipHomePage(){return membershipHomePage;}
     public RoofCardPage roofCardPage(){return roofCardPage;}
+    public GeneralPage generalPage(){return generalPage;}
 
 
 

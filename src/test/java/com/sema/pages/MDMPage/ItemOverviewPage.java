@@ -59,6 +59,12 @@ public class ItemOverviewPage extends BasePage {
     @FindBy(id = "createItem")
     private WebElement createNewItemButton;
 
+    @FindBy(xpath = "//button[@id='saveItem']")
+    private WebElement createButtonInCreateModal;
+
+    @FindBy(xpath = "//div[contains(@class,'modalFooter')]/button[contains(text(),'Cancel')]")
+    private WebElement cancelButtonInCreateModal;
+
 
 
     public void goToItemOverviewPage(String item) {

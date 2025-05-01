@@ -300,7 +300,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 
   Scenario: Asset Home Page Columns - remove column
     And  The user enters columns button
-    And The user remove 'Family' to columns
+    And The user remove 'Family' from columns
     And  The user clicks save button columns
 
   Scenario: Asset Home Page Columns - save Button

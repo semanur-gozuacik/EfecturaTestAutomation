@@ -1,5 +1,6 @@
 package com.sema.pages;
 import com.sema.utilities.Driver;
+import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@Getter
 public class BasePage {
 
 
@@ -25,6 +27,7 @@ public class BasePage {
 
     @FindBy(xpath = "//button[@id='configure-columns']")
     private WebElement columnsBtn;
+
 
     protected WebDriver driver = Driver.getDriver();
     protected WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
