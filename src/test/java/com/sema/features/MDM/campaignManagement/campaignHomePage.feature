@@ -30,17 +30,19 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And the user verify on label filter functionality with partial unique code "testbirthday1561"- Campaign
 
   Scenario: Verify Label Filter - Partial Label
-    And The user enters "test" into Label field
+#    And The user enters "test" into Label field
     And The user enters "test" into "Label" filter text input box
     And the user verify on label filter functionality with partial unique code "Test"- Campaign
 
   Scenario: Verify Label Filter - Invalid  Label
-    And The user enters "sema12345" into Label field
+#    And The user enters "sema12345" into Label field
+    And The user enters "sema12345" into "Label" filter text input box
     And the user verify on code filter functionality  with invalid unique code "No matching records found"
 
-  Scenario Outline: Filter "<ItemStatus>" Item Statuses
-    And the user clicks on ItemStatuses
-    And the user clicks on "<ItemStatus>"
+  Scenario Outline: Filter "<ItemStatus>" Item Statuses7
+    And The user select "<ItemStatus>" in "ItemStatus" select filter
+#    And the user clicks on ItemStatuses
+#    And the user clicks on "<ItemStatus>"
     # And the incoming filter for "<ItemStatus>" should contain
     Examples:
        |ItemStatus |
@@ -52,14 +54,15 @@ Feature: Campaign Management Test Cases- Campaign Home Page
   Scenario: Reset Button Control
    # And The user enters "sema12345" into Code field
     And The user enters "sema12345" into "Label" filter text input box
-    And The user enters "testbirthday1561" into Label field
+#    And The user enters "testbirthday1561" into Label field
     And the user clicks on Reset button
-    And the user verify Reset button functionality
+#    And the user verify Reset button functionality
+    And The user verify Reset button func for "Label" filter
 
   Scenario: Deleting an item and declining the popup message
     #And The user enters "TESTSETSET123123" into Code field
     And The user enters "TESTSETSET123123" into "Code" filter text input box
-    And the user clicks on Search button
+#    And the user clicks on Search button
     And The user clicks on Delete
     And The user declines the popup message
     Then The user verify that "TESTSETSET123123" is visible-campaign
