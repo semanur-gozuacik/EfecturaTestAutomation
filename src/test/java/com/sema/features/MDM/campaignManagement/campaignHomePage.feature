@@ -51,6 +51,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
        |On Hold    |
        |Draft      |
 
+
   Scenario: Reset Button Control
    # And The user enters "sema12345" into Code field
     And The user enters "sema12345" into "Label" filter text input box
