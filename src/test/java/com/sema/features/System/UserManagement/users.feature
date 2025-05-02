@@ -66,23 +66,26 @@ Feature: Users Management Test Cases
     And the user verify on username filter functionality "No matching records found"-invalid username
 
   Scenario: Verify UserEmail Filter -Valid Unique UserName
-    And The click filter username
-    And The user enters "yana@efectura.com" into userEmail field
+     #And The click filter username
+    And The user enters "yana@efectura.com" into "UserName" filter text input box
     And the user verify on userEmail filter functionality "yana@efectura.com"
 
   Scenario: Verify UserEmail Filter -Valid Partial UserName
     And The click filter username
+    And The user enters "test" into "UserName" filter text input box
     And The user enters "test" into userEmail field
     And the user verify on username filter functionality "test"-partial username
 
   Scenario: Verify UserEmail Filter -Invalid Unique UserName
-    And The click filter username
-    And The user enters "1234semaaa" into userEmail field
+    And The user enters "1234semaaa" into "First Name" filter text input box
+     #And The user enters "1234semaaa" into userEmail field
     And the user verify on username filter functionality "No matching records found"-invalid username
 
   Scenario: Verify First Name Filter -Valid Unique UserName
     And The user enters "98765" into first name field
     And the user verify on first name filter functionality "98765"
+
+
 
   Scenario: Verify First Name Filter -Valid Partial UserName
     And The user enters "98" into first name field

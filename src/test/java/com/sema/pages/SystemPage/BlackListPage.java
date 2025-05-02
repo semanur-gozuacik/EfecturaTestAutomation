@@ -46,6 +46,8 @@ public class BlackListPage extends BasePage {
     private WebElement cardNumbersField;
     @FindBy(xpath = "//input[@id='passiveCardNumber']")
     private WebElement passiveCardNumbersField;
+    @FindBy(xpath = "//span[@id=\"blacklist_table-Reset\"]//span[@class=\"icon\"]")
+    private WebElement blacklistresetbutton;
 
     public BlackListPage() {
     }
@@ -112,6 +114,8 @@ public class BlackListPage extends BasePage {
     public void clickDeleteButton(){
         BrowserUtils.waitForVisibility(deleteButton,20);
         deleteButton.click();
+
+
     }
     public void clickDeleteButtonPopup(){
         BrowserUtils.waitForVisibility(deleteButtonPopup,20);
@@ -185,5 +189,7 @@ public class BlackListPage extends BasePage {
     public void onTheBlackListPage(){
         driver.navigate().to("https://sandbox-ui.efectura.com/Settings/BlackList");
     }
-
+    public void clickresetbuttun(){
+        blacklistresetbutton.click();
+    }
 }

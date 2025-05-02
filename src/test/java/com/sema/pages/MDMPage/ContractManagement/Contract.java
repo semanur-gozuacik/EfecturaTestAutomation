@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class Contract extends BasePage {
-    @FindBy(id = "createItem")
+    @FindBy(xpath = "//button[@id=\"createItem\"]//span[@class=\"icon \"]")
     private WebElement createNewItemButton;
     @FindBy(id = "inputCode")
     private WebElement uniqueCodeElement;
