@@ -170,6 +170,7 @@ public class Pages {
     public Campaign_AccountRulePage campaign_accountRulePage() {return campaignAccountRulePage;}
     public MembershipHomePage membershipHomePage(){return membershipHomePage;}
     public RoofCardPage roofCardPage(){return roofCardPage;}
+
     public GeneralPage generalPage(){return generalPage;}
 
 
