@@ -162,9 +162,7 @@ public class Pages {
     public ItemStatusesPage itemStatusesPage() {return itemStatusesPage;}
     public SalesOrganization salesOrganization() {return salesOrganization;}
     public FileManagementHomePage fileManagementHomePage(){return fileManagementHomePage;}
-
     public FinancialAccount financialAccount(){return financialAccount;}
-
     public Membership_AccountRulePage membershipAccountRulePage(){return membershipAccountRulePage;}
     public EditItemPage editItemPage() {return editItemPage;}
     public ItemOverviewPage itemOverviewPage() {return itemOverviewPage;}
