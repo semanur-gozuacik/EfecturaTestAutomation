@@ -19,6 +19,7 @@ public class CampaignHomePage extends BasePage {
     public CampaignHomePage() {
     }
 
+
     public void verifyCampaignCodeFilter(String code) {
         BrowserUtils.wait(5);
 //        Assert.assertEquals(getColumnData(itemOverviewTable, "Code").get(0), code);
