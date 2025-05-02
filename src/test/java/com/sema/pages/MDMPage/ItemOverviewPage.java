@@ -65,6 +65,9 @@ public class ItemOverviewPage extends BasePage {
     @FindBy(xpath = "//div[contains(@class,'modalFooter')]/button[contains(text(),'Cancel')]")
     private WebElement cancelButtonInCreateModal;
 
+    @FindBy(xpath = "//select[@id='items-ItemStatuses']")
+    private WebElement itemStatusSelect;
+
 
 
     public void goToItemOverviewPage(String item) {

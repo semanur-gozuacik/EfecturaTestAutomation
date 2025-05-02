@@ -69,6 +69,13 @@ public class ItemOverviewStepDefs extends BaseStep {
         } else {
             throw new RuntimeException("Invalid Button Name in this modal: " + btnName);
         }
+
+    }
+
+    @And("The user click on {string} tab in create modal")
+    public void theUserClickOnCategoriesTabInCreateModal(String tabNameInCreateModal) {
+        WebElement tab = Driver.getDriver().findElement(By.xpath("//a[text()='" + tabNameInCreateModal + "']"));
+        tab.click();
     }
 
 }

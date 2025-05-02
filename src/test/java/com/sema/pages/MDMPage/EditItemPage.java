@@ -147,7 +147,8 @@ public class EditItemPage extends BasePage {
 
     // you can use selectFilter as IsAssociated, Family, ItemStatuses in feature file
     public void selectOptionInSelectFilter(String selectOption, String selectFilter) {
-        WebElement selectElement = driver.findElement(By.xpath("//select[@id='association-table-" + selectFilter + "']"));
+
+        WebElement selectElement = driver.findElement(By.xpath("//select[contains(@id,'-" + selectFilter + "')]"));
         BrowserUtils.selectDropdownOptionByVisibleText(selectElement,selectOption);
 
     }
