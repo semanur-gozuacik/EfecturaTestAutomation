@@ -11,33 +11,39 @@ Feature: Campaign Management Test Cases- Campaign Home Page
   Scenario: Verify Code Filter -Valid Unique Code
 #    And The user enters "welcometestgeneric122" into Code field
     And The user enters "welcometestgeneric122" into "Code" filter text input box
-    And the user verify on code filter functionality "welcometestgeneric122"-Campaign
+#    And the user verify on code filter functionality "welcometestgeneric122"-Campaign
+    Then The user verify "Code" text filter with value "welcometestgeneric122" in "overviewTable"
 
   Scenario:  Verify Code Filter -Valid Unique Code partial
 #    And The user enters "TEST" into Code field
     And The user enters "TEST" into "Code" filter text input box
-    And the user verify on code filter functionality with partial unique code "TEST"- Campaign
-    And the user verify on code filter functionality "TEST"-Campaign
+#    And the user verify on code filter functionality with partial unique code "TEST"- Campaign
+#    And the user verify on code filter functionality "TEST"-Campaign
+    Then The user verify "Code" text filter with value "TEST" in "overviewTable"
 
   Scenario: Verify Code Filter - Invalid Unique Code
 #    And The user enters "sema12345" into Code field
     And The user enters "sema12345" into "Code" filter text input box
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+#    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario: Verify Label Filter - Valid Label
 #    And The user enters "testbirthday1561" into Label field
     And The user enters "testbirthday1561" into "Label" filter text input box
-    And the user verify on label filter functionality with partial unique code "testbirthday1561"- Campaign
+#    And the user verify on label filter functionality with partial unique code "testbirthday1561"- Campaign
+    Then The user verify "Label" text filter with value "testbirthday1561" in "overviewTable"
 
   Scenario: Verify Label Filter - Partial Label
 #    And The user enters "test" into Label field
     And The user enters "test" into "Label" filter text input box
-    And the user verify on label filter functionality with partial unique code "Test"- Campaign
+#    And the user verify on label filter functionality with partial unique code "Test"- Campaign
+    Then The user verify "Label" text filter with value "test" in "overviewTable"
 
   Scenario: Verify Label Filter - Invalid  Label
 #    And The user enters "sema12345" into Label field
     And The user enters "sema12345" into "Label" filter text input box
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+#    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario Outline: Filter "<ItemStatus>" Item Statuses7
     And The user select "<ItemStatus>" in "ItemStatus" select filter

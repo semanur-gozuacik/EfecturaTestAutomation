@@ -12,4 +12,10 @@ public class GeneralPage extends BasePage {
 
     @FindBy(xpath = "//select[@id='chooseFamilies']")
     private WebElement familySelectInCreateModal;
+
+    @FindBy(xpath = "//tbody/tr/td[@class='dataTables_empty']")
+    private WebElement emptyDataTableInfo;
+
+
+
 }

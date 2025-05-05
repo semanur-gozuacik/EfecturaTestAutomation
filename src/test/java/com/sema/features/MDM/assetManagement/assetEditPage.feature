@@ -285,7 +285,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 #    And The user Assocaited No filter
     And The user select "No" in "IsAssociated" select filter
 #    Then The user verify No Filter
-    Then The user verify "Associated" filter with value "No"
+    Then The user verify "Associated" select filter with value "No" in "associationTable"
 
   Scenario:Asset edit -Attributes Tab
 #    And The user enters "Asset_19" into Code field
