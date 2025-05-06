@@ -78,4 +78,8 @@ public class ItemOverviewStepDefs extends BaseStep {
         tab.click();
     }
 
+    @And("The user clicks cancel button in overview delete popup")
+    public void theUserClicksCancelButtonInOverviewDeletePopup() {
+        pages.itemOverviewPage().getCancelBtnInDeleteModal().click();
+    }
 }

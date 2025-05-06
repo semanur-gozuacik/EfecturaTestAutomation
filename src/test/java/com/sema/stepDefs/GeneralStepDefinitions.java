@@ -56,4 +56,14 @@ public class GeneralStepDefinitions extends BaseStep {
     public void theUserVerifyEmptyDataTableInfoNoMatchingRecordsFound(String emptyTableInfo) {
         Assert.assertEquals(emptyTableInfo, pages.generalPage().getEmptyDataTableInfo().getText());
     }
+
+    @And("The User clicks on delete button in table")
+    public void theUserClicksOnDeleteButtonInTable() {
+        pages.generalPage().getDeleteBtnInTable().click();
+    }
+
+    @And("The user clicks on edit button in table")
+    public void theUserClicksOnEditButtonInTable() {
+        pages.generalPage().getEditBtnInTable().click();
+    }
 }

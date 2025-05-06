@@ -69,9 +69,12 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     #And The user enters "TESTSETSET123123" into Code field
     And The user enters "TESTSETSET123123" into "Code" filter text input box
 #    And the user clicks on Search button
-    And The user clicks on Delete
-    And The user declines the popup message
-    Then The user verify that "TESTSETSET123123" is visible-campaign
+#    And The user clicks on Delete
+    And The User clicks on delete button in table
+#    And The user declines the popup message
+    And The user clicks cancel button in overview delete popup
+#    Then The user verify that "TESTSETSET123123" is visible-campaign
+    Then The user verify "Code" text filter with value "TESTSETSET123123" in "overviewTable"
 
   Scenario: Verify My Count Star Item Functionality- One Contact
   #  And The user enters "TestWelcomeCampaignSecondPreview" into Code field

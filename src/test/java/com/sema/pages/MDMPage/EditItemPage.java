@@ -71,6 +71,9 @@ public class EditItemPage extends BasePage {
     @FindBy(xpath = "//div[3]/div/div/div[1]/h4[contains(text(),'Column Selection')]")
     private WebElement associationTableColumnsBtn;
 
+    @FindBy(xpath = "//button[@id='cancelPopup']")
+    private WebElement cancelBtnInDeletePopup;
+
 
     public void clickRuleTab() {
         BrowserUtils.wait(5);
@@ -121,7 +124,7 @@ public class EditItemPage extends BasePage {
     _next, _previous, LastPage, FirstPage
      */
     public void verifyButtonStatus(String tabName, String btnName, String btnStatus) {
-        BrowserUtils.wait(40);
+        BrowserUtils.wait(4);
         WebElement btn = driver.findElement(By.id(tabName.toLowerCase() + "-permissions-table" + btnName));
         if(btnStatus.equalsIgnoreCase("Active")) {
             Assert.assertTrue(isButtonActive(btn));

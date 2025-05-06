@@ -68,6 +68,10 @@ public class ItemOverviewPage extends BasePage {
     @FindBy(xpath = "//select[@id='items-ItemStatuses']")
     private WebElement itemStatusSelect;
 
+    @FindBy(xpath = "//button[contains(@id,'cancelPopup')]")
+    private WebElement cancelBtnInDeleteModal;
+
+
 
 
     public void goToItemOverviewPage(String item) {

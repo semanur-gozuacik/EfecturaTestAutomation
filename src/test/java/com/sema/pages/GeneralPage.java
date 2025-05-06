@@ -16,6 +16,12 @@ public class GeneralPage extends BasePage {
     @FindBy(xpath = "//tbody/tr/td[@class='dataTables_empty']")
     private WebElement emptyDataTableInfo;
 
+    @FindBy(xpath = "//a[contains(@class,'t-edit')]")
+    private WebElement editBtnInTable;
+
+    @FindBy(xpath = "//a[contains(@class,'danger-btn')]")
+    private WebElement deleteBtnInTable;
+
 
 
 }
