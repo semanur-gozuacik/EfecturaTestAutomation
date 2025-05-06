@@ -47,7 +47,7 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
   Scenario: Sales Organization Edit item removed list
     And  The user enters "TESTBM" into Code field
     And  the user clicks on Search button
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And  The user clicks removed button
     Then The user verifies item is removed
 
@@ -68,26 +68,26 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
 
   Scenario::Sales Organization Group Permission Verify Item First Page Button Unclickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks group permission tab
     #And  The user verifies previous button is not clickable asset
 
   Scenario::Sales Organization Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks group permission tab
     And  The user verifies previous page button is not clickable asset
 
   Scenario:Sales Organization Group Permission Verify Item next Button clickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks group permission tab
     When The user clicks next page button asset
     And  The user verifies next button is clickable asset
 
   Scenario:Sales Organization  Group Permission Verify Previous Page Button clickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks group permission tab
     When The user clicks next page button asset
     When The user clicks next page button asset
@@ -96,14 +96,14 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
 
   Scenario:Sales Organization Group Permission Verify Last Page Button clickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies last button is clickable asset
 
   Scenario:Sales Organization  User Permission Verify Previous Page Button clickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks user permission tab
     When The user clicks next page button user
     When The user clicks next page button user
@@ -112,34 +112,34 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
 
   Scenario:Sales Organization  User Permission Verify Last Page Button clickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies last button is clickable user
 
   Scenario:Sales Organization  User Permission Verify Last Page Button Unclickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks user permission tab
     When The user clicks last page button user
     And  The user verifies last button is unclickable asset
 
   Scenario:Sales Organization edit -SO_MRP Associated
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "BM_SM" tab
     And The user Assocaited All filter
 
   Scenario:Sales Organization  edit - SO_MRP Tab Associated Filter No
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "BM_SM" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 
   Scenario:Sales Organization  edit -SO_MRP  tab- All Filter
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "BM_SM" tab
     And The user Assocaited All filter
     And The user clicks item
@@ -160,7 +160,7 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
 
   Scenario Outline: Sales Organization Associated Tab Status Fılter "<Status>"
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And  The user clicks "BM_SM" tab
     And  The user clicks Associated status
     And  The user selects  "<Status>"
@@ -173,38 +173,38 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
 
   Scenario: Sales Organization  Export Entity Button - Attributes
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks Export Entity Button
     And The user clicks Export Attributes
     Then The user dowloand Export Entity verifies
 
   Scenario: Sales Organization  Export Entity Button - Associations
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks Export Entity Button
     And The user clicks Export Associations
     Then The user dowloand Export Entity verifies
 
   Scenario: Sales Organization Export Entity Button - Permission
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks Export Entity Button
     And The user clicks Export Permission
     Then The user dowloand Export Entity verifies
 
   Scenario:Sales Organization  edit - Categories Tab
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Categories" tab
 
   Scenario:Sales Organization edit - History Tab
     And The user enters "TESTBM" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "History" tab
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "TESTBM" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     And the user selects "<ItemStatus>"
        #And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area

@@ -43,12 +43,12 @@ Feature: Gift Creation and Management Home Page
 
   Scenario: Gift page edit verify
     And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
 
 
   Scenario Outline:Gift Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     And the user selects "<ItemStatus>"
       # And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area
@@ -63,12 +63,12 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift edit - Certificate Tab
     And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Certificate" tab
 
   Scenario:Gift edit - Gifts image Tab Associated
     And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Gifts image" tab
     And The user Assocaited All filter
     And The user clicks item
@@ -79,14 +79,14 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift edit -Gifts image Tab Associated Filter No
     And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Gifts image" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 
   Scenario:Gift Gifts image Associated Tab Code Filter Functionality
     And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Gifts image" tab
     And The user clicks on code filter Filter
     # And The user enters "1310202301"
@@ -94,7 +94,7 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift edit - GIFT_CONTACT Tab Associated
     And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "GIFT_CONTACT" tab
     And The user Assocaited All filter
     And The user clicks item
@@ -105,7 +105,7 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift edit -GIFT_CONTACT Tab Associated Filter No
     And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "GIFT_CONTACT" tab
     And The user Assocaited No filter
     Then The user verify No Filter
@@ -113,7 +113,7 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift edit - Gifts image Tab Associated
     And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Event-Gift" tab
     And The user Assocaited All filter
     And The user clicks item
@@ -124,17 +124,17 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift edit - history Tab
     And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "history" tab
 
   Scenario:Gift edit - ItemComment Tab
     And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "ItemComment" tab
 
   Scenario:Gift edit -Gifts image Tab Associated Filter No
     And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Event-Gift" tab
     And The user Assocaited No filter
     Then The user verify No Filter

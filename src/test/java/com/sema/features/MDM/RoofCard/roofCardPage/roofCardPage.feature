@@ -37,37 +37,37 @@ Feature: RoofCard Management Test Cases- Contact Home Page
   Scenario:RoofCard Organization  edit - Categories Tab
     And The user enters "roof_card_test" into "Code" filter text input box
     And the user clicks on Search button
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Categories" tab
 
   Scenario:RoofCard Organization  edit - Categories Tab
     And The user enters "roof_card_test" into "Code" filter text input box
     And the user clicks on Search button
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "History" tab
 
   Scenario:RoofCard Organization  edit - Categories Tab
     And The user enters "roof_card_test" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Attributes" tab
 
   Scenario: RoofCard Export Entity Button - Associations
     And The user enters "roof_card_test" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks Export Entity Button
     And The user clicks Export Associations
     Then The user dowloand Export Entity verifies
 
   Scenario: RoofCard Export Entity Button - Permission
     And The user enters "roof_card_test" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks Export Entity Button
     And The user clicks Export Permission
     Then The user dowloand Export Entity verifies
 
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses - cancel button
     And The user enters "roof_card_test" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     And the user selects "<ItemStatus>"
 
     Examples:
@@ -78,11 +78,11 @@ Feature: RoofCard Management Test Cases- Contact Home Page
 
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "roof_card_test" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     And the user selects "<ItemStatus>"
 
     Examples:
-      |ItemStatus |
-      |Active     |
-      |Passive    |
-      |Approved     |
+      | ItemStatus |
+      | Active     |
+      | Passive    |
+      | Approved   |
