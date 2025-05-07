@@ -236,32 +236,32 @@ Feature: Campaign Management Test Cases- Campaign Home Page
   Scenario:Group Permission Verify Last Page Button Unclickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
+    And The user clicks "Group Permissions" tab
     When The user clicks last page button asset
     And  The user verifies last button is unclickable asset
 
   Scenario:Group Permission Verify Item next Button unclickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
+    And The user clicks "Group Permissions" tab
     When The user clicks last page button asset
     And  The user verifies next button is unclickable asset
 
   Scenario:Group Permission Verify Item First Page Button Clickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
+    And The user clicks "Group Permissions" tab
     When The user clicks last page button asset
     #And  The user verifies first page button is clickable asset
 
   Scenario:User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
+    And The user clicks "User Permissions" tab
     And  The user verifies first page button is not clickable user
 
   Scenario:User Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
+    And The user clicks "User Permissions" tab
     And  The user verifies previous page button is not clickable user

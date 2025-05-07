@@ -48,21 +48,6 @@ public class MDMAssetEditStep extends BaseStep {
         pages.assetEditPage().verifyEditRemoved();
     }
 
-    @Then("clicks group permission tab")
-    public void clicks_group_permission_tab() {
-        pages.assetEditPage().clickGroupPermission();
-    }
-
-    @Then("The user verifies previous page button is not clickable asset")
-    public void the_user_verifies_previous_page_button_is_not_clickable_asset() {
-        pages.assetEditPage().verifyPreviousePageIsNotClicible();
-    }
-
-    @Then("The user verifies previous button is not clickable asset")
-    public void the_user_verifies_previous_button_is_not_clickable_asset() {
-        pages.assetEditPage().verifyLeftPreviousePageIsNotClicible();
-    }
-
     @When("The user clicks next page button asset")
     public void the_user_clicks_next_page_button_asset() {
         pages.assetEditPage().clicksNextPageButton(pages);
@@ -108,10 +93,6 @@ public class MDMAssetEditStep extends BaseStep {
         pages.assetEditPage().verifyFirstPageIsClickable();
     }
 
-    @Then("clicks user permission tab")
-    public void clicks_user_permission_tab() {
-        pages.assetEditPage().clickUserPermission();
-    }
     @Then("The user verifies first page button is not clickable user")
     public void the_user_verifies_first_page_button_is_not_clickable_user() {
         pages.assetEditPage().verifyLeftPreviousePageUserIsNotClicible();

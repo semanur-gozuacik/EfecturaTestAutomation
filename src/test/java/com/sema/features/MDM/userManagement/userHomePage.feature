@@ -143,116 +143,112 @@ Feature: User Management Test Cases- Contact Home Page
   Scenario:Group Permission Verify Item First Page Button Unclickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
-    #And  The user verifies previous button is not clickable asset
+    And The user clicks "Group Permissions" tab
+    And  The user verifies "Group" "FirstPage" button is "Passive"
 
   Scenario:Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
-    And  The user verifies previous page button is not clickable asset
+    And The user clicks "Group Permissions" tab
+    And  The user verifies "Group" "_previous" button is "Passive"
 
 
   Scenario:Group Permission Verify Item next Button clickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
-    When The user clicks next page button asset
-    And  The user verifies next button is clickable asset
+    And The user clicks "Group Permissions" tab
+    When The user clicks "Group" "_next" page button
+    And  The user verifies "Group" "_next" button is "Active"
 
 
   Scenario: Group Permission Verify Previous Page Button clickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
-    When The user clicks next page button asset
-    When The user clicks next page button asset
-    When The user clicks previous page button asset
-    And  The user verifies previous button is clickable asset
+    And The user clicks "Group Permissions" tab
+    When The user clicks "Group" "_next" page button
+    And  The user verifies "Group" "_previous" button is "Active"
 
   Scenario: Group Permission Verify Last Page Button clickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
-    When The user clicks last page button asset
-    And  The user verifies last button is clickable asset
+    And The user clicks "Group Permissions" tab
+    When The user clicks "Group" "_next" page button
+    And  The user verifies "Group" "LastPage" button is "Active"
 
   Scenario: Group Permission Verify Last Page Button Unclickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
-    When The user clicks last page button asset
-    And  The user verifies last button is unclickable asset
+    And The user clicks "Group Permissions" tab
+    When The user clicks "Group" "LastPage" page button
+    And  The user verifies "Group" "LastPage" button is "Passive"
 
   Scenario:Group Permission Verify Item next Button unclickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
-    When The user clicks last page button asset
-    And  The user verifies next button is unclickable asset
+    And The user clicks "Group Permissions" tab
+    When The user clicks "Group" "LastPage" page button
+    And  The user verifies "Group" "_next" button is "Passive"
 
   Scenario:Group Permission Verify Item First Page Button Clickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
-    When The user clicks last page button asset
-   # And  The user verifies first page button is clickable asset
+    And The user clicks "Group Permissions" tab
+    When The user clicks "Group" "LastPage" page button
+    And  The user verifies "Group" "FirstPage" button is "Active"
 
   Scenario: User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
-    And  The user verifies first page button is not clickable user
+    And The user clicks "User Permissions" tab
+    And  The user verifies "User" "FirstPage" button is "Passive"
 
   Scenario:User Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
-    And  The user verifies previous page button is not clickable user
+    And The user clicks "User Permissions" tab
+    And  The user verifies "User" "_previous" button is "Passive"
 
   Scenario:User Permission Verify Item next Button clickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
-    When The user clicks next page button user
-    And  The user verifies next button is clickable user
+    And The user clicks "User Permissions" tab
+    When The user clicks "User" "_next" page button
+    And  The user verifies "User" "_next" button is "Active"
 
   Scenario:User Permission Verify Previous Page Button clickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
-    When The user clicks next page button user
-    When The user clicks next page button user
-    When The user clicks previous page button user
-    And  The user verifies previous button is clickable user
+    And The user clicks "User Permissions" tab
+    When The user clicks "User" "_next" page button
+    And  The user verifies "User" "_previous" button is "Active"
 
   Scenario:User Permission Verify Last Page Button clickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
-    When The user clicks last page button user
-    And  The user verifies last button is clickable user
+    And The user clicks "User Permissions" tab
+    When The user clicks "User" "_next" page button
+    And  The user verifies "User" "LastPage" button is "Active"
 
   Scenario: User Permission Verify Last Page Button Unclickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
-    When The user clicks last page button user
-    And  The user verifies last button is unclickable asset
+    And The user clicks "User Permissions" tab
+    When The user clicks "User" "LastPage" page button
+    And  The user verifies "User" "LastPage" button is "Passive"
 
   Scenario:User Permission Verify Item next Button unclickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
-    When The user clicks last page button user
-    And  The user verifies next button is unclickable user
+    And The user clicks "User Permissions" tab
+    When The user clicks "User" "LastPage" page button
+    And  The user verifies "User" "_next" button is "Passive"
 
   Scenario: User Permission Verify Item First Page Button Clickable Condition
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
-    When The user clicks last page button user
-    And  The user verifies first page button is clickable user
+    And The user clicks "User Permissions" tab
+    When The user clicks "User" "LastPage" page button
+    And  The user verifies "User" "FirstPage" button is "Active"
 
   Scenario:User edit -Preview Tab Export Button
     And The user enters "Otomasyon" into "Code" filter text input box

@@ -43,17 +43,15 @@ Feature: Financial Account Management Test Cases- Contact Home Page
     And The user enters "FinancialAccount_06" into "Code" filter text input box
     And the user clicks on Search button
     And The user clicks on edit button in table
-    And clicks group permission tab
-    And  The user verifies previous page button is not clickable asset
+    And The user clicks "Group Permissions" tab
+    And  The user verifies "Group" "_previous" button is "Passive"
 
   Scenario:Financial Account  User Permission Verify Previous Page Button clickable Condition
     And The user enters "FinancialAccount_06" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
-    When The user clicks next page button user
-    When The user clicks next page button user
-    When The user clicks previous page button user
-    And  The user verifies previous button is clickable user
+    And The user clicks "User Permissions" tab
+    When The user clicks "Group" "_next" page button
+    And  The user verifies "Group" "_previous" button is "Active"
 
   Scenario::Financial Account   EVENT_CONTACT Tab
     And The user enters "FinancialAccount_06" into "Code" filter text input box

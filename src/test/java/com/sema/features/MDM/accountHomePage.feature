@@ -278,14 +278,14 @@ Feature: Account Management Test Cases- Account Home Page
   Scenario:Account Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "2943740465" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
-    And  The user verifies previous page button is not clickable asset
+    And The user clicks "Group Permissions" tab
+    And  The user verifies "Group" "_previous" button is "Passive"
 
   Scenario:Account User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "2943740465" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
-    And  The user verifies first page button is not clickable user
+    And The user clicks "User Permissions" tab
+    And  The user verifies "Group" "FirstPage" button is "Passive"
 
   Scenario:Account edit -Item Comment Tab
     And The user enters "2943740465" into "Code" filter text input box

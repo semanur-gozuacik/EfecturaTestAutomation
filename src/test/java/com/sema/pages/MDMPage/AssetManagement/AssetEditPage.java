@@ -86,22 +86,6 @@ public class AssetEditPage extends BasePage {
         Assert.assertTrue(allListAddedItem.isDisplayed());
     }
 
-    public void clickGroupPermission() {
-    BrowserUtils.wait(5);
-        groupPermissions.click();
-    }
-
-    public void verifyLeftPreviousePageIsNotClicible() {
-        BrowserUtils.wait(5);
-        String classAttribute = leftPreviousPage.getAttribute("class");
-        Assert.assertTrue(classAttribute.contains("disabled"));
-    }
-
-    public void verifyPreviousePageIsNotClicible() {
-        BrowserUtils.wait(5);
-        String classAttribute = previousPage.getAttribute("class");
-        Assert.assertTrue(classAttribute.contains("disabled"));
-    }
     public void verifyPreviousePageUserIsNotClicible() {
         BrowserUtils.wait(5);
         String classAttribute = previousPageUser.getAttribute("class");
@@ -200,10 +184,6 @@ public class AssetEditPage extends BasePage {
         Assert.assertTrue(!classAttribute.contains("disabled"));
     }
 
-    public void clickUserPermission() {
-        BrowserUtils.wait(7);
-        userPermissions.click();
-    }
     public void verifyLeftPreviousePageUserIsNotClicible() {
         String classAttribute = leftPreviousPageUser.getAttribute("class");
         Assert.assertTrue(classAttribute.contains("disabled"));

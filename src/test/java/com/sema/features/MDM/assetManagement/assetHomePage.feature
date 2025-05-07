@@ -14,7 +14,6 @@ Feature: Asset Management Test Cases- Asset Home Page
     And the user verify on code filter functionality "TEST123456"
 
   Scenario:  Verify Code Filter -Valid Unique Code partial
-    And The user enters "TEST" into Code field
     And The user enters "TEST" into "Code" filter text input box
 #    And the user clicks on Search button
 #    And the user verify on code filter functionality with partial unique code "TEST"

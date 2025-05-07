@@ -161,103 +161,97 @@ Feature: Connector Management Test Cases- Connector Home Page
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-    # And  The user verifies previous button is not clickable asset
+    And  The user verifies "Group" "FirstPage" button is "Passive"
 
 
   Scenario:Connector Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-    And  The user verifies previous page button is not clickable asset
+    And  The user verifies "Group" "_previous" button is "Passive"
 
   Scenario:Connector Group Permission Verify Item next Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-    When The user clicks next page button asset
-    And  The user verifies next button is clickable asset
+    When The user clicks "Group" "_next" page button
+    And  The user verifies "Group" "_next" button is "Active"
 
   Scenario:Connector Group Permission Verify Previous Page Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-    When The user clicks next page button asset
-    When The user clicks next page button asset
-    When The user clicks previous page button asset
-    And  The user verifies previous button is clickable asset
+    When The user clicks "Group" "_next" page button
+    And  The user verifies "Group" "_previous" button is "Active"
 
   Scenario:Connector Group Permission Verify Last Page Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-    When The user clicks last page button asset
-    And  The user verifies last button is clickable asset
+    When The user clicks "Group" "_next" page button
+    And  The user verifies "Group" "LastPage" button is "Active"
 
   Scenario:Connector Group Permission Verify Last Page Button Unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-    When The user clicks last page button asset
-    And  The user verifies last button is unclickable asset
+    When The user clicks "Group" "LastPage" page button
+    And  The user verifies "Group" "LastPage" button is "Passive"
 
   Scenario:Connector Group Permission Verify Item next Button unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-    When The user clicks last page button asset
-    And  The user verifies next button is unclickable asset
+    When The user clicks "Group" "LastPage" page button
+    And  The user verifies "Group" "_next" button is "Passive"
 
   Scenario:Connector Group Permission Verify Item First Page Button Clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-    When The user clicks last page button asset
-    #And  The user verifies first page button is clickable asset
+    When The user clicks "Group" "LastPage" page button
+    And  The user verifies "Group" "FirstPage" button is "Active"
 
   Scenario:Connector User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    #And  The user verifies first page button is not clickable user
-
+    And  The user verifies "User" "FirstPage" button is "Passive"
 
   Scenario:Connector User Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    And  The user verifies previous page button is not clickable user
-
+    And  The user verifies "User" "_previous" button is "Passive"
 
   Scenario:Connector User Permission Verify Item next Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    When The user clicks next page button user
-    And  The user verifies next button is clickable user
+    When The user clicks "User" "_next" page button
+    And  The user verifies "User" "_next" button is "Active"
 
   Scenario:Connector User Permission Verify Previous Page Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    When The user clicks next page button user
-    When The user clicks next page button user
-    When The user clicks previous page button user
-    And  The user verifies previous button is clickable user
+    When The user clicks "User" "_next" page button
+    And  The user verifies "User" "_previous" button is "Active"
 
 
   Scenario:Connector User Permission Verify Last Page Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    When The user clicks last page button user
-    And  The user verifies last button is clickable user
+    When The user clicks "User" "_next" page button
+    And  The user verifies "User" "LastPage" button is "Active"
 
   Scenario:Connector User Permission Verify Last Page Button Unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    When The user clicks last page button user
-    And  The user verifies last button is unclickable asset
+    When The user clicks "User" "LastPage" page button
+    And  The user verifies "User" "LastPage" button is "Passive"
 
   Scenario:Connector Edit item status Passive Item Status-cancel button
     And The user enters "1connector1" into "Code" filter text input box
