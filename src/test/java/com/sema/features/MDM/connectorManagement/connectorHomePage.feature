@@ -115,7 +115,7 @@ Feature: Connector Management Test Cases- Connector Home Page
   Scenario: Connector page edit verify
     And The user enters "1connector1" into "Code" filter text input box
      #search buton kaldırıldı- And the user clicks on Search button
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     Then The user verify Edit Page-Connector
 
   Scenario: Verify Connector Star Item Functionality- One Contact
@@ -131,56 +131,56 @@ Feature: Connector Management Test Cases- Connector Home Page
 
   Scenario:Connector edit -Attributes Tab
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Attributes" tab
 
   Scenario:Connector edit -ItemComment Tab
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "ItemComment" tab
 
   Scenario:Connector edit -Categories Tab
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Categories" tab
 
   Scenario: Connector Edit item added list
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And  The user clicks list drop down button
     And  The user clicks new list item-connector
     Then The user verifies item is added
 
   Scenario: Connector Edit item removed list
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And  The user clicks removed button
     Then The user verifies item is removed
 
   Scenario:Connector Group Permission Verify Item First Page Button Unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks group permission tab
+    And The user clicks on edit button in table
+    And The user clicks "Group Permissions" tab
     # And  The user verifies previous button is not clickable asset
 
 
   Scenario:Connector Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks group permission tab
+    And The user clicks on edit button in table
+    And The user clicks "Group Permissions" tab
     And  The user verifies previous page button is not clickable asset
 
   Scenario:Connector Group Permission Verify Item next Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks group permission tab
+    And The user clicks on edit button in table
+    And The user clicks "Group Permissions" tab
     When The user clicks next page button asset
     And  The user verifies next button is clickable asset
 
   Scenario:Connector Group Permission Verify Previous Page Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks group permission tab
+    And The user clicks on edit button in table
+    And The user clicks "Group Permissions" tab
     When The user clicks next page button asset
     When The user clicks next page button asset
     When The user clicks previous page button asset
@@ -188,57 +188,57 @@ Feature: Connector Management Test Cases- Connector Home Page
 
   Scenario:Connector Group Permission Verify Last Page Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks group permission tab
+    And The user clicks on edit button in table
+    And The user clicks "Group Permissions" tab
     When The user clicks last page button asset
     And  The user verifies last button is clickable asset
 
   Scenario:Connector Group Permission Verify Last Page Button Unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks group permission tab
+    And The user clicks on edit button in table
+    And The user clicks "Group Permissions" tab
     When The user clicks last page button asset
     And  The user verifies last button is unclickable asset
 
   Scenario:Connector Group Permission Verify Item next Button unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks group permission tab
+    And The user clicks on edit button in table
+    And The user clicks "Group Permissions" tab
     When The user clicks last page button asset
     And  The user verifies next button is unclickable asset
 
   Scenario:Connector Group Permission Verify Item First Page Button Clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks group permission tab
+    And The user clicks on edit button in table
+    And The user clicks "Group Permissions" tab
     When The user clicks last page button asset
     #And  The user verifies first page button is clickable asset
 
   Scenario:Connector User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks user permission tab
+    And The user clicks on edit button in table
+    And The user clicks "User Permissions" tab
     #And  The user verifies first page button is not clickable user
 
 
   Scenario:Connector User Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks user permission tab
+    And The user clicks on edit button in table
+    And The user clicks "User Permissions" tab
     And  The user verifies previous page button is not clickable user
 
 
   Scenario:Connector User Permission Verify Item next Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks user permission tab
+    And The user clicks on edit button in table
+    And The user clicks "User Permissions" tab
     When The user clicks next page button user
     And  The user verifies next button is clickable user
 
   Scenario:Connector User Permission Verify Previous Page Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks user permission tab
+    And The user clicks on edit button in table
+    And The user clicks "User Permissions" tab
     When The user clicks next page button user
     When The user clicks next page button user
     When The user clicks previous page button user
@@ -247,21 +247,21 @@ Feature: Connector Management Test Cases- Connector Home Page
 
   Scenario:Connector User Permission Verify Last Page Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks user permission tab
+    And The user clicks on edit button in table
+    And The user clicks "User Permissions" tab
     When The user clicks last page button user
     And  The user verifies last button is clickable user
 
   Scenario:Connector User Permission Verify Last Page Button Unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
-    And  The user clicks on Edit Button
-    And clicks user permission tab
+    And The user clicks on edit button in table
+    And The user clicks "User Permissions" tab
     When The user clicks last page button user
     And  The user verifies last button is unclickable asset
 
   Scenario:Connector Edit item status Passive Item Status-cancel button
     And The user enters "1connector1" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     And the user selects "Passive"
       # And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area
@@ -270,7 +270,7 @@ Feature: Connector Management Test Cases- Connector Home Page
 
   Scenario:Connector Edit item status Passive  Item Status- save button
     And The user enters "1connector1" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     And the user selects "Passive"
      #  And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area

@@ -25,7 +25,7 @@ Feature: Gift Creation and Management Home Page
 
   Scenario:Gift Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into "Label" filter text input box
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario Outline: Gift Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries

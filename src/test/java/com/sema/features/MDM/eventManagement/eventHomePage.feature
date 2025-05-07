@@ -43,7 +43,7 @@ Feature: Event Management Test Cases- Event Home Page
 
   Scenario:Event Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into "Label" filter text input box
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario Outline: Event Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries
@@ -57,11 +57,11 @@ Feature: Event Management Test Cases- Event Home Page
 
   Scenario: Event page edit verify
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     And the user selects "<ItemStatus>"
       # And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area
@@ -76,7 +76,7 @@ Feature: Event Management Test Cases- Event Home Page
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     And the user selects "<ItemStatus>"
       # And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area
@@ -90,35 +90,35 @@ Feature: Event Management Test Cases- Event Home Page
 
   Scenario: Edit item added list
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And  The user clicks list drop down button
     And  The user clicks new list item-event
     # Then The user verifies item is added
 
   Scenario: Edit item removed list
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And  The user clicks removed button
     # Then The user verifies item is removed
 
   Scenario:Event edit - EVENT_LOCATION Tab
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "EVENT_LOCATION" tab
 
   Scenario:Event edit - ItemComment Tab
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "ItemComment" tab
 
   Scenario:Event edit - history Tab
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "history" tab
 
   Scenario:Event edit - Categories Tab
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Categories" tab
 
   Scenario: Verify My Count Star Item Functionality- One Contact
@@ -133,12 +133,12 @@ Feature: Event Management Test Cases- Event Home Page
 
   Scenario:Event edit - Event-Product Tab
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Event-Product" tab
 
   Scenario:Event edit - Event-Product Tab Associated
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "EVENT_PRODUCT" tab
     And The user Assocaited All filter
     And The user clicks item
@@ -149,7 +149,7 @@ Feature: Event Management Test Cases- Event Home Page
 
   Scenario:Event edit -Event-Product Tab Associated Filter No
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "EVENT_PRODUCT" tab
     And The user Assocaited No filter
     Then The user verify No Filter
@@ -157,19 +157,19 @@ Feature: Event Management Test Cases- Event Home Page
 
   Scenario:Event edit - EVENT_CONTACT Tab
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "EVENT_CONTACT" tab
 
   Scenario:Event edit - EVENT_CONTACT Tab Associated
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "EVENT_CONTACT" tab
     And The user Assocaited All filter
 
 
   Scenario:Event edit EVENT_CONTACT Tab Associated Filter No
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "EVENT_CONTACT" tab
     And The user Assocaited No filter
     Then The user verify No Filter
@@ -177,12 +177,12 @@ Feature: Event Management Test Cases- Event Home Page
 
   Scenario:Event edit - Event-Gift Tab
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Event_Gift" tab
 
   Scenario:Event edit - Event-Gift Tab Associated
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Event_Gift" tab
     And The user Assocaited All filter
     # And The user clicks item
@@ -193,19 +193,19 @@ Feature: Event Management Test Cases- Event Home Page
 
   Scenario:Event edit Event-Gift Tab Associated Filter No
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Event_Gift" tab
     And The user Assocaited No filter
     Then The user verify No Filter
 
   Scenario:Event edit - EVENT_DIGITAL_ASSET Tab
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "EVENT_DIGITAL_ASSET" tab
 
   Scenario:Event edit - EVENT_DIGITAL_ASSET Tab Associated
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "EVENT_DIGITAL_ASSET" tab
     And The user Assocaited All filter
     And The user clicks item
@@ -216,7 +216,7 @@ Feature: Event Management Test Cases- Event Home Page
 
   Scenario:Event edit EVENT_DIGITAL_ASSET Tab Associated Filter No
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "EVENT_DIGITAL_ASSET" tab
     And The user Assocaited No filter
     Then The user verify No Filter

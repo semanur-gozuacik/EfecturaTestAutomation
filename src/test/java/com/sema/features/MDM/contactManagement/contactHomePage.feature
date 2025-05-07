@@ -33,7 +33,7 @@ Feature: Contact Management Test Cases- Contact Home Page
   Scenario: Verify Code Filter - Invalid Unique Code
     And The user clicks on Contact  category
     And The user enters "sema12345" into "Code" filter text input box
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario: Verify Label Filter - Valid Label
     And The user clicks on Contact  category
@@ -47,7 +47,7 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into "Label" filter text input box
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario: Search for Ekosystem Family
     And The user clicks on Ekosystem Filtre
@@ -86,7 +86,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     And The user clicks on Contact  category
     And The user enters "sematestttt" into "Code" filter text input box
    #search button kaldırıldı. And the user clicks on Search button
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     Then The user verify Edit Page
 
     Scenario Outline: Verify "<starFeature>" visibility and badge count

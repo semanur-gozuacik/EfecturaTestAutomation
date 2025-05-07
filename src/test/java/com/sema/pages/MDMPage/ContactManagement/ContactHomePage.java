@@ -300,18 +300,6 @@ public class ContactHomePage extends BasePage {
         assertTrue(verifyPartialCodeFilters.size() > 1);
     }
 
-
-    public void verifyNoContentTextInvalidUniqueCode(String text) {
-        BrowserUtils.wait(4);
-        assertTrue(noContentsText.getText().equalsIgnoreCase(text));
-    }
-
-    public void setLabelFilter(String label) {
-        BrowserUtils.wait(7);
-//        labelFilterClick.click();
-        labelFilter.sendKeys(label);
-    }
-
     public void verifyPartialLabelFilters(String partialLabel) {
         BrowserUtils.wait(2);
         assertTrue(verifyPartialCodeFilters.size() >= 1);
@@ -423,13 +411,6 @@ public class ContactHomePage extends BasePage {
         BrowserUtils.wait(5);
         assertTrue(BrowserUtils.isOptionSelected(showEntries, entrie));
 
-    }
-
-    public void clickEditButton() {
-        BrowserUtils.wait(7);
-        BrowserUtils.hoverOver(editButton);
-        BrowserUtils.wait(8);
-        editButton.click();
     }
 
     public void verifyEditPage() {

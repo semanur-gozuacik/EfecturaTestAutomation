@@ -48,7 +48,7 @@ Feature: Contact Management Test Cases Create Home Page
 
 
   Scenario Outline: Delete Contact on Fletum with valid credentials - "<Family>"-cancel button
-    And  The user enters "199955523515555" into Code field
+    And The user enters "199955523515555" into "Code" filter text input box
     And  the user clicks on Search button
     And  The user clicks delete button- "<Family>"
     And  The user clicks cancel button in popup
@@ -57,7 +57,7 @@ Feature: Contact Management Test Cases Create Home Page
       |Ekosystem|
 
   Scenario Outline: Delete Contact on Fletum with valid credentials - "<Family>"
-    And  The user enters "<Number>" into Code field
+    And The user enters "<Number>" into "Code" filter text input box
     And  the user clicks on Search button
     And  The user clicks delete button- "<Family>"
     And  The user clicks delete button in popup

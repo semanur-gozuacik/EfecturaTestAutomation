@@ -37,7 +37,7 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
 
   Scenario: Verify Label Filter - Invalid  Label
     And The user enters "44444" into "Label" filter text input box
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario:Sales Organization Create List- create button
     And  The user clicks plus icon
@@ -45,7 +45,7 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
     When The user enters "otomasyon" List Name
 
   Scenario: Sales Organization Edit item removed list
-    And  The user enters "TESTBM" into Code field
+    And The user enters "TESTBM" into "Code" filter text input box
     And  the user clicks on Search button
     And The user clicks on edit button in table
     And  The user clicks removed button
@@ -64,31 +64,31 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
 
   Scenario:Sales Organization Verify Code Filter - Invalid Unique Code
     And The user enters "sema12345" into "Code" filter text input box
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario::Sales Organization Group Permission Verify Item First Page Button Unclickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
+    And The user clicks "Group Permissions" tab
     #And  The user verifies previous button is not clickable asset
 
   Scenario::Sales Organization Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
+    And The user clicks "Group Permissions" tab
     And  The user verifies previous page button is not clickable asset
 
   Scenario:Sales Organization Group Permission Verify Item next Button clickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
+    And The user clicks "Group Permissions" tab
     When The user clicks next page button asset
     And  The user verifies next button is clickable asset
 
   Scenario:Sales Organization  Group Permission Verify Previous Page Button clickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
+    And The user clicks "Group Permissions" tab
     When The user clicks next page button asset
     When The user clicks next page button asset
     When The user clicks previous page button asset
@@ -97,14 +97,14 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
   Scenario:Sales Organization Group Permission Verify Last Page Button clickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks group permission tab
+    And The user clicks "Group Permissions" tab
     When The user clicks last page button asset
     And  The user verifies last button is clickable asset
 
   Scenario:Sales Organization  User Permission Verify Previous Page Button clickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
+    And The user clicks "User Permissions" tab
     When The user clicks next page button user
     When The user clicks next page button user
     When The user clicks previous page button user
@@ -113,14 +113,14 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
   Scenario:Sales Organization  User Permission Verify Last Page Button clickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
+    And The user clicks "User Permissions" tab
     When The user clicks last page button user
     And  The user verifies last button is clickable user
 
   Scenario:Sales Organization  User Permission Verify Last Page Button Unclickable Condition
     And The user enters "TESTBM" into "Code" filter text input box
     And The user clicks on edit button in table
-    And clicks user permission tab
+    And The user clicks "User Permissions" tab
     When The user clicks last page button user
     And  The user verifies last button is unclickable asset
 

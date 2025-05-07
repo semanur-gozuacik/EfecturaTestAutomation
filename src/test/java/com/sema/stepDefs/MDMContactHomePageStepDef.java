@@ -80,11 +80,6 @@ public class MDMContactHomePageStepDef extends BaseStep {
         pages.homePage().mouseoverOnTheKisilerElement();
     }
 
-    @Then("The user enters {string} into Code field")
-    public void the_user_enters_into_code_field(String code) {
-//        pages.contactHomePage().setCodeFilter(code);
-        pages.itemOverviewPage().useTextFilter("Code",code);
-    }
     @Given("The user is on the Contact item home page")
     public void the_user_is_on_the_Contact_item_home_page() {
         pages.contactHomePage().onTheUserPage();
@@ -116,16 +111,6 @@ public class MDMContactHomePageStepDef extends BaseStep {
     @Then("the user verify on code filter functionality with partial unique code {string}")
     public void the_user_verify_on_code_filter_functionality_with_partial_unique_code(String partialCode) {
         pages.contactHomePage().verifyPartialCodeFilters(partialCode);
-    }
-
-    @Then("the user verify on code filter functionality  with invalid unique code {string}")
-    public void the_user_verify_on_code_filter_functionality_with_invalid_unique_code(String text) {
-        pages.contactHomePage().verifyNoContentTextInvalidUniqueCode(text);
-    }
-
-    @Then("The user enters {string} into Label field")
-    public void the_user_enters_into_label_field(String label) {
-        pages.contactHomePage().setLabelFilter(label);
     }
 
     @Then("the user verify on label filter functionality with partial unique code {string}")
@@ -215,10 +200,7 @@ public class MDMContactHomePageStepDef extends BaseStep {
     public void the_user_should_see_entrie_in_everypage(String entrie) {
       pages.contactHomePage().verifySelectOption(entrie);
     }
-    @Then("The user clicks on Edit Button")
-    public void the_user_clicks_on_editButton() {
-        pages.contactHomePage().clickEditButton();
-    }
+
     @Then("The user verify Edit Page")
     public void the_user_verify_edit_page() {
         pages.contactHomePage().verifyEditPage();

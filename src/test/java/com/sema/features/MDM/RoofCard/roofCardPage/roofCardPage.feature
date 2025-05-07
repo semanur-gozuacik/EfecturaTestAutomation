@@ -30,9 +30,9 @@ Feature: RoofCard Management Test Cases- Contact Home Page
     And the user verify Reset button functionality
 
   Scenario:RoofCard Home Page Verify Label Filter - Invalid  Label
-    And The user enters "sema12345" into Label field
+    And The user enters "sema12345" into "Label" filter text input box
     And the user clicks on Search button
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario:RoofCard Organization  edit - Categories Tab
     And The user enters "roof_card_test" into "Code" filter text input box

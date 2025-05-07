@@ -10,7 +10,7 @@ Feature: Contact Management Test Cases-My Contact Page
     And   The User gets the current URL and stores it in "itemType=Contact"
 
   Scenario Outline:  My Count Add Star Item Functionality- One Contact
-    And The user enters "<Code>" into Code field
+    And The user enters "<Code>" into "Code" filter text input box
     And the user clicks on Star items
     And the user clicks on Reset button
     Examples:
@@ -38,7 +38,7 @@ Feature: Contact Management Test Cases-My Contact Page
   Scenario: Verify Code Filter - Invalid Unique Code
     When The user clicks My Contact button
     And The user enters "sema12345" into "Code" filter text input box
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario: Verify Label Filter - Valid Label
     When The user clicks My Contact button
@@ -53,7 +53,7 @@ Feature: Contact Management Test Cases-My Contact Page
   Scenario: Verify Label Filter - Invalid  Label
     When The user clicks My Contact button
     And The user enters "sema12345" into "Label" filter text input box
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario: Search for Ekosystem Family
     When The user clicks My Contact button
@@ -93,7 +93,7 @@ Feature: Contact Management Test Cases-My Contact Page
   Scenario: My Contact page edit verify
     When The user clicks My Contact button
     And The user enters "0058950138" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     Then The user verify Edit Page
 
   Scenario:My Contact Verify First Page Button Unclickable Condition
@@ -137,7 +137,7 @@ Feature: Contact Management Test Cases-My Contact Page
 
 
   Scenario Outline:My Count Delete Star Item Functionality
-    And The user enters "<Code>" into Code field
+    And The user enters "<Code>" into "Code" filter text input box
     And the user clicks on Star items
     And the user clicks on Reset button
     Examples:

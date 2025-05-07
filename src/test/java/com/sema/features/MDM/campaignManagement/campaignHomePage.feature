@@ -9,40 +9,28 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And   The User gets the current URL and stores it in "itemType=Campaign"
 
   Scenario: Verify Code Filter -Valid Unique Code
-#    And The user enters "welcometestgeneric122" into Code field
     And The user enters "welcometestgeneric122" into "Code" filter text input box
-#    And the user verify on code filter functionality "welcometestgeneric122"-Campaign
+    And the user verify on code filter functionality "welcometestgeneric122"-Campaign
     Then The user verify "Code" text filter with value "welcometestgeneric122" in "overviewTable"
 
   Scenario:  Verify Code Filter -Valid Unique Code partial
-#    And The user enters "TEST" into Code field
     And The user enters "TEST" into "Code" filter text input box
-#    And the user verify on code filter functionality with partial unique code "TEST"- Campaign
-#    And the user verify on code filter functionality "TEST"-Campaign
     Then The user verify "Code" text filter with value "TEST" in "overviewTable"
 
   Scenario: Verify Code Filter - Invalid Unique Code
-#    And The user enters "sema12345" into Code field
     And The user enters "sema12345" into "Code" filter text input box
-#    And the user verify on code filter functionality  with invalid unique code "No matching records found"
     And The user verify empty data table info 'No matching records found'
 
   Scenario: Verify Label Filter - Valid Label
-#    And The user enters "testbirthday1561" into Label field
     And The user enters "testbirthday1561" into "Label" filter text input box
-#    And the user verify on label filter functionality with partial unique code "testbirthday1561"- Campaign
     Then The user verify "Label" text filter with value "testbirthday1561" in "overviewTable"
 
   Scenario: Verify Label Filter - Partial Label
-#    And The user enters "test" into Label field
     And The user enters "test" into "Label" filter text input box
-#    And the user verify on label filter functionality with partial unique code "Test"- Campaign
     Then The user verify "Label" text filter with value "test" in "overviewTable"
 
   Scenario: Verify Label Filter - Invalid  Label
-#    And The user enters "sema12345" into Label field
     And The user enters "sema12345" into "Label" filter text input box
-#    And the user verify on code filter functionality  with invalid unique code "No matching records found"
     And The user verify empty data table info 'No matching records found'
 
   Scenario Outline: Filter "<ItemStatus>" Item Statuses7
@@ -58,15 +46,12 @@ Feature: Campaign Management Test Cases- Campaign Home Page
        |Draft      |
 
   Scenario: Reset Button Control
-   # And The user enters "sema12345" into Code field
     And The user enters "sema12345" into "Label" filter text input box
-#    And The user enters "testbirthday1561" into Label field
     And the user clicks on Reset button
 #    And the user verify Reset button functionality
     And The user verify Reset button func for "Label" filter
 
   Scenario: Deleting an item and declining the popup message
-    #And The user enters "TESTSETSET123123" into Code field
     And The user enters "TESTSETSET123123" into "Code" filter text input box
 #    And the user clicks on Search button
 #    And The user clicks on Delete
@@ -77,7 +62,6 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     Then The user verify "Code" text filter with value "TESTSETSET123123" in "overviewTable"
 
   Scenario: Verify My Count Star Item Functionality- One Contact
-  #  And The user enters "TestWelcomeCampaignSecondPreview" into Code field
     And The user enters "TestWelcomeCampaignSecondPreview" into "Code" filter text input box
     And the user clicks on Star items
 
@@ -148,54 +132,53 @@ Feature: Campaign Management Test Cases- Campaign Home Page
    #Then The user verifies "campaign-list" is not visible
 
   Scenario:Campaign edit -Attributes Tab
-    #And The user enters "TestAutomation" into Code field
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Attributes" tab
 
   Scenario:Campaign edit -Preview Tab
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Preview" tab
    #  Then The user verifies preview tab details is displayed
 
   Scenario:Campaign edit -Item Comment Tab
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "ItemComment" tab
     #Then The user verifies itemComment tab details is displayed
 
   Scenario:Campaign edit - AbstractPreview Tab
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "AbstractPreview" tab
    # Then The user verifies My Account tab details is displayed
 
   Scenario:Campaign edit - Campaign-Account Tab export
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Campaign-Account" tab
    # When  The user clicks on Export button ediitem
     #Then  The user verify that the export was "Success"
 
   Scenario:Campaign edit - RealtimeList Tab
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "RealtimeList" tab
 
   Scenario:Campaign edit - Categories Tab
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Categories" tab
 
   Scenario:Campaign edit - History Tab
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "History" tab
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button-Campaign
     And The user enters "TestAutomation" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     And the user selects "<ItemStatus>"
        #And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area
@@ -209,7 +192,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "TestAutomation" into "Code" filter text input box
-    And The user clicks on Edit Button
+    And The user clicks on edit button in table
     And the user selects "<ItemStatus>"
       # And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area
@@ -223,19 +206,19 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario:Campaign edit - Campaign-point Associated
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Campaign Points" tab
 
   Scenario:Campaign edit - Campaign-Account Associated
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "CAMPAIGN_ACCOUNT" tab
     And The user Assocaited All filter
 
 
   Scenario:Campaign edit - Campaign-Account Tab Associated Filter No
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "CAMPAIGN_ACCOUNT" tab
     And The user Assocaited No filter
     Then The user verify No Filter
@@ -252,33 +235,33 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario:Group Permission Verify Last Page Button Unclickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies last button is unclickable asset
 
   Scenario:Group Permission Verify Item next Button unclickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks group permission tab
     When The user clicks last page button asset
     And  The user verifies next button is unclickable asset
 
   Scenario:Group Permission Verify Item First Page Button Clickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks group permission tab
     When The user clicks last page button asset
     #And  The user verifies first page button is clickable asset
 
   Scenario:User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks user permission tab
     And  The user verifies first page button is not clickable user
 
   Scenario:User Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And clicks user permission tab
     And  The user verifies previous page button is not clickable user

@@ -39,7 +39,7 @@ Feature: File Management Test Cases- Contact Home Page
   Scenario: File  Home Page Verify Label Filter - Invalid  Label
     And The user enters "596348452" into "Label" filter text input box
     And the user clicks on Search button
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario Outline: File  Home Page Filter "<ItemStatus>" Item Statuses
     And the user clicks on ItemStatuses
@@ -72,7 +72,7 @@ Feature: File Management Test Cases- Contact Home Page
   Scenario Outline: File  Home Page Associated Tab Status Fılter "<Status>"
     And The user enters "File_296034" into "Code" filter text input box
     And  the user clicks on Search button
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And  The user clicks "BANNER_MRP" tab
     And  The user clicks Associated status
     And  The user selects  "<Status>"
@@ -86,25 +86,25 @@ Feature: File Management Test Cases- Contact Home Page
   Scenario:File edit -Event-Contact Tab
     And The user enters "File_296034" into "Code" filter text input box
     And the user clicks on Search button
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Previeew" tab
 
   Scenario:File edit -Event-Contact Tab
     And The user enters "File_296034" into "Code" filter text input box
     And the user clicks on Search button
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "ItemComment" tab
 
   Scenario:File edit -Event-Contact Tab
     And The user enters "File_296034" into "Code" filter text input box
     And the user clicks on Search button
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Training-File" tab
 
   Scenario:File edit - Event-Contact Tab Associated
     And The user enters "File_296034" into "Code" filter text input box
     And the user clicks on Search button
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Training-File" tab
     And The user Assocaited All filter
     And The user clicks item
@@ -116,7 +116,7 @@ Feature: File Management Test Cases- Contact Home Page
   Scenario:File edit -Event-Contact Tab Associated Filter No
     And The user enters "File_296034" into "Code" filter text input box
     And the user clicks on Search button
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Training-File" tab
     And The user Assocaited No filter
     Then The user verify No Filter

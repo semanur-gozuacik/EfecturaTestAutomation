@@ -33,11 +33,11 @@ Feature: Financial Account Management Test Cases- Contact Home Page
   #  And the user verify Reset button functionality
 
   Scenario:Financial Account Verify Label Filter - Valid Label
-    And The user enters "FinancialAccount_06" into Label field
+    And The user enters "FinancialAccount_06" into "Label" filter text input box
 
   Scenario: Financial Account Verify Label Filter - Invalid  Label
     And The user enters "44444" into "Label" filter text input box
-    And the user verify on code filter functionality  with invalid unique code "No matching records found"
+    And The user verify empty data table info 'No matching records found'
 
   Scenario:Financial Account Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "FinancialAccount_06" into "Code" filter text input box
@@ -170,7 +170,7 @@ Feature: Financial Account Management Test Cases- Contact Home Page
 
   Scenario:Contact edit -Event-Contact Tab
     And The user enters "FinancialAccount_06" into "Code" filter text input box
-    And  The user clicks on Edit Button
+    And The user clicks on edit button in table
     And The user clicks "Account_Deposit" tab
 
   Scenario:Contact edit - Event-Contact Tab Associated
