@@ -30,11 +30,6 @@ public class EditItemStepDefs extends BaseStep{
         pages.editItemPage().clickPermissionPageBtn(tabName,btnName);
     }
 
-    @And("The user select {string} in {string} select filter")
-    public void theUserSelectInSelectFilter(String selectOption, String selectFilter) {
-        pages.editItemPage().selectOptionInSelectFilter(selectOption,selectFilter);
-    }
-
     @And("The user select item at order {int} in association tab")
     public void theUserSelectItemAtOrderInAssociationTab(int assocCheckboxOrder) {
         BrowserUtils.wait(2);
@@ -55,4 +50,8 @@ public class EditItemStepDefs extends BaseStep{
         Assert.assertEquals(expectedMessage, pages.editItemPage().getInfoMessage().getText());
     }
 
+    @And("The user select ItemStatus as {string}")
+    public void theUserSelectItemStatusAsApproved(String status) {
+        BrowserUtils.selectDropdownOptionByVisibleText(pages.editItemPage().getEditItemStatusSelect(),status);
+    }
 }

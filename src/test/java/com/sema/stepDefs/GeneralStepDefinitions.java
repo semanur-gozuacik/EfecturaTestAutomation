@@ -14,6 +14,17 @@ import java.util.List;
 
 public class GeneralStepDefinitions extends BaseStep {
 
+
+    @And("The user select {string} in {string} select filter")
+    public void theUserSelectInSelectFilter(String selectOption, String selectFilter) {
+        pages.generalPage().selectOptionInSelectFilter(selectOption,selectFilter);
+    }
+
+    @And("The user enters {string} into {string} filter text input box")
+    public void theUserEntersIntoFilterTextInputBox(String value, String columnName) {
+        pages.generalPage().useTextFilter(value,columnName);
+    }
+
     @Then("The user verify {string} warning")
     public void theUserVerifyEMPTY_FAMILYWarning(String expectedWarningText) {
         BrowserUtils.waitForVisibility(pages.generalPage().getGeneralWarningElement(),30);
@@ -66,4 +77,5 @@ public class GeneralStepDefinitions extends BaseStep {
     public void theUserClicksOnEditButtonInTable() {
         pages.generalPage().getEditBtnInTable().click();
     }
+
 }

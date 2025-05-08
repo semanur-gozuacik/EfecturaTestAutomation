@@ -12,7 +12,8 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button-Asset
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
-    And the user selects "<ItemStatus>"
+#    And the user selects "<ItemStatus>"
+    And The user select ItemStatus as "<ItemStatus>"
       # And the user clicks on unsaved change button
        #And The user enters "-------" in  comment area
        #And The user clicks cancel button
@@ -30,7 +31,8 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
-    And the user selects "<ItemStatus>"
+#    And the user selects "<ItemStatus>"
+    And The user select ItemStatus as "<ItemStatus>"
       # And the user clicks on unsaved change button
        #And The user enters "-------" in  comment area
       # And The user clicks save button
@@ -74,131 +76,96 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-#    When The user clicks next page button asset
     When The user clicks "Group" "_next" page button
-#    And  The user verifies next button is clickable asset
     And  The user verifies "Group" "_next" button is "Active"
 
   Scenario:Group Permission Verify Previous Page Button clickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-    When The user clicks next page button asset
     When The user clicks "Group" "_next" page button
-#    When The user clicks next page button asset
-#    When The user clicks previous page button asset
-#    And  The user verifies previous button is clickable asset
+    When The user clicks "Group" "_next" page button
     And  The user verifies "Group" "_previous" button is "Active"
 
   Scenario:Group Permission Verify Last Page Button clickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-#    When The user clicks last page button asset
-#    And  The user verifies last button is clickable asset
     And  The user verifies "Group" "LastPage" button is "Active"
-
 
   Scenario:Group Permission Verify Last Page Button Unclickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-#    When The user clicks last page button asset
     When The user clicks "Group" "LastPage" page button
-#    And  The user verifies last button is unclickable asset
     And  The user verifies "Group" "LastPage" button is "Passive"
 
   Scenario:Group Permission Verify Item next Button unclickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-#    When The user clicks last page button asset
     When The user clicks "Group" "LastPage" page button
-#    And  The user verifies next button is unclickable asset
     And  The user verifies "Group" "_next" button is "Passive"
 
   Scenario:Group Permission Verify Item First Page Button Clickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-#    When The user clicks last page button asset
     When The user clicks "Group" "LastPage" page button
-    #And  The user verifies first page button is clickable asset
     And  The user verifies "Group" "FirstPage" button is "Active"
 
   Scenario:User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
-      #search kaldırıldı buton olarak eklenirse  And the user clicks on Search button
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-#    And  The user verifies first page button is not clickable user
     And  The user verifies "User" "FirstPage" button is "Passive"
 
   Scenario:User Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
-   #search kaldırıldı buton olarak eklenirse  And the user clicks on Search button
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-#    And  The user verifies previous page button is not clickable user
     And  The user verifies "User" "_previous" button is "Passive"
 
   Scenario:User Permission Verify Item next Button clickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
-  #search kaldırıldı buton olarak eklenirse   And the user clicks on Search button
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-#    When The user clicks next page button user
     When The user clicks "User" "_next" page button
-#    And  The user verifies next button is clickable user
     And  The user verifies "User" "_next" button is "Active"
-
 
   Scenario:User Permission Verify Previous Page Button clickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
- #search kaldırıldı buton olarak eklenirse    And the user clicks on Search button
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-#    When The user clicks next page button user
-#    When The user clicks next page button user
-#    When The user clicks previous page button user
     When The user clicks "User" "_next" page button
-#    And  The user verifies previous button is clickable user
     And  The user verifies "User" "_previous" button is "Active"
 
   Scenario:User Permission Verify Last Page Button clickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-#    When The user clicks last page button user
     When The user clicks "User" "_next" page button
-#    And  The user verifies last button is clickable user
     And  The user verifies "User" "LastPage" button is "Active"
 
   Scenario:User Permission Verify Last Page Button Unclickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-#    When The user clicks last page button user
     When The user clicks "User" "LastPage" page button
-#    And  The user verifies last button is unclickable asset
     And  The user verifies "User" "LastPage" button is "Passive"
 
   Scenario:User Permission Verify Item next Button unclickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-#    When The user clicks last page button user
     When The user clicks "User" "LastPage" page button
-#    And  The user verifies next button is unclickable user
     And  The user verifies "User" "_next" button is "Passive"
 
   Scenario:User Permission Verify Item First Page Button Clickable Condition
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-#    When The user clicks last page button user
     When The user clicks "User" "LastPage" page button
-#    And  The user verifies first page button is clickable user
     And  The user verifies "User" "FirstPage" button is "Active"
 
   Scenario:Asset edit -Item Comment Tab
@@ -266,5 +233,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
 #    And  The user selected columns
     And The user add 'Family' to columns
     And  The user clicks save button columns
+    
 
 

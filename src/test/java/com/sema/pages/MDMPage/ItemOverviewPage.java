@@ -101,15 +101,4 @@ public class ItemOverviewPage extends BasePage {
         }
     }
 
-    public void useTextFilter(String value, String columnName) {
-        //thead/tr[1]/th[normalize-space()='Address']/following::tr[1]/th[position()=count(//thead/tr[1]/th[normalize-space()='Address']/preceding-sibling::th)+1]//input
-        String locate = "//thead/tr[1]/th[normalize-space()='" + columnName +
-                "']/following::tr[1]/th[position()=count(//thead/tr[1]/th[normalize-space()='" + columnName +
-                "']/preceding-sibling::th)+1]//input";
-
-        WebElement filterInput = Driver.getDriver().findElement(By.xpath(locate));
-        filterInput.sendKeys(value + Keys.ENTER);
-
-    }
-
 }

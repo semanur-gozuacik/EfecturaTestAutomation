@@ -74,6 +74,12 @@ public class EditItemPage extends BasePage {
     @FindBy(xpath = "//button[@id='cancelPopup']")
     private WebElement cancelBtnInDeletePopup;
 
+    @FindBy(xpath = "//select[@id='itemStatusDropdown']")
+    private WebElement editItemStatusSelect;
+
+    @FindBy(xpath = "//select[@id='item-family']")
+    private WebElement editItemFamilySelect;
+
 
     public void clickRuleTab() {
         BrowserUtils.wait(5);
@@ -148,11 +154,4 @@ public class EditItemPage extends BasePage {
         return stringList;
     }
 
-    // you can use selectFilter as IsAssociated, Family, ItemStatuses in feature file
-    public void selectOptionInSelectFilter(String selectOption, String selectFilter) {
-
-        WebElement selectElement = driver.findElement(By.xpath("//select[contains(@id,'-" + selectFilter + "')]"));
-        BrowserUtils.selectDropdownOptionByVisibleText(selectElement,selectOption);
-
-    }
 }

@@ -237,31 +237,31 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-    When The user clicks last page button asset
-    And  The user verifies last button is unclickable asset
+    When The user clicks "Group" "LastPage" page button
+    And  The user verifies "Group" "LastPage" button is "Passive"
 
   Scenario:Group Permission Verify Item next Button unclickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-    When The user clicks last page button asset
-    And  The user verifies next button is unclickable asset
+    When The user clicks "Group" "LastPage" page button
+    And  The user verifies "Group" "_next" button is "Passive"
 
   Scenario:Group Permission Verify Item First Page Button Clickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
-    When The user clicks last page button asset
+    When The user clicks "Group" "LastPage" page button
     #And  The user verifies first page button is clickable asset
 
   Scenario:User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    And  The user verifies first page button is not clickable user
+    And  The user verifies "User" "FirstPage" button is "Passive"
 
   Scenario:User Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    And  The user verifies previous page button is not clickable user
+    And  The user verifies "User" "_previous" button is "Passive"

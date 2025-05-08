@@ -117,58 +117,56 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user enters "semaotomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    And  The user verifies first page button is not clickable user
+    And  The user verifies "User" "FirstPage" button is "Passive"
 
   Scenario:Contact User Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "semaotomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    And  The user verifies previous page button is not clickable user
+    And  The user verifies "User" "_previous" button is "Passive"
 
   Scenario:Contact User Permission Verify Item next Button clickable Condition
     And The user enters "semaotomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    When The user clicks next page button user
-    And  The user verifies next button is clickable user
+    When The user clicks "User" "_next" page button
+    And  The user verifies "User" "_next" button is "Active"
 
   Scenario:Contact User Permission Verify Previous Page Button clickable Condition
     And The user enters "semaotomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    When The user clicks next page button user
-    When The user clicks next page button user
-    When The user clicks previous page button user
-    And  The user verifies previous button is clickable user
+    When The user clicks "User" "_next" page button
+    And  The user verifies "User" "_previous" button is "Active"
 
 
   Scenario:Contact User Permission Verify Last Page Button clickable Condition
     And The user enters "semaotomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    When The user clicks last page button user
-    And  The user verifies last button is clickable user
+    When The user clicks "User" "_next" page button
+    And  The user verifies "User" "LastPage" button is "Active"
 
   Scenario:Contact User Permission Verify Last Page Button Unclickable Condition
     And The user enters "semaotomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    When The user clicks last page button user
-    And  The user verifies last button is unclickable asset
+    When The user clicks "User" "LastPage" page button
+    And  The user verifies "User" "LastPage" button is "Passive"
 
   Scenario:Contact User Permission Verify Item next Button unclickable Condition
     And The user enters "semaotomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    When The user clicks last page button user
-    And  The user verifies next button is unclickable user
+    When The user clicks "User" "LastPage" page button
+    And  The user verifies "User" "_next" button is "Passive"
 
   Scenario:Contact User Permission Verify Item First Page Button Clickable Condition
     And The user enters "semaotomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "User Permissions" tab
-    When The user clicks last page button user
-    And  The user verifies first page button is clickable user
+    When The user clicks "User" "LastPage" page button
+    And  The user verifies "User" "FirstPage" button is "Active"
 
   Scenario:Contact edit -Preview Tab
     And The user enters "semaotomasyon" into "Code" filter text input box
