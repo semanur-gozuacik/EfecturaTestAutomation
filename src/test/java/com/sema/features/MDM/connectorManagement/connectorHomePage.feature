@@ -256,7 +256,7 @@ Feature: Connector Management Test Cases- Connector Home Page
   Scenario:Connector Edit item status Passive Item Status-cancel button
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
-    And the user selects "Passive"
+    And The user select ItemStatus as "Passive"
       # And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area
        #And The user clicks cancel button
@@ -265,7 +265,7 @@ Feature: Connector Management Test Cases- Connector Home Page
   Scenario:Connector Edit item status Passive  Item Status- save button
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
-    And the user selects "Passive"
+    And The user select ItemStatus as "Passive"
      #  And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area
       # And The user clicks save button

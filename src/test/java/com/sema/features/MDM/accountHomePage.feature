@@ -74,7 +74,7 @@ Feature: Account Management Test Cases- Account Home Page
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses - cancel button
     And The user enters "2943740465" into "Code" filter text input box
     And The user clicks on edit button in table
-    And the user selects "<ItemStatus>"
+    And The user select ItemStatus as "<ItemStatus>"
    # And the user clicks on unsaved change button
    # And The user enters "-------" in  comment area
   #  And The user clicks cancel button
@@ -89,7 +89,7 @@ Feature: Account Management Test Cases- Account Home Page
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "2943740465" into "Code" filter text input box
     And The user clicks on edit button in table
-    And the user selects "<ItemStatus>"
+    And The user select ItemStatus as "<ItemStatus>"
    # And the user clicks on unsaved change button
    # And The user enters "-------" in  comment area
    # And The user clicks save button

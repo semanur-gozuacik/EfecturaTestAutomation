@@ -40,10 +40,7 @@ public class MDMContactEditPage extends BaseStep{
     public void the_user_clicks_upload_photo_save1_button() {
         pages.contactEditPage().clickUnSavedButton();
     }
-    @Then("the user selects {string}")
-    public void the_user_selects(String status) {
-        pages.contactEditPage().selectItemStatus(status);
-    }
+
     @Then("the user clicks on unsaved change button")
     public void the_user_clicks_on_unsaved_change_button() {
            pages.contactEditPage().clickUnSavedButton();

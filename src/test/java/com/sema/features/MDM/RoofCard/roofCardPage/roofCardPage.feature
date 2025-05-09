@@ -68,7 +68,7 @@ Feature: RoofCard Management Test Cases- Contact Home Page
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses - cancel button
     And The user enters "roof_card_test" into "Code" filter text input box
     And The user clicks on edit button in table
-    And the user selects "<ItemStatus>"
+    And The user select ItemStatus as "<ItemStatus>"
 
     Examples:
       |ItemStatus |
@@ -79,7 +79,7 @@ Feature: RoofCard Management Test Cases- Contact Home Page
   Scenario Outline:Account Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "roof_card_test" into "Code" filter text input box
     And The user clicks on edit button in table
-    And the user selects "<ItemStatus>"
+    And The user select ItemStatus as "<ItemStatus>"
 
     Examples:
       | ItemStatus |
