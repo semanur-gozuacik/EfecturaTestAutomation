@@ -15,7 +15,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user enters "5071245698" into "Code" filter text input box
     And The user clicks on edit button in table
     Then The user verify Edit Page
-    And the user selects "<ItemStatus>"
+    And The user select ItemStatus as "<ItemStatus>"
        #And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area
       # And The user clicks save button
@@ -34,7 +34,7 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user enters "semaotomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     Then The user verify Edit Page
-    And the user selects "<ItemStatus>"
+    And The user select ItemStatus as "<ItemStatus>"
        #And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area
      #  And The user clicks cancel button

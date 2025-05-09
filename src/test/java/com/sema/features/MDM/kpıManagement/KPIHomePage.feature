@@ -93,7 +93,7 @@ Feature: KPI Management Test Cases
     And The user enters "Total Earning Points" into "Code" filter text input box
     And the user clicks on Search button
     And The user clicks on edit button in table
-    And the user selects "<ItemStatus>"
+    And The user select ItemStatus as "<ItemStatus>"
       # And the user clicks on unsaved change button
       # And The user enters "-------" in  comment area
        #And The user clicks cancel button

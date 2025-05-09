@@ -12,7 +12,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button-Asset
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
-#    And the user selects "<ItemStatus>"
     And The user select ItemStatus as "<ItemStatus>"
       # And the user clicks on unsaved change button
        #And The user enters "-------" in  comment area
@@ -31,7 +30,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
-#    And the user selects "<ItemStatus>"
     And The user select ItemStatus as "<ItemStatus>"
       # And the user clicks on unsaved change button
        #And The user enters "-------" in  comment area
