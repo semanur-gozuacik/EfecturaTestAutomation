@@ -1,17 +1,10 @@
 package com.sema.stepDefs;
 
-import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
-import com.sema.utilities.ConfigurationReader;
-import com.sema.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class EditItemStepDefs extends BaseStep{
 
@@ -51,7 +44,11 @@ public class EditItemStepDefs extends BaseStep{
     }
 
     @And("The user select ItemStatus as {string}")
-    public void theUserSelectItemStatusAsApproved(String status) {
-        BrowserUtils.selectDropdownOptionByVisibleText(pages.editItemPage().getEditItemStatusSelect(),status);
+    public void theUserSelectItemStatusAs(String status) {
+        BrowserUtils.wait(2);
+        pages.editItemPage().getStatusExpandArrow().click();
+        pages.editItemPage().getStatusSelectInput().sendKeys(status);
+        pages.editItemPage().getResultOption().click();
+//        pages.contactEditPage().selectItemStatus(status);
     }
 }

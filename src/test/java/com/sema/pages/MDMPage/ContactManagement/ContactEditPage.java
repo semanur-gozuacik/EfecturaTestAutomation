@@ -78,8 +78,8 @@ public class ContactEditPage extends BasePage {
     }
     public void selectItemStatus(String status){
         BrowserUtils.wait(10);
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", editItemStatuses);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].dispatchEvent(new Event('change', { bubbles: true }));", editItemStatuses);
         Select select =new Select(editItemStatuses);
         select.selectByVisibleText(status);
     }
