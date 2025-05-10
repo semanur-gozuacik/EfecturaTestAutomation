@@ -2,11 +2,14 @@ package com.sema.pages.MDMPage;
 
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
+import com.sema.utilities.Driver;
 import lombok.Getter;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,6 +79,15 @@ public class EditItemPage extends BasePage {
 
     @FindBy(xpath = "//select[@id='itemStatusDropdown']")
     private WebElement editItemStatusSelect;
+
+    @FindBy(xpath = "//*[@id=\"status-input-block\"]/div[1]/div[2]/span/span[1]/span/span[2]/b")
+    private WebElement statusExpandArrow;
+
+    @FindBy(xpath = "//input[@class='select2-search__field']")
+    private WebElement statusSelectInput;
+
+    @FindBy(xpath = "//li[contains(@class,'select2-results__option')]")
+    private WebElement resultOption;
 
     @FindBy(xpath = "//select[@id='item-family']")
     private WebElement editItemFamilySelect;
@@ -154,4 +166,18 @@ public class EditItemPage extends BasePage {
         return stringList;
     }
 
+    public void selectStatus(String status) {
+        WebElement option = Driver.getDriver().findElement(By.xpath("//li[contains(text(),'" + status + "')]"));
+        BrowserUtils.wait(15);
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", statusExpandArrow);
+        statusSelectInput.sendKeys(status);
+        option.click();
+
+
+
+
+
+
+    }
 }

@@ -75,6 +75,9 @@ public class GeneralStepDefinitions extends BaseStep {
 
     @And("The user clicks on edit button in table")
     public void theUserClicksOnEditButtonInTable() {
+        pages.itemOverviewPage().closeSideAccordionInOverview();
+        BrowserUtils.wait(5);
+        BrowserUtils.adjustScreenSize(80,Driver.getDriver());
         pages.generalPage().getEditBtnInTable().click();
     }
 

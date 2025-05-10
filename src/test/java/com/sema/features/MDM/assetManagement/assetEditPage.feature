@@ -13,9 +13,9 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user select ItemStatus as "<ItemStatus>"
-      # And the user clicks on unsaved change button
-       #And The user enters "-------" in  comment area
-       #And The user clicks cancel button
+    And the user clicks on unsaved change button
+#    And The user enters "-------" in  comment area
+#    And The user clicks cancel button
       # And the user verifies item status not change
 
     Examples:
