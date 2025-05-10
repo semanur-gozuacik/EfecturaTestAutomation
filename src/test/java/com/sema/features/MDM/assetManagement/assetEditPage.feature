@@ -13,10 +13,11 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user select ItemStatus as "<ItemStatus>"
-    And the user clicks on unsaved change button
-#    And The user enters "-------" in  comment area
+#    And the user clicks on unsaved change button
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
 #    And The user clicks cancel button
-      # And the user verifies item status not change
+#       And the user verifies item status not change
 
     Examples:
       | ItemStatus |
@@ -31,10 +32,13 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user select ItemStatus as "<ItemStatus>"
-      # And the user clicks on unsaved change button
-       #And The user enters "-------" in  comment area
-      # And The user clicks save button
+#       And the user clicks on unsaved change button
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
+#    And The user clicks save button
+    And The user clicks save button in edit item save modal
       # And the user verifies item status success message
+    Then The user verifies info "Changes saved successfully." appears
 
     Examples:
       | ItemStatus |

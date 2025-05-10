@@ -32,6 +32,9 @@ public class GeneralPage extends BasePage {
     @FindBy(xpath = "//select[contains(@id,'-Family')]")
     private WebElement tableFamilySelect;
 
+    @FindBy(xpath = "//textarea[@id='comment']")
+    private WebElement changeSaveCommentTextArea;
+
 
     // you can use selectFilter as IsAssociated, Family, ItemStatuses in feature file
     public void selectOptionInSelectFilter(String selectOption, String selectFilter) {
