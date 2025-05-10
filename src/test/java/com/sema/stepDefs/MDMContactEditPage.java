@@ -16,12 +16,9 @@ public class MDMContactEditPage extends BaseStep{
     public void the_user_verifies_the_photo_uploaded() {
        pages.contactEditPage().verifyUpload();
     }
-    @When("The user enters {string} in  comment area")
+
+    @When("The user enters {string} in comment area1")
     public void the_user_enters_in_comment_area1(String comment) {
-        pages.contactEditPage().setChangeCommentArea(comment);
-    }
-    @When("The user enters {string} in comment area")
-    public void the_user_enters_in_comment_area(String comment) {
         pages.contactEditPage().uploadCommentArea(comment);
     }
     @When("The user clicks upload photo cancel button")

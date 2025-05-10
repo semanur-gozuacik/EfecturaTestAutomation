@@ -20,6 +20,14 @@ import static com.sema.utilities.BrowserUtils.isButtonActive;
 @Getter
 public class EditItemPage extends BasePage {
 
+    @FindBy(xpath = "//div[@id='saveChangeButton']")
+    private WebElement saveButton;
+
+    @FindBy(xpath = "//button[contains(@id,'floatingSaveButton')]")
+    private WebElement saveBtnInEditItemSaveModal;
+
+    @FindBy(xpath = "//*[@id='renderBodyWrap']/div[6]/div[1]")
+    protected WebElement accordionButton;
 
     @FindBy(xpath = "//span[@id='arrowbtn-down']")
     private WebElement scrollRightButton;

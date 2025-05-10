@@ -6,6 +6,7 @@ import com.sema.utilities.ConfigurationReader;
 import com.sema.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -79,6 +80,13 @@ public class GeneralStepDefinitions extends BaseStep {
         BrowserUtils.wait(5);
         BrowserUtils.adjustScreenSize(80,Driver.getDriver());
         pages.generalPage().getEditBtnInTable().click();
+    }
+
+    @When("The user enters {string} in comment area")
+    public void the_user_enters_in_comment_area(String comment) {
+//        pages.contactEditPage().setChangeCommentArea(comment);
+        BrowserUtils.waitForVisibility(pages.generalPage().getChangeSaveCommentTextArea(),15);
+        pages.generalPage().getChangeSaveCommentTextArea().sendKeys(comment);
     }
 
 }

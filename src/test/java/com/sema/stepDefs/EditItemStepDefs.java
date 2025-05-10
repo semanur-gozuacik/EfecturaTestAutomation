@@ -51,4 +51,16 @@ public class EditItemStepDefs extends BaseStep{
         pages.editItemPage().getResultOption().click();
 //        pages.contactEditPage().selectItemStatus(status);
     }
+
+    @And("The user clicks save button in edit item")
+    public void theUserClicksSaveButtonInEditItem() {
+        pages.editItemPage().getAccordionButton().click();
+        BrowserUtils.waitForVisibility(pages.editItemPage().getSaveButton(),10);
+        pages.editItemPage().getSaveButton().click();
+    }
+
+    @And("The user clicks save button in edit item save modal")
+    public void theUserClicksSaveButtonInEditItemSaveModal() {
+        pages.editItemPage().getSaveBtnInEditItemSaveModal().click();
+    }
 }
