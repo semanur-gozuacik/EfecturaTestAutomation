@@ -139,8 +139,8 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
     And The user clicks "BM_SM" tab
     And The user Assocaited All filter
     And The user clicks item
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
     And The user clicks save button
     And the user verifies item status success message
 
