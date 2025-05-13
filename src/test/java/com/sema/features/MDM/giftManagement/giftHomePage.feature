@@ -72,8 +72,8 @@ Feature: Gift Creation and Management Home Page
     And The user clicks "Gifts image" tab
     And The user Assocaited All filter
     And The user clicks item
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
     And The user clicks save button
     And the user verifies item status success message
 
@@ -98,8 +98,8 @@ Feature: Gift Creation and Management Home Page
     And The user clicks "GIFT_CONTACT" tab
     And The user Assocaited All filter
     And The user clicks item
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
     And The user clicks save button
     And the user verifies item status success message
 
@@ -117,8 +117,8 @@ Feature: Gift Creation and Management Home Page
     And The user clicks "Event-Gift" tab
     And The user Assocaited All filter
     And The user clicks item
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
     And The user clicks save button
     And the user verifies item status success message
 

@@ -122,8 +122,8 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks "Product-Account" tab
     And The user Assocaited All filter
     And The user clicks item
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
     And The user clicks save button
     And the user verifies item status success message
 
@@ -201,8 +201,8 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks "ACCOUNT_CONTACT" tab
     And The user Assocaited All filter
     And The user clicks item
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
     And The user clicks save button
     And the user verifies item status success message
 
@@ -217,8 +217,8 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks "Account MRP" tab
     And The user Assocaited All filter
     And The user clicks item
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
     And The user clicks save button
     And the user verifies item status success message
 
@@ -256,8 +256,8 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks "Campaign-Account" tab
     And The user Assocaited All filter
     And The user clicks item
-    And the user clicks on unsaved change button
-    And The user enters "-------" in  comment area
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
     And The user clicks save button
  #  And the user verifies item status success message
 
