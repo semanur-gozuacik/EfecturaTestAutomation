@@ -272,15 +272,15 @@ Feature: User Management Test Cases- Contact Home Page
     And The user clicks item
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
-    And The user clicks save button
-    And the user verifies item status success message
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
 
   Scenario:User edit -Account-MRP tab No Filter
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Account-MRP" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
+    And The user select "No" in "IsAssociated" select filter
+    Then The user verify "Associated" select filter with value "No" in "associationTable"
 
   Scenario:User edit -Account-MRP tab- Valid Label Filter
     And The user enters "Otomasyon" into "Code" filter text input box
@@ -368,15 +368,15 @@ Feature: User Management Test Cases- Contact Home Page
     And The user clicks item
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
-    And The user clicks save button
-    And the user verifies item status success message
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
 
   Scenario:User edit -Training-User tab  Assocaited No filter
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Training-User" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
+    And The user select "No" in "IsAssociated" select filter
+    Then The user verify "Associated" select filter with value "No" in "associationTable"
 
   Scenario Outline:User edit -Account-MRP tab- "<status>" Filter
     And The user enters "Otomasyon" into "Code" filter text input box
@@ -397,16 +397,15 @@ Feature: User Management Test Cases- Contact Home Page
     And The user clicks item
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
-    And The user clicks save button
-    And the user verifies item status success message
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
 
   Scenario:User edit -Banner-MRP tab  Assocaited No filter
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Banner-MRP" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
-
+    And The user select "No" in "IsAssociated" select filter
+    Then The user verify "Associated" select filter with value "No" in "associationTable"
 
   Scenario Outline:User edit -Account-MRP tab "<export>" button
     And The user enters "Otomasyon" into "Code" filter text input box
@@ -439,8 +438,6 @@ Feature: User Management Test Cases- Contact Home Page
     And  The user selected columns
     And  The user clicks Default button columns
 
-
-
   Scenario:User edit -Training-User tab Assocaited All filter
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
@@ -449,15 +446,15 @@ Feature: User Management Test Cases- Contact Home Page
     And The user clicks item
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
-    And The user clicks save button
-    And the user verifies item status success message
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
 
   Scenario:User edit -Training-User tab  Assocaited No filter
     And The user enters "Otomasyon" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "MRP_SURVEY" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
+    And The user select "No" in "IsAssociated" select filter
+    Then The user verify "Associated" select filter with value "No" in "associationTable"
 
   Scenario Outline:User edit -Account-MRP tab- "<status>" Filter
     And The user enters "Otomasyon" into "Code" filter text input box

@@ -34,19 +34,6 @@ public class MDMContactEditPage extends BaseStep{
         pages.contactEditPage().clickUploadPhotoSaveButton();
     }
 
-    @Then("the user clicks on unsaved change button")
-    public void the_user_clicks_on_unsaved_change_button() {
-           pages.contactEditPage().clickUnSavedButton();
-    }
-    @Then("The user clicks save button")
-    public void the_user_clicks_save_button() {
-        pages.contactEditPage().clickSaveChangeButton();
-    }
-    @Given("^the user verifies item status success message$")
-    public void theUserVerifiesItemStatusSuccessMessage() {
-        pages.contactEditPage().verifyChangeSuccesMessage();
-
-    }
     @Given("^The user clicks cancel button$")
     public void theUserClicksCancelButton() {
         pages.contactEditPage().clickCancelChangeButton();

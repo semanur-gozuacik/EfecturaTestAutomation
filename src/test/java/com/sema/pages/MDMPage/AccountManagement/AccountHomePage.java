@@ -42,17 +42,5 @@ public class AccountHomePage extends BasePage {
         selectFirstItem.click();
         BrowserUtils.wait(5);
     }
-    
-    public void clickAssociatedNoFilter() {
-        BrowserUtils.wait(10);
-        associatedNoFilter.sendKeys("No"+ Keys.ENTER);
-    }
-public void verifyAssociatedNoFilter(){
-    BrowserUtils.wait(9);
 
-    for (WebElement element : noAssociatedText) {
-        Assert.assertEquals("No", element.getText());
-    }
-
-}
 }

@@ -110,13 +110,13 @@ Feature: File Management Test Cases- Contact Home Page
     And The user clicks item
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
-    And The user clicks save button
-    And the user verifies item status success message
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
 
   Scenario:File edit -Event-Contact Tab Associated Filter No
     And The user enters "File_296034" into "Code" filter text input box
     And the user clicks on Search button
     And The user clicks on edit button in table
     And The user clicks "Training-File" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
+    And The user select "No" in "IsAssociated" select filter
+    Then The user verify "Associated" select filter with value "No" in "associationTable"

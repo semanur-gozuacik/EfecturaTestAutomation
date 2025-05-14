@@ -49,8 +49,8 @@ Feature: Product Management Test Cases- Contact Home Page
     And the user clicks on Search button
     And The user clicks on edit button in table
     And The user clicks "Web_Images" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
+    And The user select "No" in "IsAssociated" select filter
+    Then The user verify "Associated" select filter with value "No" in "associationTable"
 
 
   Scenario:Product edit -EVENT_PRODUCT Associated
@@ -65,8 +65,8 @@ Feature: Product Management Test Cases- Contact Home Page
     And the user clicks on Search button
     And The user clicks on edit button in table
     And The user clicks "Event-Product" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
+    And The user select "No" in "IsAssociated" select filter
+    Then The user verify "Associated" select filter with value "No" in "associationTable"
 
 
   Scenario:Product edit -Item Comment Tab
@@ -87,5 +87,5 @@ Feature: Product Management Test Cases- Contact Home Page
     And the user clicks on Search button
     And The user clicks on edit button in table
     And The user clicks "Product_Account" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
+    And The user select "No" in "IsAssociated" select filter
+    Then The user verify "Associated" select filter with value "No" in "associationTable"
