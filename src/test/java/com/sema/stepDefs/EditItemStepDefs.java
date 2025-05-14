@@ -29,13 +29,6 @@ public class EditItemStepDefs extends BaseStep{
         pages.editItemPage().getAssociateCheckBoxes().get(assocCheckboxOrder - 1).click();
     }
 
-    @And("The user saves changes with comment {string}")
-    public void theUserSavesChangesWithComment(String saveComment) {
-        pages.editItemPage().getSaveChangesBtn().click();
-        pages.editItemPage().getSaveCommentTextarea().sendKeys(saveComment);
-        pages.editItemPage().getSaveButtonInSaveChanges().click();
-    }
-
     @Then("The user verifies info {string} appears")
     public void theUserVerifiesInfoAppears(String expectedMessage) {
         BrowserUtils.wait(3);

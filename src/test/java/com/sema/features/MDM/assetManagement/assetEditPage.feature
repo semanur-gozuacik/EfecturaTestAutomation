@@ -13,7 +13,6 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user select ItemStatus as "<ItemStatus>"
-#    And the user clicks on unsaved change button
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
 #    And The user clicks cancel button
@@ -32,12 +31,9 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user enters "TEST123456" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user select ItemStatus as "<ItemStatus>"
-    And the user clicks on unsaved change button
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
-#    And The user clicks save button
     And The user clicks save button in edit item save modal
-      # And the user verifies item status success message
     Then The user verifies info "Changes saved successfully." appears
 
     Examples:
@@ -199,20 +195,14 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user select "No" in "IsAssociated" select filter
 #    And The user clicks item
     And The user select item at order 1 in association tab
-#    And the user clicks on unsaved change button
-#    And The user enters "-------" in  comment area
-#    And The user clicks save button
-    And The user saves changes with comment "-------"
-#    And the user verifies item status success message
+    And The user enters "-------" in comment area
     Then The user verifies info "Changes saved successfully." appears
 
   Scenario:Asset edit -ACCOUNT_COOLER Tab Associated Filter No
     And The user enters "Asset_19" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "ACCOUNT_COOLER" tab
-#    And The user Assocaited No filter
     And The user select "No" in "IsAssociated" select filter
-#    Then The user verify No Filter
     Then The user verify "Associated" select filter with value "No" in "associationTable"
 
   Scenario:Asset edit -Attributes Tab
@@ -223,6 +213,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
   Scenario: Asset Home Page Columns - Cancel Button
     And  The user enters columns button
 #    And  The user selected columns
+    And The user remove 'Family' from columns
     And  The user clicks cancel button columns
 
   Scenario: Asset Home Page Columns - remove column

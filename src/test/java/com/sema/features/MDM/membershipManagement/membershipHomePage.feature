@@ -66,8 +66,8 @@ Feature: Membership Management Test Cases
     And The user enters "TestMember" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "MEMBERSHIP_ACCOUNT" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
+    And The user select "No" in "IsAssociated" select filter
+    Then The user verify "Associated" select filter with value "No" in "associationTable"
 
   Scenario Outline: Membership Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries

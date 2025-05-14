@@ -20,15 +20,6 @@ public class MDMAccountHomePageStepDefs extends BaseStep{
     public void the_user_clicks_item() {
      pages.accountHomePage().clicksSelectFirstItem();
     }
-    @Given("The user Assocaited No filter")
-    public void the_user_assocaited_no_filter() {
-        pages.accountHomePage().clickAssociatedFilter();
-        pages.accountHomePage().clickAssociatedNoFilter();
-    }
-    @Then("The user verify No Filter")
-    public void the_user_verify_no_filter() {
-    pages.accountHomePage().verifyAssociatedNoFilter();
-    }
 
     @Given("The user clicks Associated on filter")
     public void the_user_clicks_associated_on_filter() {

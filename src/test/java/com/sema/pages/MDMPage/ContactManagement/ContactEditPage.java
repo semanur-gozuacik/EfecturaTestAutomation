@@ -83,11 +83,7 @@ public class ContactEditPage extends BasePage {
         Select select =new Select(editItemStatuses);
         select.selectByVisibleText(status);
     }
-    public void clickUnSavedButton(){
-        accordionButton.click();
-        BrowserUtils.waitForVisibility(unsavedChanges,15);
-        unsavedChanges.click();
-    }
+
     public void clickCancelChangeButton(){
         BrowserUtils.waitForVisibility(cancelChangeButton,10);
         cancelChangeButton.click();
@@ -100,14 +96,7 @@ public class ContactEditPage extends BasePage {
         BrowserUtils.waitForVisibility(commentChange, 10);
         commentChange.sendKeys(comment);
     }
-    public void verifyChangeSuccesMessage(){
-        BrowserUtils.waitForVisibility(changeSucessMessage,10);
-        Assert.assertTrue(changeSucessMessage.isDisplayed());
-    }
-    public void clickSaveChangeButton(){
-        //BrowserUtils.waitForVisibility(saveChangeButton,20);
-        saveChangeButton.click();
-    }
+
     public void clickListItem() {
         BrowserUtils.waitForVisibility(editListItem, 30);
         editListItem.click();

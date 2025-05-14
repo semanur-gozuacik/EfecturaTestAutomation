@@ -124,15 +124,15 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks item
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
-    And The user clicks save button
-    And the user verifies item status success message
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
 
   Scenario:Account edit -Product-Account Tab Associated Filter No
     And The user enters "2943740465" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Product-Account" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
+    And The user select "No" in "IsAssociated" select filter
+    Then The user verify "Associated" select filter with value "No" in "associationTable"
 
   Scenario:Account edit -My Contact Tab
     And The user enters "2943740465" into "Code" filter text input box
@@ -179,7 +179,6 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks on edit button in table
     And The user clicks "InvoiceTransaction" tab
 
-
   Scenario:Account edit -Nexio Data Tab
     And The user enters "2943740465" into "Code" filter text input box
     And The user clicks on edit button in table
@@ -203,8 +202,8 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks item
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
-    And The user clicks save button
-    And the user verifies item status success message
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
 
   Scenario:Account edit -Account-MRP Tab
     And The user enters "2943740465" into "Code" filter text input box
@@ -219,16 +218,15 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks item
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
-    And The user clicks save button
-    And the user verifies item status success message
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
 
   Scenario:Account edit -Account-MRP Tab Associated Filter No
     And The user enters "2943740465" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Account MRP" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
-
+    And The user select "No" in "IsAssociated" select filter
+    Then The user verify "Associated" select filter with value "No" in "associationTable"
 
   Scenario:Account edit -Event-Location Tab
     And The user enters "2943740465" into "Code" filter text input box
@@ -258,15 +256,15 @@ Feature: Account Management Test Cases- Account Home Page
     And The user clicks item
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
-    And The user clicks save button
- #  And the user verifies item status success message
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
 
   Scenario:Account edit - Campaign-Account Tab Associated Filter No
     And The user enters "2943740465" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "Campaign-Account" tab
-    And The user Assocaited No filter
-    Then The user verify No Filter
+    And The user select "No" in "IsAssociated" select filter
+    Then The user verify "Associated" select filter with value "No" in "associationTable"
 
   Scenario:Account edit -Preview Tab Export Button
     And The user enters "2943740465" into "Code" filter text input box
