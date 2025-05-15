@@ -56,4 +56,10 @@ public class EditItemStepDefs extends BaseStep{
     public void theUserClicksSaveButtonInEditItemSaveModal() {
         pages.editItemPage().getSaveBtnInEditItemSaveModal().click();
     }
+
+    @And("The user clicks cancel button in edit item save modal")
+    public void theUserClicksCancelButtonInEditItemSaveModal() {
+        BrowserUtils.waitForVisibility(pages.editItemPage().getCancelBtnInEditItemSaveModal(),10);
+        pages.editItemPage().getCancelBtnInEditItemSaveModal().click();
+    }
 }

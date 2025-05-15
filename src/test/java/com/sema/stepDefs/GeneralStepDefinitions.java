@@ -89,4 +89,9 @@ public class GeneralStepDefinitions extends BaseStep {
         pages.generalPage().getChangeSaveCommentTextArea().sendKeys(comment);
     }
 
+    @And("The user verify item status is not {string} on item with code {string}")
+    public void theUserVerifyItemStatusIsNotOnItemWithCodeTEST(String status, String itemCode) {
+        Assert.assertFalse(pages.generalPage().getItemStatus(itemCode).isEmpty());
+        Assert.assertNotEquals(status,pages.generalPage().getItemStatus(itemCode));
+    }
 }

@@ -26,6 +26,9 @@ public class EditItemPage extends BasePage {
     @FindBy(xpath = "//button[contains(@id,'floatingSaveButton')]")
     private WebElement saveBtnInEditItemSaveModal;
 
+    @FindBy(xpath = "//div[@class='comment-footer']/button[contains(text(),'Cancel')]")
+    private WebElement cancelBtnInEditItemSaveModal;
+
     @FindBy(xpath = "//*[@id='renderBodyWrap']/div[6]/div[1]")
     protected WebElement accordionButton;
 

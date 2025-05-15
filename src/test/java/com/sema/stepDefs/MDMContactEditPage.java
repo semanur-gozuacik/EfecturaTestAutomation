@@ -34,15 +34,6 @@ public class MDMContactEditPage extends BaseStep{
         pages.contactEditPage().clickUploadPhotoSaveButton();
     }
 
-    @Given("^The user clicks cancel button$")
-    public void theUserClicksCancelButton() {
-        pages.contactEditPage().clickCancelChangeButton();
-    }
-    @Given("^the user verifies item status not change$")
-    public void theUserVerifiesItemStatusNotChange() {
-        pages.contactEditPage().verifyCancelChange();
-
-    }
     @Then("The user clicks new list item-contact")
     public void the_user_clicks_new_list_item() {
         pages.contactEditPage().clickListItem();
