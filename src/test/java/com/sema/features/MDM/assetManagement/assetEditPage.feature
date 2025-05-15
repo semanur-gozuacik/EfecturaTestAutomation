@@ -191,7 +191,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user enters "Asset_19" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user clicks "ACCOUNT_COOLER" tab
-#    And The user Assocaited All filter
+    And The user Assocaited All filter
     And The user select "No" in "IsAssociated" select filter
 #    And The user clicks item
     And The user select item at order 1 in association tab
