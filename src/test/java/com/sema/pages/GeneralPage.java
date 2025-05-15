@@ -1,12 +1,18 @@
 package com.sema.pages;
 
 import com.sema.utilities.BrowserUtils;
+import com.sema.utilities.Database;
 import com.sema.utilities.Driver;
 import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 @Getter
 public class GeneralPage extends BasePage {
@@ -56,5 +62,26 @@ public class GeneralPage extends BasePage {
     }
 
 
+    public String getItemStatus(String itemCode) {
+        String query = "SELECT Text FROM TEST_MDM.dbo.ItemStatusesTranslations is2 \n" +
+                "WHERE LanguageCode = 'en-US' \n" +
+                "AND ItemStatusesId = (SELECT ItemStatusesId FROM TEST_MDM.dbo.Items WHERE SKU = '" + itemCode + "')";
 
+        String itemStatus = "";
+
+        try (Connection conn = Database.getInstance();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+
+            while (rs.next()) {
+                itemStatus = rs.getString("Text");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("item status of the item with code " + itemCode + " is " + itemStatus);
+        return itemStatus;
+
+    }
 }

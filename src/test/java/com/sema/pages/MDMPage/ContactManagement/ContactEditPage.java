@@ -27,7 +27,7 @@ public class ContactEditPage extends BasePage {
     private WebElement editItemStatuses;
     @FindBy(xpath = "//span[normalize-space()='Unsaved Changes']")
     private WebElement unsavedChanges;
-    @FindBy(xpath = "//div[@id='modalSaveChange']//i[@class='fa fa-chevron-left']")
+    @FindBy(xpath = "//div[@class='comment-footer']/button[contains(text(),'Cancel')]")
     private WebElement cancelChangeButton;
     @FindBy(xpath = "//textarea[@id='comment']")
     private WebElement commentChange;
@@ -84,14 +84,6 @@ public class ContactEditPage extends BasePage {
         select.selectByVisibleText(status);
     }
 
-    public void clickCancelChangeButton(){
-        BrowserUtils.waitForVisibility(cancelChangeButton,10);
-        cancelChangeButton.click();
-    }
-   public void verifyCancelChange(){
-        BrowserUtils.waitForVisibility(unsavedChanges,12);
-        Assert.assertTrue(unsavedChanges.isDisplayed());
-   }
     public void setChangeCommentArea(String comment) {
         BrowserUtils.waitForVisibility(commentChange, 10);
         commentChange.sendKeys(comment);

@@ -15,8 +15,8 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user select ItemStatus as "<ItemStatus>"
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
-#    And The user clicks cancel button
-#       And the user verifies item status not change
+    And The user clicks cancel button in edit item save modal
+    And The user verify item status is not "<ItemStatus>" on item with code "TEST123456"
 
     Examples:
       | ItemStatus |
