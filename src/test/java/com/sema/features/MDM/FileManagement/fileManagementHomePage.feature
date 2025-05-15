@@ -106,7 +106,7 @@ Feature: File Management Test Cases- Contact Home Page
     And the user clicks on Search button
     And The user clicks on edit button in table
     And The user clicks "Training-File" tab
-    And The user Assocaited All filter
+    And The user select "No" in "IsAssociated" select filter
     And The user clicks item
     And The user clicks save button in edit item
     And The user enters "-------" in comment area
