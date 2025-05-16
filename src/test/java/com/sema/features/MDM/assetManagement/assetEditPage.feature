@@ -35,6 +35,7 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user enters "-------" in comment area
     And The user clicks save button in edit item save modal
     Then The user verifies info "Changes saved successfully." appears
+    And The user verify item status is "<ItemStatus>" on item with code "TEST123456"
 
     Examples:
       | ItemStatus |
@@ -195,8 +196,11 @@ Feature: Asset Management Test Cases- Asset Home Page Edit
     And The user select "No" in "IsAssociated" select filter
 #    And The user clicks item
     And The user select item at order 1 in association tab
+    And The user clicks save button in edit item
     And The user enters "-------" in comment area
+    And The user clicks save button in edit item save modal
     Then The user verifies info "Changes saved successfully." appears
+    Then The user verify that first item with code "Asset_19" has association on "ACCOUNT_COOLER"
 
   Scenario:Asset edit -ACCOUNT_COOLER Tab Associated Filter No
     And The user enters "Asset_19" into "Code" filter text input box

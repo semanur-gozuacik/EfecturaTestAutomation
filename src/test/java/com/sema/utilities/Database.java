@@ -1,9 +1,12 @@
 package com.sema.utilities;
 
+import lombok.Getter;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+@Getter
 public class Database {
 
     private static Database instance = null;
