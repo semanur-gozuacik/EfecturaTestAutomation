@@ -50,7 +50,7 @@ Feature: File Management Test Cases- Contact Home Page
       |ItemStatus |
       |Active     |
       |Passive    |
-      |Blanks    |
+      |Blanks     |
 
   Scenario:ID Tab Sorting Functionality
     And  The user clicks id tab

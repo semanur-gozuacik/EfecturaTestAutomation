@@ -1,7 +1,9 @@
 package com.sema.pages.MDMPage;
 
 import com.sema.pages.BasePage;
+import com.sema.pages.GeneralPage;
 import com.sema.utilities.BrowserUtils;
+import com.sema.utilities.Database;
 import com.sema.utilities.Driver;
 import lombok.Getter;
 import org.junit.Assert;
@@ -11,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -184,11 +187,70 @@ public class EditItemPage extends BasePage {
         executor.executeScript("arguments[0].click();", statusExpandArrow);
         statusSelectInput.sendKeys(status);
         option.click();
+    }
 
+    int itemIdToBeAssociated;
+    public void selectItemAtOrderInAssociationTab(int assocCheckboxOrder) {
+        BrowserUtils.wait(2);
+        associateCheckBoxes.get(assocCheckboxOrder - 1).click();
+        String itemIdToBeAssociatedText = GeneralPage.getColumnData(associationTable,"Item Id").get(1);
+        itemIdToBeAssociated = Integer.parseInt(itemIdToBeAssociatedText);
+    }
 
+    public boolean getAssociations(String itemCode, String associationTypeCode) {
+        int firstItemId = 0;
+        int secondItemId = 0;
+        int assocType = 0;
+        int itemId = getItemIdFromSKU(itemCode);
+        if (itemId == -1) {
+            System.out.println("Item not found for SKU: " + itemCode);
+        }
 
+        String query = "SELECT * FROM TEST_MDM.dbo.Associations a " +
+                "WHERE (FirstItemId = ? AND SecondItemId = ?) " +
+                "   OR (FirstItemId = ? AND SecondItemId = ?)";
 
+        try (Connection connection = Database.getInstance();
+             PreparedStatement ps = connection.prepareStatement(query)) {
 
+            ps.setInt(1, itemIdToBeAssociated);
+            ps.setInt(2, itemId);
+            ps.setInt(3, itemId);
+            ps.setInt(4, itemIdToBeAssociated);
 
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                System.out.println("Association ID: " + rs.getInt("Id"));
+                firstItemId = rs.getInt("FirstItemId");
+                secondItemId = rs.getInt("SecondItemId");
+                assocType = rs.getInt("AssociationTypeId");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("FirstItemId " + firstItemId);
+        System.out.println("SecondItemId " + secondItemId);
+        System.out.println("AssociationTypeId " + assocType);
+        System.out.println(itemIdToBeAssociated);
+        return firstItemId != 0 && secondItemId != 0;
+    }
+
+    public int getItemIdFromSKU(String sku) {
+        String sql = "SELECT Id FROM TEST_MDM.dbo.Items WHERE SKU = ?";
+        try (Connection connection = Database.getInstance();
+             PreparedStatement ps = connection.prepareStatement(sql)) {
+
+            ps.setString(1, sku);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("Id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 }

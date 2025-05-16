@@ -1,5 +1,6 @@
 package com.sema.stepDefs;
 
+import com.sema.pages.GeneralPage;
 import com.sema.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -25,8 +26,7 @@ public class EditItemStepDefs extends BaseStep{
 
     @And("The user select item at order {int} in association tab")
     public void theUserSelectItemAtOrderInAssociationTab(int assocCheckboxOrder) {
-        BrowserUtils.wait(2);
-        pages.editItemPage().getAssociateCheckBoxes().get(assocCheckboxOrder - 1).click();
+        pages.editItemPage().selectItemAtOrderInAssociationTab(assocCheckboxOrder);
     }
 
     @Then("The user verifies info {string} appears")

@@ -11,6 +11,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class GeneralStepDefinitions extends BaseStep {
@@ -93,5 +94,17 @@ public class GeneralStepDefinitions extends BaseStep {
     public void theUserVerifyItemStatusIsNotOnItemWithCodeTEST(String status, String itemCode) {
         Assert.assertFalse(pages.generalPage().getItemStatus(itemCode).isEmpty());
         Assert.assertNotEquals(status,pages.generalPage().getItemStatus(itemCode));
+    }
+
+    @And("The user verify item status is {string} on item with code {string}")
+    public void theUserVerifyItemStatusIsOnItemWithCode(String status, String itemCode) {
+        Assert.assertFalse(pages.generalPage().getItemStatus(itemCode).isEmpty());
+        Assert.assertEquals(status,pages.generalPage().getItemStatus(itemCode));
+    }
+
+    @Then("The user verify that first item with code {string} has association on {string}")
+    public void theUserVerifyThatFirstItemWithCodeHasAssociationOn(String itemCode, String associationTypeCode) throws SQLException {
+        BrowserUtils.wait(2);
+        Assert.assertTrue(pages.editItemPage().getAssociations(itemCode,associationTypeCode));
     }
 }
