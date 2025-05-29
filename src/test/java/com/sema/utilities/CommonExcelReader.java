@@ -185,6 +185,39 @@ public class CommonExcelReader {
         workbook.close();
     }
 
+    public static void createEmptyExcel(String filePath) {
+        // Boş bir workbook (Excel dosyası) oluştur
+        XSSFWorkbook workbook = new XSSFWorkbook();
+
+        try (FileOutputStream outputStream = new FileOutputStream(filePath)) {
+            // Workbook'u belirtilen path'e yaz
+            workbook.write(outputStream);
+            System.out.println("Excel dosyası oluşturuldu: " + filePath);
+        } catch (IOException e) {
+            System.err.println("Excel dosyası oluşturulamadı: " + e.getMessage());
+        } finally {
+            try {
+                workbook.close();
+            } catch (IOException e) {
+                System.err.println("Workbook kapatılamadı: " + e.getMessage());
+            }
+        }
+    }
+
+    public static void deleteExcelFile(String filePath) {
+        File file = new File(filePath);
+
+        if (file.exists()) {
+            if (file.delete()) {
+                System.out.println("Excel dosyası silindi: " + filePath);
+            } else {
+                System.err.println("Excel dosyası silinemedi: " + filePath);
+            }
+        } else {
+            System.err.println("Dosya bulunamadı: " + filePath);
+        }
+    }
+
 }
 
 

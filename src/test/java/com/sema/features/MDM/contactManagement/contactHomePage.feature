@@ -21,29 +21,33 @@ Feature: Contact Management Test Cases- Contact Home Page
     And The user verifies that the codes shown in the Unassigned label filter are contact categories
 
   Scenario: Verify Code Filter -Valid Unique Code
-    And The user clicks on Contact  category
+#    And The user clicks on Contact  category
     And The user enters "semaotomasyon" into "Code" filter text input box
-    And the user verify on code filter functionality "test_automation"
+#    And the user verify on code filter functionality "test_automation"
+    Then The user verify "Code" text filter with value "semaotomasyon" in "overviewTable"
 
   Scenario:Verify Code Filter -Valid partial Code
-    And The user clicks on Contact  category
+#    And The user clicks on Contact  category
     And The user enters "test" into "Code" filter text input box
-    And the user verify on code filter functionality with partial unique code "test"
+#    And the user verify on code filter functionality with partial unique code "test"
+    Then The user verify "Code" text filter with value "test" in "overviewTable"
 
   Scenario: Verify Code Filter - Invalid Unique Code
-    And The user clicks on Contact  category
+#    And The user clicks on Contact  category
     And The user enters "sema12345" into "Code" filter text input box
     And The user verify empty data table info 'No matching records found'
 
   Scenario: Verify Label Filter - Valid Label
-    And The user clicks on Contact  category
+#    And The user clicks on Contact  category
     And The user enters "semaotoma" into "Label" filter text input box
-    And the user verify on label filter functionality with partial unique code "semaotomasyon"
+#    And the user verify on label filter functionality with partial unique code "semaotomasyon"
+    Then The user verify "Label" text filter with value "semaotoma" in "overviewTable"
 
   Scenario: Verify Label Filter - Partial Unique Code
-    And The user clicks on Contact  category
+#    And The user clicks on Contact  category
     And The user enters "test" into "Label" filter text input box
-    And the user verify on label filter functionality with partial unique code "test"
+#    And the user verify on label filter functionality with partial unique code "test"
+    Then The user verify "Label" text filter with value "test" in "overviewTable"
 
   Scenario: Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into "Label" filter text input box

@@ -283,27 +283,10 @@ public class ContactHomePage extends BasePage {
         BrowserUtils.wait(5);
     }
 
-    public void verifyCodeFilter(String code) {
-        BrowserUtils.wait(5);
-        assertEquals(getColumnData(itemOverviewTable, "Code").get(0) , code);
-//        assertTrue(verifyCodeFilter.getText().equalsIgnoreCase(code));
-    }
-
     public void verifyLabelFilter(String label) {
         for (WebElement verifyPartialCodeFilter : verifyPartialCodeFilters) {
             assertTrue(verifyPartialCodeFilter.getText().equalsIgnoreCase(label));
         }
-    }
-
-    public void verifyPartialCodeFilters(String partialCode) {
-        System.out.println(verifyPartialCodeFilters.size());
-        assertTrue(verifyPartialCodeFilters.size() > 1);
-    }
-
-    public void verifyPartialLabelFilters(String partialLabel) {
-        BrowserUtils.wait(2);
-        assertTrue(verifyPartialCodeFilters.size() >= 1);
-        assertTrue(getColumnData(itemOverviewTable,"Label").get(0).contains(partialLabel));
     }
 
     public void selectEkosystemFamilyFilter() {
