@@ -103,21 +103,6 @@ public class MDMContactHomePageStepDef extends BaseStep {
         BrowserUtils.wait(2);
     }
 
-    @Then("the user verify on code filter functionality {string}")
-    public void the_user_verify_on_code_filter_functionality(String code) {
-        pages.contactHomePage().verifyCodeFilter(code);
-    }
-
-    @Then("the user verify on code filter functionality with partial unique code {string}")
-    public void the_user_verify_on_code_filter_functionality_with_partial_unique_code(String partialCode) {
-        pages.contactHomePage().verifyPartialCodeFilters(partialCode);
-    }
-
-    @Then("the user verify on label filter functionality with partial unique code {string}")
-    public void the_user_verify_on_label_filter_functionality_with_partial_unique_code(String partialLabel) {
-        pages.contactHomePage().verifyPartialLabelFilters(partialLabel);
-    }
-
     @Then("the user verify on family filter Ekosystem functionality")
     public void the_user_verify_on_family_filter_ekosystem_functionality() {
         pages.contactHomePage().verifyFamilyFilter();

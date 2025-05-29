@@ -25,15 +25,17 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario: Verify Code Filter -Valid Unique Code
     When The user open side accordion in overview
-    When The user clicks My Contact button
-    And The user clicks on Contact  category
+#    When The user clicks My Contact button
+#    And The user clicks on Contact  category
     And The user enters "0058950138" into "Code" filter text input box
-    And the user verify on code filter functionality "0058950138"
+#    And the user verify on code filter functionality "0058950138"
+    Then The user verify "Code" text filter with value "0058950138" in "overviewTable"
 
   Scenario:  Verify Code Filter -Valid Partial Unique Code
-    When The user clicks My Contact button
+#    When The user clicks My Contact button
     And The user enters "test" into "Code" filter text input box
-    And the user verify on code filter functionality with partial unique code "test"
+#    And the user verify on code filter functionality with partial unique code "test"
+    Then The user verify "Code" text filter with value "test" in "overviewTable"
 
   Scenario: Verify Code Filter - Invalid Unique Code
     When The user clicks My Contact button
@@ -41,14 +43,16 @@ Feature: Contact Management Test Cases-My Contact Page
     And The user verify empty data table info 'No matching records found'
 
   Scenario: Verify Label Filter - Valid Label
-    When The user clicks My Contact button
-    And The user enters "t_aut" into "Label" filter text input box
-    And the user verify on label filter functionality with partial unique code "test_automation"
+#    When The user clicks My Contact button
+    And The user enters "denem" into "Label" filter text input box
+#    And the user verify on label filter functionality with partial unique code "test_automation"
+    Then The user verify "Label" text filter with value "denem" in "overviewTable"
 
   Scenario: Verify Label Filter - Partial Unique Code
-    When The user clicks My Contact button
+#    When The user clicks My Contact button
     And The user enters "Test" into "Label" filter text input box
    # And the user verify on label filter functionality with partial unique code "Test"
+    Then The user verify "Label" text filter with value "Test" in "overviewTable"
 
   Scenario: Verify Label Filter - Invalid  Label
     When The user clicks My Contact button

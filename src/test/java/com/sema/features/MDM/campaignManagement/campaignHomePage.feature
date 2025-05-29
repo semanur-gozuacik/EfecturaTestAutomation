@@ -252,7 +252,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
     When The user clicks "Group" "LastPage" page button
-    #And  The user verifies first page button is clickable asset
+#    And  The user verifies first page button is clickable asset
 
   Scenario:User Permission Verify Item First Page Button Unclickable Condition
     And The user enters "TestAutomation" into "Code" filter text input box

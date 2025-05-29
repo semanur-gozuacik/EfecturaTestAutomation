@@ -239,11 +239,10 @@ public class EditItemPage extends BasePage {
     }
 
     public int getItemIdFromSKU(String sku) {
-        String sql = "SELECT Id FROM TEST_MDM.dbo.Items WHERE SKU = ?";
+        String sql = "SELECT Id FROM TEST_MDM.dbo.Items WHERE SKU = '" + sku + "'";
         try (Connection connection = Database.getInstance();
              PreparedStatement ps = connection.prepareStatement(sql)) {
 
-            ps.setString(1, sku);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 return rs.getInt("Id");

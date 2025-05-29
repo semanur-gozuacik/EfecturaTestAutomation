@@ -11,31 +11,26 @@ Feature: Asset Management Test Cases- Asset Home Page
   Scenario: Verify Code Filter -Valid Unique Code
     And The user enters "TEST123456" into "Code" filter text input box
 #    And the user clicks on Search button
-    And the user verify on code filter functionality "TEST123456"
+    Then The user verify "Code" text filter with value "TEST123456" in "overviewTable"
 
   Scenario:  Verify Code Filter -Valid Unique Code partial
     And The user enters "TEST" into "Code" filter text input box
-#    And the user clicks on Search button
-#    And the user verify on code filter functionality with partial unique code "TEST"
+    Then The user verify "Code" text filter with value "TEST" in "overviewTable"
 
   Scenario: Verify Code Filter - Invalid Unique Code
     And The user enters "sema12345" into "Code" filter text input box
-#    And the user clicks on Search button
     And The user verify empty data table info 'No matching records found'
 
   Scenario: Verify Label Filter - Valid Label
     And The user enters "TEST12345" into "Label" filter text input box
-#    And the user clicks on Search button
-    And the user verify on label filter functionality with partial unique code "TEST12345"
+    Then The user verify "Label" text filter with value "TEST12345" in "overviewTable"
 
   Scenario: Verify Label Filter - Partial Label
     And The user enters "test" into "Label" filter text input box
-#    And the user clicks on Search button
-    And the user verify on label filter functionality with partial unique code "test"
+    Then The user verify "Label" text filter with value "test" in "overviewTable"
 
   Scenario: Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into "Label" filter text input box
-#    And the user clicks on Search button
     And The user verify empty data table info 'No matching records found'
 
   Scenario: Create List- cancel button
