@@ -38,7 +38,7 @@ Feature: Connector Management Test Cases- Connector Home Page
    #  Scenario: Verify export button
    #    When  The user clicks on Export button
    #    Then  The user verify that the export was "Success" verify that the file is located in the downloads folder
-    #And   The user verify that the file is in the correct format
+#    And   The user verify that the file is in the correct format
 
 
   # You can write button names like these in future file:
