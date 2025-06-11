@@ -7,7 +7,7 @@ Feature: Import Management Test Cases
     And    The User inputs a valid password "validPassword"
     And    The User clicks the Submit button
     Then  The User waits until the System element is visible with a timeout of 120 seconds
-    And   The User performs a mouseover on the System element symbol
+#    And   The User performs a mouseover on the System element symbol
     Given The user on the settings ımport page
     And   The User gets the current URL and stores it in "Import"
     And The user accepts the popup OK
@@ -16,7 +16,9 @@ Feature: Import Management Test Cases
     Then The User verifies import page table is displayed
 
   Scenario: Reset Button Control
-    And the user clicks on Reset button
+    And The user enters "Oge Turleri" into "Name" filter text input box
+    And The user reset the basic filters
+    And The user verify Reset button func for "Name" text filter
 
   Scenario Outline:Import Page-User selects different options for show entries
     When  The user selects "<entries>" into show entries import

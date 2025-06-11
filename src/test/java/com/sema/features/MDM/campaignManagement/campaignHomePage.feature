@@ -10,7 +10,6 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario: Verify Code Filter -Valid Unique Code
     And The user enters "welcometestgeneric122" into "Code" filter text input box
-    And the user verify on code filter functionality "welcometestgeneric122"-Campaign
     Then The user verify "Code" text filter with value "welcometestgeneric122" in "overviewTable"
 
   Scenario:  Verify Code Filter -Valid Unique Code partial
@@ -35,9 +34,7 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario Outline: Filter "<ItemStatus>" Item Statuses7
     And The user select "<ItemStatus>" in "ItemStatus" select filter
-#    And the user clicks on ItemStatuses
-#    And the user clicks on "<ItemStatus>"
-    # And the incoming filter for "<ItemStatus>" should contain
+#     And the incoming filter for "<ItemStatus>" should contain
     Examples:
        |ItemStatus |
        |Active     |
@@ -47,18 +44,13 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
   Scenario: Reset Button Control
     And The user enters "sema12345" into "Label" filter text input box
-    And the user clicks on Reset button
-#    And the user verify Reset button functionality
-    And The user verify Reset button func for "Label" filter
+    And The user reset the basic filters
+    And The user verify Reset button func for "Label" text filter
 
   Scenario: Deleting an item and declining the popup message
     And The user enters "TESTSETSET123123" into "Code" filter text input box
-#    And the user clicks on Search button
-#    And The user clicks on Delete
     And The User clicks on delete button in table
-#    And The user declines the popup message
     And The user clicks cancel button in overview delete popup
-#    Then The user verify that "TESTSETSET123123" is visible-campaign
     Then The user verify "Code" text filter with value "TESTSETSET123123" in "overviewTable"
 
   Scenario: Verify My Count Star Item Functionality- One Contact
@@ -70,18 +62,18 @@ Feature: Campaign Management Test Cases- Campaign Home Page
  #   Then  The user verify that the export was "Success"
 
   Scenario: Verify Item Previous Button Unclickable Condition
-    And  The user verifies previous button is not clickable
+    And  The user verifies "items_previous" button is "Passive"
 
   Scenario: Verify Item next Button Unclickable Condition
-    When The user clicks last page button
-  #  And  The user verifies next button is not clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "items_next" button is "Passive"
 
   Scenario: Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable
+    And  The user verifies "firstPageTable" button is "Passive"
 
   Scenario: Verify Last Page Button Unclickable Condition
-    When The user clicks last page button
-    And  The user verifies last page button is not clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "lastPageTable" button is "Passive"
 
   Scenario Outline: Contact Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries

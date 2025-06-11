@@ -186,9 +186,7 @@ public class Users extends BasePage {
        BrowserUtils.wait(2);
    }
     }
-    public void verifyResetButton() {
-        assertTrue(true);
-    }
+
     public void onTheUsersSettingPage(){
         driver.navigate().to("https://sandbox-ui.efectura.com/UserManage");
     }

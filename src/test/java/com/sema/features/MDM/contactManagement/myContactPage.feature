@@ -11,12 +11,13 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario Outline:  My Count Add Star Item Functionality- One Contact
     And The user enters "<Code>" into "Code" filter text input box
-    And the user clicks on Star items
-    And the user clicks on Reset button
+#    And the user clicks on Star items
+    And The user reset the basic filters
+
     Examples:
-    |Code|
-    |testcontact2322|
-    |testforDIAGEOcontact|
+      | Code                 |
+      | testcontact2322      |
+      | testforDIAGEOcontact |
 
    Scenario: Verify My Contact Button
    When The user clicks My Contact button
@@ -71,28 +72,27 @@ Feature: Contact Management Test Cases-My Contact Page
 
   Scenario Outline: Filter "<ItemStatus>" Item Statuses
     When The user clicks My Contact button
-    And the user clicks on ItemStatuses
-    And the user clicks on "<ItemStatus>"
+    And The user select "<ItemStatus>" in "ItemStatus" select filter
  #    And the incoming filter for "<ItemStatus>" should contain
     Examples:
-      |ItemStatus |
-      |Active     |
-      |Passive    |
-      |Approved   |
+      | ItemStatus |
+      | Draft      |
+      | Passive    |
+      | Approved   |
 
   Scenario: Reset Button Control
-    When The user clicks My Contact button
+#    When The user clicks My Contact button
     And The user enters "Test2123" into "Code" filter text input box
-    And The user clicks on Ekosystem Filtre
-    And the user clicks on Reset button
-    And the user verify Reset button functionality
+#    And The user clicks on Ekosystem Filtre
+    And The user reset the basic filters
+    And The user verify Reset button func for "Code" text filter
 
   Scenario: Deleting an item and declining the popup message
     When The user clicks My Contact button
-    And The user enters "test_auto" into "Code" filter text input box
-    And The user clicks on Delete
-    And The user declines the popup message
-    Then The user verify that "test_automation" is visible
+    And The user enters "2904TEST" into "Code" filter text input box
+    And The User clicks on delete button in table
+    And The user clicks cancel button in overview delete popup
+    Then The user verify that "2904TEST" is visible
 
   Scenario: My Contact page edit verify
     When The user clicks My Contact button
@@ -101,53 +101,54 @@ Feature: Contact Management Test Cases-My Contact Page
     Then The user verify Edit Page
 
   Scenario:My Contact Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable
+    And  The user verifies "firstPageTable" button is "Passive"
 
   Scenario:My Contact Verify Previous Page Button Unclickable Condition
-    And  The user verifies previous page button is not clickable
+    And  The user verifies "items_previous" button is "Passive"
 
   Scenario:My Contact Verify Item next Button Unclickable Condition
-    When The user clicks last page button
-    And  The user verifies next button is not clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "items_next" button is "Passive"
 
   Scenario:My Contact Verify Last Page Button Unclickable Condition
-    When The user clicks last page button
-   # And  The user verifies last page button is not clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "lastPageTable" button is "Passive"
 
   Scenario:My Contact Verify First Page Button Clickable Condition
-    When The user clicks last page button
-    And  The user verifies first page button is clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "firstPageTable" button is "Active"
 
   Scenario:My Contact Verify Previous Page Button Clickable Condition
-    When The user clicks last page button
-    And  The user verifies previous page button is clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "items_previous" button is "Active"
 
   Scenario:My Contact Verify Item next Button Clickable Condition
-    And  The user verifies next button is clickable
+    And  The user verifies "items_next" button is "Active"
 
   Scenario:My Contact Verify Last Page Button Clickable Condition
-    And  The user verifies last page button is clickable
+    And  The user verifies "lastPageTable" button is "Active"
 
 
   Scenario Outline: Contact Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries
     Then  The user should see  "<entries>" entrie in everypage
     Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
+      | entries |
+      | 10      |
+      | 25      |
+      | 50      |
+      | 100     |
 
 
   Scenario Outline:My Count Delete Star Item Functionality
     And The user enters "<Code>" into "Code" filter text input box
-    And the user clicks on Star items
-    And the user clicks on Reset button
+#    And the user clicks on Star items
+    And The user reset the basic filters
+
     Examples:
-      |Code|
-      |testcontact2322|
-      |testforDIAGEOcontact|
+      | Code                 |
+      | testcontact2322      |
+      | testforDIAGEOcontact |
 
   Scenario: My Count Verify export button
     When The user clicks My Contact button

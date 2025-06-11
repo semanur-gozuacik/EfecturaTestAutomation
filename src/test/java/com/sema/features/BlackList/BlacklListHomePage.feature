@@ -59,7 +59,7 @@ Feature: BlackList Test Cases- Black List Home Page
 
   Scenario: Reset Button Control-CardNumber
     When  The user enters "fullNumber" into the card number field
-    And the user clicks on Reset button
+    And The user reset the basic filters
     And the user verify Reset button functionality in blackList
 
   Scenario: Delete Button Functionality Control - Cancel Button-CardNumber

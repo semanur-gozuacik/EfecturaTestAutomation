@@ -142,7 +142,7 @@ public class ContactHomePage extends BasePage {
     private WebElement exportSuccessMessage;
     @FindBy(xpath = "//div[@id='details']/div[@id='title-area']/a[@id='file-link']")
     private WebElement exportedContactFile;
-    @FindBy(xpath = "//a[@id='myContacts']//span[@class='text']")
+    @FindBy(xpath = "//span[contains(text(),'MY_Contact')]")
     private WebElement myContactButton;
     @FindBy(xpath = "//button[@id='lastPageTable']")
     private WebElement lastPageButton;
@@ -315,19 +315,6 @@ public class ContactHomePage extends BasePage {
         }
     }
 
-    public void clicksItemStatuses(String itemStatus) {
-        if (clicksItemStatusTextBox.equals("Active")) {
-            clicksItemStatusTextBox.sendKeys("Active" + Keys.ENTER);
-        } else if (clicksItemStatusTextBox.equals("Passive")) {
-            clicksItemStatusTextBox.sendKeys("Passive" + Keys.ENTER);
-        } else if (clicksItemStatusTextBox.equals("On Hold")) {
-            clicksItemStatusTextBox.sendKeys("On Hold" + Keys.ENTER);
-        } else {
-            clicksItemStatusTextBox.sendKeys("Draft" + Keys.ENTER);
-        }
-
-    }
-
     public void verifyItemStatuses(String status) {
         for (WebElement verifyItemStatus : verifyItemStatuses) {
             BrowserUtils.wait(5);
@@ -336,49 +323,20 @@ public class ContactHomePage extends BasePage {
         }
     }
 
-    public void clicksItemStatus() {
-        clicksItemStatus.click();
-    }
-
-    public void clicksResetButton() {
-        resetButton.click();
-        BrowserUtils.wait(5);
-    }
-
-    public void verifyResetButton() {
-        BrowserUtils.wait(5);
-        codeFilterClick.click();
-        assertTrue(codeFilterSendKey.getText().equalsIgnoreCase(""));
-
-    }
-
-    public void clickDeleteButton() {
-        BrowserUtils.hoverOver(deleteButton);
-        BrowserUtils.wait(5);
-        deleteButton.click();
-    }
-
     public void acceptDeletePopUp() {
         BrowserUtils.waitForVisibility(acceptDeleteButton, 8);
         acceptDeleteButton.click();
     }
 
-    public void declineDeletePopUp() {
-        BrowserUtils.wait(5);
-        cancelDeletePopUp.click();
-
-    }
-
     public void verifyDeletingObject(String code) {
-        BrowserUtils.waitForVisibility(getColumnDataAsWebElement(itemOverviewTable,"CODE").get(0), 5);
-        assertEquals(getColumnData(itemOverviewTable,"CODE").get(0),code);
+        BrowserUtils.waitForVisibility(getColumnDataAsWebElement(itemOverviewTable,"Code").get(0), 5);
+        assertEquals(getColumnData(itemOverviewTable,"Code").get(0),code);
 //        assertEquals(deletingObject.getText(), code);
     }
 
     public void verifyDeleteMessage() {
         BrowserUtils.waitForVisibility(deleteErrorText, 7);
         assertTrue(deleteErrorText.isDisplayed());
-
     }
 
     public void clickShowEntrie() {
@@ -505,35 +463,6 @@ public class ContactHomePage extends BasePage {
         myContactButton.click();
     }
 
-    public void clickLastPageButton() {
-        BrowserUtils.wait(12);
-        lastPageButton.click();
-    }
-
-    public void verifyFirstPageButtonUnClickable() {
-        BrowserUtils.wait(8);
-        // String classes = firstPageButton.getAttribute("class");
-        //  System.out.println(classes);
-        // boolean isDisabled = classes.contains("disabled");
-        assertTrue(true);
-    }
-
-    public void verifypreviousPageButtonUnClickability() {
-        BrowserUtils.wait(10);
-        String classes = previousPageButton.getAttribute("class");
-        System.out.println(classes);
-        boolean isDisabled = classes.contains("disabled");
-        assertTrue(isDisabled);
-    }
-
-    public void verifyLastPageButtonClickability() {
-        BrowserUtils.wait(10);
-        String classes = lastPageButton.getAttribute("class");
-        System.out.println(classes);
-        boolean isDisabled = classes.contains("disabled");
-        assertTrue(isDisabled);
-    }
-
     public void clicksStarFeatures(String starFeature) {
         for (WebElement feature : starFeatures) {
             if (feature.getText().contains(starFeature)) {
@@ -542,38 +471,6 @@ public class ContactHomePage extends BasePage {
             }
         }
 
-    }
-
-    public void verifyFirstPageButtonClickable() {
-        BrowserUtils.wait(5);
-        //String classes = firstPageButton.getAttribute("class");
-        //System.out.println(classes);
-        //boolean isDisabled = classes.contains("disabled");
-        Assert.assertFalse(false);
-    }
-
-    public void verifyPreviousPageButtonClickable() {
-        BrowserUtils.wait(12);
-        String classes = previousPageButton.getAttribute("class");
-        System.out.println(classes);
-        boolean isDisabled = classes.contains("disabled");
-        Assert.assertFalse(isDisabled);
-    }
-
-    public void verifyNextPageButtonClickable() {
-        BrowserUtils.wait(5);
-        String classes = nextPageButton.getAttribute("class");
-        System.out.println(classes);
-        boolean isDisabled = classes.contains("disabled");
-        Assert.assertFalse(isDisabled);
-    }
-
-    public void verifyLastPageButtonClickable() {
-        BrowserUtils.wait(5);
-        String classes = lastPageButton.getAttribute("class");
-        System.out.println(classes);
-        boolean isDisabled = classes.contains("disabled");
-        Assert.assertFalse(isDisabled);
     }
 
     public void setUniqueCodeElement(String code) {

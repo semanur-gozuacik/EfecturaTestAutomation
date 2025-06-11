@@ -14,32 +14,32 @@ Feature: Event Management Test Cases- Event Home Page
     #Then  The user verify that the export was "Success"
 
   Scenario:Event Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable
+    And  The user verifies "firstPageTable" button is "Passive"
 
   Scenario:Event Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies previous page button is not clickable
+    And  The user verifies "items_previous" button is "Passive"
 
   Scenario:Event Home Page Verify Item next Button Unclickable Condition
-    When The user clicks last page button
-    And  The user verifies next button is not clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "items_next" button is "Passive"
 
   Scenario:Event Home Page Verify Last Page Button Unclickable Condition
-    When The user clicks last page button
-   # And  The user verifies last page button is not clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "lastPageTable" button is "Passive"
 
   Scenario:Event Home Page Verify First Page Button Clickable Condition
-    When The user clicks last page button
-    And  The user verifies first page button is clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "firstPageTable" button is "Active"
 
   Scenario:Event Home Page Verify Previous Page Button Clickable Condition
-    When The user clicks last page button
-    And  The user verifies previous page button is clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "items_previous" button is "Active"
 
   Scenario:Event Home Page Verify Item next Button Clickable Condition
-    And  The user verifies next button is clickable
+    And  The user verifies "items_next" button is "Active"
 
   Scenario:Event Home Page Verify Last Page Button Clickable Condition
-    And  The user verifies last page button is clickable
+    And  The user verifies "lastPageTable" button is "Active"
 
   Scenario:Event Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into "Label" filter text input box
@@ -49,11 +49,11 @@ Feature: Event Management Test Cases- Event Home Page
     When  The user selects "<entries>" into show entries
     Then  The user should see  "<entries>" entrie in everypage
     Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
+      | entries |
+      | 100     |
+      | 25      |
+      | 50      |
+      | 10      |
 
   Scenario: Event page edit verify
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
@@ -128,8 +128,8 @@ Feature: Event Management Test Cases- Event Home Page
 
   Scenario: Event Home Page Reset Button Control
     And The user enters "test2123" into "Code" filter text input box
-    And the user clicks on Reset button
-    And the user verify Reset button functionality
+    And The user reset the basic filters
+    And The user verify Reset button func for "Code" text filter
 
   Scenario:Event edit - Event-Product Tab
     And The user enters "DIAGEOEVENT" into "Code" filter text input box

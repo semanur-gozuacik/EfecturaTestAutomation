@@ -13,10 +13,10 @@ Feature: Financial Account Management Test Cases- Contact Home Page
 
 
   Scenario:Financial Account Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable
+    And  The user verifies "firstPageTable" button is "Passive"
 
   Scenario:Financial Account Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies previous page button is not clickable
+    And  The user verifies "items_previous" button is "Passive"
 
   Scenario Outline: Financial Account Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries
@@ -29,11 +29,12 @@ Feature: Financial Account Management Test Cases- Contact Home Page
       |100|
   Scenario:Financial Account Reset Button Control
     And The user enters "NoMask" into "Code" filter text input box
-    And the user clicks on Reset button
-  #  And the user verify Reset button functionality
+    And The user reset the basic filters
+    And The user verify Reset button func for "Code" text filter
 
   Scenario:Financial Account Verify Label Filter - Valid Label
     And The user enters "FinancialAccount_06" into "Label" filter text input box
+    Then The user verify "Label" text filter with value "FinancialAccount_06" in "overviewTable"
 
   Scenario: Financial Account Verify Label Filter - Invalid  Label
     And The user enters "44444" into "Label" filter text input box

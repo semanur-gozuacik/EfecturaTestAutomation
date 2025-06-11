@@ -28,18 +28,7 @@ public class MDMConnectorHomePage extends BaseStep {
     public void the_user_verify_on_ıd_filter_functionality(String id) {
         pages.connectorHomePage().verifyIdFilter(id);
     }
-    @Then("the user verify on code filter functionality {string}-connector")
-    public void the_user_verify_on_code_filter_functionality_connector(String code) {
-      //  pages.connectorHomePage().verifyConnectorCodeFilter(code);
-    }
-    @Then("the user verify on code filter functionality with partial unique code {string}-connector")
-    public void the_user_verify_on_code_filter_functionality_with_partial_unique_code_connector(String code) {
 
-    }
-    @Then("the user verify Reset button functionality-connector")
-    public void the_user_verify_reset_button_functionality_connector() {
-pages.connectorHomePage().verifyResetButton();
-    }
     @Then("The user verify Edit Page-Connector")
     public void the_user_verify_edit_page() {
         pages.connectorHomePage().verifyEditPage();

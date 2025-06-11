@@ -12,11 +12,11 @@ Feature: Families Management Test Cases
 
     Scenario: Families pages tables verification
       Then The User verifies Families page table is displayed
-@test
+  @test
   Scenario: Reset Button Control
-    And The user enters "ACCOUNT_TEST" into Code field-Settings Families
-    And the user clicks on Reset button
-    And the user verify Reset button functionality-Settings Families
+    And The user enters "ACCOUNT_TEST" into "Code" filter text input box
+    And The user reset the basic filters
+    And The user verify Reset button func for "Code" text filter
 
 
   Scenario Outline:Families Page-User selects different options for show entries

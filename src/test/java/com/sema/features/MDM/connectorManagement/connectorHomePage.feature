@@ -15,27 +15,24 @@ Feature: Connector Management Test Cases- Connector Home Page
 
   Scenario:Connector Verify Label Filter - Valid Label
     And The user enters "JSONFile" into "Label" filter text input box
-  #search buton kaldırıldı-  And the user clicks on Search button
-     # And the user verify on label filter functionality with partial unique code "ConConXML"
+    Then The user verify "Label" text filter with value "JSONFile" in "overviewTable"
 
   Scenario: Connector Verify Label Filter - Partial Unique Label
     And The user enters "JSON" into "Label" filter text input box
-   #search buton kaldırıldı- And the user clicks on Search button
-     # And the user verify on label filter functionality with partial unique code "ConCon"
+    Then The user verify "Label" text filter with value "JSON" in "overviewTable"
 
   Scenario:Connector Verify Code Filter -Valid Unique Code
     And The user enters "test212129" into "Code" filter text input box
-    And the user verify on code filter functionality "test212129"-connector
+    Then The user verify "Code" text filter with value "test212129" in "overviewTable"
 
   Scenario:Connector Verify Code Filter -Valid partial Code
     And The user enters "test" into "Code" filter text input box
-    And the user verify on code filter functionality with partial unique code "test"-connector
+    Then The user verify "Code" text filter with value "test" in "overviewTable"
 
   Scenario: Reset Button Control
     And The user enters "test212129" into "Code" filter text input box
-    And the user clicks on Reset button
-    And the user verify Reset button functionality-connector
-
+    And The user reset the basic filters
+    And The user verify Reset button func for "Code" text filter
 
    # And   The user
    #  Scenario: Verify export button
@@ -43,44 +40,47 @@ Feature: Connector Management Test Cases- Connector Home Page
    #    Then  The user verify that the export was "Success" verify that the file is located in the downloads folder
     #And   The user verify that the file is in the correct format
 
+
+  # You can write button names like these in future file:
+  # firstPageTable, items_previous, items_next, lastPageTable
+
   Scenario:Connector Page Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable
+    And  The user verifies "firstPageTable" button is "Passive"
 
   Scenario:Connector Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies previous page button is not clickable
+    And  The user verifies "items_previous" button is "Passive"
 
   Scenario:Connector Page Verify Item next Button Unclickable Condition
-    When The user clicks last page button
-    And  The user verifies next button is not clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "items_next" button is "Passive"
 
   Scenario: Connector Page Verify Last Page Button Unclickable Condition
-    When The user clicks last page button
-    And  The user verifies last page button is not clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "lastPageTable" button is "Passive"
 
   Scenario:Connector Page Verify First Page Button Clickable Condition
-    When The user clicks last page button
-    And  The user verifies first page button is clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "firstPageTable" button is "Active"
 
   Scenario:Connector Page Verify Previous Page Button Clickable Condition
-    When The user clicks last page button
-    And  The user verifies previous page button is clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "items_previous" button is "Active"
 
   Scenario:Connector Page Verify Item next Button Clickable Condition
-    And  The user verifies next button is clickable
+    And  The user verifies "items_next" button is "Active"
 
   Scenario: Connector Page Verify Last Page Button Clickable Condition
-    And  The user verifies last page button is clickable
-
+    And  The user verifies "lastPageTable" button is "Active"
 
   Scenario Outline: Connector Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries
     Then  The user should see  "<entries>" entrie in everypage
     Examples:
-      | entries|
-      |100 |
-      |50 |
-      |25 |
-      |10|
+      | entries |
+      | 100     |
+      | 50      |
+      | 25      |
+      | 10      |
 
 
   Scenario: Create List- create button
@@ -114,13 +114,11 @@ Feature: Connector Management Test Cases- Connector Home Page
 
   Scenario: Connector page edit verify
     And The user enters "1connector1" into "Code" filter text input box
-     #search buton kaldırıldı- And the user clicks on Search button
     And The user clicks on edit button in table
     Then The user verify Edit Page-Connector
 
   Scenario: Verify Connector Star Item Functionality- One Contact
     And The user enters "1connector1" into "Code" filter text input box
-     #search buton kaldırıldı-  And the user clicks on Search button
     And the user clicks on Star items
     And the user verify My Count badge count is correct
 
@@ -162,7 +160,6 @@ Feature: Connector Management Test Cases- Connector Home Page
     And The user clicks on edit button in table
     And The user clicks "Group Permissions" tab
     And  The user verifies "Group" "FirstPage" button is "Passive"
-
 
   Scenario:Connector Group Permission Verify Item Previous Page Button Unclickable Condition
     And The user enters "1connector1" into "Code" filter text input box
@@ -238,7 +235,6 @@ Feature: Connector Management Test Cases- Connector Home Page
     When The user clicks "User" "_next" page button
     And  The user verifies "User" "_previous" button is "Active"
 
-
   Scenario:Connector User Permission Verify Last Page Button clickable Condition
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
@@ -257,19 +253,18 @@ Feature: Connector Management Test Cases- Connector Home Page
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user select ItemStatus as "Passive"
-      # And the user clicks on unsaved change button
-      # And The user enters "-------" in  comment area
-       #And The user clicks cancel button
-      # And the user verifies item status not change
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
+    And The user clicks cancel button in edit item save modal
 
   Scenario:Connector Edit item status Passive  Item Status- save button
     And The user enters "1connector1" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user select ItemStatus as "Passive"
-     #  And the user clicks on unsaved change button
-      # And The user enters "-------" in  comment area
-      # And The user clicks save button
-      # And the user verifies item status success message
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
 
   #Scenario:Connector Edit item status Passive Item Status-cancel button
     #And The user enters "randomSKU" into Code field

@@ -19,17 +19,6 @@ public class CampaignHomePage extends BasePage {
     public CampaignHomePage() {
     }
 
-    public void verifyCampaignCodeFilter(String code) {
-        BrowserUtils.wait(5);
-//        Assert.assertEquals(getColumnData(itemOverviewTable, "Code").get(0), code);
-        Assert.assertTrue(getColumnData(itemOverviewTable,"Code").get(0).toLowerCase().contains(code.toLowerCase()));
-//        assertTrue(verifyCampaignCodeFilter.getText().equalsIgnoreCase(code));
-    }
-
-    public void verifyDeletingObject(String code) {
-        BrowserUtils.waitForVisibility(deletingObject, 5);
-        assertTrue(deletingObject.getText().equalsIgnoreCase(code));
-    }
     public void onTheUserPage(){
         driver.navigate().to("https://sandbox-ui.efectura.com/Enrich/Items?itemType=Campaign");
     }
