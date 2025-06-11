@@ -31,9 +31,10 @@ public class EditItemStepDefs extends BaseStep{
 
     @Then("The user verifies info {string} appears")
     public void theUserVerifiesInfoAppears(String expectedMessage) {
-        BrowserUtils.wait(3);
-        BrowserUtils.waitForVisibility(pages.editItemPage().getInfoMessage(),20);
-        Assert.assertEquals(expectedMessage, pages.editItemPage().getInfoMessage().getText());
+        BrowserUtils.wait(1);
+        BrowserUtils.waitForVisibility(pages.generalPage().getInfoMessage(),20);
+        Assert.assertEquals(expectedMessage, pages.generalPage().getInfoMessage().getText());
+        BrowserUtils.wait(1);
     }
 
     @And("The user select ItemStatus as {string}")

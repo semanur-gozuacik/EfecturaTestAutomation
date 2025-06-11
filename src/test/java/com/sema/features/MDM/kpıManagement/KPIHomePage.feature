@@ -66,13 +66,13 @@ Feature: KPI Management Test Cases
     And The user verify Reset button func for "Code" text filter
 
   Scenario: Create List- create button-exist user
-    And  The user clicks plus icon
-    Then The user verifies New List pop up is open
-    When The user enters "Sematestyeni" List Name
+    And The user clicks add list button
+    Then The user verifies New List popup is open
+    When The user enters list name as "Sematestyeni"
    # And  The user enters "_5458429214" Can view
     # And  The user enters "1757483988_5392786463" Can edit
-   # And  The user clicks create button-New List
-   # Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
+    And The user clicks create list button
+    Then The user verifies info "USER_LIST_ALREADY_EXISTS" appears
 
   Scenario Outline: KPI Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries

@@ -87,27 +87,27 @@ Feature: Campaign Management Test Cases- Campaign Home Page
 
 
   Scenario: Campaign Create List- cancel button
-    And  The user clicks plus icon
-    Then The user verifies New List pop up is open
-    When The user enters "otomasyon" List Name
+    And The user clicks add list button
+    Then The user verifies New List popup is open
+    When The user enters list name as "automation"
    #  And  The user enters "_5458429214" Can view
     # And  The user enters "1757483988_5392786463" Can edit
    #  And The user clicks cancel button-New List
      #Then The user verifies "otomasyon" is not visible
 
   Scenario:Campaign Create List- create button
-    And  The user clicks plus icon
-    Then The user verifies New List pop up is open
-    When The user enters "campaign-list" List Name
+    And The user clicks add list button
+    Then The user verifies New List popup is open
+    When The user enters list name as "campaign-list"
    # And  The user enters "_5458429214" Can view
     #And  The user enters "1757483988_5392786463" Can edit
     #And The user clicks create button-New List
    # Then The user verifies "campaign-list" is visible
 
   Scenario:Campaign Create List- create button-exist user
-    And  The user clicks plus icon
-    Then The user verifies New List pop up is open
-    When The user enters "Sematestyeni" List Name
+    And The user clicks add list button
+    Then The user verifies New List popup is open
+    When The user enters list name as "Sematestyeni"
    # And  The user enters "_5458429214" Can view
    # And  The user enters "1757483988_5392786463" Can edit
    # And  The user clicks create button-New List

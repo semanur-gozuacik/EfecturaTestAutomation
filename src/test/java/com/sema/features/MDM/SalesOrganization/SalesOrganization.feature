@@ -41,9 +41,9 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
     And The user verify empty data table info 'No matching records found'
 
   Scenario:Sales Organization Create List- create button
-    And  The user clicks plus icon
-    Then The user verifies New List pop up is open
-    When The user enters "otomasyon" List Name
+    And The user clicks add list button
+    Then The user verifies New List popup is open
+    When The user enters list name as "automation"
 
   Scenario: Sales Organization Edit item removed list
     And The user enters "TESTBM" into "Code" filter text input box

@@ -44,6 +44,9 @@ public class GeneralPage extends BasePage {
     @FindBy(xpath = "//button[contains(@id,'-reset-basic')]")
     private WebElement basicResetButton;
 
+    @FindBy(xpath = "//div[@class='notyf__message']")
+    private WebElement infoMessage;
+
 
     // you can use selectFilter as IsAssociated, Family, ItemStatuses in feature file
     public void selectOptionInSelectFilter(String selectOption, String selectFilter) {
