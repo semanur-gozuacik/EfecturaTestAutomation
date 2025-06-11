@@ -3,6 +3,7 @@ package com.sema.stepDefs;
 import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.Driver;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -86,5 +87,65 @@ public class ItemOverviewStepDefs extends BaseStep {
     @When("The user clicks {string} pagination button")
     public void theUserClicksLastPageTablePaginationButton(String btnName) {
         pages.itemOverviewPage().clickPaginationButton(btnName);
+    }
+
+    @And("The user clicks add list button")
+    public void theUserClicksAddListButton() {
+        BrowserUtils.wait(1);
+        pages.itemOverviewPage().openSideAccordionInOverview();
+        BrowserUtils.waitForVisibility(pages.itemOverviewPage().getCreateListButton(), 15);
+        pages.itemOverviewPage().getCreateListButton().click();
+    }
+
+    @Then("The user verifies New List popup is open")
+    public void theUserVerifiesNewListPopupIsOpen() {
+        BrowserUtils.waitForVisibility(pages.itemOverviewPage().getNewListPopup(), 10);
+        Assert.assertTrue(pages.itemOverviewPage().getNewListPopup().isDisplayed());
+    }
+
+    @When("The user enters list name as {string}")
+    public void theUserEntersListNameAs(String listName) {
+        pages.itemOverviewPage().getListNameInputBox().sendKeys(listName);
+    }
+
+    @And("The user clicks create list button")
+    public void theUserClicksCreateListButton() {
+        BrowserUtils.waitForClickability(pages.itemOverviewPage().getListCreateButton(),10);
+        pages.itemOverviewPage().getListCreateButton().click();
+        BrowserUtils.waitForVisibility(pages.generalPage().getInfoMessage(),10);
+    }
+
+    @Then("The user verify list {string} exists")
+    public void theUserVerifyListExists(String listName) {
+        if (pages.itemOverviewPage().getAllListsAccordion().getAttribute("class").contains("active")) {
+            pages.itemOverviewPage().getAllListsAccordion().click();
+        }
+
+        boolean exists = pages.itemOverviewPage().getAvaliableLists().stream()
+                .anyMatch(e -> listName.equals(e.getText()));
+        Assert.assertTrue(exists);
+    }
+
+    @Then("The user verify list {string} do not exists")
+    public void theUserVerifyListDoNotExists(String listName) {
+        if (pages.itemOverviewPage().getAllListsAccordion().getAttribute("class").contains("active")) {
+            pages.itemOverviewPage().getAllListsAccordion().click();
+        }
+
+        boolean exists = pages.itemOverviewPage().getAvaliableLists().stream()
+                .anyMatch(e -> listName.equals(e.getText()));
+        Assert.assertFalse(exists);
+    }
+
+    @And("The user clicks delete button in {string} list")
+    public void theUserClicksDeleteButtonInList(String listName) {
+        pages.itemOverviewPage().clickDeleteBtnOfList(listName);
+    }
+
+    @And("The user clicks {string} button in delete list modal")
+    public void theUserClicksCancelButtonInCreateListModal(String btnName) {
+        String locate = "//div[@id='delete-list-modal']/div/div/div/button[contains(text(),'" + btnName + "')]";
+        WebElement button = Driver.getDriver().findElement(By.xpath(locate));
+        button.click();
     }
 }

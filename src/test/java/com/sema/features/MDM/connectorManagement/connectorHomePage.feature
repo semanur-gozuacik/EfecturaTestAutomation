@@ -84,33 +84,34 @@ Feature: Connector Management Test Cases- Connector Home Page
 
 
   Scenario: Create List- create button
-    And  The user clicks plus icon
-    Then The user verifies New List pop up is open
-    When The user enters "otomasyon" List Name
+    And The user clicks add list button
+    Then The user verifies New List popup is open
+    When The user enters list name as "automation-connector"
     #And  The user enters "_5458429214" Can view
    # And  The user enters "1757483988_5392786463" Can edit
-   # And The user clicks create button-New List
-    #Then The user verifies "otomasyon" is visible
+    And The user clicks create list button
+    Then The user verifies info "USER_LIST_ADDED" appears
+    Then The user verify list "automation-connector" exists
 
   Scenario: Create List- create button-exist user
-    And  The user clicks plus icon
-    Then The user verifies New List pop up is open
-    When The user enters "Sematestyeni" List Name
+    And The user clicks add list button
+    Then The user verifies New List popup is open
+    When The user enters list name as "Sematestyeni"
   #  And  The user enters "_5458429214" Can view
    # And  The user enters "1757483988_5392786463" Can edit
-   # And  The user clicks create button-New List
-   # Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
+    And The user clicks create list button
+    Then The user verifies info "USER_LIST_ALREADY_EXISTS" appears
 
   Scenario: Create List- delete list-cancel button
-    And The user selects deleted element-asset
-  #  And The user clicks cancel button in delete popup-asset
-   # Then The user verifies "otomasyon" is visible
+    And The user clicks delete button in "automation-connector" list
+    And The user clicks "Cancel" button in delete list modal
+    Then The user verify list "automation-connector" exists
 
   Scenario: Create List- delete list
-    And The user selects deleted element-asset
-   # And The user clicks cancel button in delete popup-asset
-   # And The user clicks delete button in delete popup
-   # Then The user verifies "otomasyon" is not visible
+    And The user clicks delete button in "automation-connector" list
+    And The user clicks "Delete" button in delete list modal
+    Then The user verifies info "USER_LIST_DELETED" appears
+    Then The user verify list "automation-connector" do not exists
 
   Scenario: Connector page edit verify
     And The user enters "1connector1" into "Code" filter text input box

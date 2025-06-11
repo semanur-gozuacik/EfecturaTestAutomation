@@ -76,9 +76,6 @@ public class EditItemPage extends BasePage {
     @FindBy(xpath = "//button[@id='floatingSaveButton']")
     private WebElement saveButtonInSaveChanges;
 
-    @FindBy(xpath = "/html/body/div[7]/div/div[1]/div[2]")
-    private WebElement infoMessage;
-
     @FindBy(xpath = "//*[@id='association-table']/tbody/tr/td[4]/div")
     private List<WebElement> isAssociatedValues;
 

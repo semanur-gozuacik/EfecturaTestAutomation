@@ -3,9 +3,11 @@ package com.sema.pages.MDMPage;
 import com.sema.pages.BasePage;
 import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.ConfigurationReader;
+import com.sema.utilities.Driver;
 import lombok.Getter;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -18,6 +20,9 @@ public class ItemOverviewPage extends BasePage {
 
     @FindBy(xpath = "//div[contains(@class,'list-header all')]")
     private WebElement allListsAccordion;
+
+    @FindBy(xpath = "//li[@class='list-item']/p")
+    private List<WebElement> avaliableLists;
 
     @FindBy(xpath = "//ul[@class='lists-name']/li/p")
     private List<WebElement> listOptions;
@@ -73,7 +78,24 @@ public class ItemOverviewPage extends BasePage {
     @FindBy(xpath = "//button[contains(@id,'cancelPopup')]")
     private WebElement cancelBtnInDeleteModal;
 
+    @FindBy(xpath = "//a[@id='createNewList']")
+    private WebElement createListButton;
 
+    @FindBy(xpath = "//div[contains(@class,'modal-header')]/h4[normalize-space()='New List']")
+    private WebElement newListPopup;
+
+    @FindBy(xpath = "//input[@id='input-list']")
+    private WebElement listNameInputBox;
+
+    @FindBy(xpath = "//button[@id='create-list']")
+    private WebElement listCreateButton;
+
+    @FindBy(xpath = "//div[contains(@class,'accordion-container')]")
+    private WebElement accordionContainer;
+
+
+    public ItemOverviewPage() {
+    }
 
 
     public void goToItemOverviewPage(String item) {
@@ -85,20 +107,24 @@ public class ItemOverviewPage extends BasePage {
             allListsAccordion.click();
         }
 
-        listOptions.stream()
+        avaliableLists.stream()
                 .filter(element -> element.getText().equals(listName))
                 .findFirst()
                 .ifPresent(WebElement::click);
     }
 
     public void openSideAccordionInOverview() {
-        if (overviewSideAccordion.getAttribute("title").equals("ShowSidebar")) {
+        boolean isSidebarOpen = BrowserUtils.isElementDisplayed(accordionContainer);
+        if (!isSidebarOpen) {
             overviewSideAccordion.click();
+        } else {
+            System.out.println("Accordion butonuna tıklanmadı!!!");
         }
     }
 
     public void closeSideAccordionInOverview() {
-        if (overviewSideAccordion.getAttribute("title").equals("HideSidebar")) {
+        boolean isSidebarOpen = BrowserUtils.isElementDisplayed(accordionContainer);
+        if (isSidebarOpen) {
             overviewSideAccordion.click();
         }
     }
@@ -127,5 +153,14 @@ public class ItemOverviewPage extends BasePage {
         WebElement btn = driver.findElement
                 (By.xpath("//div[@class='pagination-container']//button[@id='" + btnName + "']"));
         btn.click();
+    }
+
+    public void clickDeleteBtnOfList(String listName) {
+        WebElement target = avaliableLists.stream().filter(e -> listName.equals(e.getText()))
+                .findFirst().orElse(null);
+        String locate = "//li[p[text()='" +listName + "']]//i[@data-original-title='DeleteList']";
+        WebElement deleteBtn = Driver.getDriver().findElement(By.xpath(locate));
+        BrowserUtils.hoverOver(target);
+        deleteBtn.click();
     }
 }

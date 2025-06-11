@@ -160,20 +160,6 @@ public class Asset extends BasePage {
         }
     }
 
-    public void clickNewList() {
-        BrowserUtils.waitForVisibility(createListButton, 15);
-        createListButton.click();
-    }
-
-    public void verifyNewListPopup() {
-        BrowserUtils.waitForVisibility(verifyNewListPopup, 10);
-        Assert.assertTrue(verifyNewListPopup.isDisplayed());
-    }
-
-    public void setListName(String name) {
-        listName.sendKeys(name);
-    }
-
     public void setCanView(String view) {
         Select select = new Select(canView);
         for (WebElement option : canViewList) {
@@ -200,34 +186,6 @@ public class Asset extends BasePage {
         createListCancelButton.click();
     }
 
-    public void verifyListItemIsNotVisible(String itemName) {
-        BrowserUtils.wait(5);
-        List<String> names = new ArrayList<String>();
-        for (int i = 0; i < listItemsName.size(); i++) {
-            names.add(listItemsName.get(i).getText());
-        }
-        Assert.assertTrue(!names.contains(itemName));
-    }
-
-    public void verifyListItemIsVisible(String itemName) {
-        BrowserUtils.wait(5);
-        List<String> names = new ArrayList<String>();
-        for (int i = 0; i < listItemsName.size(); i++) {
-            names.add(listItemsName.get(i).getText());
-        }
-        Assert.assertTrue(names.contains(itemName));
-    }
-
-    public void clickNewListCreateButton() {
-        BrowserUtils.waitForVisibility(listCreateButton, 20);
-        listCreateButton.click();
-    }
-
-    public void verifyCreateListErrorMessageIsDisplayed(String message) {
-        BrowserUtils.waitForVisibility(createListErrorMessage, 15);
-        Assert.assertTrue(createListErrorMessage.isDisplayed());
-    }
-
     public void verifyNoResultsFound() {
         BrowserUtils.waitForVisibility(verifyNoResultsFound, 10);
         Assert.assertTrue(verifyNoResultsFound.isDisplayed());
@@ -242,19 +200,6 @@ public class Asset extends BasePage {
     public void clickCancelButtonPopUp() {
         BrowserUtils.waitForVisibility(deleteListCancelPopUp, 20);
         deleteListCancelPopUp.click();
-    }
-
-    public void clickDeleteButtonPopUp() {
-        BrowserUtils.waitForVisibility(deleteListDeletePopUp, 15);
-        deleteListDeletePopUp.click();
-    }
-    public void clickDeleteButtonOtomasyon() {
-        //BrowserUtils.hoverOver(deletedListItemAssetOtomasyonVerify);
-       // BrowserUtils.waitForVisibility(deletedListItemAssetOtomasyonVerify, 30);
-    }
-    public void clickCancelButtonPopUpOtomasyon() {
-        BrowserUtils.waitForVisibility(deleteListButtonAssetOtomasyon, 15);
-        deleteListButtonAssetOtomasyon.click();
     }
 
 }
