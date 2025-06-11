@@ -37,14 +37,7 @@ public class ConnectorHomePage extends BasePage {
         BrowserUtils.wait(5);
         assertTrue(verifyIdFilterFrom.getText().equalsIgnoreCase(id));
     }
-    public void verifyConnectorCodeFilter(String code) {
-        BrowserUtils.wait(10);
-        assertTrue(verifyConnectorCodeFilter.getText().equalsIgnoreCase(code));
-    }
-    public void verifyResetButton() {
-        assertTrue(true);
-        BrowserUtils.wait(5);
-    }
+
     public void verifyEditPage() {
         BrowserUtils.wait(5);
         assertTrue(verifyContactEditButton.isDisplayed());

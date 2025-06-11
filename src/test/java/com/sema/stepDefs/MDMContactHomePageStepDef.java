@@ -123,40 +123,9 @@ public class MDMContactHomePageStepDef extends BaseStep {
         pages.contactHomePage().verifyIWSAFamilyFilter();
     }
 
-    @Then("the user clicks on ItemStatuses")
-    public void the_user_clicks_on_ItemStatuses() {
-        pages.contactHomePage().clicksItemStatus();
-    }
-
-    @Then("the user clicks on {string}")
-    public void the_user_clicks_on(String itemStatus) {
-        pages.contactHomePage().clicksItemStatuses(itemStatus);
-    }
-
     @Then("the incoming filter for {string} should contain")
     public void the_incoming_filter_for_should_contain(String itemStatus) {
         pages.contactHomePage().verifyItemStatuses(itemStatus);
-    }
-
-    @Then("the user clicks on Reset button")
-    public void the_user_clicks_on_reset_button() {
-        pages.contactHomePage().clicksResetButton();
-        BrowserUtils.wait(5);
-    }
-
-    @Then("the user verify Reset button functionality")
-    public void the_user_verify_reset_button_functionality() {
-        pages.contactHomePage().verifyResetButton();
-    }
-
-    @Then("The user clicks on Delete")
-    public void the_user_clicks_on_delete() {
-        pages.contactHomePage().clickDeleteButton();
-    }
-
-    @Then("The user declines the popup message")
-    public void the_user_declines_the_popup_message() {
-        pages.contactHomePage().declineDeletePopUp();
     }
 
     @Then("The user verify that {string} is visible")
@@ -227,43 +196,11 @@ public class MDMContactHomePageStepDef extends BaseStep {
     public void the_user_clicks_my_contact_button() {
       pages.contactHomePage().clickMyContactButton();
     }
-    @When("The user clicks last page button")
-    public void the_user_clicks_last_page_button() {
-        pages.contactHomePage().clickLastPageButton();
-    }
-    @Then("The user verifies first page button is not clickable")
-    public void the_user_verifies_first_page_button_is_not_clickable() {
-        pages.contactHomePage().verifyFirstPageButtonUnClickable();
-    }
-    @Then("The user verifies previous page button is not clickable")
-    public void the_user_verifies_previous_page_button_is_not_clickable() {
-pages.contactHomePage().verifypreviousPageButtonUnClickability();
-    }
-    @Then("The user verifies last page button is not clickable")
-    public void the_user_verifies_last_page_button_is_not_clickable() {
-        pages.contactHomePage().verifyLastPageButtonClickability();
-    }
+
     @Given("The user clicks {string}")
     public void the_user_clicks(String starFeature) {
         pages.contactHomePage().clicksStarFeatures(starFeature);
 
-    }
-
-    @When("The user verifies first page button is clickable")
-    public void the_user_verifies_first_page_button_is_clickable() {
-       pages.contactHomePage().verifyFirstPageButtonClickable();
-    }
-    @When("The user verifies previous page button is clickable")
-    public void the_user_verifies_previous_page_button_is_clickable() {
-        pages.contactHomePage().verifyPreviousPageButtonClickable();
-    }
-    @When("The user verifies next button is clickable")
-    public void the_user_verifies_next_button_is_clickable() {
-        pages.contactHomePage().verifyNextPageButtonClickable();
-    }
-    @When("The user verifies last page button is clickable")
-    public void the_user_verifies_last_page_button_is_clickable() {
-      pages.contactHomePage().verifyLastPageButtonClickable();
     }
 
     @Then("The user verifies preview tab details is displayed")

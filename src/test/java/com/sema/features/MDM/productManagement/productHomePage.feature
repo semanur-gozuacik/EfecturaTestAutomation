@@ -13,10 +13,10 @@ Feature: Product Management Test Cases- Contact Home Page
     #Then  The user verify that the export was "Success"
 
   Scenario:Product Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable
+    And  The user verifies "firstPageTable" button is "Passive"
 
   Scenario:Product Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies previous page button is not clickable
+    And  The user verifies "items_previous" button is "Passive"
 
   Scenario Outline: Product Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries
@@ -30,8 +30,10 @@ Feature: Product Management Test Cases- Contact Home Page
 
   Scenario: User Reset Button Control
     And The user enters "test2123" into "Code" filter text input box
-    And the user clicks on Reset button
-    And the user verify Reset button functionality
+#    And the user clicks on Reset button
+#    And the user verify Reset button functionality
+    And The user reset the basic filters
+    And The user verify Reset button func for "Code" text filter
 
   Scenario:Product Home Page Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into "Label" filter text input box

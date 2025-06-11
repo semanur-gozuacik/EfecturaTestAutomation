@@ -111,10 +111,7 @@ pages.users().setUserEmailFilter(userEmail);
     public void the_user_verify_on_first_name_filter_functionality_partial_first_name(String firstName) {
         pages.users().verifyPartialFirstNameFilters(firstName);
     }
-    @Then("the user verify Reset button functionality-Users")
-    public void the_user_verify_reset_button_functionality_users() {
-        pages.users().verifyResetButton();
-    }
+
     @Then("The user clicks on Is Real")
     public void the_user_clicks_on_is_real() {
 //pages.users().clicksIsReal();

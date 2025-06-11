@@ -1,15 +1,17 @@
 package com.sema.pages.MDMPage;
 
 import com.sema.pages.BasePage;
+import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.ConfigurationReader;
-import com.sema.utilities.Driver;
 import lombok.Getter;
+import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+
+import static com.sema.utilities.BrowserUtils.isButtonActive;
 
 @Getter
 public class ItemOverviewPage extends BasePage {
@@ -101,4 +103,29 @@ public class ItemOverviewPage extends BasePage {
         }
     }
 
+
+    /*
+    You can write button names like these in future file:
+    firstPageTable
+    items_previous
+    items_next
+    lastPageTable
+     */
+    public void verifyButtonStatus(String btnName, String btnStatus) {
+        BrowserUtils.wait(4);
+        WebElement btn = driver.findElement(By.id(btnName));
+        if(btnStatus.equalsIgnoreCase("Active")) {
+            Assert.assertTrue(isButtonActive(btn));
+        } else if (btnStatus.equalsIgnoreCase("Passive")) {
+            Assert.assertFalse(isButtonActive(btn));
+        }
+    }
+
+    public void clickPaginationButton(String btnName) {
+        BrowserUtils.wait(10);
+        WebElement btn2 = driver.findElement(By.id(btnName));
+        WebElement btn = driver.findElement
+                (By.xpath("//div[@class='pagination-container']//button[@id='" + btnName + "']"));
+        btn.click();
+    }
 }

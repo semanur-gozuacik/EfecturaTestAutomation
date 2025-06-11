@@ -13,34 +13,34 @@ Feature: Membership Management Test Cases
   #  Then  The user verify that the export was "Success"
 
   Scenario:Membership Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable
+    And  The user verifies "firstPageTable" button is "Passive"
 
   Scenario:Membership Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies previous page button is not clickable
+    And  The user verifies "items_previous" button is "Passive"
 
   Scenario:Membership Home Page Verify Item next Button Unclickable Condition
-    When The user clicks last page button
-    And  The user verifies next button is not clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "items_next" button is "Passive"
 
   Scenario:Membership Home Page Verify Last Page Button Unclickable Condition
-    When The user clicks last page button
-   # And  The user verifies last page button is not clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "lastPageTable" button is "Passive"
 
   Scenario:Membership Home Page Verify First Page Button Clickable Condition
-    When The user clicks last page button
-    And  The user verifies first page button is clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "firstPageTable" button is "Active"
 
   Scenario:Membership Home Page Verify Previous Page Button Clickable Condition
-    When The user clicks last page button
-    And  The user verifies previous page button is clickable
+    When The user clicks 'lastPageTable' pagination button
+    And  The user verifies "items_previous" button is "Active"
 
   Scenario:Membership Home Page Verify Item next Button Clickable Condition
-    And  The user verifies next button is clickable
+    And  The user verifies "items_next" button is "Active"
 
   Scenario: Membership Reset Button Control
     And The user enters "TestMember" into "Code" filter text input box
-    And the user clicks on Reset button
-    And the user verify Reset button functionality
+    And The user reset the basic filters
+    And The user verify Reset button func for "Code" text filter
 
   Scenario:Membership Organization  edit - Categories Tab
     And The user enters "TestMember" into "Code" filter text input box
@@ -104,11 +104,9 @@ Feature: Membership Management Test Cases
 
 
   Scenario Outline: Filter "<ItemStatus>" Item Statuses
-    And the user clicks on ItemStatuses
-    And the user clicks on "<ItemStatus>"
-    And the user clicks on Search button
+    And The user select "<ItemStatus>" in "ItemStatus" select filter
      #And the incoming filter for "<ItemStatus>" should contain
     Examples:
-      |ItemStatus |
-      |Active     |
-      |Passive    |
+      | ItemStatus |
+      | Active     |
+      | Passive    |

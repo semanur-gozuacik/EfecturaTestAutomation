@@ -12,10 +12,10 @@ Feature: File Management Test Cases- Contact Home Page
     When  The user clicks on Export button
 
   Scenario:File Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable
+    And  The user verifies "firstPageTable" button is "Passive"
 
   Scenario:File Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies previous page button is not clickable
+    And  The user verifies "items_previous" button is "Passive"
 
   Scenario Outline: File  Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries
@@ -30,27 +30,27 @@ Feature: File Management Test Cases- Contact Home Page
 
   Scenario: File  Home Page Reset Button Control
     And The user enters "test2123" into "Code" filter text input box
-    And the user clicks on Reset button
+    And The user reset the basic filters
+    And The user verify Reset button func for "Code" text filter
 
   Scenario:File  Home Page Verify Label Filter - Valid Label
-    And The user enters "TEST123456" into "Label" filter text input box
+    And The user enters "Unique" into "Label" filter text input box
+    Then The user verify "Label" text filter with value "Unique" in "overviewTable"
 
 
   Scenario: File  Home Page Verify Label Filter - Invalid  Label
     And The user enters "596348452" into "Label" filter text input box
-    And the user clicks on Search button
+#    And the user clicks on Search button
     And The user verify empty data table info 'No matching records found'
 
   Scenario Outline: File  Home Page Filter "<ItemStatus>" Item Statuses
-    And the user clicks on ItemStatuses
-    And the user clicks on "<ItemStatus>"
-    And the user clicks on Search button
+    And The user select "<ItemStatus>" in "ItemStatus" select filter
     # And the incoming filter for "<ItemStatus>" should contain
     Examples:
-      |ItemStatus |
-      |Active     |
-      |Passive    |
-      |Blanks     |
+      | ItemStatus |
+      | Active     |
+      | Passive    |
+      | Draft      |
 
   Scenario:ID Tab Sorting Functionality
     And  The user clicks id tab

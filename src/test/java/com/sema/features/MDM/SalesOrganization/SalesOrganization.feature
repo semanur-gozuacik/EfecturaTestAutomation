@@ -12,10 +12,10 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
     When  The user clicks on Export button
 
   Scenario:Sales Organization Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable
+    And  The user verifies "firstPageTable" button is "Passive"
 
   Scenario:Sales Organization Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies previous page button is not clickable
+    And  The user verifies "items_previous" button is "Passive"
 
   Scenario Outline: Sales Organization Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries
@@ -29,8 +29,9 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
 
   Scenario: Sales Organization Reset Button Control
     And The user enters "test2123" into "Code" filter text input box
-    And the user clicks on Reset button
-   # And the user verify Reset button functionality
+    And The user reset the basic filters
+    And The user verify Reset button func for "Code" text filter
+
 
   Scenario:Sales Organization Verify Label Filter - Valid Label
     And The user enters "TEST123456" into "Label" filter text input box
@@ -52,15 +53,13 @@ Feature: Sales Organization Management Test Cases- Contact Home Page
     Then The user verifies item is removed
 
   Scenario Outline: Sales Organization Filter "<ItemStatus>" Item Statuses
-    And the user clicks on ItemStatuses
-    And the user clicks on "<ItemStatus>"
-    And the user clicks on Search button
+    And The user select "<ItemStatus>" in "ItemStatus" select filter
     # And the incoming filter for "<ItemStatus>" should contain
     Examples:
-      |ItemStatus |
-      |Active     |
-      |Passive    |
-      |Blanks    |
+      | ItemStatus |
+      | Active     |
+      | Passive    |
+      | Draft      |
 
   Scenario:Sales Organization Verify Code Filter - Invalid Unique Code
     And The user enters "sema12345" into "Code" filter text input box

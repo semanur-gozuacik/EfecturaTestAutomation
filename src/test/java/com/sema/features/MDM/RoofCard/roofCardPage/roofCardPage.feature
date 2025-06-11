@@ -13,10 +13,10 @@ Feature: RoofCard Management Test Cases- Contact Home Page
     #Then  The user verify that the export was "Success"
 
   Scenario:RoofCard Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable
+    And  The user verifies "firstPageTable" button is "Passive"
 
   Scenario:RoofCard Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies previous page button is not clickable
+    And  The user verifies "items_previous" button is "Passive"
 
   Scenario Outline: RoofCard Home Page User selects different options for show entries
     When  The user selects "<entries>" into show entries
@@ -27,22 +27,21 @@ Feature: RoofCard Management Test Cases- Contact Home Page
 
   Scenario: RoofCard Home Page Reset Button Control
     And The user enters "roofcard" into "Code" filter text input box
-    And the user verify Reset button functionality
+    And The user reset the basic filters
+    And The user verify Reset button func for "Code" text filter
 
   Scenario:RoofCard Home Page Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into "Label" filter text input box
-    And the user clicks on Search button
+#    And the user clicks on Search button
     And The user verify empty data table info 'No matching records found'
 
-  Scenario:RoofCard Organization  edit - Categories Tab
+  Scenario:RoofCard Organization edit - Categories Tab
     And The user enters "roof_card_test" into "Code" filter text input box
-    And the user clicks on Search button
     And The user clicks on edit button in table
     And The user clicks "Categories" tab
 
   Scenario:RoofCard Organization  edit - Categories Tab
     And The user enters "roof_card_test" into "Code" filter text input box
-    And the user clicks on Search button
     And The user clicks on edit button in table
     And The user clicks "History" tab
 

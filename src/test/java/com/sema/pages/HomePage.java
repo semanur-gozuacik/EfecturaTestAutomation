@@ -108,7 +108,7 @@ public class HomePage extends BasePage {
     }
 
     public void currentUrlAndStoresItInUrl(String partialUrl) {
-        BrowserUtils.wait(7);
+        BrowserUtils.wait(5);
         String currentURL = driver.getCurrentUrl();
         Assert.assertTrue(currentURL.contains(partialUrl));
     }
@@ -193,7 +193,7 @@ public class HomePage extends BasePage {
     public void verifySystemElementSymbol(int timeout) {
         BrowserUtils.waitForVisibility(settingsElementSymbol, timeout);
         Assert.assertTrue(settingsElementSymbol.isDisplayed());
-        BrowserUtils.wait(50);
+        BrowserUtils.wait(5);
     }
 
     public void mouseoverOnTheSystemElement() {

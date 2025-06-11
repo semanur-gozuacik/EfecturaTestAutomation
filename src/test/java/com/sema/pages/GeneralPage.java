@@ -41,13 +41,16 @@ public class GeneralPage extends BasePage {
     @FindBy(xpath = "//textarea[@id='comment']")
     private WebElement changeSaveCommentTextArea;
 
+    @FindBy(xpath = "//button[contains(@id,'-reset-basic')]")
+    private WebElement basicResetButton;
+
 
     // you can use selectFilter as IsAssociated, Family, ItemStatuses in feature file
     public void selectOptionInSelectFilter(String selectOption, String selectFilter) {
 
         WebElement selectElement = driver.findElement(By.xpath("//select[contains(@id,'-" + selectFilter + "')]"));
         BrowserUtils.selectDropdownOptionByVisibleText(selectElement,selectOption);
-
+        BrowserUtils.wait(3);
     }
 
     public void useTextFilter(String value, String columnName) {

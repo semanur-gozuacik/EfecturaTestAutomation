@@ -20,6 +20,7 @@ public class GeneralStepDefinitions extends BaseStep {
     @And("The user select {string} in {string} select filter")
     public void theUserSelectInSelectFilter(String selectOption, String selectFilter) {
         pages.generalPage().selectOptionInSelectFilter(selectOption,selectFilter);
+        BrowserUtils.wait(5);
     }
 
     @And("The user enters {string} into {string} filter text input box")
@@ -58,7 +59,7 @@ public class GeneralStepDefinitions extends BaseStep {
         List<String> values =  BasePage.getColumnData(tableElement,columnName);
 
         System.out.println(values);
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(2);
         for (String actualValue : values) {
             Assert.assertTrue(actualValue.toLowerCase().contains(expectedValue.toLowerCase()));
 //            Assert.assertEquals(expectedValue,actualValue);
@@ -72,6 +73,8 @@ public class GeneralStepDefinitions extends BaseStep {
 
     @And("The User clicks on delete button in table")
     public void theUserClicksOnDeleteButtonInTable() {
+        BrowserUtils.wait(2);
+        BrowserUtils.adjustScreenSize(80,Driver.getDriver());
         pages.generalPage().getDeleteBtnInTable().click();
     }
 
@@ -106,5 +109,20 @@ public class GeneralStepDefinitions extends BaseStep {
     public void theUserVerifyThatFirstItemWithCodeHasAssociationOn(String itemCode, String associationTypeCode) throws SQLException {
         BrowserUtils.wait(2);
         Assert.assertTrue(pages.editItemPage().getAssociations(itemCode,associationTypeCode));
+    }
+
+    @And("The user reset the basic filters")
+    public void theUserResetTheBasicFilters() {
+        BrowserUtils.wait(10);
+        BrowserUtils.waitForClickability(pages.generalPage().getBasicResetButton(),20);
+        pages.generalPage().getBasicResetButton().click();
+        BrowserUtils.wait(10);
+    }
+
+    @And("The user verify Reset button func for {string} simple select filter")
+    public void theUserVerifyResetButtonFuncForSimpleSelectFilter(String filterName) {
+        String locate = "//span[contains(@id,'-" + filterName + "')]/span[text()='Select']";
+        WebElement simpleSelectFilterPlaceholder = Driver.getDriver().findElement(By.xpath(locate));
+        Assert.assertTrue(simpleSelectFilterPlaceholder.isDisplayed());
     }
 }

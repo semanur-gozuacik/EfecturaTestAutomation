@@ -105,8 +105,9 @@ Feature: Users Management Test Cases
       |Disable     |
 
   Scenario: Reset Button Control
-    And The user clicks on Is Real
-    And The user clicks on "Enable" Is Real
-    And the user clicks on Reset button
-    And the user verify Reset button functionality-Users
+#    And The user clicks on Is Real
+#    And The user clicks on "Enable" Is Real
+    And The user select "Enabled" in "IsReal" select filter
+    And The user reset the basic filters
+    And The user verify Reset button func for "IsReal" simple select filter
 

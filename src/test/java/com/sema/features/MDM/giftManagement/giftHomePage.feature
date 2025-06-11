@@ -12,16 +12,16 @@ Feature: Gift Creation and Management Home Page
     When  The user clicks on Export button
 
   Scenario:Gift Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable
+    And  The user verifies "firstPageTable" button is "Passive"
 
   Scenario:Gift Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies previous page button is not clickable
+    And  The user verifies "items_previous" button is "Passive"
 
   Scenario:Gift Home Page Verify Item next Button Clickable Condition
-    And  The user verifies next button is clickable
+    And  The user verifies "items_next" button is "Active"
 
   Scenario:Gift Home Page Verify Last Page Button Clickable Condition
-    And  The user verifies last page button is clickable
+    And  The user verifies "lastPageTable" button is "Active"
 
   Scenario:Gift Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into "Label" filter text input box
@@ -38,11 +38,12 @@ Feature: Gift Creation and Management Home Page
       |100|
 
   Scenario: Gift Home Page Reset Button Control
-    And The user enters "TestGiftForRecieved" into "Code" filter text input box
-    And the user clicks on Reset button
+    And The user enters "TestGiftForReceived" into "Code" filter text input box
+    And The user reset the basic filters
+    And The user verify Reset button func for "Code" text filter
 
   Scenario: Gift page edit verify
-    And The user enters "TestGiftForRecieved" into "Code" filter text input box
+    And The user enters "TestGiftForReceived" into "Code" filter text input box
     And The user clicks on edit button in table
 
 
