@@ -79,21 +79,21 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     When  The user selects "<entries>" into show entries
     Then  The user should see  "<entries>" entrie in everypage
     Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
+      | entries |
+      | 10      |
+      | 25      |
+      | 50      |
+      | 100     |
 
 
   Scenario: Campaign Create List- cancel button
     And The user clicks add list button
     Then The user verifies New List popup is open
-    When The user enters list name as "automation"
+    When The user enters list name as "automation-campaign"
    #  And  The user enters "_5458429214" Can view
     # And  The user enters "1757483988_5392786463" Can edit
-   #  And The user clicks cancel button-New List
-     #Then The user verifies "otomasyon" is not visible
+    And The user clicks "Cancel" button in create list modal
+    Then The user verify list "automation-campaign" do not exists
 
   Scenario:Campaign Create List- create button
     And The user clicks add list button
@@ -101,8 +101,8 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     When The user enters list name as "campaign-list"
    # And  The user enters "_5458429214" Can view
     #And  The user enters "1757483988_5392786463" Can edit
-    #And The user clicks create button-New List
-   # Then The user verifies "campaign-list" is visible
+    And The user clicks "Save" button in create list modal
+    Then The user verify list "campaign-list" exists
 
   Scenario:Campaign Create List- create button-exist user
     And The user clicks add list button
@@ -110,18 +110,19 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     When The user enters list name as "Sematestyeni"
    # And  The user enters "_5458429214" Can view
    # And  The user enters "1757483988_5392786463" Can edit
-   # And  The user clicks create button-New List
-    #Then The user verifies error message "USER_LIST_ALREADY_EXISTS" is displayed
+    And The user clicks "Save" button in create list modal
+    Then The user verifies info "USER_LIST_ALREADY_EXISTS" appears
 
   Scenario:Campaign Create List- delete list-cancel button
-     And The user selects deleted element
-   # And The user clicks cancel button in delete popup
-  #  Then The user verifies "campaign-list" is visible
+    And The user clicks delete button in "campaign-list" list
+    And The user clicks "Cancel" button in delete list modal
+    Then The user verify list "campaign-list" exists
 
   Scenario:Campaign Create List- delete list
-    And The user selects deleted element
-    #And The user clicks delete button in delete popup
-   #Then The user verifies "campaign-list" is not visible
+    And The user clicks delete button in "campaign-list" list
+    And The user clicks "Delete" button in delete list modal
+    Then The user verifies info "USER_LIST_DELETED" appears
+    Then The user verify list "campaign-list" do not exists
 
   Scenario:Campaign edit -Attributes Tab
     And The user enters "TestAutomation" into "Code" filter text input box

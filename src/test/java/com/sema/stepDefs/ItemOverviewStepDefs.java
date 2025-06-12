@@ -108,13 +108,6 @@ public class ItemOverviewStepDefs extends BaseStep {
         pages.itemOverviewPage().getListNameInputBox().sendKeys(listName);
     }
 
-    @And("The user clicks create list button")
-    public void theUserClicksCreateListButton() {
-        BrowserUtils.waitForClickability(pages.itemOverviewPage().getListCreateButton(),10);
-        pages.itemOverviewPage().getListCreateButton().click();
-        BrowserUtils.waitForVisibility(pages.generalPage().getInfoMessage(),10);
-    }
-
     @Then("The user verify list {string} exists")
     public void theUserVerifyListExists(String listName) {
         if (pages.itemOverviewPage().getAllListsAccordion().getAttribute("class").contains("active")) {
@@ -147,5 +140,14 @@ public class ItemOverviewStepDefs extends BaseStep {
         String locate = "//div[@id='delete-list-modal']/div/div/div/button[contains(text(),'" + btnName + "')]";
         WebElement button = Driver.getDriver().findElement(By.xpath(locate));
         button.click();
+    }
+
+    @And("The user clicks {string} button in create list modal")
+    public void theUserClicksButtonInCreateListModal(String btnName) {
+        String locate = "//div[@id='create-new-list']/div/div/div/button[contains(text(),'" + btnName + "')]";
+        WebElement btn = Driver.getDriver().findElement(By.xpath(locate));
+        BrowserUtils.waitForClickability(btn,10);
+        btn.click();
+        BrowserUtils.wait(1);
     }
 }

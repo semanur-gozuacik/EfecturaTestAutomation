@@ -36,11 +36,11 @@ Feature: Asset Management Test Cases- Asset Home Page
   Scenario: Create List- cancel button
     And The user clicks add list button
     Then The user verifies New List popup is open
-    When The user enters list name as "automation"
+    When The user enters list name as "automation-asset"
     # And  The user enters "_5458429214" Can view
    #  And  The user enters "1757483988_5392786463" Can edit
-     And The user clicks cancel button-New List
-    Then The user verify list "automation" do not exists
+    And The user clicks "Cancel" button in create list modal
+    Then The user verify list "automation-asset" do not exists
 
   Scenario: Create List- create button
     And The user clicks add list button
