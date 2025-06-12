@@ -174,7 +174,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     When The user enters list name as "automation-contact"
   # And  The user enters "_5458429214" Can view
     # And  The user enters "1757483988_5392786463" Can edit
-    And The user clicks create list button
+    And The user clicks "Save" button in create list modal
     Then The user verifies info "USER_LIST_ADDED" appears
     Then The user verify list "automation-contact" exists
 
@@ -184,7 +184,7 @@ Feature: Contact Management Test Cases- Contact Home Page
     When The user enters list name as "Sematestyeni"
     # And  The user enters "_5458429214" Can view
    #  And  The user enters "1757483988_5392786463" Can edit
-    And The user clicks create list button
+    And The user clicks "Save" button in create list modal
     Then The user verifies info "USER_LIST_ALREADY_EXISTS" appears
 
   Scenario: Create List- delete list-cancel button

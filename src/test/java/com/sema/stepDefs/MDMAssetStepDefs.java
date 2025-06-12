@@ -65,26 +65,11 @@ public class MDMAssetStepDefs extends BaseStep {
     public void the_user_enters_can_edit(String edit) {
         pages.asset().setCanEdit(edit);
     }
-    @When("The user clicks cancel button-New List")
-    public void the_user_clicks_cancel_button_new_list() {
-        pages.asset().clickNewListCancelButton();
-    }
 
     @Then("The user verifies is invalid visible")
     public void the_user_verifies_is_invalid_visible() {
         pages.asset().verifyNoResultsFound();
     }
-
-    @Then("The user selects deleted element")
-    public void the_user_selects_deleted_element() {
-      pages.asset().clickDeleteButton();
-    }
-
-    @Then("The user clicks cancel button in delete popup")
-    public void the_user_clicks_cancel_button_in_delete_popup() {
-      pages.asset().clickCancelButtonPopUp();
-    }
-
 
 
 }

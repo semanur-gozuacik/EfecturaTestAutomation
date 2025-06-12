@@ -182,24 +182,9 @@ public class Asset extends BasePage {
         }
     }
 
-    public void clickNewListCancelButton() {
-        createListCancelButton.click();
-    }
-
     public void verifyNoResultsFound() {
         BrowserUtils.waitForVisibility(verifyNoResultsFound, 10);
         Assert.assertTrue(verifyNoResultsFound.isDisplayed());
-    }
-
-    public void clickDeleteButton() {
-       //  BrowserUtils.hoverOver(deletedListItem);
-       // BrowserUtils.waitForVisibility(deleteListButton, 20);
-       //  deleteListButton.click();
-    }
-
-    public void clickCancelButtonPopUp() {
-        BrowserUtils.waitForVisibility(deleteListCancelPopUp, 20);
-        deleteListCancelPopUp.click();
     }
 
 }

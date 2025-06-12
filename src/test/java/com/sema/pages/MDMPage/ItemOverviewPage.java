@@ -81,6 +81,9 @@ public class ItemOverviewPage extends BasePage {
     @FindBy(xpath = "//a[@id='createNewList']")
     private WebElement createListButton;
 
+    @FindBy(xpath = "//div[@id='create-new-list']/div/div/div/button[text()='Cancel']")
+    private WebElement createNewListCancelButton;
+
     @FindBy(xpath = "//div[contains(@class,'modal-header')]/h4[normalize-space()='New List']")
     private WebElement newListPopup;
 
