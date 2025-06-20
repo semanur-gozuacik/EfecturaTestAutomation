@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.Select;
 
 public class SettingsTagsStepDefs extends BaseStep {
 
@@ -292,7 +293,11 @@ public class SettingsTagsStepDefs extends BaseStep {
 
     @Then("The user verifies that table contains right rows according to {string}")
     public void theUserVerifiesThatTableContainsRightRowsAccordingTo(String length) {
-        pages.tagsPage().verifyTableContainsRightRowsAccordingToLength(length);
+        BrowserUtils.wait(1);
+        pages.generalPage().verifyTableContainsRightRowsAccordingToLength(length);
+//        Assert.assertTrue(BrowserUtils.isOptionSelected(pages.generalPage().getTableShowEntrySelect(), length));
+        Select select = new Select(pages.generalPage().getTableShowEntrySelect());
+        Assert.assertEquals(select.getFirstSelectedOption().getAttribute("value"),length.split(" ")[0]);
     }
 
     @When("The user clicks DeleteTag button in Tags page")

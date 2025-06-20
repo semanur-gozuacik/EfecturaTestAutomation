@@ -295,7 +295,7 @@ public class SystemCurrenciesStepDefs extends BaseStep{
 
     @Then("The user verifies that table contains right rows according to {string} in Currencies")
     public void theUserVerifiesThatTableContainsRightRowsAccordingToInCurrencies(String length) {
-        //pages.currenciesPage().verifyTableContainsRightRowsAccordingToLengthInCurrencies(length);
+        pages.currenciesPage().verifyTableContainsRightRowsAccordingToLengthInCurrencies(length);
     }
 
     @When("The user undone the changes in CurrencyCode in EditCurrency modal")

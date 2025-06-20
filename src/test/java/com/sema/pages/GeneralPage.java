@@ -4,6 +4,7 @@ import com.sema.utilities.BrowserUtils;
 import com.sema.utilities.Database;
 import com.sema.utilities.Driver;
 import lombok.Getter;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -13,6 +14,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 @Getter
 public class GeneralPage extends BasePage {
@@ -46,6 +48,12 @@ public class GeneralPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='notyf__message']")
     private WebElement infoMessage;
+
+    @FindBy(xpath = "//select[contains(@class,'form-control custom-length')]")
+    private WebElement tableShowEntrySelect;
+
+    @FindBy(xpath = "//div[contains(@class,'dataTables_info')]")
+    private WebElement tableInfo;
 
 
     // you can use selectFilter as IsAssociated, Family, ItemStatuses in feature file
@@ -89,5 +97,17 @@ public class GeneralPage extends BasePage {
         System.out.println("item status of the item with code " + itemCode + " is " + itemStatus);
         return itemStatus;
 
+    }
+
+    public static boolean isRowCountCorrectAccordingToTableLength(WebElement tableInfo, String length) {
+        List<WebElement> rows = Driver.getDriver().findElements(By.xpath("//tr/td[1]"));
+        String maxDataCountAsString = tableInfo.getText().split(" ")[5].replace(",","");
+        int maxDataCount = Integer.parseInt(maxDataCountAsString);
+        int lengthAsInt = Integer.parseInt(length.split(" ")[0]);
+        return rows.size() == Math.min(maxDataCount, lengthAsInt);
+    }
+
+    public void verifyTableContainsRightRowsAccordingToLength(String length) {
+        Assert.assertTrue(isRowCountCorrectAccordingToTableLength(tableInfo,length));
     }
 }

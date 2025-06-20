@@ -61,7 +61,7 @@ public class EditItemPage extends BasePage {
     @FindBy(xpath = "//table[@id='association-table']/thead/tr[2]/th")
     private List<WebElement> assocTabFilters;
 
-    @FindBy(xpath = "//ul[@class='nav nav-tabs current_nav_tabs']//li//a")
+    @FindBy(xpath = "//div[contains(@class,'new_container')]/ul[contains(@class,'nav nav-tabs')]/li/a[@data-toggle='tab']")
     private List<WebElement> editItemTabs;
 
     @FindBy(xpath = "//*[@id='association-table']/tbody/tr/td/input")

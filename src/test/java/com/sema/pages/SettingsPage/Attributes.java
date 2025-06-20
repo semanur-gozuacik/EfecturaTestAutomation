@@ -50,11 +50,6 @@ public class Attributes extends BasePage {
         Assert.assertTrue(attrbutesPageVerificationsElement.isDisplayed());
     }
 
-    public void clickEditButton() {
-        BrowserUtils.wait(6);
-        editButton.click();
-    }
-
     public void selectEntrie(String entrie) {
         BrowserUtils.selectOption(entrieNumber, entrie);
     }
@@ -69,18 +64,6 @@ public class Attributes extends BasePage {
         driver.navigate().to("https://sandbox-ui.efectura.com/Settings/Attributes");
     }
 
-    public void clickAttribute(String attribute) {
-        for (int i = 0; i < attributes.size(); i++) {
-            System.out.println(attributes.get(i).getText());
-            if (attributes.get(i).getText().contains(attribute)) {
-                attributes.get(i).click();
-                break;
-            }
-
-        }
-
-    }
-
     public void setCodeField(String code) {
         BrowserUtils.waitForVisibility(codeField, 30);
         codeField.click();
@@ -89,7 +72,7 @@ public class Attributes extends BasePage {
 
     public void verifyResetButton() {
         BrowserUtils.wait(5);
-        Assert.assertTrue(codeField.getAttribute("placeholder").contains("Code"));
+        Assert.assertTrue(codeField.getAttribute("placeholder").contains("Enter Value"));
 
     }
 

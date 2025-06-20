@@ -81,8 +81,8 @@ public class GeneralStepDefinitions extends BaseStep {
     @And("The user clicks on edit button in table")
     public void theUserClicksOnEditButtonInTable() {
         pages.itemOverviewPage().closeSideAccordionInOverview();
-        BrowserUtils.wait(5);
-        BrowserUtils.adjustScreenSize(80,Driver.getDriver());
+        BrowserUtils.wait(3);
+        BrowserUtils.adjustScreenSize(60,Driver.getDriver());
         pages.generalPage().getEditBtnInTable().click();
     }
 
@@ -124,5 +124,10 @@ public class GeneralStepDefinitions extends BaseStep {
         String locate = "//span[contains(@id,'-" + filterName + "')]/span[text()='Select']";
         WebElement simpleSelectFilterPlaceholder = Driver.getDriver().findElement(By.xpath(locate));
         Assert.assertTrue(simpleSelectFilterPlaceholder.isDisplayed());
+    }
+
+    @When("The user select {string} in table show entry select")
+    public void theUserSelectInTableShowEntrySelect(String tableShowSize) {
+        BrowserUtils.selectDropdownOptionByVisibleText(pages.generalPage().getTableShowEntrySelect(),tableShowSize);
     }
 }
