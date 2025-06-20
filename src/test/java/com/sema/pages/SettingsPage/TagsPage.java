@@ -548,17 +548,7 @@ public class TagsPage extends BasePage {
         selectLengthFromTableLength(tableLengthSelectDropdown,length);
     }
 
-    public static boolean isRowCountCorrectAccordingToTableLength(WebElement tableInfo, String length) {
-        List<WebElement> rows = Driver.getDriver().findElements(By.xpath("//tr/td[1]"));
-        String maxDataCountAsString = tableInfo.getText().split(" ")[5].replace(",","");
-        int maxDataCount = Integer.parseInt(maxDataCountAsString);
-        int lengthAsInt = Integer.parseInt(length);
-        return rows.size() == Math.min(maxDataCount, lengthAsInt);
-    }
 
-    public void verifyTableContainsRightRowsAccordingToLength(String length) {
-        Assert.assertTrue(isRowCountCorrectAccordingToTableLength(tableInfo,length));
-    }
 
     public void clickDeleteTagButton() {
         enterInputToLabelFilter(tagLabelForEdit);

@@ -142,7 +142,10 @@ public class ItemOverviewPage extends BasePage {
      */
     public void verifyButtonStatus(String btnName, String btnStatus) {
         BrowserUtils.wait(4);
-        WebElement btn = driver.findElement(By.id(btnName));
+        WebElement btn = driver.findElement(By.xpath(
+                "//*[contains(translate(@id, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '"
+                        + btnName + "')]"));
+//        WebElement button = driver.findElement(By.id(btnName));
         if(btnStatus.equalsIgnoreCase("Active")) {
             Assert.assertTrue(isButtonActive(btn));
         } else if (btnStatus.equalsIgnoreCase("Passive")) {
@@ -152,9 +155,12 @@ public class ItemOverviewPage extends BasePage {
 
     public void clickPaginationButton(String btnName) {
         BrowserUtils.wait(10);
-        WebElement btn2 = driver.findElement(By.id(btnName));
-        WebElement btn = driver.findElement
-                (By.xpath("//div[@class='pagination-container']//button[@id='" + btnName + "']"));
+        WebElement btn = driver.findElement(By.xpath(
+                "//*[contains(translate(@id, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '"
+                        + btnName + "')]"));
+//        WebElement btn2 = driver.findElement(By.id(btnName));
+//        WebElement button = driver.findElement
+//                (By.xpath("//div[@class='pagination-container']//button[@id='" + btnName + "']"));
         btn.click();
     }
 

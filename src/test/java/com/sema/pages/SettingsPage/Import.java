@@ -20,7 +20,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import static com.sema.pages.SettingsPage.TagsPage.isRowCountCorrectAccordingToTableLength;
+//import static com.sema.pages.SettingsPage.TagsPage.isRowCountCorrectAccordingToTableLength;
+import static com.sema.pages.GeneralPage.isRowCountCorrectAccordingToTableLength;
 import static com.sema.pages.SettingsPage.TagsPage.selectLengthFromTableLength;
 import static com.sema.utilities.CommonExcelReader.*;
 
@@ -37,7 +38,7 @@ public class Import extends BasePage {
     @FindBy(xpath = "//label/select")
     private WebElement tableLengthSelectDropdown;
 
-    @FindBy(xpath = "//div[contains(text(),'Showing')]")
+    @FindBy(xpath = "//div[contains(@class,'dataTables_info')]")
     private WebElement tableInfo;
 
     @FindBy(xpath = "//tr/td[1]")

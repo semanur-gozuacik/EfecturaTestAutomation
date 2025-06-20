@@ -5,8 +5,8 @@ Feature: Families Management Test Cases
     And    The User inputs a valid username "validUsername"
     And    The User inputs a valid password "validPassword"
     And    The User clicks the Submit button
-    Then  The User waits until the System element is visible with a timeout of 120 seconds
-    And   The User performs a mouseover on the System element symbol
+#    Then  The User waits until the System element is visible with a timeout of 120 seconds
+#    And   The User performs a mouseover on the System element symbol
     Given The user on the settings families page
     And   The User gets the current URL and stores it in "Settings/Families"
 
@@ -30,29 +30,33 @@ Feature: Families Management Test Cases
       |100|
 
   Scenario:Families Page Verify First Page Button Unclickable Condition
-    And  The user verifies first page button is not clickable-families
+#    And  The user verifies first page button is not clickable-families
+    And  The user verifies "firstpage" button is "Passive"
 
   Scenario:Families Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies previous page button is not clickable-families
+#    And  The user verifies previous page button is not clickable-families
+    And  The user verifies "_previous" button is "Passive"
 
   Scenario:Families Page Verify Item next Button Unclickable Condition
-    When The user clicks last page button-families
-    And  The user verifies next button is not clickable-families
+#    When The user clicks last page button-families
+    When The user clicks 'lastpage' pagination button
+#    And  The user verifies next button is not clickable-families
+    And  The user verifies "_next" button is "Passive"
 
   Scenario: Families Page Verify Last Page Button Unclickable Condition
-    When The user clicks last page button-families
-    And  The user verifies last page button is not clickable-families
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "lastpage" button is "Passive"
 
   Scenario:Families Page Verify First Page Button Clickable Condition
-    When The user clicks last page button-families
-    And  The user verifies first page button is clickable-families
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "firstpage" button is "Active"
 
   Scenario:Families Page Verify Previous Page Button Clickable Condition
-    When The user clicks last page button-families
-    And  The user verifies previous page button is clickable-families
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "_previous" button is "Active"
 
   Scenario:Families Page Verify Item next Button Clickable Condition
-    And  The user verifies next button is clickable-families
+    And  The user verifies "_next" button is "Active"
 
   Scenario: Families Page Verify Last Page Button Clickable Condition
-    And  The user verifies last page button is clickable-families
+    And  The user verifies "lastpage" button is "Active"

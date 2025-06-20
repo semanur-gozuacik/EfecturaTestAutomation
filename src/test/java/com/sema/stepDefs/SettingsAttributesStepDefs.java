@@ -18,17 +18,15 @@ public class SettingsAttributesStepDefs extends BaseStep{
     public void the_user_verifies_attributes_page_table_is_displayed() {
     pages.attributes().verifyFamilyPage();
     }
-    @Then("The user clicks on Edit Button-Attributes")
-    public void the_user_clicks_on_edit_button_attributes() {
-      pages.attributes().clickEditButton();
-    }
+
     @When("The user selects {string} into show entries attributes")
     public void the_user_selects_into_show_entries_attributes(String entrie) {
         pages.attributes().selectEntrie(entrie);
     }
     @Then("The user should see  {string} entrie in everypage attributes")
     public void the_user_should_see_entrie_in_everypage_attributes(String entrie) {
-        pages.attributes().verifySelectOption(entrie);
+//        pages.attributes().verifySelectOption(entrie);
+        Assert.assertTrue(BrowserUtils.isOptionSelected(pages.generalPage().getTableShowEntrySelect(), entrie));
     }
 
     @Given("The user on the settings attribute page")
@@ -41,11 +39,6 @@ public class SettingsAttributesStepDefs extends BaseStep{
     }@Then("The user  {string}")
     public void the_user(String string) {
 
-    }
-
-    @And("The user clicks {string} attributes")
-    public void theUserClicksAttributes(String attribute) {
-        pages.attributes().clickAttribute(attribute);
     }
 
     @And("The user enters {string} into Code field-Settings Attributes")
