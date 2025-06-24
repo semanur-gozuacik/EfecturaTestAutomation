@@ -49,10 +49,10 @@ public class GeneralPage extends BasePage {
     @FindBy(xpath = "//div[@class='notyf__message']")
     private WebElement infoMessage;
 
-    @FindBy(xpath = "//select[contains(@class,'form-control custom-length')]")
+    @FindBy(xpath = "//div[contains(@id,'_wrapper')]/div/div/div/label/div/select")
     private WebElement tableShowEntrySelect;
 
-    @FindBy(xpath = "//div[contains(@class,'dataTables_info')]")
+    @FindBy(xpath = "//div[@class='pagination-container']/div[contains(@id,'_info')]")
     private WebElement tableInfo;
 
 
@@ -100,10 +100,15 @@ public class GeneralPage extends BasePage {
     }
 
     public static boolean isRowCountCorrectAccordingToTableLength(WebElement tableInfo, String length) {
-        List<WebElement> rows = Driver.getDriver().findElements(By.xpath("//tr/td[1]"));
+        BrowserUtils.waitForVisibility(tableInfo,30);
+        List<WebElement> rows = Driver.getDriver().findElements(By.xpath("//div[contains(@id,'_wrapper')]/div/div/table/tbody/tr/td[2]"));
         String maxDataCountAsString = tableInfo.getText().split(" ")[5].replace(",","");
+        System.out.println("maxDataCountAsString " + maxDataCountAsString);
+        System.out.println("LengthAsInt " + Integer.parseInt(length.split(" ")[0]));
         int maxDataCount = Integer.parseInt(maxDataCountAsString);
         int lengthAsInt = Integer.parseInt(length.split(" ")[0]);
+        System.out.println("Row sayısı " + rows.size());
+        System.out.println(Math.min(maxDataCount, lengthAsInt));
         return rows.size() == Math.min(maxDataCount, lengthAsInt);
     }
 

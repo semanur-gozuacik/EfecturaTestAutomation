@@ -146,14 +146,6 @@ public class MDMContactHomePageStepDef extends BaseStep {
     public void the_user_clicks_show_entries_button() {
         pages.contactHomePage().clickShowEntrie();
     }
-    @When("The user selects {string} into show entries")
-    public void the_user_selects_into_show_entries(String entrie) {
-  pages.contactHomePage().selectEntrie(entrie);
-    }
-    @Then("The user should see  {string} entrie in everypage")
-    public void the_user_should_see_entrie_in_everypage(String entrie) {
-      pages.contactHomePage().verifySelectOption(entrie);
-    }
 
     @Then("The user verify Edit Page")
     public void the_user_verify_edit_page() {

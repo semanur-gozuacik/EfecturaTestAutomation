@@ -19,19 +19,17 @@ Feature: Product Management Test Cases- Contact Home Page
     And  The user verifies "items_previous" button is "Passive"
 
   Scenario Outline: Product Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
+    When The user select "<entry>" in table show entry select
+    Then The user verifies that table contains right rows according to "<entry>"
     Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
+      | entry       |
+      | 100 Entries |
+      | 50 Entries  |
+      | 25 Entries  |
+      | 10 Entries  |
 
   Scenario: User Reset Button Control
     And The user enters "test2123" into "Code" filter text input box
-#    And the user clicks on Reset button
-#    And the user verify Reset button functionality
     And The user reset the basic filters
     And The user verify Reset button func for "Code" text filter
 

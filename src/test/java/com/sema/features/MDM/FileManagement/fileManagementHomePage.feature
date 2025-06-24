@@ -17,15 +17,15 @@ Feature: File Management Test Cases- Contact Home Page
   Scenario:File Home Page Verify Previous Page Button Unclickable Condition
     And  The user verifies "items_previous" button is "Passive"
 
-  Scenario Outline: File  Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
+  Scenario Outline: File Home Page User selects different options for show entries
+    When The user select "<entry>" in table show entry select
+    Then The user verifies that table contains right rows according to "<entry>"
     Examples:
-      | entries|
-      |100 |
-      |50 |
-      |25 |
-      |10|
+      | entry       |
+      | 100 Entries |
+      | 50 Entries  |
+      | 25 Entries  |
+      | 10 Entries  |
 
 
   Scenario: File  Home Page Reset Button Control

@@ -50,10 +50,6 @@ public class Attributes extends BasePage {
         Assert.assertTrue(attrbutesPageVerificationsElement.isDisplayed());
     }
 
-    public void selectEntrie(String entrie) {
-        BrowserUtils.selectOption(entrieNumber, entrie);
-    }
-
     public void verifySelectOption(String entrie) {
         BrowserUtils.wait(5);
         Assert.assertTrue(BrowserUtils.isOptionSelected(entrieNumber, entrie));

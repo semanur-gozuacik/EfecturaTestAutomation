@@ -28,14 +28,14 @@ Feature: Gift Creation and Management Home Page
     And The user verify empty data table info 'No matching records found'
 
   Scenario Outline: Gift Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
+    When The user select "<entry>" in table show entry select
+    Then The user verifies that table contains right rows according to "<entry>"
     Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
+      | entry       |
+      | 100 Entries |
+      | 50 Entries  |
+      | 25 Entries  |
+      | 10 Entries  |
 
   Scenario: Gift Home Page Reset Button Control
     And The user enters "TestGiftForReceived" into "Code" filter text input box

@@ -10,6 +10,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -130,4 +131,14 @@ public class GeneralStepDefinitions extends BaseStep {
     public void theUserSelectInTableShowEntrySelect(String tableShowSize) {
         BrowserUtils.selectDropdownOptionByVisibleText(pages.generalPage().getTableShowEntrySelect(),tableShowSize);
     }
+
+    @Then("The user verifies that table contains right rows according to {string}")
+    public void theUserVerifiesThatTableContainsRightRowsAccordingTo(String length) {
+        BrowserUtils.wait(1);
+        pages.generalPage().verifyTableContainsRightRowsAccordingToLength(length);
+//        Assert.assertTrue(BrowserUtils.isOptionSelected(pages.generalPage().getTableShowEntrySelect(), length));
+        Select select = new Select(pages.generalPage().getTableShowEntrySelect());
+        Assert.assertEquals(select.getFirstSelectedOption().getAttribute("value"),length.split(" ")[0]);
+    }
+
 }

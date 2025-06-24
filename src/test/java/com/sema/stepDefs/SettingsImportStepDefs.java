@@ -25,16 +25,6 @@ public class SettingsImportStepDefs extends BaseStep {
         pages.importPage().verifyImportPage();
     }
 
-    @When("The user selects {string} into show entries import")
-    public void the_user_selects_into_show_entries_import(String length) {
-        pages.importPage().selectLengthFromTableLengthInImportPage(length);
-    }
-
-    @Then("The user should see  {string} entrie in everypage import")
-    public void the_user_should_see_entrie_in_everypage_import(String length) {
-        pages.importPage().verifyTableContainsRightRowsAccordingToLength(length);
-    }
-
     @Given("the user clicks on Refresh button")
     public void the_user_clicks_on_refresh_button() {
 

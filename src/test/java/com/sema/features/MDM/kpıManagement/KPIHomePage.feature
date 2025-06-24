@@ -75,14 +75,14 @@ Feature: KPI Management Test Cases
     Then The user verifies info "USER_LIST_ALREADY_EXISTS" appears
 
   Scenario Outline: KPI Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
+    When The user select "<entry>" in table show entry select
+    Then The user verifies that table contains right rows according to "<entry>"
     Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
+      | entry       |
+      | 100 Entries |
+      | 50 Entries  |
+      | 25 Entries  |
+      | 10 Entries  |
 
 
   Scenario: KPI page edit verify

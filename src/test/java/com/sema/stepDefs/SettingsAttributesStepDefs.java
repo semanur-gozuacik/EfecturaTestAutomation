@@ -19,16 +19,6 @@ public class SettingsAttributesStepDefs extends BaseStep{
     pages.attributes().verifyFamilyPage();
     }
 
-    @When("The user selects {string} into show entries attributes")
-    public void the_user_selects_into_show_entries_attributes(String entrie) {
-        pages.attributes().selectEntrie(entrie);
-    }
-    @Then("The user should see  {string} entrie in everypage attributes")
-    public void the_user_should_see_entrie_in_everypage_attributes(String entrie) {
-//        pages.attributes().verifySelectOption(entrie);
-        Assert.assertTrue(BrowserUtils.isOptionSelected(pages.generalPage().getTableShowEntrySelect(), entrie));
-    }
-
     @Given("The user on the settings attribute page")
     public void the_user_on_the_settings_attribute_page() {
     pages.attributes().onTheAttributeSettingPage();

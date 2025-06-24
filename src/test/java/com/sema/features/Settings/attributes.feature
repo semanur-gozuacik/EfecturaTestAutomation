@@ -129,17 +129,14 @@ Feature: Attributes Management Test Cases
 
 
   Scenario Outline:Attributes Page-User selects different options for show entries
-#    When  The user selects "<entries>" into show entries attributes
     When The user select "<entry>" in table show entry select
-#    Then  The user should see  "<entry>" entrie in everypage attributes
-#    Then The user verifies that table contains right rows according to "<length>" in Currencies
     Then The user verifies that table contains right rows according to "<entry>"
     Examples:
       | entry       |
-      | 10 Entries  |
-      | 25 Entries  |
-      | 50 Entries  |
       | 100 Entries |
+      | 50 Entries  |
+      | 25 Entries  |
+      | 10 Entries  |
 
   Scenario:Attributes Export Button
     Then The user export button attributes
