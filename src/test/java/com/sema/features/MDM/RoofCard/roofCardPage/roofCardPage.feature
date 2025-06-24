@@ -19,11 +19,12 @@ Feature: RoofCard Management Test Cases- Contact Home Page
     And  The user verifies "items_previous" button is "Passive"
 
   Scenario Outline: RoofCard Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
+    When The user select "<entry>" in table show entry select
+    Then The user verifies that table contains right rows according to "<entry>"
     Examples:
-      | entries|
-      |10 |
+      | entry       |
+      | 50 Entries  |
+      | 100 Entries |
 
   Scenario: RoofCard Home Page Reset Button Control
     And The user enters "roofcard" into "Code" filter text input box

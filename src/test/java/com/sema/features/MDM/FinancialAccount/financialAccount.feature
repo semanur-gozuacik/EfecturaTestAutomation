@@ -19,14 +19,15 @@ Feature: Financial Account Management Test Cases- Contact Home Page
     And  The user verifies "items_previous" button is "Passive"
 
   Scenario Outline: Financial Account Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
+    When The user select "<entry>" in table show entry select
+    Then The user verifies that table contains right rows according to "<entry>"
     Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
+      | entry       |
+      | 10 Entries  |
+      | 25 Entries  |
+      | 50 Entries  |
+      | 100 Entries |
+
   Scenario:Financial Account Reset Button Control
     And The user enters "NoMask" into "Code" filter text input box
     And The user reset the basic filters

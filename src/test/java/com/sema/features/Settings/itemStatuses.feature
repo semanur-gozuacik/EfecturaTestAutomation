@@ -5,7 +5,7 @@ Feature: Tags Page Test Cases
     Given The User inputs a valid username "validUsername"
     Given The User inputs a valid password "validPassword"
     Given The User clicks the Submit button
-    When  The User waits until the System element is visible with a timeout of 120 seconds
+#    When  The User waits until the System element is visible with a timeout of 120 seconds
     When  The user is on the ItemStatuses page
 
 
@@ -68,12 +68,12 @@ Feature: Tags Page Test Cases
     Then The user verifies that Label values are descending order
 
   Scenario Outline: If there is enough data in the table, there must be as many rows as the number selected in the table length
-    When The user select "<length>" from table length
-    Then The user verifies that table contains right rows according to "<length>"
+    When The user select "<entry>" in table show entry select
+    Then The user verifies that table contains right rows according to "<entry>"
     Examples:
-      | length |
-      | 100    |
-      | 10     |
+      | entry       |
+      | 100 Entries |
+      | 10 Entries  |
 
 
 #23/05/2024------------------------------------------------------------------------------

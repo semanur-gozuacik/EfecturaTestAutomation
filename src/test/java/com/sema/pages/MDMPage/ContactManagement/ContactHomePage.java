@@ -344,16 +344,6 @@ public class ContactHomePage extends BasePage {
         showEntrieButton.click();
     }
 
-    public void selectEntrie(String entrie) {
-        BrowserUtils.selectOption(showEntries, entrie);
-    }
-
-    public void verifySelectOption(String entrie) {
-        BrowserUtils.wait(5);
-        assertTrue(BrowserUtils.isOptionSelected(showEntries, entrie));
-
-    }
-
     public void verifyEditPage() {
         BrowserUtils.wait(5);
         assertTrue(verifyContactEditButton.isDisplayed());

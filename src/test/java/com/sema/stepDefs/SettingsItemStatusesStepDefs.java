@@ -1,6 +1,7 @@
 package com.sema.stepDefs;
 
 import com.sema.utilities.BrowserUtils;
+import com.sema.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -9,7 +10,8 @@ public class SettingsItemStatusesStepDefs extends BaseStep {
 
     @When("The user is on the ItemStatuses page")
     public void theUserIsOnTheItemStatusesPage() {
-        pages.itemStatusesPage().goToItemStatusesPage();
+        Driver.getDriver().navigate().to("https://sandbox-ui.efectura.com/Settings/ItemStatuses");
+//        pages.itemStatusesPage().goToItemStatusesPage();
     }
 
     @When("The user enters {int} in to Id filter")

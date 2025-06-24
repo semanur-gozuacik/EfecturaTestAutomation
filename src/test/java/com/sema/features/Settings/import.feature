@@ -6,7 +6,7 @@ Feature: Import Management Test Cases
     And    The User inputs a valid username "validUsername"
     And    The User inputs a valid password "validPassword"
     And    The User clicks the Submit button
-    Then  The User waits until the System element is visible with a timeout of 120 seconds
+#    Then  The User waits until the System element is visible with a timeout of 120 seconds
 #    And   The User performs a mouseover on the System element symbol
     Given The user on the settings ımport page
     And   The User gets the current URL and stores it in "Import"
@@ -21,12 +21,14 @@ Feature: Import Management Test Cases
     And The user verify Reset button func for "Name" text filter
 
   Scenario Outline:Import Page-User selects different options for show entries
-    When  The user selects "<entries>" into show entries import
-    Then  The user should see  "<entries>" entrie in everypage import
+    When The user select "<entry>" in table show entry select
+    Then The user verifies that table contains right rows according to "<entry>"
     Examples:
-      | entries |
-      | 25      |
-      | 10      |
+      | entry       |
+      | 100 Entries |
+      | 50 Entries  |
+      | 25 Entries  |
+      | 10 Entries  |
 
   Scenario: Refresh Button Control
     Then The user verifies that Refresh button is active

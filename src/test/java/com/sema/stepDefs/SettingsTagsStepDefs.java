@@ -291,15 +291,6 @@ public class SettingsTagsStepDefs extends BaseStep {
         pages.tagsPage().selectLengthFromTableLengthInTagsPage(length);
     }
 
-    @Then("The user verifies that table contains right rows according to {string}")
-    public void theUserVerifiesThatTableContainsRightRowsAccordingTo(String length) {
-        BrowserUtils.wait(1);
-        pages.generalPage().verifyTableContainsRightRowsAccordingToLength(length);
-//        Assert.assertTrue(BrowserUtils.isOptionSelected(pages.generalPage().getTableShowEntrySelect(), length));
-        Select select = new Select(pages.generalPage().getTableShowEntrySelect());
-        Assert.assertEquals(select.getFirstSelectedOption().getAttribute("value"),length.split(" ")[0]);
-    }
-
     @When("The user clicks DeleteTag button in Tags page")
     public void theUserClicksDeleteTagButtonInTagsPage() {
         pages.tagsPage().clickDeleteTagButton();

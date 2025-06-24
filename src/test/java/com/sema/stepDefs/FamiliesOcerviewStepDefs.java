@@ -35,14 +35,7 @@ pages.families().verifyResetButton();
     public void the_user_clicks_show_entries_button_families() {
 pages.families().clickShowEntries();
     }
-    @When("The user selects {string} into show entries families")
-    public void the_user_selects_into_show_entries_families(String entrie) {
-pages.families().selectEntrie(entrie);
-    }
-    @Then("The user should see  {string} entrie in everypage families")
-    public void the_user_should_see_entrie_in_everypage_families(String entrie) {
-pages.families().verifySelectOption(entrie);
-    }
+
     @Then("The user verifies first page button is not clickable-families")
     public void the_user_verifies_first_page_button_is_not_clickable() {
         pages.families().verifyFirstPageButtonUnClickable();

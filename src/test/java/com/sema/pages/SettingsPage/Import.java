@@ -273,14 +273,6 @@ public class Import extends BasePage {
         Assert.assertTrue(importPageVerificationsElement.isDisplayed());
     }
 
-    public void selectLengthFromTableLengthInImportPage(String length) {
-        selectLengthFromTableLength(tableLengthSelectDropdown,length);
-    }
-
-    public void verifyTableContainsRightRowsAccordingToLength(String length) {
-        Assert.assertTrue(isRowCountCorrectAccordingToTableLength(tableInfo,length));
-    }
-
     public void clickNameFilter() {
         nameFilter.click();
     }

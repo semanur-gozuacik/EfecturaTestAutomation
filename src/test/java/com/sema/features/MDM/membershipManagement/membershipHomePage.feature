@@ -70,14 +70,14 @@ Feature: Membership Management Test Cases
     Then The user verify "Associated" select filter with value "No" in "associationTable"
 
   Scenario Outline: Membership Home Page User selects different options for show entries
-    When  The user selects "<entries>" into show entries
-    Then  The user should see  "<entries>" entrie in everypage
+    When The user select "<entry>" in table show entry select
+    Then The user verifies that table contains right rows according to "<entry>"
     Examples:
-      | entries|
-      |10 |
-      |25 |
-      |50 |
-      |100|
+      | entry       |
+      | 100 Entries |
+      | 50 Entries  |
+      | 25 Entries  |
+      | 10 Entries  |
 
   Scenario: Membership Home Page Columns - Reset Button
     And  The user enters columns button

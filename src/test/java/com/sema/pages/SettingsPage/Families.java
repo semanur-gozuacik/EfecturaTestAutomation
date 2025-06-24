@@ -55,14 +55,7 @@ public void setCodeField(String code){
 public void clickShowEntries(){
         showentries.click();
 }
-public void selectEntrie(String entrie){
-        BrowserUtils.selectOption(entrieNumber,entrie);
-}
-public void verifySelectOption(String entrie){
-        BrowserUtils.wait(5);
-    Assert.assertTrue(BrowserUtils.isOptionSelected(entrieNumber, entrie));
 
-}
     public void verifyFirstPageButtonUnClickable() {
         BrowserUtils.wait(5);
         String classes = firstPageButton.getAttribute("class");
