@@ -96,6 +96,9 @@ public class ItemOverviewPage extends BasePage {
     @FindBy(xpath = "//div[contains(@class,'accordion-container')]")
     private WebElement accordionContainer;
 
+    @FindBy(xpath = "//button[@id='export-dropdown']")
+    private WebElement overviewExportDropdownBtn;
+
 
     public ItemOverviewPage() {
     }
@@ -130,38 +133,6 @@ public class ItemOverviewPage extends BasePage {
         if (isSidebarOpen) {
             overviewSideAccordion.click();
         }
-    }
-
-
-    /*
-    You can write button names like these in future file:
-    firstPageTable
-    items_previous
-    items_next
-    lastPageTable
-     */
-    public void verifyButtonStatus(String btnName, String btnStatus) {
-        BrowserUtils.wait(4);
-        WebElement btn = driver.findElement(By.xpath(
-                "//*[contains(translate(@id, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '"
-                        + btnName + "')]"));
-//        WebElement button = driver.findElement(By.id(btnName));
-        if(btnStatus.equalsIgnoreCase("Active")) {
-            Assert.assertTrue(isButtonActive(btn));
-        } else if (btnStatus.equalsIgnoreCase("Passive")) {
-            Assert.assertFalse(isButtonActive(btn));
-        }
-    }
-
-    public void clickPaginationButton(String btnName) {
-        BrowserUtils.wait(10);
-        WebElement btn = driver.findElement(By.xpath(
-                "//*[contains(translate(@id, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '"
-                        + btnName + "')]"));
-//        WebElement btn2 = driver.findElement(By.id(btnName));
-//        WebElement button = driver.findElement
-//                (By.xpath("//div[@class='pagination-container']//button[@id='" + btnName + "']"));
-        btn.click();
     }
 
     public void clickDeleteBtnOfList(String listName) {

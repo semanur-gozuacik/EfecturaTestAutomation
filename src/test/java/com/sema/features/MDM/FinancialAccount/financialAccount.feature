@@ -9,14 +9,14 @@ Feature: Financial Account Management Test Cases- Contact Home Page
     And   The User gets the current URL and stores it in "itemType=FinancialAccount"
 
   Scenario:Financial Account Verify export button
-    When  The user clicks on Export button
-
+    When The user click on export "all" button in overview
+    Then The user verifies info "Success" appears
 
   Scenario:Financial Account Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies "firstPageTable" button is "Passive"
+    And  The user verifies "firstpage" button is "Passive"
 
   Scenario:Financial Account Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies "items_previous" button is "Passive"
+    And  The user verifies "previous" button is "Passive"
 
   Scenario Outline: Financial Account Home Page User selects different options for show entries
     When The user select "<entry>" in table show entry select

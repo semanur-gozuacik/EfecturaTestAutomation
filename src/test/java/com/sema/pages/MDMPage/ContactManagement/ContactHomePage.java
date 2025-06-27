@@ -426,17 +426,6 @@ public class ContactHomePage extends BasePage {
         assertTrue(true);
     }
 
-    public void clickExportButton() {
-        BrowserUtils.waitForVisibility(exportButton, 10);
-        exportButton.click();
-        exportAllOption.click();
-    }
-
-    public void verifyExportSuccessMessage(String message) {
-        BrowserUtils.waitForVisibility(exportSuccessMessage, 10);
-        assertEquals(message, exportSuccessMessage.getText());
-    }
-
     public void verifyExportedFile() {
         driver.navigate().to("chrome://downloads/");
         assertTrue(exportedContactFile.isDisplayed());

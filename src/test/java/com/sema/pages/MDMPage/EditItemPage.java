@@ -35,6 +35,9 @@ public class EditItemPage extends BasePage {
     @FindBy(xpath = "//*[@id='renderBodyWrap']/div[6]/div[1]")
     protected WebElement accordionButton;
 
+    @FindBy(xpath = "//button[contains(@id,'sidebarToggleBtn')]")
+    private WebElement sideBarButton;
+
     @FindBy(xpath = "//span[@id='arrowbtn-down']")
     private WebElement scrollRightButton;
 
@@ -94,7 +97,7 @@ public class EditItemPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"status-input-block\"]/div[1]/div[2]/span/span[1]/span/span[2]/b")
     private WebElement statusExpandArrow;
 
-    @FindBy(xpath = "//input[@class='select2-search__field']")
+    @FindBy(xpath = "/html/body/span/span/span[1]/input")
     private WebElement statusSelectInput;
 
     @FindBy(xpath = "//li[contains(@class,'select2-results__option')]")

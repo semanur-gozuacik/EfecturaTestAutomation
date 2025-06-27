@@ -16,6 +16,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
+import static com.sema.utilities.BrowserUtils.isButtonActive;
+
 @Getter
 public class GeneralPage extends BasePage {
 
@@ -115,4 +117,37 @@ public class GeneralPage extends BasePage {
     public void verifyTableContainsRightRowsAccordingToLength(String length) {
         Assert.assertTrue(isRowCountCorrectAccordingToTableLength(tableInfo,length));
     }
+
+    /*
+    You can write button names like these in future file:
+    firstpage
+    previous
+    next
+    lastpage
+     */
+    public void verifyButtonStatus(String btnName, String btnStatus) {
+        BrowserUtils.wait(4);
+        String locate = "//div[@class='pagination-container']//*[contains(translate(@id, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" +
+                btnName + "')]";
+        System.out.println(locate);
+        WebElement btn = driver.findElement(By.xpath(locate));
+//        WebElement button = driver.findElement(By.id(btnName));
+        if(btnStatus.equalsIgnoreCase("Active")) {
+            Assert.assertTrue(isButtonActive(btn));
+        } else if (btnStatus.equalsIgnoreCase("Passive")) {
+            Assert.assertFalse(isButtonActive(btn));
+        }
+    }
+
+    public void clickPaginationButton(String btnName) {
+        BrowserUtils.wait(10);
+        String locate = "//div[@class='pagination-container']//*[contains(translate(@id, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" +
+                btnName + "')]";
+        WebElement btn = driver.findElement(By.xpath(locate));
+//        WebElement btn2 = driver.findElement(By.id(btnName));
+//        WebElement button = driver.findElement
+//                (By.xpath("//div[@class='pagination-container']//button[@id='" + btnName + "']"));
+        btn.click();
+    }
+
 }

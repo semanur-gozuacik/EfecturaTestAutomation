@@ -154,5 +154,5 @@ Feature: Contact Management Test Cases-My Contact Page
   Scenario: My Count Verify export button
     When The user clicks My Contact button
     And The user waits ten seconds
-    When  The user clicks on Export button
-   # Then  The user verify that the export was "Success"
+    When The user click on export "all" button in overview
+    Then The user verifies info "Success" appears

@@ -81,12 +81,12 @@ public class ItemOverviewStepDefs extends BaseStep {
 
     @And("The user verifies {string} button is {string}")
     public void theUserVerifiesButtonIs(String btnName, String btnStatus) {
-        pages.itemOverviewPage().verifyButtonStatus(btnName,btnStatus);
+        pages.generalPage().verifyButtonStatus(btnName,btnStatus);
     }
 
     @When("The user clicks {string} pagination button")
     public void theUserClicksLastPageTablePaginationButton(String btnName) {
-        pages.itemOverviewPage().clickPaginationButton(btnName);
+        pages.generalPage().clickPaginationButton(btnName);
     }
 
     @And("The user clicks add list button")
@@ -149,5 +149,13 @@ public class ItemOverviewStepDefs extends BaseStep {
         BrowserUtils.waitForClickability(btn,10);
         btn.click();
         BrowserUtils.wait(1);
+    }
+
+    @When("The user click on export {string} button in overview")
+    public void theUserClickOnExportButtonInOverview(String btnText) {
+        WebElement exportBtn = Driver.getDriver().findElement(By.xpath("//a[contains(@id,'-" + btnText + "')]"));
+        pages.itemOverviewPage().getOverviewExportDropdownBtn().click();
+        exportBtn.click();
+
     }
 }

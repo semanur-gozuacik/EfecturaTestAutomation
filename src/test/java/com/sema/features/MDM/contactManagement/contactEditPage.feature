@@ -16,16 +16,16 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user clicks on edit button in table
     Then The user verify Edit Page
     And The user select ItemStatus as "<ItemStatus>"
-       #And the user clicks on unsaved change button
-      # And The user enters "-------" in  comment area
-      # And The user clicks save button
-       #And the user verifies item status success message
-
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
+    And The user verify item status is "<ItemStatus>" on item with code "5071245698"
     Examples:
-      |ItemStatus |
-      |Active     |
-      |Passive    |
-      |Approved   |
+      | ItemStatus |
+      | Active     |
+      | Passive    |
+      | Approved   |
 
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses - cancel button
@@ -35,15 +35,14 @@ Feature: Contact Management Test Cases- Contact Edit Page
     And The user clicks on edit button in table
     Then The user verify Edit Page
     And The user select ItemStatus as "<ItemStatus>"
-       #And the user clicks on unsaved change button
-      # And The user enters "-------" in  comment area
-     #  And The user clicks cancel button
-      # And the user verifies item status not change
-
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
+    And The user clicks cancel button in edit item save modal
+    And The user verify item status is not "<ItemStatus>" on item with code "semaotomasyon"
     Examples:
-      |ItemStatus |
-      |Passive    |
-      |Active     |
+      | ItemStatus |
+      | Passive    |
+      | Active     |
       #|Approved   |
 
   Scenario: Edit item added list

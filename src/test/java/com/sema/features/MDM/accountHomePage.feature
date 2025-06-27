@@ -20,42 +20,41 @@ Feature: Account Management Test Cases- Account Home Page
     Then  The User waits until the page contains "EMPTY_FAMILY" with a timeout of 120 seconds
 
   Scenario:Account Verify export button
-    When  The user clicks on Export button
+    When The user click on export "all" button in overview
+    Then The user verifies info "Since there are more than 1000 data, the document was sent as an e-mail." appears
 
   Scenario: Account Home Page Reset Button Control
     And The user enters "test2123" into "Code" filter text input box
-#    And the user clicks on Reset button
     And The user reset the basic filters
-#    And the user verify Reset button functionality
     And The user verify Reset button func for "Code" text filter
 
   Scenario:Account Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies "firstPageTable" button is "Passive"
+    And  The user verifies "firstpage" button is "Passive"
 
   Scenario:Account Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies "items_previous" button is "Passive"
+    And  The user verifies "previous" button is "Passive"
 
   Scenario:Account Home Page Verify Item next Button Unclickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "items_next" button is "Passive"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "next" button is "Passive"
 
   Scenario:Account Home Page Verify Last Page Button Unclickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "lastPageTable" button is "Passive"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "lastpage" button is "Passive"
 
   Scenario:Account Home Page Verify First Page Button Clickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "firstPageTable" button is "Active"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "firstpage" button is "Active"
 
   Scenario:Account Home Page Verify Previous Page Button Clickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "items_previous" button is "Active"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "previous" button is "Active"
 
   Scenario:Account Home Page Verify Item next Button Clickable Condition
-    And  The user verifies "items_next" button is "Active"
+    And  The user verifies "next" button is "Active"
 
   Scenario:Account Home Page Verify Last Page Button Clickable Condition
-    And  The user verifies "lastPageTable" button is "Active"
+    And  The user verifies "lastpage" button is "Active"
 
 
   Scenario Outline: Account Home Page User selects different options for show entries

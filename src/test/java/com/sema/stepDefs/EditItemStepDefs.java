@@ -40,15 +40,17 @@ public class EditItemStepDefs extends BaseStep{
     @And("The user select ItemStatus as {string}")
     public void theUserSelectItemStatusAs(String status) {
         BrowserUtils.wait(2);
+        pages.editItemPage().getSideBarButton().click();
         pages.editItemPage().getStatusExpandArrow().click();
         pages.editItemPage().getStatusSelectInput().sendKeys(status);
         pages.editItemPage().getResultOption().click();
+        pages.editItemPage().getSideBarButton().click();
 //        pages.contactEditPage().selectItemStatus(status);
     }
 
     @And("The user clicks save button in edit item")
     public void theUserClicksSaveButtonInEditItem() {
-        pages.editItemPage().getAccordionButton().click();
+//        pages.editItemPage().getAccordionButton().click();
         BrowserUtils.waitForVisibility(pages.editItemPage().getSaveButton(),10);
         pages.editItemPage().getSaveButton().click();
     }

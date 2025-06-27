@@ -58,22 +58,22 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And the user clicks on Star items
 
   Scenario: Verify export button
-    When  The user clicks on Export button
- #   Then  The user verify that the export was "Success"
+    When The user click on export "all" button in overview
+    Then The user verifies info "Success" appears
 
   Scenario: Verify Item Previous Button Unclickable Condition
-    And  The user verifies "items_previous" button is "Passive"
+    And  The user verifies "previous" button is "Passive"
 
   Scenario: Verify Item next Button Unclickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "items_next" button is "Passive"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "next" button is "Passive"
 
   Scenario: Verify First Page Button Unclickable Condition
-    And  The user verifies "firstPageTable" button is "Passive"
+    And  The user verifies "firstpage" button is "Passive"
 
   Scenario: Verify Last Page Button Unclickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "lastPageTable" button is "Passive"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "lastpage" button is "Passive"
 
   Scenario Outline: Campaign Home Page User selects different options for show entries
     When The user select "<entry>" in table show entry select
@@ -173,29 +173,28 @@ Feature: Campaign Management Test Cases- Campaign Home Page
     And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user select ItemStatus as "<ItemStatus>"
-       #And the user clicks on unsaved change button
-      # And The user enters "-------" in  comment area
-       #And The user clicks cancel button
-      # And the user verifies item status not change
-
+    And The user clicks save button in edit item
+    And The user enters "automation" in comment area
+    And The user clicks cancel button in edit item save modal
+    And The user verify item status is not "<ItemStatus>" on item with code "TestAutomation"
     Examples:
-      |ItemStatus |
-      |Passive    |
-     # |Active     |
+      | ItemStatus |
+      | Passive    |
+      | Active     |
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "TestAutomation" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user select ItemStatus as "<ItemStatus>"
-      # And the user clicks on unsaved change button
-      # And The user enters "-------" in  comment area
-      # And The user clicks save button
-      # And the user verifies item status success message
-
+    And The user clicks save button in edit item
+    And The user enters "automation" in comment area
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
+    And The user verify item status is "<ItemStatus>" on item with code "TestAutomation"
     Examples:
-      |ItemStatus |
-      |Passive    |
-      |Active     |
+      | ItemStatus |
+      | Passive    |
+      | Active     |
 
   Scenario:Campaign edit - Campaign-point Associated
     And The user enters "TestAutomation" into "Code" filter text input box

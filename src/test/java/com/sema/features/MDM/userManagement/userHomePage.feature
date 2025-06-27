@@ -21,8 +21,8 @@ Feature: User Management Test Cases- Contact Home Page
     Then  The User waits until the page contains "EMPTY_FAMILY" with a timeout of 120 seconds
 
   Scenario:User Home Page Verify export button
-    When  The user clicks on Export button
-  #  Then  The user verify that the export was "Success"
+    When The user click on export "all" button in overview
+    Then The user verifies info "Success" appears
 
   Scenario:User Home Page Verify First Page Button Unclickable Condition
     And  The user verifies "firstPageTable" button is "Passive"

@@ -45,32 +45,32 @@ Feature: Connector Management Test Cases- Connector Home Page
   # firstPageTable, items_previous, items_next, lastPageTable
 
   Scenario:Connector Page Verify First Page Button Unclickable Condition
-    And  The user verifies "firstPageTable" button is "Passive"
+    And  The user verifies "firstpage" button is "Passive"
 
   Scenario:Connector Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies "items_previous" button is "Passive"
+    And  The user verifies "previous" button is "Passive"
 
   Scenario:Connector Page Verify Item next Button Unclickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "items_next" button is "Passive"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "next" button is "Passive"
 
   Scenario: Connector Page Verify Last Page Button Unclickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "lastPageTable" button is "Passive"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "lastpage" button is "Passive"
 
   Scenario:Connector Page Verify First Page Button Clickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "firstPageTable" button is "Active"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "firstpage" button is "Active"
 
   Scenario:Connector Page Verify Previous Page Button Clickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "items_previous" button is "Active"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "previous" button is "Active"
 
   Scenario:Connector Page Verify Item next Button Clickable Condition
-    And  The user verifies "items_next" button is "Active"
+    And  The user verifies "next" button is "Active"
 
   Scenario: Connector Page Verify Last Page Button Clickable Condition
-    And  The user verifies "lastPageTable" button is "Active"
+    And  The user verifies "lastpage" button is "Active"
 
   Scenario Outline: Connector Home Page User selects different options for show entries
     When The user select "<entry>" in table show entry select

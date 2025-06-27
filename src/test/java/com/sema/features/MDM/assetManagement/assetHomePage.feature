@@ -46,8 +46,6 @@ Feature: Asset Management Test Cases- Asset Home Page
     And The user clicks add list button
     Then The user verifies New List popup is open
     When The user enters list name as "automation"
-#     And  The user enters "_5458429214" Can view
-#      And  The user enters "1757483988_5392786463" Can edit
 
   Scenario: Create List- create button-exist user
     And The user clicks add list button
@@ -75,30 +73,30 @@ Feature: Asset Management Test Cases- Asset Home Page
     And  The user verifies "items_previous" button is "Passive"
 
   Scenario:Asset Home Page Verify Item next Button Unclickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "items_next" button is "Passive"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "next" button is "Passive"
 
   Scenario:Asset Home Page Verify Last Page Button Unclickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "lastPageTable" button is "Passive"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "lastpage" button is "Passive"
 
   Scenario:Asset Home Page Verify First Page Button Clickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "firstPageTable" button is "Active"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "firstpage" button is "Active"
 
   Scenario:Asset Home Page Verify Previous Page Button Clickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "items_previous" button is "Active"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "previous" button is "Active"
 
   Scenario:Asset Home Page Verify Item next Button Clickable Condition
-    And  The user verifies "items_next" button is "Active"
+    And  The user verifies "next" button is "Active"
 
   Scenario:Asset Home Page Verify Last Page Button Clickable Condition
-    And  The user verifies "lastPageTable" button is "Active"
+    And  The user verifies "lastpage" button is "Active"
 
   Scenario: Verify export button
-    When  The user clicks on Export button
-   # Then  The user verify that the export was "Success"
+    When The user click on export "all" button in overview
+    Then The user verifies info "Success" appears
 
   Scenario Outline: Asset Home Page User selects different options for show entries
     When The user select "<entry>" in table show entry select
