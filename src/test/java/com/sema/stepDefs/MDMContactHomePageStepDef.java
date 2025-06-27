@@ -167,14 +167,7 @@ public class MDMContactHomePageStepDef extends BaseStep {
     public void the_user_verify_my_count_badge_count_is_correct() {
       pages.contactHomePage().verifyMyCountsBadgeCount();
     }
-    @When("The user clicks on Export button")
-    public void the_user_clicks_on_export_button() {
-     pages.contactHomePage().clickExportButton();
-    }
-    @Then("The user verify that the export was {string}")
-    public void the_user_verify_that_the_export_was(String successMessage) {
-      pages.contactHomePage().verifyExportSuccessMessage(successMessage);
-    }
+
     @Then("The user verify that the file is located in the downloads folder")
     public void the_user_verify_that_the_file_is_located_in_the_downloads_folder() {
         pages.contactHomePage().verifyExportedFile();

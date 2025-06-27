@@ -115,36 +115,36 @@ Feature: Contact Management Test Cases- Contact Home Page
     And the user verify My Count badge count is correct
 
   Scenario: Verify export button
-    When  The user clicks on Export button
-
+    When The user click on export "all" button in overview
+    Then The user verifies info "Success" appears
 
   Scenario:Contact Page Verify First Page Button Unclickable Condition
-    And  The user verifies "firstPageTable" button is "Passive"
+    And  The user verifies "firstpage" button is "Passive"
 
   Scenario:Contact Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies "items_previous" button is "Passive"
+    And  The user verifies "previous" button is "Passive"
 
   Scenario:Contact Page Verify Item next Button Unclickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "items_next" button is "Passive"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "next" button is "Passive"
 
   Scenario: Contact Page Verify Last Page Button Unclickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "lastPageTable" button is "Passive"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "lastpage" button is "Passive"
 
   Scenario:Contact Page Verify First Page Button Clickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "firstPageTable" button is "Active"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "firstpage" button is "Active"
 
   Scenario:Contact Page Verify Previous Page Button Clickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "items_previous" button is "Active"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "previous" button is "Active"
 
   Scenario:Contact Page Verify Item next Button Clickable Condition
-    And  The user verifies "items_next" button is "Active"
+    And  The user verifies "next" button is "Active"
 
   Scenario: Contact Page Verify Last Page Button Clickable Condition
-    And  The user verifies "lastPageTable" button is "Active"
+    And  The user verifies "lastpage" button is "Active"
 
 
   Scenario Outline: Contact Home Page User selects different options for show entries

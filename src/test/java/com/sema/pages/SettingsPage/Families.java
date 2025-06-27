@@ -56,13 +56,6 @@ public void clickShowEntries(){
         showentries.click();
 }
 
-    public void verifyFirstPageButtonUnClickable() {
-        BrowserUtils.wait(5);
-        String classes = firstPageButton.getAttribute("class");
-        System.out.println(classes);
-        boolean isDisabled = classes.contains("disabled");
-        Assert.assertTrue(isDisabled);
-    }
     public void verifyFirstPageButtonClickable() {
         BrowserUtils.wait(5);
         String classes = firstPageButton.getAttribute("class");
@@ -70,13 +63,7 @@ public void clickShowEntries(){
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
     }
-    public void verifyPreviousPageButtonUnClickable() {
-        BrowserUtils.wait(5);
-        String classes = previousPageButton.getAttribute("class");
-        System.out.println(classes);
-        boolean isDisabled = classes.contains("disabled");
-        Assert.assertTrue(isDisabled);
-    }
+
     public void verifyPreviousPageButtonClickable() {
         BrowserUtils.wait(5);
         String classes = previousPageButton.getAttribute("class");
@@ -84,13 +71,7 @@ public void clickShowEntries(){
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
     }
-    public void verifyNextPageButtonUnClickable() {
-        BrowserUtils.wait(5);
-        String classes = nextPageButton.getAttribute("class");
-        System.out.println(classes);
-        boolean isDisabled = classes.contains("disabled");
-        Assert.assertTrue(isDisabled);
-    }
+
     public void verifyNextPageButtonClickable() {
         BrowserUtils.wait(5);
         String classes = nextPageButton.getAttribute("class");
@@ -98,10 +79,7 @@ public void clickShowEntries(){
         boolean isDisabled = classes.contains("disabled");
         Assert.assertFalse(isDisabled);
     }
-    public void clickLastPage(){
-        BrowserUtils.waitForVisibility(lastPageButton,20);
-        lastPageButton.click();
-    }
+
     public void verifyLastPageButtonUnClickable() {
         BrowserUtils.wait(5);
         String classes = lastPageButton.getAttribute("class");

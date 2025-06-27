@@ -36,30 +36,16 @@ pages.families().verifyResetButton();
 pages.families().clickShowEntries();
     }
 
-    @Then("The user verifies first page button is not clickable-families")
-    public void the_user_verifies_first_page_button_is_not_clickable() {
-        pages.families().verifyFirstPageButtonUnClickable();
-    }
     @Then("The user verifies first page button is clickable-families")
     public void the_user_verifies_first_page_button_is_clickable() {
         pages.families().verifyFirstPageButtonClickable();
     }
-    @Then("The user verifies previous page button is not clickable-families")
-    public void the_user_verifies_previous_page_button_is_not_clickable() {
-        pages.families().verifyPreviousPageButtonUnClickable();
-    }
+
     @Then("The user verifies previous page button is clickable-families")
     public void the_user_verifies_previous_page_button_is_clickable() {
         pages.families().verifyPreviousPageButtonClickable();
     }
-    @When("The user clicks last page button-families")
-    public void the_user_clicks_last_page_button_families() {
-     pages.families().clickLastPage();
-    }
-    @When("The user verifies next button is not clickable-families")
-    public void the_user_verifies_next_button_is_not_clickable_families() {
-       pages.families().verifyNextPageButtonUnClickable();
-    }
+
     @When("The user verifies next button is clickable-families")
     public void the_user_verifies_next_button_is_clickable_families() {
         pages.families().verifyNextPageButtonClickable();

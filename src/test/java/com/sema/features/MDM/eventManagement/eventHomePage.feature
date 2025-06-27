@@ -10,36 +10,36 @@ Feature: Event Management Test Cases- Event Home Page
 
 
   Scenario:Event Verify export button
-    When  The user clicks on Export button
-    #Then  The user verify that the export was "Success"
+    When The user click on export "all" button in overview
+    Then The user verifies info "Success" appears
 
   Scenario:Event Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies "firstPageTable" button is "Passive"
+    And  The user verifies "firstpage" button is "Passive"
 
   Scenario:Event Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies "items_previous" button is "Passive"
+    And  The user verifies "previous" button is "Passive"
 
   Scenario:Event Home Page Verify Item next Button Unclickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "items_next" button is "Passive"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "next" button is "Passive"
 
   Scenario:Event Home Page Verify Last Page Button Unclickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "lastPageTable" button is "Passive"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "lastpage" button is "Passive"
 
   Scenario:Event Home Page Verify First Page Button Clickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "firstPageTable" button is "Active"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "firstpage" button is "Active"
 
   Scenario:Event Home Page Verify Previous Page Button Clickable Condition
-    When The user clicks 'lastPageTable' pagination button
-    And  The user verifies "items_previous" button is "Active"
+    When The user clicks 'lastpage' pagination button
+    And  The user verifies "previous" button is "Active"
 
   Scenario:Event Home Page Verify Item next Button Clickable Condition
-    And  The user verifies "items_next" button is "Active"
+    And  The user verifies "next" button is "Active"
 
   Scenario:Event Home Page Verify Last Page Button Clickable Condition
-    And  The user verifies "lastPageTable" button is "Active"
+    And  The user verifies "lastpage" button is "Active"
 
   Scenario:Event Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into "Label" filter text input box
@@ -63,30 +63,31 @@ Feature: Event Management Test Cases- Event Home Page
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user select ItemStatus as "<ItemStatus>"
-      # And the user clicks on unsaved change button
-      # And The user enters "-------" in  comment area
-      # And The user clicks cancel button
-       #And the user verifies item status not change
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
+    And The user clicks cancel button in edit item save modal
+    And The user verify item status is not "<ItemStatus>" on item with code "DIAGEOEVENT"
 
     Examples:
-      |ItemStatus |
-      |Active     |
-      # |Passive    |
+      | ItemStatus |
+      | Active     |
+      | Passive    |
 
 
   Scenario Outline: Edit item status "<ItemStatus>" Item Statuses- save button
     And The user enters "DIAGEOEVENT" into "Code" filter text input box
     And The user clicks on edit button in table
     And The user select ItemStatus as "<ItemStatus>"
-      # And the user clicks on unsaved change button
-      # And The user enters "-------" in  comment area
-       #And The user clicks save button
-      # And the user verifies item status success message
+    And The user clicks save button in edit item
+    And The user enters "-------" in comment area
+    And The user clicks save button in edit item save modal
+    Then The user verifies info "Changes saved successfully." appears
+    And The user verify item status is "<ItemStatus>" on item with code "TEST123456"
 
     Examples:
-      |ItemStatus |
-      |Active     |
-      |Passive    |
+      | ItemStatus |
+      | Active     |
+      | Passive    |
 
   Scenario: Edit item added list
     And The user enters "DIAGEOEVENT" into "Code" filter text input box

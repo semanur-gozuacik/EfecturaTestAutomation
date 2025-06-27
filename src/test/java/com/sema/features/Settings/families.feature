@@ -29,18 +29,14 @@ Feature: Families Management Test Cases
       | 10 Entries  |
 
   Scenario:Families Page Verify First Page Button Unclickable Condition
-#    And  The user verifies first page button is not clickable-families
     And  The user verifies "firstpage" button is "Passive"
 
   Scenario:Families Page Verify Previous Page Button Unclickable Condition
-#    And  The user verifies previous page button is not clickable-families
-    And  The user verifies "_previous" button is "Passive"
+    And  The user verifies "previous" button is "Passive"
 
   Scenario:Families Page Verify Item next Button Unclickable Condition
-#    When The user clicks last page button-families
     When The user clicks 'lastpage' pagination button
-#    And  The user verifies next button is not clickable-families
-    And  The user verifies "_next" button is "Passive"
+    And  The user verifies "next" button is "Passive"
 
   Scenario: Families Page Verify Last Page Button Unclickable Condition
     When The user clicks 'lastpage' pagination button
@@ -52,10 +48,10 @@ Feature: Families Management Test Cases
 
   Scenario:Families Page Verify Previous Page Button Clickable Condition
     When The user clicks 'lastpage' pagination button
-    And  The user verifies "_previous" button is "Active"
+    And  The user verifies "previous" button is "Active"
 
   Scenario:Families Page Verify Item next Button Clickable Condition
-    And  The user verifies "_next" button is "Active"
+    And  The user verifies "next" button is "Active"
 
   Scenario: Families Page Verify Last Page Button Clickable Condition
     And  The user verifies "lastpage" button is "Active"

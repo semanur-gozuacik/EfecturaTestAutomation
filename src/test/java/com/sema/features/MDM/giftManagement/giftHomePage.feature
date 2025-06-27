@@ -9,19 +9,20 @@ Feature: Gift Creation and Management Home Page
     And   The User gets the current URL and stores it in "itemType=Gift"
 
   Scenario:Gift Verify export button
-    When  The user clicks on Export button
+    When The user click on export "all" button in overview
+    Then The user verifies info "Success" appears
 
   Scenario:Gift Home Page Verify First Page Button Unclickable Condition
-    And  The user verifies "firstPageTable" button is "Passive"
+    And  The user verifies "firstpage" button is "Passive"
 
   Scenario:Gift Home Page Verify Previous Page Button Unclickable Condition
-    And  The user verifies "items_previous" button is "Passive"
+    And  The user verifies "previous" button is "Passive"
 
   Scenario:Gift Home Page Verify Item next Button Clickable Condition
-    And  The user verifies "items_next" button is "Active"
+    And  The user verifies "next" button is "Active"
 
   Scenario:Gift Home Page Verify Last Page Button Clickable Condition
-    And  The user verifies "lastPageTable" button is "Active"
+    And  The user verifies "lastpage" button is "Active"
 
   Scenario:Gift Verify Label Filter - Invalid  Label
     And The user enters "sema12345" into "Label" filter text input box
