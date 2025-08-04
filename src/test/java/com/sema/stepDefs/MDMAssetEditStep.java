@@ -48,9 +48,4 @@ public class MDMAssetEditStep extends BaseStep {
         pages.assetEditPage().verifyEditRemoved();
     }
 
-    @Given("The user is on the Asset item home page")
-    public void the_user_is_on_the_Asset_item_home_page() {
-        pages.assetEditPage().onTheUserPage();
-    }
-
 }

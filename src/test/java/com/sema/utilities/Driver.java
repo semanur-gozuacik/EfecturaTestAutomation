@@ -7,6 +7,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 
+import org.openqa.selenium.Proxy;
+
+
 public class Driver {
 
 
@@ -46,6 +49,12 @@ public class Driver {
                     chromeOptions.addArguments("--window-size=1920,1080");
                     chromeOptions.addArguments("--disable-notifications");
                     //chromeOptions.addArguments("--remote-allow-origins=*");
+
+                   // JMeter proxy ayarları
+                   Proxy proxy = new Proxy();
+                   proxy.setHttpProxy("localhost:8888");
+                   chromeOptions.setProxy(proxy);
+
                     driverPool.set(new ChromeDriver(chromeOptions));
                     break;
                 case "firefox":

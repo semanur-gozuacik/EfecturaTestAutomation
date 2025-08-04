@@ -8,6 +8,20 @@ Feature: Contact Management Test Cases- Contact Home Page
     Given The user is on the Contact item home page
     And   The User gets the current URL and stores it in "itemType=Contact"
 
+
+  Scenario: Contact Family filter
+    And The user select "Ekosystem" in "Family" select filter
+    Then The user verify "Family" text filter with value "Ekosystem" in "overviewTable"
+
+  Scenario: Contact Status filter
+    And The user select "Passive" in "ItemStatuses" select filter
+    Then The user verify "ItemStatuses" text filter with value "Passive" in "overviewTable"
+
+  Scenario: Contact DIA_FIRSTNAME filter
+    And The user enters "TEST" into "DIA_FIRSTNAME" filter text input box
+    Then The user verify "DIA_FIRSTNAME" text filter with value "TEST" in "overviewTable"
+
+
   Scenario: Contact category functionality check
     And The user clicks on Contact  category
     And The user verifies that the codes shown in the Contact label filter are contact categories
@@ -23,13 +37,11 @@ Feature: Contact Management Test Cases- Contact Home Page
   Scenario: Verify Code Filter -Valid Unique Code
 #    And The user clicks on Contact  category
     And The user enters "semaotomasyon" into "Code" filter text input box
-#    And the user verify on code filter functionality "test_automation"
     Then The user verify "Code" text filter with value "semaotomasyon" in "overviewTable"
 
   Scenario:Verify Code Filter -Valid partial Code
 #    And The user clicks on Contact  category
     And The user enters "test" into "Code" filter text input box
-#    And the user verify on code filter functionality with partial unique code "test"
     Then The user verify "Code" text filter with value "test" in "overviewTable"
 
   Scenario: Verify Code Filter - Invalid Unique Code
@@ -40,13 +52,11 @@ Feature: Contact Management Test Cases- Contact Home Page
   Scenario: Verify Label Filter - Valid Label
 #    And The user clicks on Contact  category
     And The user enters "semaotoma" into "Label" filter text input box
-#    And the user verify on label filter functionality with partial unique code "semaotomasyon"
     Then The user verify "Label" text filter with value "semaotoma" in "overviewTable"
 
   Scenario: Verify Label Filter - Partial Unique Code
 #    And The user clicks on Contact  category
     And The user enters "test" into "Label" filter text input box
-#    And the user verify on label filter functionality with partial unique code "test"
     Then The user verify "Label" text filter with value "test" in "overviewTable"
 
   Scenario: Verify Label Filter - Invalid  Label
@@ -55,7 +65,7 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Search for Ekosystem Family
     And The user clicks on Ekosystem Filtre
-     #And the user verify on family filter Ekosystem functionality
+#     And the user verify on family filter Ekosystem functionality
 
   Scenario: Search for IWSA Family
     And The user clicks on IWSA Filtre
@@ -72,12 +82,11 @@ Feature: Contact Management Test Cases- Contact Home Page
 
   Scenario: Reset Button Control
       And The user clicks on Contact  category
-      And The user enters "test2123" into "Code" filter text input box
+#      And The user enters "test2123" into "Code" filter text input box
+    And The user select "Ekosystem" in "Family" select filter
 #      And The user clicks on Ekosystem Filtre
-#      And the user clicks on Reset button
-#      And the user verify Reset button functionality
       And The user reset the basic filters
-      And The user verify Reset button func for "Code" text filter
+      And The user verify Reset button func for "Family" text filter
 
   Scenario: Deleting an item and declining the popup message
     And The user clicks on Contact  category

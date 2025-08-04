@@ -86,8 +86,4 @@ public class AssetEditPage extends BasePage {
         Assert.assertTrue(allListAddedItem.isDisplayed());
     }
 
-    public void onTheUserPage(){
-        driver.navigate().to("https://sandbox-ui.efectura.com/Enrich/Items?itemType=Asset");
-    }
-
 }

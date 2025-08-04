@@ -5,7 +5,7 @@ Feature: Asset Management Test Cases- Asset Home Page
     And    The User inputs a valid username "validUsername"
     And    The User inputs a valid password "validPassword"
     And    The User clicks the Submit button
-    Given The user is on the Asset item home page
+    Given The user go to 'Asset' overview page
     And   The User gets the current URL and stores it in "itemType=Asset"
 
   Scenario: Verify Code Filter -Valid Unique Code

@@ -20,6 +20,7 @@ public class GeneralStepDefinitions extends BaseStep {
 
     @And("The user select {string} in {string} select filter")
     public void theUserSelectInSelectFilter(String selectOption, String selectFilter) {
+        BrowserUtils.adjustScreenSize(70,Driver.getDriver());
         pages.generalPage().selectOptionInSelectFilter(selectOption,selectFilter);
         BrowserUtils.wait(5);
     }
@@ -139,6 +140,12 @@ public class GeneralStepDefinitions extends BaseStep {
 //        Assert.assertTrue(BrowserUtils.isOptionSelected(pages.generalPage().getTableShowEntrySelect(), length));
         Select select = new Select(pages.generalPage().getTableShowEntrySelect());
         Assert.assertEquals(select.getFirstSelectedOption().getAttribute("value"),length.split(" ")[0]);
+    }
+
+
+    @When("The user go to {string} overview page")
+    public void theUserGoToAccountOverviewPage(String item) {
+        pages.itemOverviewPage().goToItemOverviewPage(item);
     }
 
 }
